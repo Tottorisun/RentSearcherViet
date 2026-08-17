@@ -1,0 +1,1673 @@
+banner [ref_48]
+ link "Tải ứng dụng" [ref_49] href="javascript:void(0);"
+ link [ref_50] href="javascript:void(0);"
+ generic "Tải ứng dụng" [ref_51]
+ image "QR Code" [ref_52]
+ link [ref_53] href="https://batdongsan.onelink.me/8kLq/general_bds_website"
+  image "app store" [ref_54]
+ link [ref_55] href="https://batdongsan.onelink.me/8kLq/general_bds_website"
+  image "google play" [ref_56]
+ link "Danh mục" [ref_57] href="javascript:void(0)"
+ heading [ref_58]
+  link "Nhà đất" [ref_59] href="https://batdongsan.com.vn"
+   image "Nền tảng bất động sản uy tín - Mua, Bán, Cho Thuê Nhà Đất Toàn Quốc" [ref_60]
+ link "Danh mục" [ref_61]
+ link "Danh mục" [ref_62] href="javascript:void(0)"
+ link "Tải ứng dụng" [ref_1] href="javascript:void(0);"
+ link [ref_63] href="javascript:void(0);"
+ generic "Tải ứng dụng" [ref_64]
+ image "QR Code" [ref_65]
+ link [ref_66] href="https://batdongsan.onelink.me/8kLq/header_qr_code"
+  image "app store" [ref_67]
+ link [ref_68] href="https://batdongsan.onelink.me/8kLq/header_qr_code"
+  image "google play" [ref_69]
+ tooltip "Danh sách tin đã lưu" [ref_70]
+  link [ref_2]
+  generic "Tin đăng đã lưu" [ref_71]
+  image "no data" [ref_72]
+  link "Xem tất cả" [ref_73]
+   generic "Xem tất cả" [ref_74]
+ link "Đăng nhập" [ref_3] href="javascript:void(0);"
+ link "Đăng ký" [ref_4] href="javascript:void(0);"
+ link "Đăng tin" [ref_5] href="/nguoi-ban/dang-tin"
+ heading [ref_75]
+  link [ref_6] href="https://batdongsan.com.vn"
+   image "Batdongsan.com.vn" [ref_76]
+ list [ref_77]
+  listitem [ref_78]
+   link [ref_79] href="https://batdongsan.onelink.me/8kLq/hd6jp67d"
+    generic "Mở App" [ref_80]
+  listitem [ref_81]
+   link [ref_82] href="/tin-da-luu"
+    generic "Tin đăng đã lưu" [ref_83]
+  listitem [ref_84]
+   link [ref_7] href="/nha-dat-ban"
+    generic "Nhà đất bán" [ref_85]
+   list [ref_86]
+    listitem [ref_87]
+     link "Bán căn hộ chung cư" [ref_88] href="/ban-can-ho-chung-cu"
+    listitem [ref_89]
+     link "Bán chung cư mini, căn hộ dịch vụ" [ref_90] href="/ban-can-ho-chung-cu-mini"
+    listitem [ref_91]
+     link "Bán nhà riêng" [ref_92] href="/ban-nha-rieng"
+    listitem [ref_93]
+     link "Bán nhà biệt thự, liền kề" [ref_94] href="/ban-nha-biet-thu-lien-ke"
+    listitem [ref_95]
+     link "Bán nhà mặt phố" [ref_96] href="/ban-nha-mat-pho"
+    listitem [ref_97]
+     link "Bán shophouse, nhà phố thương mại" [ref_98] href="/ban-shophouse-nha-pho-thuong-mai"
+    listitem [ref_99]
+     link "Bán đất nền dự án" [ref_100] href="/ban-dat-nen-du-an"
+    listitem [ref_101]
+     link "Bán đất" [ref_102] href="/ban-dat"
+    listitem [ref_103]
+     link "Bán trang trại, khu nghỉ dưỡng" [ref_104] href="/ban-trang-trai-khu-nghi-duong"
+    listitem [ref_105]
+     link "Bán condotel" [ref_106] href="/ban-condotel"
+    listitem [ref_107]
+     link "Bán kho, nhà xưởng" [ref_108] href="/ban-kho-nha-xuong"
+    listitem [ref_109]
+     link "Bán loại bất động sản khác" [ref_110] href="/ban-loai-bat-dong-san-khac"
+  listitem [ref_111]
+   link [ref_8] href="/nha-dat-cho-thue"
+    generic "Nhà đất cho thuê" [ref_112]
+   list [ref_113]
+    listitem [ref_114]
+     link "Cho thuê căn hộ chung cư" [ref_115] href="/cho-thue-can-ho-chung-cu"
+    listitem [ref_116]
+     link "Cho thuê chung cư mini, căn hộ dịch vụ" [ref_117] href="/cho-thue-can-ho-chung-cu-mini"
+    listitem [ref_118]
+     link "Cho thuê nhà riêng" [ref_119] href="/cho-thue-nha-rieng"
+    listitem [ref_120]
+     link "Cho thuê nhà biệt thự, liền kề" [ref_121] href="/cho-thue-nha-biet-thu-lien-ke"
+    listitem [ref_122]
+     link "Cho thuê nhà mặt phố" [ref_123] href="/cho-thue-nha-mat-pho"
+    listitem [ref_124]
+     link "Cho thuê shophouse, nhà phố thương mại" [ref_125] href="/cho-thue-shophouse-nha-pho-thuong-mai"
+    listitem [ref_126]
+     link "Cho thuê nhà trọ, phòng trọ" [ref_127] href="/cho-thue-nha-tro-phong-tro"
+    listitem [ref_128]
+     link "Cho thuê văn phòng" [ref_129] href="/cho-thue-van-phong"
+    listitem [ref_130]
+     link "Cho thuê, sang nhượng cửa hàng, ki ốt" [ref_131] href="/cho-thue-sang-nhuong-cua-hang-ki-ot"
+    listitem [ref_132]
+     link "Cho thuê kho, nhà xưởng, đất" [ref_133] href="/cho-thue-kho-nha-xuong-dat"
+    listitem [ref_134]
+     link "Cho thuê loại bất động sản khác" [ref_135] href="/cho-thue-loai-bat-dong-san-khac"
+  listitem [ref_136]
+   link [ref_9] href="/du-an-bat-dong-san"
+    generic "Dự án" [ref_137]
+   list [ref_138]
+    listitem [ref_139]
+     link "Căn hộ chung cư" [ref_140] href="/du-an-can-ho-chung-cu"
+    listitem [ref_141]
+     link "Cao ốc văn phòng" [ref_142] href="/du-an-cao-oc-van-phong"
+    listitem [ref_143]
+     link "Trung tâm thương mại" [ref_144] href="/du-an-trung-tam-thuong-mai"
+    listitem [ref_145]
+     link "Khu đô thị mới" [ref_146] href="/du-an-khu-do-thi-moi"
+    listitem [ref_147]
+     link "Khu phức hợp" [ref_148] href="/du-an-khu-phuc-hop"
+    listitem [ref_149]
+     link "Nhà ở xã hội" [ref_150] href="/du-an-nha-o-xa-hoi"
+    listitem [ref_151]
+     link "Khu nghỉ dưỡng, Sinh thái" [ref_152] href="/du-an-khu-nghi-duong-sinh-thai"
+    listitem [ref_153]
+     link "Khu công nghiệp" [ref_154] href="/du-an-khu-cong-nghiep"
+    listitem [ref_155]
+     link "Biệt thự, liền kề" [ref_156] href="/du-an-biet-thu-lien-ke"
+    listitem [ref_157]
+     link "Shophouse" [ref_158] href="/du-an-shophouse"
+    listitem [ref_159]
+     link "Nhà mặt phố" [ref_160] href="/du-an-nha-mat-pho"
+    listitem [ref_161]
+     link "Dự án khác" [ref_162] href="/du-an-khac"
+  listitem [ref_163]
+   link [ref_10] href="https://wiki.batdongsan.com.vn/tin-tuc"
+    generic "Tin tức" [ref_164]
+  listitem [ref_165]
+   link [ref_11] href="https://wiki.batdongsan.com.vn/wiki"
+    generic "Wiki BĐS" [ref_166]
+   list [ref_167]
+    listitem [ref_168]
+     link "Mua BĐS" [ref_169] href="https://wiki.batdongsan.com.vn/wiki/mua-bds"
+    listitem [ref_170]
+     link "Bán BĐS" [ref_171] href="https://wiki.batdongsan.com.vn/wiki/ban-bds"
+    listitem [ref_172]
+     link "Thuê BĐS" [ref_173] href="https://wiki.batdongsan.com.vn/wiki/thue-bds"
+    listitem [ref_174]
+     link "Tài chính BĐS" [ref_175] href="https://wiki.batdongsan.com.vn/wiki/tai-chinh"
+    listitem [ref_176]
+     link "Quy hoạch - Pháp lý" [ref_177] href="https://wiki.batdongsan.com.vn/wiki/quy-hoach-phap-ly"
+    listitem [ref_178]
+     link "Nội - Ngoại thất" [ref_179] href="https://wiki.batdongsan.com.vn/wiki/noi-ngoai-that"
+    listitem [ref_180]
+     link "Phong tục" [ref_181] href="https://wiki.batdongsan.com.vn/wiki/phong-tuc"
+  listitem [ref_182]
+   link [ref_12] href="https://wiki.batdongsan.com.vn/phan-tich-danh-gia"
+    generic "Phân tích đánh giá" [ref_183]
+   list [ref_184]
+    listitem [ref_185]
+     link "Biểu đồ giá" [ref_186] href="https://wiki.batdongsan.com.vn/phan-tich-danh-gia/bieu-do-gia"
+    listitem [ref_187]
+     link "Video đánh giá" [ref_188] href="https://wiki.batdongsan.com.vn/phan-tich-danh-gia/video-danh-gia"
+    listitem [ref_189]
+     link "Báo cáo thị trường" [ref_190] href="https://research.batdongsan.com.vn/"
+    listitem [ref_191]
+     link "Góc nhìn chuyên gia" [ref_192] href="https://wiki.batdongsan.com.vn/phan-tich-danh-gia/goc-nhin-chuyen-gia"
+    listitem [ref_193]
+     link "Interkative Story" [ref_194] href="/interaktivestory"
+  listitem [ref_195]
+   link [ref_13] href="javascript:void(0);"
+    generic "Danh bạ" [ref_196]
+   list [ref_197]
+    listitem [ref_198]
+     link "Nhà môi giới" [ref_199] href="/nha-moi-gioi"
+    listitem [ref_200]
+     link "Doanh nghiệp" [ref_201] href="/doanh-nghiep"
+  listitem [ref_202]
+  listitem [ref_203]
+   link [ref_204] href="/nguoi-ban/quan-ly-tin-rao-ban-cho-thue"
+    generic "Chuyển sang đăng tin" [ref_205]
+  listitem [ref_206]
+  listitem [ref_207]
+   link [ref_208] href="/nguoi-ban/trang-chu"
+    generic "Tổng quan" [ref_209]
+  listitem [ref_210]
+   link [ref_211] href="/nguoi-ban/quan-ly-tin-rao-ban-cho-thue"
+    generic "Quản lý tin đăng" [ref_212]
+  listitem [ref_213]
+   link [ref_214] href="/nguoi-ban/quan-ly-khach-hang"
+    generic "Quản lý khách hàng" [ref_215]
+  listitem [ref_216]
+   link [ref_217] href="/sellernet/thong-tin-ca-nhan?tab=3"
+    generic "Môi giới chuyên nghiệp" [ref_218]
+  listitem [ref_219]
+   link [ref_220] href="/sellernet/goi-hoi-vien/dang-ky"
+    generic "Gói hội viên" [ref_221]
+    generic "Tiết kiệm đến -39%" [ref_222]
+  listitem [ref_223]
+   link [ref_224] href="/sellernet/nap-tien"
+    generic "Nạp tiền" [ref_225]
+  listitem [ref_226]
+  listitem [ref_227]
+   link [ref_228] href="/sellernet/thong-tin-ca-nhan"
+    generic "Cài đặt tài khoản" [ref_229]
+  listitem [ref_230]
+   link [ref_231] href="/sellernet/thong-tin-ca-nhan?tab=mat-khau"
+    generic "Đổi mật khẩu" [ref_232]
+  listitem [ref_233]
+   list [ref_234]
+    listitem [ref_235]
+     link [ref_236] href="https://wiki.batdongsan.com.vn/phan-tich-danh-gia"
+      generic "Phân tích đánh giá" [ref_237]
+     list [ref_238]
+      listitem [ref_239]
+       link "Biểu đồ giá" [ref_240] href="https://wiki.batdongsan.com.vn/phan-tich-danh-gia/bieu-do-gia"
+      listitem [ref_241]
+       link "Video đánh giá" [ref_242] href="https://wiki.batdongsan.com.vn/phan-tich-danh-gia/video-danh-gia"
+      listitem [ref_243]
+       link "Báo cáo thị trường" [ref_244] href="https://research.batdongsan.com.vn/"
+      listitem [ref_245]
+       link "Góc nhìn chuyên gia" [ref_246] href="https://wiki.batdongsan.com.vn/phan-tich-danh-gia/goc-nhin-chuyen-gia"
+      listitem [ref_247]
+       link "Interkative Story" [ref_248] href="/interaktivestory"
+    listitem [ref_249]
+     link [ref_250] href="javascript:void(0);"
+      generic "Danh bạ" [ref_251]
+     list [ref_252]
+      listitem [ref_253]
+       link "Nhà môi giới" [ref_254] href="/nha-moi-gioi"
+      listitem [ref_255]
+       link "Doanh nghiệp" [ref_256] href="/doanh-nghiep"
+generic "Lưu tin thành công" [ref_257]
+generic "Đã bỏ lưu tin" [ref_258]
+textbox "[value redacted]" [ref_259] type="hidden"
+generic "Bộ lọc" [ref_260]
+button "Tìm mua" [ref_261]
+button "Tìm thuê" [ref_262]
+generic "Loại bất động sản" [ref_263]
+button [ref_264]
+ generic "Thêm" [ref_265]
+list [ref_266]
+ listitem [ref_267]
+  label [ref_268]
+   generic "Tất cả nhà đất" [ref_269]
+   checkbox "on" [ref_270] type="checkbox"
+ listitem [ref_271]
+  label [ref_272]
+   generic "Căn hộ chung cư" [ref_273]
+   checkbox "324" [ref_274] type="checkbox"
+ listitem [ref_275]
+  label [ref_276]
+   generic "Chung cư mini, căn hộ dịch vụ" [ref_277]
+   checkbox "650" [ref_278] type="checkbox"
+ listitem [ref_279]
+  label [ref_280]
+   generic "Các loại nhà bán" [ref_281]
+   checkbox "362" [ref_282] type="checkbox"
+ listitem [ref_283]
+  label [ref_284]
+   generic "Nhà riêng" [ref_285]
+   checkbox "41" [ref_286] type="checkbox"
+ listitem [ref_287]
+  label [ref_288]
+   generic "Nhà biệt thự, liền kề" [ref_289]
+   checkbox "325" [ref_290] type="checkbox"
+ listitem [ref_291]
+  label [ref_292]
+   generic "Nhà mặt phố" [ref_293]
+   checkbox "163" [ref_294] type="checkbox"
+ listitem [ref_295]
+  label [ref_296]
+   generic "Shophouse, nhà phố thương mại" [ref_297]
+   checkbox "575" [ref_298] type="checkbox"
+ listitem [ref_299]
+  label [ref_300]
+   generic "Các loại đất bán" [ref_301]
+   checkbox "361" [ref_302] type="checkbox"
+ listitem [ref_303]
+  label [ref_304]
+   generic "Đất nền dự án" [ref_305]
+   checkbox "40" [ref_306] type="checkbox"
+ listitem [ref_307]
+  label [ref_308]
+   generic "Bán đất" [ref_309]
+   checkbox "283" [ref_310] type="checkbox"
+ listitem [ref_311]
+  label [ref_312]
+   generic "Trang trại, khu nghỉ dưỡng" [ref_313]
+   checkbox "44" [ref_314] type="checkbox"
+ listitem [ref_315]
+  label [ref_316]
+   generic "Condotel" [ref_317]
+   checkbox "562" [ref_318] type="checkbox"
+ listitem [ref_319]
+  label [ref_320]
+   generic "Kho, nhà xưởng" [ref_321]
+   checkbox "45" [ref_322] type="checkbox"
+ listitem [ref_323]
+  label [ref_324]
+   generic "Bất động sản khác" [ref_325]
+   checkbox "48" [ref_326] type="checkbox"
+list [ref_327]
+ listitem [ref_328]
+  label [ref_329]
+   generic "Tất cả nhà đất" [ref_330]
+   checkbox "on" [ref_331] type="checkbox"
+ listitem [ref_332]
+  label [ref_333]
+   generic "Căn hộ chung cư" [ref_334]
+   checkbox "326" [ref_335] type="checkbox"
+ listitem [ref_336]
+  label [ref_337]
+   generic "Chung cư mini, căn hộ dịch vụ" [ref_338]
+   checkbox "651" [ref_339] type="checkbox"
+ listitem [ref_340]
+  label [ref_341]
+   generic "Nhà riêng" [ref_342]
+   checkbox "52" [ref_343] type="checkbox"
+ listitem [ref_344]
+  label [ref_345]
+   generic "Nhà biệt thự, liền kề" [ref_346]
+   checkbox "577" [ref_347] type="checkbox"
+ listitem [ref_348]
+  label [ref_349]
+   generic "Nhà mặt phố" [ref_350]
+   checkbox "51" [ref_351] type="checkbox"
+ listitem [ref_352]
+  label [ref_353]
+   generic "Nhà trọ, phòng trọ" [ref_354]
+   checkbox "57" [ref_355] type="checkbox"
+ listitem [ref_356]
+  label [ref_357]
+   generic "Shophouse, nhà phố thương mại" [ref_358]
+   checkbox "576" [ref_359] type="checkbox"
+ listitem [ref_360]
+  label [ref_361]
+   generic "Văn phòng" [ref_362]
+   checkbox "50" [ref_363] type="checkbox"
+ listitem [ref_364]
+  label [ref_365]
+   generic "Cửa hàng, ki ốt" [ref_366]
+   checkbox "55" [ref_367] type="checkbox"
+ listitem [ref_368]
+  label [ref_369]
+   generic "Kho, nhà xưởng, đất" [ref_370]
+   checkbox "53" [ref_371] type="checkbox"
+ listitem [ref_372]
+  label [ref_373]
+   generic "Bất động sản khác" [ref_374]
+   checkbox "59" [ref_375] type="checkbox"
+button "Đặt lại" [ref_376]
+button "Áp dụng" [ref_377]
+generic "Khu vực & Dự án" [ref_378]
+button [ref_379] type="button"
+ generic "Trên toàn quốc" [ref_380]
+generic "Khu vực & Dự án" [ref_381]
+generic "Tìm theo địa chỉ mới sau sáp nhập" [ref_382]
+generic "Tỉnh/Thành phố" [ref_383]
+textbox "Chọn Tỉnh/Thành phố" [ref_384] placeholder="Chọn Tỉnh/Thành phố"
+generic "Quận/Huyện" [ref_385]
+textbox "Chọn Quận/Huyện" [ref_386] placeholder="Chọn Quận/Huyện"
+generic "Vui lòng chọn Tỉnh/Thành phố trước" [ref_387]
+generic "Phường/Xã" [ref_388]
+textbox "Chọn Phường/Xã" [ref_389] placeholder="Chọn Phường/Xã"
+generic "Vui lòng chọn Tỉnh/Thành phố trước" [ref_390]
+generic "Vui lòng chọn Quận/Huyện trước" [ref_391]
+generic "Đường/Phố" [ref_392]
+textbox "Chọn Đường/Phố" [ref_393] placeholder="Chọn Đường/Phố"
+generic "Vui lòng chọn Tỉnh/Thành phố trước" [ref_394]
+generic "Vui lòng chọn Quận/Huyện trước" [ref_395]
+generic "Vui lòng chọn Phường/Xã trước" [ref_396]
+generic "Dự án" [ref_397]
+textbox "Chọn Dự án" [ref_398] placeholder="Chọn Dự án"
+generic "Vui lòng chọn Tỉnh/Thành phố trước" [ref_399]
+generic "Vui lòng chọn Quận/Huyện trước" [ref_400]
+generic "Vui lòng chọn Phường/Xã trước" [ref_401]
+button "Đặt lại" [ref_402]
+button "Tiếp tục" [ref_403]
+generic "Khoảng giá" [ref_404]
+button [ref_405]
+ generic "Tất cả" [ref_406]
+generic "Khoảng giá" [ref_407]
+label "Giá thấp nhất" [ref_408]
+label "Giá cao nhất" [ref_409]
+textbox "Từ" [ref_410] type="number" placeholder="Từ"
+textbox "Đến" [ref_411] type="number" placeholder="Đến"
+generic [ref_412]
+generic [ref_413]
+list [ref_414]
+ listitem [ref_415]
+  generic "Tất cả khoảng giá" [ref_416]
+ listitem [ref_417]
+  generic "Dưới 500 triệu" [ref_418]
+ listitem [ref_419]
+  generic "500 - 800 triệu" [ref_420]
+ listitem [ref_421]
+  generic "800 triệu - 1 tỷ" [ref_422]
+ listitem [ref_423]
+  generic "1 - 2 tỷ" [ref_424]
+ listitem [ref_425]
+  generic "2 - 3 tỷ" [ref_426]
+ listitem [ref_427]
+  generic "3 - 5 tỷ" [ref_428]
+ listitem [ref_429]
+  generic "5 - 7 tỷ" [ref_430]
+ listitem [ref_431]
+  generic "7 - 10 tỷ" [ref_432]
+ listitem [ref_433]
+  generic "10 - 20 tỷ" [ref_434]
+ listitem [ref_435]
+  generic "20 - 30 tỷ" [ref_436]
+ listitem [ref_437]
+  generic "30 - 40 tỷ" [ref_438]
+ listitem [ref_439]
+  generic "40 - 60 tỷ" [ref_440]
+ listitem [ref_441]
+  generic "Trên 60 tỷ" [ref_442]
+ listitem [ref_443]
+  generic "Thỏa thuận" [ref_444]
+list [ref_445]
+ listitem [ref_446]
+  generic "Tất cả khoảng giá" [ref_447]
+ listitem [ref_448]
+  generic "Dưới 1 triệu" [ref_449]
+ listitem [ref_450]
+  generic "1 - 3 triệu" [ref_451]
+ listitem [ref_452]
+  generic "3 - 5 triệu" [ref_453]
+ listitem [ref_454]
+  generic "5 - 10 triệu" [ref_455]
+ listitem [ref_456]
+  generic "10 - 40 triệu" [ref_457]
+ listitem [ref_458]
+  generic "40 - 70 triệu" [ref_459]
+ listitem [ref_460]
+  generic "70 - 100 triệu" [ref_461]
+ listitem [ref_462]
+  generic "Trên 100 triệu" [ref_463]
+ listitem [ref_464]
+  generic "Thỏa thuận" [ref_465]
+button "Đặt lại" [ref_466]
+button "Áp dụng" [ref_467]
+generic "Diện tích" [ref_468]
+button [ref_469]
+ generic "Tất cả" [ref_470]
+generic "Diện tích" [ref_471]
+label "Diện tích nhỏ nhất" [ref_472]
+label "Diện tích lớn nhất" [ref_473]
+textbox "Từ" [ref_474] type="number" placeholder="Từ"
+textbox "Đến" [ref_475] type="number" placeholder="Đến"
+generic [ref_476]
+generic [ref_477]
+list [ref_478]
+ listitem [ref_479]
+  generic "Tất cả diện tích" [ref_480]
+ listitem [ref_481]
+  generic "Dưới 30 m²" [ref_482]
+ listitem [ref_483]
+  generic "30 - 50 m²" [ref_484]
+ listitem [ref_485]
+  generic "50 - 80 m²" [ref_486]
+ listitem [ref_487]
+  generic "80 - 100 m²" [ref_488]
+ listitem [ref_489]
+  generic "100 - 150 m²" [ref_490]
+ listitem [ref_491]
+  generic "150 - 200 m²" [ref_492]
+ listitem [ref_493]
+  generic "200 - 250 m²" [ref_494]
+ listitem [ref_495]
+  generic "250 - 300 m²" [ref_496]
+ listitem [ref_497]
+  generic "300 - 500 m²" [ref_498]
+ listitem [ref_499]
+  generic "Trên 500 m²" [ref_500]
+list [ref_501]
+ listitem [ref_502]
+  generic "Tất cả diện tích" [ref_503]
+ listitem [ref_504]
+  generic "Dưới 30 m²" [ref_505]
+ listitem [ref_506]
+  generic "30 - 50 m²" [ref_507]
+ listitem [ref_508]
+  generic "50 - 80 m²" [ref_509]
+ listitem [ref_510]
+  generic "80 - 100 m²" [ref_511]
+ listitem [ref_512]
+  generic "100 - 150 m²" [ref_513]
+ listitem [ref_514]
+  generic "150 - 200 m²" [ref_515]
+ listitem [ref_516]
+  generic "200 - 250 m²" [ref_517]
+ listitem [ref_518]
+  generic "250 - 300 m²" [ref_519]
+ listitem [ref_520]
+  generic "300 - 500 m²" [ref_521]
+ listitem [ref_522]
+  generic "Trên 500 m²" [ref_523]
+button "Đặt lại" [ref_524]
+button "Áp dụng" [ref_525]
+generic "Uy tín & Chất lượng" [ref_526]
+generic "Tin xác thực" [ref_527]
+generic "Batdongsan.com.vn đã xác thực:" [ref_528]
+list [ref_529]
+ listitem "Có sổ đỏ/hợp đồng mua bán" [ref_530]
+ listitem "Đúng địa chỉ, hình ảnh & đặc điểm" [ref_531]
+ listitem "Trong khoảng giá thị trường" [ref_532]
+generic "Môi giới chuyên nghiệp" [ref_533]
+generic "Số phòng ngủ" [ref_534]
+list [ref_535]
+ listitem [ref_536]
+ listitem [ref_537]
+ listitem [ref_538]
+ listitem [ref_539]
+ listitem [ref_540]
+generic "Số phòng tắm, vệ sinh" [ref_541]
+list [ref_542]
+ listitem [ref_543]
+ listitem [ref_544]
+ listitem [ref_545]
+ listitem [ref_546]
+ listitem [ref_547]
+generic "Hướng nhà" [ref_548]
+generic "Bắc" [ref_549]
+generic "Đông Bắc" [ref_550]
+generic "Đông" [ref_551]
+generic "Đông Nam" [ref_552]
+generic "Nam" [ref_553]
+generic "Tây Nam" [ref_554]
+generic "Tây" [ref_555]
+generic "Tây Bắc" [ref_556]
+generic "Hướng ban công" [ref_557]
+generic "Bắc" [ref_558]
+generic "Đông Bắc" [ref_559]
+generic "Đông" [ref_560]
+generic "Đông Nam" [ref_561]
+generic "Nam" [ref_562]
+generic "Tây Nam" [ref_563]
+generic "Tây" [ref_564]
+generic "Tây Bắc" [ref_565]
+generic "Nội thất" [ref_566]
+list [ref_567]
+ listitem "Đầy đủ" [ref_568]
+ listitem "Cơ bản" [ref_569]
+ listitem "Không nội thất" [ref_570]
+ listitem "Khác" [ref_571]
+generic "Thời gian dự kiến vào ở" [ref_572]
+button [ref_573]
+ generic "Tất cả" [ref_574]
+generic "Thời gian dự kiến vào ở" [ref_575]
+list [ref_576]
+ listitem [ref_577]
+  generic "Tất cả" [ref_578]
+ listitem [ref_579]
+  generic "Ở ngay" [ref_580]
+ listitem [ref_581]
+  generic "1 - 2 tuần" [ref_582]
+ listitem [ref_583]
+  generic "1 tháng" [ref_584]
+ listitem [ref_585]
+  generic "Thỏa thuận" [ref_586]
+list [ref_587]
+ listitem [ref_588]
+  generic "Tất cả" [ref_589]
+ listitem [ref_590]
+  generic "Ở ngay" [ref_591]
+ listitem [ref_592]
+  generic "1 - 2 tuần" [ref_593]
+ listitem [ref_594]
+  generic "1 tháng" [ref_595]
+ listitem [ref_596]
+  generic "Thỏa thuận" [ref_597]
+button "Đặt lại" [ref_598]
+button "Áp dụng" [ref_599]
+generic "Mức giá điện" [ref_600]
+button [ref_601]
+ generic "Tất cả" [ref_602]
+generic "Mức giá điện" [ref_603]
+list [ref_604]
+ listitem [ref_605]
+  generic "Tất cả" [ref_606]
+ listitem [ref_607]
+  generic "Thỏa thuận" [ref_608]
+ listitem [ref_609]
+  generic "Do chủ nhà quy định" [ref_610]
+ listitem [ref_611]
+  generic "Theo nhà cung cấp" [ref_612]
+list [ref_613]
+ listitem [ref_614]
+  generic "Tất cả" [ref_615]
+ listitem [ref_616]
+  generic "Thỏa thuận" [ref_617]
+ listitem [ref_618]
+  generic "Do chủ nhà quy định" [ref_619]
+ listitem [ref_620]
+  generic "Theo nhà cung cấp" [ref_621]
+button "Đặt lại" [ref_622]
+button "Áp dụng" [ref_623]
+generic "Mức giá nước" [ref_624]
+button [ref_625]
+ generic "Tất cả" [ref_626]
+generic "Mức giá nước" [ref_627]
+list [ref_628]
+ listitem [ref_629]
+  generic "Tất cả" [ref_630]
+ listitem [ref_631]
+  generic "Do chủ nhà quy định" [ref_632]
+ listitem [ref_633]
+  generic "Theo nhà cung cấp" [ref_634]
+ listitem [ref_635]
+  generic "Thỏa thuận" [ref_636]
+list [ref_637]
+ listitem [ref_638]
+  generic "Tất cả" [ref_639]
+ listitem [ref_640]
+  generic "Do chủ nhà quy định" [ref_641]
+ listitem [ref_642]
+  generic "Theo nhà cung cấp" [ref_643]
+ listitem [ref_644]
+  generic "Thỏa thuận" [ref_645]
+button "Đặt lại" [ref_646]
+button "Áp dụng" [ref_647]
+generic "Mức giá internet" [ref_648]
+button [ref_649]
+ generic "Tất cả" [ref_650]
+generic "Mức giá internet" [ref_651]
+list [ref_652]
+ listitem [ref_653]
+  generic "Tất cả" [ref_654]
+ listitem [ref_655]
+  generic "Do chủ nhà quy định" [ref_656]
+ listitem [ref_657]
+  generic "Thỏa thuận" [ref_658]
+list [ref_659]
+ listitem [ref_660]
+  generic "Tất cả" [ref_661]
+ listitem [ref_662]
+  generic "Do chủ nhà quy định" [ref_663]
+ listitem [ref_664]
+  generic "Thỏa thuận" [ref_665]
+button "Đặt lại" [ref_666]
+button "Áp dụng" [ref_667]
+generic "Tiện ích" [ref_668]
+list [ref_669]
+ listitem "Có dịch vụ bảo vệ" [ref_670]
+ listitem "Có camera" [ref_671]
+ listitem "Có PCCC" [ref_672]
+generic "Tin có ảnh/video" [ref_673]
+list [ref_674]
+ listitem "Có video" [ref_675]
+generic "Số tầng" [ref_676]
+list [ref_677]
+ listitem [ref_678]
+ listitem [ref_679]
+ listitem [ref_680]
+ listitem [ref_681]
+ listitem [ref_682]
+generic "Đường vào" [ref_683]
+button [ref_684]
+ generic "Tất cả" [ref_685]
+generic "Đường vào" [ref_686]
+list [ref_687]
+ listitem [ref_688]
+  generic "Tất cả" [ref_689]
+ listitem [ref_690]
+  generic "Dưới 5 m" [ref_691]
+ listitem [ref_692]
+  generic "5 - 6 m" [ref_693]
+ listitem [ref_694]
+  generic "6 - 8 m" [ref_695]
+ listitem [ref_696]
+  generic "8 - 10 m" [ref_697]
+ listitem [ref_698]
+  generic "10 - 12 m" [ref_699]
+ listitem [ref_700]
+  generic "Trên 12 m" [ref_701]
+list [ref_702]
+ listitem [ref_703]
+  generic "Tất cả" [ref_704]
+ listitem [ref_705]
+  generic "Dưới 5 m" [ref_706]
+ listitem [ref_707]
+  generic "5 - 8 m" [ref_708]
+ listitem [ref_709]
+  generic "8 - 12 m" [ref_710]
+ listitem [ref_711]
+  generic "12 - 15 m" [ref_712]
+ listitem [ref_713]
+  generic "15 - 20 m" [ref_714]
+ listitem [ref_715]
+  generic "Trên 20 m" [ref_716]
+button "Đặt lại" [ref_717]
+button "Áp dụng" [ref_718]
+generic "Mặt tiền" [ref_719]
+button [ref_720]
+ generic "Tất cả" [ref_721]
+generic "Mặt tiền" [ref_722]
+list [ref_723]
+ listitem [ref_724]
+  generic "Tất cả" [ref_725]
+ listitem [ref_726]
+  generic "Dưới 5 m" [ref_727]
+ listitem [ref_728]
+  generic "5 - 6 m" [ref_729]
+ listitem [ref_730]
+  generic "6 - 7 m" [ref_731]
+ listitem [ref_732]
+  generic "7 - 10 m" [ref_733]
+ listitem [ref_734]
+  generic "10 - 15 m" [ref_735]
+ listitem [ref_736]
+  generic "Trên 15 m" [ref_737]
+list [ref_738]
+ listitem [ref_739]
+  generic "Tất cả" [ref_740]
+ listitem [ref_741]
+  generic "Dưới 5 m" [ref_742]
+ listitem [ref_743]
+  generic "5 - 6 m" [ref_744]
+ listitem [ref_745]
+  generic "6 - 8 m" [ref_746]
+ listitem [ref_747]
+  generic "8 - 10 m" [ref_748]
+ listitem [ref_749]
+  generic "10 - 12 m" [ref_750]
+ listitem [ref_751]
+  generic "12 - 20 m" [ref_752]
+ listitem [ref_753]
+  generic "Trên 20 m" [ref_754]
+button "Đặt lại" [ref_755]
+button "Áp dụng" [ref_756]
+generic "Pháp lý" [ref_757]
+list [ref_758]
+ listitem "Sổ đỏ/Sổ hồng" [ref_759]
+ listitem "Hợp đồng mua bán" [ref_760]
+ listitem "Đang chờ sổ" [ref_761]
+ listitem "Khác" [ref_762]
+button "Đặt lại" [ref_763]
+button "Xem kết quả" [ref_764]
+generic "Bộ lọc" [ref_765]
+button "Đặt lại" [ref_766]
+button "Áp dụng" [ref_767]
+generic "Bạn có chắc muốn thay đổi?" [ref_768]
+generic "Việc chọn tỉnh/thành phố mới sẽ thay thế những lựa chọn trước đó." [ref_769]
+checkbox "Không hiển thị lần sau" [ref_770] type="checkbox"
+label "Không hiển thị lần sau" [ref_771]
+button "Không" [ref_772]
+button "Đồng ý" [ref_773]
+form [ref_774]
+ textbox "[value redacted]" [ref_775] type="hidden"
+ textbox [ref_776] type="hidden"
+ textbox "[value redacted]" [ref_777] type="hidden"
+ textbox [ref_778] type="hidden"
+ generic [ref_14]
+  list [ref_779]
+   listitem [ref_780]
+    link [ref_781]
+     generic "Thành phố Nha Trang" [ref_782]
+    textbox "[value redacted]" [ref_783] type="hidden"
+    textbox "[value redacted]" [ref_784] type="hidden"
+  generic "Thành phố Nha Trang" [ref_785]
+  generic "Khánh Hòa" [ref_786]
+  textbox "[value redacted]" [ref_787] type="hidden"
+  textbox "Thành phố Nha Trang" [ref_15] type="search"
+  textbox [ref_788] type="hidden"
+  button [ref_16] type="submit"
+   generic "Tìm kiếm" [ref_789]
+ generic "Tìm theo địa chỉ mới sau sáp nhập" [ref_790]
+ list [ref_791]
+ generic "Nhập từ khóa bạn muốn tìm. Ví dụ:" [ref_792]
+ list [ref_793]
+  listitem "Bán chung cư Vinhomes giá 5 tỷ" [ref_794]
+  listitem "Bán chung cư Quận Bình Thạnh 2 phòng ngủ" [ref_795]
+  listitem "Bán đất nền dự án" [ref_796]
+  listitem "Cho thuê nhà trọ dưới 10 triệu" [ref_797]
+ generic "Tiếp tục tìm kiếm" [ref_798]
+ generic "Cho thuê nhà riêng tại Đà Nẵng" [ref_799]
+ generic "Cho thuê nhà trọ, phòng trọ tại Đà Nẵng" [ref_800]
+ generic "Cho thuê căn hộ chung cư tại Đà Nẵng" [ref_801]
+ generic "Chọn quận huyện, phường xã, đường phố, dự án" [ref_802]
+ generic "Xem bản đồ" [ref_803]
+ button [ref_17] type="button"
+  generic "Lọc" [ref_804]
+ textbox [ref_805]
+ generic "Tin xác thực" [ref_806]
+ textbox [ref_807] type="hidden"
+ generic "Căn hộ chung cư" [ref_18]
+  generic "Căn hộ chung cư" [ref_808]
+ textbox "[value redacted]" [ref_809] type="hidden"
+ generic "Loại nhà đất" [ref_810]
+ link [ref_811]
+ list [ref_812]
+  listitem [ref_813]
+   generic "Tất cả nhà đất" [ref_814]
+  listitem [ref_815]
+   generic "Căn hộ chung cư" [ref_816]
+  listitem [ref_817]
+   generic "Chung cư mini, căn hộ dịch vụ" [ref_818]
+  listitem [ref_819]
+   generic "Nhà riêng" [ref_820]
+  listitem [ref_821]
+   generic "Nhà biệt thự, liền kề" [ref_822]
+  listitem [ref_823]
+   generic "Nhà mặt phố" [ref_824]
+  listitem [ref_825]
+   generic "Nhà trọ, phòng trọ" [ref_826]
+  listitem [ref_827]
+   generic "Shophouse, nhà phố thương mại" [ref_828]
+  listitem [ref_829]
+   generic "Văn phòng" [ref_830]
+  listitem [ref_831]
+   generic "Cửa hàng, ki ốt" [ref_832]
+  listitem [ref_833]
+   generic "Kho, nhà xưởng, đất" [ref_834]
+  listitem [ref_835]
+   generic "Bất động sản khác" [ref_836]
+ link [ref_837]
+  generic "Đặt lại" [ref_838]
+ link [ref_839]
+  generic "Áp dụng" [ref_840]
+ generic [ref_19]
+  generic "Khoảng giá" [ref_841]
+ textbox [ref_842] type="hidden"
+ generic "Khoảng giá" [ref_843]
+ link [ref_844]
+ label "Giá thấp nhất" [ref_845]
+ label "Giá cao nhất" [ref_846]
+ textbox "Từ" [ref_847] type="number" placeholder="Từ"
+ textbox "Đến" [ref_848] type="number" placeholder="Đến"
+ generic [ref_849]
+ generic [ref_850]
+ list [ref_851]
+  listitem [ref_852]
+   generic "Tất cả khoảng giá" [ref_853]
+  listitem [ref_854]
+   generic "Dưới 1 triệu" [ref_855]
+  listitem [ref_856]
+   generic "1 - 3 triệu" [ref_857]
+  listitem [ref_858]
+   generic "3 - 5 triệu" [ref_859]
+  listitem [ref_860]
+   generic "5 - 10 triệu" [ref_861]
+  listitem [ref_862]
+   generic "10 - 40 triệu" [ref_863]
+  listitem [ref_864]
+   generic "40 - 70 triệu" [ref_865]
+  listitem [ref_866]
+   generic "70 - 100 triệu" [ref_867]
+  listitem [ref_868]
+   generic "Trên 100 triệu" [ref_869]
+  listitem [ref_870]
+   generic "Thỏa thuận" [ref_871]
+ link [ref_872]
+  generic "Đặt lại" [ref_873]
+ link [ref_874]
+  generic "Áp dụng" [ref_875]
+ generic [ref_20]
+  generic "Diện tích" [ref_876]
+ textbox [ref_877] type="hidden"
+ generic "Diện tích" [ref_878]
+ link [ref_879]
+ label "Diện tích nhỏ nhất" [ref_880]
+ label "Diện tích lớn nhất" [ref_881]
+ textbox "Từ" [ref_882] type="number" placeholder="Từ"
+ textbox "Đến" [ref_883] type="number" placeholder="Đến"
+ generic [ref_884]
+ generic [ref_885]
+ list [ref_886]
+  listitem [ref_887]
+   generic "Tất cả diện tích" [ref_888]
+  listitem [ref_889]
+   generic "Dưới 30 m²" [ref_890]
+  listitem [ref_891]
+   generic "30 - 50 m²" [ref_892]
+  listitem [ref_893]
+   generic "50 - 80 m²" [ref_894]
+  listitem [ref_895]
+   generic "80 - 100 m²" [ref_896]
+  listitem [ref_897]
+   generic "100 - 150 m²" [ref_898]
+  listitem [ref_899]
+   generic "150 - 200 m²" [ref_900]
+  listitem [ref_901]
+   generic "200 - 250 m²" [ref_902]
+  listitem [ref_903]
+   generic "250 - 300 m²" [ref_904]
+  listitem [ref_905]
+   generic "300 - 500 m²" [ref_906]
+  listitem [ref_907]
+   generic "Trên 500 m²" [ref_908]
+ link [ref_909]
+  generic "Đặt lại" [ref_910]
+ link [ref_911]
+  generic "Áp dụng" [ref_912]
+ generic "Môi giới chuyên nghiệp" [ref_913]
+ textbox [ref_914] type="hidden"
+ textbox [ref_915] type="hidden"
+ textbox [ref_916] type="hidden"
+ textbox [ref_917] type="hidden"
+ textbox [ref_918] type="hidden"
+ textbox [ref_919] type="hidden"
+ textbox [ref_920] type="hidden"
+ textbox [ref_921] type="hidden"
+ textbox [ref_922] type="hidden"
+ textbox [ref_923] type="hidden"
+ textbox [ref_924] type="hidden"
+ textbox [ref_925] type="hidden"
+ textbox [ref_926] type="hidden"
+ textbox [ref_927] type="hidden"
+ textbox [ref_928] type="hidden"
+ textbox [ref_929] type="hidden"
+ textbox [ref_930] type="hidden"
+ textbox "[value redacted]" [ref_931] type="hidden"
+ button "Next slide" [ref_932]
+ button "Previous slide" [ref_933]
+link "Cho thuê căn hộ chung cư tại Việt Nam" [ref_21] href="/cho-thue-can-ho-chung-cu"
+link "Cho thuê căn hộ chung cư tại Khánh Hòa" [ref_22] href="/cho-thue-can-ho-chung-cu-khanh-hoa"
+link "Cho thuê căn hộ chung cư tại Thành phố Nha Trang" [ref_23] href="/cho-thue-can-ho-chung-cu-nha-trang-kh"
+link "Tất cả BĐS tại Nha Trang" [ref_24] href="/cho-thue-can-ho-chung-cu-nha-trang-kh?cIds=651,577,52"
+heading "Cho thuê mặt bằng Hòa Khánh Đà Nẵng" [ref_934]
+ link "Cho thuê mặt bằng Hòa Khánh Đà Nẵng" [ref_25] href="/cho-thue-cua-hang-ki-ot-lien-chieu-ddn"
+heading "Cho thuê phòng trọ Âu Cơ Hòa Khánh" [ref_935]
+ link "Cho thuê phòng trọ Âu Cơ Hòa Khánh" [ref_26] href="/cho-thue-nha-tro-phong-tro-duong-au-co-47"
+heading "Thuê nhà Cam Ranh" [ref_936]
+ link "Thuê nhà Cam Ranh" [ref_27] href="/nha-dat-cho-thue-cam-ranh-kh"
+button "Next slide" [ref_937]
+button "Previous slide" [ref_938]
+heading "Cho thuê căn hộ chung cư tại Thành phố Nha Trang" [ref_939]
+generic "Hiện có bất động sản." [ref_940]
+ generic "112" [ref_941]
+generic "21,8%" [ref_942]
+generic "Giá thuê đã tăng trong 1 năm qua" [ref_943]
+generic "Xem lịch sử giá" [ref_944]
+generic "Nhận email tin mới" [ref_945]
+generic "Email cho tôi khi có tin mới" [ref_946]
+generic "Nhận thông báo về tin đăng" [ref_947]
+link [ref_28]
+generic [ref_29]
+ generic "Mặc định" [ref_948]
+ textbox "[value redacted]" [ref_949] type="hidden"
+ list [ref_950]
+  listitem "Mặc định" [ref_951]
+  listitem "Tin xác thực xếp trước" [ref_952]
+  listitem "Giá thấp đến cao" [ref_953]
+  listitem "Giá cao đến thấp" [ref_954]
+  listitem "Diện tích nhỏ đến lớn" [ref_955]
+  listitem "Diện tích lớn đến nhỏ" [ref_956]
+link "Cho thuê căn hộ biển Mường Thanh Viễn Triều" [ref_30] href="/cho-thue-can-ho-chung-cu-duong-pham-van-dong-phuong-vinh-phuoc-muong-thanh-vien-trieu/cho-bien-ben-em-co-hon-100-cho-ngay-thang-nam-pr37935367"
+ image "Ảnh đại diện" [ref_957]
+  generic "���o��ޑ��#>��9aVE���T�6��R��^{��S�X�p��pg�_�dT����݋XeL� ��m�>�j I���~�? |?�[�#H�[�E" [ref_958]
+   generic "�)}�����?Z�6�D�-ͽ/�F����f��= �'?AT��؞duv�Cn#�[Iuh������s#�����(a2ڰ�N?Z�;�8��/�˰[���s��" [ref_959]
+    generic "��om�����$ ��� ��X���ƦY�=C�U�-�b3��������.�~����0ݙS�4�����6�n@?� �U��i�5���T�y=VHq�����l." [ref_960]
+     generic "��ՍKJE(G�����)w���u�Z �9 a�Ty�ٝ2�{�ϥg��q8J;�Ch,�u�xu� U��` �>�2�� ��}y�N�ө�xg�ǈ���j�ǫ[���0^" [ref_961]
+      generic "_)F��j�g�2] �>?xu\����z�Z�cS���c����+�|���P���\"����KNӦX����N倯���]�u�1� O�y �Zl2�Ɵ��r&C�wd.>" [ref_962]
+       generic "�J�Qs�hTf�8��ξ'�P�\"�B������?�f�M�\�uoI�>/�K�ǃ�?��j���vi̬.��xo�U���g�>Y�@hQ�z�_]A��{CK�k�l" [ref_963]
+        generic "�j�,�?��R��B���fv����^���x+��kRi��4����4<+ X_�D�F�n��]O.����~ ���h�>�d����6>d_�\������=`" [ref_964]
+         generic "�<��_����L���.u-��'�yf�:��T*T�bU�}SB����P���!�/&�7��w�ݗ�\"\��������R�*+s���o�[@�mGS����Hb.WD���" [ref_965]
+          generic "��x;S��xcU��PF0s )5�F�xo\"'B�֨��Y�a|V�ׂ���������c��� ���H���t���Qs�1�����ŷe+w3����;��?g?�(���?�" [ref_966]
+           generic "�~Y�2&�V�^@M�wg����Z�2����o�}W܊z��?���e��暮���D��&y?�f?�: �d�j_���̉fx���#�|.���iɻn�-��j����*" [ref_967]
+            generic "��O�t����J��Ld�< �[*��6ǃ�׵vQ�9�����? ���[N���!W����" [ref_968]
+             generic "�>��m��" [ref_969]
+              generic "4|/�$�յ �V{~k 5�00�4b���x�Vg�_�՘YT^���,�����@��n-����D��nzp�1!�W�M��p^'5s�����j�l��3� �~���" [ref_970]
+               generic "���W��^,�3i�C�<�L�2N3]U�Gٴ���5!}Y鿵O�>)����� x�XԴ��3N�$��Lѳ9�Qg�����S�����rT�I��׹�U��\��|��" [ref_2065]
+ image "Ảnh đại diện" [ref_971]
+  generic "(\"k�8t�)�k�a����c��9�Ӹ�<�(G�������k�Z���k���K+�&�%y�\"Fdظr�;��֪�Z��m��V���:9�[ۘ-|�� �Ϸ,rzd�=" [ref_972]
+   generic "5h׷*\"�_�m\")5�n�4�+�R�YA�΄.��c5��:�~h=m���m�J���G��M�~�C��w q K���^D� f��q���N+XǘSv��A����e��ӎ���" [ref_973]
+    generic "����x�������_�g�[_|Eע��泲Ҝ�eh_Nx�-��:��$� �2s��� �)�.����:w=*q��.��/Ҿ|K���$~�<��aQ�_����E��T��1��" [ref_974]
+     generic "eTZ�\����>x�[�ӢԼ?��j:��N�cmI$��$��$��p+%%cK���uOx�5x�T��u��'i�[���𮥤lr�es��7s�r�+=}y�" [ref_975]
+      generic "���%|��_��c�m�����-��{h�yV�w[� �'l\"rI%��I��� �we�J0�=�� /���~6���į��+M/�w���;��Tb\�Ls��+���K" [ref_976]
+ image "Ảnh đại diện" [ref_977]
+  generic "�jQ_�_����X��첕��\"�JQ�l|.**29��&v$��O�t�lq^�X�e>�x �\>�@;Wxϥg)F: BRZVLq\"��G�v��t�}���L Ic��" [ref_978]
+ image "Ảnh đại diện" [ref_979]
+  generic "ִ����>챰'�5��teO � 2�̀�M�)�N�f����e|�� ��� ��ч�שG3OiUl�O�������]�o�էn}��䘚�x���'��a�T)E%�~GK�" [ref_980]
+   generic "���XK�:�ܡ��W�5�" [ref_981]
+    generic "����~+�y��������. �<��O$��N�ٯ?�>��Z�w�f���3�wV�k]GR�d$M��:s�" [ref_982]
+     generic "�b���d���+�yn��6���Ң����'3�x�N�G��d��?�7��}p�q�Vr�R�~��G�C�m��O�4�R�,�(� ��g�' }J�?�y8�֬V����j7Qr" [ref_983]
+      generic "<՚K����=x��LC�9?����W���/��cS�9����:������?���9�e�O�\�P�.,���q��oB<����Z��ö������_���-�Y��q��Pq" [ref_984]
+       generic ",��7���+&��o�W1�xS�fp���4��-���{#�^|��m�� �W�����_?��OČM�������Vާ�G��Rŧ*�t�O����7���g�~" [ref_985]
+        generic "<��p�ײ��v>����>��9�Y�<�RD��W�R�����5��)_0ι-ϧ��y�d_x��/�� '��X�pi��դQ ���q�-���N=����uqu" [ref_986]
+         generic "�OU������p಺�*s��/-]�[1u�Uw����d�L���+��߸ռ�<�n#�E�T�1��|O'�3���e]�c�[�A�x�a^�7 e�i~}�*�i" [ref_987]
+          generic "�k�.���W��)�=ߍ/KZ�i�/����S�����0�yԕYS���?����Ɯi�P��S<+�W��!��5��" [ref_988]
+           generic ":�a~��f�O?��5��1��������o��[������j2�9W����cN��t���]l�u)?Ƹ�V�o���#M=�k��#�O�ʓԮ� �F����g" [ref_989]
+ generic "Cho thuê căn hộ biển Mường Thanh Viễn Triều" [ref_990]
+  heading "Cho thuê căn hộ biển Mường Thanh Viễn Triều" [ref_991]
+   generic "Cho thuê căn hộ biển Mường Thanh Viễn Triều" [ref_992]
+  generic "12 triệu/tháng" [ref_993]
+  generic "60 m²" [ref_994]
+  tooltip "2 Phòng ngủ" [ref_995]
+  tooltip "2 WC" [ref_996]
+  generic "P. Vĩnh Phước (P. Bắc Nha Trang mới)" [ref_997]
+  generic "Căn hộ thuộc dự án Mường Thanh Viễn Triều, tổ hợp 6 tòa 40 tầng (gồm 5 tòa chung cư và 1 tòa khách s" [ref_998]
+  generic "‎Bùi Hà" [ref_999]
+  tooltip "14/08/2026" [ref_1000]
+  generic "0932 331 *** · Hiện số" [ref_1001]
+  tooltip "Bấm để lưu tin" [ref_1002]
+link "Cho thuê chung cư CT4 Vĩnh Điềm Trung, Nha Trang" [ref_31] href="/cho-thue-can-ho-chung-cu-duong-hoang-cam-xa-vinh-hiep-1-khu-do-thi-vinh-diem-trung/cho-ct4-iem-nha-trang-pr46157544"
+ image "Ảnh đại diện" [ref_1003]
+  generic "����gC!�$^��b2�U_5/u���\q��R�+���ɾ���_ �mOx�H���=�� ���'� ���M��m���a��;�������r�v���ўˡ��G" [ref_1004]
+   generic "[ݳ��k��e8�:�s#������Ѩ���I~�� ���>1�7��a�UȈq$Y�ᐑ�^k����8N�H�.�Ğ��Q��b�1\-�Ck���/ƹ�a��ܾyEhy�" [ref_1005]
+    generic "n}4�筍c�����U�\v]Ӻk���������/ٗN��<1��ß�v+Ka�h1Cs~n�5��Ĉe�C �#���w�⠏�)fx��-7N����y�s��xl���5" [ref_1006]
+     generic "M�����p�7�_����p��j��V2�J�q����S��x8�LÍ�0��k]ɤ����>��6*���|����g�����e����F�-;P���=MŽ�$<@�\"|�" [ref_1007]
+      generic "\2��@����)U.Nk��؏oޛ�ԯ���Tt�m\�r���c�/��g��a����Zf�?h�" [ref_1008]
+       generic "� ��k�����g̟�3|k�뫵��_�:������Y�Lv�4�D���|�G +�q��7+U�m�[�T}f-��cj0Kϯ�s�Qi�InD �BJ��q&Г�߿�ו]��" [ref_1009]
+        generic "�%���p���Z�q���i�29�,M}��+Ӧ����/WY�o�|0�1_־��l�`%�ў{v���T�)Iǘ,�|��\�^��]�����jA�0�H�=\"N����" [ref_1010]
+         generic "�f7���R����՛}��|;" [ref_1011]
+          generic "��Q��g�>��k߉F9.>�xr�M*���I�F���7���*�:}x��\�x��੯�?�\�1�O��^윚�S�| ��� ��N��\"���/i� 3�yO9e" [ref_1012]
+           generic "|<�c���O�d���F=ށ����:�����&�H�K9�B�+��>[��^40��u�(Ǚ�?.Ǳ*�|%4�����������o �K�f���{���p���HS�T$y$" [ref_1013]
+            generic "�h��Z)[�VW��u��������Δ�%+kv}�h�� ��T�t[S���k��V���3������٘������f:A�<���?3tV7R��xmG#я\"��� �T" [ref_1014]
+             generic "H�x��B 3�������+}\"����+쏒�r�W7������A��Z�Qlͦ���d�����s[��e{�{C��u��i�f���֑����Hʻ���kG�S�߆-v���" [ref_1015]
+              generic "y�U��%n^�6^��W�sJ�=|R���3���F������N�ͭ�i<A�wr�NA���s�C 'B]�gN*�Ӫ����=>�Y���'�ಸ���-�;M6�" [ref_1016]
+               generic "������ў4�`�)��y�n�z����ۿ�<<�-a������m8ݜ��BG�Tq[�C2����%�f��>n����[���ĭ&�?5������~�9���lC���" [ref_2066]
+ image "Ảnh đại diện" [ref_1017]
+  generic "X�\�i݂Fe���.����O�������SN���_����k�j֒xz�Iy��B|��wy(a��[�{;�����k����mֱ�@<��,��ۓ" [ref_1018]
+   generic "�H������[\��,4�A\"���i�8�s��e$�H�����.�ҝ�����[�6��lO�''Ļ���wpGi�<>+��(��L�d�$,U��ǘ�\m�.T��" [ref_1019]
+ image "Ảnh đại diện" [ref_1020]
+  generic "=�i�?m,���2�B�9+��\"���i��H�Ud�c��?��%��F���D���/4����l��Y|��;d��C���U$�v�ȩ��)=6/I��^��y���\D�7" [ref_1021]
+   generic "�.I��=OƏ�*?�!������k�4�qi7zL�Io�Y������`H�s��i NQV{���/n�U����(պ\Y~��>S�������K�}+�`gc��=�^�-e�" [ref_1022]
+    generic "�$�K�J�����h���M��d�l�n7S:�N�U(IǙI�;v}bϗ��j����ҥN*\�+�7�F���q����u�+�����'c����Şmޞ���G^Z�" [ref_1023]
+ generic "Cho thuê chung cư CT4 Vĩnh Điềm Trung, Nha Trang" [ref_1024]
+  heading "Cho thuê chung cư CT4 Vĩnh Điềm Trung, Nha Trang" [ref_1025]
+   generic "Cho thuê chung cư CT4 Vĩnh Điềm Trung, Nha Trang" [ref_1026]
+  generic "8 triệu/tháng" [ref_1027]
+  generic "70 m²" [ref_1028]
+  tooltip "2 Phòng ngủ" [ref_1029]
+  tooltip "1 WC" [ref_1030]
+  generic "X. Vĩnh Hiệp (P. Tây Nha Trang mới)" [ref_1031]
+  generic "Căn hộ chung cư cho thuê tại CT4, Khu đô thị Vĩnh Điềm Trung, Nha Trang. Diện tích 70m², 2 phòng ngủ" [ref_1032]
+   generic "0916 965 ***" [ref_1033]
+  tooltip "09/08/2026" [ref_1034]
+  tooltip "Bấm để lưu tin" [ref_1035]
+heading [ref_1036]
+heading "Xem nhà trực quan với video" [ref_1037]
+link "Cho thuê căn hộ 2PN full nội thất HUD 04 Nguyễn Thiện Thuật Nha Trang" [ref_1038] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/cho-2pn-full-noi-that-04-trang-pr46030877"
+ heading "Cho thuê căn hộ 2PN full nội thất HUD 04 Nguyễn Thiện Thuật Nha Trang" [ref_1039]
+ generic "17 triệu/tháng" [ref_1040]
+ generic "59,2 m²" [ref_1041]
+ generic "P. Tân Tiến" [ref_1042]
+link "Cho thuê căn studio view biển Panorama, không gian thoáng sáng và đầy đủ. Giá 16tr/tháng" [ref_1043] href="/cho-thue-can-ho-chung-cu-duong-nguyen-thi-minh-khai-phuong-loc-tho-panorama-nha-trang/cho-studio-view-bien-khong-gian-thoang-sang-va-ay-u-gia-16tr-thang-pr46112814"
+ heading "Cho thuê căn studio view biển Panorama, không gian thoáng sáng và đầy đủ. Giá 16tr/tháng" [ref_1044]
+ generic "16 triệu/tháng" [ref_1045]
+ generic "43 m²" [ref_1046]
+ generic "P. Lộc Thọ" [ref_1047]
+link "Studio 38m2 Panorama Nha Trang - View thành phố thoáng đẹp - full nội thất" [ref_1048] href="/cho-thue-can-ho-chung-cu-duong-nguyen-thi-minh-khai-phuong-loc-tho-panorama-nha-trang/studio-38m-view-thanh-pho-thoang-ep-full-noi-that-pr46112884"
+ heading "Studio 38m2 Panorama Nha Trang - View thành phố thoáng đẹp - full nội thất" [ref_1049]
+ generic "12 triệu/tháng" [ref_1050]
+ generic "38 m²" [ref_1051]
+ generic "P. Lộc Thọ" [ref_1052]
+link "Cho thuê căn hộ CT2 VCN Phước Hải 90m 3PN đầy đủ nội thất giá chỉ 14 triệu/tháng gần biển" [ref_1053] href="/cho-thue-can-ho-chung-cu-duong-to-huu-phuong-phuoc-hai-chung-cu-ct2-vcn-phuoc-hai/cho-90m-3pn-ay-u-noi-that-gia-chi-14-trieu-thang-gan-bien-pr46182090"
+ heading "Cho thuê căn hộ CT2 VCN Phước Hải 90m 3PN đầy đủ nội thất giá chỉ 14 triệu/tháng gần biển" [ref_1054]
+ generic "14 triệu/tháng" [ref_1055]
+ generic "90 m²" [ref_1056]
+ generic "P. Phước Hải" [ref_1057]
+link "Cho thuê giá tốt Mường Thanh Khánh Hòa 04 Trần Phú - nội thất sạch sẽ" [ref_1058] href="/cho-thue-can-ho-chung-cu-duong-tran-phu-phuong-van-thanh-1-muong-thanh-khanh-hoa/booking-gio-hang-cho-gia-tot-04-noi-that-sach-se-pr45311980"
+ heading "Cho thuê giá tốt Mường Thanh Khánh Hòa 04 Trần Phú - nội thất sạch sẽ" [ref_1059]
+ generic "11 triệu/tháng" [ref_1060]
+ generic "70 m²" [ref_1061]
+ generic "P. Vạn Thạnh" [ref_1062]
+link "Nội thất siêu đẹp căn hộ HUD Nguyễn Thiện Thuật 45m2 giá tốt - ngay trung tâm" [ref_1063] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/gio-hang-45m2-gia-tot-ngay-trung-tam-view-bien-full-noi-that-pr45144708"
+ heading "Nội thất siêu đẹp căn hộ HUD Nguyễn Thiện Thuật 45m2 giá tốt - ngay trung tâm" [ref_1064]
+ generic "14 triệu/tháng" [ref_1065]
+ generic "45 m²" [ref_1066]
+ generic "P. Tân Tiến" [ref_1067]
+link "View biển đẹp có bồn tắm! Studio Panorama 50m2 - Giá tốt" [ref_1068] href="/cho-thue-can-ho-chung-cu-duong-nguyen-thi-minh-khai-phuong-loc-tho-panorama-nha-trang/view-bien-ep-co-bon-tam-studio-50m2-gia-tot-pr46121971"
+ heading "View biển đẹp có bồn tắm! Studio Panorama 50m2 - Giá tốt" [ref_1069]
+ generic "18 triệu/tháng" [ref_1070]
+ generic "50 m²" [ref_1071]
+ generic "P. Lộc Thọ" [ref_1072]
+link "LVCC cho thuê căn hộ 2PN full nội thất cao cấp mới keng chưa sử dụng tại HUD Building - chỉ 18 tr" [ref_1073] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/lvcc-cho-2pn-full-noi-that-cao-cap-moi-keng-chua-su-dung-tai-chi-18-tr-pr46107079"
+ heading "LVCC cho thuê căn hộ 2PN full nội thất cao cấp mới keng chưa sử dụng tại HUD Building - chỉ 18 tr" [ref_1074]
+ generic "18 triệu/tháng" [ref_1075]
+ generic "60 m²" [ref_1076]
+ generic "P. Tân Tiến" [ref_1077]
+link "LVCC cho thuê căn góc 3PN full nội thất cao cấp mới keng đập hộp tại HUD Building - chỉ 26 tr/tháng" [ref_1078] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/lvcc-cho-goc-3pn-full-noi-that-cao-cap-moi-keng-ap-hop-tai-chi-26-tr-thang-pr46103607"
+ heading "LVCC cho thuê căn góc 3PN full nội thất cao cấp mới keng đập hộp tại HUD Building - chỉ 26 tr/tháng" [ref_1079]
+ generic "26 triệu/tháng" [ref_1080]
+ generic "88,19 m²" [ref_1081]
+ generic "P. Tân Tiến" [ref_1082]
+link "Cho thuê CC 2PN, 1WC, giá cực chất 13 triệu, 51,3m2 tại Mường Thanh 60 Trần Phú Nha Trang" [ref_1083] href="/cho-thue-can-ho-chung-cu-duong-tran-phu-phuong-loc-tho-muong-thanh-que-huong/cho-cc-2pn-1wc-gia-cuc-chat-13-trieu-51-3m2-tai-60-nha-trang-pr45529108"
+ heading "Cho thuê CC 2PN, 1WC, giá cực chất 13 triệu, 51,3m2 tại Mường Thanh 60 Trần Phú Nha Trang" [ref_1084]
+ generic "13 triệu/tháng" [ref_1085]
+ generic "51,3 m²" [ref_1086]
+ generic "P. Lộc Thọ" [ref_1087]
+button "Previous slide" [ref_1088]
+ link [ref_1089]
+button "Next slide" [ref_1090]
+ link [ref_1091]
+generic "Tin xác thực mới nhất" [ref_1092]
+generic "Đúng địa chỉ & hình ảnh" [ref_1093]
+generic "Trong khoảng giá thị trường" [ref_1094]
+link [ref_1095] href="/cho-thue-can-ho-chung-cu-duong-tran-phu-phuong-van-thanh-1-muong-thanh-khanh-hoa/booking-gio-hang-cho-gia-tot-04-noi-that-sach-se-pr45311980"
+ image "Ảnh đại diện" [ref_1096]
+ generic "Cho thuê giá tốt Mường Thanh Khánh Hòa 04 Trần Phú - nội thất sạch sẽ" [ref_1097]
+  heading "Cho thuê giá tốt Mường Thanh Khánh Hòa 04 Trần Phú - nội thất sạch sẽ" [ref_1098]
+   generic "Cho thuê giá tốt Mường Thanh Khánh Hòa 04 Trần Phú - nội thất sạch sẽ" [ref_1099]
+  generic "11 triệu/tháng" [ref_1100]
+  generic "70 m²" [ref_1101]
+  tooltip "2 Phòng ngủ" [ref_1102]
+  tooltip "2 WC" [ref_1103]
+  generic "P. Vạn Thạnh (P. Nha Trang mới)" [ref_1104]
+  generic "~·�kzo�Rp��$��9�>fINi����H*��Z�!�s���D��jT���B��{{lB�{��,8�N�}��@\"���ǜ��\"@�(�BDe ��H��۞�b�" [ref_1105]
+   generic "?�ɣ� �IB*�L�0 �>z��'�ܝBLPT��`<SQcR���Jah\"c��d��S��P� !����4UM�w��5> G��;<��*6�9��>�$O��2�" [ref_1106]
+    generic "*�җr��>O=�ٓS����g�o�ʣG2x��~�C Cd� ��P;�f�b2�T� >�L�� ��4C28 �P��Ebbuv�&j �a�Y^~N���{�" [ref_1107]
+     generic "rx�&ZE�O\��:F���_0;z�z�������/��5�'?'����q��#Z�,V���L_���;(%���-�Ց�����G�>��ي��%���'�,W" [ref_1108]
+      generic "�;C�̋c��)wQ�ъ���%W7���d:!NS����@JO]mY�T��z˷_���Ы���e�%I ߗ\"I ����|���|��svz@�����=�㧇��_�" [ref_1109]
+       generic "9�ͫ�tlw5������ľ�$�r��� �GCӀ5 ׵���y����=�nE��KEd\"�i�(���D4m�z� r%PB�E)�6h��5�r��i��٬�Tp��." [ref_1110]
+        generic "�ٔ��ſ`��y�?�;���>���}vz��b1H���8>}�Ԛ��;�<�2{���A�Ƙ(cW/)& Fi\"c�����!?x�#�./Xެ�����O~̳�}��AAk;�,�-" [ref_1111]
+         generic "���-Y��ɇO0Z�����GL�kL��e��)��qa����H�]E[׌F#no.PF3*.�.Ɋ��rɒ5��q}y����o��O~�?��1;z«/ɮ�l" [ref_1112]
+          generic "�w��=O�췹P�6u?L����q��+�vM�jy���ί���q4m�z�d<�4uE����\rp0����%N$&6���G|���~��p�2���5�������" [ref_1113]
+           generic "���i��:\"�S�$g�U$iDOx��T�n(w}�����m�T��$���A�b ���G@+�@��P��LD�z���GGq�^�ǣ���!�'�xC��_S�" [ref_1114]
+            generic "{�� �������ְ����$SY8�`$������ƚ����m�TR���ߙ��S/��9���_��z9������ӻ�<{|��<��l��v���ѽ�Zg " [ref_1115]
+             generic "A����5w7-�1G�G<~\"�:��i�H2MUY}��N5e��߿EX�3���w����_��CPЬW�mCZ'�U fc?y��v������' J��섽�'8�c߱ M�" [ref_1116]
+              generic "�v�m+%*���!O<�j*�?by}Ç��=�����p���>_�ᄇO3�=����0�q������HR�<<�rzy��������ٜ����L/ϐF��$o���-" [ref_1117]
+               generic "'˾Fb���t����� ��{6��)�K�#��)H���r���`�GP� ]�:�����v O�sx0bS���-�لώ9<c���>�c8r�`�d�" [ref_2067]
+  generic "‎Nguyễn Thiện" [ref_1118]
+  tooltip "14/08/2026" [ref_1119]
+  tooltip "Bấm để lưu tin" [ref_1120]
+link [ref_1121] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/gio-hang-45m2-gia-tot-ngay-trung-tam-view-bien-full-noi-that-pr45144708"
+ image "Ảnh đại diện" [ref_1122]
+ generic "Nội thất siêu đẹp căn hộ HUD Nguyễn Thiện Thuật 45m2 giá tốt - ngay trung tâm" [ref_1123]
+  heading "Nội thất siêu đẹp căn hộ HUD Nguyễn Thiện Thuật 45m2 giá tốt - ngay trung tâm" [ref_1124]
+   generic "Nội thất siêu đẹp căn hộ HUD Nguyễn Thiện Thuật 45m2 giá tốt - ngay trung tâm" [ref_1125]
+  generic "14 triệu/tháng" [ref_1126]
+  generic "45 m²" [ref_1127]
+  tooltip "1 Phòng ngủ" [ref_1128]
+  tooltip "1 WC" [ref_1129]
+  generic "P. Tân Tiến (P. Nha Trang mới)" [ref_1130]
+  generic "~·�kzo�Rp��$��9�>fINi����H*��Z�!�s���D��jT���B��{{lB�{��,8�N�}��@\"���ǜ��\"@�(�BDe ��H��۞�b�" [ref_1131]
+   generic "?�ɣ� �IB*�L�0 �>z��'�ܝBLPT��`<SQcR���Jah\"c��d��S��P� !����4UM�w��5> G��;<��*6�9��>�$O��2�" [ref_1132]
+    generic "*�җr��>O=�ٓS����g�o�ʣG2x��~�C Cd� ��P;�f�b2�T� >�L�� ��4C28 �P��Ebbuv�&j �a�Y^~N���{�" [ref_1133]
+     generic "rx�&ZE�O\��:F���_0;z�z�������/��5�'?'����q��#Z�,V���L_���;(%���-�Ց�����G�>��ي��%���'�,W" [ref_1134]
+      generic "�;C�̋c��)wQ�ъ���%W7���d:!NS����@JO]mY�T��z˷_���Ы���e�%I ߗ\"I ����|���|��svz@�����=�㧇��_�" [ref_1135]
+       generic "9�ͫ�tlw5������ľ�$�r��� �GCӀ5 ׵���y����=�nE��KEd\"�i�(���D4m�z� r%PB�E)�6h��5�r��i��٬�Tp��." [ref_1136]
+        generic "�ٔ��ſ`��y�?�;���>���}vz��b1H���8>}�Ԛ��;�<�2{���A�Ƙ(cW/)& Fi\"c�����!?x�#�./Xެ�����O~̳�}��AAk;�,�-" [ref_1137]
+         generic "���-Y��ɇO0Z�����GL�kL��e��)��qa����H�]E[׌F#no.PF3*.�.Ɋ��rɒ5��q}y����o��O~�?��1;z«/ɮ�l" [ref_1138]
+          generic "�w��=O�췹P�6u?L����q��+�vM�jy���ί���q4m�z�d<�4uE����\rp0����%N$&6���G|���~��p�2���5�������" [ref_1139]
+           generic "���i��:\"�S�$g�U$iDOx��T�n(w}�����m�T��$���A�b ���G@+�@��P��LD�z���GGq�^�ǣ���!�'�xC��_S�" [ref_1140]
+            generic "{�� �������ְ����$SY8�`$������ƚ����m�TR���ߙ��S/��9���_��z9������ӻ�<{|��<��l��v���ѽ�Zg " [ref_1141]
+             generic "A����5w7-�1G�G<~\"�:��i�H2MUY}��N5e��߿EX�3���w����_��CPЬW�mCZ'�U fc?y��v������' J��섽�'8�c߱ M�" [ref_1142]
+              generic "�v�m+%*���!O<�j*�?by}Ç��=�����p���>_�ᄇO3�=����0�q������HR�<<�rzy��������ٜ����L/ϐF��$o���-" [ref_1143]
+               generic "'˾Fb���t����� ��{6��)�K�#��)H���r���`�GP� ]�:�����v O�sx0bS���-�لώ9<c���>�c8r�`�d�" [ref_2068]
+  generic "‎Nguyễn Thiện" [ref_1144]
+  tooltip "14/08/2026" [ref_1145]
+  tooltip "Bấm để lưu tin" [ref_1146]
+link [ref_1147] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/lvcc-cho-2pn-full-noi-that-cao-cap-moi-keng-chua-su-dung-tai-chi-18-tr-pr46107079"
+ image "Ảnh đại diện" [ref_1148]
+ generic "LVCC cho thuê căn hộ 2PN full nội thất cao cấp mới keng chưa sử dụng tại HUD Building - chỉ 18 tr" [ref_1149]
+  heading "LVCC cho thuê căn hộ 2PN full nội thất cao cấp mới keng chưa sử dụng tại HUD Building - chỉ 18 tr" [ref_1150]
+   generic "LVCC cho thuê căn hộ 2PN full nội thất cao cấp mới keng chưa sử dụng tại HUD Building - chỉ 18 tr" [ref_1151]
+  generic "18 triệu/tháng" [ref_1152]
+  generic "60 m²" [ref_1153]
+  tooltip "2 Phòng ngủ" [ref_1154]
+  tooltip "2 WC" [ref_1155]
+  generic "P. Tân Tiến (P. Nha Trang mới)" [ref_1156]
+  generic "q��ɔ�rFF�3%�߀�\��G���M�0i���oM�>�)T�yr�ch��m�����N4?��}�?���GP��z��O.�ˢ�G�W�S��" [ref_1157]
+   generic "Itx��y'�%�ŊRIΞ���������I;E g��,�c������3T�% �nB�Jk-N�Q���(0Z%��h����@��EH��AʡH�x$�E�kqE�t��" [ref_1158]
+    generic "g}���^���@T�.�L�k���G�=@�0" [ref_1159]
+     generic "5U�G�f��\"FG��C�DuIl$��,�Y�$������R��y5�e���Xնm�]� R�*������r$���eNg�9s T���E�C�t�" [ref_1160]
+      generic "c2s0�2��)M!��}�P�Ǹ(��H]��.�X,V���, �g�V[��-M]��Kb6�e����FSJ��D����`}K F�me�J����S��'8i}." [ref_1161]
+       generic "�?)�Ί�<3��P� w����~��*7ɤ�2�X�����C!�xٻ����U4��Ͽ�-_?}�o&+�f�R����\;���1�-�����'���Π�a;�V�" [ref_1162]
+        generic "�v�Ċ��59��U��s��[%���3=]�h�!�" [ref_1163]
+         generic "\ʟ�7_䡖���*���K��y�3�}�� &�Ss츸� ף�V�N����m���c����/ZG���w���+#�hZ����N< ��Z���� �>�?�> �uLtD��" [ref_1164]
+          generic "����[�D'~Z<�z2�prr���)��G������zG\"'�(�<������{ �;8<:��Ua�wP(�sS���j��� �^�����;e9��:ƊuTW�0" [ref_1165]
+           generic "�:�x��uA���[�a$ ��i���a>�E�}��g9����r��a�^�Bq��и�O%_���s)�&;1�9#ttm���6*J�Ѽz����5M#!aEAk���x£��" [ref_1166]
+            generic "h~r�:ƣ�'�<�����G���;�#M۴TՎ�f�f�c�ݱ�vlv���nZ���z8�{��BIBN9/x��,�2������Eo�a<��sL�e��rz�vS" [ref_1167]
+             generic "� (r�C���!,�q�8���ձ��g��1z��}��m��B核^�rtpȦ�җ�D���d��ܪ(�(�f\�8�O89�s���1��|��5�Zq8s��a�4�Նg�J.�" [ref_1168]
+              generic "��C����!'�8�" [ref_1169]
+               generic "r��K��vAQ�� �wK���w~�ǟ��lRۖ��!���S�>��/�����������G� ��pv�������9�7���r~�!Gf��h!���44��]" [ref_2069]
+  generic "‎Trần Hiếu" [ref_1170]
+  tooltip "09/08/2026" [ref_1171]
+  tooltip "Bấm để lưu tin" [ref_1172]
+link [ref_1173] href="/cho-thue-can-ho-chung-cu-nha-trang-kh?sortValue=8"
+ generic "Xem thêm Tin xác thực" [ref_1174]
+link "Cho thuê căn hộ 2PN full nội thất HUD 04 Nguyễn Thiện Thuật Nha Trang" [ref_1175] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/cho-2pn-full-noi-that-04-trang-pr46030877"
+ image "Ảnh đại diện" [ref_1176]
+ generic "Cho thuê căn hộ 2PN full nội thất HUD 04 Nguyễn Thiện Thuật Nha Trang" [ref_1177]
+  heading "Cho thuê căn hộ 2PN full nội thất HUD 04 Nguyễn Thiện Thuật Nha Trang" [ref_1178]
+   generic "Cho thuê căn hộ 2PN full nội thất HUD 04 Nguyễn Thiện Thuật Nha Trang" [ref_1179]
+  generic "17 triệu/tháng" [ref_1180]
+  generic "59,2 m²" [ref_1181]
+  tooltip "2 Phòng ngủ" [ref_1182]
+  tooltip "2 WC" [ref_1183]
+  generic "P. Tân Tiến (P. Nha Trang mới)" [ref_1184]
+  generic "�0 d��Xc��\�$�kN�v�:����~��Xkρ0��Kg7�y���m�{�Kf�ux�1À������!9e��& q`Y��z#ƈ��YB\>n�H�K`�����" [ref_1185]
+   generic "5�Ӈ��Dْ��K�lBbDI�{�\"�u4NYU��FuŨ���+�w��[�R�d���U�e�Q�5������ڇ���d�)-���x1�qQ�zK�T��6� '�o�>*" [ref_1186]
+    generic "�ɥ��>0" [ref_1187]
+     generic "���C��:�w4�s����l_�%��=6a��Ծܑ�q�RWm]���S�������o��j��9�\"�s`\U3Lz_[��}J��l��*�b9�����qCe-�@s��" [ref_1188]
+      generic "j� FyOv�/�==�� ����E�3�~�iڭ���5>���x� 0�y�m�� �yG��&��~�U:e�0��g���~�,��1��/.��S�v�5�t" [ref_1189]
+       generic "99�o=��`=yI2Ĝ�9<�ю��R&�1�.��T�+�|��" [ref_1190]
+        generic "r�+��Ɗ σ����:��Zۼ��`�R���OF;�,E� $E�yT=F+0�a���Qai�]�*�Ϥ�!f��x)�������L�L��� �C�ԇ �V?��" [ref_1191]
+         generic "Vy8{���nj'�F�� E^����r%��5g �H�p��ŌA$��\����,0$�b �L�6[�X���B*óa��u����G�jPm���Tev�9�*)/�C" [ref_1192]
+          generic "D�!��� )�/[֓Iԓ v/�a\źQ�mI�T#)C�]ו��X.55�{�����#�J��\"ȋ�B9 ��b��IL(� �g�l(8C������a�!1O�c�" [ref_1193]
+           generic "rp�sa��7~��PO&��3�sQ.�r��m�(�Mx�KMW����iH�֚����~�ĩ�~�կ��'?�����;��#Ŋ _�w������o�Ʒ����ӏ�t�M�3" [ref_1194]
+            generic "�k�东2����4A)^�Z�ʒ��#FȊh��ȉe�-�1B��$���t�����0m�uU�Lw�|�6�h�.�Ċ�/wg!��0O=1FT˅���ɭ�n�'o�������" [ref_1195]
+             generic "`�b����g>?\"�2g�s�N^G���Je�Ys3��Ow����ٻ�ʗ=���[�����^��/����/^����g����]�|���&{���=�e_���O|�����" [ref_1196]
+              generic "Я��g:�`�e������̚L��1 �PU�iW1_��UL[�*����m�'*����V��۟y˻�{�{�����O��]k��Eٟ����x�����S�;翩�j&]G״,�" [ref_1197]
+               generic "x��_��?�����~͏���[�Z��(g��SrJ+c��%�I˴m��e@�,=O>x�{NLY ���%�̬m�u ������+��/���]&�C����:86" [ref_2070]
+  generic "‎Văn Trạch" [ref_1198]
+  tooltip "15/08/2026" [ref_1199]
+  tooltip "Bấm để lưu tin" [ref_1200]
+link "Cho thuê căn hộ 3 phòng ngủ CT2 VCN Phước Hải, Nha Trang, vào ở ngay full nội thất giá 14 triệu" [ref_1201] href="/cho-thue-can-ho-chung-cu-duong-to-huu-phuong-phuoc-hai-chung-cu-ct2-vcn-phuoc-hai/cho-3-ngu-nha-trang-vao-o-ngay-full-noi-that-gia-14-trieu-pr46185349"
+ image "Ảnh đại diện" [ref_1202]
+ generic "Cho thuê căn hộ 3 phòng ngủ CT2 VCN Phước Hải, Nha Trang, vào ở ngay full nội thất giá 14 triệu" [ref_1203]
+  heading "Cho thuê căn hộ 3 phòng ngủ CT2 VCN Phước Hải, Nha Trang, vào ở ngay full nội thất giá 14 triệu" [ref_1204]
+   generic "Cho thuê căn hộ 3 phòng ngủ CT2 VCN Phước Hải, Nha Trang, vào ở ngay full nội thất giá 14 triệu" [ref_1205]
+  generic "14 triệu/tháng" [ref_1206]
+  generic "88 m²" [ref_1207]
+  tooltip "3 Phòng ngủ" [ref_1208]
+  tooltip "2 WC" [ref_1209]
+  generic "P. Phước Hải (P. Nam Nha Trang mới)" [ref_1210]
+  generic "�0 d��Xc��\�$�kN�v�:����~��Xkρ0��Kg7�y���m�{�Kf�ux�1À������!9e��& q`Y��z#ƈ��YB\>n�H�K`�����" [ref_1211]
+   generic "5�Ӈ��Dْ��K�lBbDI�{�\"�u4NYU��FuŨ���+�w��[�R�d���U�e�Q�5������ڇ���d�)-���x1�qQ�zK�T��6� '�o�>*" [ref_1212]
+    generic "�ɥ��>0" [ref_1213]
+     generic "���C��:�w4�s����l_�%��=6a��Ծܑ�q�RWm]���S�������o��j��9�\"�s`\U3Lz_[��}J��l��*�b9�����qCe-�@s��" [ref_1214]
+      generic "j� FyOv�/�==�� ����E�3�~�iڭ���5>���x� 0�y�m�� �yG��&��~�U:e�0��g���~�,��1��/.��S�v�5�t" [ref_1215]
+       generic "99�o=��`=yI2Ĝ�9<�ю��R&�1�.��T�+�|��" [ref_1216]
+        generic "r�+��Ɗ σ����:��Zۼ��`�R���OF;�,E� $E�yT=F+0�a���Qai�]�*�Ϥ�!f��x)�������L�L��� �C�ԇ �V?��" [ref_1217]
+         generic "Vy8{���nj'�F�� E^����r%��5g �H�p��ŌA$��\����,0$�b �L�6[�X���B*óa��u����G�jPm���Tev�9�*)/�C" [ref_1218]
+          generic "D�!��� )�/[֓Iԓ v/�a\źQ�mI�T#)C�]ו��X.55�{�����#�J��\"ȋ�B9 ��b��IL(� �g�l(8C������a�!1O�c�" [ref_1219]
+           generic "rp�sa��7~��PO&��3�sQ.�r��m�(�Mx�KMW����iH�֚����~�ĩ�~�կ��'?�����;��#Ŋ _�w������o�Ʒ����ӏ�t�M�3" [ref_1220]
+            generic "�k�东2����4A)^�Z�ʒ��#FȊh��ȉe�-�1B��$���t�����0m�uU�Lw�|�6�h�.�Ċ�/wg!��0O=1FT˅���ɭ�n�'o�������" [ref_1221]
+             generic "`�b����g>?\"�2g�s�N^G���Je�Ys3��Ow����ٻ�ʗ=���[�����^��/����/^����g����]�|���&{���=�e_���O|�����" [ref_1222]
+              generic "Я��g:�`�e������̚L��1 �PU�iW1_��UL[�*����m�'*����V��۟y˻�{�{�����O��]k��Eٟ����x�����S�;翩�j&]G״,�" [ref_1223]
+               generic "x��_��?�����~͏���[�Z��(g��SrJ+c��%�I˴m��e@�,=O>x�{NLY ���%�̬m�u ������+��/���]&�C����:86" [ref_2071]
+  generic "‎Văn Trạch" [ref_1224]
+  tooltip "15/08/2026" [ref_1225]
+  tooltip "Bấm để lưu tin" [ref_1226]
+link "Cho thuê gấp Căn hộ chung cư 2PN, 2WC tại Nguyễn Thiện Thuật, Nha Trang, 66,18 m2, 17 triệu VND" [ref_1227] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-loc-tho-350/cho-gap-2pn-2wc-tai-nha-trang-66-18-m2-17-trieu-vnd-pr46184688"
+ image "Ảnh đại diện" [ref_1228]
+ generic "Cho thuê gấp Căn hộ chung cư 2PN, 2WC tại Nguyễn Thiện Thuật, Nha Trang, 66,18 m2, 17 triệu VND" [ref_1229]
+  heading "Cho thuê gấp Căn hộ chung cư 2PN, 2WC tại Nguyễn Thiện Thuật, Nha Trang, 66,18 m2, 17 triệu VND" [ref_1230]
+   generic "Cho thuê gấp Căn hộ chung cư 2PN, 2WC tại Nguyễn Thiện Thuật, Nha Trang, 66,18 m2, 17 triệu VND" [ref_1231]
+  generic "17 triệu/tháng" [ref_1232]
+  generic "66,18 m²" [ref_1233]
+  tooltip "2 Phòng ngủ" [ref_1234]
+  tooltip "2 WC" [ref_1235]
+  generic "P. Lộc Thọ (P. Nha Trang mới)" [ref_1236]
+  tooltip "15/08/2026" [ref_1237]
+  tooltip "Bấm để lưu tin" [ref_1238]
+link "Cho thuê CC 2PN 2WC tại Nguyễn Thiện Thuật, Nha Trang, 16 triệu, 59.6m2 Hot! tốt" [ref_1239] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-loc-tho-350/cho-cc-2pn-2wc-tai-nha-trang-16-trieu-59-6m2-hot-uy-tin-pr46184665"
+ image "Ảnh đại diện" [ref_1240]
+ generic "Cho thuê CC 2PN 2WC tại Nguyễn Thiện Thuật, Nha Trang, 16 triệu, 59.6m2 Hot! tốt" [ref_1241]
+  heading "Cho thuê CC 2PN 2WC tại Nguyễn Thiện Thuật, Nha Trang, 16 triệu, 59.6m2 Hot! tốt" [ref_1242]
+   generic "Cho thuê CC 2PN 2WC tại Nguyễn Thiện Thuật, Nha Trang, 16 triệu, 59.6m2 Hot! tốt" [ref_1243]
+  generic "16 triệu/tháng" [ref_1244]
+  generic "59,6 m²" [ref_1245]
+  tooltip "2 Phòng ngủ" [ref_1246]
+  tooltip "2 WC" [ref_1247]
+  generic "P. Lộc Thọ (P. Nha Trang mới)" [ref_1248]
+  tooltip "15/08/2026" [ref_1249]
+  tooltip "Bấm để lưu tin" [ref_1250]
+link "Cho thuê căn hộ 2PN cao cấp HUD Building Nha Trang ngay biển - full nội thất cao cấp" [ref_1251] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/cho-2pn-cao-cap-ngay-bien-full-noi-that-cao-cap-pr46184489"
+ image "Ảnh đại diện" [ref_1252]
+ generic "Cho thuê căn hộ 2PN cao cấp HUD Building Nha Trang ngay biển - full nội thất cao cấp" [ref_1253]
+  heading "Cho thuê căn hộ 2PN cao cấp HUD Building Nha Trang ngay biển - full nội thất cao cấp" [ref_1254]
+   generic "Cho thuê căn hộ 2PN cao cấp HUD Building Nha Trang ngay biển - full nội thất cao cấp" [ref_1255]
+  generic "15,5 triệu/tháng" [ref_1256]
+  generic "59 m²" [ref_1257]
+  tooltip "2 Phòng ngủ" [ref_1258]
+  tooltip "2 WC" [ref_1259]
+  generic "P. Tân Tiến (P. Nha Trang mới)" [ref_1260]
+  generic "z�a��\l%F[��Y��w��gҞ�/��m������V�n�u����$�ʾ��H?����B��ub��G���j��SS�%$��M]�y��SF�]XwR�Il��-" [ref_1261]
+   generic "���o_؟���io�~����H5�I��g�IPG��#޽ZY�U���U/]?3�|�X g��K�m/���_�?��o��G�����Jd��4;��I<�m�6������W�" [ref_1262]
+    generic "��ß ~xb��Vs��o[��eb����'5���d9DgON2���.���� �.;�ʴq8�EH`湹���=9U��h�ǌh}�/��%| ��[�G\��]" [ref_1263]
+     generic "x��C��?d�BO�^�h�9}G�Wr�.���\",�r�x�^+ĭ�f�_�BW^_�}���K��㩨��:V�I�=�O��!��O����#V���c_>���" [ref_1264]
+      generic "�޾/����c��J����<:�qxܕ½ڄ��m��}���ּk�~ǚsxɦx����]I�KX��'���t�� �܊Ue�ǟ�/N�� R�Q�Z��T����O�g@��\" [ref_1265]
+       generic "*q� ��jpQ�iR�-�d�w}kku�s����j���������oV��U���.�>p�ȑ��BI·Q���ikϰS�a%Jr|���/���p^wO(�ib�ҋ� �k" [ref_1266]
+        generic "`1��e�*�A!N�l�h�����4/Y�J���|O�����I&&+��w�`���r�ܩ���-- z��G��C�-|W���z���j�Gzuٗ�*�i]�g)*��" [ref_1267]
+         generic "D����:}���y�Z�p�Nb�$9e8�[��M]����¤}�iZ?��?���s���g�� ��O�ТӬ�;���qxó�R_4������uXN�d�z�hփ" [ref_1268]
+          generic "�Z~��s��YB\�c���v��.�|K���ՠ���w����tR�����;gY&�- b���8 ����ݭc������O[�3�p��h�#��jz����&�.�^�g" [ref_1269]
+           generic "z.ͧ�%ryqu��A�|��bqQ����_ُ�'����6��E���W�7�.u{����� ����a=�3dI+�h�(=���q��W�qv��O���j�}�E}����c�" [ref_1270]
+            generic "|F�`׵�~\"��N��K�!��N�s)Wq8r;f�_b��}����&��~��? t��g����x^���T���� g�/m㻵YH�V)����]P��s��lݏ֟" [ref_1271]
+             generic "�6}O�������%��[M}TC� M�c7Y�1�n �0Med�6rD�w�|��[��~�-ⴹ7�Aa,3A�\+�NXsɡ�[�\�?�W�C �tْw�e���" [ref_1272]
+              generic "�8 �5�a@��������\"�V�4�X�J��N�I����P�� 56�A����RV&S��ɍ�PP�w���b�dΔ��|�RU��ls@Y .���K�i" [ref_1273]
+               generic "�U�J�To#��I�������*��e�Xx�Qk#��[y�p�#@��:��q���F���Q�� �s�u���� �������6Z�j0̲m�ק�U�;�r��᎒" [ref_2072]
+  generic "‎Hồng Nhung" [ref_1274]
+  tooltip "15/08/2026" [ref_1275]
+  tooltip "Bấm để lưu tin" [ref_1276]
+generic "Email cho tôi khi có tin đăng mới tương tự" [ref_1277]
+generic "Email cho tôi khi có tin mới" [ref_1278]
+generic "Nhận thông báo về tin đăng Cho thuê căn hộ chung cư tại Thành phố Nha Trang" [ref_1279]
+link [ref_1280]
+link "Cho thuê căn hộ CCU01 Phước Long, đầy đủ nội thất" [ref_1281] href="/cho-thue-can-ho-chung-cu-duong-vo-van-kiet-phuong-phuoc-long-chung-cu-ccu-01-phuoc-long/cho-ccu01-ay-u-noi-that-pr46139624"
+ image "Ảnh đại diện" [ref_1282]
+ generic "Cho thuê căn hộ CCU01 Phước Long, đầy đủ nội thất" [ref_1283]
+  heading "Cho thuê căn hộ CCU01 Phước Long, đầy đủ nội thất" [ref_1284]
+   generic "Cho thuê căn hộ CCU01 Phước Long, đầy đủ nội thất" [ref_1285]
+  generic "12 triệu/tháng" [ref_1286]
+  generic "68 m²" [ref_1287]
+  tooltip "2 Phòng ngủ" [ref_1288]
+  tooltip "2 WC" [ref_1289]
+  generic "P. Phước Long (P. Nam Nha Trang mới)" [ref_1290]
+  generic "C-(�Qx�1�R 5'�2�}GJ���Z|7}*�fd�;��䜰Z��C!X�)�\":#Y0ڢ�A�J� (E���,�L�3�HQ(�ଥ�{~����_&^�� �:��" [ref_1291]
+   generic "�DN��L���A׊R�%Li�BΙט9ω�9�p�Tk-1'���Y��;T�X�1FÄB��m(�`��Z�2�mR��Vm�lF>���w���KF��0t\.gj͌��" [ref_1292]
+    generic "�g�fOX��X� �������W�yf��S��L�:��(%�}�|��}���3�s��}ϸ9�΄�0�������Xk7rJ������_���sT�h=�Y��" [ref_1293]
+     generic "2�� 1D�*���9�L�DJ��2�_�@jm%�����*��hE�MÈK@+E V?������し/^���;JJ�)���b��%2O��C��-������rE��." [ref_1294]
+      generic "_�Kb��;�m�fN�\"K�\��*p<����R��i�g�Ҕ\鼣֌���i�u��N3�<�L��BI��9���_��4_1֒J�[IU�)[��B]��V�2y�(D�Ԗ=" [ref_1295]
+       generic "�6�2���{���v�~�%� a�RK���}��06��sA[�ۏB�Ls �L���s+�[ ڔpն�,��eF�ǖ=j� Jk�B���|$,�&�`]��K�'z��G" [ref_1296]
+        generic ", �&C�[�|� bJ����0�:-����3v�Ars��`>�1��1(�1���/�%��" [ref_1297]
+         generic "+�>G�_&H�T���G��ҊS��h������)h��І�f��iQ+��6����?� ������������8�4��Q�5��wO9Y劲���:ᤶק}�7��������" [ref_1298]
+          generic "�Mm�����G�3sJ��R ��� f���婎5�SK��~� 9Wj�|x8�cd9��k?��h��;�V8�� �����z�R����� ����zr�@5�XCݲs" [ref_1299]
+           generic "i�P �0�5:ӵa����2s�U�:-Tic���B��{�1jj���i­�L���c� ��m�Fӣ�g����V���?�$J��|�����TyZ|j-�|ׯ3��ԙ6" [ref_1300]
+            generic "�����-���lS�={�� ]m��w�&:�i�U Mz�;�\��V�6�x��~�U\" �e��\jkX�E �rk�e!o6��;|ZHM�M���~C����U" [ref_1301]
+             generic "�����b ��HgϹ���鱩|�)��T �UDZOf�'-<����EC�źs��q�5��X5����8� �U ��1�*�U��5[��6Ƃԇ���p�Z��sr�Z�A" [ref_1302]
+              generic "pqu� ^��\ 8#KM<�3�,���|��_��_py}������Z���j,�G�����_\����P����� (�����[���a�\�`(lu�&���" [ref_1303]
+               generic "���x\"N��D\\"i��69q�����r8F��]]��a�[G���Z�&�6r;b���9�׸�B�~��v��]�bp ����+%3/�%;r �g;��7����" [ref_2073]
+  generic "‎Phan Thị Lan" [ref_1304]
+  tooltip "15/08/2026" [ref_1305]
+  tooltip "Bấm để lưu tin" [ref_1306]
+link "Cho thuê gấp Căn hộ chung cư 2PN, 2WC, 19 triệu tại Nguyễn Thiện Thuật, Nha Trang" [ref_1307] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-loc-tho-350/cho-gap-2pn-2wc-19-trieu-tai-nha-trang-pr46183859"
+ image "Ảnh đại diện" [ref_1308]
+ generic "Cho thuê gấp Căn hộ chung cư 2PN, 2WC, 19 triệu tại Nguyễn Thiện Thuật, Nha Trang" [ref_1309]
+  heading "Cho thuê gấp Căn hộ chung cư 2PN, 2WC, 19 triệu tại Nguyễn Thiện Thuật, Nha Trang" [ref_1310]
+   generic "Cho thuê gấp Căn hộ chung cư 2PN, 2WC, 19 triệu tại Nguyễn Thiện Thuật, Nha Trang" [ref_1311]
+  generic "19 triệu/tháng" [ref_1312]
+  generic "68,38 m²" [ref_1313]
+  tooltip "2 Phòng ngủ" [ref_1314]
+  tooltip "2 WC" [ref_1315]
+  generic "P. Lộc Thọ (P. Nha Trang mới)" [ref_1316]
+  tooltip "15/08/2026" [ref_1317]
+  tooltip "Bấm để lưu tin" [ref_1318]
+link "Cho thuê CC 2PN, 2WC, 59,2m2 tại Nguyễn Thiện Thuật, giá tốt" [ref_1319] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-loc-tho-350/cho-cc-2pn-2wc-59-2m2-tai-gia-tot-pr46183797"
+ image "Ảnh đại diện" [ref_1320]
+ generic "Cho thuê CC 2PN, 2WC, 59,2m2 tại Nguyễn Thiện Thuật, giá tốt" [ref_1321]
+  heading "Cho thuê CC 2PN, 2WC, 59,2m2 tại Nguyễn Thiện Thuật, giá tốt" [ref_1322]
+   generic "Cho thuê CC 2PN, 2WC, 59,2m2 tại Nguyễn Thiện Thuật, giá tốt" [ref_1323]
+  generic "17 triệu/tháng" [ref_1324]
+  generic "59,2 m²" [ref_1325]
+  tooltip "2 Phòng ngủ" [ref_1326]
+  tooltip "2 WC" [ref_1327]
+  generic "P. Lộc Thọ (P. Nha Trang mới)" [ref_1328]
+  tooltip "15/08/2026" [ref_1329]
+  tooltip "Bấm để lưu tin" [ref_1330]
+link "Cho thuê CC 2PN, 2WC, 64,31m2 tại Nguyễn Thiện Thuật, P. Lộc Thọ, Nha Trang, giá ưu đãi" [ref_1331] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-loc-tho-350/cho-cc-2pn-2wc-64-31m2-tai-p-nha-trang-gia-uu-ai-pr46183737"
+ image "Ảnh đại diện" [ref_1332]
+ generic "Cho thuê CC 2PN, 2WC, 64,31m2 tại Nguyễn Thiện Thuật, P. Lộc Thọ, Nha Trang, giá ưu đãi" [ref_1333]
+  heading "Cho thuê CC 2PN, 2WC, 64,31m2 tại Nguyễn Thiện Thuật, P. Lộc Thọ, Nha Trang, giá ưu đãi" [ref_1334]
+   generic "Cho thuê CC 2PN, 2WC, 64,31m2 tại Nguyễn Thiện Thuật, P. Lộc Thọ, Nha Trang, giá ưu đãi" [ref_1335]
+  generic "16 triệu/tháng" [ref_1336]
+  generic "64,31 m²" [ref_1337]
+  tooltip "2 Phòng ngủ" [ref_1338]
+  tooltip "2 WC" [ref_1339]
+  generic "P. Lộc Thọ (P. Nha Trang mới)" [ref_1340]
+  tooltip "15/08/2026" [ref_1341]
+  tooltip "Bấm để lưu tin" [ref_1342]
+link "Cần cho thuê ngắn hạn hoặc dài hạn căn góc view biển và phố. LH ngay 0989 271 ***" [ref_1343] href="/cho-thue-can-ho-chung-cu-duong-pham-van-dong-phuong-vinh-phuoc-muong-thanh-vien-trieu/cho-ngan-han-hoac-dai-han-goc-view-bien-va-pho-lh-ngay-pr44113967"
+ image "Ảnh đại diện" [ref_1344]
+ generic "Cần cho thuê ngắn hạn hoặc dài hạn căn góc view biển và phố. LH ngay 0989 271 ***" [ref_1345]
+  heading "Cần cho thuê ngắn hạn hoặc dài hạn căn góc view biển và phố. LH ngay 0989 271 ***" [ref_1346]
+   generic "Cần cho thuê ngắn hạn hoặc dài hạn căn góc view biển và phố. LH ngay" [ref_1347]
+    generic "0989 271 ***" [ref_1348]
+  generic "16 triệu/tháng" [ref_1349]
+  generic "62 m²" [ref_1350]
+  tooltip "2 Phòng ngủ" [ref_1351]
+  tooltip "2 WC" [ref_1352]
+  generic "P. Vĩnh Phước (P. Bắc Nha Trang mới)" [ref_1353]
+  generic "kG�YO��7��#��{���o8�JK�V~�� �˪F[�~�׃̓�&�y��MZ�+v�R�����낾� ]�����Y�s7�f�Q���[9o^E�b�" [ref_1354]
+   generic "i��\"�k�i�ak8�!`$h�2ypW8�A�j玒l��f|]��G���F�4[h��|�nAGS�:�� ��;U�檽�v�m��[.�bP ��?���wFO���h��k�" [ref_1355]
+    generic "ؼ� ��`��^�9T�6+E�$c �q��^���z�v|�/�Y��#����`z" [ref_1356]
+     generic "����G�Y�/�>][XZ��+�I#y]1�Q=ӻa�$%|�ߒ0��:�sW�jn���Q#�?�����3���s�~����[Xܑ UGKtP��8 �8" [ref_1357]
+      generic "΋V��1� :erÑ�Y�����0�h8���M�bb�]ەo/�[y���u�/�Z��̪�t�YtmR�h�[�<����;�ֺaw�>���s��� ��[�;�V�" [ref_1358]
+       generic "�o�_i��$t�E}G�>.`���/����@3ї�!��9YI�V�������},�Pm��U Ӭ P��]4�iJђ��ף9YI\���P��H��" [ref_1359]
+        generic "��z�I����F4?����v��j7\"�hV��A��ٹ��?Q� 8�ly����z�%]'��" [ref_1360]
+         generic "� t�� ��ڗ����s���A�?)Iښ:b�6{��>ҭ�)icrf��4;��5��#u�ڑ��$����^����jgQj],�tb�29�z�1ޒv��[����H�4m" [ref_1361]
+          generic "k�35J>ʛ�������x ��Y���Oq5��;��.Pm�'n�J�ض֧��7T�|I����G��/6�9-��,��(�2��A��� ��Lt=��JP����" [ref_1362]
+           generic "�%�ۈ\"9u+�+`�˯����+SL�C-��}��xF�k ���d2�n����G�j:ʒsК�L77��t�h�C�CV�+78��ʥ;BW�p �ΚK��_$��r�AS�� �" [ref_1363]
+            generic "��_;�qVkB�����c��<)�Vé:K�~� мC�C�ڋ��̖���$��o@z��8=q�Jxn4��O�נc�?��}F���]������Y�u�ro�F�" [ref_1364]
+             generic "ˮ@�P6��ą�bn?Z��Z4�9+�M$Wӵ�#P)�KHzu?���|J�I���;G�Z�R�,��rT��f�O�%�e=$�2�&��>z�H�H�S�O�~��P������>" [ref_1365]
+              generic "8����>���Wr��!�+�kS��$W�c#��0*�v���ך�q�5M��~0��z{��#��bf�b�+�����V��~(���>yN�.��Ϯf��{_�M" [ref_1366]
+               generic "��)BX7ME��~7Z���UI����6� G���G�� 9�:��,F=8ݍx��S�<���*5�y&�ϛ�1���M�K�]�B��췷[�ă�Q��_s�y�'(�k�." [ref_2074]
+  generic "‎Lê Tài" [ref_1367]
+  tooltip "15/08/2026" [ref_1368]
+  tooltip "Bấm để lưu tin" [ref_1369]
+link "Cho thuê CC tại Phố Nguyễn Thiện Thuật, 17 triệu, 59,2m2, giá ưu đãi, tốt" [ref_1370] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-loc-tho-350/cho-cc-tai-17-trieu-59-2m2-gia-uu-ai-uy-tin-pr46183698"
+ image "Ảnh đại diện" [ref_1371]
+ generic "Cho thuê CC tại Phố Nguyễn Thiện Thuật, 17 triệu, 59,2m2, giá ưu đãi, tốt" [ref_1372]
+  heading "Cho thuê CC tại Phố Nguyễn Thiện Thuật, 17 triệu, 59,2m2, giá ưu đãi, tốt" [ref_1373]
+   generic "Cho thuê CC tại Phố Nguyễn Thiện Thuật, 17 triệu, 59,2m2, giá ưu đãi, tốt" [ref_1374]
+  generic "17 triệu/tháng" [ref_1375]
+  generic "59,2 m²" [ref_1376]
+  tooltip "2 Phòng ngủ" [ref_1377]
+  tooltip "2 WC" [ref_1378]
+  generic "P. Lộc Thọ (P. Nha Trang mới)" [ref_1379]
+  tooltip "15/08/2026" [ref_1380]
+  tooltip "Bấm để lưu tin" [ref_1381]
+link "Cho thuê căn hộ 3PN HUD Building Nha Trang, đường Nguyễn Thiện Thuật, giá 28 triệu" [ref_1382] href="/cho-thue-can-ho-chung-cu-pho-nguyen-thien-thuat-phuong-tan-tien_1-hud-building-nha-trang/cho-3pn-uong-gia-28-trieu-pr45935961"
+ image "Ảnh đại diện" [ref_1383]
+ generic "Cho thuê căn hộ 3PN HUD Building Nha Trang, đường Nguyễn Thiện Thuật, giá 28 triệu" [ref_1384]
+  heading "Cho thuê căn hộ 3PN HUD Building Nha Trang, đường Nguyễn Thiện Thuật, giá 28 triệu" [ref_1385]
+   generic "Cho thuê căn hộ 3PN HUD Building Nha Trang, đường Nguyễn Thiện Thuật, giá 28 triệu" [ref_1386]
+  generic "28 triệu/tháng" [ref_1387]
+  generic "90 m²" [ref_1388]
+  generic "P. Tân Tiến (P. Nha Trang mới)" [ref_1389]
+  tooltip "15/08/2026" [ref_1390]
+  tooltip "Bấm để lưu tin" [ref_1391]
+link "Cho thuê căn hộ chung cư Vĩnh Phước đường 2/4, giá 6 triệu, 52m2, 2PN, view đẹp" [ref_1392] href="/cho-thue-can-ho-chung-cu-duong-2-4-phuong-vinh-phuoc-350/cho-2-4-gia-4-trieu-52-m2-2-pn-view-dep-pr41413787"
+ image "Ảnh đại diện" [ref_1393]
+ generic "Đã xem" [ref_1394]
+ generic "Cho thuê căn hộ chung cư Vĩnh Phước đường 2/4, giá 6 triệu, 52m2, 2PN, view đẹp" [ref_1395]
+  heading "Cho thuê căn hộ chung cư Vĩnh Phước đường 2/4, giá 6 triệu, 52m2, 2PN, view đẹp" [ref_1396]
+   generic "Cho thuê căn hộ chung cư Vĩnh Phước đường 2/4, giá 6 triệu, 52m2, 2PN, view đẹp" [ref_1397]
+  generic "6 triệu/tháng" [ref_1398]
+  generic "52 m²" [ref_1399]
+  tooltip "2 Phòng ngủ" [ref_1400]
+  tooltip "1 WC" [ref_1401]
+  generic "P. Vĩnh Phước (P. Bắc Nha Trang mới)" [ref_1402]
+  generic "kG�YO��7��#��{���o8�JK�V~�� �˪F[�~�׃̓�&�y��MZ�+v�R�����낾� ]�����Y�s7�f�Q���[9o^E�b�" [ref_1403]
+   generic "i��\"�k�i�ak8�!`$h�2ypW8�A�j玒l��f|]��G���F�4[h��|�nAGS�:�� ��;U�檽�v�m��[.�bP ��?���wFO���h��k�" [ref_1404]
+    generic "ؼ� ��`��^�9T�6+E�$c �q��^���z�v|�/�Y��#����`z" [ref_1405]
+     generic "����G�Y�/�>][XZ��+�I#y]1�Q=ӻa�$%|�ߒ0��:�sW�jn���Q#�?�����3���s�~����[Xܑ UGKtP��8 �8" [ref_1406]
+      generic "΋V��1� :erÑ�Y�����0�h8���M�bb�]ەo/�[y���u�/�Z��̪�t�YtmR�h�[�<����;�ֺaw�>���s��� ��[�;�V�" [ref_1407]
+       generic "�o�_i��$t�E}G�>.`���/����@3ї�!��9YI�V�������},�Pm��U Ӭ P��]4�iJђ��ף9YI\���P��H��" [ref_1408]
+        generic "��z�I����F4?����v��j7\"�hV��A��ٹ��?Q� 8�ly����z�%]'��" [ref_1409]
+         generic "� t�� ��ڗ����s���A�?)Iښ:b�6{��>ҭ�)icrf��4;��5��#u�ڑ��$����^����jgQj],�tb�29�z�1ޒv��[����H�4m" [ref_1410]
+          generic "k�35J>ʛ�������x ��Y���Oq5��;��.Pm�'n�J�ض֧��7T�|I����G��/6�9-��,��(�2��A��� ��Lt=��JP����" [ref_1411]
+           generic "�%�ۈ\"9u+�+`�˯����+SL�C-��}��xF�k ���d2�n����G�j:ʒsК�L77��t�h�C�CV�+78��ʥ;BW�p �ΚK��_$��r�AS�� �" [ref_1412]
+            generic "��_;�qVkB�����c��<)�Vé:K�~� мC�C�ڋ��̖���$��o@z��8=q�Jxn4��O�נc�?��}F���]������Y�u�ro�F�" [ref_1413]
+             generic "ˮ@�P6��ą�bn?Z��Z4�9+�M$Wӵ�#P)�KHzu?���|J�I���;G�Z�R�,��rT��f�O�%�e=$�2�&��>z�H�H�S�O�~��P������>" [ref_1414]
+              generic "8����>���Wr��!�+�kS��$W�c#��0*�v���ך�q�5M��~0��z{��#��bf�b�+�����V��~(���>yN�.��Ϯf��{_�M" [ref_1415]
+               generic "��)BX7ME��~7Z���UI����6� G���G�� 9�:��,F=8ݍx��S�<���*5�y&�ϛ�1���M�K�]�B��췷[�ă�Q��_s�y�'(�k�." [ref_2075]
+  generic "‎Lê Tài" [ref_1416]
+  tooltip "15/08/2026" [ref_1417]
+  tooltip "Bấm để lưu tin" [ref_1418]
+link "Cho thuê chung cư XH1 VCN Phước Long Nha Trang 7 triệu/tháng" [ref_1419] href="/cho-thue-can-ho-chung-cu-duong-28-phuong-phuoc-long-khu-do-thi-vcn-phuoc-long-2/cho-xh1-nha-trang-7-trieu-thang-pr46183238"
+ image "Ảnh đại diện" [ref_1420]
+ generic "Đã xem" [ref_1421]
+ generic "Cho thuê chung cư XH1 VCN Phước Long Nha Trang 7 triệu/tháng" [ref_1422]
+  heading "Cho thuê chung cư XH1 VCN Phước Long Nha Trang 7 triệu/tháng" [ref_1423]
+   generic "Cho thuê chung cư XH1 VCN Phước Long Nha Trang 7 triệu/tháng" [ref_1424]
+  generic "7 triệu/tháng" [ref_1425]
+  generic "67 m²" [ref_1426]
+  tooltip "2 Phòng ngủ" [ref_1427]
+  tooltip "1 WC" [ref_1428]
+  generic "P. Phước Long (P. Nam Nha Trang mới)" [ref_1429]
+  tooltip "15/08/2026" [ref_1430]
+  tooltip "Bấm để lưu tin" [ref_1431]
+link "Cho thuê căn studio view biển Panorama, không gian thoáng sáng và đầy đủ. Giá 16tr/tháng" [ref_1432] href="/cho-thue-can-ho-chung-cu-duong-nguyen-thi-minh-khai-phuong-loc-tho-panorama-nha-trang/cho-studio-view-bien-khong-gian-thoang-sang-va-ay-u-gia-16tr-thang-pr46112814"
+ image "Ảnh đại diện" [ref_1433]
+ generic "Cho thuê căn studio view biển Panorama, không gian thoáng sáng và đầy đủ. Giá 16tr/tháng" [ref_1434]
+  heading "Cho thuê căn studio view biển Panorama, không gian thoáng sáng và đầy đủ. Giá 16tr/tháng" [ref_1435]
+   generic "Cho thuê căn studio view biển Panorama, không gian thoáng sáng và đầy đủ. Giá 16tr/tháng" [ref_1436]
+  generic "16 triệu/tháng" [ref_1437]
+  generic "43 m²" [ref_1438]
+  tooltip "1 WC" [ref_1439]
+  generic "P. Lộc Thọ (P. Nha Trang mới)" [ref_1440]
+  generic "�\"<�>��=&w����W_����cd{W9==��d�0�`400� MkPo�!Bt����&r�I�D�V8��/V-a���`Q�Q KOS�&2'A��[ �QJ��!" [ref_1441]
+   generic "�s4m���)�a�T[���/9/��q��M:+��5f6�i�5=��c��|%��˺��/��U�*�TZ�R�m7�W�a�.� �.}�������º�e�&\O0��" [ref_1442]
+    generic "���aG,F��$��d�l�� �zb��j�b6��1n��R9 \2$��{�>���4�Yzm=��ի���_��`�����_�����+���b4() ���!Ϧ �" [ref_1443]
+     generic "��ƻ\"�6�ǥ�S�`�47y�̬��m�򵛷y��ySSO_0=>���g �ۻo�ń��O0��s�p��B[KdE��_N�u ���l\"?��,X[$�Y}�C �>�ΰ���-^" [ref_1444]
+      generic "��_߿j��{���{4�R{|��s��,����klY� ��@*0���%cld]t�>��q�ŵ��� KD\�6�m��w����$��5��B�t����i" [ref_1445]
+       generic "UU���@�Ҷ-�ay~�ho_��-��yRZ�?��]noE�F���cˋ||����g\�r��S�dg�?==�4����E��\)�� �,?��%Q\�K�򌡛�>�M䡞" [ref_1446]
+        generic "�d �Ы3꽚�^�=lLl6[��-M�2���u8�*A���]0���g/��\b���w��Ï��%r��ځ�ӛ�h�H �nsC\]S�m�8�E�/i*�o���cL�s�]��z" [ref_1447]
+         generic "��)��ct9���o�����/�.�$ZO�愊*e&�x�$0� M�X,Z>��Y����&2��p��qW �5�'�ጫ�k���{���-)dը��� �b-%&X�R���" [ref_1448]
+          generic "�:Ο=�ﻉ���) �0�EA�.hf3f���G�����=�������r;rx8G�4���am0QaFŢ.�z5��n���$(df�I���Eķ�J*f¡��h]!l�O��" [ref_1449]
+           generic "��t%A�t����C���u yd��\�::&�nL<~�ޑR���r7L�� |�1%��$g Σ��� Ebړ�1�BSCU5T$���,EQPU�� >��4\:��d" [ref_1450]
+            generic "���y�� ���J�M���ij�-��m'�//6�t^���`qJ3?bP+���H� �D� �M�A�RV�+@��+R�Xݼ��z�AO�F6�� P��H�����" [ref_1451]
+             generic "b¥Ŀ���fy�4��\"�gQ��ro�D���PE�V� �'cB�H��AcL��g�5��q����w�x��l�7�h���X�FݖrLP!JW@Ia<��+" [ref_1452]
+              generic "��K�?��`��F0Ӛ���T�#-���K~p���`�>ĉ��;L��@���|�ж1��[�6�m?��Ĕ��2�4f)� �����ڻ���� �Z�IF�;�,�_" [ref_1453]
+               generic "N�������BM�ԫ7��b:0cr�~�}�?z�L=�ަh4a�)��5(��z�8��SB�W_}E1YVM��U $L!s%��Y�',�hY�7ܬo躎����eI�5���" [ref_2076]
+  generic "‎Tôn Thị Loan" [ref_1454]
+  tooltip "15/08/2026" [ref_1455]
+  tooltip "Bấm để lưu tin" [ref_1456]
+link "1" [ref_1457] href="/cho-thue-can-ho-chung-cu-nha-trang-kh"
+link "2" [ref_1458] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/p2"
+link "3" [ref_1459] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/p3"
+link "4" [ref_1460] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/p4"
+link "5" [ref_1461] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/p5"
+link "6" [ref_1462] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/p6"
+link [ref_1463] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/p2"
+generic "Môi giới chuyên nghiệp tại Nha Trang" [ref_1464]
+list [ref_1465]
+ listitem [ref_1466]
+  link [ref_1467] href="https://guru.batdongsan.com.vn/pa/495f57f7c74a6be0"
+   generic "Văn Trạch" [ref_1468]
+   generic "20 tin phù hợp" [ref_1469]
+ listitem [ref_1470]
+  link [ref_1471] href="https://guru.batdongsan.com.vn/pa/cd1ba74185f8b0b2"
+   generic "Tôn Thị Loan" [ref_1472]
+   generic "14 tin phù hợp" [ref_1473]
+ listitem [ref_1474]
+  link [ref_1475] href="https://guru.batdongsan.com.vn/pa/b972a78e548806a8"
+   generic "Trần Nguyễn Hoài Nguyên" [ref_1476]
+   generic "8 tin phù hợp" [ref_1477]
+ listitem [ref_1478]
+  link [ref_1479] href="https://guru.batdongsan.com.vn/pa/3fec49a7b6d81617"
+   generic "Lê Tài" [ref_1480]
+   generic "7 tin phù hợp" [ref_1481]
+ listitem [ref_1482]
+  link [ref_1483] href="https://guru.batdongsan.com.vn/pa/0962670127a9d9c6"
+   generic "Phương Gohome" [ref_1484]
+   generic "7 tin phù hợp" [ref_1485]
+ listitem [ref_1486]
+  link [ref_1487] href="https://guru.batdongsan.com.vn/pa/23e2166714ba0225"
+   generic "Tươi Bùi" [ref_1488]
+   generic "6 tin phù hợp" [ref_1489]
+ listitem [ref_1490]
+  link [ref_1491] href="https://guru.batdongsan.com.vn/pa/8ef3845331184ab5"
+   generic "Thu Vân" [ref_1492]
+   generic "6 tin phù hợp" [ref_1493]
+ listitem [ref_1494]
+  link [ref_1495] href="https://guru.batdongsan.com.vn/pa/52d07c3dbad1e94c"
+   generic "Hà Định" [ref_1496]
+   generic "5 tin phù hợp" [ref_1497]
+ listitem [ref_1498]
+  link [ref_1499] href="https://guru.batdongsan.com.vn/pa/a098f6ccbeeec5be"
+   generic "Phan Thị Lan" [ref_1500]
+   generic "4 tin phù hợp" [ref_1501]
+ listitem [ref_1502]
+  link [ref_1503] href="https://guru.batdongsan.com.vn/pa/e6fc8dbace520682"
+   generic "Nguyễn Thị Long" [ref_1504]
+   generic "4 tin phù hợp" [ref_1505]
+ listitem [ref_1506]
+  link [ref_1507] href="https://guru.batdongsan.com.vn/pa/f973b308c0f74d5b"
+   generic "Nguyễn Thiện" [ref_1508]
+   generic "4 tin phù hợp" [ref_1509]
+ listitem [ref_1510]
+  link [ref_1511] href="https://guru.batdongsan.com.vn/pa/593b1426a1b469d7"
+   generic "Nguyễn Ánh Ly" [ref_1512]
+   generic "4 tin phù hợp" [ref_1513]
+ listitem [ref_1514]
+  link [ref_1515] href="https://guru.batdongsan.com.vn/pa/b5c8f30f2f529a94"
+   generic "Phan Tiến Thịnh" [ref_1516]
+   generic "4 tin phù hợp" [ref_1517]
+ listitem [ref_1518]
+  link [ref_1519] href="https://guru.batdongsan.com.vn/pa/eb9029f5440027e6"
+   generic "VŨ XUÂN LỘC" [ref_1520]
+   generic "4 tin phù hợp" [ref_1521]
+ listitem [ref_1522]
+  link [ref_1523] href="https://guru.batdongsan.com.vn/pa/3557241e9d18c738"
+   generic "Xuân Oanh" [ref_1524]
+   generic "3 tin phù hợp" [ref_1525]
+ listitem [ref_1526]
+  link [ref_1527] href="https://guru.batdongsan.com.vn/pa/788ed0be7ab34c11"
+   generic "Hồng Nhung" [ref_1528]
+   generic "3 tin phù hợp" [ref_1529]
+ listitem [ref_1530]
+  link [ref_1531] href="https://guru.batdongsan.com.vn/pa/454e352b1b13cc3d"
+   generic "Đào Như Quỳnh" [ref_1532]
+   generic "3 tin phù hợp" [ref_1533]
+ listitem [ref_1534]
+  link [ref_1535] href="https://guru.batdongsan.com.vn/pa/b9840b1356c89a82"
+   generic "Nguyễn Thanh Quang" [ref_1536]
+   generic "3 tin phù hợp" [ref_1537]
+ listitem [ref_1538]
+  link [ref_1539] href="https://guru.batdongsan.com.vn/pa/163c3bcbf5f9ee1b"
+   generic "Trần Mộng Đạt" [ref_1540]
+   generic "3 tin phù hợp" [ref_1541]
+ listitem [ref_1542]
+  link [ref_1543] href="https://guru.batdongsan.com.vn/pa/63ce63ec8dc052b4"
+   generic "Lê Tiến Dũng" [ref_1544]
+   generic "2 tin phù hợp" [ref_1545]
+ listitem [ref_1546]
+textbox "[value redacted]" [ref_1547] type="hidden"
+textbox "[value redacted]" [ref_1548] type="hidden"
+textbox "[value redacted]" [ref_1549] type="hidden"
+heading "Lịch sử giá Cho thuê căn hộ chung cư tại Thành Phố Nha Trang" [ref_1550]
+generic "Tổng hợp và xử lý bởi Batdongsan.com.vn" [ref_1551]
+list [ref_1552]
+ listitem "Mua bán" [ref_1553]
+ listitem "Cho thuê" [ref_1554]
+list [ref_1555]
+ listitem "1 năm" [ref_1556]
+ listitem "2 năm" [ref_1557]
+ listitem "5 năm" [ref_1558]
+generic "tr/tháng" [ref_1559]
+generic "Giá đang cập nhật" [ref_1560]
+generic "23%" [ref_1561]
+generic "Giá thuê đã tăng trong 1 năm qua (Q2/2022 - Q2/2023)" [ref_1562]
+generic "Dữ liệu đang được cập nhật" [ref_1563]
+generic "So sánh biến động giá với các quý trước" [ref_1564]
+generic "Giá hiện tại thấp hơn đỉnh 8,5 tr/tháng vào Q1/2022" [ref_1565]
+generic "tr/tháng" [ref_1566]
+image "Batdongsan.com.vn" [ref_1567]
+generic "Giá cao nhất" [ref_1568]
+generic "Giá phổ biến nhất" [ref_1569]
+generic "Giá thấp nhất" [ref_1570]
+generic "Chúng tôi đang cập nhật dữ liệu. Bạn hãy quay lại sau nhé!" [ref_1571]
+generic "Dữ liệu giá được tổng hợp và xử lý từ các tin đăng trên trang Batdongsan.com.vn. Bạn hãy lưu ý về .." [ref_1572]
+heading [ref_1573]
+list [ref_1574]
+ listitem [ref_1575]
+ listitem [ref_1576]
+list [ref_1577]
+ listitem [ref_1578]
+ listitem [ref_1579]
+ listitem [ref_1580]
+link [ref_1581]
+link [ref_1582]
+link [ref_1583]
+link [ref_1584]
+link [ref_1585]
+link [ref_1586]
+link [ref_1587]
+link [ref_1588]
+link [ref_1589]
+link [ref_1590]
+link [ref_1591]
+generic "thông tin độc quyền về Cho thuê căn hộ chung cư tại Thành Phố Nha Trang" [ref_1592]
+ generic "Truy cập miễn phí" [ref_1593]
+generic "Khoảng giá an toàn hiện tại để giao dịch" [ref_1594]
+generic "Lịch sử biến động giá được tổng hợp và xử lý bởi Batdongsan.com.vn" [ref_1595]
+link "Xem lịch sử giá" [ref_1596]
+heading "Tìm kiếm theo từ khóa" [ref_1597]
+heading "thuê căn hộ Nha Trang dưới 10 triệu" [ref_1598]
+ link "thuê căn hộ Nha Trang dưới 10 triệu" [ref_1599] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/gia-tu-5-trieu-den-10-trieu"
+heading "thuê căn hộ chung cư Nha Trang dưới 40 triệu" [ref_1600]
+ link "thuê căn hộ chung cư Nha Trang dưới 40 triệu" [ref_1601] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/gia-tu-10-trieu-den-40-trieu"
+heading "thuê căn hộ Nha Trang dưới 5 triệu" [ref_1602]
+ link "thuê căn hộ Nha Trang dưới 5 triệu" [ref_1603] href="/cho-thue-can-ho-chung-cu-nha-trang-kh/gia-tu-3-trieu-den-5-trieu"
+heading "thuê nhà mặt tiền Nha Trang" [ref_1604]
+ link "thuê nhà mặt tiền Nha Trang" [ref_1605] href="/cho-thue-nha-mat-pho-nha-trang-kh"
+heading "thuê nhà nguyên căn Nha Trang" [ref_1606]
+ link "thuê nhà nguyên căn Nha Trang" [ref_1607] href="/cho-thue-nha-rieng-nha-trang-kh"
+heading "HUD Building Nha Trang" [ref_1608]
+ link "HUD Building Nha Trang" [ref_1609] href="/cho-thue-can-ho-chung-cu-hud-building-nha-trang"
+heading "Mường Thanh Viễn Triều" [ref_1610]
+ link "Mường Thanh Viễn Triều" [ref_1611] href="/cho-thue-can-ho-chung-cu-muong-thanh-vien-trieu"
+heading "Khu đô thị VCN Phước Hải" [ref_1612]
+ link "Khu đô thị VCN Phước Hải" [ref_1613] href="/cho-thue-can-ho-chung-cu-khu-do-thi-vcn-phuoc-hai"
+heading "bán căn hộ Nha Trang" [ref_1614]
+ link "bán căn hộ Nha Trang" [ref_1615] href="/ban-can-ho-chung-cu-nha-trang-kh"
+heading "thuê chung cư Vĩnh Phước" [ref_1616]
+ link "thuê chung cư Vĩnh Phước" [ref_1617] href="/cho-thue-can-ho-chung-cu-phuong-vinh-phuoc"
+heading "thuê căn hộ chung cư Lộc Thọ" [ref_1618]
+ link "thuê căn hộ chung cư Lộc Thọ" [ref_1619] href="/cho-thue-can-ho-chung-cu-phuong-loc-tho"
+heading "thuê căn hộ chung cư Phước Hải" [ref_1620]
+ link "thuê căn hộ chung cư Phước Hải" [ref_1621] href="/cho-thue-can-ho-chung-cu-phuong-phuoc-hai"
+heading "Các câu hỏi thường gặp" [ref_1622]
+heading "Mức giá thuê chung cư thấp nhất tại Nha Trang là bao nhiêu?" [ref_1623]
+generic "Dựa trên dữ liệu thị trường, các căn hộ studio tại khu vực Vĩnh Phước (điển hình là Mường Thanh Viễn" [ref_1624]
+heading "Người thuê chung cư tại Nha Trang thường phải đặt cọc bao nhiêu?" [ref_1625]
+generic "Thông thường, các thỏa thuận sẽ yêu cầu đặt cọc từ 1 đến 2 tháng tiền thuê. Việc thanh toán tiền nhà" [ref_1626]
+heading "Chi phí quản lý khi thuê căn hộ chung cư tại Nha Trang được tính thế nào?" [ref_1627]
+generic "Phí quản lý tùy thuộc vào từng dự án cụ thể, dao động từ 5.000đ - 15.000đ/m2. Các chi phí khác như đ" [ref_1628]
+heading "Nên chọn khu vực nào để thuận tiện đi lại và gần biển?" [ref_1629]
+generic "Phường Lộc Thọ và Phường Vĩnh Hòa là những lựa chọn đáng cân nhắc nếu bạn ưu tiên vị trí gần biển và" [ref_1630]
+button [ref_1631] type="button"
+ generic "Xem thêm" [ref_1632]
+button [ref_1633] type="button"
+ generic "Thu gọn" [ref_1634]
+heading "Thông tin cho thuê căn hộ chung cư Nha Trang" [ref_1635]
+table [ref_1636]
+ generic "Khoảng giá tham khảo" [ref_1637]
+ generic "6.3 - 37,3 tr/tháng" [ref_1638]
+ generic "Diện tích phổ biến" [ref_1639]
+ generic "25 - 116 m²" [ref_1640]
+ generic "Khu vực cho thuê nhiều, phổ biến" [ref_1641]
+ generic "Lộc Thọ, Phước Hải, Tân Tiến, Vĩnh Phước, Phước Long" [ref_1642]
+ generic "Số lượng" [ref_1643]
+ generic "112 căn" [ref_1644]
+ generic "Cập nhật tin đăng gần đây nhất" [ref_1645]
+ generic "15-08-2026, 15:11" [ref_1646]
+generic "Nha Trang không chỉ là thành phố du lịch biển nổi tiếng mà còn là nơi đáng sống với hệ thống hạ tầng" [ref_1647]
+ link "thuê chung cư Nha Trang" [ref_1648] href="https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+heading "Thị trường cho thuê chung cư Nha Trang" [ref_1649]
+generic "Thị trường thuê chung cư đang diễn ra rất sôi động nhờ sự phục hồi mạnh mẽ của du lịch và nhu cầu a." [ref_1650]
+ link "Nha Trang" [ref_1651] href="https://vi.wikipedia.org/wiki/Nha_Trang"
+generic "Về vị trí, các dự án chủ yếu tập trung dọc cung đường biển Trần Phú, Phạm Văn Đồng và các khu đô thị" [ref_1652]
+generic "Sau sáp nhập ngày 01/7/2025, Thành phố Nha Trang được sắp xếp lại thành các phường: Nha Trang, Bắc N" [ref_1653]
+ generic "Lưu ý:" [ref_1654]
+heading "Các lựa chọn cho thuê căn hộ chung cư Nha Trang theo khu vực" [ref_1655]
+generic "Tùy vào khả năng tài chính và mục đích sử dụng, bạn có thể cân nhắc các khu vực trọng điểm sau để ch" [ref_1656]
+list [ref_1657]
+ listitem ": Đây là khu vực trung tâm sầm uất, tập trung các dự án mặt biển với tầm nhìn đắt giá. Giá thuê dao " [ref_1658]
+  link "Thuê chung cư Phường Lộc Thọ Nha Trang" [ref_1659] href="https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-loc-tho"
+ listitem ": Khu vực phía Bắc thành phố với ưu thế về giá thành cạnh tranh, phù hợp cho sinh viên và người đi l" [ref_1660]
+  link "Thuê chung cư Phường Vĩnh Phước Nha Trang" [ref_1661] href="https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-vinh-phuoc"
+ listitem ": Không gian yên tĩnh tại các khu đô thị mới, rất đáng cân nhắc cho hộ gia đình. Giá thuê khoảng 8 -" [ref_1662]
+  link "Thuê chung cư Phường Phước Hải Nha Trang" [ref_1663] href="https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-phuoc-hai"
+ listitem ": Vị trí thuận lợi di chuyển, tập trung nhiều căn hộ hiện đại. Giá thuê dao động 10 - 18 triệu đồng/" [ref_1664]
+  link "Thuê chung cư Phường Tân Tiến Nha Trang" [ref_1665] href="https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-tan-tien_1"
+ listitem ": Gần khu vực chợ Đầm, thuận tiện cho việc sinh hoạt và mua sắm hàng ngày. Giá thuê từ 9 - 16 triệu " [ref_1666]
+  link "Thuê chung cư Phường Vạn Thạnh Nha Trang" [ref_1667] href="https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-van-thanh-1"
+ listitem ": Khu vực đang phát triển mạnh mẽ với các tổ hợp căn hộ cao cấp gần bến du thuyền. Giá thuê từ 10 - " [ref_1668]
+  link "Thuê chung cư Phường Vĩnh Hòa Nha Trang" [ref_1669] href="https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-vinh-hoa-2"
+heading "Các lựa chọn cho thuê chung cư Nha Trang theo số phòng ngủ" [ref_1670]
+generic "Việc lựa chọn diện tích căn hộ phụ thuộc lớn vào số lượng thành viên trong gia đình:" [ref_1671]
+list [ref_1672]
+ listitem ": Thường là các căn Studio hoặc 1PN diện tích 40-50m2, phù hợp cho người độc thân. Giá thuê: 7 - 12 " [ref_1673]
+  link "Thuê chung cư Nha Trang 1 phòng ngủ" [ref_1674] href="https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh/1pn"
+[output truncated at 90000 of 114037 characters. Pass a larger max_chars (default 50000) to see more, or use ref_id or a smaller depth to focus.]
+
+Viewport: 1707x842

@@ -1,0 +1,10 @@
+[out:json][timeout:90];
+(
+  relation["boundary"="administrative"]["name"="Phường Phan Thiết"](10.85,108.05,11.02,108.35);
+  relation["boundary"="administrative"]["name"="Phường Bình Thuận"](10.85,108.05,11.02,108.35);
+  relation["boundary"="administrative"]["name"="Phường Phú Thủy"](10.85,108.05,11.02,108.35);
+  relation["boundary"="administrative"]["name"="Phường Mũi Né"](10.85,108.05,11.02,108.35);
+  relation["boundary"="administrative"]["name"="Phường Tiến Thành"](10.85,108.05,11.02,108.35);
+  relation["boundary"="administrative"]["name"="Phường Hàm Thắng"](10.85,108.05,11.02,108.35);
+);
+out geom;

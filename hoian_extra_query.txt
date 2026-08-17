@@ -1,0 +1,5 @@
+[out:json][timeout:60];
+(
+  relation["boundary"="administrative"]["name"="Phường Hội An"](15.83,108.28,15.93,108.38);
+);
+out geom;

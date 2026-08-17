@@ -1,0 +1,9 @@
+[out:json][timeout:90];
+(
+  relation["boundary"="administrative"]["name"="Phường Quy Nhơn"](13.72,109.13,13.85,109.30);
+  relation["boundary"="administrative"]["name"="Phường Quy Nhơn Đông"](13.72,109.13,13.85,109.30);
+  relation["boundary"="administrative"]["name"="Phường Quy Nhơn Tây"](13.72,109.13,13.85,109.30);
+  relation["boundary"="administrative"]["name"="Phường Quy Nhơn Nam"](13.72,109.13,13.85,109.30);
+  relation["boundary"="administrative"]["name"="Phường Quy Nhơn Bắc"](13.72,109.13,13.85,109.30);
+);
+out geom;

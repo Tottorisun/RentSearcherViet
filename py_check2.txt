@@ -1,0 +1,4 @@
+vung-tau: [('rd', 'Phường Rạch Dừa'), ('vtp', 'Phường Vũng Tàu'), ('pth', 'Phường Phước Thắng'), ('tth', 'Phường Tam Thắng')]
+quy-nhon: [('qnt', 'Phường Quy Nhơn Tây'), ('qnn', 'Phường Quy Nhơn Nam'), ('qnd', 'Phường Quy Nhơn Đông'), ('qnb', 'Phường Quy Nhơn Bắc'), ('qn', 'Phường Quy Nhơn')]
+hoi-an: [('ha', 'Phường Hội An'), ('hat', 'Phường Hội An Tây'), ('had', 'Phường Hội An Đông')]
+phan-thiet: [('mn', 'Phường Mũi Né'), ('put', 'Phường Phú Thủy'), ('pt', 'Phường Phan Thiết'), ('bt', 'Phường Bình Thuận'), ('tt', 'Phường Tiến Thành'), ('hth', 'Phường Hàm Thắng')]

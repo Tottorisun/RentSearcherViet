@@ -1,0 +1,8 @@
+[out:json][timeout:90];
+(
+  relation["boundary"="administrative"]["name"="Phường Vũng Tàu"](10.28,107.02,10.42,107.14);
+  relation["boundary"="administrative"]["name"="Phường Tam Thắng"](10.28,107.02,10.42,107.14);
+  relation["boundary"="administrative"]["name"="Phường Rạch Dừa"](10.28,107.02,10.42,107.14);
+  relation["boundary"="administrative"]["name"="Phường Phước Thắng"](10.28,107.02,10.42,107.14);
+);
+out geom;
