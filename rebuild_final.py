@@ -2544,6 +2544,15 @@ L(848,"ho-chi-minh","tm","Квартира",30000000,80,
   "2-спальная квартира 80 м², 2 с/у, ЖК Midtown (кластер Hưng Phúc/Midtown/StarHill), Phú Mỹ Hưng. Полная премиум-меблировка, вид на бассейн и реку. Рядом Crescent Mall, мост Cầu Ánh Sao, международные школы.",
   "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-tan-phu-19-midtown-phu-my-hung/cho-1pn-2pn-3pn-view-ep-nhan-nha-ngay-pr46196496","сегодня",0,source="batdongsan",
   details={"contact":"Ngọc Mai","notice":"у агента есть и другие варианты в том же кластере (1-3-спальные, посуточно и на длительный срок). Цена 30 млн ₫ подтверждена дважды — в карточке выдачи и в блоке «Khoảng giá»."}),
+L(849,"ho-chi-minh","th","Студия",5800000,35,
+  "Студия 35 м² с балконом, ул. Trần Xuân Soạn, Tân Hưng. Полная премиум-меблировка: кровать, шкаф, кондиционер, холодильник, кухонный гарнитур, водонагреватель, отдельная стиральная машина. Рядом SC VivoCity, Lotte Mart Q7, Crescent Mall, международные школы, госпиталь FV.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134189594.htm","вчера",1,source="chotot",
+  details={"contact":"Nhật Thiên Airways Unitegroup"}),
+
+L(850,"ho-chi-minh","th","Дом",13000000,50,
+  "Дом целиком, цоколь + 1 этаж, 2 комнаты, 50 м², в районе Kiều Đàm на ул. Trần Xuân Soạn, Tân Hưng. Широкий подъезд (заезд на машине/грузовике свободно), тихий безопасный квартал. Подходит для семьи или под небольшой офис.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/133166016.htm","сегодня",0,source="chotot",
+  details={"contact":"Hoàng Duy"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
