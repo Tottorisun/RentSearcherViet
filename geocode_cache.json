@@ -1480,5 +1480,30 @@
   "display_name": "Chung cư Hoàng Anh Gia Lai 1, Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam"
  },
  "Phường Nguyễn Thái Bình, Ho Chi Minh City, Vietnam": null,
- "Phường Nguyễn Thái Bình, Phường Bến Thành, Ho Chi Minh City, Vietnam": null
+ "Phường Nguyễn Thái Bình, Phường Bến Thành, Ho Chi Minh City, Vietnam": null,
+ "Chợ Tân Mỹ, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7364452,
+  "lon": 106.7187278,
+  "display_name": "Chợ Tân Mỹ, Đường Số 8, Phường Tân Mỹ, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "Tân Kiểng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7549518,
+  "lon": 106.6776402,
+  "display_name": "Đình Tân Kiểng, 718-728, Đường Trần Hưng Đạo, Khu phố 12, Phường Chợ Quán, Thành phố Hồ Chí Minh, 72760, Việt Nam"
+ },
+ "Ký Con, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7690361,
+  "lon": 106.6967122,
+  "display_name": "Ký Con, Khu phố 15, Phường Bến Thành, Thành phố Hồ Chí Minh, 71010, Việt Nam"
+ },
+ "Lê Thị Hồng Gấm, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7688313,
+  "lon": 106.6974998,
+  "display_name": "Lê Thị Hồng Gấm, Khu phố 15, Phường Bến Thành, Thành phố Hồ Chí Minh, 71010, Việt Nam"
+ },
+ "Hoàng Anh Gia Lai 2, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7508657,
+  "lon": 106.6996116,
+  "display_name": "Hoàng Anh Gia Lai 2, Trần Xuân Soạn, Khu phố 5, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72911, Việt Nam"
+ }
 }
