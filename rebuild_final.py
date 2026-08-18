@@ -2553,6 +2553,35 @@ L(850,"ho-chi-minh","th","Дом",13000000,50,
   "Дом целиком, цоколь + 1 этаж, 2 комнаты, 50 м², в районе Kiều Đàm на ул. Trần Xuân Soạn, Tân Hưng. Широкий подъезд (заезд на машине/грузовике свободно), тихий безопасный квартал. Подходит для семьи или под небольшой офис.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/133166016.htm","сегодня",0,source="chotot",
   details={"contact":"Hoàng Duy"}),
+L(851,"ho-chi-minh","th","Комната",5000000,20,
+  "Комната 20 м² в квартире-студии на ул. Trần Xuân Soạn, Tân Hưng (рассчитана на 2 девушек). Полная меблировка: кровать, шкаф, кондиционер, стиральная машина, кухня, окно. Тихий безопасный район, рядом Đại học Tôn Đức Thắng, Lotte Mart, остановки автобусов на Q1/Q4. Цена включает все платежи, торг возможен.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134219542.htm","сегодня",0,source="chotot",
+  details={"contact":"Phượng Trần (Phoenix Trần)"}),
+
+L(852,"ho-chi-minh","th","Квартира",20000000,76,
+  "Квартира 2 спальни/2 санузла, 76 м², в ЖК Sunrise City View, ул. Nguyễn Hữu Thọ, Tân Hưng. Полная меблировка, просторный балкон с открытым видом. Сдаёт собственник напрямую. 10-15 минут до центральных районов города.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134218619.htm","сегодня",0,source="chotot",
+  details={"contact":"Căn hộ giá tốt Quận 4"}),
+
+L(853,"ho-chi-minh","th","Студия",4800000,50,
+  "Новая мансардная студия (gác/лофт с окном) 50 м² на ул. Nguyễn Hữu Thọ, Tân Hưng. Полностью новая мебель, бесплатный бассейн и спортзал в комплексе, охраняемая вилла-зона. Рядом ДТУ, RMIT, NTTU — позиционируется под студентов.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134218187.htm","сегодня",0,source="chotot",
+  details={"contact":"Auren T Nguyen"}),
+
+L(854,"ho-chi-minh","th","Студия",6300000,30,
+  "Квартира-студия 30 м² с балконом на Đường số 33, Tân Kiểng, Tân Hưng. Полная меблировка. Рядом Lâm Văn Bền, Trần Xuân Soạn, Nguyễn Thị Thập — 10-15 минут до Đại học Tôn Đức Thắng и RMIT.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134218081.htm","сегодня",0,source="chotot",
+  details={"contact":"Mẫn Nhi"}),
+
+L(855,"ho-chi-minh","th","Дом",25000000,72,
+  "Дом целиком, 1 этаж + 2 надстройки, 4 спальни/3 санузла, 4x18 м (72 м²), фасад на переулочной улице в районе Tân Kiểng (старое название части Tân Hưng), Q7. Подходит и для жилья, и под небольшой офис компании.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134218405.htm","сегодня",0,source="chotot",
+  details={"contact":"NGUYỄN HOA"}),
+
+L(856,"ho-chi-minh","th","Студия",5200000,40,
+  "Дуплекс-студия 40 м² на Đường số 79, Tân Hưng. Полная меблировка, отдельная стиральная машина, просторная комната. Отдельный вход, свободный график. Рядом Lotte Mart, Crescent Mall, КЭЗ Tân Thuận, RMIT, ДТУ, удобно до Q1/Q4.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134219039.htm","сегодня",0,source="chotot",
+  details={"contact":"Dương Cần"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
