@@ -3784,5 +3784,107 @@
   "lon": 106.6915513,
   "source": "geocode",
   "matched": "Trần Xuân Soạn"
+ },
+ "817": {
+  "lat": 10.7707391,
+  "lon": 106.6938394,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Nghĩa"
+ },
+ "818": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "819": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "820": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "geocode",
+  "matched": "Số 30"
+ },
+ "821": {
+  "lat": 10.7405653,
+  "lon": 106.704148,
+  "source": "geocode",
+  "matched": "Hoàng Anh Gia Lai"
+ },
+ "822": {
+  "lat": 10.8273371,
+  "lon": 106.7368775,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "823": {
+  "lat": 10.8073843,
+  "lon": 106.7308879,
+  "source": "geocode",
+  "matched": "Quốc Hương"
+ },
+ "824": {
+  "lat": 10.7703806,
+  "lon": 106.6951066,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "825": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "826": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "827": {
+  "lat": 10.7474719,
+  "lon": 106.7074078,
+  "source": "geocode",
+  "matched": "Phan Huy Thực"
+ },
+ "828": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "829": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "830": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "831": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
+ },
+ "832": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
+ },
+ "833": {
+  "lat": 10.7878232,
+  "lon": 106.7343792,
+  "source": "geocode",
+  "matched": "Lương Định Của"
  }
 }

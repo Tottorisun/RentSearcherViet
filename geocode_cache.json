@@ -1458,5 +1458,27 @@
   "lat": 10.7796343,
   "lon": 106.6626801,
   "display_name": "Hồng Lĩnh, Khu phố 15, Phường Hòa Hưng, Thành phố Hồ Chí Minh, 72117, Việt Nam"
- }
+ },
+ "Nguyễn Thị Nghĩa, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7707391,
+  "lon": 106.6938394,
+  "display_name": "Nguyễn Thị Nghĩa, Khu phố 3, Phường Bến Thành, Thành phố Hồ Chí Minh, 71009, Việt Nam"
+ },
+ "Số 30, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7463863,
+  "lon": 106.619305,
+  "display_name": "30, Đường số 11, Khu phố 19, Phường An Lạc, Thành phố Hồ Chí Minh, 73118, Việt Nam"
+ },
+ "Số 30, Phường Tân Hưng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "display_name": "Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Hoàng Anh Gia Lai, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7405653,
+  "lon": 106.704148,
+  "display_name": "Chung cư Hoàng Anh Gia Lai 1, Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Phường Nguyễn Thái Bình, Ho Chi Minh City, Vietnam": null,
+ "Phường Nguyễn Thái Bình, Phường Bến Thành, Ho Chi Minh City, Vietnam": null
 }
