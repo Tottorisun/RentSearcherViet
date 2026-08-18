@@ -17,10 +17,10 @@ try {
     if (-not $prompt) { throw "Prompt file was empty or unreadable: $promptFile" }
 
     $claudeExe = "$env:USERPROFILE\.local\bin\claude.exe"
-    $prompt | & $claudeExe -p --permission-mode dontAsk *>&1 | Tee-Object -FilePath $logFile
+    $prompt | & $claudeExe -p --permission-mode dontAsk *>&1 | Tee-Object -FilePath $logFile -Encoding utf8
 }
 catch {
-    $_ | Out-String | Tee-Object -FilePath $logFile -Append
-    "SCRIPT ERROR: $($_.Exception.Message)" | Tee-Object -FilePath $logFile -Append
+    $_ | Out-String | Tee-Object -FilePath $logFile -Append -Encoding utf8
+    "SCRIPT ERROR: $($_.Exception.Message)" | Tee-Object -FilePath $logFile -Append -Encoding utf8
     exit 1
 }
