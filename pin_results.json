@@ -4132,5 +4132,245 @@
   "lon": 106.7316206,
   "source": "geocode",
   "matched": "Phú Mỹ"
+ },
+ "889": {
+  "lat": 11.9524083,
+  "lon": 108.4418061,
+  "source": "geocode",
+  "matched": "Xuân Hương"
+ },
+ "890": {
+  "lat": 11.9689167,
+  "lon": 108.446046,
+  "source": "geocode",
+  "matched": "Trần Quang Khải"
+ },
+ "891": {
+  "lat": 11.9315654,
+  "lon": 108.4235435,
+  "source": "geocode",
+  "matched": "Ngô Thì Sỹ"
+ },
+ "892": {
+  "lat": 11.9518069,
+  "lon": 108.4659247,
+  "source": "geocode",
+  "matched": "Phan Chu Trinh"
+ },
+ "893": {
+  "lat": 11.9411339,
+  "lon": 108.4620494,
+  "source": "geocode",
+  "matched": "Phường 6"
+ },
+ "894": {
+  "lat": 11.9518069,
+  "lon": 108.4659247,
+  "source": "geocode",
+  "matched": "Phan Chu Trinh"
+ },
+ "895": {
+  "lat": 11.9551084,
+  "lon": 108.4278294,
+  "source": "geocode",
+  "matched": "Phan Đình Giót"
+ },
+ "896": {
+  "lat": 11.9546627,
+  "lon": 108.4341194,
+  "source": "geocode",
+  "matched": "Cổ Loa"
+ },
+ "897": {
+  "lat": 11.9518548,
+  "lon": 108.4359271,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "898": {
+  "lat": 11.946116,
+  "lon": 108.5014597,
+  "source": "geocode",
+  "matched": "Trại Mát"
+ },
+ "899": {
+  "lat": 11.9524083,
+  "lon": 108.4418061,
+  "source": "geocode",
+  "matched": "Phường 10"
+ },
+ "900": {
+  "lat": 11.9658203,
+  "lon": 108.4275081,
+  "source": "geocode",
+  "matched": "Đinh Công Tráng"
+ },
+ "901": {
+  "lat": 11.9524083,
+  "lon": 108.4418061,
+  "source": "geocode",
+  "matched": "Xuân Hương"
+ },
+ "902": {
+  "lat": 16.0114033,
+  "lon": 108.2541917,
+  "source": "geocode",
+  "matched": "Hải Triều"
+ },
+ "903": {
+  "lat": 16.0700623,
+  "lon": 108.2364217,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "904": {
+  "lat": 16.0495348,
+  "lon": 108.2443888,
+  "source": "geocode",
+  "matched": "An Thượng"
+ },
+ "905": {
+  "lat": 16.0633626,
+  "lon": 108.2361658,
+  "source": "geocode",
+  "matched": "Lương Thế Vinh"
+ },
+ "906": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "907": {
+  "lat": 16.0916548,
+  "lon": 108.1359341,
+  "source": "geocode",
+  "matched": "Bàu Tràm"
+ },
+ "908": {
+  "lat": 16.1104518,
+  "lon": 108.132495,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
+ },
+ "909": {
+  "lat": 16.0713595,
+  "lon": 108.2302588,
+  "source": "geocode",
+  "matched": "Vincom Plaza"
+ },
+ "910": {
+  "lat": 16.0589539,
+  "lon": 108.2194844,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "911": {
+  "lat": 16.0613692,
+  "lon": 108.2199779,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "912": {
+  "lat": 16.0273168,
+  "lon": 108.2568994,
+  "source": "geocode",
+  "matched": "Crowne Plaza"
+ },
+ "913": {
+  "lat": 16.0936951,
+  "lon": 108.2449065,
+  "source": "geocode",
+  "matched": "Phan Bá Phiến"
+ },
+ "914": {
+  "lat": 16.0586332,
+  "lon": 108.2060893,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "915": {
+  "lat": 16.009196,
+  "lon": 108.1985454,
+  "source": "geocode",
+  "matched": "Cống Quỳnh"
+ },
+ "916": {
+  "lat": 16.0009136,
+  "lon": 108.2657907,
+  "source": "geocode",
+  "matched": "Mộc Sơn 2"
+ },
+ "917": {
+  "lat": 16.0683504,
+  "lon": 108.1967703,
+  "source": "geocode",
+  "matched": "Thái Thị Bôi"
+ },
+ "918": {
+  "lat": 16.0426615,
+  "lon": 108.245486,
+  "source": "geocode",
+  "matched": "Chế Lan Viên"
+ },
+ "919": {
+  "lat": 16.0502882,
+  "lon": 108.2354624,
+  "source": "geocode",
+  "matched": "Phạm Hữu Kính"
+ },
+ "920": {
+  "lat": 16.0324826,
+  "lon": 108.1152478,
+  "source": "geocode",
+  "matched": "Nam Việt"
+ },
+ "921": {
+  "lat": 10.3400678,
+  "lon": 107.0928148,
+  "source": "geocode",
+  "matched": "Thùy Vân"
+ },
+ "922": {
+  "lat": 10.3900545,
+  "lon": 107.1124023,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "923": {
+  "lat": 10.348189,
+  "lon": 107.0753349,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "924": {
+  "lat": 10.3900545,
+  "lon": 107.1124023,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "925": {
+  "lat": 10.348189,
+  "lon": 107.0753349,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "926": {
+  "lat": 13.7700566,
+  "lon": 109.2317824,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "927": {
+  "lat": 13.7700566,
+  "lon": 109.2317824,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "928": {
+  "lat": 13.7671012,
+  "lon": 109.2268142,
+  "source": "geocode",
+  "matched": "Nguyễn Huệ"
  }
 }

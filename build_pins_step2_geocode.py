@@ -10,7 +10,8 @@ m = re.search(r'var DATA = (\{.*?\});\s*\n', html, re.S)
 data = json.loads(m.group(1))
 listings = data["LISTINGS"]
 
-CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City"}
+CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City",
+           "vung-tau":"Vung Tau","quy-nhon":"Quy Nhon","phan-thiet":"Phan Thiet"}
 DIST_NAME = {}
 for ckey, cval in data["CITIES"].items():
     for d in cval["districts"]:

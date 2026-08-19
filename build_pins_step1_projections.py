@@ -99,16 +99,34 @@ HA_KEYS = {"Phường Hội An":"ha","Phường Hội An Đông":"had","Phườn
 HCMC_NAMES = ["Phường Tân Mỹ","Phường Tân Hưng","Phường An Khánh","Phường Bình Trưng","Phường Bình Quới","Phường Bến Thành","Phường Khánh Hội"]
 HCMC_KEYS = {"Phường Tân Mỹ":"tm","Phường Tân Hưng":"th","Phường An Khánh":"ak","Phường Bình Trưng":"btr","Phường Bình Quới":"bq","Phường Bến Thành":"bth","Phường Khánh Hội":"kh"}
 
+# Added so vung-tau / quy-nhon / phan-thiet listings get real geocode/ward-centroid resolution too
+# (previously missing here — those 3 cities' first-ever listings landed with lat/lon=null because
+# this projections file only covered da-lat/da-nang/hoi-an/ho-chi-minh; nha-trang is handled by a
+# separate mosaic-jitter script). Names/keys match build_leaflet_data.py's VT_NAMES/QN_NAMES/PT_NAMES
+# exactly so ward centroids line up with the already-built ward polygons.
+VT_NAMES = ["Phường Vũng Tàu","Phường Tam Thắng","Phường Rạch Dừa","Phường Phước Thắng"]
+VT_KEYS = {"Phường Vũng Tàu":"vtp","Phường Tam Thắng":"tth","Phường Rạch Dừa":"rd","Phường Phước Thắng":"pth"}
+QN_NAMES = ["Phường Quy Nhơn","Phường Quy Nhơn Đông","Phường Quy Nhơn Tây","Phường Quy Nhơn Nam","Phường Quy Nhơn Bắc"]
+QN_KEYS = {"Phường Quy Nhơn":"qn","Phường Quy Nhơn Đông":"qnd","Phường Quy Nhơn Tây":"qnt","Phường Quy Nhơn Nam":"qnn","Phường Quy Nhơn Bắc":"qnb"}
+PT_NAMES = ["Phường Phan Thiết","Phường Bình Thuận","Phường Phú Thủy","Phường Mũi Né","Phường Tiến Thành","Phường Hàm Thắng"]
+PT_KEYS = {"Phường Phan Thiết":"pt","Phường Bình Thuận":"bt","Phường Phú Thủy":"put","Phường Mũi Né":"mn","Phường Tiến Thành":"tt","Phường Hàm Thắng":"hth"}
+
 dl_elements = load("dalat_overpass.json")["elements"]
 dn_elements = load("danang_overpass.json")["elements"]
 ha_elements = load("hoian_extra_overpass.json")["elements"] + load("danang_overpass.json")["elements"]
 hcmc_elements = load("hcmc_overpass.json")["elements"] + load("hcmc_extra_overpass.json")["elements"]
+vt_elements = load("vungtau_overpass.json")["elements"]
+qn_elements = load("quynhon_overpass.json")["elements"]
+pt_elements = load("phanthiet_overpass.json")["elements"]
 
 result = {
     "da-lat": build_projection(dl_elements, DL_NAMES, DL_KEYS),
     "da-nang": build_projection(dn_elements, DN_NAMES, DN_KEYS),
     "hoi-an": build_projection(ha_elements, HA_NAMES, HA_KEYS),
     "ho-chi-minh": build_projection(hcmc_elements, HCMC_NAMES, HCMC_KEYS),
+    "vung-tau": build_projection(vt_elements, VT_NAMES, VT_KEYS),
+    "quy-nhon": build_projection(qn_elements, QN_NAMES, QN_KEYS),
+    "phan-thiet": build_projection(pt_elements, PT_NAMES, PT_KEYS),
 }
 
 with open("pin_projections.json", "w", encoding="utf-8") as f:
