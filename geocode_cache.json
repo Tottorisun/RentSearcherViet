@@ -1712,5 +1712,17 @@
   "lat": 13.7671012,
   "lon": 109.2268142,
   "display_name": "Nguyễn Huệ, Tổ dân phố 14, Phường Quy Nhơn, Quy Nhơn, Tỉnh Gia Lai, 55106, Việt Nam"
+ },
+ "New City Thủ Thiêм, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7813043,
+  "lon": 106.7356449,
+  "display_name": "New City Thủ Thiêm, Phường An Khánh, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Sunshine Sky City, Ho Chi Minh City, Vietnam": null,
+ "Sunshine Sky City, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null,
+ "Phú Thuận, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7311388,
+  "lon": 106.7351885,
+  "display_name": "Phường Phú Thuận, Nhà Bè, Thành phố Hồ Chí Minh, Việt Nam"
  }
 }

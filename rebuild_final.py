@@ -2934,6 +2934,50 @@ L(928,"quy-nhon","qn","Дом",3200000,40,
   "Дом с мезонином в переулке от ул. Nguyễn Huệ, рядом с провинциальной больницей, рынком и Университетом Куинён. Несколько шагов до моря.",
   "https://www.nhatot.com/thue-nha-dat-thanh-pho-qui-nhon-binh-dinh/134220484.htm","вчера",1,source="chotot",
   details={"contact":"Chị Quỳnh"}),
+L(929,"ho-chi-minh","th","Квартира",10000000,98,
+  "2-спальная квартира (2 с/у) в ЖК Hoàng Anh 2, ул. Trần Xuân Soạn (д.783), Tân Hưng, Q7. Высокий этаж, светлая, меблировка в наличии.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134237102.htm","сегодня",0,source="chotot",
+  details={"notice":"рядом крупные вузы, удобно до Q1/Q4/Q8","contact":"N.Phương"}),
+
+L(930,"ho-chi-minh","th","Квартира",9400000,50,
+  "2-спальная квартира целиком, ул. Trần Xuân Soạn (д.1041), Tân Hưng, Q7, рядом KDC Him Lam. Полная меблировка, своя стиральная машина.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134237670.htm","сегодня",0,source="chotot",
+  details={"amenities":"рядом Lotte Mart, SC VivoCity, ТDTU/RMIT","contact":"Phú (Thanh Phú HiFriendz)"}),
+
+L(931,"ho-chi-minh","kh","Квартира",19000000,65,
+  "2-спальная квартира (2 с/у) в ЖК Millennium, Q4, рядом центр Q1 и рынок. Полная меблировка, заезд сразу.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134209596.htm","вчера",1,source="chotot",
+  details={"contact":"Ngân"}),
+
+L(932,"ho-chi-minh","kh","Квартира",20000000,75,
+  "2-спальная квартира (2 с/у) в ЖК Millennium, ул. Bến Vân Đồn (д.138), Q4, у моста Calmette рядом Q1. Вид на город.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/133116832.htm","вчера",1,source="chotot",
+  details={"amenities":"бассейн, спортзал, ресторан в комплексе","contact":"Việt Hoàng"}),
+
+L(933,"ho-chi-minh","tm","Квартира",7200000,50,
+  "1-спальная квартира с полной меблировкой прямо у рынка Tân Mỹ, рядом Phú Mỹ Hưng, Q7. Отдельная спальня, заезд сразу.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134205509.htm","вчера",1,source="chotot",
+  details={"contact":"Linh"}),
+
+L(934,"ho-chi-minh","ak","Квартира",15000000,51,
+  "1-спальная квартира в ЖК New City Thủ Thiêм, Thủ Đức. Полная современная меблировка, заезд сразу.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/134204593.htm","вчера",1,source="chotot",
+  details={"notice":"в объявлении внутреннее расхождение: заголовок и поле «Thiết kế» указывают 1 спальню, но один абзац текста ошибочно упоминает 2 — использовано устойчивое значение (1 спальня)","contact":"Trang"}),
+
+L(935,"ho-chi-minh","tm","Квартира",28000000,84,
+  "Угловая 2-спальная квартира (2 с/у) в ЖК The Ascentia, Phú Mỹ Hưng, Q7. Премиальная меблировка, светлая, естественная вентиляция. Бассейн, спортзал, лаунж, зона барбекю, охрана 24/7.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134195347.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Hoàng Trúc Loan"}),
+
+L(936,"ho-chi-minh","tm","Дом",16000000,52,
+  "Дом целиком, полная качественная меблировка, ул. Huỳnh Tấn Phát, Tân Phú/Tân Mỹ, Q7. 2 спальни, гостиная, кухня-столовая, 2 с/у, ТВ 65\".",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134196283.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Mr Ngọc"}),
+
+L(937,"ho-chi-minh","tm","Квартира",23000000,132,
+  "4-спальная квартира (3 с/у, +кладовая) в ЖК Sunshine Sky City, 23 Phú Thuận, Tân Mỹ, Q7. 2 балкона, базовая меблировка (шторы, кондиционеры, водонагреватель, кухонный гарнитур с индукционной плитой). Освобождается с 15.09.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134176311.htm","3 дня назад",3,source="chotot",
+  details={"notice":"расхождение цены: структурное поле API отдаёт 22 000 000, но заголовок и текст объявления говорят «23tr/thương lượng» — использована цена из текста (торг возможен)","contact":"Nhung"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
