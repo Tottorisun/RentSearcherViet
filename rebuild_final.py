@@ -2582,6 +2582,25 @@ L(856,"ho-chi-minh","th","Студия",5200000,40,
   "Дуплекс-студия 40 м² на Đường số 79, Tân Hưng. Полная меблировка, отдельная стиральная машина, просторная комната. Отдельный вход, свободный график. Рядом Lotte Mart, Crescent Mall, КЭЗ Tân Thuận, RMIT, ДТУ, удобно до Q1/Q4.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134219039.htm","сегодня",0,source="chotot",
   details={"contact":"Dương Cần"}),
+L(857,"ho-chi-minh","bth","Студия",6500000,40,
+  "Меблированная мини-квартира (студия) 40 м² на ул. Bùi Viện, Bến Thành. Новая мебель, wifi, свободный график заселения. Рядом ĐH Khoa học Tự nhiên, ĐH Sư phạm, развлекательный квартал Bùi Viện.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134211907.htm","вчера",1,source="chotot",
+  details={"contact":"Minh Khang"}),
+
+L(858,"ho-chi-minh","th","Квартира",6000000,45,
+  "1-спальная квартира с балконом, 45 м², в КДЦ Him Lam, ул. số 9, Tân Hưng. Полная меблировка: кровать, шкаф, диван, кондиционер, холодильник, кухня, водонагреватель, стиральная машина. Охраняемый комплекс, камеры 24/7, паркинг. Рядом RMIT, ĐH Tôn Đức Thắng, Crescent Mall, SC VivoCity, Lotte Mart Q7, до Q1/Q4/Q5 несколько минут.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133616242.htm","вчера",1,source="chotot",
+  details={"contact":"Quang Vũ Unite"}),
+
+L(859,"ho-chi-minh","th","Дом",13500000,80,
+  "Дом (nhà cấp 4) на ул. số 12, старый район Tân Quy (сейчас часть Tân Hưng), Q7. Участок 4x20 м (80 м²), 1 спальня/1 санузел, кондиционер, задний двор с видом на реку. Новый ремонт, торг возможен.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134188757.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Ngọc Trang"}),
+
+L(860,"ho-chi-minh","ak","Дом",80000000,250,
+  "Вилла целиком на ул. Nguyễn Văn Hưởng, центр Thảo Điền. Участок 10x25 м (250 м²), цоколь + 1 этаж + 3 этажа, 5 спален, у каждой свой санузел, сад. Полная меблировка, можно заезжать сразу. Цена указана в объявлении как 3200 USD/мес (≈80 млн ₫ по текущему курсу). Подходит для семьи или экспатов, также предлагается под офис представительства компании.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-thu-duc-tp-ho-chi-minh/133799419.htm","3 дня назад",2,source="chotot",
+  details={"contact":"Phan Cường Rental D2","notice":"⚠ цена в объявлении дана в USD (3200 USD/мес), приведён пересчёт в донгах по текущему курсу."}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from

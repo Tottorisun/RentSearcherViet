@@ -4024,5 +4024,29 @@
   "lon": 106.7189174,
   "source": "geocode",
   "matched": "Crescent Mall"
+ },
+ "857": {
+  "lat": 10.7657414,
+  "lon": 106.6907571,
+  "source": "geocode",
+  "matched": "Bùi Viện"
+ },
+ "858": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "859": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "860": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
  }
 }

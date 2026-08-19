@@ -1507,5 +1507,10 @@
   "display_name": "Hoàng Anh Gia Lai 2, Trần Xuân Soạn, Khu phố 5, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72911, Việt Nam"
  },
  "Sunrise City View, Ho Chi Minh City, Vietnam": null,
- "Sunrise City View, Phường Tân Hưng, Ho Chi Minh City, Vietnam": null
+ "Sunrise City View, Phường Tân Hưng, Ho Chi Minh City, Vietnam": null,
+ "Tân Quy, Ho Chi Minh City, Vietnam": {
+  "lat": 10.8879673,
+  "lon": 106.778367,
+  "display_name": "Tân Quý, Phường Đông Hòa, Thành phố Hồ Chí Minh, 00084, Việt Nam"
+ }
 }
