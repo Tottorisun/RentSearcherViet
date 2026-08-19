@@ -2984,6 +2984,10 @@ L(937,"ho-chi-minh","tm","Квартира",23000000,132,
   "4-спальная квартира (3 с/у, +кладовая) в ЖК Sunshine Sky City, 23 Phú Thuận, Tân Mỹ, Q7. 2 балкона, базовая меблировка (шторы, кондиционеры, водонагреватель, кухонный гарнитур с индукционной плитой). Освобождается с 15.09.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134176311.htm","3 дня назад",3,source="chotot",
   details={"notice":"расхождение цены: структурное поле API отдаёт 22 000 000, но заголовок и текст объявления говорят «23tr/thương lượng» — использована цена из текста (торг возможен)","contact":"Nhung"}),
+L(938,"ho-chi-minh","th","Квартира",9000000,50,
+  "1-спальная квартира (1 с/у) с новой полной меблировкой, ул. Đường Số 79, Tân Hưng, Q7, рядом Lotte Mart. Светлая, отдельная кухня, естественная вентиляция.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133129867.htm","сегодня",0,source="chotot",
+  details={"contact":"Trịnh Hoàng Tâm"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
