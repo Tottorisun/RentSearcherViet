@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 import json, re
+import datetime
+
+RU_MONTHS_GENITIVE = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"]
+def ru_today_stamp():
+    d = datetime.date.today()
+    return f"{d.day} {RU_MONTHS_GENITIVE[d.month-1]} {d.year}"
 
 W = "."
 maps_data = json.load(open(W + "/maps_data.json", encoding="utf-8"))
@@ -3344,7 +3350,7 @@ HTML = r"""<meta charset="utf-8">
     </ul>
     <h3 style="margin-top:16px;" id="fb-groups-title">Facebook-группы по аренде</h3>
     <ul id="fb-groups-list"></ul>
-    <p class="stamp">Данные актуальны на 18 августа 2026 · объявления старше 30 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление.</p>
+    <p class="stamp">Данные актуальны на __TODAY_DATE__ · объявления старше 30 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление.</p>
   </footer>
 
 </div>
@@ -3833,6 +3839,7 @@ HTML = r"""<meta charset="utf-8">
 
 HTML = HTML.replace("__DATA_JSON__", DATA_JSON)
 HTML = HTML.replace("__LISTING_COUNT__", str(len(LISTINGS)))
+HTML = HTML.replace("__TODAY_DATE__", ru_today_stamp())
 
 out_path = W + "/vietnam-rent-finder.html"
 with open(out_path, "w", encoding="utf-8") as f:
