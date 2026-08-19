@@ -2988,6 +2988,55 @@ L(938,"ho-chi-minh","th","Квартира",9000000,50,
   "1-спальная квартира (1 с/у) с новой полной меблировкой, ул. Đường Số 79, Tân Hưng, Q7, рядом Lotte Mart. Светлая, отдельная кухня, естественная вентиляция.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133129867.htm","сегодня",0,source="chotot",
   details={"contact":"Trịnh Hoàng Tâm"}),
+L(939,"ho-chi-minh","th","Дом",15000000,100,
+  "Дом целиком (5×20-22м, 2 спальни, 2 с/у) на ул. Lâm Văn Bền, Tân Hưng, Q7. Подходит для жилья или под небольшой офис. Витринная дата API вводила в заблуждение (repush) — использован честный orig_list_time (~2 дня).",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134196586.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Nguyễn Hoa"}),
+
+L(940,"ho-chi-minh","tm","Квартира",14000000,65,
+  "2-спальная квартира (2 с/у) в River Panorama, Tân Mỹ (Phú Mỹ Hưng), Q7. Средний этаж, светлый вид, полная меблировка, готова к заселению.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/131760231.htm","2 часа назад",0,source="chotot",
+  details={"contact":"BDS Premium Sky (Minh Thành)"}),
+
+L(941,"ho-chi-minh","tm","Дом",45000000,140,
+  "Вилла в закрытом комплексе Green Star Hưng Lộc Phát рядом с Phú Mỹ Hưng, Tân Mỹ, Q7. Участок 7×20м (140м²), 1 этаж + 2 верхних, ориентация СЗ, документы HĐMB.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134238016.htm","2 часа назад",0,source="chotot",
+  details={"contact":"Xuyến Liễu"}),
+
+L(942,"ho-chi-minh","tm","Дом",12500000,48,
+  "Дом целиком (1 этаж+1 этаж, 4×12м, 2 спальни, 3 с/у) в переулке ул. Nguyễn Thị Thập рядом с рынком Tân Mỹ, Q7. С мебелью, подходит под жильё или небольшой офис.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/133909291.htm","10 часов назад",0,source="chotot",
+  details={"contact":"LHP"}),
+
+L(943,"ho-chi-minh","tm","Дом",7200000,25,
+  "Дом целиком (1 этаж+1 этаж, гостиная, 2 спальни, с/у, кухня) в широком переулке для машины, 730 Huỳnh Tấn Phát, Tân Mỹ, Q7. Рядом супермаркет GO! (бывший Big C) и рынок. Приоритет длительной аренде.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134228666.htm","9 часов назад",0,source="chotot",
+  details={"contact":"Tuấn Anh Land"}),
+
+L(944,"ho-chi-minh","ak","Квартира",25000000,72,
+  "2-спальная квартира (2 с/у, 71,6м²) в ЖК De Capella, 116 Lương Định Của, An Khánh (Thảo Điền), Thủ Đức. Полная меблировка. Ward подтверждён геокодингом адреса.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/134233963.htm","5 часов назад",0,source="chotot",
+  details={"contact":"Lê Thanh Trung"}),
+
+L(945,"ho-chi-minh","ak","Квартира",16000000,75,
+  "2-спальная квартира с дизайнерским ремонтом в Masteri Thảo Điền, An Khánh, Thủ Đức. Высокий этаж, вид на реку.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/126685241.htm","5 часов назад",0,source="chotot",
+  details={"contact":"Phương Nhi"}),
+
+L(946,"ho-chi-minh","kh","Квартира",17000000,77,
+  "2-спальная квартира (самая большая 2BR-планировка в комплексе) в Millennium на ул. Bến Vân Đồn, Khánh Hội, Q4. Высокий этаж, вид на Bitexco.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/126278417.htm","5 часов назад",0,source="chotot",
+  details={"contact":"Phương Nhi"}),
+
+L(947,"ho-chi-minh","kh","Студия",5500000,35,
+  "Студия с отдельной кухней (без запаха от соседей), своей стиральной машиной и большим окном, у моста Calmette (Bến Vân Đồn), Khánh Hội, Q4 — рядом Q1/Q3/Q10. Свободный график, без совместного проживания с хозяином. Цена за 1 чел. — 5,5 млн ₫, за 2 чел. — 7,5 млн ₫.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/132262424.htm","21 час назад",0,source="chotot",
+  details={"contact":"Duy Khoa Neway","occupancy_price":"1 чел. — 5,5 млн ₫, 2 чел. — 7,5 млн ₫"}),
+
+L(948,"ho-chi-minh","bth","Студия",6400000,30,
+  "Студия с отдельной кухней на ул. Phạm Ngũ Lão, Bến Thành, Q1 (между Bùi Viện и парком 23/9), 5 минут пешком до метро Bến Thành.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134226838.htm","10 часов назад",0,source="chotot",
+  details={"contact":"Huỳnh Kỳ Đức"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
