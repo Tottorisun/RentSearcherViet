@@ -4552,5 +4552,71 @@
   "lon": 106.7331692,
   "source": "geocode",
   "matched": "Trần Não"
+ },
+ "959": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "960": {
+  "lat": 10.7259257,
+  "lon": 106.7086694,
+  "source": "geocode",
+  "matched": "Nguyễn Đức Cảnh"
+ },
+ "961": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "962": {
+  "lat": 10.6928289,
+  "lon": 106.7172107,
+  "source": "geocode",
+  "matched": "Phạm Hữu Lầu"
+ },
+ "963": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "964": {
+  "lat": 10.7735586,
+  "lon": 106.7235711,
+  "source": "geocode",
+  "matched": "Mai Chí Thọ"
+ },
+ "965": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "966": {
+  "lat": 10.7860169,
+  "lon": 106.7343719,
+  "source": "geocode",
+  "matched": "Lưu Đình Lễ"
+ },
+ "967": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "968": {
+  "lat": 10.7688288,
+  "lon": 106.6948692,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Học"
+ },
+ "969": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
