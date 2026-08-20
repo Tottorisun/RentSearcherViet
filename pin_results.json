@@ -4810,5 +4810,269 @@
   "lon": 106.7185992,
   "source": "geocode",
   "matched": "Nguyễn Tất Thành"
+ },
+ "1002": {
+  "lat": 16.0691157,
+  "lon": 108.235859,
+  "source": "geocode",
+  "matched": "Tạ Mỹ Duật"
+ },
+ "1003": {
+  "lat": 15.9993863,
+  "lon": 108.2595986,
+  "source": "geocode",
+  "matched": "Lê Văn Hiến"
+ },
+ "1004": {
+  "lat": 16.0635336,
+  "lon": 108.2435983,
+  "source": "geocode",
+  "matched": "Võ Văn Kiệt"
+ },
+ "1005": {
+  "lat": 16.0268353,
+  "lon": 108.2449323,
+  "source": "geocode",
+  "matched": "Nguyễn Đình Chiểu"
+ },
+ "1006": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1007": {
+  "lat": 15.9983771,
+  "lon": 108.2132989,
+  "source": "geocode",
+  "matched": "Khu An Trung"
+ },
+ "1008": {
+  "lat": 16.0330141,
+  "lon": 108.240832,
+  "source": "geocode",
+  "matched": "Nguyễn Lữ"
+ },
+ "1009": {
+  "lat": 16.0683614,
+  "lon": 108.1067993,
+  "source": "geocode",
+  "matched": "Hoa Sơn 7"
+ },
+ "1010": {
+  "lat": 16.0505216,
+  "lon": 108.2449396,
+  "source": "geocode",
+  "matched": "An Thượng 17"
+ },
+ "1011": {
+  "lat": 16.011491,
+  "lon": 108.1974809,
+  "source": "geocode",
+  "matched": "Nguyễn Nhàn"
+ },
+ "1012": {
+  "lat": 16.0580234,
+  "lon": 108.2041012,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh 302"
+ },
+ "1013": {
+  "lat": 16.0330141,
+  "lon": 108.240832,
+  "source": "geocode",
+  "matched": "Nguyễn Lữ"
+ },
+ "1014": {
+  "lat": 16.0474266,
+  "lon": 108.2409063,
+  "source": "geocode",
+  "matched": "Tôn Thất Thiệp"
+ },
+ "1015": {
+  "lat": 16.0486822,
+  "lon": 108.245994,
+  "source": "geocode",
+  "matched": "Lê Quang Đạo 133"
+ },
+ "1016": {
+  "lat": 16.0382687,
+  "lon": 108.2445068,
+  "source": "geocode",
+  "matched": "Khuê Mỹ Đông 7"
+ },
+ "1017": {
+  "lat": 16.0357525,
+  "lon": 108.2253449,
+  "source": "geocode",
+  "matched": "Đoàn Khuê"
+ },
+ "1018": {
+  "lat": 15.9854536,
+  "lon": 108.2090339,
+  "source": "geocode",
+  "matched": "Phù Đổng"
+ },
+ "1019": {
+  "lat": 16.0495348,
+  "lon": 108.2443888,
+  "source": "geocode",
+  "matched": "An Thượng"
+ },
+ "1020": {
+  "lat": 16.0259385,
+  "lon": 108.2433416,
+  "source": "geocode",
+  "matched": "Tùng Thiện Vương"
+ },
+ "1021": {
+  "lat": 16.0259254,
+  "lon": 108.2120353,
+  "source": "geocode",
+  "matched": "Trịnh Đình Thảo"
+ },
+ "1022": {
+  "lat": 16.0608247,
+  "lon": 108.2088912,
+  "source": "geocode",
+  "matched": "Phan Thanh"
+ },
+ "1023": {
+  "lat": 16.0505216,
+  "lon": 108.2449396,
+  "source": "geocode",
+  "matched": "An Thượng 37"
+ },
+ "1024": {
+  "lat": 16.0429335,
+  "lon": 108.2452843,
+  "source": "geocode",
+  "matched": "Chế Lan Viên 08"
+ },
+ "1025": {
+  "lat": 15.9851873,
+  "lon": 108.074183,
+  "source": "geocode",
+  "matched": "Hòa Phú 30"
+ },
+ "1026": {
+  "lat": 16.0160211,
+  "lon": 108.2236902,
+  "source": "geocode",
+  "matched": "Lê Quảng Chí"
+ },
+ "1027": {
+  "lat": 16.0691157,
+  "lon": 108.235859,
+  "source": "geocode",
+  "matched": "Tạ Mỹ Duật"
+ },
+ "1028": {
+  "lat": 16.0106666,
+  "lon": 108.2220586,
+  "source": "geocode",
+  "matched": "Hoàng Hiệp"
+ },
+ "1029": {
+  "lat": 16.0984243,
+  "lon": 108.230012,
+  "source": "geocode",
+  "matched": "Phan Bá Vành"
+ },
+ "1030": {
+  "lat": 16.0748223,
+  "lon": 108.2106153,
+  "source": "geocode",
+  "matched": "Hoàng Đình"
+ },
+ "1031": {
+  "lat": 16.0700623,
+  "lon": 108.2364217,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1032": {
+  "lat": 16.0710756,
+  "lon": 108.2436243,
+  "source": "geocode",
+  "matched": "Wyndham Soleil"
+ },
+ "1033": {
+  "lat": 16.0607904,
+  "lon": 108.2303821,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "1034": {
+  "lat": 16.0723061,
+  "lon": 108.2329937,
+  "source": "geocode",
+  "matched": "Phạm Văn Đồng"
+ },
+ "1035": {
+  "lat": 16.0788207,
+  "lon": 108.2329019,
+  "source": "geocode",
+  "matched": "Ngô Quyền"
+ },
+ "1036": {
+  "lat": 16.0980621,
+  "lon": 108.2243797,
+  "source": "geocode",
+  "matched": "Golden Bay"
+ },
+ "1037": {
+  "lat": 16.0545708,
+  "lon": 108.2403862,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Thoại"
+ },
+ "1038": {
+  "lat": 16.0368792,
+  "lon": 108.2460051,
+  "source": "geocode",
+  "matched": "Khuê Đông"
+ },
+ "1039": {
+  "lat": 16.0926523,
+  "lon": 108.2429551,
+  "source": "geocode",
+  "matched": "Mân Quang 9"
+ },
+ "1040": {
+  "lat": 16.0369082,
+  "lon": 108.2445028,
+  "source": "geocode",
+  "matched": "Khuê Mỹ Đông 15"
+ },
+ "1041": {
+  "lat": 16.1084388,
+  "lon": 108.1321979,
+  "source": "geocode",
+  "matched": "Hòa Hiệp Nam"
+ },
+ "1042": {
+  "lat": 16.0191879,
+  "lon": 108.2115565,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1043": {
+  "lat": 16.0611682,
+  "lon": 108.2278968,
+  "source": "geocode",
+  "matched": "Dragon Bridge"
+ },
+ "1044": {
+  "lat": 16.0410096,
+  "lon": 108.2390001,
+  "source": "geocode",
+  "matched": "Lê Văn Hưu"
+ },
+ "1045": {
+  "lat": 16.0054502,
+  "lon": 108.2364105,
+  "source": "geocode",
+  "matched": "Hói Kiểng 27"
  }
 }

@@ -1862,5 +1862,218 @@
   "lat": 10.7621322,
   "lon": 106.6991629,
   "display_name": "River Gate, Nguyễn Thái Học, Khu phố 18, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh, 71010, Việt Nam"
+ },
+ "Khu Phố Hàn, Da Nang, Vietnam": null,
+ "Khu Phố Hàn, Phường An Hải, Da Nang, Vietnam": null,
+ "Tạ Mỹ Duật, Da Nang, Vietnam": {
+  "lat": 16.0691157,
+  "lon": 108.235859,
+  "display_name": "Đường Tạ Mỹ Duật, Tổ dân phố An Nhơn 1, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "Lê Văn Hiến, Da Nang, Vietnam": {
+  "lat": 15.9993863,
+  "lon": 108.2595986,
+  "display_name": "Lê Văn Hiến, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Kiệt 02 Lâm Hoành, Da Nang, Vietnam": null,
+ "Kiệt 02 Lâm Hoành, Phường An Hải, Da Nang, Vietnam": null,
+ "Võ Văn Kiệt, Da Nang, Vietnam": {
+  "lat": 16.0635336,
+  "lon": 108.2435983,
+  "display_name": "Đường Võ Văn Kiệt, Tổ dân phố Mỹ Thạnh, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "Nguyễn Đình Chiểu, Da Nang, Vietnam": {
+  "lat": 15.8853854,
+  "lon": 108.3301636,
+  "display_name": "Nguyễn Đình Chiểu, Phường Hội An Tây, Hội An, Thành phố Đà Nẵng, 64000, Việt Nam"
+ },
+ "Nguyễn Đình Chiểu, Phường Ngũ Hành Sơn, Da Nang, Vietnam": {
+  "lat": 16.0268353,
+  "lon": 108.2449323,
+  "display_name": "Đường Nguyễn Đình Chiểu, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Shophouse F, Da Nang, Vietnam": null,
+ "Shophouse F, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Khu An Trung, Da Nang, Vietnam": {
+  "lat": 15.9983771,
+  "lon": 108.2132989,
+  "display_name": "Khu chung cư Hòa Xuân, Đường Văn Tiến Dũng, Tổ dân phố Lỗ Giáng 2, Phường Hòa Xuân, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "Nguyễn Lữ, Da Nang, Vietnam": {
+  "lat": 16.0330141,
+  "lon": 108.240832,
+  "display_name": "Đường Nguyễn Lữ, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Hoa Sơn 7, Da Nang, Vietnam": {
+  "lat": 16.0683614,
+  "lon": 108.1067993,
+  "display_name": "Hòa Sơn, Thành phố Đà Nẵng, 51000, Việt Nam"
+ },
+ "An Thượng 17, Da Nang, Vietnam": {
+  "lat": 16.0505216,
+  "lon": 108.2449396,
+  "display_name": "Đường An Thượng 37, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Nguyễn Nhàn, Da Nang, Vietnam": {
+  "lat": 16.011491,
+  "lon": 108.1974809,
+  "display_name": "Đường Nguyễn Nhàn, Hòa Thọ Đông, Phường Cẩm Lệ, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "Nguyễn Văn Linh 302, Da Nang, Vietnam": {
+  "lat": 15.4348442,
+  "lon": 108.6523275,
+  "display_name": "Nguyễn Văn Linh, Xã Núi Thành, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Nguyễn Văn Linh 302, Phường Hòa Cường, Da Nang, Vietnam": {
+  "lat": 16.0580234,
+  "lon": 108.2041012,
+  "display_name": "Đường Nguyễn Văn Linh, Phường Hòa Cường, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Tôn Thất Thiệp, Da Nang, Vietnam": {
+  "lat": 16.0474266,
+  "lon": 108.2409063,
+  "display_name": "Đường Tôn Thất Thiệp, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Lê Quang Đạo 133, Da Nang, Vietnam": {
+  "lat": 16.0486822,
+  "lon": 108.245994,
+  "display_name": "Đường Lê Quang Đạo, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Khuê Mỹ Đông 7, Da Nang, Vietnam": {
+  "lat": 16.0382687,
+  "lon": 108.2445068,
+  "display_name": "Đường Khuê Mỹ Đông 5, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Đoàn Khuê, Da Nang, Vietnam": {
+  "lat": 16.0357525,
+  "lon": 108.2253449,
+  "display_name": "Đường Doãn Khuê, Phường Hòa Cường, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Phù Đổng, Da Nang, Vietnam": {
+  "lat": 15.6741255,
+  "lon": 108.2189536,
+  "display_name": "Đông Phú, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Phù Đổng, Phường Hòa Xuân, Da Nang, Vietnam": {
+  "lat": 15.9854536,
+  "lon": 108.2090339,
+  "display_name": "Đường Phù Đổng, Tổ dân phố Nhơn Hòa 1, Phường Hòa Xuân, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "Tùng Thiện Vương, Da Nang, Vietnam": {
+  "lat": 16.0259385,
+  "lon": 108.2433416,
+  "display_name": "Đường Tùng Thiện Vương, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Trịnh Đình Thảo, Da Nang, Vietnam": {
+  "lat": 16.0259254,
+  "lon": 108.2120353,
+  "display_name": "Đường Trịnh Đình Thảo, Khuê Trung, Phường Cẩm Lệ, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Phan Thanh, Da Nang, Vietnam": {
+  "lat": 15.8925268,
+  "lon": 108.3170515,
+  "display_name": "Phan Thanh, Phường Hội An Tây, Hội An, Thành phố Đà Nẵng, 51309, Việt Nam"
+ },
+ "Phan Thanh, Phường Thanh Khê, Da Nang, Vietnam": {
+  "lat": 16.0608247,
+  "lon": 108.2088912,
+  "display_name": "Đường Phan Thanh, Tổ dân phố 28 Thạc Gián, Phường Thanh Khê, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "An Thượng 37, Da Nang, Vietnam": {
+  "lat": 16.0505216,
+  "lon": 108.2449396,
+  "display_name": "Đường An Thượng 37, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Chế Lan Viên 08, Da Nang, Vietnam": {
+  "lat": 15.8899609,
+  "lon": 108.3225481,
+  "display_name": "Chế Lan Viên, Phường Hội An Tây, Hội An, Thành phố Đà Nẵng, 51309, Việt Nam"
+ },
+ "Chế Lan Viên 08, Phường Ngũ Hành Sơn, Da Nang, Vietnam": {
+  "lat": 16.0429335,
+  "lon": 108.2452843,
+  "display_name": "08, Đường Chế Lan Viên, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Hòa Phú 30, Da Nang, Vietnam": {
+  "lat": 15.9851873,
+  "lon": 108.074183,
+  "display_name": "Hòa Phú, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Lê Quảng Chí, Da Nang, Vietnam": {
+  "lat": 16.0160211,
+  "lon": 108.2236902,
+  "display_name": "Đường Lê Quảng Chí, Tổ dân phố Trung Lương 8, Phường Hòa Xuân, Hội An, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Hoàng Hiệp, Da Nang, Vietnam": {
+  "lat": 16.0106666,
+  "lon": 108.2220586,
+  "display_name": "Đường Hoàng Hiệp, Tổ dân phố Thanh Lương 2, Phường Hòa Xuân, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "Phan Bá Vành, Da Nang, Vietnam": {
+  "lat": 16.0984243,
+  "lon": 108.230012,
+  "display_name": "Đường Phan Bá Vành, Phường Sơn Trà, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Hoàng Đình, Da Nang, Vietnam": {
+  "lat": 16.0748223,
+  "lon": 108.2106153,
+  "display_name": "Đường Đinh Tiên Hoàng, Tổ dân phố 02 Tam Thuận, Phường Thanh Khê, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Euro Village 1, Da Nang, Vietnam": null,
+ "Euro Village 1, Phường An Hải, Da Nang, Vietnam": null,
+ "Wyndham Soleil, Da Nang, Vietnam": {
+  "lat": 16.0710756,
+  "lon": 108.2436243,
+  "display_name": "Wyndham Soleil Danang, Tổ dân phố Mỹ Thạnh, Phường An Hải, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Phúc Lộc Viên, Da Nang, Vietnam": null,
+ "Phúc Lộc Viên, Phường An Hải, Da Nang, Vietnam": null,
+ "Nguyễn Văn Thoại, Da Nang, Vietnam": {
+  "lat": 16.0545708,
+  "lon": 108.2403862,
+  "display_name": "Đường Nguyễn Văn Thoại, Tổ dân phố An Cư 4, Phường An Hải, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Khuê Đông, Da Nang, Vietnam": null,
+ "Khuê Đông, Phường Ngũ Hành Sơn, Da Nang, Vietnam": {
+  "lat": 16.0368792,
+  "lon": 108.2460051,
+  "display_name": "Cosmetologist Danang Vietnam, Đường Khuê Mỹ Đông 14, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Coopmart Sơn Trà, Da Nang, Vietnam": null,
+ "Coopmart Sơn Trà, Phường Sơn Trà, Da Nang, Vietnam": null,
+ "Mân Quang 9, Da Nang, Vietnam": {
+  "lat": 16.0926523,
+  "lon": 108.2429551,
+  "display_name": "Đường Mân Quang 6, Phường Sơn Trà, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "Khuê Mỹ Đông 15, Da Nang, Vietnam": {
+  "lat": 16.0369082,
+  "lon": 108.2445028,
+  "display_name": "Đường Khuê Mỹ Đông 1, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Hòa Hiệp Nam, Da Nang, Vietnam": {
+  "lat": 16.1084388,
+  "lon": 108.1321979,
+  "display_name": "Khu Chung cư Hòa Hiệp Nam, Đường Hướng Dương 2, Phường Hải Vân, Thành phố Đà Nẵng, 84236, Việt Nam"
+ },
+ "Nguyễn Hữu Thọ, Da Nang, Vietnam": {
+  "lat": 16.0191879,
+  "lon": 108.2115565,
+  "display_name": "Nguyễn Hữu Thọ, Khuê Trung, Phường Cẩm Lệ, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Lê Văn Hưu, Da Nang, Vietnam": {
+  "lat": 15.8883419,
+  "lon": 108.3254079,
+  "display_name": "Lê Văn Hưu, Phường Hội An Tây, Hội An, Thành phố Đà Nẵng, 51309, Việt Nam"
+ },
+ "Lê Văn Hưu, Phường Ngũ Hành Sơn, Da Nang, Vietnam": {
+  "lat": 16.0410096,
+  "lon": 108.2390001,
+  "display_name": "Đường Lê Văn Hưu, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Hói Kiểng 27, Da Nang, Vietnam": {
+  "lat": 16.0054502,
+  "lon": 108.2364105,
+  "display_name": "Đường Hói Kiểng 17, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
  }
 }
