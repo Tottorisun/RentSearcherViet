@@ -3169,6 +3169,21 @@ L(975,"da-lat","lv","Квартира",9000000,40,
   "1-спальная квартира (1 с/у) на ул. Phù Đổng Thiên Vương, район Lâm Viên (старое — Phường 8). Полная меблировка (кухня, ТВ, холодильник, диван), общая стиральная машина на первом этаже, рядом Университет Далата и ночной рынок (5 мин на байке).",
   "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-da-lat-lam-dong/134239437.htm","вчера",1,source="chotot",
   details={"deposit":"1 месяц (оплата за 1)","contract":"3-6 месяцев","notice":"цена уже включает электричество, воду и wifi","contact":"Hương Lê"}),
+
+L(976,"vung-tau","vtp","Дом",15000000,88,
+  "Дом целиком (1 этаж + 2 этажа, 3 спальни, 3 с/у, комната для алтаря) на фасаде ул. Đinh Tiên Hoàng, район Vũng Tàu (старое — P.2), рядом рынок Xóm Lưới и пляж Bãi Trước. Пустой, планировка под любые нужды.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-vung-tau-ba-ria-vung-tau/134183246.htm","3 дня назад",3,source="chotot",
+  details={"notice":"дата пересчитана честно по orig_list_time — сайт показывал «2 ngày trước» по list_time (после повторной публикации), фактическая разница ~24 часа (1 день)","contact":"Mỹ Lệ Vũng Tàu 79"}),
+
+L(977,"vung-tau","vtp","Дом",10000000,64,
+  "Дом целиком (1 этаж + 2 этажа, 3 спальни, 3 с/у) на ул. Bạch Đằng, район Vũng Tàu (центр). Рядом рынок, супермаркет, школа, больница, банк, торговый центр.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-vung-tau-ba-ria-vung-tau/134169720.htm","4 дня назад",4,source="chotot",
+  details={"contact":"Đặng Trung Hậu"}),
+
+L(978,"vung-tau","vtp","Дом",35000000,240,
+  "Дом целиком на фасаде ул. Huỳnh Thúc Kháng, район Vũng Tàu (центр). 1 этаж + 1 этаж, 4 спальни, 4 с/у, 3 кондиционера. Подходит и для проживания, и под офис/шоурум/спа (вторично).",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-vung-tau-ba-ria-vung-tau/134169024.htm","4 дня назад",4,source="chotot",
+  details={"deposit":"2 месяца","contact":"Anh Thư Vũng Tàu"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
