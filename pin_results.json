@@ -4492,5 +4492,65 @@
   "lon": 106.6966136,
   "source": "geocode",
   "matched": "Phạm Ngũ Lão"
+ },
+ "949": {
+  "lat": 10.7674015,
+  "lon": 106.6977106,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Bình"
+ },
+ "950": {
+  "lat": 10.7641364,
+  "lon": 106.7034159,
+  "source": "geocode",
+  "matched": "Ngân Hàng"
+ },
+ "951": {
+  "lat": 10.7623141,
+  "lon": 106.7022361,
+  "source": "geocode",
+  "matched": "Hoàng Diệu"
+ },
+ "952": {
+  "lat": 10.7392988,
+  "lon": 106.7001498,
+  "source": "geocode",
+  "matched": "Sunrise City"
+ },
+ "953": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "954": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "955": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "956": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "957": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "958": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
  }
 }

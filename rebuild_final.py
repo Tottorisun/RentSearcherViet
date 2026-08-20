@@ -3037,6 +3037,55 @@ L(948,"ho-chi-minh","bth","Студия",6400000,30,
   "Студия с отдельной кухней на ул. Phạm Ngũ Lão, Bến Thành, Q1 (между Bùi Viện и парком 23/9), 5 минут пешком до метро Bến Thành.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134226838.htm","10 часов назад",0,source="chotot",
   details={"contact":"Huỳnh Kỳ Đức"}),
+L(949,"ho-chi-minh","bth","Студия",7000000,35,
+  "Квартира-студия (1 антресоль/спальное место) в старом доме на ул. Nguyễn Thái Bình, Bến Thành, Q1 — рядом рынок Bến Thành, мост Ông Lãnh, Đại học Ngân hàng, пешеходная улица Bùi Viện. Полная меблировка, лифт, электричество/вода по гос. тарифу, большой охраняемый паркинг.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134243647.htm","11 часов назад",0,source="chotot",
+  details={"contact":"Thành Khang"}),
+
+L(950,"ho-chi-minh","bth","Студия",6900000,35,
+  "Студия с большим светлым окном рядом с ДХ Ngân Hàng/Văn Lang/Hoa Sen, Bến Thành, Q1. Полная меблировка, своя стиральная машина, замок по отпечатку пальца, свободный график без совместного проживания с хозяином. Точный адрес/название дома в объявлении не указан — только ориентиры на близлежащие вузы.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134235095.htm","20 часов назад",0,source="chotot",
+  details={"contact":"Boon Apartments"}),
+
+L(951,"ho-chi-minh","kh","Квартира",13000000,70,
+  "2-спальная квартира (1 с/у, угловая, 3 окна) в ЖК H1 Hoàng Diệu, Khánh Hội, Q4 — в 1 мосту (Calmette) от Q1. Полная меблировка (стиралка, сушилка, холодильник, ТВ), рядом рынок, автобусы, Đại học Luật, порт Nhà Rồng, рынок Xóm Chiếu. Сдаёт напрямую хозяин (chính chủ), без посредников. Депозит 2 мес., договор от 1 года.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134227261.htm","1 день назад",1,source="chotot",
+  details={"contact":"Hari Nguyễn","deposit":"2 месяца"}),
+
+L(952,"ho-chi-minh","th","Студия",11000000,38,
+  "Квартира-студия с полной меблировкой в ЖК Sunrise CityView, Tân Hưng, Q7.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134228509.htm","1 день назад",1,source="chotot",
+  details={"contact":"Minh Anh"}),
+
+L(953,"ho-chi-minh","th","Студия",8000000,30,
+  "Новая студия с балконом (только что построена, 100% новая мебель) рядом с Lotte Mart, центр Q7, Tân Hưng. Лифт, вход по отпечатку пальца.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134234495.htm","20 часов назад",0,source="chotot",
+  details={"contact":"Thanh Trúc"}),
+
+L(954,"ho-chi-minh","tm","Студия",6500000,20,
+  "Студия в новом закрытом жилом комплексе, Tân Mỹ, Q7 — только что освободилась. Замок по отпечатку пальца, матрас, шкаф, кухонная стойка, кондиционер, балкон, подземный паркинг, лифт, охрана, общая стиральная машина. Тарифы отдельно: электричество 4000 ₫/кВт·ч, вода 100 000 ₫/чел., паркинг 100 000 ₫/место, сервис 150 000 ₫/комната. Депозит 1 мес., договор 12 мес., животные не разрешены.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134223529.htm","1 день назад",1,source="chotot",
+  details={"contact":"Hồ Quang Huy","electricity":"4 000 ₫/кВт·ч","water":"100 000 ₫/чел.","deposit":"1 месяц (12 мес. договор)"}),
+
+L(955,"ho-chi-minh","tm","Квартира",10500000,58,
+  "2-спальная квартира (1 с/у) свободна для заезда, Tân Mỹ, Q7, ~10 минут до Phú Mỹ Hưng. 3 кондиционера, водонагреватель. Точный адрес/название ЖК в объявлении не указан.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134243194.htm","12 часов назад",0,source="chotot",
+  details={"contact":"Nguyễn Thị Minh Trang"}),
+
+L(956,"ho-chi-minh","tm","Дом",30000000,80,
+  "Дом целиком (4×20м, 3 этажа, 6 спален, кухня, 3 с/у, 7 кондиционеров) в 300 м от рынка Tân Mỹ, Q7. Подходит для жилья или под небольшой бизнес.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134234709.htm","20 часов назад",0,source="chotot",
+  details={"contact":"Dương Văn Bảo"}),
+
+L(957,"ho-chi-minh","ak","Студия",7500000,35,
+  "Квартира с отдельной кухней и просторным балконом, Thảo Điền (An Khánh), рядом мост Sài Gòn — удобно до Q1/Q3/Q5/Q10/Bình Thạnh/Thủ Đức. Премиальная меблировка, еженедельная уборка, паркинг с лифтом и охраной 24/7, разрешены животные.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/116727047.htm","1 день назад",1,source="chotot",
+  details={"contact":"Ngọc Thịnh Hifriendz"}),
+
+L(958,"ho-chi-minh","ak","Дом",20000000,80,
+  "Дом целиком на Đường số 10, Trần Não, An Khánh (центр бывшего Q2). Оживлённый район рядом с магазинами/супермаркетами/рынком, широкий переулок для машины, крепкий дом с хорошим ремонтом.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-thu-duc-tp-ho-chi-minh/133870652.htm","15 часов назад",0,source="chotot",
+  details={"contact":"Mi"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from

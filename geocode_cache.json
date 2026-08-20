@@ -1741,5 +1741,15 @@
   "display_name": "Chung cư River Panorama, Hẻm 79 Đường Hoàng Quốc Việt, Khu phố 24, Phường Phú Thuận, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
  },
  "Green Star Hưng Lộc Phát, Ho Chi Minh City, Vietnam": null,
- "Green Star Hưng Lộc Phát, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null
+ "Green Star Hưng Lộc Phát, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null,
+ "Ngân Hàng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7641364,
+  "lon": 106.7034159,
+  "display_name": "Cư xá Ngân Hàng, Phường Xóm Chiếu, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Sunrise City, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7392988,
+  "lon": 106.7001498,
+  "display_name": "Sunrise City - South Towers, Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam"
+ }
 }
