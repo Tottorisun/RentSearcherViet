@@ -4618,5 +4618,41 @@
   "lon": 106.7023355,
   "source": "ward-centroid",
   "matched": null
+ },
+ "970": {
+  "lat": 11.9781853,
+  "lon": 108.4499229,
+  "source": "geocode",
+  "matched": "Thung Lũng Tình Yêu"
+ },
+ "971": {
+  "lat": 11.9501398,
+  "lon": 108.4712506,
+  "source": "geocode",
+  "matched": "Hùng Vương"
+ },
+ "972": {
+  "lat": 11.9547108,
+  "lon": 108.4310355,
+  "source": "geocode",
+  "matched": "La Sơn Phu Tử"
+ },
+ "973": {
+  "lat": 11.9307864,
+  "lon": 108.4284257,
+  "source": "geocode",
+  "matched": "Phường 9"
+ },
+ "974": {
+  "lat": 11.9466628,
+  "lon": 108.4276542,
+  "source": "geocode",
+  "matched": "Lê Thánh Tôn"
+ },
+ "975": {
+  "lat": 11.9726796,
+  "lon": 108.4408185,
+  "source": "geocode",
+  "matched": "Phù Đổng Thiên Vương"
  }
 }

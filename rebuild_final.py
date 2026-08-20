@@ -3140,6 +3140,35 @@ L(969,"ho-chi-minh","kh","Квартира",18900000,65,
   "2-спальная квартира (2 с/у) 65м² в ЖК Millennium, Khánh Hội, Q4 — бассейн, спортзал, супермаркет, кафе в комплексе. По словам агента — конкурентная цена по рынку.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134250500.htm","4 часа назад",0,source="chotot",
   details={"contact":"Hương Dung (Danh Land)"}),
+L(970,"da-lat","lb","Студия",4500000,35,
+  "Меблированная студия-дуплекс (мансарда + первый этаж, гостиная совмещена с кухней, 1 с/у) на ул. Tô Hiệu, район Lang Biang (старое — Phường 7). Просторный общий двор, общая стиральная машина, 8 мин до долины Thung Lũng Tình Yêu.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-da-lat-lam-dong/134252520.htm","7 часов назад",0,source="chotot",
+  details={"electricity":"по гостарифу","water":"по гостарифу","deposit":"1 месяц (оплата за 1)","contract":"6-12 месяцев","contact":"Hương Lê"}),
+
+L(971,"da-lat","lv","Дом",6500000,120,
+  "Дом целиком под жильё (подходит и под небольшой homestay-бизнес), ул. Hùng Vương, район Lâm Viên (старое — Phường 9). 1 этаж + терраса на крыше (зона под кофе/барбекю), 3 спальни, 4 с/у. 7 мин до озера Xuân Hương и ночного рынка.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/134249060.htm","9 часов назад",0,source="chotot",
+  details={"electricity":"по гостарифу","water":"по гостарифу","deposit":"2 месяца (оплата за 1)","contract":"от 12 месяцев","notice":"подходит и для проживания, и под homestay-бизнес (вторично); нет стиральной машины","contact":"Hương Lê"}),
+
+L(972,"da-lat","cl","Квартира",11000000,100,
+  "2-спальная квартира (2 с/у) на ул. La Sơn Phu Tử, район Cam Ly (старое — Phường 6). Полная меблировка, лифт и подземный паркинг в доме.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-da-lat-lam-dong/133442551.htm","10 часов назад",0,source="chotot",
+  details={"deposit":"2 месяца (оплата за 1)","contract":"6-12 месяцев","contact":"Trần Thị Bích Thuỳ (Bích Thùy Land)"}),
+
+L(973,"da-lat","lv","Дом",16000000,160,
+  "Дом целиком (новое строительство, чистый и готов к заселению), квартал Lữ Gia, район Lâm Viên (старое — Phường 9). 3 просторные спальни, 2 отдельных с/у, полная меблировка, свой двор для машины, сильный wifi.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/132145853.htm","10 часов назад",0,source="chotot",
+  details={"deposit":"1 месяц (оплата за 1)","notice":"только для проживания, не под бизнес","contact":"Trần Thị Bích Thuỳ (Bích Thùy Land)"}),
+
+L(974,"da-lat","cl","Дом",21000000,72,
+  "Дом-магазин (1 этаж + 3 надстройки, есть комната для алтаря), ул. Lê Thánh Tôn, район Cam Ly (старое — Phường 5). 4 спальни, 5 с/у, площадь застройки 72м² (общая площадь этажей 288м²). Первый этаж пустой под коммерцию — разрешён только «чистый» бизнес или кофейня (без общепита/баров).",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/134239752.htm","вчера",1,source="chotot",
+  details={"electricity":"по гостарифу","water":"по гостарифу","deposit":"1 месяц (оплата за 6)","contract":"долгосрочный","notice":"без мебели; первый этаж — под коммерцию (вторично)","contact":"Hương Lê"}),
+
+L(975,"da-lat","lv","Квартира",9000000,40,
+  "1-спальная квартира (1 с/у) на ул. Phù Đổng Thiên Vương, район Lâm Viên (старое — Phường 8). Полная меблировка (кухня, ТВ, холодильник, диван), общая стиральная машина на первом этаже, рядом Университет Далата и ночной рынок (5 мин на байке).",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-da-lat-lam-dong/134239437.htm","вчера",1,source="chotot",
+  details={"deposit":"1 месяц (оплата за 1)","contract":"3-6 месяцев","notice":"цена уже включает электричество, воду и wifi","contact":"Hương Lê"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
