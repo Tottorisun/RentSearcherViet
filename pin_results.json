@@ -4672,5 +4672,143 @@
   "lon": 107.0835523,
   "source": "geocode",
   "matched": "Huỳnh Thúc Kháng"
+ },
+ "979": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "980": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
+ },
+ "981": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "982": {
+  "lat": 10.7293122,
+  "lon": 106.7215902,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng 600"
+ },
+ "983": {
+  "lat": 10.7138449,
+  "lon": 106.7316206,
+  "source": "geocode",
+  "matched": "Phú Mỹ"
+ },
+ "984": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "985": {
+  "lat": 10.7289952,
+  "lon": 106.7189174,
+  "source": "geocode",
+  "matched": "Crescent Mall"
+ },
+ "986": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "987": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "988": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "989": {
+  "lat": 10.7259257,
+  "lon": 106.7086694,
+  "source": "geocode",
+  "matched": "Nguyễn Đức Cảnh"
+ },
+ "990": {
+  "lat": 10.7334493,
+  "lon": 106.7097305,
+  "source": "geocode",
+  "matched": "Mỹ Gia 1"
+ },
+ "991": {
+  "lat": 10.7925228,
+  "lon": 106.73296,
+  "source": "geocode",
+  "matched": "Đường Số 13"
+ },
+ "992": {
+  "lat": 10.7735586,
+  "lon": 106.7235711,
+  "source": "geocode",
+  "matched": "Mai Chí Thọ"
+ },
+ "993": {
+  "lat": 10.8016627,
+  "lon": 106.7332826,
+  "source": "geocode",
+  "matched": "Thảo Điền Pearl"
+ },
+ "994": {
+  "lat": 10.7691739,
+  "lon": 106.7016598,
+  "source": "geocode",
+  "matched": "Nguyễn Công Trứ 146"
+ },
+ "995": {
+  "lat": 10.7720338,
+  "lon": 106.6933844,
+  "source": "geocode",
+  "matched": "Cách Mạng Tháng 8"
+ },
+ "996": {
+  "lat": 10.820543,
+  "lon": 106.6828914,
+  "source": "geocode",
+  "matched": "Phạm Ngũ Lão 265"
+ },
+ "997": {
+  "lat": 10.7621322,
+  "lon": 106.6991629,
+  "source": "geocode",
+  "matched": "River Gate"
+ },
+ "998": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "999": {
+  "lat": 10.7629917,
+  "lon": 106.7043593,
+  "source": "geocode",
+  "matched": "Đoàn Văn Bơ"
+ },
+ "1000": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
+ },
+ "1001": {
+  "lat": 10.7567803,
+  "lon": 106.7185992,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
  }
 }
