@@ -26,6 +26,12 @@ try {
     # PowerShell's default (UTF-16LE) rather than crashing; it's still readable in any
     # real editor, and streaming live means partial output survives a kill/timeout.
     $prompt | & $claudeExe -p --permission-mode dontAsk *>&1 | Tee-Object -FilePath $logFile
+    # A pipeline doesn't throw on its own -- claude.exe can fail (e.g. expired auth)
+    # while this script still reaches here and would otherwise report success.
+    if ($LASTEXITCODE -ne 0) {
+        "SCRIPT ERROR: claude.exe exited with code $LASTEXITCODE -- see output above (often an auth/session problem, run 'claude auth status' to check)." | Tee-Object -FilePath $logFile -Append
+        exit 1
+    }
 }
 catch {
     ($_ | Out-String) | Tee-Object -FilePath $logFile -Append
