@@ -5074,5 +5074,275 @@
   "lon": 108.2364105,
   "source": "geocode",
   "matched": "Hói Kiểng 27"
+ },
+ "1046": {
+  "lat": 10.6928289,
+  "lon": 106.7172107,
+  "source": "geocode",
+  "matched": "Phạm Hữu Lầu"
+ },
+ "1047": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1048": {
+  "lat": 10.7181738,
+  "lon": 106.7285012,
+  "source": "geocode",
+  "matched": "Nam Viên"
+ },
+ "1049": {
+  "lat": 10.7289952,
+  "lon": 106.7189174,
+  "source": "geocode",
+  "matched": "Crescent Mall"
+ },
+ "1050": {
+  "lat": 10.7377616,
+  "lon": 106.7402338,
+  "source": "geocode",
+  "matched": "Sunshine City"
+ },
+ "1051": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1052": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
+ },
+ "1053": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1054": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
+ },
+ "1055": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
+ },
+ "1056": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
+ },
+ "1057": {
+  "lat": 10.7137641,
+  "lon": 106.7342136,
+  "source": "geocode",
+  "matched": "Hoàng Quốc Việt"
+ },
+ "1058": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1059": {
+  "lat": 10.7462581,
+  "lon": 106.6377238,
+  "source": "geocode",
+  "matched": "Him Lam"
+ },
+ "1060": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1061": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1062": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1063": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1064": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1065": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1066": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1067": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1068": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1069": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1070": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1071": {
+  "lat": 10.7433407,
+  "lon": 106.7090678,
+  "source": "geocode",
+  "matched": "Số 79"
+ },
+ "1072": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1073": {
+  "lat": 10.7365674,
+  "lon": 106.7054501,
+  "source": "geocode",
+  "matched": "Tân Quy Đông"
+ },
+ "1074": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1075": {
+  "lat": 10.7549518,
+  "lon": 106.6776402,
+  "source": "geocode",
+  "matched": "Tân Kiểng"
+ },
+ "1076": {
+  "lat": 10.7735586,
+  "lon": 106.7235711,
+  "source": "geocode",
+  "matched": "Mai Chí Thọ"
+ },
+ "1077": {
+  "lat": 10.778998,
+  "lon": 106.7133319,
+  "source": "geocode",
+  "matched": "The Galleria Residences"
+ },
+ "1078": {
+  "lat": 10.8073843,
+  "lon": 106.7308879,
+  "source": "geocode",
+  "matched": "Quốc Hương"
+ },
+ "1079": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1080": {
+  "lat": 10.7697025,
+  "lon": 106.707918,
+  "source": "geocode",
+  "matched": "Thủ Thiêm"
+ },
+ "1081": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1082": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1083": {
+  "lat": 10.7814203,
+  "lon": 106.7014168,
+  "source": "geocode",
+  "matched": "Nguyễn Du"
+ },
+ "1084": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "1085": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "1086": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "1087": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
+ },
+ "1088": {
+  "lat": 10.7623141,
+  "lon": 106.7022361,
+  "source": "geocode",
+  "matched": "Hoàng Diệu"
+ },
+ "1089": {
+  "lat": 10.7629917,
+  "lon": 106.7043593,
+  "source": "geocode",
+  "matched": "Đoàn Văn Bơ"
+ },
+ "1090": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
