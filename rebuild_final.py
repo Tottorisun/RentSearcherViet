@@ -3741,6 +3741,30 @@ L(1090,"ho-chi-minh","kh","Студия",12000000,30,
   "Студия-officetel с отдельной спальной нишей, вид на Bitexco, в ЖК Millennium, Khánh Hội, Q4 — 30м², полная меблировка. Бассейн, спортзал, мини-маркет, кафе.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134256731.htm","вчера",1,source="chotot",
   details={"contact":"Hương Dung (Danh Land)"}),
+L(1091,"ho-chi-minh","th","Квартира",7000000,45,
+  "1-спальная квартира с балконом в жилом комплексе Him Lam, ул. Hoàng Trọng Mậu. Полная меблировка, рядом ĐH Tôn Đức Thắng, Lotte Mart, RMIT, Phú Mỹ Hưng.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134212202.htm","3 дня назад",3,source="chotot",
+  details={"contact":"Nguyễn Hữu Quyết"}),
+
+L(1092,"ho-chi-minh","th","Студия",7300000,30,
+  "Студия с балконом на ул. Số 7. Свободный график, вход по отпечатку пальца, крупный чистый жилой комплекс, своя стирально-сушильная машина, рядом ĐH Tôn Đức Thắng, UFM, RMIT.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134279201.htm","сегодня",0,source="chotot",
+  details={"contact":"Hang Pham"}),
+
+L(1093,"ho-chi-minh","th","Дом",8500000,66,
+  "Дом целиком (2 спальни) на ул. Số 25 (бывший район Tân Quy), рядом рынок и парк.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134245968.htm","1 день назад",1,source="chotot",
+  details={"contact":"Thu Anh"}),
+
+L(1094,"ho-chi-minh","ak","Студия",5500000,35,
+  "Студия с отдельной кухонной зоной на ул. Trần Não, An Khánh. Полная меблировка (кондиционер, холодильник, стиралка, кровать), несколько минут до Thảo Điền, Sala, Thủ Thiêm.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/133969162.htm","сегодня",0,source="chotot",
+  details={"contact":"Phương An"}),
+
+L(1095,"ho-chi-minh","ak","Квартира",11000000,50,
+  "1-спальная квартира на ул. Nguyễn Bá Huân, Thảo Điền. Премиальная меблировка, рядом Vincom Mega Mall, станция метро An Phú, охрана 24/7, лифт, подземный паркинг.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/133971394.htm","сегодня",0,source="chotot",
+  details={"contact":"Phương An"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from

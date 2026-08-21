@@ -5344,5 +5344,35 @@
   "lon": 106.7023355,
   "source": "ward-centroid",
   "matched": null
+ },
+ "1091": {
+  "lat": 10.7351883,
+  "lon": 106.6953441,
+  "source": "geocode",
+  "matched": "Hoàng Trọng Mậu"
+ },
+ "1092": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1093": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "geocode",
+  "matched": "Số 25"
+ },
+ "1094": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1095": {
+  "lat": 10.8024419,
+  "lon": 106.7415654,
+  "source": "geocode",
+  "matched": "Vincom Mega Mall"
  }
 }
