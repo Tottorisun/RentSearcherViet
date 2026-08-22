@@ -5998,5 +5998,23 @@
   "lon": 106.6931006,
   "source": "geocode",
   "matched": "Trần Hưng Đạo"
+ },
+ "1234": {
+  "lat": 10.6928289,
+  "lon": 106.7172107,
+  "source": "geocode",
+  "matched": "Phạm Hữu Lầu"
+ },
+ "1235": {
+  "lat": 10.7709391,
+  "lon": 106.6875758,
+  "source": "geocode",
+  "matched": "Tôn Thất Tùng"
+ },
+ "1236": {
+  "lat": 10.691104,
+  "lon": 106.6424193,
+  "source": "geocode",
+  "matched": "Đường Số 14"
  }
 }

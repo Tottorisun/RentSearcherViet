@@ -2420,5 +2420,10 @@
   "display_name": "Cao ốc RES 11, 205, Phường Bình Thới, Thành phố Hồ Chí Minh, Việt Nam"
  },
  "Hẻm Gà Nướng Bảy Đực, Ho Chi Minh City, Vietnam": null,
- "Hẻm Gà Nướng Bảy Đực, Phường Bình Quới, Ho Chi Minh City, Vietnam": null
+ "Hẻm Gà Nướng Bảy Đực, Phường Bình Quới, Ho Chi Minh City, Vietnam": null,
+ "Đường Số 14, Ho Chi Minh City, Vietnam": {
+  "lat": 10.691104,
+  "lon": 106.6424193,
+  "display_name": "Đường Số 14, KDC Phong Phú 4, Xã Bình Hưng, Thành phố Hồ Chí Minh, 71812, Việt Nam"
+ }
 }

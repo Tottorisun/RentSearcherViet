@@ -4452,6 +4452,20 @@ L(1233,"ho-chi-minh","bth","Квартира",7000000,35,
   "Квартира на красной линии ул. Trần Hưng Đạo, Bến Thành, Q1 — 35м², полная меблировка, удобно добираться до Q1/Q4/Q5/Bình Thạnh. Электричество и вода по гостарифу.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134270103.htm","вчера",1,source="chotot",
   details={"notice":"по тексту объявления подходит и для небольшого бизнеса (маникюр/спа/парикмахерская) на дому — указано честно как доп. опция","contact":"Nguyễn Văn Ước"}),
+L(1234,"ho-chi-minh","tm","Комната",3500000,16,
+  "Комната 4x4м в доме на ул. Phạm Hữu Lầu (Q7, район рынка Tân Mỹ) — железная лестница, без кондиционера. Хозяйка сдаёт 2 комнаты в доме: эта дешевле (3,5 млн, без кондиционера), вторая дороже (4,5 млн, с кондиционером на верхнем этаже). Приоритет студентам или семье из 3 человек с 2 мотобайками.",
+  "https://www.nhatot.com/thue-phong-tro-quan-7-tp-ho-chi-minh/134294038.htm","сегодня",0,source="chotot",
+  details={"contact":"BĐS TPLAND"}),
+
+L(1235,"ho-chi-minh","bth","Дом",40000000,33,
+  "Дом на ул. Tôn Thất Tùng (Q1) — этаж 33м², 6 уровней (первый этаж, антресоль и 4 этажа), 3 спальни/4 с/у.",
+  "https://www.nhatot.com/thue-nha-dat-quan-1-tp-ho-chi-minh/134244968.htm","2 дня назад",2,source="chotot",
+  details={"notice":"хозяин разрешает любой вид бизнеса на первом этаже наравне с проживанием","contact":"binh Ta"}),
+
+L(1236,"ho-chi-minh","tm","Дом",30000000,80,
+  "Дом на Đường Số 14 рядом с рынком Tân Mỹ (старый район Tân Phú, Q7) — 80м² (4x20), 3 этажа, 5 спален.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134244463.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Phạm Tăng"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
