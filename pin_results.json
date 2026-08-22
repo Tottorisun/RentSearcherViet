@@ -6076,5 +6076,71 @@
   "lon": 106.6830591,
   "source": "geocode",
   "matched": "Phan Văn Trị"
+ },
+ "1247": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1248": {
+  "lat": 10.8465467,
+  "lon": 106.774414,
+  "source": "geocode",
+  "matched": "Tôn Thất Thuyết"
+ },
+ "1249": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "1250": {
+  "lat": 10.7462581,
+  "lon": 106.6377238,
+  "source": "geocode",
+  "matched": "Him Lam"
+ },
+ "1251": {
+  "lat": 10.7462581,
+  "lon": 106.6377238,
+  "source": "geocode",
+  "matched": "Him Lam"
+ },
+ "1252": {
+  "lat": 10.7674015,
+  "lon": 106.6977106,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Bình"
+ },
+ "1253": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1254": {
+  "lat": 10.7462581,
+  "lon": 106.6377238,
+  "source": "geocode",
+  "matched": "Him Lam"
+ },
+ "1255": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1256": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1257": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
  }
 }
