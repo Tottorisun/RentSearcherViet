@@ -4484,9 +4484,31 @@ try:
 except FileNotFoundError:
     WARD_BOUNDARIES = {}
 
+# Real points of interest near the tracked HCMC wards (metro/hospitals/international
+# schools), fetched from OpenStreetMap Overpass (bbox 10.72,106.66,10.83,106.78) 22 Aug 2026.
+# Metro stations are Line 1 (Bến Thành - Suối Tiên), several right by An Khánh (Thảo Điền/An Phú).
+POIS = {
+    "ho-chi-minh": [
+        {"type":"metro","name":"Công viên Văn Thánh","lat":10.7960548,"lon":106.7155056},
+        {"type":"metro","name":"Tân Cảng","lat":10.7985879,"lon":106.7232392},
+        {"type":"metro","name":"Thảo Điền","lat":10.8004871,"lon":106.7336512},
+        {"type":"metro","name":"An Phú","lat":10.8021337,"lon":106.7422498},
+        {"type":"metro","name":"Rạch Chiếc","lat":10.8085535,"lon":106.755277},
+        {"type":"metro","name":"Phước Long","lat":10.821435,"lon":106.758185},
+        {"type":"school","name":"Renaissance International School Saigon","lat":10.7817518,"lon":106.6869549},
+        {"type":"school","name":"European International School HCMC","lat":10.8055241,"lon":106.7346208},
+        {"type":"hospital","name":"Columbia Asia Saigon","lat":10.7795758,"lon":106.6965213},
+        {"type":"hospital","name":"Bệnh viện Đa khoa Tân Hưng","lat":10.7515951,"lon":106.696342},
+        {"type":"hospital","name":"Bệnh Viện Mắt Sài Gòn","lat":10.7713711,"lon":106.6909391},
+        {"type":"hospital","name":"Bệnh viện Quận 1 (cơ sở 2)","lat":10.7651115,"lon":106.6932273},
+        {"type":"hospital","name":"Bệnh Viện Sài Gòn ITO","lat":10.7950017,"lon":106.6672345},
+        {"type":"hospital","name":"Bệnh viện Phụ sản Mekong","lat":10.7998479,"lon":106.6675233},
+    ]
+}
+
 DATA = {
     "CITIES": CITIES, "SOURCES": SOURCES, "FB_GROUPS": FB_GROUPS,
-    "LISTINGS": LISTINGS, "WARD_BOUNDARIES": WARD_BOUNDARIES
+    "LISTINGS": LISTINGS, "WARD_BOUNDARIES": WARD_BOUNDARIES, "POIS": POIS
 }
 DATA_JSON = json.dumps(DATA, ensure_ascii=False, separators=(",",":"))
 print("Data JSON size:", len(DATA_JSON))
@@ -4655,6 +4677,8 @@ HTML = r"""<meta charset="utf-8">
 
   .map-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:0.78rem;color:var(--ink-dim);}
   .map-legend span{display:inline-flex;align-items:center;gap:6px;}
+  .poi-toggle-label{display:inline-flex;align-items:center;gap:6px;cursor:pointer;}
+  .poi-marker{border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 1px 3px rgba(0,0,0,0.35);border:1.5px solid #fff;}
   .swatch{width:12px;height:12px;border-radius:4px;display:inline-block;border:1px solid var(--line-strong);}
   .swatch-selected{background:var(--accent);border-color:var(--accent);}
   .swatch-has{background:var(--grey-has);}
@@ -4805,6 +4829,7 @@ HTML = r"""<meta charset="utf-8">
       <div class="map-legend">
         <span><i class="swatch" style="background:var(--accent)" aria-hidden="true"></i>объявление (положение приблизительное)</span>
         <span>клик по району на карте — фильтр по нему</span>
+        <label class="poi-toggle-label"><input type="checkbox" id="poi-toggle">метро / школы / госпитали</label>
       </div>
       <p class="map-credit" id="map-credit">Карта и адреса — © участники OpenStreetMap (ODbL). Границы районов актуальны после реформы административного деления 2025 года.</p>
     </div>
@@ -4933,8 +4958,15 @@ HTML = r"""<meta charset="utf-8">
   }
 
   var WARD_BOUNDARIES = DATA.WARD_BOUNDARIES || {};
-  var leafletMap = null, wardLayerGroup = null, markerLayerGroup = null, leafletReady = false;
+  var POIS = DATA.POIS || {};
+  var POI_STYLE = {
+    metro: {bg:"#1E6FBF", icon:"🚇"},
+    school: {bg:"#7A3FA0", icon:"🎓"},
+    hospital: {bg:"#B44430", icon:"✚"}
+  };
+  var leafletMap = null, wardLayerGroup = null, markerLayerGroup = null, poiLayerGroup = null, leafletReady = false;
   var wardLayerByKey = {};
+  var showPois = false;
 
   function initLeafletMap(){
     if (leafletMap || typeof L === "undefined") return;
@@ -4945,7 +4977,32 @@ HTML = r"""<meta charset="utf-8">
     }).addTo(leafletMap);
     wardLayerGroup = L.layerGroup().addTo(leafletMap);
     markerLayerGroup = L.layerGroup().addTo(leafletMap);
+    poiLayerGroup = L.layerGroup().addTo(leafletMap);
     leafletReady = true;
+    var poiToggle = document.getElementById("poi-toggle");
+    if (poiToggle){
+      poiToggle.addEventListener("change", function(){
+        showPois = poiToggle.checked;
+        renderPois(state.city);
+      });
+    }
+  }
+
+  function renderPois(cityKey){
+    if (!leafletReady) return;
+    poiLayerGroup.clearLayers();
+    if (!showPois) return;
+    var list = POIS[cityKey];
+    if (!list) return;
+    list.forEach(function(p){
+      var style = POI_STYLE[p.type] || {bg:"#666", icon:"•"};
+      var icon = L.divIcon({
+        className: "",
+        html: '<div class="poi-marker" style="background:'+style.bg+';width:22px;height:22px;">'+style.icon+'</div>',
+        iconSize: [22,22], iconAnchor: [11,11]
+      });
+      L.marker([p.lat, p.lon], {icon: icon}).bindTooltip(p.name).addTo(poiLayerGroup);
+    });
   }
 
   function wardStyle(cnt, selected){
@@ -4994,6 +5051,7 @@ HTML = r"""<meta charset="utf-8">
         boundsLayers.push(poly);
       });
     }
+    renderPois(state.city);
     if (boundsLayers.length){
       leafletMap.fitBounds(L.featureGroup(boundsLayers).getBounds(), {padding:[12,12]});
     } else {
