@@ -5782,5 +5782,167 @@
   "lon": 107.0801837,
   "source": "geocode",
   "matched": "Nguyễn An Ninh"
+ },
+ "1198": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1199": {
+  "lat": 10.763543,
+  "lon": 106.6418501,
+  "source": "geocode",
+  "matched": "Res I"
+ },
+ "1200": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1201": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1202": {
+  "lat": 10.7289952,
+  "lon": 106.7189174,
+  "source": "geocode",
+  "matched": "Crescent Mall"
+ },
+ "1203": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1204": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1205": {
+  "lat": 10.7435652,
+  "lon": 106.7042398,
+  "source": "geocode",
+  "matched": "Kim Sơn"
+ },
+ "1206": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1207": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1208": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1209": {
+  "lat": 10.7549518,
+  "lon": 106.6776402,
+  "source": "geocode",
+  "matched": "Tân Kiểng"
+ },
+ "1210": {
+  "lat": 10.7462581,
+  "lon": 106.6377238,
+  "source": "geocode",
+  "matched": "Him Lam"
+ },
+ "1211": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1212": {
+  "lat": 10.7462581,
+  "lon": 106.6377238,
+  "source": "geocode",
+  "matched": "Him Lam"
+ },
+ "1213": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1214": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1215": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1216": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1217": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "1218": {
+  "lat": 10.7969577,
+  "lon": 106.7504543,
+  "source": "geocode",
+  "matched": "Landmark 81"
+ },
+ "1219": {
+  "lat": 10.7703806,
+  "lon": 106.6951066,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1220": {
+  "lat": 10.7674015,
+  "lon": 106.6977106,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Bình"
+ },
+ "1221": {
+  "lat": 10.7655835,
+  "lon": 106.6931006,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "1222": {
+  "lat": 10.7674015,
+  "lon": 106.6977106,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Bình"
+ },
+ "1223": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1224": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
  }
 }

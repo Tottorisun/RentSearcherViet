@@ -4274,6 +4274,140 @@ L(1197,"vung-tau","tth","Квартира",12000000,75,
   "Квартира 20.06 в ЖК Gateway A на ул. Nguyễn An Ninh — 75м², 2 спальни/2 с/у, вся мебель остаётся, балкон с видом на море (по выходным видно фейерверк). Общий паркинг для машин.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-vung-tau-ba-ria-vung-tau/134271271.htm","сегодня",0,source="chotot",
   details={"notice":"цена не включает коммунальные платежи ЖК; договор минимум на год, оплата помесячно или поквартально; хозяин отдаёт приоритет компаниям для сотрудников и иностранцам, помогает с регистрацией проживания и выдаёт счёт-фактуру","contact":"Vũ Minh Hiếu"}),
+L(1198,"ho-chi-minh","tm","Квартира",30000000,128,
+  "3-спальная квартира (2 с/у) 128м² в ЖК Docklands на ул. Nguyễn Thị Thập, Q7 — полная меблировка, готова к заезду. Цена с торгом, залог 2 месяца.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134293885.htm","сегодня",0,source="chotot",
+  details={"contact":"владелец напрямую"}),
+
+L(1199,"ho-chi-minh","tm","Квартира",10000000,75,
+  "2-спальная квартира (2 с/у) 75м² в ЖК Res III рядом с рынком Tân Mỹ, у ворот Phú Mỹ Hưng. Полная меблировка.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134282442.htm","сегодня",0,source="chotot",
+  details={"contact":"Thiên Lộc"}),
+
+L(1200,"ho-chi-minh","tm","Квартира",8500000,70,
+  "Угловая 2-спальная квартира (2 с/у) 70м² в ЖК Belleza, блок B, Tân Mỹ — почти полная меблировка. Цена фиксированная: залог 2 месяца + 1 месяц вперёд.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134260804.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Nguyễn Thị Hưng (em Hưng)"}),
+
+L(1201,"ho-chi-minh","tm","Дом",30000000,80,
+  "Дом целиком, 3 этажа, ул. Đường số, старый центр Q7 (ныне Tân Mỹ) — 300 м от рынка Tân Mỹ. Участок 4×20м (80м²), 6 спален, кухня, 3 санузла. Чистый, отделка как на фото.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134254961.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Khánh Phan BDS"}),
+
+L(1202,"ho-chi-minh","th","Студия",6000000,30,
+  "Студия (căn hộ dịch vụ) напротив университетов RMIT и TDTU, Tân Hưng, Q7 — рядом Phú Mỹ Hưng, Lotte Mart, Crescent Mall, VivoCity. Полная меблировка, балкон.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134292943.htm","сегодня",0,source="chotot",
+  details={"contact":"Đức Quyền"}),
+
+L(1203,"ho-chi-minh","th","Комната",6500000,35,
+  "Комната 35м² в новом доме на 20 комнат (только что открылся), Tân Hưng, Q7, напротив Tôn Đức Thắng и RMIT. Полная меблировка, лифт, просторный двор, паркинг для машин, без общего с хозяином входа.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134292612.htm","сегодня",0,source="chotot",
+  details={"contact":"Hoàng Phước Newind"}),
+
+L(1204,"ho-chi-minh","th","Квартира",8000000,50,
+  "1-спальная квартира 50м² в жилом комплексе Kim Sơn, Tân Hưng, Q7, рядом Lotte Mart. Полная меблировка, своя стиральная машина. Новый дом.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134292525.htm","сегодня",0,source="chotot",
+  details={"contact":"Li Pao"}),
+
+L(1205,"ho-chi-minh","th","Квартира",9500000,50,
+  "1-спальная квартира 50м² в жилом комплексе Kim Sơn, Tân Hưng, Q7 — только что открылся. Премиальная меблировка, своя стиральная машина, пожарная безопасность подтверждена. Пешком до TDTU.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134292452.htm","сегодня",0,source="chotot",
+  details={"notice":"электричество 4000 ₫/кВт·ч, вода+парковка+управление 300 000 ₫/мес","contact":"Huy Phan Megas"}),
+
+L(1206,"ho-chi-minh","th","Квартира",10000000,37,
+  "2-спальная квартира (2 с/у) 37м² в ЖК Lavida Plus, Tân Hưng, Q7 — полная меблировка (диван, кровать, шкаф, обеденный стол, холодильник, стиралка, кондиционер в каждой комнате). Бассейн, супермаркет в комплексе. Рядом RMIT, Tôn Đức Thắng, Lotte Mart, VivoCity, Crescent Mall.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134270761.htm","1 день назад",1,source="chotot",
+  details={"contact":"Võ Thị Kim Thy"}),
+
+L(1207,"ho-chi-minh","th","Студия",5400000,30,
+  "Студия с балконом рядом с Lotte Mart, Tân Hưng, Q7 — чисто, тихий охраняемый квартал у парка, лифт, просторная парковка, камеры 24/7. Заезд без хозяина в доме, свободный режим входа.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134263452.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Thúy Doll"}),
+
+L(1208,"ho-chi-minh","th","Студия",5900000,30,
+  "Студия напротив RMIT, речной квартал Tân Hưng, Q7 — только что открылся дом, разные комнаты по цене 5,9-8,0 млн, лифт, подземный паркинг. Разрешены животные, принимают иностранцев, электровелосипед без подзарядки.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134290959.htm","сегодня",0,source="chotot",
+  details={"notice":"диапазон цен по комнатам 5,9-8,0 млн ₫, взята нижняя граница; электричество 4000 ₫/кВт·ч, вода+парковка+управление 300 000 ₫/мес","contact":"Phạm Lộc Newind"}),
+
+L(1209,"ho-chi-minh","th","Дом",15000000,80,
+  "Дом целиком фасадом на Đường số, Tân Kiểng, Tân Hưng, Q7 — участок 3×26м, расширяется вглубь до 5,5м (80м²), 1 этаж + 1 этаж, 3 спальни/3 с/у + отдельная комната для алтаря. Южная ориентация, базовая меблировка.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134293765.htm","сегодня",0,source="chotot",
+  details={"notice":"в объявлении отмечено «подходит для проживания в сочетании с бизнесом»","contact":"Gia Gia"}),
+
+L(1210,"ho-chi-minh","th","Дом",90000000,200,
+  "Вилла 10×20м в закрытом квартале Him Lam, Tân Hưng, Q7 — цоколь + 4 этажа, лифт премиум-класса, общая площадь застройки 1000м², 6 комнат/5 с/у, кондиционеры, большой двор с трёх сторон, просторный подземный паркинг.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134288266.htm","сегодня",0,source="chotot",
+  details={"notice":"в объявлении отмечено «подходит для проживания, офиса или бизнеса»","contact":"Nguyễn Hoàng Minh Sơn"}),
+
+L(1211,"ho-chi-minh","th","Дом",60000000,100,
+  "Таунхаус 5×20м в закрытом квартале Him Lam, Tân Hưng, Q7, рядом ул. Nguyễn Thị Thập — цоколь + 4 этажа, общая площадь застройки 500м², 6 комнат/5 с/у, кондиционеры, двор спереди и сзади.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134288048.htm","сегодня",0,source="chotot",
+  details={"notice":"цена указана «со всеми налогами»; в объявлении отмечено «подходит для проживания, офиса или бизнеса»","contact":"Nguyễn Hoàng Minh Sơn"}),
+
+L(1212,"ho-chi-minh","th","Дом",5000000,20,
+  "Дом целиком с антресолью в 100м от моста Him Lam, Tân Hưng, Q7 — переулок для машины шириной 8м, плотный жилой квартал, прямое электричество и вода.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134281630.htm","сегодня",0,source="chotot",
+  details={"notice":"в объявлении отмечено «подходит для проживания вместе с небольшой торговлей»"}),
+
+L(1213,"ho-chi-minh","th","Дом",10000000,50,
+  "Дом целиком (3 комнаты) в переулке ул. Trần Xuân Soạn, Tân Hưng, Q7 — участок 5×10м, 1 этаж + 2 этажа, 3 спальни/3 с/у, гостиная, кухня. Центральное расположение, удобно до других районов.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134282685.htm","сегодня",0,source="chotot",
+  details={}),
+
+L(1214,"ho-chi-minh","ak","Квартира",20000000,70,
+  "2-спальная квартира в ЖК Masteri Thảo Điền — средний этаж, прямой вид на реку. Полная качественная меблировка. Рядом ТЦ Vincom Mega Mall, станция метро №1, бассейн, спортзал, зона BBQ.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/134255526.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Thái"}),
+
+L(1215,"ho-chi-minh","ak","Студия",8000000,45,
+  "Просторная студия в центре Thảo Điền, рядом мост Sài Gòn — 45м², свой балкон. Полная меблировка, заезд сразу.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/134255071.htm","2 дня назад",2,source="chotot",
+  details={"contact":"Minh Khôi Chuyên Căn Hộ Quận 2"}),
+
+L(1216,"ho-chi-minh","ak","Дом",18000000,35,
+  "Дом целиком в переулке для машины, Thảo Điền — участок 4,3×8,1м (35м²), 1 этаж + 2 этажа, 3 спальни, 2 с/у, терраса на крыше. Тихий безопасный квартал.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-thu-duc-tp-ho-chi-minh/134292991.htm","сегодня",0,source="chotot",
+  details={"contact":"Thomas"}),
+
+L(1217,"ho-chi-minh","bq","Квартира",7500000,60,
+  "2-спальная квартира (1 с/у) в доме Chung cư Dầu Khí, Bình Quới, Bình Thạnh — 60м². Пустая (без мебели), заезд сразу. Подходит для семьи или компании друзей, долгосрочная аренда.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-binh-thanh-tp-ho-chi-minh/134292834.htm","сегодня",0,source="chotot",
+  details={"contact":"Nguyễn Phước Đăng Khoa"}),
+
+L(1218,"ho-chi-minh","bq","Дом",3500000,50,
+  "Отдельно стоящий дом в переулке 480 (Hẻm Gà Nướng Bảy Đực), Bình Quới, Bình Thạnh, на территории большого частного земельного участка — 1 спальня, гостиная, санузел, маленькая кухня. Тихо, зелено, вид на Landmark 81 и высотки Q2.",
+  "https://www.nhatot.com/thue-nha-dat-quan-binh-thanh-tp-ho-chi-minh/134291718.htm","сегодня",0,source="chotot",
+  details={"notice":"в структурном поле площадки ошибочно указана площадь 10000м² (это площадь всего участка комплекса из текста объявления, не самого юнита); по тексту размер блока 5×10м = 50м²","contact":"Cô Thảo"}),
+
+L(1219,"ho-chi-minh","bth","Студия",7500000,35,
+  "Апартамент в центре Q1 — 35м², светлая просторная комната, полная новая меблировка, большой подземный паркинг, лифт.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134291185.htm","сегодня",0,source="chotot",
+  details={"notice":"в объявлении не указан точный адрес","contact":"Kiều Nga Megas"}),
+
+L(1220,"ho-chi-minh","bth","Студия",11000000,25,
+  "Студия 25-30м² в районе Nguyễn Thái Bình, Q1 — полная меблировка, отдельная кухня, стиральная машина, свой балкон, лифт, бесплатная парковка. Рядом рынок Bến Thành, Saigon Centre, пешеходная Nguyễn Huệ, Дворец Независимости. Своя разводка электричества (по счётчику), вода 150 000₫/чел.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134288291.htm","сегодня",0,source="chotot",
+  details={"notice":"диапазон цены в объявлении 11-13 млн ₫/мес за 25-30м² в зависимости от конкретной комнаты, взята нижняя граница (структурное поле)","other_fees":"вода 150 000 ₫/чел., парковка бесплатно","contact":"Việt Lương Quốc"}),
+
+L(1221,"ho-chi-minh","bth","Студия",5000000,24,
+  "Мини-квартира на 134 Trần Hưng Đạo, Bến Thành, Q1 — от собственника, без комиссии. Полная меблировка, заезд сразу. Рядом школы, больница, Bến Thành, Bùi Viện.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134285592.htm","сегодня",0,source="chotot",
+  details={"contact":"Mây (chính chủ)"}),
+
+L(1222,"ho-chi-minh","bth","Дом",14000000,40,
+  "Дом целиком, 2 спальни/4 с/у, ул. Nguyễn Thái Bình, Q1, у моста Calmette (тупиковый переулок, дом в самом конце) — 1 этаж + 2 этажа + терраса на крыше, кондиционер в каждой комнате, двор на 3 байка, тупик проезжий для машины. Северо-западная ориентация. Договор на 2 года.",
+  "https://www.nhatot.com/thue-nha-dat-quan-1-tp-ho-chi-minh/134280462.htm","сегодня",0,source="chotot",
+  details={"notice":"в объявлении отмечено «подходит для семьи или онлайн-бизнеса»"}),
+
+L(1223,"ho-chi-minh","kh","Квартира",19000000,54,
+  "1-спальная квартира 54м² в ЖК Millennium, Khánh Hội, Q4 — вид на реку, освобождается в сентябре. Полная современная меблировка, дом ухоженный. Бассейн-инфинити, спортзал, зона BBQ, парк в комплексе, охрана 24/7.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134287137.htm","сегодня",0,source="chotot",
+  details={"contact":"hà pihomes"}),
+
+L(1224,"ho-chi-minh","kh","Студия",12000000,31,
+  "Студия с балконом 31м² (1 спальня, 1 с/у) в ЖК Masteri Millennium, Khánh Hội, Q4 — полная меблировка. Бесплатный доступ к бассейну, спортзалу и другим удобствам комплекса.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134284028.htm","сегодня",0,source="chotot",
+  details={"contact":"Căn hộ giá tốt Quận 4"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
