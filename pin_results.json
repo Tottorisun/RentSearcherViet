@@ -6142,5 +6142,83 @@
   "lon": 106.7331692,
   "source": "geocode",
   "matched": "Trần Não"
+ },
+ "1258": {
+  "lat": 10.771895,
+  "lon": 106.6890524,
+  "source": "geocode",
+  "matched": "Sương Nguyệt Anh"
+ },
+ "1259": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "1260": {
+  "lat": 10.7960438,
+  "lon": 106.6924865,
+  "source": "geocode",
+  "matched": "Circle K"
+ },
+ "1261": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1262": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1263": {
+  "lat": 10.8379245,
+  "lon": 106.6713343,
+  "source": "geocode",
+  "matched": "Lotte Mart Q7"
+ },
+ "1264": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1265": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1266": {
+  "lat": 10.7289952,
+  "lon": 106.7189174,
+  "source": "geocode",
+  "matched": "Crescent Mall"
+ },
+ "1267": {
+  "lat": 10.6928289,
+  "lon": 106.7172107,
+  "source": "geocode",
+  "matched": "Phạm Hữu Lầu"
+ },
+ "1268": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1269": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1270": {
+  "lat": 10.8016927,
+  "lon": 106.7393614,
+  "source": "geocode",
+  "matched": "Song Hành"
  }
 }
