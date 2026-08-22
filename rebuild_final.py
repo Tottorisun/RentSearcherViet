@@ -4408,6 +4408,50 @@ L(1224,"ho-chi-minh","kh","Студия",12000000,31,
   "Студия с балконом 31м² (1 спальня, 1 с/у) в ЖК Masteri Millennium, Khánh Hội, Q4 — полная меблировка. Бесплатный доступ к бассейну, спортзалу и другим удобствам комплекса.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134284028.htm","сегодня",0,source="chotot",
   details={"contact":"Căn hộ giá tốt Quận 4"}),
+L(1225,"ho-chi-minh","th","Дом",15000000,78,
+  "Дом целиком на переулочной улице рядом с Lotte Mart — 1 этаж+1 этаж, 3x26м (78м²), 3 спальни/3 с/у. Рядом рынок Тан Куи, ун-т Тон Дык Тханг, мост Кэнь Тэ.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134292844.htm","сегодня",0,source="chotot",
+  details={"contact":"Đặng Trung Hậu"}),
+
+L(1226,"ho-chi-minh","th","Квартира",5500000,35,
+  "Дуплекс с антресолью рядом с Lotte Mart, TDTU и RMIT — 35м², полная меблировка, окна, вход по отпечатку пальца.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134291760.htm","сегодня",0,source="chotot",
+  details={"contact":"MỸ HƯƠNG"}),
+
+L(1227,"ho-chi-minh","tm","Дом",8000000,24,
+  "Дом целиком в переулке 167 ул. Phạm Hữu Lầu, в 50м от проезжей части, рядом с Фу Ми Хынг — 3x8м (24м²), 1 этаж+1 этаж, балкон, 2 спальни/2 с/у. Новый дом, никто ещё не жил.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134289080.htm","сегодня",0,source="chotot",
+  details={"contact":"Nguyễn duy tú"}),
+
+L(1228,"ho-chi-minh","bth","Дом",182000000,117,
+  "Дом на красной линии ул. Nguyễn Công Trứ, Q1, от собственника — 4,5x23м (117м²), 1 этаж + 5 этажей, 10 комнат.",
+  "https://www.nhatot.com/thue-nha-dat-quan-1-tp-ho-chi-minh/134283541.htm","вчера",1,source="chotot",
+  details={"notice":"крупный масштаб (10 комнат, депозит 540 млн ₫) — похоже на объект под гостевой дом/инвестицию, а не типовую семейную аренду; указано честно как есть","contact":"Phi Nguyễn"}),
+
+L(1229,"ho-chi-minh","th","Дом",15000000,78,
+  "Дом на красной линии, ул. Số 04 (старый район Tân Kiểng, ныне Tân Hưng) — 3x26м, сужается к 5,5м вглубь (форма «желудка» по фэн-шуй), 1 этаж+1 этаж, 3 спальни/3 с/у, отдельная комната для алтаря. Рядом рынок Tân Quy, Lotte Mart, больница Tâm Anh, мост Kênh Tẻ.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134281528.htm","вчера",1,source="chotot",
+  details={"notice":"в объявлении цена ошибочно указана со знаком доллара «$15.000.000»; по контексту это вьетнамские донги, не доллары; действует договор аренды по этой цене, торг не предполагается","contact":"Zara Tâm An"}),
+
+L(1230,"ho-chi-minh","th","Студия",5500000,40,
+  "Студия и дуплекс с балконом в центре Куан 7, рядом Lotte Mart, RMIT, TDTU — 40м², полная меблировка, своя стиральная машина, заезд сразу.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134280507.htm","вчера",1,source="chotot",
+  details={"contact":"Trần Văn"}),
+
+L(1231,"ho-chi-minh","kh","Квартира",11000000,68,
+  "Квартира 2 спальни/1 с/у с 2 балконами на ул. Tôn Thất Thuyết, Q4 — 68м², полная меблировка, своя стиральная машина, угловая квартира. Рядом университеты Luật и Nguyễn Tất Thành, Q1/Q5/Q7.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134278124.htm","вчера",1,source="chotot",
+  details={"contact":"Thanh Phú HiFriendz"}),
+
+L(1232,"ho-chi-minh","th","Квартира",6900000,30,
+  "Дуплекс в пешей доступности от Lotte Mart, рядом ун-ты Tôn Đức Thắng, RMIT, Tài chính-Marketing — 30м², рядом промзона Tân Thuận, Eco Green, рынки Tân Quy и Tân Mỹ.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134272313.htm","вчера",1,source="chotot",
+  details={"contact":"Thanh Trúc hình thật giá thật"}),
+
+L(1233,"ho-chi-minh","bth","Квартира",7000000,35,
+  "Квартира на красной линии ул. Trần Hưng Đạo, Bến Thành, Q1 — 35м², полная меблировка, удобно добираться до Q1/Q4/Q5/Bình Thạnh. Электричество и вода по гостарифу.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134270103.htm","вчера",1,source="chotot",
+  details={"notice":"по тексту объявления подходит и для небольшого бизнеса (маникюр/спа/парикмахерская) на дому — указано честно как доп. опция","contact":"Nguyễn Văn Ước"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
