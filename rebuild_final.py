@@ -509,7 +509,7 @@ L(316,"nha-trang","ps","Квартира",4200000,None,"Дуплекс в рай
 L(317,"nha-trang","ph","Дом",18000000,None,"Дом целиком, 4 этажа, 5 спален со своими санузлами, район Phước Hải (ул. Thích Quảng Đức).","https://www.facebook.com/groups/chothuenhanguyencannhatrang/posts/4622871407963854/","недавно",0,source="facebook",details={"deposit":"2 месяца + 1 оплата","notice":"площадка для сушки белья, заселение с 1 сентября, тел. 0394 257 517"}),
 L(318,"nha-trang","vt","Дом",35000000,300,"Новый дом 3 спальни в КДТ Mỹ Gia (район Vĩnh Thái), лифт, терраса, охраняемый район.","https://www.facebook.com/groups/chothuenhanguyencannhatrang/posts/4630872880497040/","недавно",0,source="facebook",details={"deposit":"2 месяца (оплата за 2)","contract":"1 год","managementFee":"770 000 ₫/мес","notice":"Zalo 0976 864 740"}),
 L(319,"nha-trang","ps","Дом",4000000,None,"Одноэтажный дом, 2 спальни, район Chợ Ga (ул. Vĩnh Thạnh), долгосрочный контракт.","https://www.facebook.com/groups/chothuenhanguyencannhatrang/posts/4632286153689046/","недавно",0,source="facebook",details={"notice":"тел. 0935 709 788"}),
-L(320,"nha-trang","pl","Квартира",10000000,65,"Угловая 2-спальная квартира в КДТ Phước Long (CT4 Hud, ул. 28), балкон, качественная мебель.","https://www.facebook.com/groups/chothuecanhonhatrangkhanhhoa/posts/27944490621827590/","недавно",0,source="facebook",details={"deposit":"2 месяца (оплата за 2)","notice":"тел. 0989 819 892"}),
+L(320,"nha-trang","pl","Квартира",10000000,65,"Угловая 2-спальная квартира в КДТ Phước Long (CT4 Hud, ул. 28), балкон, качественная мебель.","https://www.facebook.com/groups/chothuecanhonhatrangkhanhhoa/posts/27944490621827590/","недавно",0,source="facebook",details={"alsoOn":[{"source":"fbmarketplace","url":"https://www.facebook.com/marketplace/item/1491098622776266/"},{"source":"chotot","url":"https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134184961.htm"}],"deposit":"2 месяца (оплата за 2)","notice":"тел. 0989 819 892"}),
 L(321,"nha-trang","ps","Квартира",8500000,65,"2-спальная квартира в Vĩnh Điềm Trung (CT6), 3 кондиционера, рядом супермаркет Go.","https://www.facebook.com/groups/chothuecanhonhatrangkhanhhoa/posts/27965768696366449/","недавно",0,source="facebook",details={"amenities":"3 кондиционера","deposit":"2 месяца (оплата за 2)","contract":"1 год","notice":"тел. 0773 701 937"}),
 L(322,"nha-trang","lt","Квартира",14000000,None,"2-спальная квартира в ЖК Mường Thanh, 04 Trần Phú, вид на реку и башню Понагар.","https://www.facebook.com/groups/chothuecanhonhatrangkhanhhoa/posts/27910007241942595/","недавно",0,source="facebook",details={"managementFee":"700 000 ₫/мес","notice":"паркинг мотоцикла 100 000 ₫/мес, wifi 250 000 ₫/мес"}),
 L(323,"da-nang","ns","Дом",18000000,100,"Дом целиком, 3 этажа, 4 спальни, район Hói Kiểng (рядом ул. Minh Mạng), полная мебель.","https://www.facebook.com/groups/599988861199745/posts/1857447832120502/","недавно",0,source="facebook",details={"amenities":"4 кондиционера, холодильник, стиральная машина","contract":"1-2 года","notice":"тел. 0905 999 196"}),
@@ -976,7 +976,7 @@ L(519,"da-nang","st","Квартира",15420000,27,
 L(520,"nha-trang","pl","Квартира",10000000,65,
   "Угловая 2-спальная квартира (2 с/у) с балконом в ЖК CT4 Hud, ул. 28, КГТ Phước Long, полностью меблирована, заезжай с чемоданом.",
   "https://www.facebook.com/marketplace/item/1491098622776266/","проверено 16 авг",1,source="fbmarketplace",
-  details={"deposit":"2 месяца","notice":"⚠ на карточке FB отображается цена 1 000 000 ₫ — это баг ввода цены у продавца, в тексте описания указано 10 000 000 ₫/мес, используется цена из описания.","contact":"продавец Lê Đình Ngọc (на FB с 2018)"}),
+  details={"duplicateOf":320,"deposit":"2 месяца","notice":"⚠ на карточке FB отображается цена 1 000 000 ₫ — это баг ввода цены у продавца, в тексте описания указано 10 000 000 ₫/мес, используется цена из описания.","contact":"продавец Lê Đình Ngọc (на FB с 2018)"}),
 
 L(521,"nha-trang","vt","Квартира",16000000,None,
   "3-спальная квартира (2 с/у) с видом на море в Napoleon Seaview Apartments, рядом с Университетом Нячанга, тихий охраняемый район, средний этаж.",
@@ -1224,7 +1224,7 @@ L(569,"ho-chi-minh","bq","Студия",5700000,35,
 L(570,"ho-chi-minh","bq","Квартира",21000000,130,
   "3-спальная квартира 130 м² в комплексе Thanh Đa View, полная мебель, «срочно сдаётся».",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-binh-thanh-tp-ho-chi-minh/133691094.htm","4 недели назад",28,source="chotot",
-  details={"contact":"Trần Ngọc Nhiễm (8 объявлений)"}),
+  details={"alsoOn":[{"source":"fbmarketplace","url":"https://www.facebook.com/marketplace/item/1330550035468360/"}],"contact":"Trần Ngọc Nhiễm (8 объявлений)"}),
 
 
 L(573,"ho-chi-minh","tm","Квартира",27000000,80,
@@ -1313,7 +1313,7 @@ L(589,"ho-chi-minh","ak","Квартира",35000000,77,
 L(592,"ho-chi-minh","bq","Квартира",21000000,120,
   "Thanh Đa View, 3-спальная квартира (2 с/у), рядом мост Thanh Đa и рынок, бассейн, спортзал, магазин у дома, вид на реку Сайгон.",
   "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-thanh-da-phuong-27-thanh-da-view/cho-3pn-a-so-7-a-p-27-quan-binh-dien-pr46066498","опубл. 04.08.26",13,source="batdongsan",
-  details={"notice":"⚠ дата истечения тарифа объявления — 14.08.26 (пару дней назад)","contact":"Nguyễn Tấn Huy, 0937 833 ***"}),
+  details={"alsoOn":[{"source":"fbmarketplace","url":"https://www.facebook.com/marketplace/item/1578595263909443/"},{"source":"fbmarketplace","url":"https://www.facebook.com/marketplace/item/1043456721722228/"}],"notice":"⚠ дата истечения тарифа объявления — 14.08.26 (пару дней назад)","contact":"Nguyễn Tấn Huy, 0937 833 ***"}),
 
 
 L(594,"ho-chi-minh","bq","Комната",4200000,40,
@@ -1370,12 +1370,12 @@ L(605,"ho-chi-minh","bq","Квартира",14000000,None,
 L(606,"ho-chi-minh","bq","Квартира",21000000,120,
   "Угловая 3-спальная квартира (2 с/у) в комплексе Thanh Đa View №7, у моста Thanh Đa, напротив рынка, вид на реку Сайгон.",
   "https://www.facebook.com/marketplace/item/1578595263909443/","проверено 17 авг",1,source="fbmarketplace",
-  details={"notice":"⚠ на карточке FB отображается усечённая цена 21 000 ₫, в описании 21 млн ₫/мес.","amenities":"бассейн, спортзал, мини-маркет","contact":"Tấn Huy"}),
+  details={"duplicateOf":592,"notice":"⚠ на карточке FB отображается усечённая цена 21 000 ₫, в описании 21 млн ₫/мес.","amenities":"бассейн, спортзал, мини-маркет","contact":"Tấn Huy"}),
 
 L(607,"ho-chi-minh","bq","Квартира",21000000,130,
   "3-спальная квартира (2 с/у) в охраняемом комплексе Thanh Đa View, бассейн, бесплатный спортзал, супермаркет.",
   "https://www.facebook.com/marketplace/item/1330550035468360/","проверено 17 авг",1,source="fbmarketplace",
-  details={"notice":"⚠ на карточке FB цена показана как 1 ₫ (баг), в описании указано «21TR» (21 млн ₫/мес)."}),
+  details={"duplicateOf":570,"notice":"⚠ на карточке FB цена показана как 1 ₫ (баг), в описании указано «21TR» (21 млн ₫/мес)."}),
 
 L(608,"ho-chi-minh","bq","Дом",8000000,100,
   "Отдельный 3-этажный дом, 3 спальни/3 с/у, точный адрес 28/3 Thanh Đa (район «Cháo Vịt»), рядом вузы (HUTECH, ГТВТ, Ngoại Thương, Văn Lang), рынок ~100м.",
@@ -1848,7 +1848,7 @@ L(706,"ho-chi-minh","bq","Дом",12000000,96,
 L(707,"ho-chi-minh","bq","Квартира",21000000,120,
   "Угловая 3-спальная квартира (2 с/у) в ЖК Thanh Đa View, балкон, бассейн, спортзал, магазин у дома, напротив рынка Thanh Đa, у моста, вокруг река Сайгон.",
   "https://www.facebook.com/marketplace/item/1043456721722228/","проверено 17 авг",0,source="fbmarketplace",
-  details={"contact":"Tấn Huy (тот же агент, что и объявления по Q4 выше)"}),
+  details={"duplicateOf":592,"contact":"Tấn Huy (тот же агент, что и объявления по Q4 выше)"}),
 L(708,"ho-chi-minh","bth","Квартира",27966263,20,
   "Mersey Central Saigon Apart'Hotel, студия/1-спальная, ул. Yersin, Q1.",
   "https://www.booking.com/hotel/vn/mersey-central-saigon.ru.html","проверено 17 авг",0,source="booking",
@@ -2410,7 +2410,7 @@ L(819,"ho-chi-minh","th","Квартира",5000000,30,
 L(820,"ho-chi-minh","th","Дом",25000000,72,
   "Дом на первой линии, ул. Số 30 (бывший APH, новый Phường Tân Hưng), 4x18 м, 3 этажа: цоколь + 5 комнат (у каждой свой с/у), терраса на 3-м этаже, ещё одна комната с с/у сзади, отдельная зона для стирки, просторный двор под машины.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134185850.htm","вчера",1,source="chotot",
-  details={"contact":"Lực Villa Him Lam Quận 7","notice":"подходит под офис/спа/школу или другой бизнес, а не только под жильё."}),
+  details={"alsoOn":[{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134218405.htm"},{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134273371.htm"},{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134221426.htm"}],"contact":"Lực Villa Him Lam Quận 7","notice":"подходит под офис/спа/школу или другой бизнес, а не только под жильё."}),
 
 L(821,"ho-chi-minh","th","Дом",50000000,142,
   "Вилла на первой линии, ул. Số 85 (бывший Tân Quy, новый Tân Hưng), 7x23 м, южная ориентация, цоколь + 2 этажа, 5 спален/5 с/у, новая постройка, большой двор под несколько машин. В 300 м — ЖК Hoàng Anh Gia Lai.",
@@ -2582,7 +2582,7 @@ L(854,"ho-chi-minh","th","Студия",6300000,30,
 L(855,"ho-chi-minh","th","Дом",25000000,72,
   "Дом целиком, 1 этаж + 2 надстройки, 4 спальни/3 санузла, 4x18 м (72 м²), фасад на переулочной улице в районе Tân Kiểng (старое название части Tân Hưng), Q7. Подходит и для жилья, и под небольшой офис компании.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134218405.htm","сегодня",0,source="chotot",
-  details={"contact":"NGUYỄN HOA"}),
+  details={"duplicateOf":820,"contact":"NGUYỄN HOA"}),
 
 L(856,"ho-chi-minh","th","Студия",5200000,40,
   "Дуплекс-студия 40 м² на Đường số 79, Tân Hưng. Полная меблировка, отдельная стиральная машина, просторная комната. Отдельный вход, свободный график. Рядом Lotte Mart, Crescent Mall, КЭЗ Tân Thuận, RMIT, ДТУ, удобно до Q1/Q4.",
@@ -2670,7 +2670,7 @@ L(872,"ho-chi-minh","ak","Дом",25000000,120,
 L(873,"ho-chi-minh","tm","Дом",30000000,80,
   "Дом целиком, ~300 м от рынка Tân Mỹ (старый центр Q7), Phường Tân Mỹ. Участок 4x20 м (80 м²), 3 этажа, 5 спален, отделка как на фото.",
   "https://batdongsan.com.vn/cho-thue-nha-rieng-duong-12-phuong-tan-phu-19-59/cho-nguyen-can-uong-so-p-quan-7-nay-la-my-tp-hcm-ngay-cho-my-pr46202495","проверено 19 авг",0,source="batdongsan",
-  details={"notice":"Batdongsan не публикует дату размещения; свежесть определена по ID объявления (prNNNNNNNN) — выше максимального ID, зафиксированного как уже виденный в проверках по состоянию на 18 авг (46197409). Цена подтверждена дважды: в карточке поиска и на странице объявления (поле «Khoảng giá»). Этот же объект (тот же адрес-ориентир, площадь и цена) также был замечен опубликованным под 4 разными аккаунтами на Chợ Tốt — добавлена только эта версия во избежание задвоения."}),
+  details={"alsoOn":[{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134234709.htm"},{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134273497.htm"},{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134254961.htm"},{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134244463.htm"}],"notice":"Batdongsan не публикует дату размещения; свежесть определена по ID объявления (prNNNNNNNN) — выше максимального ID, зафиксированного как уже виденный в проверках по состоянию на 18 авг (46197409). Цена подтверждена дважды: в карточке поиска и на странице объявления (поле «Khoảng giá»). Этот же объект (тот же адрес-ориентир, площадь и цена) также был замечен опубликованным под 4 разными аккаунтами на Chợ Tốt — добавлена только эта версия во избежание задвоения."}),
 
 L(874,"ho-chi-minh","tm","Дом",20000000,90,
   "Дом в жилом квартале (KDC/переселенческий) Phú Mỹ, Phường Tân Mỹ. Участок 5x18 м (90 м²), 1 этаж + 1 надстройка, 2 спальни/2 санузла, заезд авто во двор, базовая меблировка. Подходит для проживания, под небольшой офис или онлайн-бизнес.",
@@ -2709,7 +2709,7 @@ L(881,"nha-trang","vh","Дом",15000000,100,
 L(882,"nha-trang","pl","Квартира",10000000,65,
   "Угловая 2-спальная квартира (2 с/у) с балконом, ЖК CT4 Hud, ул. 28, КДТ Phước Long.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134184961.htm","2 дня назад",2,source="chotot",
-  details={"deposit":"2 месяца (оплата за 2)","contact":"Hà Lương IT"}),
+  details={"duplicateOf":320,"deposit":"2 месяца (оплата за 2)","contact":"Hà Lương IT"}),
 
 L(883,"nha-trang","ph","Квартира",10000000,67,
   "2-спальная квартира (2 с/у) в ЖК CT2 VCN Phước Hải. 3 кондиционера, 2 ТВ, водонагреватель, электроплита, стиралка.",
@@ -3075,7 +3075,7 @@ L(955,"ho-chi-minh","tm","Квартира",10500000,58,
 L(956,"ho-chi-minh","tm","Дом",30000000,80,
   "Дом целиком (4×20м, 3 этажа, 6 спален, кухня, 3 с/у, 7 кондиционеров) в 300 м от рынка Tân Mỹ, Q7. Подходит для жилья или под небольшой бизнес.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134234709.htm","20 часов назад",0,source="chotot",
-  details={"contact":"Dương Văn Bảo"}),
+  details={"duplicateOf":873,"contact":"Dương Văn Bảo"}),
 
 L(957,"ho-chi-minh","ak","Студия",7500000,35,
   "Квартира с отдельной кухней и просторным балконом, Thảo Điền (An Khánh), рядом мост Sài Gòn — удобно до Q1/Q3/Q5/Q10/Bình Thạnh/Thủ Đức. Премиальная меблировка, еженедельная уборка, паркинг с лифтом и охраной 24/7, разрешены животные.",
@@ -3520,7 +3520,7 @@ L(1045,"da-nang","ns","Квартира",9500000,60,
 L(1046,"ho-chi-minh","tm","Дом",8000000,24,
   "Дом целиком в переулке 167, ул. Phạm Hữu Lầu, Tân Mỹ, Q7 — 50 м до асфальтированной дороги, рядом Phú Mỹ Hưng. Участок 3×8 м, 1 этаж + 1 этаж, балкон 1,8 м, 2 спальни, 2 с/у, гостиная, кухня. Новый дом, никто ещё не жил.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134277555.htm","1 час назад",0,source="chotot",
-  details={"deposit":"1 месяц","contact":"Lý Thuỷ Mộc (chính chủ)"}),
+  details={"alsoOn":[{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134289080.htm"}],"deposit":"1 месяц","contact":"Lý Thuỷ Mộc (chính chủ)"}),
 
 L(1047,"ho-chi-minh","tm","Квартира",9500000,75,
   "2-спальная квартира (2 с/у) 75м² в ЖК Sunshine Sky City, рядом Phú Mỹ Hưng. Базовая меблировка. Бесплатное управление первые 2 года. Бассейн, спортзал, охрана 24/7, паркинг.",
@@ -3545,7 +3545,7 @@ L(1050,"ho-chi-minh","tm","Квартира",13000000,75,
 L(1051,"ho-chi-minh","tm","Дом",30000000,80,
   "Дом целиком (5 спален), 300 м от рынка Tân Mỹ, старый центр Q7. Участок 4×20м (80м²), 3 этажа, полная меблировка, западная ориентация.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134273497.htm","4 часа назад",0,source="chotot",
-  details={"contact":"phượng"}),
+  details={"duplicateOf":873,"contact":"phượng"}),
 
 L(1052,"ho-chi-minh","tm","Дом",17000000,64,
   "Дом целиком в переулке 1422, ул. Huỳnh Tấn Phát, Q7 — участок 4×16м (64м²), 1 этаж + 2 этажа + терраса, 3 спальни, 3 с/у. Полная качественная меблировка.",
@@ -3620,7 +3620,7 @@ L(1065,"ho-chi-minh","th","Студия",5600000,35,
 L(1066,"ho-chi-minh","th","Дом",25000000,72,
   "Дом целиком, 3 этажа, Tân Hưng, Q7, фасад на улицу — участок 4×18м (72м²), 1 этаж + 3 этажа, 4 спальни, 3 с/у, гостиная, кухня, место для авто.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134273371.htm","4 часа назад",0,source="chotot",
-  details={"contact":"Nhà Thuê Nguyên Căn Quận 7"}),
+  details={"duplicateOf":820,"contact":"Nhà Thuê Nguyên Căn Quận 7"}),
 
 L(1067,"ho-chi-minh","th","Дом",15000000,110,
   "Дом целиком фасадом на улицу, ул. Lâm Văn Bền, Q7 — участок 5×22м (110м²), 1 сквозной этаж, 2 спальни, 2 с/у, гостиная, кухня, место для авто.",
@@ -3665,7 +3665,7 @@ L(1074,"ho-chi-minh","th","Студия",6500000,30,
 L(1075,"ho-chi-minh","th","Дом",25000000,72,
   "Дом фасадом на улицу, ул. Tân Kiểng, Q7 — участок 4×18м (72м²), 1 этаж + 3 этажа, 4 спальни, 3 с/у, гостиная, кухня, место для авто.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134221426.htm","2 дня назад",2,source="chotot",
-  details={"contact":"LHP"}),
+  details={"duplicateOf":820,"contact":"LHP"}),
 
 L(1076,"ho-chi-minh","ak","Квартира",22000000,83,
   "3-спальная квартира (2 с/у) 83м² в ЖК New City, ул. Mai Chí Thọ, An Khánh — полная меблировка, бассейн, спортзал, кафе Highlands, магазин у дома.",
@@ -4292,7 +4292,7 @@ L(1200,"ho-chi-minh","tm","Квартира",8500000,70,
 L(1201,"ho-chi-minh","tm","Дом",30000000,80,
   "Дом целиком, 3 этажа, ул. Đường số, старый центр Q7 (ныне Tân Mỹ) — 300 м от рынка Tân Mỹ. Участок 4×20м (80м²), 6 спален, кухня, 3 санузла. Чистый, отделка как на фото.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134254961.htm","2 дня назад",2,source="chotot",
-  details={"contact":"Khánh Phan BDS"}),
+  details={"duplicateOf":873,"contact":"Khánh Phan BDS"}),
 
 L(1202,"ho-chi-minh","th","Студия",6000000,30,
   "Студия (căn hộ dịch vụ) напротив университетов RMIT и TDTU, Tân Hưng, Q7 — рядом Phú Mỹ Hưng, Lotte Mart, Crescent Mall, VivoCity. Полная меблировка, балкон.",
@@ -4421,7 +4421,7 @@ L(1226,"ho-chi-minh","th","Квартира",5500000,35,
 L(1227,"ho-chi-minh","tm","Дом",8000000,24,
   "Дом целиком в переулке 167 ул. Phạm Hữu Lầu, в 50м от проезжей части, рядом с Фу Ми Хынг — 3x8м (24м²), 1 этаж+1 этаж, балкон, 2 спальни/2 с/у. Новый дом, никто ещё не жил.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134289080.htm","сегодня",0,source="chotot",
-  details={"contact":"Nguyễn duy tú"}),
+  details={"duplicateOf":1046,"contact":"Nguyễn duy tú"}),
 
 L(1228,"ho-chi-minh","bth","Дом",182000000,117,
   "Дом на красной линии ул. Nguyễn Công Trứ, Q1, от собственника — 4,5x23м (117м²), 1 этаж + 5 этажей, 10 комнат.",
@@ -4465,7 +4465,7 @@ L(1235,"ho-chi-minh","bth","Дом",40000000,33,
 L(1236,"ho-chi-minh","tm","Дом",30000000,80,
   "Дом на Đường Số 14 рядом с рынком Tân Mỹ (старый район Tân Phú, Q7) — 80м² (4x20), 3 этажа, 5 спален.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134244463.htm","2 дня назад",2,source="chotot",
-  details={"contact":"Phạm Tăng"}),
+  details={"duplicateOf":873,"contact":"Phạm Tăng"}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
@@ -4681,6 +4681,8 @@ HTML = r"""<meta charset="utf-8">
   .listing-desc{font-size:0.92rem;color:var(--ink);margin:0;}
 
   .listing-notice{font-size:0.82rem;background:var(--warn-bg);color:var(--warn-ink);padding:8px 10px;border-radius:var(--radius-sm);font-weight:600;}
+  .listing-also{font-size:0.8rem;color:var(--ink-faint);margin:0;}
+  .listing-also a{color:var(--accent);text-decoration:underline;}
 
   .details-toggle{appearance:none;border:1px dashed var(--line-strong);background:transparent;color:var(--ink-dim);padding:7px 10px;border-radius:var(--radius-sm);font-size:0.82rem;font-weight:600;cursor:pointer;text-align:left;width:100%;}
   .details-toggle:hover{border-color:var(--accent);color:var(--accent);}
@@ -5215,6 +5217,7 @@ HTML = r"""<meta charset="utf-8">
     var city = CITIES[state.city];
     var list = LISTINGS.filter(function(l){
       if (l.city !== state.city) return false;
+      if (l.details && l.details.duplicateOf) return false;
       if (!state.sources.has(l.source)) return false;
       if (state.district && l.district !== state.district) return false;
       if (state.minBudget !== null && l.price < state.minBudget*1000000) return false;
@@ -5254,6 +5257,13 @@ HTML = r"""<meta charset="utf-8">
       var photos = l.details && l.details.photos;
       var photoHtml = (photos && photos.length)
         ? '<img class="listing-photo" src="' + photos[0] + '" alt="" loading="lazy" onerror="this.remove()">' : "";
+      var alsoOn = l.details && l.details.alsoOn;
+      var alsoOnHtml = (alsoOn && alsoOn.length)
+        ? '<p class="listing-also">Также встречается на: ' + alsoOn.map(function(a){
+            var s = SOURCE_LABEL[a.source];
+            return '<a href="' + a.url + '" target="_blank" rel="noopener">' + (s ? s.short : a.source) + '</a>';
+          }).join(', ') + '</p>'
+        : "";
       card.innerHTML =
         photoHtml +
         '<div class="listing-top">' +
@@ -5266,6 +5276,7 @@ HTML = r"""<meta charset="utf-8">
         '</div>' +
         '<p class="listing-desc">' + l.desc + '</p>' +
         noticeHtml +
+        alsoOnHtml +
         detailsHtml(l) +
         '<div class="listing-bottom">' +
           '<span class="price">' + (l.price===null ? "цена по запросу" : (fmtPrice(l.price) + ' <small>₫ / мес</small>')) + '</span>' +
