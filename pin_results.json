@@ -6016,5 +6016,65 @@
   "lon": 106.6424193,
   "source": "geocode",
   "matched": "Đường Số 14"
+ },
+ "1237": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1238": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1239": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1240": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1241": {
+  "lat": 10.6928289,
+  "lon": 106.7172107,
+  "source": "geocode",
+  "matched": "Phạm Hữu Lầu"
+ },
+ "1242": {
+  "lat": 10.7335286,
+  "lon": 106.7159168,
+  "source": "geocode",
+  "matched": "Green Valley"
+ },
+ "1243": {
+  "lat": 10.7925228,
+  "lon": 106.73296,
+  "source": "geocode",
+  "matched": "Đường Số 13"
+ },
+ "1244": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1245": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảо Điền"
+ },
+ "1246": {
+  "lat": 10.829004,
+  "lon": 106.6830591,
+  "source": "geocode",
+  "matched": "Phan Văn Trị"
  }
 }
