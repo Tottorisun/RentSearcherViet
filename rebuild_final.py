@@ -4670,6 +4670,7 @@ HTML = r"""<meta charset="utf-8">
   .results-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:16px;align-items:start;}
 
   .listing-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:16px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-sm);}
+  .listing-photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);background:var(--surface-2);display:block;}
   .listing-top{display:flex;justify-content:space-between;align-items:center;gap:8px;}
   .source-pill{display:inline-flex;align-items:center;gap:6px;font-size:0.72rem;font-weight:700;color:var(--ink-dim);background:var(--surface-2);border-radius:999px;padding:4px 10px;text-transform:uppercase;letter-spacing:0.03em;}
   .source-pill i{width:7px;height:7px;border-radius:50%;background:var(--danger);}
@@ -5250,7 +5251,11 @@ HTML = r"""<meta charset="utf-8">
       card.className = "listing-card";
       var noticeHtml = (l.details && l.details.notice && l.details.notice.indexOf("⚠")===0)
         ? '<p class="listing-notice">' + l.details.notice + '</p>' : "";
+      var photos = l.details && l.details.photos;
+      var photoHtml = (photos && photos.length)
+        ? '<img class="listing-photo" src="' + photos[0] + '" alt="" loading="lazy" onerror="this.remove()">' : "";
       card.innerHTML =
+        photoHtml +
         '<div class="listing-top">' +
           '<span class="source-pill"><i style="background:'+src.color+'"></i>' + src.short + '</span>' +
           '<span class="posted">' + l.posted + '</span>' +

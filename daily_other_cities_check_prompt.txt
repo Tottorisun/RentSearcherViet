@@ -69,6 +69,7 @@ CRITICAL RULES (this project has a zero-tolerance history on these -- read a few
 - Before adding anything, grep rebuild_final.py for its URL -- if the exact URL already exists anywhere in the file, it's a duplicate, skip it (regardless of which batch/source/city added it originally).
 - Descriptions should be in Russian, matching the rest of the project's voice (concise, factual: price/area/location/amenities, honest notices for any data quirks).
 - Assign each listing to the correct project district `key` (e.g. "vh", "xh", "hc"...) by reading its actual address/description, not by which source-side location filter happened to return it -- this matters especially given the old/new naming mismatch described above.
+- Capture real photo URLs when the source provides them (best-effort, don't let this slow you down): Chợ Tốt's gateway API returns an `images` array on each ad (full-size CDN URLs, no extra fetch needed) -- grab the first one or two. Batdongsan's listing pages have `<img>` tags with the listing photos. Store them as `details={"photos": ["url1", "url2", ...]}` -- the site renders the first one as a card thumbnail automatically. Never invent or substitute a stock/placeholder image; if no real photo URL is available, just omit the `photos` key entirely (the card renders fine without one).
 
 INTEGRATION STEPS (follow the file's own established pattern exactly):
 1. `grep -oP "(?<=^L\()\d+" rebuild_final.py | sort -n | tail -1` to find the current max listing ID; your new IDs continue from there.
