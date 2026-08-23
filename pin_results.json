@@ -6730,5 +6730,47 @@
   "lon": 106.7180522,
   "source": "geocode",
   "matched": "Nguyễn Lương Bằng"
+ },
+ "1363": {
+  "lat": 10.7629924,
+  "lon": 106.69605,
+  "source": "geocode",
+  "matched": "Đề Thám"
+ },
+ "1364": {
+  "lat": 10.7387292,
+  "lon": 106.7264604,
+  "source": "geocode",
+  "matched": "The Golden Star"
+ },
+ "1365": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "1366": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1367": {
+  "lat": 10.7009549,
+  "lon": 106.7336308,
+  "source": "geocode",
+  "matched": "Phú Xuân"
+ },
+ "1368": {
+  "lat": 10.7137641,
+  "lon": 106.7342136,
+  "source": "geocode",
+  "matched": "Hoàng Quốc Việt"
+ },
+ "1369": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
