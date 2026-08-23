@@ -6670,5 +6670,65 @@
   "lon": 108.3155525,
   "source": "geocode",
   "matched": "Đồng Nà 1"
+ },
+ "1353": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1354": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1355": {
+  "lat": 10.7670352,
+  "lon": 106.6874492,
+  "source": "geocode",
+  "matched": "Cống Quỳnh"
+ },
+ "1356": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1357": {
+  "lat": 10.7549518,
+  "lon": 106.6776402,
+  "source": "geocode",
+  "matched": "Tân Kiểng"
+ },
+ "1358": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1359": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1360": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1361": {
+  "lat": 10.6928289,
+  "lon": 106.7172107,
+  "source": "geocode",
+  "matched": "Phạm Hữu Lầu"
+ },
+ "1362": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
  }
 }
