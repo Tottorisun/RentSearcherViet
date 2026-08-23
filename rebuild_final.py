@@ -4781,6 +4781,265 @@ L(1300,"ho-chi-minh","ak","Квартира",20000000,72,
   "2-спальная квартира в Masteri Thảo Điền, 72м², вид с балкона на реку Сайгон и центр города — полная качественная меблировка (ТВ, диван, холодильник, стиральная машина, СВЧ, кровать, шкаф), бассейн (3 этаж)+BBQ, спортзал, теннис, баскетбол, парк бесплатно, цена по договорённости.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/129313705.htm","сегодня",0,source="chotot",
   details={"contact":"Ánh Trang","photos":["https://cdn.chotot.com/OyKOlSz16XR54LwjQNAQd-qfLA29CB5lrtOEIR2YQrg/preset:view/plain/1b2242153219cb74ce45011ecddb35ac-2959737416373472147.jpg","https://cdn.chotot.com/UhQwWdIUbUYgsllcQGK6_Ya-rybk0K4SstmDaYg4EJQ/preset:view/plain/47d5dabbf54342e19acb66b98787ec89-2959737416250337065.jpg"]}),
+L(1301,"da-nang","tk","Квартира",6000000,45,
+  '1-спальная квартира в новостройке, 45м², ул. Nguyễn Tất Thành (Thanh Khê) — полная меблировка (диван, холодильник, кондиционер, кухня), балкон, рядом медцентр, администрация района, школы, супермаркет. В доме бассейн, лифт, охрана, парковка.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-thanh-khe-da-nang/134305439.htm","сегодня",0,source="chotot",
+  details={'contact': 'Văn Vĩnh Duy', 'photos': ['https://cdn.chotot.com/Nbw-fuuUkrQuFnq7YvQUTq_MyRBDQmGOVt8Cfzlk7s0/preset:view/plain/f099da1e4def2bac101dd8e8630ba590-2998856851644364300.jpg', 'https://cdn.chotot.com/ydFb_iDFVNnCyNeme3_6zpG8BVVez3M97dEXmiqrmSM/preset:view/plain/b3998516d930b20e206f075982e17bd3-2998856852098829090.jpg']}),
+
+L(1302,"da-nang","hcg","Квартира",17000000,70,
+  '2-спальная квартира B2-2-22 в ЖК на ул. Hóa Sơn 8 (Hòa Cường) — полная меблировка, отдельные стиральная и сушильная машины, тренажёрный зал в доме, просторная терраса на крыше.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-hai-chau-da-nang/134304686.htm","сегодня",0,source="chotot",
+  details={'contact': 'HAVILAND CĂN HỘ GIÁ TỐT', 'photos': ['https://cdn.chotot.com/Q_EH27eORQtbaC2Rvp2m2EuRHtaS8rdCKbq2-21y6GI/preset:view/plain/f741b315308b7343e4da5c450124a28b-2998853598770946268.jpg', 'https://cdn.chotot.com/tqHY_A97APEm33hXF4laztKx5Rs6qlKtzL3gO_oqJS4/preset:view/plain/3fcd322c184e9d415e9cf9c900331a39-2998853594689939475.jpg']}),
+
+L(1303,"da-nang","ns","Дом",17000000,52,
+  'Дом целиком 3 этажа на ул. Ngũ Hành Sơn (Mỹ An) — участок 52м², общая площадь 156м², гостиная, 3 спальни, столовая, кухня, 2 с/у. Базовая мебель, рядом Университет экономики Đà Nẵng.',
+  "https://www.nhatot.com/thue-nha-dat-quan-ngu-hanh-son-da-nang/134304453.htm","сегодня",0,source="chotot",
+  details={'notice': 'в объявлении отмечено удобное расположение и для проживания, и для бизнеса', 'contact': 'THANH', 'photos': ['https://cdn.chotot.com/HSlfLUhKBZhqjfpemTQqotPsVHLcHPxYaeKDwXb79CA/preset:view/plain/3351ab86f002d9628bb8fc106453c42b-2998852264551557139.jpg', 'https://cdn.chotot.com/rpgEL4ODfOYpb0DbsEbvaCJFMFwhSLkS7mtYtMHn4C8/preset:view/plain/1937657b83ae60184b3ce66e6e54fa85-2998852264329988898.jpg']}),
+
+L(1304,"da-nang","hk","Дом",15000000,110,
+  'Дом целиком 3 этажа рядом с ул. Hoàng Văn Thái (Hòa Minh) — 110м², 3 спальни/4 с/у, гостиная, кухня, терраса на крыше, место для сушки белья и парковки. Полная меблировка, цена по договорённости.',
+  "https://www.nhatot.com/thue-nha-dat-quan-lien-chieu-da-nang/134304253.htm","сегодня",0,source="chotot",
+  details={'notice': 'передача дома — середина сентября 2026', 'contact': 'Nhà Xanh', 'photos': ['https://cdn.chotot.com/p9ZZKYvTaGMfl-Tz1bvupvngMPAwoTxEsNcFWl7A2oo/preset:view/plain/5d101a1f338e7cf44b57905b56ac53b5-2998851384097802066.jpg', 'https://cdn.chotot.com/Adn9qiuWPFonGNNSFCGtc7gDf3k_3IdeaMR9X6lBcXI/preset:view/plain/22bb8aa27c51d7fa8f82a03dcd19666f-2998851384161087555.jpg']}),
+
+L(1305,"da-nang","ah","Дом",20000000,110,
+  'Дом целиком 3 этажа на ул. Cao Bá Nhạ (An Hải Bắc) — 110м², 3 спальни + рабочий кабинет, 4 с/у, большая гостиная, кухня, просторный двор и терраса на крыше. Полная меблировка (4 кондиционера, водонагреватели, ТВ, холодильник Samsung side-by-side, СВЧ, стиральная машина).',
+  "https://www.nhatot.com/thue-nha-dat-quan-son-tra-da-nang/134303876.htm","сегодня",0,source="chotot",
+  details={'notice': 'площадь по тексту объявления 110м², в структурном поле площадки — 100м²', 'contact': 'BÌNH CAPITAL', 'photos': ['https://cdn.chotot.com/QksbRKMVAIBilV2GTvfHK4scsPgO1_CSwmq3MjfigoQ/preset:view/plain/393aa814e2af70226a6a9410125eb740-2998849341468849676.jpg', 'https://cdn.chotot.com/xTF61xmbF3N5TbpKG9CTfLL67s512P8QHZlRSoEs4ns/preset:view/plain/9c8213fc8f215c18c2232c591333bbc9-2998849341310732114.jpg']}),
+
+L(1306,"da-nang","ah","Квартира",7000000,45,
+  'Меблированная квартира современного дизайна на ул. An Đồn 5 (An Hải Bắc) — рядом мост Sông Hàn и Vincom (500 м), около 1 км до парка на берегу моря.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-son-tra-da-nang/134303835.htm","сегодня",0,source="chotot",
+  details={'contact': '1W05.Lê Phan Cẩm Ly', 'photos': ['https://cdn.chotot.com/ulqJXSoXi2ViI4M-6gBkqhLXZ-521k9GJhXSEo4m8G8/preset:view/plain/ef12135a06baa348ea533c289573e4fe-2998848988846654035.jpg', 'https://cdn.chotot.com/pKEF348xmBrzqOxwHPX3cBDKl1wrh39Sbv_h1LUE7JY/preset:view/plain/e718cb383973821c69325f0e46a9dd69-2998848988743540883.jpg']}),
+
+L(1307,"da-nang","tk","Студия",6000000,30,
+  'Студия с двумя фасадами и балконом на ул. Đoàn Nhữ Hài (Hòa Khê) — полная меблировка, своя стирально-сушильная машина, отдельный wifi.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-thanh-khe-da-nang/134303411.htm","сегодня",0,source="chotot",
+  details={'notice': 'последняя свободная комната в доме', 'contact': 'Bùi Đoàn Tiến', 'photos': ['https://cdn.chotot.com/a9XTKHrBX1gUfp6E9ghJH0sFTRriNUIuWTxptCTIm80/preset:view/plain/eebb9eff34b21a1647a65724bd4f0e5a-2998846066671108133.jpg', 'https://cdn.chotot.com/ug13I6ORrd9algbCLznKcOX-XVlEggRdCvQsiBDwZos/preset:view/plain/9961b9d89077b6d7f0b44d420640fa87-2998846066730510355.jpg']}),
+
+L(1308,"da-nang","ns","Квартира",8500000,35,
+  'Квартира с балконом на ул. An Thượng 4 (Mỹ An) — 35м², 200 м до пляжа Mỹ Khê, полная меблировка, своя стиральная машина, принимают иностранцев и аренду от 1 месяца.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134303362.htm","сегодня",0,source="chotot",
+  details={'contact': 'Ha for rent APT', 'photos': ['https://cdn.chotot.com/35z973GjTaev3-vJrIkeiAzs_aGlfBuox5IwilQ4KpU/preset:view/plain/bcec245a15ca689d3f6a18f3dd5b82b9-2998846463510742866.jpg', 'https://cdn.chotot.com/iPhr-5gwsvsVUYhagyzJ7but9pqtEmoBcHPa8FfSgxA/preset:view/plain/f1f5f0b760caa571468df4c1246f0666-2998846463379229474.jpg']}),
+
+L(1309,"da-nang","ns","Дом",22000000,100,
+  'Дом целиком 3 этажа на ул. Đa Phước 2, квартал Nam Việt Á (Khuê Mỹ) — 100м², 3 спальни/3 с/у, полная меблировка, у реки, тихий квартал.',
+  "https://www.nhatot.com/thue-nha-dat-quan-ngu-hanh-son-da-nang/134303217.htm","сегодня",0,source="chotot",
+  details={'notice': 'цена по тексту объявления обсуждается; отмечена возможность использовать дом и под офис', 'contact': 'Trần Quân Land', 'photos': ['https://cdn.chotot.com/n53yLgT-NRKuRZKrP6qDdLjt9YXn7gU-tIj8lI0Fk0U/preset:view/plain/833995c38ff240cbb884c4f55a6bc837-2998846148761870556.jpg', 'https://cdn.chotot.com/aPvqsRaBZUpKPk82YfPPbN7_sk1jjE5WTtCyiPLF0HU/preset:view/plain/ad713b0cd58ee88b138896257bebeddc-2998846148718873378.jpg']}),
+
+L(1310,"da-nang","tk","Дом",8000000,52,
+  'Дом целиком в переулке 2,5 м, ул. Điện Biên Phủ (Chính Gián) — 52м², гостиная, 2 спальни, 1 с/у, кухня, кондиционер, вентилятор, стиральная машина. Рядом супермаркет Aeon и парк 29/3.',
+  "https://www.nhatot.com/thue-nha-dat-quan-thanh-khe-da-nang/134302772.htm","сегодня",0,source="chotot",
+  details={'notice': 'площадь по тексту объявления 52м², в структурном поле площадки — 80м²', 'contact': 'BÌNH CAPITAL', 'photos': ['https://cdn.chotot.com/gstjUPSpheQ2a7cwgb5M452QJJCXwl4HT8feYIVUK-s/preset:view/plain/88dac9571432c41ee889b741ae0f6cc1-2998843373276493354.jpg', 'https://cdn.chotot.com/L6gQGTTxh-Fe0FHGCYIyxZ6LnuOMqdoy0DlhLo1VT0E/preset:view/plain/0e3a6ac9b1c27bcac0ac2029cbad16b3-2998843373173230476.jpg']}),
+
+L(1311,"da-nang","ns","Квартира",8000000,45,
+  'Квартира с садом на ул. 26.5 (Hòa Hải), рядом Đại học FPT — 45м², 1 спальня, полная меблировка, подходит для 2-3 человек.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134302470.htm","сегодня",0,source="chotot",
+  details={'notice': 'освобождается с 29 августа', 'contact': 'Phương Trang', 'photos': ['https://cdn.chotot.com/WmCVbjPOWck11GUV_OZQbEebxahce0MWolB4z4cXakM/preset:view/plain/9d1c7a88addda4367be4b0a75ec07949-2998841419304255273.jpg', 'https://cdn.chotot.com/GW6sKxCk6vcMKrhWjAKSGR4CXA_JWVIxxdpuBYtoKIo/preset:view/plain/e56218c949787f25bf721b613fca914c-2998841419267061260.jpg']}),
+
+L(1312,"da-nang","ns","Студия",8000000,None,
+  'Сервисная квартира-студия с отдельной спальней на Hói Kiểng 23 (Hòa Quý) — балкон, место для сушки белья, электронный замок с распознаванием лица, 3-5 минут до ĐH FPT/VKU/Làng Đại học, 7 минут до пляжа Mỹ Khê. Полная меблировка.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134299946.htm","вчера",1,source="chotot",
+  details={'contact': 'Nhung Nguyen', 'photos': ['https://cdn.chotot.com/LkYyFQV_BM9nIw5-uR6mNl9IyZxV7n3p5iKn5ebLbEU/preset:view/plain/77236ebc87c19e6bfa4589ce452fbd4f-2998777248596364983.jpg', 'https://cdn.chotot.com/-txn830ewu_LvBjVChJFDNvz5eSVp2DfQiNKUUuhKp4/preset:view/plain/d435a697bb2afd3662b8b710c28eb16f-2998776460571783577.jpg']}),
+
+L(1313,"da-nang","hx","Студия",6500000,22,
+  'Новая студия/1-спальная квартира на ул. Nguyễn Sắc Kim (Hòa Xuân) — полная меблировка, своя стиральная и сушильная машина, на главной улице, принимают иностранцев, для 1-2 человек.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-cam-le-da-nang/134299295.htm","вчера",1,source="chotot",
+  details={'contact': 'Sơn Kim', 'photos': ['https://cdn.chotot.com/hCOb-4nexq27I-5FweNQKFSwUdmWihKTAT3z-Ht2E9E/preset:view/plain/2eb59b3f59a95c12c1dee0cb3e089195-2998769161448999077.jpg', 'https://cdn.chotot.com/DSELDMMukDY5fkWzsMpgWG9EH6xaXxnIB-hVnJsmZtY/preset:view/plain/eb92773df32e9fffab99b6ce9bf8b8ea-2998769160319593827.jpg']}),
+
+L(1314,"da-nang","ns","Квартира",5000000,25,
+  'Новая квартира (только что отделана) рядом с Đại học FPT (Hòa Hải) — полная меблировка, готова к заезду.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134299001.htm","вчера",1,source="chotot",
+  details={'contact': 'Nhieu Phan', 'photos': ['https://cdn.chotot.com/5S0l87QiVflkF_hWTUrKGtms1huCecI2nPpx1bDby14/preset:view/plain/0e197163f2aff5abdb5d2898a26dafe5-2998749720483301202.jpg', 'https://cdn.chotot.com/RvnYriTrIHw0QTfemzbuuoiIYFt4l4Snt29bfY8XLrg/preset:view/plain/17d74d67db42d4c21d2abceb2c6d2016-2998749720152715673.jpg']}),
+
+L(1315,"da-nang","ns","Квартира",6000000,40,
+  'Новая квартира за улицей Huỳnh Lắm (Hòa Quý) — полная меблировка, тихий прохладный район.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134296983.htm","вчера",1,source="chotot",
+  details={'contact': 'Đăng Khoa', 'photos': ['https://cdn.chotot.com/kplLWjVvqYDyw4O_f87fyCZ5vuFHjApV9AF2PnYGzTw/preset:view/plain/439ec45c95e9a7ed672111a72636d411-2998752437887666002.jpg', 'https://cdn.chotot.com/J0Zfjpj0pKRTtRxtKa58Ubfrl0Ybn_zyRxw5vVHKuFY/preset:view/plain/c3706aed1258eae50190207f427e04a0-2998752423593324953.jpg']}),
+
+L(1316,"da-nang","ns","Квартира",9500000,40,
+  '1-спальная квартира на 4 этаже в Đầm Sen 5 by Haviland (Hòa Quý) — балкон с видом на город, своя стиральная и сушильная машина, еженедельная уборка, диван и обеденный стол.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134296840.htm","вчера",1,source="chotot",
+  details={'contact': 'HAVILAND HOUSE ĐÀ NẴNG', 'photos': ['https://cdn.chotot.com/O2P6TMXGjhbUhQFD3ci79DBcuR2DDkxf3PlL6NcYAcM/preset:view/plain/500a7161f7112761f5c79bc5ed266373-2998751551170169740.jpg', 'https://cdn.chotot.com/_tyAkuNM9bU-h5VoEW8ZAxddqa76dhLoTPBeFs0HOAg/preset:view/plain/5b094fa5e002c9b227255878a232ef4f-2998751551495186451.jpg']}),
+
+L(1317,"da-nang","hk","Квартира",8000000,40,
+  'Меблированная квартира 40м² с отдельной спальней на ул. Trần Nguyên Đán (Hòa Khánh Nam), рядом ĐH Sư phạm, ĐH Bách khoa, Mega Market, 500 м до пляжа Nguyễn Tất Thành. Лифт в доме.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-lien-chieu-da-nang/134293624.htm","вчера",1,source="chotot",
+  details={'notice': 'у того же хозяина в этом же доме есть студия 30м² за 6 млн ₫/мес', 'contact': 'Lê Đào Dương', 'photos': ['https://cdn.chotot.com/2JsLydXFV01GX9JDxBvGKHAX3XWaek5PeEA9tRpeKqo/preset:view/plain/ab7d2df471aa9f7e6aec8b26b3fb11ef-2998734900602202727.jpg', 'https://cdn.chotot.com/cW1_snymgw3Me3Zsi3YfvsAv82wuNGGDaWUczwBqYF4/preset:view/plain/e98ad9e43e38eee4fb3f57a76d7911c2-2998734900886981516.jpg']}),
+
+L(1318,"da-nang","ah","Дом",32000000,120,
+  'Вилла целиком 2 этажа на ул. Đinh Đạt (Phước Mỹ), 200 м до моря — 2 спальни/2 с/у (с ванной), кондиционер 3HP в гостиной, кухня-остров, отдельная прачечная со стиральной и сушильной машиной. Полная премиальная меблировка.',
+  "https://www.nhatot.com/thue-nha-dat-quan-son-tra-da-nang/134289636.htm","вчера",1,source="chotot",
+  details={'contact': 'Phương', 'photos': ['https://cdn.chotot.com/TYy4EjWt3miXMXrI1QWWK648gYjieVM6TvEfjjuvlzk/preset:view/plain/dbb37e8a91a21ba3546741f408f37965-2998715218158291661.jpg', 'https://cdn.chotot.com/PZ2_FfjKyvUVs5SjpYhgR8XZbZuIKOB0cx07UQdohf4/preset:view/plain/c8e1ed98b0479e5db820659b48bbed19-2998715218524045051.jpg']}),
+
+L(1319,"da-nang","hcg","Дом",75000000,263,
+  'Вилла целиком 3 этажа на ул. Núi Thành (Hòa Cường Bắc) — 263м² (фасад 9 м), 5 спален, полная меблировка.',
+  "https://www.nhatot.com/thue-nha-dat-quan-hai-chau-da-nang/134288721.htm","вчера",1,source="chotot",
+  details={'contact': 'Mr AN', 'photos': ['https://cdn.chotot.com/Bvkf06OUqD0sjElPnM31xaWuF6elwqfx9qUep6u_PIc/preset:view/plain/ef6307e2d7e13d6e82ae1a63afd63fbf-2998711398057527461.jpg', 'https://cdn.chotot.com/bsZN3N0VjVzZnwM0WNejROpQ4joA3YzLx8hRzTRJCE8/preset:view/plain/b9688d19a85dd06941ec9e4996c90aaa-2998711398064555858.jpg']}),
+
+L(1320,"da-nang","ns","Квартира",30000000,82,
+  'Квартира в ЖК The Ponte (ул. Trần Thị Lý) — 82м², 2 спальни, средний этаж, прямой вид на мост Cầu Rồng, полная премиальная меблировка.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134288660.htm","вчера",1,source="chotot",
+  details={'contact': 'Phương', 'photos': ['https://cdn.chotot.com/-3G1NvBzFlZlJhywQlpk5uQ_CDcYqFh1e93EhcgfGC8/preset:view/plain/31632fa5fc0e2c3f16ccb10c92783091-2998711010219674508.jpg', 'https://cdn.chotot.com/REN-_CYr9aHyP4809jb1JTa2bVtv-cBmjv3yF62oG2g/preset:view/plain/29c2f2be38462a61e935d2ea8adab3b7-2998711013273193356.jpg']}),
+
+L(1321,"da-nang","tk","Дом",30000000,78,
+  'Новый дом целиком на ул. Trần Xuân Lê (Thanh Khê) — 3 спальни/3 с/у, полная меблировка, тихий район, есть место для машины.',
+  "https://www.nhatot.com/thue-nha-dat-quan-thanh-khe-da-nang/134288614.htm","вчера",1,source="chotot",
+  details={'notice': 'цена по объявлению обсуждается', 'contact': 'Được Phan', 'photos': ['https://cdn.chotot.com/Unx0n341bCC9foQTr9uYizOFuI-U9HC5XsO78wEmWIY/preset:view/plain/7d39dad14acdc3f1b625cec85e67cd10-2998710958184006431.jpg', 'https://cdn.chotot.com/nwzPxFwkvwpn2Mqf5VPLxiGCUsvCr--C-lElv6J6y8c/preset:view/plain/f6139df3e194df541c3a49de4348fec9-2998710957774636882.jpg']}),
+
+L(1322,"da-nang","st","Дом",200000000,800,
+  'Вилла целиком 5 этажей на первой линии ул. Hoàng Sa (Mân Thái) — 800м², 8 спален/8 с/у, бассейн, сад, прямой вид на море. Полная меблировка.',
+  "https://www.nhatot.com/thue-nha-dat-quan-son-tra-da-nang/134287222.htm","вчера",1,source="chotot",
+  details={'contact': 'MR HUY', 'photos': ['https://cdn.chotot.com/WAGn6gPNx6Vw-gB3Qwq6ILJvjCCTgzLJh3RiomfLp1o/preset:view/plain/d4e13a4a7d1d71c55e77cded0099aa15-2998705510599557919.jpg', 'https://cdn.chotot.com/nrCcS29VeQzGIor4wwnW96OCWjaC-BHNnnwm3K2aJ8Y/preset:view/plain/54df5814a865076852a58371937b2fff-2998705511178973593.jpg']}),
+
+L(1323,"da-nang","ah","Дом",30000000,75,
+  'Дом целиком 3 этажа на ул. Trần Thanh Mại (An Hải Bắc) — 75м² (фасад 4,5 м), 3 спальни/2 с/у.',
+  "https://www.nhatot.com/thue-nha-dat-quan-son-tra-da-nang/134287173.htm","вчера",1,source="chotot",
+  details={'notice': 'площадь по тексту объявления 75м², в структурном поле площадки — 70м²', 'contact': 'Mr AN', 'photos': ['https://cdn.chotot.com/tJW-M3UAjmPtfqCjx7sJvlTqHfHtTnsmdU6u2pw68-s/preset:view/plain/c8593dd64a1852f92bbf84b4c2b27587-2998705552991934220.jpg', 'https://cdn.chotot.com/uislR-tORLRyWzqzKRqJOKcTs2TiX03CfJJF9Ye2X_A/preset:view/plain/79b0409b4314a77c2df7cecaa6a3bf11-2998705553036838738.jpg']}),
+
+L(1324,"da-nang","ns","Дом",20000000,100,
+  'Дом целиком 3 этажа на ул. Mỹ Đa Tây 6, квартал Nam Việt Á (Khuê Mỹ) — 100м²/этаж, 4 спальни/5 с/у, полная меблировка.',
+  "https://www.nhatot.com/thue-nha-dat-quan-ngu-hanh-son-da-nang/134285932.htm","вчера",1,source="chotot",
+  details={'notice': 'хозяин принимает иностранцев и допускает сдачу в краткосрочную аренду (lưu trú)', 'contact': 'Ms Diễm', 'photos': ['https://cdn.chotot.com/vlAioQNBpT5VOuJzPQyTeuHMLKY4ePh7Yz_b8dYi6ZY/preset:view/plain/60c51046ee1250416dabfd95e31d7871-2998700008630530457.jpg', 'https://cdn.chotot.com/O8oqzbNLlOqKXo_pO8OQGB9QJOcDxgP-VOn16-JUnh4/preset:view/plain/391ad88b10641ff456c6a78cf1ca4dca-2998700008913536850.jpg']}),
+
+L(1325,"da-nang","ah","Квартира",19000000,68,
+  'Квартира Monarchy A (An Trung 2) — 68м², 2 спальни/2 с/у, просторная гостиная с балконом, полная премиальная меблировка. Бассейн, детская площадка, ресепшн и охрана 24/7, большой подземный паркинг. Несколько минут до моста Rồng, Trần Thị Lý, реки Хан и пляжа Mỹ Khê.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-son-tra-da-nang/134285564.htm","вчера",1,source="chotot",
+  details={'notice': 'заезд с сентября 2026', 'contact': 'Hoàng Thiện Duyên ', 'photos': ['https://cdn.chotot.com/nBpYFs73kJmlCsQ0J5VGAcBJl6Pp3lZGyQrwBLaDnyo/preset:view/plain/f38157309dfdc14c32dab55fd93ccc45-2998697696377953395.jpg', 'https://cdn.chotot.com/edqgO8cmDWgDUPmUxRtN261y09e-SjxMqkygWJ3SOc8/preset:view/plain/e346f7b52a7b0884a2959ee6eddc0eab-2998697698069383885.jpg']}),
+
+L(1326,"da-nang","ah","Дом",18000000,90,
+  'Дом целиком 3 этажа рядом с парком Hồ Nghinh (An Hải Bắc) — 90м², 4 спальни, кондиционеры есть, без мебели.',
+  "https://www.nhatot.com/thue-nha-dat-quan-son-tra-da-nang/134285443.htm","вчера",1,source="chotot",
+  details={'contact': 'BĐS Sơn Trà', 'photos': ['https://cdn.chotot.com/vtzZeN1lRV9_7020CF0whvNaASq12tUUB_rk4rgqFoI/preset:view/plain/628e09d5c19f818688e97fde9d491673-2998697394363782924.jpg', 'https://cdn.chotot.com/JunQplH91FdJ35_8XfmcNfwfq_DLq6K3-BDvS-3Xzp8/preset:view/plain/6e758d1b7791913b0cd6e6f8e02b01a1-2998697394501573747.jpg']}),
+
+L(1327,"da-nang","tk","Дом",15000000,60,
+  'Дом целиком 2 этажа в переулке K96 Điện Biên Phủ (Chính Gián), выход на Lê Độ — участок 60м², общая площадь 110м², 3 спальни/3 с/у. Полная меблировка и техника (стиральная и сушильная машины, фильтр воды, холодильник, 4 ТВ, 3 водонагревателя, 5 кондиционеров), рядом AEON Mall (500 м), аэропорт, вокзал, рынок Cồn.',
+  "https://www.nhatot.com/thue-nha-dat-quan-thanh-khe-da-nang/134285136.htm","вчера",1,source="chotot",
+  details={'notice': 'для иностранных арендаторов цена 18 млн ₫/мес', 'contact': 'Nguyễn Tấn Luân', 'photos': ['https://cdn.chotot.com/oovATt0B-RXg7aUliAW6MFF2HCojtnLezPeiTneUxS0/preset:view/plain/c69c45c5d56747b1b1967be71de8c537-2998695574223161170.jpg', 'https://cdn.chotot.com/n3al3ncTf4FVQXv64eVAyFA-goNK-trz9TQH3VfWugc/preset:view/plain/9d0e5e286cf922294c70d43f148996f1-2998695575884171090.jpg']}),
+
+L(1328,"da-nang","ns","Квартира",15000000,50,
+  'Угловая квартира с видом на город в ЖК Mường Thanh (Mỹ An), 18 этаж — 1 спальня, полная меблировка.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134280530.htm","2 дня назад",2,source="chotot",
+  details={'notice': 'указанная цена не включает плату за управление и wifi', 'contact': 'Võ Thị Hồng Sương', 'photos': ['https://cdn.chotot.com/VmBEqUClDhzXqV5M8QuHOXq-8UgSCxRzVU0c1ewT_-Y/preset:view/plain/2e8f5ed88637226dfbcb19f834b63cde-2998616821187774290.jpg', 'https://cdn.chotot.com/sQJp0Ey8nTpxVTyphX9kidL1bvdkI3syF0WR0iYqlcw/preset:view/plain/23858609cb1d32931250ee12b9c15117-2998616821677672534.jpg']}),
+
+L(1329,"da-nang","st","Дом",25000000,100,
+  'Дом с садом целиком на ул. Trương Định (Mân Thái), у моря — 2 спальни/1 с/у, гостиная, кухня, просторный двор перед домом. Полная меблировка.',
+  "https://www.nhatot.com/thue-nha-dat-quan-son-tra-da-nang/134280472.htm","2 дня назад",2,source="chotot",
+  details={'contact': 'Trân Duy Hải', 'photos': ['https://cdn.chotot.com/IC5oVGTeAlrChC8ay5UjcNvBIoMtKS8nfIHlAJNdbR4/preset:view/plain/5e66d864aef1a71fb15e083464ace2cf-2998616113163306834.jpg', 'https://cdn.chotot.com/BRe7w_KPnWmL9D98wHqYrkxA88JL07__b9AdIWlh9Tg/preset:view/plain/2c94c1151547e5e3e3469ad04f644a7f-2998616113737096307.jpg']}),
+
+L(1330,"da-nang","ns","Квартира",20000000,67,
+  'Квартира с видом на город в ЖК Mường Thanh (Mỹ An), 40 этаж — 2 спальни, 67м², договор на 1 год.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134279906.htm","2 дня назад",2,source="chotot",
+  details={'contact': 'Võ Thị Hồng Sương', 'photos': ['https://cdn.chotot.com/DJEcGR1ALQ_pb8RPIcFx7MsoQSkJes9KSI7BVNZEGgo/preset:view/plain/d841016d3dc239651d345f8758d18ebd-2998612177451707349.jpg', 'https://cdn.chotot.com/tD1jNvtPwL_2OsJeVTeOjBytdw55A9WkEXzzWVVAAv0/preset:view/plain/edda665856df181c0d9678312bd8dacc-2998612177675129990.jpg']}),
+
+L(1331,"da-nang","hcg","Квартира",8000000,50,
+  '1-спальная квартира P403 на ул. Trưng Nữ Vương (Hòa Cường) — бассейн на крыше, полная меблировка, свободна сейчас.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-hai-chau-da-nang/134268892.htm","2 дня назад",2,source="chotot",
+  details={'notice': 'хозяин принимает только вьетнамских арендаторов', 'contact': 'Được Phan', 'photos': ['https://cdn.chotot.com/kQ0NBIgRzu6CIfIo1yDgMcKl2SisB5iqlLgDPrRojk4/preset:view/plain/627b4d8c7b2fe30f878f0f28caf62712-2998561532746762066.jpg', 'https://cdn.chotot.com/fXUIV83cmaeQQCCv4nLFT_ZXsuB7DyGuGq9YkbFzkAY/preset:view/plain/a9f28f80a5e586b9a20f8b861185955d-2998561532660274097.jpg']}),
+
+L(1332,"da-nang","hcg","Дом",31500000,55,
+  'Дом целиком 3,5 этажа в переулке (4,5 м, для машины) у ул. Lê Đình Lý рядом с Nguyễn Văn Linh (Bình Hiên) — 55м², фасад 9 м, гараж для машины, 3 спальни со своими балконами и с/у, терраса на крыше с барбекю и видом на салют. Полная меблировка и техника.',
+  "https://www.nhatot.com/thue-nha-dat-quan-hai-chau-da-nang/134268868.htm","2 дня назад",2,source="chotot",
+  details={'notice': 'хозяин допускает совмещение с небольшим бизнесом (спа, шоурум, take away) на первом этаже', 'contact': 'KHOA Nhà phố Đà Nẵng', 'photos': ['https://cdn.chotot.com/_t_2VJq78W_KNXYUBLQS4AGjOCAA5BSNatK3dOlTws0/preset:view/plain/f639f4808d6585d8f2637afb9182dad5-2998560700333066066.jpg', 'https://cdn.chotot.com/3asP34qX3_cNprPqRHVjOiMMM2gfltiq0ytavxuHqmc/preset:view/plain/1abc16e109708034383d7e0e2568b27a-2998560700847518040.jpg']}),
+
+L(1333,"da-nang","hc","Дом",18000000,70,
+  'Дом целиком 3 этажа на ул. Thanh Thuỷ (Thanh Bình, центр Hải Châu) — участок 70м² (4,5×16 м), общая площадь 210м², гостиная, кухня, 3 спальни/3 с/у. Полная меблировка.',
+  "https://www.nhatot.com/thue-nha-dat-quan-hai-chau-da-nang/134254268.htm","3 дня назад",3,source="chotot",
+  details={'contact': 'THANH', 'photos': ['https://cdn.chotot.com/vvgMxz2FWaVVoxvUqR1TnLJEMoSXO4YttxPlWtX8pZA/preset:view/plain/f5c4dac89f20791643aa082eddc875c8-2998442058823762073.jpg', 'https://cdn.chotot.com/yDk06dSVmwGCnCaMOyG3C9AZ8xyZDEJjSh1TOdwcWdY/preset:view/plain/a8435aff2b9f85b87ed699387ea729df-2998442044411871385.jpg']}),
+
+L(1334,"da-nang","hc","Дом",10000000,85,
+  'Дом целиком 2 этажа в переулке (3 м, для грузовика) на ул. Nguyễn Văn Linh (Hải Châu II), рядом мост Rồng — участок 85м² (фасад 5 м), общая площадь 170м², 4 спальни/2 с/у, место для машины и терраса на крыше.',
+  "https://www.nhatot.com/thue-nha-dat-quan-hai-chau-da-nang/134250151.htm","3 дня назад",3,source="chotot",
+  details={'notice': 'без мебели', 'contact': 'THANH', 'photos': ['https://cdn.chotot.com/FBj48k9b-uQyBmYRyDMQzFE9hPZ-kFbehnaBOond5KY/preset:view/plain/1e7b487b05ed96f7262c10b7c08e85be-2998423897823213690.jpg', 'https://cdn.chotot.com/mSO3LVWOoxq7nYo1Hl6-8mVs0Z1GjrEKBEWEEHVbHbU/preset:view/plain/7c855706aa661caf27b67991f26e6e38-2998423897665821811.jpg']}),
+
+L(1335,"da-nang","ns","Квартира",15500000,60,
+  'Квартира Mường Thanh рядом с кварталом An Thượng (Mỹ An) — 2 спальни/2 с/у, гостиная, кухня, балкон, полная меблировка (ТВ, холодильник, кондиционер, водонагреватель, индукционная плита, вытяжка, вентилятор).',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134249033.htm","3 дня назад",3,source="chotot",
+  details={'notice': 'в структурном поле площадки цена 15 млн ₫, в тексте объявления — 15,5 млн ₫; взята цена из текста', 'contact': 'Khánh Thuận', 'photos': ['https://cdn.chotot.com/_7ztF99pW69BznKvyqaxRLZBuBWpAGhzVPKQky8VT_I/preset:view/plain/cd3da6309b44101895e8e128a3eb8fe5-2998420207382201774.jpg', 'https://cdn.chotot.com/CSMouxrvjcjg0oHPB_WXefJMy8HMu9CvO8TKoQlIsMI/preset:view/plain/959d2327a0f689843bc45eb61fc9d9fd-2998420207629584269.jpg']}),
+
+L(1336,"da-nang","ah","Квартира",35000000,120,
+  'Дизайнерская квартира у пляжа Phạm Văn Đồng (An Hải Bắc) — 120м², 2 спальни/2 с/у, интерьер в стиле тропического леса со встроенным бассейном вдоль гостиной и водопадом, панорамное остекление, дворик с деревьями. Бесплатная уборка 2 раза в неделю и обслуживание бассейна, высокоскоростной wifi.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-son-tra-da-nang/134248095.htm","3 дня назад",3,source="chotot",
+  details={'contact': 'Huỳnh Đức Việt', 'photos': ['https://cdn.chotot.com/Mq1y8DQEwH5Pf6mO6EpeLQWsyGOrF31C8ivggmvOGRQ/preset:view/plain/748e86927cdf19dc3e933a9015058c1f-2998164110733146390.jpg', 'https://cdn.chotot.com/9XvmWt9F-Y9jYNaQSh5r21986j6rJpiFJqxg3BxeQzw/preset:view/plain/f14f9e5c85723b9fc76d5cf5fd6bb6b7-2998164196224439665.jpg']}),
+
+L(1337,"da-nang","hk","Квартира",7500000,67,
+  'Угловая квартира в ЖК MIA Center Point (ул. Ngô Thì Nhậm) — 67м², 2 спальни/2 с/у, гостиная, кухня, балкон, вид на море (СВ).',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-lien-chieu-da-nang/134241864.htm","4 дня назад",4,source="chotot",
+  details={'notice': 'в этом же доме есть варианты подороже с более полной меблировкой: 8 млн (частично), 11-12 млн и 15 млн ₫/мес (полностью меблированные)', 'contact': 'Khắc Dũng', 'photos': ['https://cdn.chotot.com/GBlosSO0RCyf-pVRj-mR-CR2DxGeJdNSJpZRbRMNhqA/preset:view/plain/f8f94da29f66c8546d2f4047822b623e-2998337160547261555.jpg', 'https://cdn.chotot.com/Vq7Ff0PDwl8hj8bOhIJx9AcYom77SShPVpXEn4LOXdc/preset:view/plain/68e042377a6484c9230c470a903806c4-2998337160475734840.jpg']}),
+
+L(1338,"nha-trang","pl","Дом",17000000,100,
+  'Дом целиком с лифтом в квартале An Bình Tân (Phước Long) — 1 этаж + 3, 4 спальни/5 с/у, кондиционер, вентиляторы, кухня. Дорога перед домом 8 м, есть место для машины.',
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134296775.htm","вчера",1,source="chotot",
+  details={'notice': 'хозяин допускает совмещение с небольшим офисом', 'contact': 'Phương GoHome', 'photos': ['https://cdn.chotot.com/AsMBKkwDCvheZ96YCR9gAb1cQyDwPHV9ACdawiEiv54/preset:view/plain/57156e8d3c3679b0ba03e6504404cb89-2998751094369897356.jpg', 'https://cdn.chotot.com/VYt-nih5WO17vyCCrM0Am1-V7ADip3o2Q2UY3cKBjIE/preset:view/plain/64be44d381ef35462d1a96025adfa1db-2998751094449154067.jpg']}),
+
+L(1339,"nha-trang","vn","Дом",20000000,142,
+  'Дом с садом целиком 2 этажа в переулке 52 Trần Phú (Vĩnh Nguyên), рядом международная больница Vinmec — 142м² (фасад 8 м), 3 спальни/3 с/у, просторная терраса на крыше.',
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134295900.htm","вчера",1,source="chotot",
+  details={'contact': 'Nghĩa Phạm', 'photos': ['https://cdn.chotot.com/mqDhZW6msQEjTgRMSXUriIwo2ICASbCh9GqXFk-NVbs/preset:view/plain/5dd96c785444538b30ca1aeee85523d5-2998745958583654277.jpg', 'https://cdn.chotot.com/wMcBp40QUCM8X6l8DR3LQKgDlwta0dH3eN46EKFfvMo/preset:view/plain/85dd8d37cfd3338f82cc066c67f1fa75-2998745958620261731.jpg']}),
+
+L(1340,"nha-trang","vt2","Квартира",17000000,93,
+  'Квартира в ЖК Mường Thanh Khánh Hòa рядом с мостом Trần Phú — 93м², 2 спальни/2 с/у, вид на реку.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134286336.htm","вчера",1,source="chotot",
+  details={'notice': 'старый район — Phường Xương Huân, отнесён к ближайшему району проекта Vạn Thạnh (по прецеденту прошлых батчей); плата за управление/проживание 700 тыс. ₫/мес отдельно', 'contact': 'Văn Hoà', 'photos': ['https://cdn.chotot.com/pbik1kY8YEYKyPmXhcQXvZPG7ePtntLrzm15Shiv4pg/preset:view/plain/5054cd24677aeb6ab2730ea185f04d45-2998701997902026508.jpg', 'https://cdn.chotot.com/mJIAIK49mTqUFDvJRfsVlT7NxLfAR6LPBsRH2FmvjBQ/preset:view/plain/802a4434ed600f51281199ddd36f14a4-2998702001005877004.jpg']}),
+
+L(1341,"nha-trang","pl","Дом",8500000,85,
+  'Новый дом целиком (cấp 4) в переулке 4 м с выходом на ул. Thích Quảng Đức (Phước Long) — 85м², 2 спальни/1 с/у, просторная гостиная, кухня, 2 кондиционера. Приоритет семьям или девушкам, длительная аренда.',
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134286137.htm","вчера",1,source="chotot",
+  details={'photos': ['https://cdn.chotot.com/oocXAIxBz7Yj2KlKx6VWxGA6mmXJKG8p21w_issHJ0w/preset:view/plain/f086193e1bd6644e9d057ac45f195d5d-2998700685585943245.jpg', 'https://cdn.chotot.com/Wlu_YWPMkv20otgpcMbrkJxZj6UF35mKGxe-eCZselo/preset:view/plain/e8a113670e2f18d6d49742566a042e86-2998700685033032588.jpg']}),
+
+L(1342,"nha-trang","nh","Квартира",12000000,45,
+  'Квартира Champa Uma на о. Champa Island (Ngọc Hiệp, север Nha Trang) — 45,1м², 2 спальни/1 с/у, кухня, гостиная, полная меблировка. Бассейн, спортзал, ресторан, массаж на территории. Цена уже включает плату за управление (890 тыс. ₫).',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134284320.htm","вчера",1,source="chotot",
+  details={'notice': 'дополнительно: интернет 220 тыс., комбо-сбор за инфраструктуру 600 тыс. ₫/чел. в месяц', 'contact': 'Trần Minh Tiến', 'photos': ['https://cdn.chotot.com/0uolJMawWfZyFm4qm_Zg3TjXrkSx-GGYL6D7VRAJ_ek/preset:view/plain/25b09241c966261483fdcab107bdb7ae-2998638808064084876.jpg', 'https://cdn.chotot.com/efI80DC1DwrGlhDT2eTx_5Cl_yBGNqk7xcwM2Huriew/preset:view/plain/a68866b8d10fbdb0e2173835e94f56fe-2998638808220294259.jpg']}),
+
+L(1343,"nha-trang","ph","Квартира",10000000,35,
+  'Квартира с балконом в VCN Phước Hải (đường số 13) — 35м², умная меблировка, лифт, электронный ключ, охрана.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134282062.htm","2 дня назад",2,source="chotot",
+  details={'contact': 'Quang Long Megas', 'photos': ['https://cdn.chotot.com/MD_ZUofC11P1Fxv_OBlzJEfLRHxuso-Bfs2ZtVwbu5U/preset:view/plain/0084760e93b46eee22f6349761b345ee-2998629076901358947.jpg', 'https://cdn.chotot.com/c_mIyHH_Ik6jXwjk9nDD2Ml5FqWFmzl5BEq6L1WJluk/preset:view/plain/181aa7f8302893dd0ed7300fa371cb33-2998629076872096725.jpg']}),
+
+L(1344,"nha-trang","ps","Дом",20000000,50,
+  'Дом целиком 3 этажа на ул. Yersin (Phương Sài), 2 минуты до моря — этаж 50м² (фасад 9 м), общая площадь 150м², 3 спальни/4 с/у, гостиная, кухня, комната для алтаря, прачечная. Полная меблировка, переулок для машины.',
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134280777.htm","2 дня назад",2,source="chotot",
+  details={'contact': 'Thu Vân', 'photos': ['https://cdn.chotot.com/m_P_djS3CgvCzdx0PJpfSk0eGRaXd6udzSYHhMHgKS0/preset:view/plain/189e143912843e6933004687b5a3d6fa-2998618958913410304.jpg', 'https://cdn.chotot.com/bJp_MyhRaPkLz9wqbnWXFTwjUt2ig0DZrCoH31ZxkeE/preset:view/plain/48dcd99a7575369964ea6da90f198e84-2998618968378869586.jpg']}),
+
+L(1345,"da-lat","lv","Квартира",10000000,55,
+  'Квартира на ул. Yersin в центре Đà Lạt — 55м², 2 спальни/1 с/у, полностью новая меблировка.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-da-lat-lam-dong/134293235.htm","вчера",1,source="chotot",
+  details={'notice': 'хозяин отдаёт приоритет договору на 1-2 года', 'contact': 'Căn Hộ Chung Cư', 'photos': ['https://cdn.chotot.com/0ccqUQ64tv4mMXR6urY4pE7EjsbCeBc5HBcUP9oK7a8/preset:view/plain/1ade7c84863d1af43e2b88289683e2fd-2998733135979407975.jpg', 'https://cdn.chotot.com/rb8_JGQxYZKNO0k791wE0-g1YODZE2P7M6TYRoEGiP8/preset:view/plain/7a188711d56fcb34e052fc29280320d9-2998733135988600051.jpg']}),
+
+L(1346,"da-lat","cl","Дом",5000000,100,
+  'Дом целиком на ул. Kim Đồng (рядом рынок Ngô Quyền) — 100м² в использовании, 2 спальни, гостиная, кухня, просторный двор для машины.',
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/134287487.htm","вчера",1,source="chotot",
+  details={'contact': 'khanh nguyên Trần Nguyễ', 'photos': ['https://cdn.chotot.com/AGgWr9fyr3Y7ehHd6vLa98Xhsr2boqzOxAk-0sD_xq4/preset:view/plain/9666eecd0c18184a8884a442dbe52251-2998706809482479442.jpg', 'https://cdn.chotot.com/IpxabwyJsRTUJRNANIQfY0tTxkazUdodfeTF6-ReRkI/preset:view/plain/fba164c0ebca35de1eef313cb4c458de-2998706808884975372.jpg']}),
+
+L(1347,"da-lat","xh","Дом",10000000,70,
+  'Дом целиком на ул. Thông Thiên Học — 1 этаж + 2 этажа, 4 спальни/3 с/у, свободная планировка, заезд по дороге для машины.',
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/134287446.htm","вчера",1,source="chotot",
+  details={'notice': 'дом сдаётся пустым, без мебели', 'contact': 'khanh nguyên Trần Nguyễ', 'photos': ['https://cdn.chotot.com/JrA7BdzGCg7uHT4KEyg_S1POocuz7zmAmmE7EctotYs/preset:view/plain/abdc8c68b97b5a45ecba3c9405af95c8-2998706665158663283.jpg', 'https://cdn.chotot.com/RoFg2I8-3pqrZuvKFnxtBZYVEreGmJoMP9Qcl8GE3jQ/preset:view/plain/209fb88ed158c2b1132300d955a5d6b7-2998706665005253407.jpg']}),
+
+L(1348,"da-lat","cl","Дом",12000000,70,
+  'Дом на главной дороге на ул. An Sơn — 3 спальни/3 с/у, гостиная, кухня-столовая, мансардный этаж.',
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/134287410.htm","вчера",1,source="chotot",
+  details={'notice': 'в объявлении отмечена возможность использовать дом и под небольшой бизнес', 'contact': 'khanh nguyên Trần Nguyễ', 'photos': ['https://cdn.chotot.com/nMMOBWOL5k_iWxMX3hohdDcIKe8lTYZh0M7gocW3b8A/preset:view/plain/db41d3f58c33fe0a605829eaf90dc65b-2998706470030366476.jpg', 'https://cdn.chotot.com/u7jsFNpivblkh_6VSQDnLRDzG8dutLlwLCo94I-Jetc/preset:view/plain/45baa847d997138306a43d90cdddd7e9-2998706469950325535.jpg']}),
+
+L(1349,"vung-tau","vtp","Квартира",6500000,64,
+  'Квартира в блоке A ЖК на ул. Nam Kỳ Khởi Nghĩa — 64м², 2 спальни/1 с/у, чистая, с полной меблировкой.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-vung-tau-ba-ria-vung-tau/134284950.htm","вчера",1,source="chotot",
+  details={'notice': 'заезд с 1 сентября', 'contact': 'Mạnh Nguyễn', 'photos': ['https://cdn.chotot.com/RzPg5ISeNpyuPmwOA5kYmTYmvvC31gd9OVn2LAbR5a4/preset:view/plain/01d48067d4383df8afab0ad967a60ccb-2998694149226491235.jpg', 'https://cdn.chotot.com/xPuIPaZ-cPevYz4icW6d40ayVMHJ5IRwHrb7m39Mfnw/preset:view/plain/82543cf008bc8c8c1be4f15f55737985-2998694149006248844.jpg']}),
+
+L(1350,"vung-tau","vtp","Квартира",12000000,49,
+  'Сервисная квартира The Sóng рядом с площадью Tam Thắng, 300 м до моря — 2 спальни/1 с/у, полная меблировка.',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-vung-tau-ba-ria-vung-tau/134280314.htm","2 дня назад",2,source="chotot",
+  details={'notice': 'в объявлении отмечена возможность использовать под офис или сдачу через Airbnb', 'contact': 'Hoàng Anh Nhà Đất', 'photos': ['https://cdn.chotot.com/J1m_ZJDt8JiUyrUqIMQfDNHxiV_aUsezSZqdduESjqA/preset:view/plain/96c11cb76923023b3b3a5c23972df28d-2998614686482149806.jpg', 'https://cdn.chotot.com/6YUB_xL4W8tXcweEJX253uka_OSlVlW-tbDRIO3S51c/preset:view/plain/172ef98374646029587d7a2825f821b6-2998614687602367603.jpg']}),
+
+L(1351,"quy-nhon","qnn","Квартира",8500000,35,
+  'Квартира с видом на море в FLC Sea Tower (ул. An Dương Vương) — 35м².',
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-qui-nhon-binh-dinh/134286420.htm","вчера",1,source="chotot",
+  details={'notice': 'в объявлении отмечена возможность как проживания, так и сдачи в краткосрочную аренду (lưu trú)', 'contact': 'Nguyễn Trường HiFriendz', 'photos': ['https://cdn.chotot.com/20-2DMm_bHdIvVoBh--dzD3YdVcRouzsZIjD2EaEN38/preset:view/plain/4dedb35d21370271dac2e6583ec3dc3f-2998701972143507282.jpg', 'https://cdn.chotot.com/d_uuaTJBsjYUHZJ91MLJdcEuP7BFbGuY4spKKDuvTfU/preset:view/plain/8c8219368ecae6dcf6d7dc984f26d75b-2998701972199069452.jpg']}),
+
+L(1352,"hoi-an","hat","Дом",45000000,150,
+  'Вилла целиком в комплексе Casamia Calm (ул. Đồng Nà 1) — 150м², 3 спальни/3 с/у, кабинет, премиальная полная меблировка. Приоритет долгосрочной аренде.',
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-hoi-an-quang-nam/134288419.htm","вчера",1,source="chotot",
+  details={'notice': 'старый район — Xã Cẩm Hà, в новой сетке — Phường Hội An Tây', 'contact': 'Phương', 'photos': ['https://cdn.chotot.com/T8yd6E1uy6FXSBhNcJEp5kRMzz66fPVM43nd5RXc1bQ/preset:view/plain/4cff3bfcb36cfb15933faf1550381eb6-2998710325895180697.jpg', 'https://cdn.chotot.com/8PPBhBbAuiD3OYhBgBW510Hmpc3-sJo0R0B13WuDafM/preset:view/plain/f258359e3e5e9001f7bc2ab76e68d824-2998710325929396389.jpg']}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
