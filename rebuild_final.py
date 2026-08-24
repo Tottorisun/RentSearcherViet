@@ -5920,7 +5920,7 @@ POIS = {
 }
 
 DATA = {
-    "CITIES": CITIES, "SOURCES": SOURCES, "FB_GROUPS": FB_GROUPS,
+    "CITIES": CITIES, "SOURCES": SOURCES,
     "LISTINGS": LISTINGS, "WARD_BOUNDARIES": WARD_BOUNDARIES, "POIS": POIS
 }
 DATA_JSON = json.dumps(DATA, ensure_ascii=False, separators=(",",":"))
@@ -6107,7 +6107,21 @@ HTML = r"""<meta charset="utf-8">
   .results-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:16px;align-items:start;}
 
   .listing-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:16px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-sm);}
-  .listing-photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);background:var(--surface-2);display:block;}
+  .listing-photos{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .listing-photo{flex:0 0 auto;width:110px;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);background:var(--surface-2);display:block;cursor:zoom-in;}
+  .listing-photos .listing-photo:only-child{flex-basis:100%;width:100%;}
+
+  .lightbox{position:fixed;inset:0;z-index:1000;background:rgba(10,14,8,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;}
+  .lightbox[hidden]{display:none;}
+  .lightbox-main{max-width:min(900px,90vw);max-height:70vh;object-fit:contain;border-radius:var(--radius-sm);background:var(--surface-2);}
+  .lightbox-close{position:absolute;top:16px;right:20px;background:transparent;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1;padding:6px 10px;}
+  .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:#fff;font-size:2.2rem;width:48px;height:48px;border-radius:50%;cursor:pointer;line-height:1;}
+  .lightbox-nav:hover{background:rgba(255,255,255,0.24);}
+  .lightbox-prev{left:16px;}
+  .lightbox-next{right:16px;}
+  .lightbox-thumbs{display:flex;gap:6px;overflow-x:auto;max-width:90vw;padding:4px;}
+  .lightbox-thumbs img{flex:0 0 auto;width:64px;height:48px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:0.55;border:2px solid transparent;}
+  .lightbox-thumbs img.active{opacity:1;border-color:var(--accent);}
   .listing-top{display:flex;justify-content:space-between;align-items:center;gap:8px;}
   .source-pill{display:inline-flex;align-items:center;gap:6px;font-size:0.72rem;font-weight:700;color:var(--ink-dim);background:var(--surface-2);border-radius:999px;padding:4px 10px;text-transform:uppercase;letter-spacing:0.03em;}
   .source-pill i{width:7px;height:7px;border-radius:50%;background:var(--danger);}
@@ -6264,21 +6278,17 @@ HTML = r"""<meta charset="utf-8">
   </section>
 
   <footer class="footer">
-    <h3>Об этой подборке</h3>
-    <ul>
-      <li>Подключено 9 источников: <strong>Chợ Tốt / Nhà Tốt</strong>, <strong>Facebook-группы</strong>, <strong>Facebook Marketplace</strong>, <strong>Batdongsan.com.vn</strong>, <strong>Telegram-каналы</strong>, <strong>Airbnb</strong>, <strong>Trip.com</strong>, <strong>Booking.com</strong> и <strong>Vrbo</strong> (последние четыре — помесячные/долгосрочные тарифы на посуточных платформах, а не обычная посуточная аренда). Все __LISTING_COUNT__ карточек выше настоящие, ссылки ведут на оригинальные объявления — нажмите «Подробнее» на карточке, чтобы увидеть коммуналку, депозит и другие условия из оригинального объявления.</li>
-      <li>Для Нячанга, Далата и Дананга собрано вручную по актуальным группам аренды (список — ниже, под соответствующим городом). Для Хошимина отдельная выборка — по приоритетным районам (Phú Mỹ Hưng, Thảo Điền/An Phú, Thanh Đa, Bến Thành, Khánh Hội).</li>
-      <li>Даты заезда для посуточных платформ (Airbnb/Trip.com/Booking.com/Vrbo) — пока фиксированный период (обычно 30 ночей), а не гибкий выбор дат; свободный выбор даты заезда/выезда всё ещё в разработке.</li>
-      <li>Facebook закрывает поиск по группам без входа в аккаунт и отдаёт ленту частями — поэтому автоматический постоянный сбор из групп ограничен; надёжнее всего работает точечная проверка групп вручную (список — ниже).</li>
-      <li>Если в подборку добавятся риелторы/агентства — только вьетнамские, без посреднических наценок экспат-агентов.</li>
-      <li>Карта теперь интерактивная (Leaflet + OpenStreetMap): у каждого объявления есть точка на карте, наведение показывает мини-карточку, клик открывает объявление. Точное положение — там, где адрес удалось определить по описанию, иначе точка стоит примерно по центру района. ⚠ Карта грузит внешние тайлы OpenStreetMap, поэтому не открывается по ссылке артефакта (там это заблокировано политикой безопасности) — работает только если открыть файл локально.</li>
-      <li>Карта Нячанга — особый случай: после реформы 2025 года старые районы (Lộc Thọ, Tân Lập, Phước Hải и т.д.) официально объединили в 4 огромные зоны, которыми никто не пользуется, а официальных границ на уровне привычных районов больше не существует — поэтому точки там расставлены по правильному району, но не по точному адресу. Далат, Дананг, Хойан и Хошимин показаны по официальным границам районов 2025 года.</li>
-    </ul>
-    <h3 style="margin-top:16px;" id="fb-groups-title">Facebook-группы по аренде</h3>
-    <ul id="fb-groups-list"></ul>
     <p class="stamp">Данные актуальны на __TODAY_DATE__ · объявления старше 30 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление.</p>
   </footer>
 
+</div>
+
+<div id="lightbox" class="lightbox" hidden>
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Закрыть">✕</button>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Предыдущее фото">‹</button>
+  <img class="lightbox-main" id="lightbox-main" src="" alt="">
+  <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Следующее фото">›</button>
+  <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
 </div>
 
 <script>
@@ -6288,7 +6298,6 @@ HTML = r"""<meta charset="utf-8">
   var DATA = __DATA_JSON__;
   var CITIES = DATA.CITIES;
   var SOURCES = DATA.SOURCES;
-  var FB_GROUPS = DATA.FB_GROUPS;
   var LISTINGS = DATA.LISTINGS;
 
   var SOURCE_LABEL = {};
@@ -6730,7 +6739,10 @@ HTML = r"""<meta charset="utf-8">
         ? '<p class="listing-notice">' + l.details.notice + '</p>' : "";
       var photos = l.details && l.details.photos;
       var photoHtml = (photos && photos.length)
-        ? '<img class="listing-photo" src="' + photos[0] + '" alt="" loading="lazy" onerror="this.remove()">' : "";
+        ? '<div class="listing-photos">' + photos.map(function(p, i){
+            return '<img class="listing-photo" data-idx="' + i + '" src="' + p + '" alt="" loading="lazy" onerror="this.remove()">';
+          }).join('') + '</div>'
+        : "";
       var alsoOn = l.details && l.details.alsoOn;
       var alsoOnHtml = (alsoOn && alsoOn.length)
         ? '<p class="listing-also">Также встречается на: ' + alsoOn.map(function(a){
@@ -6776,6 +6788,13 @@ HTML = r"""<meta charset="utf-8">
           toggleBtn.setAttribute("aria-expanded", willOpen);
         });
       }
+      if (photos && photos.length){
+        card.querySelectorAll(".listing-photo").forEach(function(img){
+          img.addEventListener("click", function(){
+            openLightbox(photos, Number(img.getAttribute("data-idx")));
+          });
+        });
+      }
       el.resultsList.appendChild(card);
     });
     renderLeafletMarkers(list);
@@ -6796,24 +6815,52 @@ HTML = r"""<meta charset="utf-8">
     syncBudgetUI(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderCityMap(); applyFilters();
   });
 
-  function renderFbGroups(){
-    var list = document.getElementById("fb-groups-list");
-    var title = document.getElementById("fb-groups-title");
-    if (!list) return;
-    var groups = FB_GROUPS[state.city] || [];
-    title.textContent = "Facebook-группы по аренде — " + CITIES[state.city].name;
-    list.innerHTML = "";
-    groups.forEach(function(g){
-      var li = document.createElement("li");
-      li.innerHTML = '<a href="'+g.url+'" target="_blank" rel="noopener"><strong>'+g.name+'</strong></a>' +
-        (g.members!=="—" ? (" · " + g.members + " участников") : "") +
-        " — " + g.note;
-      list.appendChild(li);
-    });
+  var lightboxPhotos = [], lightboxIndex = 0;
+  var lightboxEl = document.getElementById("lightbox");
+  var lightboxMain = document.getElementById("lightbox-main");
+  var lightboxThumbs = document.getElementById("lightbox-thumbs");
+
+  function renderLightbox(){
+    lightboxMain.src = lightboxPhotos[lightboxIndex];
+    lightboxThumbs.innerHTML = "";
+    if (lightboxPhotos.length > 1){
+      lightboxPhotos.forEach(function(p, i){
+        var t = document.createElement("img");
+        t.src = p;
+        t.loading = "lazy";
+        t.className = (i === lightboxIndex) ? "active" : "";
+        t.addEventListener("click", function(){ lightboxIndex = i; renderLightbox(); });
+        lightboxThumbs.appendChild(t);
+      });
+    }
   }
 
+  function openLightbox(photos, index){
+    lightboxPhotos = photos; lightboxIndex = index;
+    renderLightbox();
+    lightboxEl.removeAttribute("hidden");
+  }
+
+  function closeLightbox(){ lightboxEl.setAttribute("hidden", ""); }
+
+  function lightboxStep(delta){
+    lightboxIndex = (lightboxIndex + delta + lightboxPhotos.length) % lightboxPhotos.length;
+    renderLightbox();
+  }
+
+  document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+  document.getElementById("lightbox-prev").addEventListener("click", function(){ lightboxStep(-1); });
+  document.getElementById("lightbox-next").addEventListener("click", function(){ lightboxStep(1); });
+  lightboxEl.addEventListener("click", function(e){ if (e.target === lightboxEl) closeLightbox(); });
+  document.addEventListener("keydown", function(e){
+    if (lightboxEl.hasAttribute("hidden")) return;
+    if (e.key === "Escape") closeLightbox();
+    else if (e.key === "ArrowLeft") lightboxStep(-1);
+    else if (e.key === "ArrowRight") lightboxStep(1);
+  });
+
   initLeafletMap();
-  renderCityTabs(); renderCityMap(); setupBudgetSlider(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderFbGroups(); applyFilters();
+  renderCityTabs(); renderCityMap(); setupBudgetSlider(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); applyFilters();
 })();
 </script>
 """
