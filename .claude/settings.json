@@ -16,5 +16,19 @@
       "Bash(git push --force*)",
       "Bash(git reset --hard*)"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR}/.claude/hooks/rebuild-on-listings-change.sh\"",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
   }
 }

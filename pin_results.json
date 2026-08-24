@@ -17,27 +17,9 @@
   "source": "ward-centroid",
   "matched": null
  },
- "11": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "ward-centroid",
-  "matched": null
- },
- "12": {
-  "lat": 11.9778449,
-  "lon": 108.3915811,
-  "source": "geocode",
-  "matched": "Măng Lin"
- },
  "13": {
   "lat": 16.0589539,
   "lon": 108.2194844,
-  "source": "ward-centroid",
-  "matched": null
- },
- "14": {
-  "lat": 16.0502691,
-  "lon": 108.1546403,
   "source": "ward-centroid",
   "matched": null
  },
@@ -233,35 +215,11 @@
   "source": "geocode",
   "matched": "Phường 10"
  },
- "94": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "geocode",
-  "matched": "Phường 8"
- },
- "95": {
-  "lat": 11.9411339,
-  "lon": 108.4620494,
-  "source": "geocode",
-  "matched": "Phường 6"
- },
- "96": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "geocode",
-  "matched": "Phường 10"
- },
  "97": {
   "lat": 11.9345622,
   "lon": 108.4305116,
   "source": "geocode",
   "matched": "Phường 3"
- },
- "98": {
-  "lat": 11.9411339,
-  "lon": 108.4620494,
-  "source": "geocode",
-  "matched": "Phường 6"
  },
  "99": {
   "lat": 11.9493056,
@@ -1148,96 +1106,6 @@
  "262": {
   "lat": 11.9493056,
   "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "263": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "ward-centroid",
-  "matched": null
- },
- "264": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "ward-centroid",
-  "matched": null
- },
- "265": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "ward-centroid",
-  "matched": null
- },
- "266": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "267": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "268": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "269": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "270": {
-  "lat": 12.0093975,
-  "lon": 108.4260842,
-  "source": "ward-centroid",
-  "matched": null
- },
- "271": {
-  "lat": 11.97356227274298,
-  "lon": 108.47368535615551,
-  "source": "ward-centroid",
-  "matched": null
- },
- "272": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "273": {
-  "lat": 11.97356227274298,
-  "lon": 108.47368535615551,
-  "source": "ward-centroid",
-  "matched": null
- },
- "274": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "ward-centroid",
-  "matched": null
- },
- "275": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "276": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "277": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
   "source": "ward-centroid",
   "matched": null
  },
@@ -2237,12 +2105,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "547": {
-  "lat": 10.7346766,
-  "lon": 106.7180522,
-  "source": "geocode",
-  "matched": "Nguyễn Lương Bằng"
- },
  "548": {
   "lat": 10.7346766,
   "lon": 106.7180522,
@@ -2363,24 +2225,6 @@
   "source": "geocode",
   "matched": "Thanh Đa"
  },
- "568": {
-  "lat": 10.8131455,
-  "lon": 106.7206046,
-  "source": "geocode",
-  "matched": "Thanh Đa"
- },
- "569": {
-  "lat": 10.8273371,
-  "lon": 106.7368775,
-  "source": "ward-centroid",
-  "matched": null
- },
- "570": {
-  "lat": 10.8273371,
-  "lon": 106.7368775,
-  "source": "ward-centroid",
-  "matched": null
- },
  "573": {
   "lat": 10.7207879,
   "lon": 106.7271824,
@@ -2417,25 +2261,7 @@
   "source": "ward-centroid",
   "matched": null
  },
- "580": {
-  "lat": 10.7289952,
-  "lon": 106.7189174,
-  "source": "geocode",
-  "matched": "Crescent Mall"
- },
- "581": {
-  "lat": 10.8704168,
-  "lon": 106.7964419,
-  "source": "geocode",
-  "matched": "Võ Trường Toản"
- },
  "582": {
-  "lat": 10.7850885,
-  "lon": 106.7293654,
-  "source": "ward-centroid",
-  "matched": null
- },
- "583": {
   "lat": 10.7850885,
   "lon": 106.7293654,
   "source": "ward-centroid",
@@ -2448,12 +2274,6 @@
   "matched": null
  },
  "585": {
-  "lat": 10.8026487,
-  "lon": 106.7423989,
-  "source": "geocode",
-  "matched": "Masteri Thảo Điền"
- },
- "586": {
   "lat": 10.8026487,
   "lon": 106.7423989,
   "source": "geocode",
@@ -2476,18 +2296,6 @@
   "lon": 106.7488432,
   "source": "geocode",
   "matched": "Lumière Riverside"
- },
- "592": {
-  "lat": 10.8131455,
-  "lon": 106.7206046,
-  "source": "geocode",
-  "matched": "Thanh Đa"
- },
- "594": {
-  "lat": 10.8273371,
-  "lon": 106.7368775,
-  "source": "ward-centroid",
-  "matched": null
  },
  "597": {
   "lat": 10.7155171,
@@ -2819,36 +2627,6 @@
   "source": "geocode",
   "matched": "Nguyễn Thái Bình"
  },
- "656": {
-  "lat": 10.7785749,
-  "lon": 106.7016045,
-  "source": "geocode",
-  "matched": "Lý Tự Trọng"
- },
- "657": {
-  "lat": 10.7674015,
-  "lon": 106.6977106,
-  "source": "geocode",
-  "matched": "Nguyễn Thái Bình"
- },
- "658": {
-  "lat": 10.7676736,
-  "lon": 106.7002575,
-  "source": "geocode",
-  "matched": "Nguyễn Công Trứ"
- },
- "659": {
-  "lat": 10.7588763,
-  "lon": 106.6928322,
-  "source": "geocode",
-  "matched": "Võ Văn Kiệt"
- },
- "660": {
-  "lat": 10.7631702,
-  "lon": 106.6996404,
-  "source": "geocode",
-  "matched": "Masteri Millennium"
- },
  "661": {
   "lat": 10.7631702,
   "lon": 106.6996404,
@@ -2908,12 +2686,6 @@
   "lon": 106.7206046,
   "source": "geocode",
   "matched": "Thanh Đa"
- },
- "671": {
-  "lat": 10.8193816,
-  "lon": 106.7963489,
-  "source": "geocode",
-  "matched": "Cầu Kinh"
  },
  "672": {
   "lat": 10.769002,
@@ -3028,12 +2800,6 @@
   "lon": 106.7504543,
   "source": "geocode",
   "matched": "Landmark 81"
- },
- "691": {
-  "lat": 10.8273371,
-  "lon": 106.7368775,
-  "source": "ward-centroid",
-  "matched": null
  },
  "692": {
   "lat": 10.8273371,
