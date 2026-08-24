@@ -6946,5 +6946,29 @@
   "lon": 106.691696,
   "source": "geocode",
   "matched": "Nguyễn Trãi"
+ },
+ "1399": {
+  "lat": 10.7969577,
+  "lon": 106.7504543,
+  "source": "geocode",
+  "matched": "Landmark 81"
+ },
+ "1400": {
+  "lat": 10.71453,
+  "lon": 106.6615098,
+  "source": "geocode",
+  "matched": "One Nam Sài Gòn"
+ },
+ "1401": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1402": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
  }
 }
