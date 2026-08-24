@@ -7414,5 +7414,77 @@
   "lon": 106.7172107,
   "source": "geocode",
   "matched": "Phạm Hữu Lầu"
+ },
+ "1570": {
+  "lat": 10.8024419,
+  "lon": 106.7415654,
+  "source": "geocode",
+  "matched": "Vincom Mega Mall"
+ },
+ "1571": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1572": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1573": {
+  "lat": 10.7697025,
+  "lon": 106.707918,
+  "source": "geocode",
+  "matched": "Thủ Thiêm"
+ },
+ "1574": {
+  "lat": 10.7878232,
+  "lon": 106.7343792,
+  "source": "geocode",
+  "matched": "Lương Định Của"
+ },
+ "1575": {
+  "lat": 10.7506471,
+  "lon": 106.6989454,
+  "source": "geocode",
+  "matched": "Hẻm 793 Trần Xuân Soạn"
+ },
+ "1576": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1577": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1578": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1579": {
+  "lat": 10.7152203,
+  "lon": 106.7396797,
+  "source": "geocode",
+  "matched": "Vạn Phát Hưng"
+ },
+ "1580": {
+  "lat": 10.7137641,
+  "lon": 106.7342136,
+  "source": "geocode",
+  "matched": "Hoàng Quốc Việt"
+ },
+ "1581": {
+  "lat": 10.7003494,
+  "lon": 106.7326546,
+  "source": "geocode",
+  "matched": "Era Town"
  }
 }
