@@ -6970,5 +6970,545 @@
   "lon": 106.7235888,
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
+ },
+ "1403": {
+  "lat": 11.9481953,
+  "lon": 108.4357295,
+  "source": "geocode",
+  "matched": "Phan Đình Phùng"
+ },
+ "1404": {
+  "lat": 11.9689167,
+  "lon": 108.446046,
+  "source": "geocode",
+  "matched": "Trần Quang Khải"
+ },
+ "1405": {
+  "lat": 11.9540885,
+  "lon": 108.4298908,
+  "source": "geocode",
+  "matched": "Bách Hóa Xanh"
+ },
+ "1406": {
+  "lat": 11.9601203,
+  "lon": 108.4676645,
+  "source": "geocode",
+  "matched": "Trương Văn Hoàn"
+ },
+ "1407": {
+  "lat": 11.9524083,
+  "lon": 108.4418061,
+  "source": "geocode",
+  "matched": "Xuân Hương"
+ },
+ "1408": {
+  "lat": 11.9507569,
+  "lon": 108.4599016,
+  "source": "geocode",
+  "matched": "Nguyễn Đình Chiểu"
+ },
+ "1409": {
+  "lat": 11.9466628,
+  "lon": 108.4276542,
+  "source": "geocode",
+  "matched": "Lê Thánh Tôn"
+ },
+ "1410": {
+  "lat": 10.9356073,
+  "lon": 108.2863836,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1411": {
+  "lat": 13.762502,
+  "lon": 109.2213907,
+  "source": "geocode",
+  "matched": "An Dương Vương"
+ },
+ "1412": {
+  "lat": 13.762502,
+  "lon": 109.2213907,
+  "source": "geocode",
+  "matched": "An Dương Vương"
+ },
+ "1413": {
+  "lat": 13.756666,
+  "lon": 109.215383,
+  "source": "geocode",
+  "matched": "Võ Thị Yến 44"
+ },
+ "1414": {
+  "lat": 13.7831003,
+  "lon": 109.2191803,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "1415": {
+  "lat": 13.7784087,
+  "lon": 109.2348323,
+  "source": "geocode",
+  "matched": "Phú Tài Residence"
+ },
+ "1416": {
+  "lat": 13.7831003,
+  "lon": 109.2191803,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "1417": {
+  "lat": 13.7831003,
+  "lon": 109.2191803,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "1418": {
+  "lat": 13.7671012,
+  "lon": 109.2268142,
+  "source": "geocode",
+  "matched": "Nguyễn Huệ"
+ },
+ "1419": {
+  "lat": 13.7850322,
+  "lon": 109.2026913,
+  "source": "geocode",
+  "matched": "Điện Biên Phủ"
+ },
+ "1420": {
+  "lat": 10.3367008,
+  "lon": 107.08413,
+  "source": "geocode",
+  "matched": "Hoàng Văn Hòe"
+ },
+ "1421": {
+  "lat": 10.3900545,
+  "lon": 107.1124023,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1422": {
+  "lat": 10.3474658,
+  "lon": 107.0743043,
+  "source": "geocode",
+  "matched": "Lê Lợi"
+ },
+ "1423": {
+  "lat": 10.3668459,
+  "lon": 107.0843152,
+  "source": "geocode",
+  "matched": "Tam Thắng"
+ },
+ "1424": {
+  "lat": 16.0791161,
+  "lon": 108.2435758,
+  "source": "geocode",
+  "matched": "Trần Đình Đàn"
+ },
+ "1425": {
+  "lat": 16.055719,
+  "lon": 108.2333755,
+  "source": "geocode",
+  "matched": "An Trung 2"
+ },
+ "1426": {
+  "lat": 16.0621304,
+  "lon": 108.2423339,
+  "source": "geocode",
+  "matched": "Tô Hiến Thành"
+ },
+ "1427": {
+  "lat": 16.0670299,
+  "lon": 108.2404802,
+  "source": "geocode",
+  "matched": "Phạm Tu"
+ },
+ "1428": {
+  "lat": 16.0513077,
+  "lon": 108.2350476,
+  "source": "geocode",
+  "matched": "Trần Thị Lý"
+ },
+ "1429": {
+  "lat": 16.0658121,
+  "lon": 108.2389106,
+  "source": "geocode",
+  "matched": "Nguyễn Công Trứ"
+ },
+ "1430": {
+  "lat": 16.0756455,
+  "lon": 108.2429089,
+  "source": "geocode",
+  "matched": "Hồ Nghinh"
+ },
+ "1431": {
+  "lat": 16.0756455,
+  "lon": 108.2429089,
+  "source": "geocode",
+  "matched": "Hồ Nghinh"
+ },
+ "1432": {
+  "lat": 16.069861,
+  "lon": 108.2367037,
+  "source": "geocode",
+  "matched": "Nguyễn Xuân Khoát"
+ },
+ "1433": {
+  "lat": 16.0444817,
+  "lon": 108.1689167,
+  "source": "geocode",
+  "matched": "Bùi Tấn Diên"
+ },
+ "1434": {
+  "lat": 16.0572883,
+  "lon": 108.184602,
+  "source": "geocode",
+  "matched": "Cần Giuộc"
+ },
+ "1435": {
+  "lat": 16.019605,
+  "lon": 108.2137842,
+  "source": "geocode",
+  "matched": "Bình Hòa 15"
+ },
+ "1436": {
+  "lat": 16.0162839,
+  "lon": 108.193908,
+  "source": "geocode",
+  "matched": "Bàu Gia Thượng 1"
+ },
+ "1437": {
+  "lat": 16.0099242,
+  "lon": 108.1980644,
+  "source": "geocode",
+  "matched": "Nguyễn Nhàn 100"
+ },
+ "1438": {
+  "lat": 16.0193811,
+  "lon": 108.2241906,
+  "source": "geocode",
+  "matched": "Cồn Dầu 15"
+ },
+ "1439": {
+  "lat": 16.0520351,
+  "lon": 108.1590736,
+  "source": "geocode",
+  "matched": "Vũ Thành Năm"
+ },
+ "1440": {
+  "lat": 16.0130967,
+  "lon": 108.2298928,
+  "source": "geocode",
+  "matched": "Mai Chí Thọ"
+ },
+ "1441": {
+  "lat": 16.0160211,
+  "lon": 108.2236902,
+  "source": "geocode",
+  "matched": "Lê Quảng Chí"
+ },
+ "1442": {
+  "lat": 16.0084953,
+  "lon": 108.2230143,
+  "source": "geocode",
+  "matched": "Diên Hồng"
+ },
+ "1443": {
+  "lat": 16.0130967,
+  "lon": 108.2298928,
+  "source": "geocode",
+  "matched": "Mai Chí Thọ"
+ },
+ "1444": {
+  "lat": 16.0041966,
+  "lon": 108.2165563,
+  "source": "geocode",
+  "matched": "Khương Hữu Dụng"
+ },
+ "1445": {
+  "lat": 16.0935851,
+  "lon": 108.1398136,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng 173"
+ },
+ "1446": {
+  "lat": 16.0935851,
+  "lon": 108.1398136,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng 173"
+ },
+ "1447": {
+  "lat": 16.0704464,
+  "lon": 108.1538527,
+  "source": "geocode",
+  "matched": "Ngô Thì Nhậm"
+ },
+ "1448": {
+  "lat": 16.0330141,
+  "lon": 108.240832,
+  "source": "geocode",
+  "matched": "Nguyễn Lữ"
+ },
+ "1449": {
+  "lat": 16.0502245,
+  "lon": 108.2300162,
+  "source": "geocode",
+  "matched": "Trần Thị Lý"
+ },
+ "1450": {
+  "lat": 16.0502245,
+  "lon": 108.2300162,
+  "source": "geocode",
+  "matched": "Trần Thị Lý"
+ },
+ "1451": {
+  "lat": 16.0502882,
+  "lon": 108.2354624,
+  "source": "geocode",
+  "matched": "Phạm Hữu Kính"
+ },
+ "1452": {
+  "lat": 16.0208755,
+  "lon": 108.2497929,
+  "source": "geocode",
+  "matched": "Đa Mặn 5"
+ },
+ "1453": {
+  "lat": 16.0486822,
+  "lon": 108.245994,
+  "source": "geocode",
+  "matched": "Lê Quang Đạo"
+ },
+ "1454": {
+  "lat": 16.0208755,
+  "lon": 108.2497929,
+  "source": "geocode",
+  "matched": "Đa Mặn 5"
+ },
+ "1455": {
+  "lat": 15.9809846,
+  "lon": 108.2620181,
+  "source": "geocode",
+  "matched": "Trần Quốc Vượng"
+ },
+ "1456": {
+  "lat": 16.0495348,
+  "lon": 108.2443888,
+  "source": "geocode",
+  "matched": "An Thượng 15"
+ },
+ "1457": {
+  "lat": 16.0268353,
+  "lon": 108.2449323,
+  "source": "geocode",
+  "matched": "Nguyễn Đình Chiểu"
+ },
+ "1458": {
+  "lat": 16.0153234,
+  "lon": 108.2555052,
+  "source": "geocode",
+  "matched": "Nguyễn Xiển 94"
+ },
+ "1459": {
+  "lat": 16.0135391,
+  "lon": 108.2548954,
+  "source": "geocode",
+  "matched": "Thủy Sơn 4"
+ },
+ "1460": {
+  "lat": 16.0368792,
+  "lon": 108.2460051,
+  "source": "geocode",
+  "matched": "Khuê Mỹ Đông"
+ },
+ "1461": {
+  "lat": 15.9271891,
+  "lon": 108.3064703,
+  "source": "geocode",
+  "matched": "Mỹ Đa Đông 8"
+ },
+ "1462": {
+  "lat": 16.0685075,
+  "lon": 108.2440223,
+  "source": "geocode",
+  "matched": "Đa Phước 2"
+ },
+ "1463": {
+  "lat": 16.0426615,
+  "lon": 108.245486,
+  "source": "geocode",
+  "matched": "Chế Lan Viên"
+ },
+ "1464": {
+  "lat": 16.0097281,
+  "lon": 108.2624783,
+  "source": "geocode",
+  "matched": "Đặng Đoàn Bằng"
+ },
+ "1465": {
+  "lat": 16.0603836,
+  "lon": 108.2458465,
+  "source": "geocode",
+  "matched": "Mỹ Khê"
+ },
+ "1466": {
+  "lat": 16.0495348,
+  "lon": 108.2443888,
+  "source": "geocode",
+  "matched": "An Thượng"
+ },
+ "1467": {
+  "lat": 16.0297679,
+  "lon": 108.2371774,
+  "source": "geocode",
+  "matched": "Chương Dương"
+ },
+ "1468": {
+  "lat": 15.997448,
+  "lon": 108.2610516,
+  "source": "geocode",
+  "matched": "Hoà Hải"
+ },
+ "1469": {
+  "lat": 16.071571,
+  "lon": 108.2093029,
+  "source": "geocode",
+  "matched": "Đà Nẵng"
+ },
+ "1470": {
+  "lat": 16.0426615,
+  "lon": 108.245486,
+  "source": "geocode",
+  "matched": "Chế Lan Viên"
+ },
+ "1471": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1472": {
+  "lat": 16.0545708,
+  "lon": 108.2403862,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Thoại"
+ },
+ "1473": {
+  "lat": 16.095211,
+  "lon": 108.2245757,
+  "source": "geocode",
+  "matched": "Lê Văn Duyệt"
+ },
+ "1474": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1475": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1476": {
+  "lat": 16.0892968,
+  "lon": 108.2466754,
+  "source": "geocode",
+  "matched": "Trương Định"
+ },
+ "1477": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1478": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1479": {
+  "lat": 16.0683682,
+  "lon": 108.1966311,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1480": {
+  "lat": 16.1104518,
+  "lon": 108.132495,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
+ },
+ "1481": {
+  "lat": 16.0683682,
+  "lon": 108.1966311,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1482": {
+  "lat": 16.0713815,
+  "lon": 108.1822792,
+  "source": "geocode",
+  "matched": "Yên Khê 2"
+ },
+ "1483": {
+  "lat": 16.0683682,
+  "lon": 108.1966311,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1484": {
+  "lat": 16.0626028,
+  "lon": 108.1683623,
+  "source": "geocode",
+  "matched": "Hòa Minh"
+ },
+ "1485": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1486": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1487": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1488": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1489": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1490": {
+  "lat": 16.0907229,
+  "lon": 108.2197635,
+  "source": "geocode",
+  "matched": "Như Nguyệt"
+ },
+ "1491": {
+  "lat": 16.0814157,
+  "lon": 108.2226575,
+  "source": "geocode",
+  "matched": "Thạch Thang"
+ },
+ "1492": {
+  "lat": 16.0589539,
+  "lon": 108.2194844,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
