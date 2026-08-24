@@ -7349,65 +7349,11 @@
   "source": "geocode",
   "matched": "Nguyễn Văn Hưởng"
  },
- "1534": {
-  "lat": 10.7697025,
-  "lon": 106.707918,
-  "source": "geocode",
-  "matched": "Thủ Thiêm"
- },
  "1535": {
   "lat": 10.8067285,
   "lon": 106.7257182,
   "source": "geocode",
   "matched": "Nguyễn Văn Hưởng"
- },
- "1536": {
-  "lat": 10.7969577,
-  "lon": 106.7504543,
-  "source": "geocode",
-  "matched": "Landmark 81"
- },
- "1537": {
-  "lat": 10.83987,
-  "lon": 106.6695842,
-  "source": "geocode",
-  "matched": "Bách Hóa Xanh"
- },
- "1538": {
-  "lat": 10.7674015,
-  "lon": 106.6977106,
-  "source": "geocode",
-  "matched": "Nguyễn Thái Bình"
- },
- "1539": {
-  "lat": 10.7655835,
-  "lon": 106.6931006,
-  "source": "geocode",
-  "matched": "Trần Hưng Đạo"
- },
- "1540": {
-  "lat": 10.7674015,
-  "lon": 106.6977106,
-  "source": "geocode",
-  "matched": "Nguyễn Thái Bình"
- },
- "1541": {
-  "lat": 10.7631702,
-  "lon": 106.6996404,
-  "source": "geocode",
-  "matched": "Masteri Millennium"
- },
- "1542": {
-  "lat": 10.7631702,
-  "lon": 106.6996404,
-  "source": "geocode",
-  "matched": "Masteri Millennium"
- },
- "1543": {
-  "lat": 10.7629917,
-  "lon": 106.7043593,
-  "source": "geocode",
-  "matched": "Đoàn Văn Bơ"
  },
  "1544": {
   "lat": 10.739937,
@@ -7421,41 +7367,11 @@
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
  },
- "1546": {
-  "lat": 10.71453,
-  "lon": 106.6615098,
-  "source": "geocode",
-  "matched": "One Nam Sài Gòn"
- },
- "1547": {
-  "lat": 10.8379245,
-  "lon": 106.6713343,
-  "source": "geocode",
-  "matched": "Lotte Mart Q7"
- },
- "1548": {
-  "lat": 10.7429954,
-  "lon": 106.7040855,
-  "source": "geocode",
-  "matched": "Lê Văn Lương"
- },
- "1549": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
  "1550": {
   "lat": 10.71453,
   "lon": 106.6615098,
   "source": "geocode",
   "matched": "One Nam Sài Gòn"
- },
- "1551": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
  },
  "1552": {
   "lat": 10.7481374,
@@ -7469,48 +7385,6 @@
   "source": "geocode",
   "matched": "Nguyễn Văn Linh"
  },
- "1554": {
-  "lat": 10.7289952,
-  "lon": 106.7189174,
-  "source": "geocode",
-  "matched": "Crescent Mall"
- },
- "1555": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1556": {
-  "lat": 10.726649,
-  "lon": 106.6938771,
-  "source": "geocode",
-  "matched": "Ven Sông"
- },
- "1557": {
-  "lat": 10.7462581,
-  "lon": 106.6377238,
-  "source": "geocode",
-  "matched": "Him Lam"
- },
- "1558": {
-  "lat": 10.7462581,
-  "lon": 106.6377238,
-  "source": "geocode",
-  "matched": "Him Lam"
- },
- "1559": {
-  "lat": 10.7512819,
-  "lon": 106.6915513,
-  "source": "geocode",
-  "matched": "Trần Xuân Soạn"
- },
- "1560": {
-  "lat": 10.8386837,
-  "lon": 106.6707729,
-  "source": "geocode",
-  "matched": "Lotte Mart"
- },
  "1561": {
   "lat": 10.7438029,
   "lon": 106.695135,
@@ -7523,29 +7397,11 @@
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
  },
- "1563": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
  "1564": {
   "lat": 10.6928289,
   "lon": 106.7172107,
   "source": "geocode",
   "matched": "Phạm Hữu Lầu"
- },
- "1565": {
-  "lat": 10.7009549,
-  "lon": 106.7336308,
-  "source": "geocode",
-  "matched": "Phú Xuân"
- },
- "1566": {
-  "lat": 10.6980033,
-  "lon": 106.7389396,
-  "source": "geocode",
-  "matched": "Huỳnh Tấn Phát"
  },
  "1567": {
   "lat": 10.6928289,
@@ -7553,34 +7409,10 @@
   "source": "geocode",
   "matched": "Phạm Hữu Lầu"
  },
- "1568": {
-  "lat": 10.7352534,
-  "lon": 106.7269018,
-  "source": "geocode",
-  "matched": "Docklands Saigon"
- },
  "1569": {
   "lat": 10.6928289,
   "lon": 106.7172107,
   "source": "geocode",
   "matched": "Phạm Hữu Lầu"
- },
- "1570": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
- },
- "1571": {
-  "lat": 10.7258082,
-  "lon": 106.7238126,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1572": {
-  "lat": 10.7346766,
-  "lon": 106.7180522,
-  "source": "geocode",
-  "matched": "Nguyễn Lương Bằng"
  }
 }
