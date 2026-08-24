@@ -6772,5 +6772,71 @@
   "lon": 106.7034261,
   "source": "ward-centroid",
   "matched": null
+ },
+ "1370": {
+  "lat": 10.7725301,
+  "lon": 106.6980365,
+  "source": "geocode",
+  "matched": "Chợ Bến Thành"
+ },
+ "1371": {
+  "lat": 10.7699795,
+  "lon": 106.6966136,
+  "source": "geocode",
+  "matched": "Phạm Ngũ Lão"
+ },
+ "1372": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1373": {
+  "lat": 10.7629917,
+  "lon": 106.7043593,
+  "source": "geocode",
+  "matched": "Đoàn Văn Bơ"
+ },
+ "1374": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1375": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1376": {
+  "lat": 10.7567803,
+  "lon": 106.7185992,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
+ },
+ "1377": {
+  "lat": 10.7006338,
+  "lon": 106.7324785,
+  "source": "geocode",
+  "matched": "Era Town Đức Khải"
+ },
+ "1378": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "1379": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1380": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
  }
 }
