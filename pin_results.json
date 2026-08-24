@@ -7510,5 +7510,47 @@
   "lon": 108.2194844,
   "source": "ward-centroid",
   "matched": null
+ },
+ "1522": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "1523": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1524": {
+  "lat": 10.7761892,
+  "lon": 106.6384144,
+  "source": "geocode",
+  "matched": "Tân Phú"
+ },
+ "1525": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "1526": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "1527": {
+  "lat": 10.7176642,
+  "lon": 106.7290547,
+  "source": "geocode",
+  "matched": "The Aurora"
+ },
+ "1528": {
+  "lat": 10.7623141,
+  "lon": 106.7022361,
+  "source": "geocode",
+  "matched": "Hoàng Diệu"
  }
 }

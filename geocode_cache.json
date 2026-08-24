@@ -2923,5 +2923,10 @@
  "Đà Nẵng Plaza, Da Nang, Vietnam": null,
  "Đà Nẵng Plaza, Phường Hải Châu, Da Nang, Vietnam": null,
  "Nguyễn Thị Minh Khai 142, Da Nang, Vietnam": null,
- "Nguyễn Thị Minh Khai 142, Phường Hải Châu, Da Nang, Vietnam": null
+ "Nguyễn Thị Minh Khai 142, Phường Hải Châu, Da Nang, Vietnam": null,
+ "Tân Phú, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7761892,
+  "lon": 106.6384144,
+  "display_name": "Phường Tân Phú, Thành phố Hồ Chí Minh, Việt Nam"
+ }
 }
