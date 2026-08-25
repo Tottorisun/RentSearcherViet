@@ -2968,5 +2968,46 @@
   "lat": 10.7178696,
   "lon": 106.6870773,
   "display_name": "Đường số 1, Ấp 29, Xã Bình Hưng, Thành phố Hồ Chí Minh, 72900, Việt Nam"
+ },
+ "Lê Hồng Sơn, Da Nang, Vietnam": {
+  "lat": 16.0814013,
+  "lon": 108.2153355,
+  "display_name": "Trường Trung học cơ sở Lê Hồng Phong, 36, Đường Hải Sơn, Tổ dân phố 09 Thanh Bình, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Vũng Thùng 1, Da Nang, Vietnam": {
+  "lat": 16.0980066,
+  "lon": 108.2327736,
+  "display_name": "Đường Vũng Thùng 4, Phường Sơn Trà, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Không Gian Xưa, Da Nang, Vietnam": null,
+ "Không Gian Xưa, Phường Thanh Khê, Da Nang, Vietnam": null,
+ "Trương Đăng Quế, Da Nang, Vietnam": null,
+ "Trương Đăng Quế, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Triệu Nữ Vương, Da Nang, Vietnam": {
+  "lat": 15.4385282,
+  "lon": 107.7943127,
+  "display_name": "Triệu Nữ Vương, Xã Khâm Đức, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Triệu Nữ Vương, Phường Hải Châu, Da Nang, Vietnam": {
+  "lat": 16.064282,
+  "lon": 108.2165882,
+  "display_name": "Đường Triệu Nữ Vương, Tổ dân phố 36 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Trần Huy Liệu, Vung Tau, Vietnam": {
+  "lat": 10.3653355,
+  "lon": 107.0767389,
+  "display_name": "Trần Huy Liệu, Khu phố 17, Phường Tam Thắng, Thành phố Hồ Chí Minh, 78860, Việt Nam"
+ },
+ "Chí Linh, Vung Tau, Vietnam": null,
+ "Chí Linh, Phường Rạch Dừa, Vung Tau, Vietnam": null,
+ "Khe Sanh, Da Lat, Vietnam": {
+  "lat": 11.9365426,
+  "lon": 108.4585556,
+  "display_name": "Khe Sanh, Ấp Hồng Lạc, Phường Xuân Hương - Đà Lạt, Đà Lạt, Tỉnh Lâm Đồng, 66117, Việt Nam"
+ },
+ "Hai Bà Trưng, Da Lat, Vietnam": {
+  "lat": 11.9483167,
+  "lon": 108.4335523,
+  "display_name": "Hai Bà Trưng, Ấp Lạc Thành, Phường Cam Ly - Đà Lạt, Đà Lạt, Tỉnh Lâm Đồng, 66113, Việt Nam"
  }
 }

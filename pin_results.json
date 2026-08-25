@@ -7462,5 +7462,89 @@
   "lon": 106.7257182,
   "source": "geocode",
   "matched": "Nguyễn Văn Hưởng"
+ },
+ "1595": {
+  "lat": 16.0814013,
+  "lon": 108.2153355,
+  "source": "geocode",
+  "matched": "Lê Hồng Sơn"
+ },
+ "1596": {
+  "lat": 16.0980066,
+  "lon": 108.2327736,
+  "source": "geocode",
+  "matched": "Vũng Thùng 1"
+ },
+ "1597": {
+  "lat": 16.0669747,
+  "lon": 108.1997848,
+  "source": "geocode",
+  "matched": "Điện Biên Phủ"
+ },
+ "1598": {
+  "lat": 15.997448,
+  "lon": 108.2610516,
+  "source": "geocode",
+  "matched": "Hòa Hải"
+ },
+ "1599": {
+  "lat": 16.064282,
+  "lon": 108.2165882,
+  "source": "geocode",
+  "matched": "Triệu Nữ Vương"
+ },
+ "1600": {
+  "lat": 10.3653355,
+  "lon": 107.0767389,
+  "source": "geocode",
+  "matched": "Trần Huy Liệu"
+ },
+ "1601": {
+  "lat": 10.3900545,
+  "lon": 107.1124023,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1602": {
+  "lat": 10.3400678,
+  "lon": 107.0928148,
+  "source": "geocode",
+  "matched": "Thùy Vân"
+ },
+ "1603": {
+  "lat": 11.9689167,
+  "lon": 108.446046,
+  "source": "geocode",
+  "matched": "Trần Quang Khải"
+ },
+ "1604": {
+  "lat": 12.0093975,
+  "lon": 108.4260842,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1605": {
+  "lat": 11.9365426,
+  "lon": 108.4585556,
+  "source": "geocode",
+  "matched": "Khe Sanh"
+ },
+ "1606": {
+  "lat": 11.9483167,
+  "lon": 108.4335523,
+  "source": "geocode",
+  "matched": "Hai Bà Trưng"
+ },
+ "1607": {
+  "lat": 11.9689167,
+  "lon": 108.446046,
+  "source": "geocode",
+  "matched": "Trần Quang Khải"
+ },
+ "1608": {
+  "lat": 11.9426311,
+  "lon": 108.4312284,
+  "source": "geocode",
+  "matched": "Highlands Coffee"
  }
 }
