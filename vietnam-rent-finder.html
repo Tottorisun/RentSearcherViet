@@ -447,7 +447,7 @@
 
   function selectCity(key){
     state.city = key; state.district = null; el.districtInput.value = "";
-    renderCityTabs(); renderCityMap(); renderFbGroups(); applyFilters();
+    renderCityTabs(); renderCityMap(); applyFilters();
   }
 
   var WARD_BOUNDARIES = DATA.WARD_BOUNDARIES || {};

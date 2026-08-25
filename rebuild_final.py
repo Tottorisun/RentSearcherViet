@@ -148,38 +148,6 @@ SOURCES = [
     {"key":"fbmarketplace","label":"Facebook Marketplace","short":"FB Marketplace","active":True,"color":"#2E7CF6"}
 ]
 
-FB_GROUPS = {
-    "nha-trang": [
-        {"name":"NHÀ ĐẤT NHA TRANG ✅","members":"149,8 тыс.","url":"https://www.facebook.com/groups/NhaDatNhaTrang/","note":"недвижимость шире — есть и продажа, и аренда"},
-        {"name":"Nha Trang Apartment And House For Rent ✅","members":"—","url":"https://www.facebook.com/groups/nhatrang.apartment.and.house/","note":"аренда квартир и домов"},
-        {"name":"Căn hộ cho thuê Nha Trang","members":"62 тыс.","url":"https://www.facebook.com/groups/593714207638751/","note":"структурированные объявления с ценой, как Marketplace"},
-        {"name":"Cho Thuê Căn Hộ Giá Rẻ Nha Trang","members":"—","url":"https://www.facebook.com/groups/chothuecanhogiarenhatrang/","note":"бюджетные квартиры"},
-        {"name":"Cho Thuê Nhà & Phòng Trọ Sinh Viên NHA TRANG","members":"—","url":"https://www.facebook.com/groups/238809506689365/","note":"комнаты и жильё для студентов"}
-    ],
-    "da-lat": [
-        {"name":"CHO THUÊ NHÀ NGUYÊN CĂN ĐÀ LẠT ✅","members":"105 тыс.","url":"https://www.facebook.com/groups/975470559939040/","note":"аренда домов целиком"},
-        {"name":"PHÒNG TRỌ - NHÀ CHO THUÊ ĐÀ LẠT","members":"70 тыс.","url":"https://www.facebook.com/groups/211616406116962/","note":"комнаты и дома"},
-        {"name":"NHÀ VÀ CĂN HỘ CHO THUÊ ĐÀ LẠT / DALAT HOUSE AND APARTMENT FOR RENT","members":"50 тыс.","url":"https://www.facebook.com/groups/356237492011374/","note":"дома и квартиры"},
-        {"name":"CHO THUÊ NHÀ ĐÀ LẠT","members":"49 тыс.","url":"https://www.facebook.com/groups/1607478209766787/","note":"общая аренда домов"},
-        {"name":"THUÊ PHÒNG ĐÀ LẠT","members":"42 тыс.","url":"https://www.facebook.com/groups/2132944206982026/","note":"комнаты, квартиры, дома целиком"}
-    ],
-    "da-nang": [
-        {"name":"Phòng Trọ, Căn Hộ, Nhà Đà Nẵng Cho Thuê","members":"225 тыс.","url":"https://www.facebook.com/groups/phongtrocanhonhadanang/","note":"комнаты, квартиры, дома"},
-        {"name":"Cho Thuê Nhà Nguyên Căn Đà Nẵng","members":"165 тыс.","url":"https://www.facebook.com/groups/476056366996433/","note":"аренда домов целиком"},
-        {"name":"CĂN HỘ CHO THUÊ ĐÀ NẴNG","members":"145 тыс.","url":"https://www.facebook.com/groups/599988861199745/","note":"квартиры"},
-        {"name":"Cho Thuê Nhà Nguyên Căn Giá Rẻ Đà Nẵng","members":"86 тыс.","url":"https://www.facebook.com/groups/682623845225623/","note":"бюджетные дома"},
-        {"name":"Căn hộ cho thuê Đà Nẵng (Apartment for rent in Danang)","members":"68 тыс.","url":"https://www.facebook.com/groups/198876884532146/","note":"квартиры"}
-    ],
-    "ho-chi-minh": [
-        {"name":"Housing in Saigon (Ho Chi Minh City, Vietnam)","members":"43 тыс.","url":"https://www.facebook.com/groups/housing.HCMC","note":"общегородская, охватывает все 5 районов подборки"},
-        {"name":"PHÒNG TRỌ QUẬN 1","members":"249,7 тыс.","url":"https://www.facebook.com/groups/q1.phongtro.club/","note":"комнаты и квартиры именно по Quận 1 / Bến Thành"},
-        {"name":"PHÒNG TRỌ QUẬN 4","members":"244 тыс.","url":"https://www.facebook.com/groups/q4.phongtro.club/","note":"комнаты и квартиры именно по Quận 4 / Khánh Hội"},
-        {"name":"TÔI LÀ DÂN THẢO ĐIỀN - AN PHÚ - BÌNH AN","members":"—","url":"https://www.facebook.com/groups/anphuthaodienneighbours/","note":"резидентское сообщество Thảo Điền/An Phú, включает аренду"},
-        {"name":"Phu My Hung District 7 Expats","members":"—","url":"https://www.facebook.com/groups/phumyhung7/","note":"экспат-сообщество Phú Mỹ Hưng"},
-        {"name":"GROUP CĂN HỘ ASCENTIA - THE ANTONIA PHÚ MỸ HƯNG","members":"—","url":"https://www.facebook.com/groups/590911979369020/","note":"узкоспециализированная — именно по The Ascentia и соседнему The Antonia"}
-    ]
-}
-
 N = "https://www.nhatot.com"
 
 def L(id, city, district, type_, price, area, desc, url, posted, daysAgo, source="chotot", details=None):
@@ -6845,7 +6813,7 @@ HTML = r"""<meta charset="utf-8">
 
   function selectCity(key){
     state.city = key; state.district = null; el.districtInput.value = "";
-    renderCityTabs(); renderCityMap(); renderFbGroups(); applyFilters();
+    renderCityTabs(); renderCityMap(); applyFilters();
   }
 
   var WARD_BOUNDARIES = DATA.WARD_BOUNDARIES || {};
