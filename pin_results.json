@@ -71,18 +71,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "37": {
-  "lat": 11.97356227274298,
-  "lon": 108.47368535615551,
-  "source": "ward-centroid",
-  "matched": null
- },
- "38": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
  "39": {
   "lat": 11.97356227274298,
   "lon": 108.47368535615551,
@@ -185,12 +173,6 @@
   "source": "geocode",
   "matched": "Phường 8"
  },
- "89": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
  "90": {
   "lat": 16.0370201,
   "lon": 108.2466699,
@@ -208,18 +190,6 @@
   "lon": 108.1948861,
   "source": "geocode",
   "matched": "Xuân Hà"
- },
- "93": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "geocode",
-  "matched": "Phường 10"
- },
- "97": {
-  "lat": 11.9345622,
-  "lon": 108.4305116,
-  "source": "geocode",
-  "matched": "Phường 3"
  },
  "99": {
   "lat": 11.9493056,
@@ -1064,48 +1034,6 @@
  "239": {
   "lat": 16.1021731,
   "lon": 108.2485821,
-  "source": "ward-centroid",
-  "matched": null
- },
- "256": {
-  "lat": 11.97356227274298,
-  "lon": 108.47368535615551,
-  "source": "ward-centroid",
-  "matched": null
- },
- "257": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "258": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "ward-centroid",
-  "matched": null
- },
- "259": {
-  "lat": 11.97356227274298,
-  "lon": 108.47368535615551,
-  "source": "ward-centroid",
-  "matched": null
- },
- "260": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "ward-centroid",
-  "matched": null
- },
- "261": {
-  "lat": 11.97356227274298,
-  "lon": 108.47368535615551,
-  "source": "ward-centroid",
-  "matched": null
- },
- "262": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
   "source": "ward-centroid",
   "matched": null
  },
@@ -2621,12 +2549,6 @@
   "source": "geocode",
   "matched": "Masteri Thảo Điền"
  },
- "655": {
-  "lat": 10.7674015,
-  "lon": 106.6977106,
-  "source": "geocode",
-  "matched": "Nguyễn Thái Bình"
- },
  "661": {
   "lat": 10.7631702,
   "lon": 106.6996404,
@@ -2698,12 +2620,6 @@
   "lon": 106.6890843,
   "source": "geocode",
   "matched": "Nam Kỳ Khởi Nghĩa"
- },
- "674": {
-  "lat": 10.7753836,
-  "lon": 106.6910196,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Minh Khai"
  },
  "675": {
   "lat": 10.7706758,
@@ -7510,5 +7426,41 @@
   "lon": 106.6996404,
   "source": "geocode",
   "matched": "Masteri Millennium"
+ },
+ "1586": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "1587": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1588": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1589": {
+  "lat": 10.7878232,
+  "lon": 106.7343792,
+  "source": "geocode",
+  "matched": "Lương Định Của"
+ },
+ "1590": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1591": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
  }
 }
