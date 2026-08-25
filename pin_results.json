@@ -7546,5 +7546,227 @@
   "lon": 108.4312284,
   "source": "geocode",
   "matched": "Highlands Coffee"
+ },
+ "1609": {
+  "lat": 10.7195231,
+  "lon": 106.7264522,
+  "source": "geocode",
+  "matched": "Riverside Residence"
+ },
+ "1610": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
+ },
+ "1611": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "1612": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1613": {
+  "lat": 10.7737959,
+  "lon": 106.704211,
+  "source": "geocode",
+  "matched": "Nguyễn Huệ"
+ },
+ "1614": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
+ },
+ "1615": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "1616": {
+  "lat": 10.7351883,
+  "lon": 106.6953441,
+  "source": "geocode",
+  "matched": "Hoàng Trọng Mậu"
+ },
+ "1617": {
+  "lat": 10.7365674,
+  "lon": 106.7054501,
+  "source": "geocode",
+  "matched": "Tân Quy Đông"
+ },
+ "1618": {
+  "lat": 10.7547129,
+  "lon": 106.7056377,
+  "source": "geocode",
+  "matched": "Tôn Đản"
+ },
+ "1619": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1620": {
+  "lat": 10.7567803,
+  "lon": 106.7185992,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
+ },
+ "1621": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "1622": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1623": {
+  "lat": 10.7306392,
+  "lon": 106.7129902,
+  "source": "geocode",
+  "matched": "Happy Valley"
+ },
+ "1624": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1625": {
+  "lat": 10.7003494,
+  "lon": 106.7326546,
+  "source": "geocode",
+  "matched": "Era Town"
+ },
+ "1626": {
+  "lat": 10.728128,
+  "lon": 106.7244243,
+  "source": "geocode",
+  "matched": "Cardinal Court"
+ },
+ "1627": {
+  "lat": 10.7712981,
+  "lon": 106.6912522,
+  "source": "geocode",
+  "matched": "Lê Thị Riêng"
+ },
+ "1628": {
+  "lat": 10.7688313,
+  "lon": 106.6974998,
+  "source": "geocode",
+  "matched": "Lê Thị Hồng Gấm"
+ },
+ "1629": {
+  "lat": 10.7712981,
+  "lon": 106.6912522,
+  "source": "geocode",
+  "matched": "Lê Thị Riêng"
+ },
+ "1630": {
+  "lat": 10.7655835,
+  "lon": 106.6931006,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "1631": {
+  "lat": 10.7703806,
+  "lon": 106.6951066,
+  "source": "geocode",
+  "matched": "Bến Thành Q1"
+ },
+ "1632": {
+  "lat": 10.7860169,
+  "lon": 106.7343719,
+  "source": "geocode",
+  "matched": "Lưu Đình Lễ"
+ },
+ "1633": {
+  "lat": 10.7878232,
+  "lon": 106.7343792,
+  "source": "geocode",
+  "matched": "Lương Định Của"
+ },
+ "1634": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1635": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1636": {
+  "lat": 10.7873452,
+  "lon": 106.7349604,
+  "source": "geocode",
+  "matched": "De Capella"
+ },
+ "1637": {
+  "lat": 10.7567803,
+  "lon": 106.7185992,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
+ },
+ "1638": {
+  "lat": 10.7598576,
+  "lon": 106.7023355,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1639": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
+ },
+ "1640": {
+  "lat": 10.7623141,
+  "lon": 106.7022361,
+  "source": "geocode",
+  "matched": "Hoàng Diệu"
+ },
+ "1641": {
+  "lat": 10.7547129,
+  "lon": 106.7056377,
+  "source": "geocode",
+  "matched": "Tôn Đản"
+ },
+ "1642": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
+ },
+ "1643": {
+  "lat": 10.7655835,
+  "lon": 106.6931006,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "1644": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1645": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
  }
 }

@@ -6166,6 +6166,188 @@ L(1608,"da-lat","lv","Квартира",8000000,45,
   "1-спальная квартира (код CH-180), 45м², 1 этаж, ул. Trương Văn Hoàn, Lâm Viên — гостиная+кухня, отдельный с/у, полная меблировка; рядом озеро Than Thở, Bách Hóa Xanh, Highlands Coffee.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-da-lat-lam-dong/134323916.htm","сегодня",0,source="chotot",
   details={"photos": ["https://cdn.chotot.com/NJH6x2bOkt9RxzmRe-HfdNQPRzIu8oJsqI-UE5t_o9M/preset:view/plain/8bd990ce8bda20f336ea7bb5d121c348-2999004187992360786.jpg", "https://cdn.chotot.com/nAQRWSQ1wjEdnymhwIgwtbSCI_yKHhvfwajAHvQ_pi8/preset:view/plain/f38ad77de743075f403c057d692ed38b-2999004187216006028.jpg", "https://cdn.chotot.com/auhVOtuNB00WJ88ykxmRiSgVSBt8VmE3T1PIuIGRlkA/preset:view/plain/1c55c65b7afbd6ff6a70dde572088524-2999004188917691158.jpg"]}),
+L(1609,"ho-chi-minh","tm","Квартира",17500000,82,
+  "2-спальная квартира, 82м² (в объявлении также указано 84м²), 2 с/у, ЖК Riverside Residence, Phú Mỹ Hưng — рядом Canadian International School, парк 2 га; полная меблировка, высокий этаж, широкий балкон, бассейн, детская площадка, тренажёрный зал в комплексе.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134342758.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/l3SkfEToMml3ulwobHJaYrq03nDsynRpPsD54kkm5sg/preset:view/plain/f42ecb90d3da8af006445245f7578200-2999146980744514444.jpg", "https://cdn.chotot.com/I5YXPQSxvxJmzcagQGZ5M9PYPs0NO1BHWF-5cRwJdyo/preset:view/plain/6a61a6f57dd63d4002bd4d557e8fb4de-2999147013980834700.jpg"]}),
+
+L(1610,"ho-chi-minh","tm","Квартира",25000000,91,
+  "2-спальная квартира, 91м², 2 с/у, ЖК The Infiniti, ул. Huỳnh Tấn Phát — полная меблировка на выбор арендатора, разные виды/этажи; цена реальная, торг напрямую с хозяином.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133486153.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/mCl-vEY7jAqGpAsq95QUYW6HPRcmCvc03dbrXPfXeuc/preset:view/plain/cbb6cf06576379d117c1864a7632d5b6-2992639923024819725.jpg", "https://cdn.chotot.com/1OmA-nWhQCPaLffVAHQbturtPau__LUjPenQtgrH_Vo/preset:view/plain/63e996cc297cd2c57fc020bc10375db7-2992639925229404215.jpg", "https://cdn.chotot.com/ObyeR4KNGH06djvfJuyxjLKDxu5ZljCgGa5bdTdIBo0/preset:view/plain/69bb16bea52b89756adafec1cfafecac-2992639924275917037.jpg"]}),
+
+L(1611,"ho-chi-minh","ak","Квартира",12000000,80,
+  "2-спальная квартира, 80м², ул. Trần Não — полная меблировка, современный ремонт, удобная связь с Q1, Bình Thạnh, An Phú.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-tp-thu-duc-tp-ho-chi-minh/134332830.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/2etqaIQyHctifX3hjYepH_LvQ-2CWR1xcTllZrJyFGs/preset:view/plain/1c021efd71d934b195a52ba85f498bf0-2999044867793389394.jpg", "https://cdn.chotot.com/JhQCSv_BclWcNzSLApGwc-G9AfSl18OYojljBPBmdsU/preset:view/plain/9d5438298597d0fa8165a67312a4b9de-2999044868475659277.jpg", "https://cdn.chotot.com/GTKw2WvuvRXXGZDYvTxhBzzkZEdAVBDVshoFk84Hdxg/preset:view/plain/b674bda0e5930a37bda4fa8255236df8-2999044868613759746.jpg"]}),
+
+L(1612,"ho-chi-minh","ak","Квартира",8000000,45,
+  "1-спальная квартира, 45м², ул. Thái Ly, Thảo Điền — рассчитана на 2-3 человек; дом без общего хозяина (вход по отпечатку пальца), паркинг, лифт, камеры 24/7; в стоимость входит всё, кроме счётчиков электричества/воды, уборка и смена белья 2 раза в неделю.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-tp-thu-duc-tp-ho-chi-minh/133389382.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/eDRKBSzLnzEcxbA-zcTq8RxxgDoomhg3AXIEZVSPRY4/preset:view/plain/60c0395d582e8474354ed17b5d5de212-2991914690679216292.jpg", "https://cdn.chotot.com/23lIKYiG6LQRWINoWfhvejN4WB00nyjdylFM9HLBU4c/preset:view/plain/56cbf5161d01f4eeaa527dc6e5610b4a-2991914690728550777.jpg", "https://cdn.chotot.com/HIFJD_KIZJKyOOiWZwvmoAE4Bcevgar9yvDMxhBay1k/preset:view/plain/e46b3680d27912851ace837314dd65db-2991914690951759109.jpg"]}),
+
+L(1613,"ho-chi-minh","bth","Комната",5000000,15,
+  "Комната (1 этаж + антресоль) в тихом переулке рядом с рынком Бен Тхань, метро и пешеходной ул. Nguyễn Huệ — 1 санузел, до 2 человек, депозит 1 месяц, свет/вода по счётчику.",
+  "https://www.nhatot.com/thue-nha-dat-quan-1-tp-ho-chi-minh/134324524.htm","сегодня",0,source="chotot",
+  details={"notice": "в объявлении указана общая площадь ~30м² (этаж + антресоль), структурированное поле сайта — 15м²", "photos": ["https://cdn.chotot.com/FPFWt4gvyYi32yvhCuW0fXa_8fpYa3giY12Wd-vGJ-0/preset:view/plain/8a20ce168e660d6f13440e48d43a9a66-2999006386724934623.jpg", "https://cdn.chotot.com/wzZe_tJquq4ECwsHXb2amxylJW0693LJg35HV6RR7jw/preset:view/plain/efd14701cb5a185d14c0beeb8088e8db-2999006386531819270.jpg", "https://cdn.chotot.com/qdrMnbHmL7GLpmUiyHtiOwD7gORPamMjKGTNZhe9iEA/preset:view/plain/82a38994634ef0fa03e480736979d697-2999006388235161515.jpg"]}),
+
+L(1614,"ho-chi-minh","kh","Квартира",18000000,54,
+  "1-спальная квартира, 54м², 1 с/у, ЖК Masteri Millennium, 132 Bến Vân Đồn, Q4 — полная меблировка, бесплатно бассейн и тренажёрный зал.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134337515.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/ZPPnjRkFFkETlFAW011kfxpD4azi_aQUiHn3KmVYJao/preset:view/plain/e3b66a265cf7b63e01edb6e7e3e19e1c-2999117581459919839.jpg", "https://cdn.chotot.com/KS2vweH1shyxvkCH8ci1tOtUdYyW_UMVMjDSgkNWecM/preset:view/plain/f9735367669b9b83d461362441a365c5-2999117582315113356.jpg", "https://cdn.chotot.com/bBc7T2wpamQuXn11bW3G1MvMCAp71JW-Sq7pl0NJvxg/preset:view/plain/2d6e72577068bb76b82db32afec83704-2999117582534517773.jpg"]}),
+
+L(1615,"ho-chi-minh","kh","Квартира",19000000,75,
+  "2-спальная квартира, 75м², ЖК Millennium, 132 Bến Vân Đồn, Q4 — вид на реку, широкий балкон, безбортовой (infinity) бассейн на верхних этажах, зал, сауна, зона BBQ.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/132617397.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/hgyN9Mxpo3T-m_Sai-my2MoL4VYzA5PXGySxVHRvrzg/preset:view/plain/c9d7e1eeb9e85c77b9313adb70de373c-2985705191606112937.jpg", "https://cdn.chotot.com/FOJUSHy7BV9Dv9svJ4E4f71KQqVzt_K38myufkemXng/preset:view/plain/519cf58a4ad32710de42dbb6801309b2-2985705191522376505.jpg", "https://cdn.chotot.com/NOIhiq3Wutj12hBa79I2Lqkkm0DuPyhEiWg_bW5eqxw/preset:view/plain/58ac5918ed4e013ca391405fc476a31c-2985705191567962112.jpg"]}),
+
+L(1616,"ho-chi-minh","th","Квартира",19000000,78,
+  "3-спальная квартира, 78м², 2 с/у, ЖК Florita, ул. Hoàng Trọng Mậu, Him Lam Q7 — полная меблировка, высокий этаж, светлая и просторная планировка; рядом ĐH Tôn Đức Thắng, RMIT; бесплатный бассейн, парк в комплексе.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134343400.htm","сегодня",0,source="chotot",
+  details={"notice": "в тексте объявления указана цена 18,7 млн ₫, на карточке сайта — 19 млн ₫", "photos": ["https://cdn.chotot.com/AqvlWO6izTR9lrg-E0AWT7O0PelkKZwAIeou1mhz7S8/preset:view/plain/606a43727824fbfd30775a1cc80f98e1-2999148205829753553.jpg", "https://cdn.chotot.com/uv6v_Bc5bb5wuGQ6TnYcaOYEse7LnEebLCqB9eSwSb8/preset:view/plain/8f6dadf4db23c90361ae30f8391bc310-2999148204176700498.jpg", "https://cdn.chotot.com/sXs2am9uRAJ4fdeMQwdSkD2IrosVlihvtI9fgpCEs9s/preset:view/plain/419bd7bda984479945329e7aab787f90-2999148205408167955.jpg"]}),
+
+L(1617,"ho-chi-minh","th","Дом",26000000,72,
+  "Дом целиком, фасад 4×18м (72м²), Trệt + 2 этажа + крыша-терраса, 5 спален, 6 с/у, полная меблировка — подходит и под жильё, и под небольшой бизнес; ул. Tân Quy Đông (район Him Lam), торг уместен.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134342178.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/2adQzm-6iMEz6rSqW9xl0DRIVeVIplv5I90qtB_IBK4/preset:view/plain/f3209a8c66a6dbdb7fdc33218032c64d-2999144782066764684.jpg", "https://cdn.chotot.com/J_EzQe-dAHlmDSfVcn7Ej68NGF58fFXRsn336QaIGHA/preset:view/plain/e5981f334ded29b5602ddd225a12791c-2999144782969333277.jpg", "https://cdn.chotot.com/Hn23JB0nSKzYb0STBrBXSYBDyW7upU1hM7mdEcvm5GI/preset:view/plain/96c1cdc20a817fef8d05233f56bd28ef-2999144783729992717.jpg"]}),
+
+L(1618,"ho-chi-minh","kh","Дом",12000000,49,
+  "Дом целиком, 5 этажей (1 этаж + 3 + крыша-терраса), железобетонный каркас, 48.7м² (5.8×8.3м участок, ~112м² полезной площади по этажам), 3 спальни (мастер), санузел на каждом этаже, кухня, 3 балкона; ул. Tôn Đản, Khánh Hội — узкая улица (проезд для повозки), но район оживлённый, удобная связь с центром.",
+  "https://www.nhatot.com/thue-nha-dat-quan-4-tp-ho-chi-minh/134329000.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/I0Bm7Lq1BBSBFvFh1XGGcMqBQYmjBh7WL_RTXovHYDs/preset:view/plain/7d4eb011a7e489750da6ea4962c65fc3-2999026635248523532.jpg", "https://cdn.chotot.com/wlfNZkLNNsNvCvDhDmNNwCoZX6ii7QoxmBNLXPhPCjo/preset:view/plain/4ec6239d23a2e09939f58a027b917ffa-2999026637252207629.jpg", "https://cdn.chotot.com/XCeVI4pIs1UqV93ZYg7jP0bOhDfgG2hZFs9izFK3vls/preset:view/plain/def026afba0feb4b8958b8d3f0c13038-2999026633889503500.jpg"]}),
+L(1619,"ho-chi-minh","th","Студия",6500000,30,
+  "Студия в мини-ЖК (căn hộ dịch vụ), 30м², квартал Him Lam, рядом ĐH Tôn Đức Thắng и RMIT — полная меблировка, бесплатные Wi-Fi и стирка/сушка.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134352328.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/3E7jvvsaVf7y2IE48J3k0gif-68-buqz-lTT-UZLW8A/preset:view/plain/b3b9af7a3a45bae1f15f612043e29312-2999188193608158092.jpg", "https://cdn.chotot.com/e7wO7H1bqQerHaWZrONeR8xoNfEQbW_clshgSpk6Obw/preset:view/plain/032ab46a0cfbdff6aae9593041d41120-2999188193659562003.jpg", "https://cdn.chotot.com/ZP5nE3JPgMeRrSFDcfGI_Tk5y-VmKRRcUP_lzy1TZgo/preset:view/plain/cfa71eccca7bfa5d4b94b3a9eb52b7b3-2999188195287017491.jpg"]}),
+
+L(1620,"ho-chi-minh","th","Квартира",7000000,35,
+  "1-спальная квартира (chung cư mini), 35м², ул. Đường Số 71, Tân Quy — новая полная меблировка, рядом Lotte Mart, ĐH Tôn Đức Thắng, ĐH Nguyễn Tất Thành.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134351856.htm","сегодня",0,source="chotot",
+  details={"notice": "в тексте объявления цена не указана прямо (только «пишите в личку»), значение 7 млн ₫ — с карточки сайта", "photos": ["https://cdn.chotot.com/_SNhw_Z8w-yppycN5Ktn2YWIYqmIO_SPhK81J6HjTDc/preset:view/plain/772ea65cfba29aaea5506ac9bafdde8e-2999185084147835917.jpg", "https://cdn.chotot.com/af6R86Dymj6oOo-uge1weMBzOCc-ns-tsNeiyNns2dI/preset:view/plain/00c7cbb400edc98c90e60044b945d34c-2999185084244004390.jpg", "https://cdn.chotot.com/HJfnW8b-cLcymIC-wAwcdFQ19CDSXLIz_WEYb_fWQQU/preset:view/plain/14124059f118e5037208a79da93e771a-2999185084235101245.jpg"]}),
+
+L(1621,"ho-chi-minh","th","Дом",25000000,120,
+  "Дом целиком, фасад 4×30м, 2 этажа + крыша-терраса, широкие светлые комнаты — подходит для проживания, офиса или мини-гостиницы; ул. Lê Văn Lương.",
+  "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134351244.htm","сегодня",0,source="chotot",
+  details={"notice": "по тексту объявления адрес относится к бывшей Phường Tân Kiểng (сейчас в составе объединённой Phường Tân Hưng) — дальше от ядра Phú Mỹ Hưng/Crescent Mall, чем обычно подразумевается под этим районом", "photos": ["https://cdn.chotot.com/oZd9qzXqmPP3tb16LdxBLWoliC3zTleNE0Ntx7EUfps/preset:view/plain/e0e8280a46d812b1e470ea4f74d46821-2999180741220307935.jpg", "https://cdn.chotot.com/3rd8QJi8tlKX8ZTLH0if8s6k_9Q5468Nd3KFVqqrQRE/preset:view/plain/5a6eedee925a3754d7617c46436b7b95-2999180741205183372.jpg", "https://cdn.chotot.com/j4utBJhDIi_9uCTagwhXPHguoDiWCytpPNgCu5oMAco/preset:view/plain/18550e21024e384f9bb2485e634eaf6d-2999180741417640973.jpg"]}),
+
+L(1622,"ho-chi-minh","th","Студия",14000000,40,
+  "Студия (студийная планировка), 40м², ЖК Sunrise City View, Q7 — полная меблировка, сдаёт напрямую хозяин без посредника.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134350391.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/XyDCd9dD0ArSeE_LO-8Na59NztNPJ_66bJZF4Z8aeGs/preset:view/plain/f892909827e2395618a91bc4e3539a00-2999177830186770769.jpg", "https://cdn.chotot.com/oAQxrc5yaaQLLukpQY9lFUKYUdO7_E7APLgVVTQM1Dc/preset:view/plain/2e7af4beba9b45c02ee585f7a6deccd6-2999177830530660870.jpg", "https://cdn.chotot.com/m_Xldc1Z3HHXL_EIs1L3k6qqyPFzEYvwSZ0F-hsc8Do/preset:view/plain/6e8ee2a2d41424e8b1098193110621c6-2999177830027392646.jpg"]}),
+
+L(1623,"ho-chi-minh","th","Квартира",27000000,100,
+  "3-спальная квартира, 100м², 2 с/у, ЖК Happy Valley, Phú Mỹ Hưng — вид на место фейерверков, полная меблировка, светлая просторная планировка.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134349088.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/sdzi9xpzXjwMnyFVBhhyxsIQwarV_dhLtVBFLa7V3J4/preset:view/plain/d259d11fc5d034b9fce6268a0e88bbfe-2998443237072699545.jpg", "https://cdn.chotot.com/ylcEjyefDnICokYtD4YYc-3rwv6FYnaCtjDZ3jbYyKI/preset:view/plain/fab6624af90b6eb8cc8463b8be0bd596-2998443167150405791.jpg", "https://cdn.chotot.com/MEzhgz8TDpv6Nm1Twf6JBwNyBPPrZqx0UxsFVYkTfMs/preset:view/plain/0dfe8ec3e7c5df182bb65d36e964d89e-2998443215167391570.jpg"]}),
+
+L(1624,"ho-chi-minh","th","Студия",6800000,25,
+  "Студия в мини-ЖК, 25м², рядом ĐH Tôn Đức Thắng и RMIT — полная меблировка, широкий балкон, тихий квартал.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134348659.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/eudEQNq2dNeFtK0No4FDJxP_CdzsQMUbTAswdMzoKzg/preset:view/plain/fb4b77bd01a0b729cc4908d55b07b39e-2999171494125704159.jpg", "https://cdn.chotot.com/98J_UPFfupUfx3Ne5kaRH-cuyboOOo1gFkBDDK_iVa0/preset:view/plain/16ce52c5cd92b2fcbc4b52760b0bb6d2-2999171494242831244.jpg", "https://cdn.chotot.com/zfSB9BiTeXSwcNUN7yxQuknV-Y4kg3BPw7cwYvxGOaE/preset:view/plain/b429427c3d8474ffc0878483bc3d6107-2999171494311309145.jpg"]}),
+
+L(1625,"ho-chi-minh","tm","Квартира",11000000,60,
+  "2-спальная квартира, 60м², 2 с/у, блок B4 ЖК Era (Era Town), ул. 15B, Tân Mỹ — вид на реку, 2 кондиционера, меблирована как на фото.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134352201.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/dIYYsKCjH6mUnNbFmSqw9MWuyO8GSEAh3RVsrrfasW4/preset:view/plain/bda05da506b619874ea9c41180097b9a-2999187154783183885.jpg", "https://cdn.chotot.com/yrBjH9oYu5qaiUdO3LS7GBay35hupoiqn5RbHcUU3to/preset:view/plain/aa6aa95812ab26115a3126e27c64d3c7-2999187154804629254.jpg", "https://cdn.chotot.com/1HgGXPDEPpP1khYQce_Cvs_PuvpTswiK2o9eHmaYYSM/preset:view/plain/8f03b784a9a135a85a85057bf575cc11-2999187154860020604.jpg"]}),
+
+L(1626,"ho-chi-minh","tm","Квартира",40000000,80,
+  "3-спальная квартира, 2 с/у, ЖК Cardinal Court, Phú Mỹ Hưng — полная меблировка, рядом SECC и Crescent Mall, подходит для семьи или иностранного специалиста.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134349533.htm","сегодня",0,source="chotot",
+  details={"notice": "в тексте объявления указана площадь 101м², в структурированном поле сайта — 80м²", "photos": ["https://cdn.chotot.com/W9m9nvEMgvPNBbebqqPPjZPT3WH9lsM-OXOLjMZpP8s/preset:view/plain/3319544dd9a4a0c76f4f1f1dd419f450-2999173724601652191.jpg", "https://cdn.chotot.com/LDrQEq9DHDl-mVlltnYswcmPWGL8V5QDLtQHeefRKms/preset:view/plain/082e3e7527d1c20d0c8ed161206e8a96-2999173886504953373.jpg", "https://cdn.chotot.com/mcSPwBXGFyur-FHCrnbjPL8ZDZmVFQwMvcA4G4t1tFI/preset:view/plain/eae550619aaf649ce6c103ac6186e20b-2999173888558213139.jpg"]}),
+
+L(1627,"ho-chi-minh","bth","Дом",45000000,48,
+  "Дом-магазин (фасадный), 3×16м, Trệt + 1 этаж, ул. Lê Thị Riêng, Bến Thành Q1 — рядом рынок Бен Тхань, парк 23/9; подходит под шоурум, салон, офис.",
+  "https://www.nhatot.com/thue-nha-dat-quan-1-tp-ho-chi-minh/133984898.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/Z3NbSX1MVlJ5LKlWWWy5vzz-6RN1IDRzQ2rxX6xclNg/preset:view/plain/7520b9f46001e9853240c0cf8a04320a-2996430259661375768.jpg", "https://cdn.chotot.com/4pUQ7LAy0U4SIc-3aV6ULv8WjWMnJYC2cIHTxh8-xuk/preset:view/plain/ab072385dd93ed40faa56fa0d47bfefd-2996430269310435057.jpg", "https://cdn.chotot.com/MBl9fP51-PuF0fS-8JHo1IJmrXw3ufeBITlvOCLYE9o/preset:view/plain/c1dce636287bfd6defe9602e9ffb9c94-2996430269359975438.jpg"]}),
+
+L(1628,"ho-chi-minh","bth","Дом",85000000,80,
+  "Дом-магазин (фасадный) целиком, 4×20м, Trệt + 4 этажа, 8 спален, 4 с/у, ул. Lê Thị Hồng Gấm — рядом рынок Бен Тхань, пешеходная ул. Nguyễn Huệ; подходит под офис, спа, шоурум, апартаменты.",
+  "https://www.nhatot.com/thue-nha-dat-quan-1-tp-ho-chi-minh/133984863.htm","сегодня",0,source="chotot",
+  details={"notice": "по тексту объявления адрес относится к бывшей Phường Nguyễn Thái Bình (сейчас объединена с Bến Thành), карточка сайта показывает Bến Thành", "photos": ["https://cdn.chotot.com/kiguom4DRJdGJowR8Gb_sHINeKPwRfTAFojqbUI-SXs/preset:view/plain/4fb7723a2b774be838b1c28ff63dc2f6-2996429868729786049.jpg", "https://cdn.chotot.com/2XBrIeD0kI42mPDrXn2OH-CdnAn9bPcV9Yf9p6pFTSs/preset:view/plain/cc9033a51d7827062d1ef7326b36d94f-2996429875289808577.jpg", "https://cdn.chotot.com/5jgX9u7W-sw_kwVXKcegk6-4yd-NpSbkdpVLPWJZpHU/preset:view/plain/c8a8ddf1f4f64a6a8f4f9d9133f52472-2996429875449474202.jpg"]}),
+
+L(1629,"ho-chi-minh","bth","Студия",7500000,30,
+  "Студия с балконом, 30м², ул. Lê Thị Riêng, Bến Thành Q1 — вход по отпечатку пальца, Smart TV, отдельный интернет в каждой квартире, бесплатное обслуживание техники.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134351076.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/my6XjPnOwovl_8T1on-GoXZoGLxRuAcdXpg41B9VQz8/preset:view/plain/052c6ecb1e362c4137d43023d4e119db-2999181050179656689.jpg", "https://cdn.chotot.com/aCqsJQLKZ2cmL13rWm8DzwtHM_DnzYycVONfli4iUH8/preset:view/plain/95dda487848142139f81fe2d089929d8-2999181050146598745.jpg", "https://cdn.chotot.com/6HB4lhX5GOWUESdvu9xcM94MwVN42f1KPBcAngnIjBg/preset:view/plain/528b46861b0b6ddc07dd45b9afe8f8ec-2999181050176672735.jpg"]}),
+
+L(1630,"ho-chi-minh","bth","Квартира",9000000,40,
+  "1-спальная квартира (мини-ЖК), 40м², ул. Trần Hưng Đạo, Q1 — новая полная меблировка, широкий балкон, 3 минуты до рынка Бен Тхань и пешеходной ул. Nguyễn Huệ.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134350861.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/ieouSHhnVx6uYDM_aiVN3sf6sUP84S1m28ulDpiYTP0/preset:view/plain/329c591910f2f3ee4ab8cc83cb60affe-2999179866968464369.jpg", "https://cdn.chotot.com/wdgz2a7qqfrNe_1-loKM3SeOpV1DcrXq4DkqHLwDzq4/preset:view/plain/90e82a3304501fe2e45e0907ec2e228e-2999179867061651946.jpg", "https://cdn.chotot.com/aRWzbNiY6iddDs-jjWZ14nlr9FUTRzO0fn3q2TVqYYo/preset:view/plain/4d21e1989b92c4a25b89189107ef768d-2999179867624632823.jpg"]}),
+
+L(1631,"ho-chi-minh","bth","Квартира",8000000,40,
+  "1-спальная квартира, 40м², ул. Ký Con, Bến Thành Q1 — новая (без предыдущих жильцов), кухня отдельно от спальни, своя стиральная машина, рядом станция метро Бен Тхань и ВУЗы (Văn Lang, Hoa Sen, Luật, Ngân hàng).",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134350781.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/PcxUjnlpAlrFmbFlMvyxArv5OYSEHq8vDrjGsOSPEi4/preset:view/plain/1f6366604d6b90ef24d0876807efb250-2999176545873044493.jpg", "https://cdn.chotot.com/NyJCekZweOTD9Z48rxHmo6KdW7fghbJqFr2DyzGcCbM/preset:view/plain/e348e516f283c6e43ecb97c89eaa56a4-2999176545931498463.jpg", "https://cdn.chotot.com/35ZeN89eAcScSF9YmR78hv4e_hXzBEeZiayeWLPAtDI/preset:view/plain/04cfca2a10b690605c629a43a9287b0f-2999176546212079133.jpg"]}),
+
+L(1632,"ho-chi-minh","ak","Студия",6000000,40,
+  "Студия с балконом, 40м², ул. Lưu Đình Lễ, An Khánh (Тхао Дьен / Ан Фу) — полная меблировка, удобная связь с Thảo Điền, An Phú, Trần Não.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-tp-thu-duc-tp-ho-chi-minh/134351700.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/1ahjLXS9yLI5W6d8mHCqV4sngQzOV_vYd4d_Xw_3rYU/preset:view/plain/deb3ea9dc936291f7b43d8e65f82f475-2999184085821494239.jpg", "https://cdn.chotot.com/e-zvv6Xpmrni-R1GcMMA5u-J_ZzmRL3FcDiY-shiduo/preset:view/plain/475796caf9886bf753ec83287c7556fb-2999184085891589055.jpg", "https://cdn.chotot.com/qTnkMUVlegFTW1THWtfW-xFNzFzCo79FmwuKRB31jPE/preset:view/plain/0f6bb819f6fc94979074102ac96f396d-2999184087128296332.jpg"]}),
+
+L(1633,"ho-chi-minh","ak","Квартира",17000000,81,
+  "2-спальная квартира, 81м², 2 с/у, ЖК De Capella, ул. Lương Định Của, An Khánh — полная меблировка, свободна сейчас, можно въехать сразу.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-tp-thu-duc-tp-ho-chi-minh/134349960.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/XrLU1-HSlDatmCrpkdS1X-DWNqyJTyQIvaXWvk-BEFY/preset:view/plain/caf686a662ea9204d293622c38da2eab-2999176235179774943.jpg", "https://cdn.chotot.com/ZtYYqmdTgX8Vd34sSfzvclUkCXtHSmflpV6u_V1whSc/preset:view/plain/582ffff5193aa577b07836d70545d048-2999176231589319647.jpg", "https://cdn.chotot.com/TmBLAF_XXYZUbie8qCsn6OHSf9NOty222nec17S2jng/preset:view/plain/1205d9d79e780e49fefeb77441cbb2a8-2999176236031436317.jpg"]}),
+
+L(1634,"ho-chi-minh","ak","Квартира",6900000,40,
+  "1-спальная квартира (căn hộ dịch vụ), 40м², ул. Nguyễn Văn Hưởng, An Khánh — до 4 человек, кухня отдельно, парковка, площадки для баскетбола/волейбола/бадминтона в комплексе.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-tp-thu-duc-tp-ho-chi-minh/134349406.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/dF4m2g1nU3eC1N1qwovBSOYBrxQ58pjh5eRnE40yVCg/preset:view/plain/4ffef765e53d25ee79c10227a19f6f93-2999173855382613849.jpg", "https://cdn.chotot.com/1XHRp4LtotPiDA14gyky7Ciypdu5i96OGEGS0qJUclU/preset:view/plain/79bb376a75db499567c7640814059a02-2999173855416165389.jpg", "https://cdn.chotot.com/Hyz3q8-K01pOBrcnhiZN2gvaa2i0Vci_zVZiAMSAIqQ/preset:view/plain/8052694a63361b7c7405212ed652cec4-2999173855540455443.jpg"]}),
+
+L(1635,"ho-chi-minh","ak","Дом",99000000,250,
+  "Вилла целиком, 12,5×20м (250м²), Trệt + 2 этажа, сад и собственный бассейн, ул. Nguyễn Ư Dĩ, Thảo Điền — полная современная меблировка, подходит для семьи или под офис компании.",
+  "https://www.nhatot.com/thue-nha-dat-tp-thu-duc-tp-ho-chi-minh/134349404.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/zwSZvYF0hmsmVnMxWBibgMV1Ju9mb4RDQutfx56TWd0/preset:view/plain/19abfc47f7572116b36e822cddd71339-2999173355581826708.jpg", "https://cdn.chotot.com/2xPYcmf6MmJD_2QG6HgTlTfM4AamfulpUA6zCbL372w/preset:view/plain/f5da6d7a9d1fee4717daed541f1a66c9-2999173356106215927.jpg", "https://cdn.chotot.com/Nt5D5In7B5GL0ylpBt3LVY1rzt9G79UTqiD8XX6YZXY/preset:view/plain/c8614189afc2bbc0cae7240e656048ab-2999173354503687254.jpg"]}),
+
+L(1636,"ho-chi-minh","ak","Квартира",17000000,80,
+  "2-спальная квартира, 81м² (в структурированном поле сайта 80м²), 2 с/у, ЖК De Capella, An Khánh — свободна сейчас, средний этаж, полная меблировка; аренда от 12 мес, депозит 2 мес, сервис-сбор ~15,4 тыс ₫/м² + 120 тыс ₫/мотоцикл.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-tp-thu-duc-tp-ho-chi-minh/134348682.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/-mt4RQdRdgZKZ2QXCYErWTb9SWJUhi14SDxxgHvQFnI/preset:view/plain/e3e65a8e6eef2e234a66e6224e4bb219-2999171404868766604.jpg", "https://cdn.chotot.com/y1RngV_Dx0zqmftLONFEvjiixAupHg1m1dcyp_WdA1I/preset:view/plain/564aafe89f61dec361335e0db23cf8fd-2999171404114498527.jpg", "https://cdn.chotot.com/Rl2jrTNfAtlW6KE1Tt5Hccp09gwf6BGxdCzg58ndyto/preset:view/plain/b40a1f4323b589d533cfd766d0914271-2999171403441152959.jpg"]}),
+
+L(1637,"ho-chi-minh","kh","Дом",11000000,21,
+  "Дом целиком, 4 этажа, пер. 222 Đoàn Văn Bơ, Khánh Hội — рядом рынок Xóm Chiếu и ун-т Nguyễn Tất Thành; электронный замок, водонагреватель, свободен, можно въехать сразу.",
+  "https://www.nhatot.com/thue-nha-dat-quan-4-tp-ho-chi-minh/134348939.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/aFS4lKtygP0Ge4K_SU6yF_HrnvyMlinPr3m7MzbyuOw/preset:view/plain/cfcaed71d5b801ce1d842dafc207efb1-2999172239231758169.jpg", "https://cdn.chotot.com/Mdf2Ekmwz3hWjo77y1MIBDjyWuHbsChlorjozbD86p4/preset:view/plain/013c925811c75a354d1ac598ed017399-2999172239332697629.jpg", "https://cdn.chotot.com/0qZk4f_OaZDXKyRYCMxOMGpk_p92LhQQqidSikYEvdQ/preset:view/plain/3fd73db79c48fa98da94a56b79799b52-2999172240352809951.jpg"]}),
+
+L(1638,"ho-chi-minh","kh","Дом",16000000,40,
+  "Дом целиком, 3 этажа, новая постройка, 3,2×10м (расширяется до 4,5м вглубь), 3 спальни, 3 кондиционера, тихий тупиковый переулок с двором перед домом — только для проживания, без коммерции; квартал «20 Thước», Khánh Hội.",
+  "https://www.nhatot.com/thue-nha-dat-quan-4-tp-ho-chi-minh/134346644.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/HROgxeBr9CQoq8_k_bkWbIXxMeimtqIFnjqSm87mz74/preset:view/plain/bd5a0ee5beab284645f5ab58216fd47e-2999162811400866700.jpg", "https://cdn.chotot.com/Q4IhZEJOdu-r-g_kBhWX69ED4RToAT7IB8tiuvcK4i8/preset:view/plain/2ac270997e285c0edcb3f85b1a85d4d7-2999162811318006866.jpg", "https://cdn.chotot.com/Uo4kXzp65Tzona84y-0-afGb8zEWZxtTeeZarmt5OHE/preset:view/plain/c9619ddc6c79f93754714ef3ac8f9aa7-2999162809896080351.jpg"]}),
+
+L(1639,"ho-chi-minh","kh","Квартира",22000000,73,
+  "2-спальная квартира, 73м², 2 с/у, ЖК Masteri Millennium, 132 Bến Vân Đồn, Q4 — бассейн, тренажёрный зал, охрана 24/7, вход по карте.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/109423909.htm","сегодня",0,source="chotot",
+  details={"notice": "объявление агентское, с прайс-листом по типам квартир в комплексе; цена и площадь взяты из конкретной карточки сайта (73м²/22 млн ₫) для диапазона 65–75м²/2 с/у", "photos": ["https://cdn.chotot.com/PMMn4R1AyMzFh9x7o6Y5unn9eQem5pdDdAeULmL5GCc/preset:view/plain/774a26d35c5d8b9f666c9cb8b6d067b8-2840428705853579931.jpg", "https://cdn.chotot.com/Jv7KJ3Xd8rp0TZP9ICjiVJqmwnEK51i4H97Ot3-Frt0/preset:view/plain/9ffdb01fdb26a4f389d2d20d50a88439-2840428717820497818.jpg", "https://cdn.chotot.com/aUzO6EngaS87g9wjok5vsUzFdsxdksIQin7wR_Uuk50/preset:view/plain/06c73715cd8e3699c5c845bc5f29ffd7-2840428718016286642.jpg"]}),
+
+L(1640,"ho-chi-minh","kh","Дом",10000000,60,
+  "Дом целиком, 4×15м, Trệt + 2 этажа, 3 спальни, 3 кондиционера, заезд для машины, ул. Tân Vĩnh (у Hoàng Diệu), Khánh Hội — подходит для семьи, можно вести онлайн-торговлю.",
+  "https://www.nhatot.com/thue-nha-dat-quan-4-tp-ho-chi-minh/133491707.htm","сегодня",0,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/szXXfCdenAYDVY_7SoARCiXmsg1pBM80IWiyWFwKn0I/preset:view/plain/56ea48ee48d86656f8392f10f60e9c52-2992666947682713655.jpg", "https://cdn.chotot.com/xD4Hs3iQOe3nSGtxwFHPO-SxNih9CWuEHpddDYjfEFU/preset:view/plain/3b2f8725404d09cd862e35fa6af4e396-2992666947747675032.jpg", "https://cdn.chotot.com/RYgSeRikknNFCpU_g-esYJyZRtvBzrimqddI4ssDfIY/preset:view/plain/33256831e6be013833696e66f5f3083e-2992666949377278007.jpg"]}),
+
+L(1641,"ho-chi-minh","kh","Дом",13000000,35,
+  "Дом целиком, 3,3×10м, Trệt + 2 этажа (терраса на крыше), 3 спальни, 2 с/у, шкафы + 3 кондиционера + стиральная машина в комплекте, ул. Tôn Đản, Khánh Hội — рядом Q1.",
+  "https://www.nhatot.com/thue-nha-dat-quan-4-tp-ho-chi-minh/134333043.htm","вчера",1,source="chotot",
+  details={"notice": "по объявлению въезд возможен с 19 сентября (после освобождения текущими жильцами)", "photos": ["https://cdn.chotot.com/mGtq_cljiefZ8PQIp9Gn9XoWnz-YFIfEWIHQwGd1a40/preset:view/plain/7e2cc0b1a6eda10216d1a5faaf2217cb-2999046159237467020.jpg", "https://cdn.chotot.com/MsiqE5IKKvV5QTmOhbU0wCrjC5mosRD57hIgChQylhc/preset:view/plain/ed1852fe22c214a8b9bc5c7613c37365-2999046159202420562.jpg", "https://cdn.chotot.com/mOiDo51QFrNRQOc3qs_eIyH1ZoW1bftBJr5pbaqCz8o/preset:view/plain/67d10135b32e383e34db2d9519f45b57-2999046159276234536.jpg"]}),
+L(1642,"ho-chi-minh","kh","Квартира",18000000,75,
+  "2-спальная квартира, 75м², 2 с/у, ЖК Masteri Millennium, ул. Bến Vân Đồn, Khánh Hội — кондиционер, кровать, холодильник в комплекте.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-ben-van-don-masteri-millennium/cho-2pn-2wc-75m2-chi-voi-18-trieu-tai-quan-4-tp-hcm-pr46226152","сегодня",0,source="batdongsan",
+  details={"photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825164216-f8d5_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825164216-8df7_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825164216-b90c_wm.jpg"]}),
+
+L(1643,"ho-chi-minh","bth","Квартира",None,35,
+  "Квартира на первой линии ул. Trần Hưng Đạo, Bến Thành Q1, 35м² (полезная площадь) — есть лифт, полная меблировка, подходит и для проживания, и для маленького бизнеса (нейл-салон, спа, парикмахерская); рядом Q1, Q4, Q5, Bình Thạnh.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-tran-hung-dao-phuong-ben-thanh-tp-ho-chi-minh/cho-thang-may-mat-tien-ao-full-noi-that-pr46225725","сегодня",0,source="batdongsan",
+  details={"notice": "цена по запросу — не указана ни в заголовке, ни в тексте объявления", "photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825153518-0585_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825153514-80d2_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825153516-4607_wm.jpg"]}),
+
+L(1644,"ho-chi-minh","ak","Дом",100000000,250,
+  "Вилла целиком, участок 230м² / жилая площадь 250м² + сад, Trệt + 1 этаж, 5 спален, 5 с/у, собственный бассейн, сауна, комната отдыха, ул. Trần Não, An Khánh — полная меблировка, подходит для семьи или иностранных специалистов.",
+  "https://batdongsan.com.vn/cho-thue-nha-rieng-duong-tran-nao-phuong-an-khanh-tp-ho-chi-minh/cho-villa-5-phong-full-noi-that-boi-gia-100-trieu-pr46225147","сегодня",0,source="batdongsan",
+  details={"photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825142323-666d_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825142323-bfd5_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825142323-b1ba_wm.jpg"]}),
+
+L(1645,"ho-chi-minh","kh","Квартира",32000000,103,
+  "3-спальная квартира, 103м², 2 с/у, ЖК Masteri Millennium, 132 Bến Vân Đồn, Q4 — широкий балкон, вид на город, бассейн-инфинити, тренажёрный зал, зона BBQ, ресепшен и охрана 24/7.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-ben-van-don-masteri-millennium/cho-quan-4-3pn-103m-full-noi-that-view-song-cau-ba-son-sat-q1-lh-pr46223393","сегодня",0,source="batdongsan",
+  details={"photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825092908-0dad_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825092908-7cb3_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/25/20260825092908-c79e_wm.jpg"]}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
