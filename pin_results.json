@@ -7852,5 +7852,53 @@
   "lon": 106.7336461,
   "source": "geocode",
   "matched": "Thảo Điền"
+ },
+ "1660": {
+  "lat": 10.7351883,
+  "lon": 106.6953441,
+  "source": "geocode",
+  "matched": "Hoàng Trọng Mậu"
+ },
+ "1661": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "1662": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1663": {
+  "lat": 10.7703806,
+  "lon": 106.6951066,
+  "source": "geocode",
+  "matched": "Bến Thành Q1"
+ },
+ "1664": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1665": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1666": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1667": {
+  "lat": 10.7703806,
+  "lon": 106.6951066,
+  "source": "geocode",
+  "matched": "Bến Thành Q1"
  }
 }
