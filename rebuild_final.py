@@ -2910,7 +2910,7 @@ L(935,"ho-chi-minh","tm","Квартира",28000000,84,
 L(936,"ho-chi-minh","tm","Дом",16000000,52,
   "Дом целиком, полная качественная меблировка, ул. Huỳnh Tấn Phát, Tân Phú/Tân Mỹ, Q7. 2 спальни, гостиная, кухня-столовая, 2 с/у, ТВ 65\".",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134196283.htm","9 дней назад",9,source="chotot",
-  details={"photos":["https://cdn.chotot.com/wLW9HvxeHYpQTuotLukBJ8xBFzoeCn0s9VJmgLSmNNw/preset:view/plain/37424a1d960b3da96a952cdb38909ac4-2998027639006844475.jpg", "https://cdn.chotot.com/W1QE5lZk6aR-Z925rrDkLyRuh68GTOtUE3BNKno1p9Q/preset:view/plain/49ddd70a37ff1d9ba5138f78aeb75652-2998027638766602215.jpg", "https://cdn.chotot.com/96sKDKe5pK_RIPf_L0pnlr5vU5HLbrAI0Vzn1DtIvs4/preset:view/plain/d6d0e261b53e81acc69ee1c90a3030c0-2998027637649594757.jpg"],"contact":"Mr Ngọc"}),
+  details={"photos":["https://cdn.chotot.com/wLW9HvxeHYpQTuotLukBJ8xBFzoeCn0s9VJmgLSmNNw/preset:view/plain/37424a1d960b3da96a952cdb38909ac4-2998027639006844475.jpg", "https://cdn.chotot.com/W1QE5lZk6aR-Z925rrDkLyRuh68GTOtUE3BNKno1p9Q/preset:view/plain/49ddd70a37ff1d9ba5138f78aeb75652-2998027638766602215.jpg", "https://cdn.chotot.com/96sKDKe5pK_RIPf_L0pnlr5vU5HLbrAI0Vzn1DtIvs4/preset:view/plain/d6d0e261b53e81acc69ee1c90a3030c0-2998027637649594757.jpg"],"contact":"Mr Ngọc","alsoOn":[{"source":"batdongsan","url":"https://batdongsan.com.vn/cho-thue-nha-rieng-duong-huynh-tan-phat-phuong-tan-my-tp-ho-chi-minh/moi-ep-full-noi-that-cao-cap-q7-pr46218931"}]}),
 
 L(937,"ho-chi-minh","tm","Квартира",23000000,132,
   "4-спальная квартира (3 с/у, +кладовая) в ЖК Sunshine Sky City, 23 Phú Thuận, Tân Mỹ, Q7. 2 балкона, базовая меблировка (шторы, кондиционеры, водонагреватель, кухонный гарнитур с индукционной плитой). Освобождается с 15.09.",
@@ -2943,7 +2943,7 @@ L(942,"ho-chi-minh","tm","Дом",12500000,48,
 L(943,"ho-chi-minh","tm","Дом",7200000,25,
   "Дом целиком (1 этаж+1 этаж, гостиная, 2 спальни, с/у, кухня) в широком переулке для машины, 730 Huỳnh Tấn Phát, Tân Mỹ, Q7. Рядом супермаркет GO! (бывший Big C) и рынок. Приоритет длительной аренде.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134228666.htm","7 дней назад",7,source="chotot",
-  details={"photos":["https://cdn.chotot.com/JI8j_9XkIn9u3uBdOBg8x1IPwcte_7HycFCatsvnR9E/preset:view/plain/c7643a1577968384464ebf73967e2a32-2998274591492043997.jpg", "https://cdn.chotot.com/TEOoS0xddSEuoilkCbeNHqZYkm8Tf9sxnriJK77RU20/preset:view/plain/64aff38f19d528d97c66486d882a56c7-2998274610416382865.jpg", "https://cdn.chotot.com/gFe_2DbioMffRI4lXoc3WsXvKTK-6--5E6smb6rmlBM/preset:view/plain/57185ae2ab5cf24a575d47b1d865fa90-2998274610263639238.jpg"],"contact":"Tuấn Anh Land"}),
+  details={"photos":["https://cdn.chotot.com/JI8j_9XkIn9u3uBdOBg8x1IPwcte_7HycFCatsvnR9E/preset:view/plain/c7643a1577968384464ebf73967e2a32-2998274591492043997.jpg", "https://cdn.chotot.com/TEOoS0xddSEuoilkCbeNHqZYkm8Tf9sxnriJK77RU20/preset:view/plain/64aff38f19d528d97c66486d882a56c7-2998274610416382865.jpg", "https://cdn.chotot.com/gFe_2DbioMffRI4lXoc3WsXvKTK-6--5E6smb6rmlBM/preset:view/plain/57185ae2ab5cf24a575d47b1d865fa90-2998274610263639238.jpg"],"contact":"Tuấn Anh Land","alsoOn":[{"source":"batdongsan","url":"https://batdongsan.com.vn/cho-thue-nha-rieng-duong-huynh-tan-phat-phuong-tan-my-tp-ho-chi-minh/cho-nguyen-can-hem-730-q7-dt-5x6-1lau-pr46216475"}]}),
 
 L(944,"ho-chi-minh","ak","Квартира",25000000,72,
   "2-спальная квартира (2 с/у, 71,6м²) в ЖК De Capella, 116 Lương Định Của, An Khánh (Thảo Điền), Thủ Đức. Полная меблировка. Ward подтверждён геокодингом адреса.",
@@ -6355,7 +6355,7 @@ L(1656,"ho-chi-minh","tm","Дом",21000000,60,
 L(1657,"ho-chi-minh","tm","Дом",21000000,64,
   "Дом целиком, участок 4×16м (64м²), 1 этаж + 2 этажа + терраса, 3 спальни/3 с/у, переулок ул. Huỳnh Tấn Phát, Q7 — полная качественная меблировка.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134349595.htm","вчера",1,source="chotot",
-  details={"photos":["https://cdn.chotot.com/_anCb7A0JFQSk2JY8GzXJtcILb--ePB5jN9rWILj880/preset:view/plain/0c602c9cf4b2d44310576dd0f8015acf-2999174943498062732.jpg", "https://cdn.chotot.com/f6OaRUXx6Z8EIcE8mRZHnB2AJQSJG7Q82QjLP46SaIM/preset:view/plain/7947755a1fb390e304b7a0581c8d4317-2999174943435796313.jpg", "https://cdn.chotot.com/A-L-gh9jdjS7f4Nmaz_O9tM3Yb8HvChz-WRmogzLE-s/preset:view/plain/003a9e71d5708de199b9d925d6e7545c-2999174943585625748.jpg"],"alsoOn":[{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/178374950.htm"}]}),
+  details={"photos":["https://cdn.chotot.com/_anCb7A0JFQSk2JY8GzXJtcILb--ePB5jN9rWILj880/preset:view/plain/0c602c9cf4b2d44310576dd0f8015acf-2999174943498062732.jpg", "https://cdn.chotot.com/f6OaRUXx6Z8EIcE8mRZHnB2AJQSJG7Q82QjLP46SaIM/preset:view/plain/7947755a1fb390e304b7a0581c8d4317-2999174943435796313.jpg", "https://cdn.chotot.com/A-L-gh9jdjS7f4Nmaz_O9tM3Yb8HvChz-WRmogzLE-s/preset:view/plain/003a9e71d5708de199b9d925d6e7545c-2999174943585625748.jpg"],"alsoOn":[{"source":"chotot","url":"https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/178374950.htm"},{"source":"batdongsan","url":"https://batdongsan.com.vn/cho-thue-nha-rieng-duong-huynh-tan-phat-phuong-tan-my-tp-ho-chi-minh/moi-100-phong-cach-sang-trong-noi-that-cao-cap-pr46216899"}]}),
 
 L(1658,"ho-chi-minh","ak","Квартира",6900000,45,
   "1-спальная квартира, 45м², Thảo Điền — светлая, современный дизайн, отдельная стиральная машина с местом для сушки, охрана и камеры 24/7, слот для парковки авто во дворе. 15 минут до Q1/Bình Thạnh.",
@@ -6592,6 +6592,7 @@ print("Data JSON size:", len(DATA_JSON))
 
 # ================== HTML TEMPLATE ==================
 HTML = r"""<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -6670,6 +6671,7 @@ HTML = r"""<meta charset="utf-8">
   .city-tab:hover{border-color:var(--accent);}
 
   .control-panel{display:grid;grid-template-columns:minmax(280px,1fr) minmax(300px,1.05fr);gap:18px;align-items:start;}
+  .control-panel>*{min-width:0;}
   @media (max-width:860px){.control-panel{grid-template-columns:1fr;}}
 
   .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);}
@@ -6710,7 +6712,7 @@ HTML = r"""<meta charset="utf-8">
   .chip .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:5px;opacity:0.6;vertical-align:middle;}
 
   .date-row{display:flex;gap:8px;align-items:center;}
-  .date-row input{flex:1;padding:9px 10px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink-faint);font-size:0.92rem;}
+  .date-row input{flex:1;min-width:0;padding:9px 10px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink-faint);font-size:0.92rem;}
   .date-row span{color:var(--ink-faint);font-size:0.85rem;}
 
   .autocomplete{position:relative;}
