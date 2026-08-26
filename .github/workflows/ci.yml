@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  compile-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # No requirements.txt exists in this repo (only stdlib + reportlab/requests
+      # are imported, with nothing pinned). This step only catches syntax errors
+      # via py_compile - it does not execute the scripts or resolve imports, so
+      # it needs no installs. See project notes for the honest v1 scope.
+      - name: Compile-check all Python files
+        run: python -m compileall . -q
