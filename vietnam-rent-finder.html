@@ -166,6 +166,8 @@
   .map-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:0.78rem;color:var(--ink-dim);}
   .map-legend span{display:inline-flex;align-items:center;gap:6px;}
   .poi-toggle-label{display:inline-flex;align-items:center;gap:6px;cursor:pointer;}
+  .per-m2-toggle-label{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-size:0.86rem;color:var(--ink-dim);margin-top:8px;}
+  .price-per-m2{font-size:0.8rem;color:var(--ink-faint);margin-left:4px;}
   .poi-marker{border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 1px 3px rgba(0,0,0,0.35);border:1.5px solid #fff;}
   .swatch{width:12px;height:12px;border-radius:4px;display:inline-block;border:1px solid var(--line-strong);}
   .swatch-selected{background:var(--accent);border-color:var(--accent);}
@@ -333,6 +335,7 @@
           <button data-sort="desc" type="button">Дороже</button>
           <button data-sort="new" type="button">Новые</button>
         </div>
+        <label class="per-m2-toggle-label"><input type="checkbox" id="per-m2-toggle"> сортировать по цене за м²</label>
       </div>
 
       <div class="field" id="poi-sort-field" hidden>
@@ -416,7 +419,7 @@
   var TYPE_OPTIONS = ["Комната","Студия","Квартира","Дом","Другое"];
 
   var state = {
-    city: "nha-trang", district: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "", textSearch: "", showFavoritesOnly: false,
+    city: "nha-trang", district: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
     sources: new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; })),
     openDetails: new Set()
   };
@@ -455,6 +458,7 @@
     sourceChips: document.getElementById("source-chips"),
     typeChips: document.getElementById("type-chips"),
     sortToggle: document.getElementById("sort-toggle"),
+    perM2Toggle: document.getElementById("per-m2-toggle"),
     poiSortField: document.getElementById("poi-sort-field"),
     poiSortSelect: document.getElementById("poi-sort-select"),
     mapTitle: document.getElementById("map-title"),
@@ -471,6 +475,13 @@
     var m = v/1000000;
     var s = (m % 1 === 0) ? String(m) : m.toFixed(1).replace(".", ",");
     return s + " млн";
+  }
+  function pricePerM2(l){
+    if (l.price == null || !l.area) return null;
+    return l.price / l.area;
+  }
+  function fmtPricePerM2(v){
+    return Math.round(v/1000) + " тыс ₫/м²";
   }
   function districtByKey(cityKey, distKey){
     var list = CITIES[cityKey].districts;
@@ -874,6 +885,11 @@
     applyFilters();
   });
 
+  el.perM2Toggle.addEventListener("change", function(){
+    state.perM2 = el.perM2Toggle.checked;
+    applyFilters();
+  });
+
   el.poiSortSelect.addEventListener("change", function(){
     state.poiSort = el.poiSortSelect.value;
     applyFilters();
@@ -911,6 +927,14 @@
         if (a._poiDist===null) return 1;
         if (b._poiDist===null) return -1;
         return a._poiDist - b._poiDist;
+      });
+    } else if (state.perM2 && state.sort !== "new"){
+      list.forEach(function(l){ l._perM2 = pricePerM2(l); });
+      list.sort(function(a,b){
+        if (a._perM2===null && b._perM2===null) return 0;
+        if (a._perM2===null) return 1;
+        if (b._perM2===null) return -1;
+        return state.sort==="asc" ? a._perM2-b._perM2 : b._perM2-a._perM2;
       });
     } else {
       list.sort(function(a,b){
@@ -966,6 +990,8 @@
             ' было ' + fmtPrice(prevPrice) + ' ₫</span>';
         }
       }
+      var perM2Val = pricePerM2(l);
+      var perM2Html = perM2Val ? ('<span class="price-per-m2">' + fmtPricePerM2(perM2Val) + '</span>') : "";
       card.innerHTML =
         photoHtml +
         '<div class="listing-top">' +
@@ -986,7 +1012,7 @@
         alsoOnHtml +
         detailsHtml(l) +
         '<div class="listing-bottom">' +
-          '<span><span class="price">' + (l.price===null ? "цена по запросу" : (fmtPrice(l.price) + ' <small>₫ / мес</small>')) + '</span>' + priceChangeHtml + '</span>' +
+          '<span><span class="price">' + (l.price===null ? "цена по запросу" : (fmtPrice(l.price) + ' <small>₫ / мес</small>')) + '</span>' + perM2Html + priceChangeHtml + '</span>' +
           '<a class="open-link" href="' + l.url + '" target="_blank" rel="noopener">Открыть объявление →</a>' +
         '</div>';
       var favBtn = card.querySelector(".fav-btn");
@@ -1027,9 +1053,9 @@
   }
 
   el.resetBtn.addEventListener("click", function(){
-    state.district = null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false;
+    state.district = null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false;
     state.sources = new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; }));
-    el.districtInput.value=""; el.poiSortSelect.value=""; el.textSearchInput.value="";
+    el.districtInput.value=""; el.poiSortSelect.value=""; el.textSearchInput.value=""; el.perM2Toggle.checked=false;
     el.favFilterToggle.setAttribute("aria-pressed","false"); el.favFilterToggle.textContent="☆ Избранное";
     Array.prototype.forEach.call(el.sortToggle.querySelectorAll("button"), function(b){ b.classList.toggle("active", b.getAttribute("data-sort")==="asc"); });
     syncBudgetUI(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderCityMap(); applyFilters();
