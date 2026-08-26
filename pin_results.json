@@ -8062,5 +8062,107 @@
   "lon": 106.7043593,
   "source": "geocode",
   "matched": "Đoàn Văn Bơ"
+ },
+ "1701": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "1702": {
+  "lat": 10.7311388,
+  "lon": 106.7351885,
+  "source": "geocode",
+  "matched": "Phú Thuận"
+ },
+ "1703": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "1704": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1705": {
+  "lat": 10.7702241,
+  "lon": 106.691696,
+  "source": "geocode",
+  "matched": "Nguyễn Trãi"
+ },
+ "1706": {
+  "lat": 10.7351883,
+  "lon": 106.6953441,
+  "source": "geocode",
+  "matched": "Hoàng Trọng Mậu"
+ },
+ "1707": {
+  "lat": 10.7351883,
+  "lon": 106.6953441,
+  "source": "geocode",
+  "matched": "Hoàng Trọng Mậu"
+ },
+ "1708": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1709": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1710": {
+  "lat": 10.7697025,
+  "lon": 106.707918,
+  "source": "geocode",
+  "matched": "Thủ Thiêm"
+ },
+ "1711": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1712": {
+  "lat": 10.7699795,
+  "lon": 106.6966136,
+  "source": "geocode",
+  "matched": "Phạm Ngũ Lão"
+ },
+ "1713": {
+  "lat": 10.7003494,
+  "lon": 106.7326546,
+  "source": "geocode",
+  "matched": "Era Town"
+ },
+ "1714": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "1715": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1716": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1717": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
  }
 }
