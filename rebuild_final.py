@@ -6650,6 +6650,12 @@ HTML = r"""<meta charset="utf-8">
   .results-sub{margin:4px 0 0;color:var(--ink-dim);font-size:0.9rem;}
   .reset-btn{appearance:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-dim);padding:8px 14px;border-radius:999px;font-size:0.84rem;font-weight:600;cursor:pointer;}
   .reset-btn:hover{border-color:var(--danger);color:var(--danger);}
+  .results-head-actions{display:flex;gap:8px;align-items:center;}
+  .fav-filter-btn{appearance:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-dim);padding:8px 14px;border-radius:999px;font-size:0.84rem;font-weight:600;cursor:pointer;}
+  .fav-filter-btn[aria-pressed="true"]{border-color:#D8A02A;color:#B9860E;background:rgba(216,160,42,0.12);}
+  .listing-top-right{display:flex;align-items:center;gap:8px;}
+  .fav-btn{appearance:none;background:none;border:none;padding:0;cursor:pointer;font-size:1.15rem;line-height:1;color:var(--ink-faint);}
+  .fav-btn[aria-pressed="true"]{color:#D8A02A;}
 
   .results-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:16px;align-items:start;}
 
@@ -6833,7 +6839,10 @@ HTML = r"""<meta charset="utf-8">
         <h2 id="results-count">— объявлений</h2>
         <p class="results-sub" id="results-context"></p>
       </div>
-      <button class="reset-btn" id="reset-filters" type="button">Сбросить фильтры</button>
+      <div class="results-head-actions">
+        <button class="fav-filter-btn" id="fav-filter-toggle" type="button" aria-pressed="false">☆ Избранное</button>
+        <button class="reset-btn" id="reset-filters" type="button">Сбросить фильтры</button>
+      </div>
     </div>
     <div class="results-list" id="results-list"></div>
     <div class="empty-state" id="empty-state" hidden>
@@ -6879,10 +6888,25 @@ HTML = r"""<meta charset="utf-8">
   var TYPE_OPTIONS = ["Комната","Студия","Квартира","Дом","Другое"];
 
   var state = {
-    city: "nha-trang", district: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "", textSearch: "",
+    city: "nha-trang", district: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "", textSearch: "", showFavoritesOnly: false,
     sources: new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; })),
     openDetails: new Set()
   };
+
+  var FAVORITES_KEY = "rentSearcherFavorites";
+  var favorites = (function(){
+    try {
+      var raw = localStorage.getItem(FAVORITES_KEY);
+      return new Set(raw ? JSON.parse(raw) : []);
+    } catch (e) { return new Set(); }
+  })();
+  function saveFavorites(){
+    try { localStorage.setItem(FAVORITES_KEY, JSON.stringify(Array.from(favorites))); } catch (e) {}
+  }
+  function toggleFavorite(id){
+    if (favorites.has(id)) favorites.delete(id); else favorites.add(id);
+    saveFavorites();
+  }
 
   var BUDGET_MIN = 0, BUDGET_MAX = 45;
 
@@ -6910,6 +6934,7 @@ HTML = r"""<meta charset="utf-8">
     resultsCount: document.getElementById("results-count"),
     resultsContext: document.getElementById("results-context"),
     resultsList: document.getElementById("results-list"),
+    favFilterToggle: document.getElementById("fav-filter-toggle"),
     emptyState: document.getElementById("empty-state"),
     resetBtn: document.getElementById("reset-filters")
   };
@@ -7174,6 +7199,13 @@ HTML = r"""<meta charset="utf-8">
     state.textSearch = ""; el.textSearchInput.value = ""; applyFilters(); el.textSearchInput.focus();
   });
 
+  el.favFilterToggle.addEventListener("click", function(){
+    state.showFavoritesOnly = !state.showFavoritesOnly;
+    el.favFilterToggle.setAttribute("aria-pressed", state.showFavoritesOnly);
+    el.favFilterToggle.textContent = (state.showFavoritesOnly ? "★" : "☆") + " Избранное";
+    applyFilters();
+  });
+
   function renderBudgetChips(){
     el.budgetChips.innerHTML = "";
     var allBtn = document.createElement("button");
@@ -7335,6 +7367,7 @@ HTML = r"""<meta charset="utf-8">
       if (l.daysAgo > state.maxDays) return false;
       if (state.type && l.type !== state.type) return false;
       if (state.textSearch && listingSearchText(l).indexOf(state.textSearch) === -1) return false;
+      if (state.showFavoritesOnly && !favorites.has(l.id)) return false;
       return true;
     });
     if (state.poiSort){
@@ -7403,7 +7436,10 @@ HTML = r"""<meta charset="utf-8">
         photoHtml +
         '<div class="listing-top">' +
           '<span class="source-pill"><i style="background:'+src.color+'"></i>' + src.short + '</span>' +
-          '<span class="posted">' + l.posted + '</span>' +
+          '<span class="listing-top-right">' +
+            '<span class="posted">' + l.posted + '</span>' +
+            '<button class="fav-btn" type="button" data-fav-id="' + l.id + '" aria-label="В избранное" aria-pressed="' + favorites.has(l.id) + '">' + (favorites.has(l.id) ? "★" : "☆") + '</button>' +
+          '</span>' +
         '</div>' +
         '<div>' +
           '<div class="listing-type">' + l.type + '</div>' +
@@ -7419,6 +7455,14 @@ HTML = r"""<meta charset="utf-8">
           '<span><span class="price">' + (l.price===null ? "цена по запросу" : (fmtPrice(l.price) + ' <small>₫ / мес</small>')) + '</span>' + priceChangeHtml + '</span>' +
           '<a class="open-link" href="' + l.url + '" target="_blank" rel="noopener">Открыть объявление →</a>' +
         '</div>';
+      var favBtn = card.querySelector(".fav-btn");
+      favBtn.addEventListener("click", function(){
+        toggleFavorite(l.id);
+        var isFav = favorites.has(l.id);
+        favBtn.setAttribute("aria-pressed", isFav);
+        favBtn.textContent = isFav ? "★" : "☆";
+        if (state.showFavoritesOnly && !isFav) applyFilters();
+      });
       var toggleBtn = card.querySelector(".details-toggle");
       if (toggleBtn){
         toggleBtn.addEventListener("click", function(){
@@ -7449,9 +7493,10 @@ HTML = r"""<meta charset="utf-8">
   }
 
   el.resetBtn.addEventListener("click", function(){
-    state.district = null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch="";
+    state.district = null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false;
     state.sources = new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; }));
     el.districtInput.value=""; el.poiSortSelect.value=""; el.textSearchInput.value="";
+    el.favFilterToggle.setAttribute("aria-pressed","false"); el.favFilterToggle.textContent="☆ Избранное";
     Array.prototype.forEach.call(el.sortToggle.querySelectorAll("button"), function(b){ b.classList.toggle("active", b.getAttribute("data-sort")==="asc"); });
     syncBudgetUI(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderCityMap(); applyFilters();
   });
