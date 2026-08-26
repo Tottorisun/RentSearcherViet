@@ -7551,6 +7551,45 @@ HTML = r"""<meta charset="utf-8">
 </script>
 """
 
+def check_js_undefined_calls(html):
+    """
+    Cheap static guard against the exact bug class found 25 Aug 2026: a
+    concurrent session's merge/stash resolution silently reintroduced a
+    call to a function (renderFbGroups) that had been deleted, breaking
+    city switching in production with no build-time signal. Not a real
+    JS parser -- just flags bare `name(` call sites (dot-prefixed method
+    calls like `.forEach(` are excluded via the lookbehind) that match
+    neither a local function declaration nor a known browser/JS global.
+    Heuristic and non-fatal by design: prints a warning to check by eye
+    rather than failing the build on a false positive.
+    """
+    m = re.search(r'<script>\n\(function\(\)\{(.*?)\}\)\(\);\n</script>', html, re.S)
+    if not m:
+        print("WARNING: check_js_undefined_calls could not locate the main JS IIFE -- skipped")
+        return
+    js = m.group(1)
+    declared = set(re.findall(r'\bfunction\s+([a-zA-Z_$][\w$]*)\s*\(', js))
+    declared |= set(re.findall(r'\bvar\s+([a-zA-Z_$][\w$]*)\s*=\s*function\s*\(', js))
+    known_globals = {
+        "if", "for", "while", "switch", "catch", "function", "return", "typeof", "new", "in", "of",
+        "instanceof", "else", "do", "void", "delete", "yield", "await",
+        "document", "window", "console", "Array", "Object", "JSON", "Math", "Number", "String",
+        "Boolean", "Set", "Map", "RegExp", "Promise", "Date", "Error", "Symbol",
+        "parseInt", "parseFloat", "isNaN", "encodeURIComponent", "decodeURIComponent",
+        "L", "fetch", "setTimeout", "setInterval", "clearTimeout", "clearInterval",
+        "requestAnimationFrame", "alert", "confirm", "prompt", "localStorage", "sessionStorage",
+        "var",  # CSS var(--x) appearing inside inline-style JS string literals, not a JS keyword-call
+        "OpenStreetMap",  # "...OpenStreetMap (ODbL)" attribution text, not a call
+    }
+    calls = set(re.findall(r'(?<![\w.$])([a-zA-Z_$][\w$]*)\s*\(', js))
+    suspicious = sorted(calls - declared - known_globals)
+    if suspicious:
+        print("WARNING: possibly-undefined JS function calls, verify before shipping:", ", ".join(suspicious))
+    else:
+        print("JS undefined-call check: OK")
+
+check_js_undefined_calls(HTML)
+
 HTML = HTML.replace("__DATA_JSON__", DATA_JSON)
 HTML = HTML.replace("__LISTING_COUNT__", str(len(LISTINGS)))
 HTML = HTML.replace("__TODAY_DATE__", ru_today_stamp())
