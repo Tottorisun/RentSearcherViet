@@ -6580,7 +6580,87 @@ POIS = {
         {"type":"hospital","name":"Bệnh viện Quận 1 (cơ sở 2)","lat":10.7651115,"lon":106.6932273},
         {"type":"hospital","name":"Bệnh Viện Sài Gòn ITO","lat":10.7950017,"lon":106.6672345},
         {"type":"hospital","name":"Bệnh viện Phụ sản Mekong","lat":10.7998479,"lon":106.6675233},
-    ]
+    ],
+    "nha-trang": [
+        {"type":"hospital","name":"Prestige international polyclinic","lat":12.2522561,"lon":109.1883141},
+        {"type":"school","name":"EFI International School","lat":12.1987033,"lon":109.2069537},
+        {"type":"hospital","name":"Bệnh viện Quân y 87","lat":12.2307449,"lon":109.1948779},
+        {"type":"hospital","name":"Bệnh viện Đa khoa Khánh Hòa","lat":12.2485342,"lon":109.1919559},
+        {"type":"hospital","name":"Bệnh viện Ung bướu tỉnh Khánh Hoà","lat":12.2781479,"lon":109.1814538},
+        {"type":"hospital","name":"Bệnh viện Da liễu tỉnh Khánh Hoà","lat":12.2782202,"lon":109.1833407},
+        {"type":"hospital","name":"Bệnh viện Lao và Bệnh phổi tỉnh Khánh Hoà","lat":12.2777146,"lon":109.1879165},
+        {"type":"hospital","name":"Tam Tri Nha Trang","lat":12.2125735,"lon":109.1949415},
+        {"type":"hospital","name":"Bệnh viện đa khoa Sài Gòn Nha Trang","lat":12.2583221,"lon":109.1694482},
+        {"type":"hospital","name":"Bệnh viện đa khoa Yersin Nha Trang","lat":12.2382514,"lon":109.1650726},
+    ],
+    "da-lat": [
+        {"type":"hospital","name":"Phòng Khám Đa Khoa Trung Tâm Y Tế Đà Lạt","lat":11.9398477,"lon":108.4329545},
+        {"type":"hospital","name":"Bệnh viện Đa khoa tỉnh Lâm Đồng","lat":11.9464757,"lon":108.4308966},
+        {"type":"hospital","name":"Bệnh viện Y học cổ truyền Phạm Ngọc Thạch","lat":11.9481144,"lon":108.4594477},
+        {"type":"hospital","name":"Bệnh viện Sản - Nhi tỉnh Lâm Đồng","lat":11.9730232,"lon":108.4344153},
+        {"type":"hospital","name":"Trung tâm Y tế khu vực Lạc Dương","lat":12.0082688,"lon":108.4074842},
+        {"type":"hospital","name":"Bệnh viện Phục hồi chức năng tỉnh Lâm Đồng","lat":11.9460869,"lon":108.4640367},
+    ],
+    "da-nang": [
+        {"type":"hospital","name":"Cong Ty CP Benh Vien Da Khoa Hoa Xuan","lat":16.0681938,"lon":108.2013645},
+        {"type":"hospital","name":"Benh Vien Y Hoc Co Truyen Tp.Da Nang","lat":16.054196,"lon":108.2190335},
+        {"type":"hospital","name":"Benh Vien Phu Nu Tp.Da Nang","lat":16.057147,"lon":108.2179094},
+        {"type":"hospital","name":"Benh Vien Ngoai Khoa Nguyen Van Thai","lat":16.0541328,"lon":108.233067},
+        {"type":"hospital","name":"Bệnh viện Hoàn Mỹ Đà Nẵng","lat":16.059401,"lon":108.2098753},
+        {"type":"hospital","name":"Benh Vien Da Khoa Binh Dan","lat":16.0713797,"lon":108.2001187},
+        {"type":"hospital","name":"Benh Vien Tu Binh Dan","lat":16.0686754,"lon":108.2189349},
+        {"type":"hospital","name":"Trung Tam Phuc Hoi Co Nhi Suy Dinh Duong Da Nang","lat":16.0824806,"lon":108.2205999},
+        {"type":"hospital","name":"Thien Nhan Hospital","lat":16.076597,"lon":108.2158614},
+        {"type":"hospital","name":"Bệnh viện Quân y 17","lat":16.0542165,"lon":108.2073008},
+        {"type":"hospital","name":"Bệnh viện Phụ sản - Nhi Đà Nẵng","lat":16.0226987,"lon":108.2493906},
+        {"type":"hospital","name":"Bệnh viện Phổi Đà Nẵng","lat":16.0480325,"lon":108.1705537},
+        {"type":"hospital","name":"Bệnh viện Đà Nẵng","lat":16.0729442,"lon":108.2154554},
+        {"type":"hospital","name":"Bệnh viện C Đà Nẵng","lat":16.0731525,"lon":108.2168358},
+        {"type":"hospital","name":"Bệnh viện Chỉnh hình & Phục hồi Chức năng Đà Nẵng","lat":16.0736863,"lon":108.2174517},
+        {"type":"hospital","name":"Bệnh viện Đa khoa Quốc tế Vinmec Đà Nẵng","lat":16.0387507,"lon":108.2112279},
+        {"type":"hospital","name":"Bệnh viện Mắt thành phố Đà Nẵng","lat":16.0374445,"lon":108.2196525},
+        {"type":"hospital","name":"Bệnh viện 199 - Bộ Công an","lat":16.0657753,"lon":108.2359315},
+        {"type":"hospital","name":"Bệnh viện Phục hồi chức năng thành phố Đà Nẵng","lat":16.0053318,"lon":108.2095449},
+        {"type":"hospital","name":"Bệnh viện Y học cổ truyền thành phố Đà Nẵng","lat":16.0057641,"lon":108.2106405},
+        {"type":"hospital","name":"Bệnh viện Ung bướu Đà Nẵng","lat":16.0697057,"lon":108.1639233},
+        {"type":"hospital","name":"Bệnh viện Y học cổ truyền thành phố Đà Nẵng (cơ sở 2)","lat":16.0660463,"lon":108.2220718},
+        {"type":"hospital","name":"Bệnh viện Tâm thần thành phố Đà Nẵng","lat":16.0795422,"lon":108.1459188},
+        {"type":"hospital","name":"Bệnh viện Da liễu thành phố Đà Nẵng","lat":16.0737867,"lon":108.1762198},
+        {"type":"hospital","name":"Bệnh viện Đa khoa Nam Liên Chiểu","lat":16.0557752,"lon":108.1621981},
+        {"type":"hospital","name":"Trung tâm Y tế quận Hải Châu","lat":16.0765046,"lon":108.2142367},
+        {"type":"hospital","name":"Trung tâm Y tế quận Thanh Khê","lat":16.0687125,"lon":108.1896135},
+        {"type":"hospital","name":"Trung tâm Y tế quận Sơn Trà","lat":16.0579051,"lon":108.2346537},
+        {"type":"hospital","name":"Trung tâm Y tế quận Ngũ Hành Sơn","lat":16.0083739,"lon":108.2571427},
+        {"type":"hospital","name":"Trung tâm Y tế khu vực Cẩm Lệ","lat":16.0098564,"lon":108.1951896},
+        {"type":"hospital","name":"Trung tâm Y tế quận Liên Chiểu","lat":16.0640276,"lon":108.1554429},
+        {"type":"hospital","name":"Trung tâm Y tế huyện Hoà Vang","lat":16.009734,"lon":108.1516407},
+        {"type":"hospital","name":"Bệnh viện Đa khoa Tâm Trí Đà Nẵng","lat":16.0229038,"lon":108.2142},
+        {"type":"hospital","name":"Bệnh viện Răng - Hàm - Mặt thành phố Đà Nẵng","lat":16.0546601,"lon":108.2104648},
+    ],
+    "hoi-an": [
+        {"type":"hospital","name":"Pacific Hospital","lat":15.8843233,"lon":108.3280358},
+        {"type":"hospital","name":"Trung tâm Y tế khu vực Hội An","lat":15.8805848,"lon":108.332732},
+    ],
+    "vung-tau": [
+        {"type":"hospital","name":"Raffles Internation Health Clinic","lat":10.3503097,"lon":107.0714235},
+        {"type":"hospital","name":"Trung tâm y tế Vietsovpetro","lat":10.3602708,"lon":107.0838967},
+        {"type":"hospital","name":"Bệnh viện Đa khoa Vũng Tàu","lat":10.3919211,"lon":107.1303597},
+    ],
+    "quy-nhon": [
+        {"type":"hospital","name":"Trung Tam y te du phong tinh binh dinh (Vaccination center)","lat":13.7927447,"lon":109.2045626},
+        {"type":"hospital","name":"Bệnh viện Quân y 13","lat":13.7505205,"lon":109.2138587},
+        {"type":"hospital","name":"Bệnh viện Chỉnh hình và Phục hồi chức năng Quy Nhơn","lat":13.7580656,"lon":109.2093373},
+        {"type":"hospital","name":"Trung tâm Y tế Quy Nhơn","lat":13.7747431,"lon":109.2374693},
+        {"type":"hospital","name":"Bệnh viện Mắt tỉnh Gia Lai","lat":13.7736829,"lon":109.2402522},
+    ],
+    "phan-thiet": [
+        {"type":"hospital","name":"BV Binh Thuan","lat":10.9176763,"lon":108.0847248},
+        {"type":"hospital","name":"Trung tâm Y tế khu vực Phan Thiết","lat":10.9335495,"lon":108.0957972},
+        {"type":"hospital","name":"Bệnh viện Đa khoa Bình Thuận","lat":10.9401633,"lon":108.089251},
+        {"type":"hospital","name":"Bệnh viện Phổi Bình Thuận","lat":10.9343327,"lon":108.0961539},
+        {"type":"hospital","name":"Bệnh viện Da liễu Bình Thuận","lat":10.9328823,"lon":108.0952084},
+        {"type":"hospital","name":"Bệnh viện Y học cổ truyền - Phục hồi chức năng Bình Thuận","lat":10.9409376,"lon":108.1231309},
+    ],
 }
 
 DATA = {
@@ -7142,9 +7222,15 @@ HTML = r"""<meta charset="utf-8">
   }
 
   function updatePoiSortAvailability(){
-    var hasPois = !!(POIS[state.city] && POIS[state.city].length);
+    var list = POIS[state.city] || [];
+    var typesPresent = new Set(list.map(function(p){ return p.type; }));
+    var hasPois = list.length > 0;
     el.poiSortField.hidden = !hasPois;
-    if (!hasPois && state.poiSort){
+    Array.prototype.forEach.call(el.poiSortSelect.querySelectorAll("option[value]"), function(opt){
+      if (opt.value === "") return;
+      opt.hidden = !typesPresent.has(opt.value);
+    });
+    if (state.poiSort && !typesPresent.has(state.poiSort)){
       state.poiSort = "";
       el.poiSortSelect.value = "";
     }
