@@ -65,12 +65,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "36": {
-  "lat": 11.9524083,
-  "lon": 108.4418061,
-  "source": "ward-centroid",
-  "matched": null
- },
  "39": {
   "lat": 11.97356227274298,
   "lon": 108.47368535615551,
@@ -298,18 +292,6 @@
   "lon": 108.4316972,
   "source": "geocode",
   "matched": "Phường 7"
- },
- "117": {
-  "lat": 11.9493056,
-  "lon": 108.4316972,
-  "source": "geocode",
-  "matched": "Phường 8"
- },
- "118": {
-  "lat": 11.9411339,
-  "lon": 108.4620494,
-  "source": "geocode",
-  "matched": "Phường 6"
  },
  "119": {
   "lat": 16.0153046,
@@ -2033,12 +2015,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "548": {
-  "lat": 10.7346766,
-  "lon": 106.7180522,
-  "source": "geocode",
-  "matched": "Nguyễn Lương Bằng"
- },
  "549": {
   "lat": 10.7245144,
   "lon": 106.7281259,
@@ -2200,12 +2176,6 @@
   "lon": 106.7293654,
   "source": "ward-centroid",
   "matched": null
- },
- "585": {
-  "lat": 10.8026487,
-  "lon": 106.7423989,
-  "source": "geocode",
-  "matched": "Masteri Thảo Điền"
  },
  "587": {
   "lat": 10.8015426,
@@ -2572,12 +2542,6 @@
   "lon": 106.6917141,
   "source": "geocode",
   "matched": "Bến Vân Đồn"
- },
- "665": {
-  "lat": 10.7590566,
-  "lon": 106.7016799,
-  "source": "geocode",
-  "matched": "Giác Nguyên"
  },
  "666": {
   "lat": 10.744758,
@@ -7900,5 +7864,125 @@
   "lon": 106.6951066,
   "source": "geocode",
   "matched": "Bến Thành Q1"
+ },
+ "1668": {
+  "lat": 10.7878232,
+  "lon": 106.7343792,
+  "source": "geocode",
+  "matched": "Lương Định Của"
+ },
+ "1669": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1670": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1671": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1672": {
+  "lat": 10.7292867,
+  "lon": 106.7096053,
+  "source": "geocode",
+  "matched": "Hưng Vượng"
+ },
+ "1673": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1674": {
+  "lat": 10.7868901,
+  "lon": 106.7744078,
+  "source": "geocode",
+  "matched": "Đường Số 5"
+ },
+ "1675": {
+  "lat": 10.8036654,
+  "lon": 106.7472268,
+  "source": "geocode",
+  "matched": "Masteri An Phú"
+ },
+ "1676": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1677": {
+  "lat": 10.7161615,
+  "lon": 106.7291163,
+  "source": "geocode",
+  "matched": "Hưng Phúc"
+ },
+ "1678": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1679": {
+  "lat": 10.8023668,
+  "lon": 106.740878,
+  "source": "geocode",
+  "matched": "Vincom Thảo Điền"
+ },
+ "1680": {
+  "lat": 10.7878232,
+  "lon": 106.7343792,
+  "source": "geocode",
+  "matched": "Lương Định Của"
+ },
+ "1681": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1682": {
+  "lat": 10.7712981,
+  "lon": 106.6912522,
+  "source": "geocode",
+  "matched": "Lê Thị Riêng"
+ },
+ "1683": {
+  "lat": 10.7702241,
+  "lon": 106.691696,
+  "source": "geocode",
+  "matched": "Nguyễn Trãi"
+ },
+ "1684": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1685": {
+  "lat": 10.7960438,
+  "lon": 106.6924865,
+  "source": "geocode",
+  "matched": "Circle K"
+ },
+ "1686": {
+  "lat": 10.7410824,
+  "lon": 106.7064663,
+  "source": "geocode",
+  "matched": "Đường Số 77"
+ },
+ "1687": {
+  "lat": 10.7969577,
+  "lon": 106.7504543,
+  "source": "geocode",
+  "matched": "Landmark 81"
  }
 }

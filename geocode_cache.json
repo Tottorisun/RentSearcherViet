@@ -3046,5 +3046,37 @@
   "lat": 10.7430976,
   "lon": 106.70082,
   "display_name": "Sunrise City - North Towers, Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Hưng Vượng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7292867,
+  "lon": 106.7096053,
+  "display_name": "Hưng Vượng, Nguyễn Văn Linh, Khu phố 33, Phường Tân Hưng, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "Đường Số 5, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7868901,
+  "lon": 106.7744078,
+  "display_name": "Đường Số 5, Khu phố 26, Phường Bình Trưng, Thành phố Hồ Chí Minh, 71210, Việt Nam"
+ },
+ "Hưng Phúc, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7161615,
+  "lon": 106.7291163,
+  "display_name": "Chung cư Hưng Phúc Premier, Phường Tân Mỹ, Nhà Bè, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Him Lam Kênh Tẻ, Ho Chi Minh City, Vietnam": null,
+ "Him Lam Kênh Tẻ, Phường Tân Hưng, Ho Chi Minh City, Vietnam": null,
+ "Vincom Thảo Điền, Ho Chi Minh City, Vietnam": {
+  "lat": 10.8023668,
+  "lon": 106.740878,
+  "display_name": "Vincom Megamall Thảo Điền, 159-161, Đường Võ Nguyên Giáp, Khu phố 1, Phường An Khánh, Thành phố Hồ Chí Minh, 71108, Việt Nam"
+ },
+ "Đường Số 77, Ho Chi Minh City, Vietnam": {
+  "lat": 10.9424354,
+  "lon": 106.540583,
+  "display_name": "Đường số 77, Ấp Đình, Xã Củ Chi, Thành phố Hồ Chí Minh, 71608, Việt Nam"
+ },
+ "Đường Số 77, Phường Tân Hưng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7410824,
+  "lon": 106.7064663,
+  "display_name": "Đường số 77, Khu phố 25, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72911, Việt Nam"
  }
 }
