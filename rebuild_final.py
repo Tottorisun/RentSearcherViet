@@ -6651,6 +6651,10 @@ L(1717,"ho-chi-minh","ak","Дом",58500000,140,
   "Вилла в закрытом компаунде, участок 7×20м (140м²), 1 этаж + 2 верхних (планировка открытая, продувается), 5 спален/5 с/у, гараж. Ул. Thảo Điền, An Khánh — охраняемый жилой комплекс, сейчас используется как офис, подходит и под жильё, и под офис. Цена без НДС.",
   "https://www.nhatot.com/thue-nha-dat-thanh-pho-thu-duc-tp-ho-chi-minh/132910649.htm","2 дня назад",2,source="chotot",
   details={"photos": ["https://cdn.chotot.com/Fw4IYjeZheNAoIOBZ45DPrJ4YbS3UDLUJNcSgRAPoMM/preset:view/plain/45779c97d84701c21b760cb63af139f8-2988260364264899653.jpg", "https://cdn.chotot.com/YMwOuvysh22RrBp1_gsqrrAFEUpUMqV5XtHHWV6jmRI/preset:view/plain/492a13000b2f9c09a52d2d884bda4d8e-2988260364996788925.jpg", "https://cdn.chotot.com/OfLlb80UXLl4KDBrmV6qSrFF4eworg4tRlLFq5ZfrXA/preset:view/plain/503458bd89cd211766772643aeccc762-2988260364999518927.jpg"]}),
+L(1718,"ho-chi-minh","ak","Студия",5500000,30,
+  "Мини-квартира (студия), 30м², ул. Trần Não, An Khánh (бывший Q2) — есть окно (не глухая комната), полная меблировка, свободный график (вход по отпечатку пальца), тихий охраняемый квартал, просторная парковка с камерами 24/7, пожарная сигнализация; рядом рынок, супермаркет, кафе, удобно до Q1/Q3/Q7/Bình Thạnh.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/132639692.htm","1 день назад",1,source="chotot",
+  details={"photos": ["https://cdn.chotot.com/ExjuBaQDCsst6iHWxwC181pW5Ab5xAwvHrBS7Dvy5-Y/preset:view/plain/6686c8815f72141f27999cf834351200-2986159418735567699.jpg", "https://cdn.chotot.com/AxKELD5tKisXTn9mAmLAK8DJf90_sHcr7Yc4_F8o7ho/preset:view/plain/8dff81237795f424e92c632fbc2d2469-2986159418711897291.jpg", "https://cdn.chotot.com/BktrXvCKUuVxz3pLiRasrh92Yp-VhqHUAFSXDooKyMQ/preset:view/plain/094d1001e647daf583a8c521c2be7bcd-2986159421392499870.jpg"]}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from

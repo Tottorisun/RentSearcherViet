@@ -8164,5 +8164,11 @@
   "lon": 106.7336461,
   "source": "geocode",
   "matched": "Thảo Điền"
+ },
+ "1718": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
  }
 }
