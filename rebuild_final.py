@@ -6728,6 +6728,14 @@ HTML = r"""<meta charset="utf-8">
   <section class="control-panel">
     <div class="filters card">
       <div class="field">
+        <label for="text-search-input">Поиск по описанию</label>
+        <div class="autocomplete">
+          <input id="text-search-input" type="text" autocomplete="off" placeholder="например: бассейн, метро, вид на море">
+          <button class="clear-btn" id="text-search-clear" type="button" title="Очистить поиск" aria-label="Очистить поиск">×</button>
+        </div>
+      </div>
+
+      <div class="field">
         <label>Бюджет, млн ₫ / мес</label>
         <div class="range-cells">
           <div class="range-cell">
@@ -6871,7 +6879,7 @@ HTML = r"""<meta charset="utf-8">
   var TYPE_OPTIONS = ["Комната","Студия","Квартира","Дом","Другое"];
 
   var state = {
-    city: "nha-trang", district: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "",
+    city: "nha-trang", district: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "", textSearch: "",
     sources: new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; })),
     openDetails: new Set()
   };
@@ -6880,6 +6888,8 @@ HTML = r"""<meta charset="utf-8">
 
   var el = {
     cityTabs: document.getElementById("city-tabs"),
+    textSearchInput: document.getElementById("text-search-input"),
+    textSearchClear: document.getElementById("text-search-clear"),
     budgetMinInput: document.getElementById("budget-min-input"),
     budgetMaxInput: document.getElementById("budget-max-input"),
     budgetMinRange: document.getElementById("budget-min-range"),
@@ -6913,6 +6923,16 @@ HTML = r"""<meta charset="utf-8">
     var list = CITIES[cityKey].districts;
     for (var i=0;i<list.length;i++){ if (list[i].key===distKey) return list[i]; }
     return null;
+  }
+  function listingSearchText(l){
+    if (l._searchText) return l._searchText;
+    var d = districtByKey(l.city, l.district);
+    var parts = [l.desc, l.type, d ? d.name : ""];
+    if (l.details){
+      ["amenities","notice","contract","deposit"].forEach(function(k){ if (l.details[k]) parts.push(l.details[k]); });
+    }
+    l._searchText = parts.join(" ").toLowerCase();
+    return l._searchText;
   }
   function countsForCity(cityKey){
     var counts = {};
@@ -7146,6 +7166,14 @@ HTML = r"""<meta charset="utf-8">
     state.district = null; el.districtInput.value = ""; renderCityMap(); applyFilters(); el.districtInput.focus();
   });
 
+  el.textSearchInput.addEventListener("input", function(){
+    state.textSearch = el.textSearchInput.value.trim().toLowerCase();
+    applyFilters();
+  });
+  el.textSearchClear.addEventListener("click", function(){
+    state.textSearch = ""; el.textSearchInput.value = ""; applyFilters(); el.textSearchInput.focus();
+  });
+
   function renderBudgetChips(){
     el.budgetChips.innerHTML = "";
     var allBtn = document.createElement("button");
@@ -7306,6 +7334,7 @@ HTML = r"""<meta charset="utf-8">
       if (state.maxBudget !== null && l.price > state.maxBudget*1000000) return false;
       if (l.daysAgo > state.maxDays) return false;
       if (state.type && l.type !== state.type) return false;
+      if (state.textSearch && listingSearchText(l).indexOf(state.textSearch) === -1) return false;
       return true;
     });
     if (state.poiSort){
@@ -7334,7 +7363,8 @@ HTML = r"""<meta charset="utf-8">
     else if (state.maxBudget===null) budgetLabel = "от " + fmtPrice(state.minBudget*1000000) + " ₫/мес";
     else budgetLabel = "от " + fmtPrice(state.minBudget*1000000) + " до " + fmtPrice(state.maxBudget*1000000) + " ₫/мес";
     var typeLabel = state.type ? state.type.toLowerCase() : "любой тип";
-    el.resultsContext.textContent = city.name + " · " + distLabel + " · " + typeLabel + " · " + budgetLabel + " · за " + state.maxDays + " " + dayWord(state.maxDays);
+    var searchLabel = state.textSearch ? (' · поиск: "' + state.textSearch + '"') : "";
+    el.resultsContext.textContent = city.name + " · " + distLabel + " · " + typeLabel + " · " + budgetLabel + " · за " + state.maxDays + " " + dayWord(state.maxDays) + searchLabel;
 
     el.resultsList.innerHTML = "";
     el.emptyState.hidden = list.length !== 0;
@@ -7419,9 +7449,9 @@ HTML = r"""<meta charset="utf-8">
   }
 
   el.resetBtn.addEventListener("click", function(){
-    state.district = null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort="";
+    state.district = null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch="";
     state.sources = new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; }));
-    el.districtInput.value=""; el.poiSortSelect.value="";
+    el.districtInput.value=""; el.poiSortSelect.value=""; el.textSearchInput.value="";
     Array.prototype.forEach.call(el.sortToggle.querySelectorAll("button"), function(b){ b.classList.toggle("active", b.getAttribute("data-sort")==="asc"); });
     syncBudgetUI(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderCityMap(); applyFilters();
   });
