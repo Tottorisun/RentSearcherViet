@@ -7984,5 +7984,53 @@
   "lon": 106.7504543,
   "source": "geocode",
   "matched": "Landmark 81"
+ },
+ "1688": {
+  "lat": 10.7703806,
+  "lon": 106.6951066,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1689": {
+  "lat": 10.7003494,
+  "lon": 106.7326546,
+  "source": "geocode",
+  "matched": "The Era Town"
+ },
+ "1690": {
+  "lat": 10.7259257,
+  "lon": 106.7086694,
+  "source": "geocode",
+  "matched": "Nguyễn Đức Cảnh"
+ },
+ "1691": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1692": {
+  "lat": 10.726649,
+  "lon": 106.6938771,
+  "source": "geocode",
+  "matched": "Ven Sông"
+ },
+ "1693": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1694": {
+  "lat": 10.7289952,
+  "lon": 106.7189174,
+  "source": "geocode",
+  "matched": "Crescent Mall"
+ },
+ "1695": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
  }
 }
