@@ -609,7 +609,7 @@ L(338,"nha-trang","vh","Квартира",37170000,163,
 L(339,"nha-trang","lt","Квартира",18770000,70,
   "2-спальная квартира в ЖК HUD Building, центр, панорамный вид на город.",
   "https://t.me/s/Arenda_Nyachang_Zhilye","9 дней назад",9,source="telegram",
-  details={"notice":"цена в оригинале 745$/мес (≈18,8 млн ₫ по курсу ~25 200 ₫/$). Туристический центр. Контакт @NhaTrang_arenda_Pavel_Mihail"}),
+  details={"photos":["https://cdn5.telesco.pe/file/lIaTkBkppFooXLBpdCPlsM6QFFkdAjyN0nrCK7ohRBGBvuGOZWUhMaE9_MdZme2BBJa2CMslweCGgKeMpXmW3Kx63ZeR1YXzeubLAcRfTxjd4oj1c4j4TkPnebvtzXRD91EvZhHnvGzWmWuvJxgc-idmZq0waFOWPNWzkC1IdDS_FxDdLzOMGXVjvZRhYlxPsv4jHrS9j6URprnxdq4tLty1Gt5fcGSn7BV9ArK4RTy_d7al5OPFVf0EVxbPNqzvKiDbrHMCNwaCWjm09N3GcNlgVVV6uddi6-WAVR1mYxcDo-R8Piez07mEKZay5W8hqcsYxAKx0zqTTlB3AevXNw.jpg"],"notice":"цена в оригинале 745$/мес (≈18,8 млн ₫ по курсу ~25 200 ₫/$). Туристический центр. Контакт @NhaTrang_arenda_Pavel_Mihail"}),
 
 L(340,"nha-trang","vh","Квартира",13860000,70,
   "2-спальная квартира в ЖК Oceanus, север, вид на город, 23 этаж.",
