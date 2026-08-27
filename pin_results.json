@@ -8734,5 +8734,23 @@
   "lon": 106.7389396,
   "source": "geocode",
   "matched": "Huỳnh Tấn Phát"
+ },
+ "1831": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1832": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1833": {
+  "lat": 10.7761892,
+  "lon": 106.6384144,
+  "source": "geocode",
+  "matched": "Phường Tân Phú"
  }
 }
