@@ -3152,5 +3152,22 @@
   "lat": 10.7761892,
   "lon": 106.6384144,
   "display_name": "Phường Tân Phú, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "The Peak Garden Villa, Ho Chi Minh City, Vietnam": null,
+ "The Peak Garden Villa, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null,
+ "Kênh Tẻ, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7524047,
+  "lon": 106.7062287,
+  "display_name": "Kênh Tẻ, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Tiền Đường Số, Ho Chi Minh City, Vietnam": {
+  "lat": 10.9665384,
+  "lon": 106.5058856,
+  "display_name": "Trường Trung học cơ sở Tân Tiến, 41, Đường Số 27, Ấp Tân Tiến 1, Xã Củ Chi, Thành phố Hồ Chí Minh, 75500, Việt Nam"
+ },
+ "Tiền Đường Số, Phường Tân Hưng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7435024,
+  "lon": 106.6955178,
+  "display_name": "Siêu Thị Tiện Lợi Citi Mart, 1, Đường Số 6, Khu phố 23, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72910, Việt Nam"
  }
 }
