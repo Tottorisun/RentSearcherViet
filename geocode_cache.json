@@ -3097,5 +3097,55 @@
  "Xa Lộ Hà Nội, Ho Chi Minh City, Vietnam": null,
  "Xa Lộ Hà Nội, Phường An Khánh, Ho Chi Minh City, Vietnam": null,
  "Nguyễn Khoái, Ho Chi Minh City, Vietnam": null,
- "Nguyễn Khoái, Phường Khánh Hội, Ho Chi Minh City, Vietnam": null
+ "Nguyễn Khoái, Phường Khánh Hội, Ho Chi Minh City, Vietnam": null,
+ "Hẻm 140 Bình Quới, Ho Chi Minh City, Vietnam": {
+  "lat": 10.8168959,
+  "lon": 106.7236845,
+  "display_name": "Hẻm 140 Bình Quới, Khu phố 7, Phường Bình Quới, Thành phố Hồ Chí Minh, 72309, Việt Nam"
+ },
+ "Hẻm 222 Đoàn Văn Bơ, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7620989,
+  "lon": 106.7052251,
+  "display_name": "Hẻm 222 Đoàn Văn Bơ, Khu phố 6, Phường Khánh Hội, Thành phố Hồ Chí Minh, 72806, Việt Nam"
+ },
+ "Bế Văn Cấm, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7511006,
+  "lon": 106.7096353,
+  "display_name": "Bế Văn Cấm, Khu phố 2, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72800, Việt Nam"
+ },
+ "Số 8, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7704037,
+  "lon": 106.5657842,
+  "display_name": "Số 8, Ấp 2, Xã Tân Vĩnh Lộc, Thành phố Hồ Chí Minh, 71915, Việt Nam"
+ },
+ "Số 8, Phường Tân Hưng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7426009,
+  "lon": 106.6968399,
+  "display_name": "Đường Số 8, Khu dân cư Him Lam, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72910, Việt Nam"
+ },
+ "Hẻm 1041 Trần Xuân Soạn, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7506918,
+  "lon": 106.6916514,
+  "display_name": "Hẻm 1041 Trần Xuân Soạn, Khu phố 8, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72911, Việt Nam"
+ },
+ "Số 85, Ho Chi Minh City, Vietnam": {
+  "lat": 10.9453195,
+  "lon": 106.5324987,
+  "display_name": "Số 85, Ấp Đình B, Xã Củ Chi, Thành phố Hồ Chí Minh, 71608, Việt Nam"
+ },
+ "Số 85, Phường Tân Hưng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7394976,
+  "lon": 106.7107407,
+  "display_name": "Đường Số 85, Khu phố 27, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72911, Việt Nam"
+ },
+ "Số 53, Ho Chi Minh City, Vietnam": {
+  "lat": 10.705923,
+  "lon": 106.6454576,
+  "display_name": "53, Đường số 4, Ấp 10, Xã Bình Hưng, Thành phố Hồ Chí Minh, 71812, Việt Nam"
+ },
+ "Tôn Dật Tiên, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7226923,
+  "lon": 106.7143547,
+  "display_name": "Đường Tôn Dật Tiên, Khu phố 35, Phường Tân Hưng, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ }
 }
