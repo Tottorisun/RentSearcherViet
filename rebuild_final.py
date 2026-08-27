@@ -7177,6 +7177,15 @@ print("Data JSON size:", len(DATA_JSON))
 HTML = r"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Нячанг, Далат, Дананг, Хойан, Вунгтау, Куинён, Фантьет, Хошимин), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном месте — с фото, картой и фильтрами.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин">
+<meta property="og:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте — с фото, картой и фильтрами.">
+<meta property="og:url" content="https://tottorisun.github.io/RentSearcherViet/vietnam-rent-finder.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин">
+<meta name="twitter:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
