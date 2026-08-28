@@ -9490,5 +9490,95 @@
   "lon": 106.6907571,
   "source": "geocode",
   "matched": "Bùi Viện"
+ },
+ "1966": {
+  "lat": 10.7161615,
+  "lon": 106.7291163,
+  "source": "geocode",
+  "matched": "Hưng Phúc"
+ },
+ "1967": {
+  "lat": 10.7826355,
+  "lon": 106.7193661,
+  "source": "geocode",
+  "matched": "The River Thủ Thiêm"
+ },
+ "1968": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1969": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1970": {
+  "lat": 10.7623141,
+  "lon": 106.7022361,
+  "source": "geocode",
+  "matched": "Hoàng Diệu"
+ },
+ "1976": {
+  "lat": 10.7137641,
+  "lon": 106.7342136,
+  "source": "geocode",
+  "matched": "Hoàng Quốc Việt"
+ },
+ "1977": {
+  "lat": 10.7246535,
+  "lon": 106.7080167,
+  "source": "geocode",
+  "matched": "Riverpark Premier"
+ },
+ "1978": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1979": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1980": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "1971": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1972": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "1973": {
+  "lat": 10.7990544,
+  "lon": 106.7111321,
+  "source": "geocode",
+  "matched": "Xô Viết Nghệ Tĩnh"
+ },
+ "1974": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1975": {
+  "lat": 10.7623141,
+  "lon": 106.7022361,
+  "source": "geocode",
+  "matched": "Hoàng Diệu"
  }
 }
