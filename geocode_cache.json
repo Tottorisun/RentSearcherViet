@@ -3179,5 +3179,44 @@
   "lat": 10.8020001,
   "lon": 106.7406138,
   "display_name": "Vincom Mega Mall Thảo Điền, Song Hành Võ Nguyên Giáp, Khu phố 4, Phường An Khánh, Thành phố Hồ Chí Minh, 71108, Việt Nam"
+ },
+ "Saigon Wonderland, Ho Chi Minh City, Vietnam": null,
+ "Saigon Wonderland, Phường Tân Hưng, Ho Chi Minh City, Vietnam": null,
+ "Nguyễn Hữu Thọ 33, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7296153,
+  "lon": 106.7003148,
+  "display_name": "Nguyễn Hữu Thọ, Khu phố 30, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "Sunrise City South, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7392988,
+  "lon": 106.7001498,
+  "display_name": "Sunrise City - South Towers, Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Sunrise City North, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7430976,
+  "lon": 106.70082,
+  "display_name": "Sunrise City - North Towers, Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Mai Văn Vĩnh 28, Ho Chi Minh City, Vietnam": {
+  "lat": 10.742091,
+  "lon": 106.7136841,
+  "display_name": "Mai Văn Vĩnh, Khu phố 18, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72911, Việt Nam"
+ },
+ "Phạm Thái Bường, Ho Chi Minh City, Vietnam": {
+  "lat": 10.72727,
+  "lon": 106.7046245,
+  "display_name": "Phạm Thái Bường, Khu phố 34, Phường Tân Hưng, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "Đường Số, Ho Chi Minh City, Vietnam": {
+  "lat": 10.8806396,
+  "lon": 106.8149234,
+  "display_name": "Đường sắt đô thị số 1 Thành phố Hồ Chí Minh (Phân đoạn Bến Thành - Suối Tiên), Xa lộ Hà Nội, Tân Lập, Phường Đông Hòa, Thành phố Hồ Chí Minh, 00084, Việt Nam"
+ },
+ "The Infiniti Riviera Point, Ho Chi Minh City, Vietnam": null,
+ "The Infiniti Riviera Point, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null,
+ "Hưng Phúc Premier, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7161615,
+  "lon": 106.7291163,
+  "display_name": "Chung cư Hưng Phúc Premier, Phường Tân Mỹ, Nhà Bè, Thành phố Hồ Chí Minh, Việt Nam"
  }
 }
