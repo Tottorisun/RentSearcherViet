@@ -17,12 +17,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "13": {
-  "lat": 16.0589539,
-  "lon": 108.2194844,
-  "source": "ward-centroid",
-  "matched": null
- },
  "15": {
   "lat": 16.0416286,
   "lon": 108.2175304,
@@ -250,18 +244,6 @@
   "lon": 108.4305116,
   "source": "geocode",
   "matched": "Phường 3"
- },
- "112": {
-  "lat": 11.9493682,
-  "lon": 108.4370052,
-  "source": "geocode",
-  "matched": "Phường 2"
- },
- "113": {
-  "lat": 11.941423,
-  "lon": 108.4491609,
-  "source": "geocode",
-  "matched": "Phường 1"
  },
  "119": {
   "lat": 16.0153046,
@@ -1985,12 +1967,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "549": {
-  "lat": 10.7245144,
-  "lon": 106.7281259,
-  "source": "geocode",
-  "matched": "Midtown M8"
- },
  "550": {
   "lat": 10.7258963,
   "lon": 106.7068386,
@@ -2447,12 +2423,6 @@
   "source": "geocode",
   "matched": "Tôn Đản"
  },
- "664": {
-  "lat": 10.7571562,
-  "lon": 106.6917141,
-  "source": "geocode",
-  "matched": "Bến Vân Đồn"
- },
  "666": {
   "lat": 10.744758,
   "lon": 106.7219421,
@@ -2476,12 +2446,6 @@
   "lon": 106.7472268,
   "source": "geocode",
   "matched": "Masteri An Phú"
- },
- "670": {
-  "lat": 10.8131455,
-  "lon": 106.7206046,
-  "source": "geocode",
-  "matched": "Thanh Đa"
  },
  "672": {
   "lat": 10.769002,
@@ -7739,24 +7703,6 @@
   "source": "geocode",
   "matched": "Bến Thành Q1"
  },
- "1664": {
-  "lat": 10.744758,
-  "lon": 106.7219421,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Linh"
- },
- "1665": {
-  "lat": 10.744758,
-  "lon": 106.7219421,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Linh"
- },
- "1666": {
-  "lat": 10.7481374,
-  "lon": 106.7158591,
-  "source": "geocode",
-  "matched": "Lâm Văn Bền"
- },
  "1668": {
   "lat": 10.7878232,
   "lon": 106.7343792,
@@ -8932,5 +8878,155 @@
   "lon": 106.7257182,
   "source": "geocode",
   "matched": "Nguyễn Văn Hưởng"
+ },
+ "1864": {
+  "lat": 10.7670352,
+  "lon": 106.6874492,
+  "source": "geocode",
+  "matched": "Cống Quỳnh"
+ },
+ "1865": {
+  "lat": 10.7699795,
+  "lon": 106.6966136,
+  "source": "geocode",
+  "matched": "Phạm Ngũ Lão"
+ },
+ "1866": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1867": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1868": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1869": {
+  "lat": 10.7351883,
+  "lon": 106.6953441,
+  "source": "geocode",
+  "matched": "Hoàng Trọng Mậu"
+ },
+ "1870": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1871": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1872": {
+  "lat": 10.7481374,
+  "lon": 106.7158591,
+  "source": "geocode",
+  "matched": "Lâm Văn Bền"
+ },
+ "1873": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1874": {
+  "lat": 10.7003494,
+  "lon": 106.7326546,
+  "source": "geocode",
+  "matched": "Era Town A1"
+ },
+ "1875": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1876": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1877": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1878": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1879": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1880": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "1881": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1882": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "1883": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1884": {
+  "lat": 10.7735586,
+  "lon": 106.7235711,
+  "source": "geocode",
+  "matched": "Mai Chí Thọ"
+ },
+ "1885": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1886": {
+  "lat": 10.8020001,
+  "lon": 106.7406138,
+  "source": "geocode",
+  "matched": "Vincom Mega Mall Thảo Điền"
+ },
+ "1887": {
+  "lat": 10.7813043,
+  "lon": 106.7356449,
+  "source": "geocode",
+  "matched": "New City Thủ Thiêm"
+ },
+ "1888": {
+  "lat": 10.8020001,
+  "lon": 106.7406138,
+  "source": "geocode",
+  "matched": "Vincom Mega Mall Thảo Điền"
  }
 }
