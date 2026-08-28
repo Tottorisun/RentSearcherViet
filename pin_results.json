@@ -9298,5 +9298,197 @@
   "lon": 106.7423989,
   "source": "geocode",
   "matched": "Masteri Thảo Điền"
+ },
+ "1934": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1935": {
+  "lat": 10.7969577,
+  "lon": 106.7504543,
+  "source": "geocode",
+  "matched": "Landmark 81"
+ },
+ "1936": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1937": {
+  "lat": 10.8073843,
+  "lon": 106.7308879,
+  "source": "geocode",
+  "matched": "Quốc Hương"
+ },
+ "1938": {
+  "lat": 10.807006,
+  "lon": 106.7291535,
+  "source": "geocode",
+  "matched": "Trần Văn Sắc"
+ },
+ "1939": {
+  "lat": 10.7706758,
+  "lon": 106.6892542,
+  "source": "geocode",
+  "matched": "Bùi Thị Xuân"
+ },
+ "1940": {
+  "lat": 10.7913764,
+  "lon": 106.6964209,
+  "source": "geocode",
+  "matched": "Đinh Tiên Hoàng"
+ },
+ "1941": {
+  "lat": 10.7711866,
+  "lon": 106.7000738,
+  "source": "geocode",
+  "matched": "Hàm Nghi"
+ },
+ "1942": {
+  "lat": 10.7753836,
+  "lon": 106.6910196,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Minh Khai"
+ },
+ "1943": {
+  "lat": 10.7657414,
+  "lon": 106.6907571,
+  "source": "geocode",
+  "matched": "Bùi Viện"
+ },
+ "1944": {
+  "lat": 10.7702241,
+  "lon": 106.691696,
+  "source": "geocode",
+  "matched": "Nguyễn Trãi"
+ },
+ "1945": {
+  "lat": 10.8619066,
+  "lon": 106.6548918,
+  "source": "geocode",
+  "matched": "Lê Thị Riêng 114"
+ },
+ "1946": {
+  "lat": 10.7669002,
+  "lon": 106.6909222,
+  "source": "geocode",
+  "matched": "Đỗ Quang Đẩu"
+ },
+ "1947": {
+  "lat": 10.8618977,
+  "lon": 106.655003,
+  "source": "geocode",
+  "matched": "Lê Thị Riêng 121"
+ },
+ "1948": {
+  "lat": 10.7567803,
+  "lon": 106.7185992,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
+ },
+ "1949": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1950": {
+  "lat": 10.7351883,
+  "lon": 106.6953441,
+  "source": "geocode",
+  "matched": "Hoàng Trọng Mậu"
+ },
+ "1951": {
+  "lat": 10.7429954,
+  "lon": 106.7040855,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "1952": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1953": {
+  "lat": 10.7474719,
+  "lon": 106.7074078,
+  "source": "geocode",
+  "matched": "Phan Huy Thực"
+ },
+ "1954": {
+  "lat": 10.8386837,
+  "lon": 106.6707729,
+  "source": "geocode",
+  "matched": "Lotte Mart"
+ },
+ "1955": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "1956": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "1957": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1958": {
+  "lat": 10.7781073,
+  "lon": 106.7133328,
+  "source": "geocode",
+  "matched": "The Metropole Thủ Thiêm"
+ },
+ "1959": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1960": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1961": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1962": {
+  "lat": 10.7674015,
+  "lon": 106.6977106,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Bình"
+ },
+ "1963": {
+  "lat": 10.7706758,
+  "lon": 106.6892542,
+  "source": "geocode",
+  "matched": "Bùi Thị Xuân"
+ },
+ "1964": {
+  "lat": 10.7700092,
+  "lon": 106.6923626,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Tráng"
+ },
+ "1965": {
+  "lat": 10.7657414,
+  "lon": 106.6907571,
+  "source": "geocode",
+  "matched": "Bùi Viện"
  }
 }
