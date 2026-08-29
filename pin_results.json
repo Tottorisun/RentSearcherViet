@@ -10192,5 +10192,17 @@
   "lon": 106.7043593,
   "source": "geocode",
   "matched": "Đoàn Văn Bơ"
+ },
+ "2124": {
+  "lat": 10.7252344,
+  "lon": 106.7289984,
+  "source": "geocode",
+  "matched": "Midtown M5"
+ },
+ "2125": {
+  "lat": 10.7181738,
+  "lon": 106.7285012,
+  "source": "geocode",
+  "matched": "Nam Viên"
  }
 }
