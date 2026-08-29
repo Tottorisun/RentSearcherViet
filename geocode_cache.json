@@ -3320,5 +3320,19 @@
  "An Phú Hưng, Ho Chi Minh City, Vietnam": null,
  "An Phú Hưng, Phường Tân Hưng, Ho Chi Minh City, Vietnam": null,
  "Đường 63, Ho Chi Minh City, Vietnam": null,
- "Đường 63, Phường An Khánh, Ho Chi Minh City, Vietnam": null
+ "Đường 63, Phường An Khánh, Ho Chi Minh City, Vietnam": null,
+ "Cao Thắng, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7731401,
+  "lon": 106.6785573,
+  "display_name": "Cao Thắng, Khu phố 32, Phường Vườn Lài, Thành phố Hồ Chí Minh, 72406, Việt Nam"
+ },
+ "The Riviera Point, Ho Chi Minh City, Vietnam": null,
+ "The Riviera Point, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null,
+ "The Antonia, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7196889,
+  "lon": 106.7278344,
+  "display_name": "The Antonia, Nguyễn Lương Bằng, Phường Tân Mỹ, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "The Era Town Đức Khải, Ho Chi Minh City, Vietnam": null,
+ "The Era Town Đức Khải, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null
 }
