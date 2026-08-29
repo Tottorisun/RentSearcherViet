@@ -3334,5 +3334,42 @@
   "display_name": "The Antonia, Nguyễn Lương Bằng, Phường Tân Mỹ, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
  },
  "The Era Town Đức Khải, Ho Chi Minh City, Vietnam": null,
- "The Era Town Đức Khải, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null
+ "The Era Town Đức Khải, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": null,
+ "Hoàng Quốc Việt 89, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7131213,
+  "lon": 106.7314638,
+  "display_name": "Hoàng Quốc Việt, Phường Tân Mỹ, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "Số 3, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7631219,
+  "lon": 106.4837689,
+  "display_name": "Kênh số 3, Xã Bình Lợi, Thành phố Hồ Chí Minh, Tỉnh Tây Ninh, Việt Nam"
+ },
+ "Số 3, Phường Tân Mỹ, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7150142,
+  "lon": 106.7321586,
+  "display_name": "Đường Số 3, Phường Tân Mỹ, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "Sky Garden 3, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7336294,
+  "lon": 106.7058036,
+  "display_name": "Sky Garden 3, Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Tân Phong, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7301154,
+  "lon": 106.7041639,
+  "display_name": "CGV, 1058, Đường Nguyễn Văn Linh, Khu phố 30, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "Tân Kiểng Cũ, Ho Chi Minh City, Vietnam": null,
+ "Tân Kiểng Cũ, Phường Tân Hưng, Ho Chi Minh City, Vietnam": null,
+ "Trần Ngọc Diện, Ho Chi Minh City, Vietnam": {
+  "lat": 10.8048152,
+  "lon": 106.7399705,
+  "display_name": "Trần Ngọc Diện, Khu phố 3, Phường An Khánh, Thành phố Hồ Chí Minh, 71108, Việt Nam"
+ },
+ "Vĩnh Khánh, Ho Chi Minh City, Vietnam": {
+  "lat": 10.762699,
+  "lon": 106.7017246,
+  "display_name": "Vĩnh Khánh, Khu phố 2, Phường Khánh Hội, Thành phố Hồ Chí Minh, 72806, Việt Nam"
+ }
 }

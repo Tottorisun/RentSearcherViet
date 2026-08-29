@@ -10042,5 +10042,155 @@
   "lon": 106.7033938,
   "source": "geocode",
   "matched": "Bình Thạnh"
+ },
+ "2099": {
+  "lat": 10.7003494,
+  "lon": 106.7326546,
+  "source": "geocode",
+  "matched": "The Era Town"
+ },
+ "2100": {
+  "lat": 10.7137641,
+  "lon": 106.7342136,
+  "source": "geocode",
+  "matched": "Hoàng Quốc Việt"
+ },
+ "2101": {
+  "lat": 10.7131213,
+  "lon": 106.7314638,
+  "source": "geocode",
+  "matched": "Hoàng Quốc Việt 89"
+ },
+ "2102": {
+  "lat": 10.7150142,
+  "lon": 106.7321586,
+  "source": "geocode",
+  "matched": "Số 3"
+ },
+ "2103": {
+  "lat": 10.7336294,
+  "lon": 106.7058036,
+  "source": "geocode",
+  "matched": "Sky Garden 3"
+ },
+ "2104": {
+  "lat": 10.7389844,
+  "lon": 106.7136973,
+  "source": "geocode",
+  "matched": "Mai Văn Vĩnh"
+ },
+ "2105": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "2106": {
+  "lat": 10.7301154,
+  "lon": 106.7041639,
+  "source": "geocode",
+  "matched": "Tân Phong"
+ },
+ "2107": {
+  "lat": 10.8806396,
+  "lon": 106.8149234,
+  "source": "geocode",
+  "matched": "Đường Số"
+ },
+ "2108": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "2109": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2110": {
+  "lat": 10.7246535,
+  "lon": 106.7080167,
+  "source": "geocode",
+  "matched": "Riverpark Premier"
+ },
+ "2111": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "2112": {
+  "lat": 10.7735586,
+  "lon": 106.7235711,
+  "source": "geocode",
+  "matched": "Mai Chí Thọ"
+ },
+ "2113": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "2114": {
+  "lat": 10.7735586,
+  "lon": 106.7235711,
+  "source": "geocode",
+  "matched": "Mai Chí Thọ"
+ },
+ "2115": {
+  "lat": 10.8023668,
+  "lon": 106.740878,
+  "source": "geocode",
+  "matched": "Vincom Thảo Điền"
+ },
+ "2116": {
+  "lat": 10.8048152,
+  "lon": 106.7399705,
+  "source": "geocode",
+  "matched": "Trần Ngọc Diện"
+ },
+ "2117": {
+  "lat": 10.7670352,
+  "lon": 106.6874492,
+  "source": "geocode",
+  "matched": "Cống Quỳnh"
+ },
+ "2118": {
+  "lat": 10.7676736,
+  "lon": 106.7002575,
+  "source": "geocode",
+  "matched": "Nguyễn Công Trứ"
+ },
+ "2119": {
+  "lat": 10.7567803,
+  "lon": 106.7185992,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
+ },
+ "2120": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "2121": {
+  "lat": 10.762699,
+  "lon": 106.7017246,
+  "source": "geocode",
+  "matched": "Vĩnh Khánh"
+ },
+ "2122": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "2123": {
+  "lat": 10.7629917,
+  "lon": 106.7043593,
+  "source": "geocode",
+  "matched": "Đoàn Văn Bơ"
  }
 }
