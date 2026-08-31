@@ -14,6 +14,10 @@ Verdicts:
   STALE        orig_list_time present and older, OR list_time alone is older
                (an ad cannot be newer than its own last re-push, so an old
                list_time is proof of age even with no original stamp)
+  GONE         the ad 404s -- it has been taken down at the source. Measured
+               31 Aug 2026 at ~4% of the base overall, concentrated at the
+               14-day edge (3 of 8 sampled at 14 days), which is what you would
+               expect as flats actually get rented.
   UNVERIFIABLE orig_list_time absent and list_time is recent -- the original
                post date is not obtainable from this API. Measured 31 Aug 2026
                at 34.5% of ads (138 of 400), stable per ad: re-fetching does
@@ -33,7 +37,7 @@ Usage:
 Options:
   --max-days N   freshness cutoff (default 14, the site's own cutoff)
 """
-import json, re, sys, time, urllib.request
+import json, re, sys, time, urllib.error, urllib.request
 
 # reconfigure, never `sys.stdout = io.TextIOWrapper(sys.stdout.buffer, ...)`:
 # that wrapper closes the underlying stream when it is garbage-collected, and
@@ -46,10 +50,19 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
 DETAIL = "https://gateway.chotot.com/v2/public/ad-listing/{}"
 
 
+class Gone(Exception):
+    """The ad is no longer published (404/410), as opposed to a transport error."""
+
+
 def fetch(list_id):
     req = urllib.request.Request(DETAIL.format(list_id), headers=UA)
-    with urllib.request.urlopen(req, timeout=25) as r:
-        return json.loads(r.read().decode("utf-8")).get("ad", {})
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return json.loads(r.read().decode("utf-8")).get("ad", {})
+    except urllib.error.HTTPError as e:
+        if e.code in (404, 410):
+            raise Gone(list_id) from None
+        raise
 
 
 def verdict(ad, now, max_days):
@@ -134,10 +147,14 @@ def main():
         sys.exit(__doc__)
 
     now = time.time()
-    counts = {"FRESH": 0, "STALE": 0, "UNVERIFIABLE": 0, "ERROR": 0}
+    counts = {"FRESH": 0, "STALE": 0, "UNVERIFIABLE": 0, "GONE": 0, "ERROR": 0}
     for lid in ids:
         try:
             v, age, src = verdict(fetch(lid), now, max_days)
+        except Gone:
+            counts["GONE"] += 1
+            print(f"{lid}  GONE          ad no longer published -- remove it from the base")
+            continue
         except Exception as ex:
             counts["ERROR"] += 1
             print(f"{lid}  ERROR         {type(ex).__name__}: {ex}")
@@ -158,6 +175,9 @@ def main():
     if counts["STALE"]:
         print("STALE ads are older than the cutoff -- do not add them, and correct "
               "any already in the base.")
+    if counts["GONE"]:
+        print("GONE ads have been taken down at the source -- a listing whose link is "
+              "dead cannot be acted on, so remove it rather than showing it.")
     if counts["UNVERIFIABLE"]:
         print("UNVERIFIABLE ads have no obtainable original date -- skip them. Do not "
               "fall back to list_time, and do not try to date them by list_id.")
