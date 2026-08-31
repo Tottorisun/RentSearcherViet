@@ -1,3 +1,13 @@
 __pycache__/
 *.pyc
 daily_check_logs/
+
+# Runtime state for the atomic listing-id allocator -- per-machine, must never
+# be shared or committed: a stale ledger from another machine would hand out
+# ids that are already used here.
+.id_alloc.lock
+id_reservations.json
+
+# Telegram ingestion / notification working state
+telegram_candidates.json
+posted_to_telegram.json
