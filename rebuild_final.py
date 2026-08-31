@@ -157,6 +157,16 @@ CITIES = {
             {"key":"btl","name":"Bắc Từ Liêm","hint":"северо-запад, Ciputra, Xuân Đỉnh","hintEn":"north-west, Ciputra, Xuan Dinh","color":"#F1CE63"},
             {"key":"hd","name":"Hà Đông","hint":"дальний юго-запад, бюджетные новостройки","hintEn":"far south-west, budget new-builds","color":"#D4A6C8"}
         ]
+    },
+    "binh-duong": {
+        "name": "Биньзыонг", "nameEn": "Binh Duong",
+        "districts": [
+            {"key":"ta","name":"Thuận An","hint":"вдоль шоссе 13, Lái Thiêu, промзоны VSIP I","hintEn":"along Highway 13, Lai Thieu, VSIP I industrial parks","color":"#4E79A7"},
+            {"key":"da","name":"Dĩ An","hint":"граница с Тхудыком, ближе всего к Хошимину","hintEn":"borders Thu Duc, the closest part to HCMC","color":"#F28E2B"},
+            {"key":"tdm","name":"Thủ Dầu Một","hint":"административный центр, Bình Dương New City","hintEn":"administrative centre, Binh Duong New City","color":"#E15759"},
+            {"key":"bc","name":"Bến Cát","hint":"север, промышленный пояс Mỹ Phước","hintEn":"north, My Phuoc industrial belt","color":"#76B7B2"},
+            {"key":"tu","name":"Tân Uyên","hint":"северо-восток, новые промзоны","hintEn":"north-east, newer industrial parks","color":"#B07AA1"}
+        ]
     }
 }
 
