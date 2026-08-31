@@ -18,7 +18,27 @@ for ckey, cval in data["CITIES"].items():
         DIST_NAME[(ckey, d["key"])] = d["name"]
 
 projections = json.load(open("pin_projections.json", encoding="utf-8"))
-GEO_CITIES = set(projections.keys())  # da-lat, da-nang, hoi-an, ho-chi-minh (nha-trang handled separately)
+GEO_CITIES = set(projections.keys())
+
+# Cities intentionally not geocoded here. Nha Trang gets its pin positions from
+# a separate mosaic-jitter script, so its absence from pin_projections.json is
+# expected, not a mistake.
+GEO_EXEMPT = {"nha-trang"}
+
+# Fail loudly on a city that is neither projected nor deliberately exempt.
+# Previously an unknown city was silently `continue`d in the loop below, so a
+# newly added city got zero coordinates and zero map pins while this script
+# still reported success -- the worst kind of failure, because nothing in the
+# logs says anything is wrong and it only surfaces when someone opens the map.
+_unprojected = sorted(set(data["CITIES"]) - GEO_CITIES - GEO_EXEMPT)
+if _unprojected:
+    raise SystemExit(
+        "pin_projections.json has no entry for: " + ", ".join(_unprojected) + "\n"
+        "Those cities' listings would be silently skipped and would never get\n"
+        "coordinates or map pins. Add a projection (bbox + district centroids;\n"
+        "the centroids can be geocoded from Nominatim) before running this, or\n"
+        "add the city to GEO_EXEMPT if another script handles its pins."
+    )
 
 CANDIDATE_RE = re.compile(r'\b(?:[A-ZĐ][a-zà-ỹ]*(?:\s+[A-ZĐ0-9][a-zà-ỹ0-9]*){1,4})')
 

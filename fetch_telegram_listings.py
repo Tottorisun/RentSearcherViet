@@ -50,12 +50,25 @@ CHANNELS = {
     "danang_house":           "da-nang",
     "danang_rent":            "da-nang",
     # Nha Trang
+    # rentnhatrang is the largest rental channel found anywhere in this survey
+    # (4,450 subscribers, posting daily) and was missed by the first sweep --
+    # Russian-language, 6-10 photos per post, prices stated plainly. It rarely
+    # states m2, which is normal for the Russian-language channels: they sell on
+    # bedroom count and complex name instead.
+    "rentnhatrang":           "nha-trang",
     "nyachang_arenda":        "nha-trang",
     "Nhatranghomes":          "nha-trang",
     "arenda_vietnam":         "nha-trang",
     "Viet_life_niachang":     "nha-trang",
     "Arenda_Nyachang_Zhilye": "nha-trang",
     "arenda_nhatrang":        "nha-trang",
+    # Da Lat -- the ONLY usable channel across the six previously uncovered
+    # cities (238 handles checked). Real priced listings with photos, but only
+    # ~1.6 posts a month, so expect it to be empty on most runs. That is not a
+    # fault: Vietnamese rental supply lives on Facebook/Zalo/batdongsan, and
+    # Telegram rental channels exist essentially only where the Russian-speaking
+    # community is dense -- Nha Trang and Da Nang.
+    "dalatapartment":         "da-lat",
 }
 
 # Known cross-posting pairs: the same flat is published in both channels.

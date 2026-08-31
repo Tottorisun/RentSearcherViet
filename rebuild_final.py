@@ -140,6 +140,23 @@ CITIES = {
             {"key":"bth","name":"Phường Bến Thành","hint":"исторический центр, бывший Quận 1","hintEn":"historic centre, former District 1"},
             {"key":"kh","name":"Phường Khánh Hội","hint":"бывший Quận 4, рядом с центром, набирает популярность","hintEn":"former District 4, next to downtown, up-and-coming"}
         ]
+    },
+    "ha-noi": {
+        "name": "Ханой", "nameEn": "Hanoi",
+        "districts": [
+            {"key":"tyh","name":"Tây Hồ","hint":"Западное озеро, главный экспат-район","hintEn":"West Lake, the main expat area","color":"#4E79A7"},
+            {"key":"bd","name":"Ba Đình","hint":"правительственный квартал, посольства","hintEn":"government quarter, embassies","color":"#F28E2B"},
+            {"key":"hkm","name":"Hoàn Kiếm","hint":"Старый квартал, озеро Хоанкьем","hintEn":"Old Quarter, Hoan Kiem lake","color":"#E15759"},
+            {"key":"cg","name":"Cầu Giấy","hint":"запад, офисный кластер, Trung Hòa","hintEn":"west, office cluster, Trung Hoa","color":"#76B7B2"},
+            {"key":"ntl","name":"Nam Từ Liêm","hint":"Mỹ Đình, корейский квартал, Vinhomes Smart City","hintEn":"My Dinh, Korean quarter, Vinhomes Smart City","color":"#B07AA1"},
+            {"key":"dd","name":"Đống Đa","hint":"центр-запад, плотная старая застройка","hintEn":"centre-west, dense older housing","color":"#EDC949"},
+            {"key":"hbt","name":"Hai Bà Trưng","hint":"юго-восток центра, Times City","hintEn":"south-east of the centre, Times City","color":"#9C755F"},
+            {"key":"lbn","name":"Long Biên","hint":"за Красной рекой, Vinhomes Riverside","hintEn":"across the Red River, Vinhomes Riverside","color":"#D37295"},
+            {"key":"tx","name":"Thanh Xuân","hint":"юго-запад, Royal City","hintEn":"south-west, Royal City","color":"#86BCB6"},
+            {"key":"hm","name":"Hoàng Mai","hint":"юг, Linh Đàm, Gamuda City","hintEn":"south, Linh Dam, Gamuda City","color":"#FF9DA7"},
+            {"key":"btl","name":"Bắc Từ Liêm","hint":"северо-запад, Ciputra, Xuân Đỉnh","hintEn":"north-west, Ciputra, Xuan Dinh","color":"#F1CE63"},
+            {"key":"hd","name":"Hà Đông","hint":"дальний юго-запад, бюджетные новостройки","hintEn":"far south-west, budget new-builds","color":"#D4A6C8"}
+        ]
     }
 }
 
@@ -8275,16 +8292,16 @@ print("Data JSON size:", len(DATA_JSON))
 # ================== HTML TEMPLATE ==================
 HTML = r"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин</title>
+<title>Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Нячанг, Далат, Дананг, Хойан, Вунгтау, Куинён, Фантьет, Хошимин), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном месте — с фото, картой и фильтрами.">
+<meta name="description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Хошимин, Ханой, Дананг, Нячанг, Далат, Хойан, Вунгтау, Куинён, Фантьет), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном месте — с фото, картой и фильтрами.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин">
+<meta property="og:title" content="Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг">
 <meta property="og:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте — с фото, картой и фильтрами.">
 <meta property="og:url" content="https://tottorisun.github.io/RentSearcherViet/">
 <link rel="canonical" href="https://tottorisun.github.io/RentSearcherViet/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин">
+<meta name="twitter:title" content="Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг">
 <meta name="twitter:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -8563,7 +8580,7 @@ HTML = r"""<meta charset="utf-8">
       </span>
       <div>
         <h1>Жильё во Вьетнаме</h1>
-        <p class="tagline" data-i18n="tagline">Комнаты, студии и квартиры в Нячанге, Далате, Дананге и Хошимине — из реальных объявлений, отсортированные по цене.</p>
+        <p class="tagline" data-i18n="tagline">Комнаты, студии, квартиры и коммерческие помещения в Хошимине, Ханое, Дананге и Нячанге — из реальных объявлений, отсортированные по цене.</p>
       </div>
     </div>
     <div class="lang-toggle" id="lang-toggle" role="group" aria-label="Language">
@@ -8757,7 +8774,7 @@ HTML = r"""<meta charset="utf-8">
 
   var I18N = {
     ru: {
-      tagline:"Комнаты, студии и квартиры в Нячанге, Далате, Дананге и Хошимине — из реальных объявлений, отсортированные по цене.",
+      tagline:"Комнаты, студии, квартиры и коммерческие помещения в Хошимине, Ханое, Дананге и Нячанге — из реальных объявлений, отсортированные по цене.",
       themeGroup:"Тема оформления", themeAuto:"Авто", themeLight:"Светлая", themeDark:"Тёмная",
       cityGroup:"Город",
       searchLabel:"Поиск по описанию", searchPlaceholder:"например: бассейн, метро, вид на море", searchClear:"Очистить поиск",
@@ -8800,7 +8817,7 @@ HTML = r"""<meta charset="utf-8">
       stamp:"Данные актуальны на __TODAY_DATE__ · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
     },
     en: {
-      tagline:"Rooms, studios and apartments in Nha Trang, Da Lat, Da Nang and Ho Chi Minh City — from real listings, sorted by price.",
+      tagline:"Rooms, studios, apartments and commercial space in Ho Chi Minh City, Hanoi, Da Nang and Nha Trang — from real listings, sorted by price.",
       themeGroup:"Colour theme", themeAuto:"Auto", themeLight:"Light", themeDark:"Dark",
       cityGroup:"City",
       searchLabel:"Search descriptions", searchPlaceholder:"e.g. pool, metro, sea view", searchClear:"Clear search",
@@ -9767,9 +9784,9 @@ EN_PATH = "en.html"
 # Each page therefore ships its own meta and its own DEFAULT_LANG, and
 # both carry hreflang so search engines treat them as translations of
 # one another rather than duplicates.
-EN_TITLE = "Rental housing in Vietnam — Nha Trang, Da Lat, Da Nang, Ho Chi Minh City"
-EN_DESC = ("Over __LISTING_COUNT__ rental listings across Vietnam (Nha Trang, Da Lat, Da Nang, Hoi An, "
-           "Vung Tau, Quy Nhon, Phan Thiet, Ho Chi Minh City), gathered from Cho Tot, Batdongsan and "
+EN_TITLE = "Rental housing in Vietnam — Ho Chi Minh City, Hanoi, Da Nang, Nha Trang"
+EN_DESC = ("Over __LISTING_COUNT__ rental listings across Vietnam (Ho Chi Minh City, Hanoi, Da Nang, "
+           "Nha Trang, Da Lat, Hoi An, Vung Tau, Quy Nhon, Phan Thiet), gathered from Cho Tot, Batdongsan and "
            "other sources in one place — with photos, a map and filters.")
 EN_DESC_SHORT = ("Over __LISTING_COUNT__ rental listings across Vietnam, gathered from several "
                  "marketplaces in one place — with photos, a map and filters.")
@@ -9788,13 +9805,13 @@ def finalise(html, lang):
     html = html.replace("__DEFAULT_LANG__", lang)
     if lang == "en":
         html = html.replace(
-            "<title>Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин</title>",
+            "<title>Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг</title>",
             "<title>" + EN_TITLE + "</title>", 1)
         html = html.replace(
-            'content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Нячанг, Далат, Дананг, Хойан, Вунгтау, Куинён, Фантьет, Хошимин), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном месте — с фото, картой и фильтрами."',
+            'content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Хошимин, Ханой, Дананг, Нячанг, Далат, Хойан, Вунгтау, Куинён, Фантьет), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном месте — с фото, картой и фильтрами."',
             'content="' + EN_DESC + '"', 1)
         html = html.replace(
-            'content="Жильё во Вьетнаме — Нячанг · Далат · Дананг · Хошимин"',
+            'content="Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг"',
             'content="' + EN_TITLE + '"')
         html = html.replace(
             'content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте — с фото, картой и фильтрами."',
