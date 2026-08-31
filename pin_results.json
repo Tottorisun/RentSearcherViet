@@ -8764,5 +8764,17 @@
   "lon": 106.7033938,
   "source": "geocode",
   "matched": "Bình Thạnh"
+ },
+ "2145": {
+  "lat": 10.8505674,
+  "lon": 106.7585291,
+  "source": "geocode",
+  "matched": "Thủ Đức"
+ },
+ "2146": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
  }
 }
