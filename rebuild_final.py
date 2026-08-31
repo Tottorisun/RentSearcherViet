@@ -5655,11 +5655,11 @@ L(1769,"ho-chi-minh","ak","Дом",110000000,1200,
   "Дом, 1200м², ул. Trần Não, An Khánh — охрана/камеры 24/7.",
   "https://www.nhatot.com/thue-nha-dat-thanh-pho-thu-duc-tp-ho-chi-minh/133526060.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/KqDwk6HTbTkec57Pq33H_VpJBvmtm1XvK1sveXvODpg/preset:view/plain/403ecf445ba40dc4597fc1b698c8e6b1-2992914145895204695.jpg", "https://cdn.chotot.com/w1E4wQp_E-w177ohyq4QgA7VyJf8Lnx79hRBbHPOANY/preset:view/plain/5fe03975f0bcb80865652508a61b302b-2992914146466764785.jpg", "https://cdn.chotot.com/_cg9GZhEHdczhs7EhyfGukmuY4lVyzQdEbZe-uLEupA/preset:view/plain/6482dceeb53f1cfd65e9aec87177fb5a-2992914146481919530.jpg"]}),
-L(1770,"ho-chi-minh","ak","1-спальная квартира",9000000,50,
+L(1770,"ho-chi-minh","ak","Квартира",9000000,50,
   "1-спальная квартира, 50м², ул. Nguyễn Văn Hưởng, An Khánh — полная меблировка; рядом Thảo Điền.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/134385975.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/apU-_TIovyvkZ8KAoQlytKw-bcQdRx1LdODLMA4DMcM/preset:view/plain/e7768851750e358972ee34401db0fa6d-2999467083830571970.jpg", "https://cdn.chotot.com/P7e3rEliZQv2jofsudfKDrcL241lTn5lOPQSJb5DlFw/preset:view/plain/568031cdce37d1753c831efb1109f194-2999467085426660319.jpg", "https://cdn.chotot.com/9rcNvEAN8utvUQXRQMmlzy7fpOwNbrAbRbiKmugP04k/preset:view/plain/506663b60d63a9fe3194edc4bdd7d38b-2999467085524048609.jpg"]}),
-L(1771,"ho-chi-minh","ak","2-спальная квартира",22000000,76,
+L(1771,"ho-chi-minh","ak","Квартира",22000000,76,
   "2-спальная квартира, 76м², ул. Xa Lộ Hà Nội, An Khánh — полная меблировка, балкон, бассейн, тренажёрный зал, стиральная машина, кондиционер, охрана/камеры 24/7; рядом Vincom, Masteri, Thảo Điền.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/134367944.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/eRruReSpUT8qknTy6J0jcffzwFVyzpKcTOZh-H-Scm4/preset:view/plain/b10d22ceb1469eb5781fdac040192bca-2999318178984408002.jpg", "https://cdn.chotot.com/vBFNYVSdZJNvGCZx_iEkge7KaZHc8kMBQEPICYAG1vU/preset:view/plain/ede1951568df73f9737b88d63c8196e2-2999318179056211579.jpg", "https://cdn.chotot.com/4qaROFxvQTYqXee259-de16lEca8WHDudfGaYpm6ZI0/preset:view/plain/639fd812ab3de579c2e19509f2e59391-2999318179138507743.jpg"]}),
@@ -5675,11 +5675,11 @@ L(1774,"ho-chi-minh","bth","Студия",5500000,40,
   "Студия, 40м², ул. Nguyễn Trãi, Bến Thành (Q1) — полная меблировка, балкон.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134376537.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/frH2BXC8--m4PFsNpljLeMK4CXuaQAtjCux8N9uiblc/preset:view/plain/ba6b1113f0ca1c5649415f28590fb32c-2999418533057796833.jpg", "https://cdn.chotot.com/F2KeYtEXMotZfUFFCI2lqqhXxbGZ0jRbvb0rpMOVLdw/preset:view/plain/a53964d37098d14ff70d16cd8ef8c5f5-2999418533163070803.jpg", "https://cdn.chotot.com/xfHpOOaTXo0TpAA9jheVlIHnnjfI7NbWGCYimjPAWuE/preset:view/plain/3916ed8bec2554d7078705747ebe5f7a-2999418533248630720.jpg"]}),
-L(1775,"ho-chi-minh","bth","1-спальная квартира",10000000,50,
+L(1775,"ho-chi-minh","bth","Квартира",10000000,50,
   "1-спальная квартира, 50м², ул. Nguyễn Trãi, Bến Thành (Q1) — полная меблировка, стиральная машина, охрана/камеры 24/7.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134377582.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/GUQgc3GDXSJrnKr6tRCAjA5G5QLoTjVcbxqI0bj-MTA/preset:view/plain/663663be1e685cbb3f0efb1c0ab9462b-2999425098623660994.jpg", "https://cdn.chotot.com/FHt2CwM4HnnD4e8T5qRAha42i9yCI3n7CU-jvLOr2sw/preset:view/plain/ac30eb7070384d5f1d082745eba0e6af-2999425098645344934.jpg", "https://cdn.chotot.com/nmRZRGWDHGV12TnsSb-QGd95iOcEmA_gdaUk05Gg5aw/preset:view/plain/36f697e06c13bc49af400a147fe84866-2999425098861474222.jpg"]}),
-L(1776,"ho-chi-minh","bth","1-спальная квартира",9200000,45,
+L(1776,"ho-chi-minh","bth","Квартира",9200000,45,
   "1-спальная квартира, 45м², ул. Nguyễn Thái Bình, Bến Thành (Q1) — полная меблировка, балкон, стиральная машина.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134382835.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/HSNUeDYNpk1N8sj1ZbH3orAMtcBQHCSG3E3fJkb7WPI/preset:view/plain/87552a3dabe8dfe3335f13318f1a97e0-2999451504414769764.jpg", "https://cdn.chotot.com/tVk6lECOE-_qbMrjq-52mwnizNsu6GKXWZZkAwfHNMk/preset:view/plain/659aff9b5fa3d431f88e69d79b6fbf2c-2999451511202158920.jpg", "https://cdn.chotot.com/uCO6gFA_tIek_TrpUDeCZfZjcwiDoKkEL6JlnysO_XY/preset:view/plain/34316fd70169d2327413757dce9686b5-2999451503203195617.jpg"]}),
@@ -5695,7 +5695,7 @@ L(1779,"ho-chi-minh","bth","Квартира",15000000,50,
   "Квартира, 50м², ул. Ký Con, Bến Thành (Q1) — балкон, лифт, стиральная машина, охрана/камеры 24/7.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134387745.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/TioL1sn-guv3LFQTLsdU9bSv_eFOYaXh8ANh0igrIEg/preset:view/plain/97552a7adf7a6d56ca22141a020e7975-2999477057331793475.jpg", "https://cdn.chotot.com/jIPeBFlm7zSIqTjbwvWeMFxD07JHFEUkufTGR-iBXqU/preset:view/plain/d043d3e20e4f93e448a4db11ee30c6f7-2999477056474821570.jpg", "https://cdn.chotot.com/sS2ZQAXkMteazQPbRHWN3gOStSODlj6EJBEgo_3O-8g/preset:view/plain/859991cc2b718c1f2b97f25664789546-2999477056690330337.jpg"]}),
-L(1780,"ho-chi-minh","bth","1-спальная квартира",6500000,40,
+L(1780,"ho-chi-minh","bth","Квартира",6500000,40,
   "1-спальная квартира, 40м², ул. Bùi Thị Xuân, Bến Thành (Q1) — балкон.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/133759370.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/4w-deETtIa1QoSdy02CQbcbKHkWFASX2dhqbkWGwVT8/preset:view/plain/4d4ef97678a2166d72c8dbc49f7dbf03-2994729528534750064.jpg", "https://cdn.chotot.com/5YKJG4U8YaZF7MQKFbEFuBXdZiJRsE2XahRubYDXQnQ/preset:view/plain/a1a331825f81eac4a9f79786b8aad0f9-2994729528296597761.jpg", "https://cdn.chotot.com/Azp5gkx9S-qgpHhB4Eh5t7ZMPrSvJi1jv7oScs7gsa8/preset:view/plain/55014ff9474ae5d4c0496426caf03ef4-2994729529074197217.jpg"]}),
@@ -5707,11 +5707,11 @@ L(1782,"ho-chi-minh","bth","Студия",6000000,30,
   "Студия, 30м², ул. Nguyễn Thái Bình, Bến Thành (Q1) — полная меблировка, лифт.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134370097.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/5C_1vTTdonF92J7lu7qCBTni2a5PA42eioGaeavBakY/preset:view/plain/f91ab052be6c51b791b916605fbb28e7-2999327953117557698.jpg", "https://cdn.chotot.com/DxEu963BXYe8V27cD3PZZiBbRtj6OVoyLMPzvqYubjE/preset:view/plain/4d687c5a00ddae08f95f13a805820a32-2999327952884353932.jpg", "https://cdn.chotot.com/uIZhjUSTuxeDT_dRZsBhHVZl89TNw0OlBsqkIPfvLR8/preset:view/plain/537945ff26e8e8153d84af9dbcc299ca-2999327952889582559.jpg"]}),
-L(1783,"ho-chi-minh","kh","2-спальная квартира",17000000,75,
+L(1783,"ho-chi-minh","kh","Квартира",17000000,75,
   "2-спальная квартира, 75м², ул. Bến Vân Đồn, Khánh Hội (Q4) — бассейн, тренажёрный зал.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/121649443.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/qalw6y7WhD5lcrlomo3uH1T1B_U5J3aSapAa72Ma87k/preset:view/plain/fccfe8f1a37ce0cda3d601d04dd0a3c6-2909062554023900570.jpg", "https://cdn.chotot.com/kfDIZeu-JBIMP1TQnTx26QaIsbn7eDutgLhVtzcduzc/preset:view/plain/0f8919fcd558c14df50bffaed338db2c-2909062553917754888.jpg", "https://cdn.chotot.com/-xQJMz_01vl66I6tomADnQB__WBROS7hU1aKlipmQww/preset:view/plain/101c646059c739c02d391e409cebfea9-2909062553878843246.jpg"]}),
-L(1784,"ho-chi-minh","kh","1-спальная квартира",13000000,38,
+L(1784,"ho-chi-minh","kh","Квартира",13000000,38,
   "1-спальная квартира, 38м², ул. Bến Vân Đồn, Khánh Hội (Q4) — полная меблировка, бассейн, тренажёрный зал; рядом Masteri.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134377119.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/1YdpRaPVkMMZVOfpJoM4qQMdVyvpKu4G6MfRygUsjok/preset:view/plain/278313746beaab02ce06cd84e9ab3b2a-2999422955442934751.jpg", "https://cdn.chotot.com/TadHlbO2eug-iV3_p0Dlk95_1V6yOWaAyc6hhAvJMmY/preset:view/plain/23d87da8231baa3148e15699f1ca4384-2999422955609591363.jpg", "https://cdn.chotot.com/Rjf6KpJpawPVWcE_MKVCKxKnE3PjL3XHV7EMpxWbS4Q/preset:view/plain/8b5e335d78a4688edf2474d85cafff6a-2999422955855597800.jpg"]}),
@@ -5719,7 +5719,7 @@ L(1785,"ho-chi-minh","kh","Дом",11000000,25,
   "Дом, 25м², ул. Đoàn Văn Bơ, Khánh Hội (Q4).",
   "https://www.nhatot.com/thue-nha-dat-quan-4-tp-ho-chi-minh/134382035.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/tr2vASB2sWpn3Jd6cAt5GrEdwIcl624hbSqoZ8tkNlM/preset:view/plain/6dc10fd989862ae520f3d9226c95b840-2999446356527657922.jpg", "https://cdn.chotot.com/8qlpgdmeeItWm6iF8QdeY8xQqy5BbP0FMZ0K23xlLUU/preset:view/plain/a2883f9aae7afb8fc7a7fc1e65c6d264-2999446356327996129.jpg", "https://cdn.chotot.com/9pTdW8RFWgf55AERUtibEDw5JAEaMHsXXWUYy3AHPJo/preset:view/plain/21963e742a833f372e6b315aa50f8c81-2999446356464393990.jpg"]}),
-L(1786,"ho-chi-minh","kh","3-спальная квартира",24000000,98,
+L(1786,"ho-chi-minh","kh","Квартира",24000000,98,
   "3-спальная квартира, 98м², ул. Bến Vân Đồn, Khánh Hội (Q4) — рядом Masteri.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/122813775.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/RC0spnq4L9ZjwazDC3zJUk8QMpmhBpF9tjjq_zOM0CY/preset:view/plain/1ac0e3fba165ba9573727670e6227b8d-2918129657564592866.jpg", "https://cdn.chotot.com/VMRQmNhbE43iZxhRwQl_f1xypNOKnc_9uQOqzULrN1Y/preset:view/plain/c706d04733ac2565ea4c9b1d32f4fb58-2918129657611654832.jpg", "https://cdn.chotot.com/GzXEiD_CMbBqF2ftXheN7OLRO_tpUzC2HFcNAbs5jFs/preset:view/plain/f08479a5cf177d45d75ddf8a2274f9c5-2918129657340691509.jpg"]}),
@@ -5727,11 +5727,11 @@ L(1787,"ho-chi-minh","kh","Дом",6000000,22,
   "Дом, 22м², ул. 41, Khánh Hội (Q4).",
   "https://www.nhatot.com/thue-nha-dat-quan-4-tp-ho-chi-minh/133066142.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/V_V50joIOWSvcVfMiN6rg1AClODadIO8ktXlzo1eUng/preset:view/plain/01a47bd3293234563ee35dd1ed32d9e8-2989492056100072049.jpg", "https://cdn.chotot.com/1KwGTC_hYLIKIpKbLD-l0lRxa6ohHEPaREHtPw7Sc9U/preset:view/plain/c0b7f82bb68be24e6df9cf8b6926e452-2989492143602020004.jpg", "https://cdn.chotot.com/LITWVjd48pT0YA1huYuQ0LkoPhTiZ0_w-CSv63tz2K0/preset:view/plain/999d2f9554d27f18be1e3ddc0f2c601a-2989492142537796209.jpg"]}),
-L(1788,"ho-chi-minh","kh","3-спальная квартира",35000000,108,
+L(1788,"ho-chi-minh","kh","Квартира",35000000,108,
   "3-спальная квартира, 108м², ул. Bến Vân Đồn, Khánh Hội (Q4) — бассейн, тренажёрный зал, охрана/камеры 24/7; рядом Masteri.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/133496740.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/PGU6qCwq1hxIHHEdxYHGfR-DmP1KaxJrnr0wwyAOS3k/preset:view/plain/608f25492f33e90730e636c394c68d7e-2992751887009513514.jpg", "https://cdn.chotot.com/HHzn1MJKf2ESz65THj3mc5htkGXRhlQAVFARjaX9XQ4/preset:view/plain/8867baca48eb79d300ef1b37314b04ff-2992751886995027469.jpg", "https://cdn.chotot.com/lz52M2Z7rQxf9JOlhkL__g5dLCahtJvJVKhc7ROSGDE/preset:view/plain/29e0003183eee889dcf3b88c5c5c4af2-2992751887116741352.jpg"]}),
-L(1789,"ho-chi-minh","kh","1-спальная квартира",18000000,54,
+L(1789,"ho-chi-minh","kh","Квартира",18000000,54,
   "1-спальная квартира, 54м², ул. Bến Vân Đồn, Khánh Hội (Q4) — бассейн, тренажёрный зал, охрана/камеры 24/7; рядом Masteri.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134080956.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/vdA9XFUZZZOJooBUNRGJJ0DjJ97LRsQiqvvtyX4NOsY/preset:view/plain/d82590c7a9462cf96ed73ae937345650-2997159216292056137.jpg", "https://cdn.chotot.com/AS7k1OcNEpWFpKcgfOsQnh6y-LDlvCNFiGz3KEPvO6k/preset:view/plain/3d66aaa2da4b896b4fb7e171c9347e01-2997159216250614475.jpg", "https://cdn.chotot.com/eUkvoFYtj2lv4XecMRTj_CpVUB1qhEho_O7nPRknIP8/preset:view/plain/2cb1cac60b74eacd1beaabe4f2d39800-2997159216338063958.jpg"]}),
@@ -5751,11 +5751,11 @@ L(1793,"ho-chi-minh","kh","Дом",11000000,50,
   "Дом, 50м², ул. Tôn Đản, Khánh Hội (Q4) — балкон.",
   "https://www.nhatot.com/thue-nha-dat-quan-4-tp-ho-chi-minh/133161516.htm","7 дней назад",7,source="chotot",
   details={"photos":["https://cdn.chotot.com/cEPDloHEUixRrO7AiTgduUcmCSuamh6FtoE5-DjsaQ8/preset:view/plain/a591e87560d27eb4ca1ea982b5c6f2f3-2990167628242148709.jpg", "https://cdn.chotot.com/rGKaJT7N4_dd8HQIJD6J94zK9TykPCuym71mXpfzirc/preset:view/plain/6f8ebcca9744ddf345fb5e32c2ba3bb7-2990167627737079153.jpg", "https://cdn.chotot.com/k54pPbifAf3L03hucPvvqMNCCPoVa1inT3sKmpebXl8/preset:view/plain/6a677e90d52d1a69541d5072c282c7fd-2990167628372638431.jpg"]}),
-L(1794,"ho-chi-minh","th","2-спальная квартира",20000000,80,
+L(1794,"ho-chi-minh","th","Квартира",20000000,80,
   "2-спальная квартира, 80м², ул. Nguyễn Văn Linh, Tân Hưng (Phú Mỹ Hưng) — бассейн, тренажёрный зал; рядом Crescent Mall, Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/126136196.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/ECYgzvkKZ2bzYA8-MPcwV15xU8yzl-TlQ6QfOuhN8sU/preset:view/plain/734f47c6cabf546acd04b38aae8c235d-2938739931461681685.jpg", "https://cdn.chotot.com/XDdl1ogk7-cMKMuIYfQKZq9JA7zTDSmY5qTNnE3B80Y/preset:view/plain/f36dfc895ac57868844f3e69c6b55c76-2938739931513456806.jpg", "https://cdn.chotot.com/R3kMslpF9o3vNAKyycdMKe-nzy-oATrHMV-QcNes2lw/preset:view/plain/9183085c4b1c5f2571eddd07f2e5ccb2-2938739931630123694.jpg"]}),
-L(1795,"ho-chi-minh","th","2-спальная квартира",14000000,68,
+L(1795,"ho-chi-minh","th","Квартира",14000000,68,
   "2-спальная квартира, 68м², ул. Bế Văn Cấm, Tân Hưng (Phú Mỹ Hưng) — полная меблировка, балкон, бассейн, тренажёрный зал; рядом Lotte.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/132390947.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/pCQBytVr56uynXySk1xEEeDOtcm7YBcloARo8Yj3PFw/preset:view/plain/b5465890a0c856f0e5bdf3754672dc75-2984279274979595922.jpg", "https://cdn.chotot.com/__qCeolqcv75s8_0RQxNf-Npa2bXg9naeZwZPWfHBSg/preset:view/plain/d78e5b6bdd53fd90b7da63c99645a482-2984279275574415449.jpg", "https://cdn.chotot.com/EMxQhFzwaQCK6Ntz_3igmbhA-_GCnDeq_L8ux51Muns/preset:view/plain/f3554f55c4198c6e0c9c9a9943b1ddce-2984279276192511969.jpg"]}),
@@ -5763,15 +5763,15 @@ L(1796,"ho-chi-minh","th","Дом",20000000,60,
   "Дом, 60м², ул. Số 8, Tân Hưng (Phú Mỹ Hưng) — рядом Lotte, Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/133289021.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/zHT2yoCZUU68ntSR4cJq7j8z8R36klM0wdkrHsn2yqI/preset:view/plain/4274fd8759459189e08fb550dc8a4d3d-2993627560240683847.jpg", "https://cdn.chotot.com/bSRHcyLmMot1AR3RnFcQXc30lcpcR27hC2z3OL8ERXY/preset:view/plain/8269215ece68b193f9e5b83fe899fdaa-2993627511000337141.jpg", "https://cdn.chotot.com/DmOYk0nDBQK69Q5fZIypWSspo0IF4XbPsyDnY8f2yrY/preset:view/plain/ab761dbb2e1a70d458d8ddf9b37282d7-2993627511042405332.jpg"]}),
-L(1797,"ho-chi-minh","th","3-спальная квартира",25000000,120,
+L(1797,"ho-chi-minh","th","Квартира",25000000,120,
   "3-спальная квартира, 120м², ул. Nguyễn Thị Thập, Tân Hưng (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133386335.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/zFS0vspeY8zQBKmqUsJOS_pHeOK12v2pbp7PplCh0-k/preset:view/plain/544315232b95ce63617764b1a121cb18-2991901175238845430.jpg", "https://cdn.chotot.com/1q4N_RPnnCf0DEnBHpOhXeElDjgyE9fA3fp-xHR04uA/preset:view/plain/853691cff36d4360f3de8945afd28256-2991901174914257400.jpg", "https://cdn.chotot.com/mTDZ2_Co-l6e79qD5GynsVDTQaJY83ElegCxte1Jyxo/preset:view/plain/ab1a440d4529315f71d4d356240e5ba7-2991901176012333433.jpg"]}),
-L(1798,"ho-chi-minh","th","2-спальная квартира",13000000,72,
+L(1798,"ho-chi-minh","th","Квартира",13000000,72,
   "2-спальная квартира, 72м², ул. Nguyễn Thị Thập, Tân Hưng (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133494854.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/OhASy-vPMHrNIF5aRHn5Oam19ApvMt571iaMipq2S3w/preset:view/plain/d11dbff67c1b742866e384962b6819fa-2992696538212267533.jpg", "https://cdn.chotot.com/6H9vc43RNURojk5KjOPGnhLbLxmBmvj0NOrQWEy3LCQ/preset:view/plain/94e06995855e97a53f515beb95d98cd5-2992696538222051383.jpg", "https://cdn.chotot.com/Q3wzKzVUIPs0HTv8ZZO5LhtIisSYHNREehAVAZGTqr8/preset:view/plain/42c05cf698ff119d3da3be1c9a5aa48d-2992696539722120088.jpg"]}),
-L(1799,"ho-chi-minh","th","2-спальная квартира",15000000,72,
+L(1799,"ho-chi-minh","th","Квартира",15000000,72,
   "2-спальная квартира, 72м², ул. Nguyễn Thị Thập, Tân Hưng (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133494959.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/V28QN7p-0EH1L7KTD6yQMJFMhgwugdaQ9PagoqRiDtA/preset:view/plain/b73894b5a23d0c48448cd66c6745e029-2992698343610971661.jpg", "https://cdn.chotot.com/hePKhQaHliQdh7QeAYkRKjR3RAziaoPM0LtrftCoimM/preset:view/plain/7336bd9259a8c93b31a94d5829fed640-2992698343604174903.jpg", "https://cdn.chotot.com/vn3MRnUnJn34XdigfuU1_ZIWL1nQWqU_asdwS6pRm9A/preset:view/plain/21a8a3705b113afe6c9e61d896b0dec1-2992698345523639821.jpg"]}),
@@ -5779,7 +5779,7 @@ L(1800,"ho-chi-minh","th","Дом",25000000,72,
   "Дом, 72м², ул. Số 63, Tân Hưng (Phú Mỹ Hưng) — рядом An Phú.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/133542070.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/2WHKunC7lRFVEDhdOC6z5VkBdKwTQvYiWVOIif5opHA/preset:view/plain/0b3010088551683f7c4f7416fcd8206b-2993076098078366803.jpg", "https://cdn.chotot.com/kQfb0ZZ3EgPH0_zwc23gUq0nvZ6HZJNXOv99azcIVys/preset:view/plain/bc6b5f119392120ad301518f384cbfc0-2993076097702304205.jpg", "https://cdn.chotot.com/nY_6fRlGRXEzmtUGtOi5T-5Vh7b2muJQbjO6IZClxNw/preset:view/plain/1ae062a832533da965ca8611736f753c-2993076097998779917.jpg"]}),
-L(1801,"ho-chi-minh","th","2-спальная квартира",15000000,78,
+L(1801,"ho-chi-minh","th","Квартира",15000000,78,
   "2-спальная квартира, 78м², ул. Nguyễn Thị Thập, Tân Hưng (Phú Mỹ Hưng) — бассейн, тренажёрный зал.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133624017.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/GgoqBa6vhjwROgL29j-cAULX3Xdbu7I9LRvHQD54TIE/preset:view/plain/7a86adb6c087bbdb7777f215795776d3-2996424439668583578.jpg", "https://cdn.chotot.com/ZywgXTDh3dCSxG-PO3TDGSgeV6HwPrMhJuAyWCfk1qE/preset:view/plain/52791aa1b61aeef5fb11be1f7027c697-2996424443745578138.jpg", "https://cdn.chotot.com/f3ftML8c1HQB5DHQKt5UtumYGRNX_lDqwcvrD-vloF4/preset:view/plain/d0ae892f8e359de5b50a5cf1da9386a1-2996424447419853978.jpg"]}),
@@ -5791,7 +5791,7 @@ L(1803,"ho-chi-minh","th","Дом",50000000,161,
   "Дом, 161м², ул. Số 85, Tân Hưng (Phú Mỹ Hưng) — рядом Lotte, Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/133771377.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/MbgpuQjkV0L4MpyBKCshRLijOo0h6QUiUzzSpEMhiuo/preset:view/plain/c93254cc8e44a39288b75877348a7422-2994834225369999890.jpg", "https://cdn.chotot.com/AD0MAGtoON4WxBxoWI3xHPs0PkLdwjL515TNeIgBWX0/preset:view/plain/42e49322e276ec7f4b28d1e1040763ed-2994834225171564933.jpg", "https://cdn.chotot.com/N_QYY8-aIpvk9AjL6rgsYgUMk20Z4ewv2d9d7KtEsCU/preset:view/plain/e93df65d02494a40cb9c56003eb5493a-2994834225593053327.jpg"]}),
-L(1804,"ho-chi-minh","th","2-спальная квартира",18000000,106,
+L(1804,"ho-chi-minh","th","Квартира",18000000,106,
   "2-спальная квартира, 106м², ул. Nguyễn Thị Thập, Tân Hưng (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133819331.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/ZIB2vQxF0D7-PGnIBoY5MJL4LyCFC9VCeGMqSinPYrs/preset:view/plain/fe23325c28441791497ac85d155cc86a-2995223839124674966.jpg", "https://cdn.chotot.com/qKtmTzyTJCwnzTLNtH1nB8x2rGA7Zodgb1NEy2qB45I/preset:view/plain/fa809c7a0b6b651b99876046e779456a-2995223839184113763.jpg", "https://cdn.chotot.com/T2FeXPVPeWTJS6EIbevwe5jBp4-7jync-EkVIIH0PGc/preset:view/plain/8be8c0351ad70082938ececa07125da0-2995223840534026646.jpg"]}),
@@ -5827,7 +5827,7 @@ L(1812,"ho-chi-minh","th","Комната",3750000,20,
   "Комната, 20м², ул. Nguyễn Hữu Thọ, Tân Hưng (Phú Mỹ Hưng) — бассейн, стиральная машина; рядом RMIT, Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134387778.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/TKrICBc3q6qFLB3uoNpak-eMkHNm8VTjDjKyFsMDy3U/preset:view/plain/63067f8652a45f15d3ddd67c9273066b-2999477374712078370.jpg", "https://cdn.chotot.com/By1oYbs1xfJu_-68Lk7SoI8cPrXBcWs1ytrg4vGT-yA/preset:view/plain/79c5ab78dd9e42995e5cd71128c0561e-2999477374803899450.jpg", "https://cdn.chotot.com/tB6DcnZs3cbpeAu9JqobQ8U0luukD43b7dSXlUF2IqA/preset:view/plain/6e117b0875ee478f398ea445c08e9e6e-2999477375731830339.jpg"]}),
-L(1813,"ho-chi-minh","th","2-спальная квартира",13000000,70,
+L(1813,"ho-chi-minh","th","Квартира",13000000,70,
   "2-спальная квартира, 70м², ул. Bế Văn Cấm, Tân Hưng (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134387840.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/RQfvzPgipQR10QVwqMu0P0j5ZY97j0YJG-fSParAZ_U/preset:view/plain/1644d382cd098ec191bd6d46f8c29f92-2999477206819495686.jpg", "https://cdn.chotot.com/wrhfkYAWZK_S1fn0rR0Q-OVUa1p47UHC0ZkBLbnHAZE/preset:view/plain/64afa38451cdb006795b73341dc3741e-2999477207056965666.jpg", "https://cdn.chotot.com/TYmPrmx9-JnhZbtnXqCZigItHB9Ytiop4ikC3RSaC3A/preset:view/plain/a260f48773b1ac64fdec6887c9ffc52a-2999477207032048753.jpg"]}),
@@ -5839,19 +5839,19 @@ L(1815,"ho-chi-minh","th","Дом",11000000,40,
   "Дом, 40м², ул. Nội Bộ, Tân Hưng (Phú Mỹ Hưng) — рядом Lotte.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/131533714.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/s3K9j1tjZvlJZLfoh5CRWRTpKf1uqh2-1pGwM5OS4aM/preset:view/plain/77cf2f76106d090df3b36009910c8b2c-2996528966865693850.jpg", "https://cdn.chotot.com/frgB6YAGgWEF2_YgFY7l-BD5jAy6NTWe-73ILYKcmK4/preset:view/plain/1b7afc756af3f4da24f5e27e71058924-2996528966891741674.jpg", "https://cdn.chotot.com/4aGxMIqRHIgoJS9mEooDdUYZpJ1wdxKV4Z6lrCVGC2U/preset:view/plain/73ab7fd6c9bddcdd5e7e30b086006e3b-2996528966901623822.jpg"]}),
-L(1816,"ho-chi-minh","th","1-спальная квартира",7500000,40,
+L(1816,"ho-chi-minh","th","Квартира",7500000,40,
   "1-спальная квартира, 40м², ул. Nguyễn Thị Thập, Tân Hưng (Phú Mỹ Hưng) — полная меблировка, стиральная машина, кондиционер.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/132375768.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/Nu7OwMziGYFVqnVtdZjDqceyJgQq9BT9AsjTFle3Gd8/preset:view/plain/08d46f084dca0582f59e58f9609fede8-2984208662530700338.jpg", "https://cdn.chotot.com/ewzsn49jk7-LC16WghdKpLz6VNVmmpT4i_naRnMdXwk/preset:view/plain/884f0db8b6a692fdef018618c4f844e7-2984208663399079966.jpg", "https://cdn.chotot.com/ozgkIV0Ot_pm7Ck5gqX03TeVHN0YKZlNTmqutv-0INU/preset:view/plain/5a73407d9aa7566612cd497636133364-2984208663398539556.jpg"]}),
-L(1817,"ho-chi-minh","tm","2-спальная квартира",10500000,55,
+L(1817,"ho-chi-minh","tm","Квартира",10500000,55,
   "2-спальная квартира, 55м², ул. Hoàng Quốc Việt, Tân Mỹ (Phú Mỹ Hưng) — полная меблировка, балкон, бассейн, кондиционер.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/130554277.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/neSeG0rBb9Nc0ftOEB-cvSBrWrpeuymlMsdtLlrpZyc/preset:view/plain/e6d7edea414c64bca7c2d259fed3f6df-2998296979664967025.jpg", "https://cdn.chotot.com/ehHGT1b8yxT8X3FIGhm77RI0-3S2tQTgc5sfsuoaHPE/preset:view/plain/454818b9056f90a0bd98b305f727fcca-2998297002632872089.jpg", "https://cdn.chotot.com/ZSfqzeo_sUUjmGNBh-79rIs4WqqY72HWzAZYmsimUQs/preset:view/plain/c91927cf9814b2780b52b676daf48f5e-2998297006978302105.jpg"]}),
-L(1818,"ho-chi-minh","tm","2-спальная квартира",17000000,70,
+L(1818,"ho-chi-minh","tm","Квартира",17000000,70,
   "2-спальная квартира, 70м², ул. 7, Tân Mỹ (Phú Mỹ Hưng) — полная меблировка, балкон, тренажёрный зал; рядом Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/131751152.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/QKFluVyyFluzAYfq2deVExnNMU8R5ptHpqlZC5RR2dw/preset:view/plain/7b1e4bdfa04301dd91ab00c335dcb28f-2995297330698376048.jpg", "https://cdn.chotot.com/P6nVtGjvfRsvzMKdQfblydwMlc9nu3B9UpUYHv09Sqw/preset:view/plain/b4196d1f809132da4c68e6a1703352f9-2995297346150525185.jpg", "https://cdn.chotot.com/6hww7H85apof4oef0x7P_6fRCDZHT9tC_86SKfWxE6k/preset:view/plain/31291cfdc7cebc7f77a8cda92caf6a0f-2995297341956936074.jpg"]}),
-L(1819,"ho-chi-minh","tm","3-спальная квартира",26000000,120,
+L(1819,"ho-chi-minh","tm","Квартира",26000000,120,
   "3-спальная квартира, 120м², ул. Tôn Dật Tiên, Tân Mỹ (Phú Mỹ Hưng).",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/132893276.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/VOVdhs3wUpLi-bxk0wQhyMkWVWpOhxBCzMCggl7HoEo/preset:view/plain/a05072aea655771f9058c930424801ac-2988128126658053189.jpg", "https://cdn.chotot.com/uPQ-lfGy7Z1ehguB-cv6puZF0xyquQgekAvPnJSmEsM/preset:view/plain/e7381adabcf140e44bb048b866f997e2-2988128151694600911.jpg", "https://cdn.chotot.com/llS7EWNEEAg9ErVN63yuZ2RHZeTegdXF9Ei6FIV3ixA/preset:view/plain/d5ba309f1199647924d1304633d7dc06-2988128186275156713.jpg"]}),
@@ -5863,7 +5863,7 @@ L(1821,"ho-chi-minh","tm","Дом",65000000,240,
   "Дом, 240м², Tân Mỹ (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/133507158.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/vlYdOXKLBq1bmfjBz09MUxmU7Zn2Rdu92DFz_quKaoM/preset:view/plain/529942b55b8c083e47c78206d5e91132-2992801916130079667.jpg", "https://cdn.chotot.com/y0HryJn8LG4A0rkgH9gsg3kBYYiqsGQmYVRkhwHms4o/preset:view/plain/3c4402d9f2be0762ad18f8848845c05d-2992801916770663637.jpg", "https://cdn.chotot.com/v5AHNJBeC14v_LILLi0EOOEY0GN6eo-qQYU4j7w88L8/preset:view/plain/a9283e32943a0b1bed4ff5de35003424-2992801915878761194.jpg"]}),
-L(1822,"ho-chi-minh","tm","2-спальная квартира",15000000,100,
+L(1822,"ho-chi-minh","tm","Квартира",15000000,100,
   "2-спальная квартира, 100м², ул. Nguyễn Thị Thập, Tân Mỹ (Phú Mỹ Hưng).",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134002751.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/GKQpa22QcFUfA2WluKoekjb4p7-8q3zUH-ypszFJTtk/preset:view/plain/78efb0b82fc9023bde96f1d9c305b908-2996566089239229904.jpg", "https://cdn.chotot.com/vLmP-sNCz27tlbA--S3hvrT-QSF6C_gLvCr_La7lQkI/preset:view/plain/8e671f107796f323fc08f1572e4c38d1-2996566089114738369.jpg", "https://cdn.chotot.com/kNVExyXKOEtqMRZax0jZTSnTwjQRPqfxdbAfQh20jh8/preset:view/plain/86f812f89195ef60f191b044fab61e5c-2996566090943520449.jpg"]}),
@@ -5871,27 +5871,27 @@ L(1823,"ho-chi-minh","tm","Дом",30000000,90,
   "Дом, 90м², ул. D1, Tân Mỹ (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134380254.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/9Q2fQXLgFkPFCdoCx0JXEgryFydLFlkAoFUDngMeOh8/preset:view/plain/504b0a4170dd51cf1469ede545bb7080-2999437166275507138.jpg", "https://cdn.chotot.com/bD37zbGKw_tQ1cAQxnXb35YfL8PU9OO1VayGv1jnuCM/preset:view/plain/4a89b41086841351a2881762626cc58d-2999437166093177510.jpg", "https://cdn.chotot.com/Rc4ruU9tDMP8defXJ6Ny4b-pYfy9Ps3QZWH-okyTsgI/preset:view/plain/14587a09a1903ff24b46238c9d6ec3db-2999437167485751974.jpg"]}),
-L(1824,"ho-chi-minh","tm","2-спальная квартира",12000000,74,
+L(1824,"ho-chi-minh","tm","Квартира",12000000,74,
   "2-спальная квартира, 74м², ул. Nguyễn Lương Bằng, Tân Mỹ (Phú Mỹ Hưng).",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134383196.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/aLojoZVQq2G2bZ_x16DN2TYf3f1zL73FF48UzB-ftUA/preset:property_project_small/plain/1538_sample_house_2.jpg", "https://cdn.chotot.com/I8cgKy6gc7c-H5mgJ8JUJ60WiDQzKL3CQ6XskER84NE/preset:property_project_small/plain/1538_sample_house_3.jpg", "https://cdn.chotot.com/nOJUDCQyGTIxB_BwMdGpbTHIY0WGtxOWvxYtpqX3_dQ/preset:property_project_small/plain/1538_overview_4.jpg"]}),
-L(1825,"ho-chi-minh","tm","2-спальная квартира",20000000,99,
+L(1825,"ho-chi-minh","tm","Квартира",20000000,99,
   "2-спальная квартира, 99м², ул. Huỳnh Tấn Phát, Tân Mỹ (Phú Mỹ Hưng) — полная меблировка, балкон, бассейн, тренажёрный зал; рядом Crescent Mall, Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134386878.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/EYNnri3BzfYaOyywermJ4aM4UD8fKIsY075_yFuAiO4/preset:view/plain/d008625ca1dcee89d80df57ae842c988-2999471321961927647.jpg", "https://cdn.chotot.com/-poXdIG-Wniu9Mw_xp3qKP9B1uXruXHwp9bzpp9CPRo/preset:view/plain/381a8109044fb63440d959664f6b85a6-2999471321962324712.jpg", "https://cdn.chotot.com/IB6ZRua-iWOdYBrV0oNJkIcYP5gnwuXyXMOV1TNhk_o/preset:view/plain/c5c492eaffe523f138d34df1edddf097-2999471322279139486.jpg"]}),
-L(1826,"ho-chi-minh","tm","3-спальная квартира",15000000,161,
+L(1826,"ho-chi-minh","tm","Квартира",15000000,161,
   "3-спальная квартира, 161м², ул. 15B, Tân Mỹ (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134387820.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/taesdZz4mz63OmVcSHEN1zTzliOJNviXQIBD-ynqO-c/preset:view/plain/5fac97795b40f2009babf8c680ba48da-2999477701129935585.jpg", "https://cdn.chotot.com/9W48jJuB-q1uadZgX2gE2FDKtitiTPW37dNOpc4MnFI/preset:view/plain/39c394b2c3b0e6a69b093d691725ead9-2999477701124756447.jpg", "https://cdn.chotot.com/clYZDuxOOo7AzWeSlVZ2tiy5EosR46Ha1lxyYuoUMWc/preset:view/plain/3379b17ef7596e4b15f2c242a661816f-2999477701249577922.jpg"]}),
-L(1827,"ho-chi-minh","tm","2-спальная квартира",8500000,67,
+L(1827,"ho-chi-minh","tm","Квартира",8500000,67,
   "2-спальная квартира, 67м², ул. 15B, Tân Mỹ (Phú Mỹ Hưng) — бассейн, тренажёрный зал, лифт, охрана/камеры 24/7; рядом Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134388050.htm","4 дня назад",4,source="chotot",
   details={"photos":["https://cdn.chotot.com/1EQQERSKeHkJ8DiNHvQ6TEicHOAG3Leiwlsp2MXcqno/preset:view/plain/0b766c051cf34b9f0d78fed40f8f0ab0-2999478907685729619.jpg", "https://cdn.chotot.com/ym5M3qNI44lmK4LjIjvuVTlCmvmwY4brgjTeM2Lrhw8/preset:view/plain/af714825f52c2c50807725a607a0fcec-2999478907483152134.jpg", "https://cdn.chotot.com/nPsaFojmMNVXN0qFZ2RF-ht2y6ONuFJTBCkgy38kdi8/preset:view/plain/80740ad0fb6a70ec2fa60b62e4049ff3-2999478907615579715.jpg"]}),
-L(1828,"ho-chi-minh","tm","1-спальная квартира",20000000,48,
+L(1828,"ho-chi-minh","tm","Квартира",20000000,48,
   "1-спальная квартира, 48м², ул. Nguyễn Lương Bằng, Tân Mỹ (Phú Mỹ Hưng) — полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133101148.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/3sN32NOMRiTVjktIzIaWBEYnC65OPt7aWI3NTdaQIqM/preset:view/plain/8e6fed2c5a3ca71154147678ba4d4704-2989723639093533681.jpg", "https://cdn.chotot.com/VU05q_KYuSjd00N7nKi0z3zMdNO7P8yodLRckrqJCLw/preset:view/plain/0bad1c77da8daba6de8e9ffd632e2330-2989723639370553603.jpg", "https://cdn.chotot.com/RcJ4Ji_oTpNwlc6_Zw7Izy6Vsccu5DsaGZGl6stjvos/preset:view/plain/fb63db6a90c210a5c68f87abf62cd9c9-2989723639224691313.jpg"]}),
-L(1829,"ho-chi-minh","tm","2-спальная квартира",20000000,78,
+L(1829,"ho-chi-minh","tm","Квартира",20000000,78,
   "2-спальная квартира, 78м², ул. Tân Phú, Tân Mỹ (Phú Mỹ Hưng) — полная меблировка, балкон, бассейн, тренажёрный зал; рядом Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134359541.htm","5 дней назад",5,source="chotot",
   details={"photos":["https://cdn.chotot.com/n_Iyq8RiWi1BF-47NVQN25o2GllCrCiXeKYfNWx-Xrc/preset:view/plain/09b6eaa1ee5cae956cdaa19ca5936449-2999280949081650114.jpg", "https://cdn.chotot.com/vEhKdLGfgkirosg4wh4iV480PqcxHVZH3TKZb-FYtW8/preset:view/plain/aeb82220f956cb31da38398f4be7cc1a-2999280949091898335.jpg", "https://cdn.chotot.com/iEMlMeTiFKFO3q2RTLzrOisTRsVEh81_pNwwTOeXILw/preset:view/plain/409a00b80ae42a2d199b2eaac0b02e67-2999280949159545740.jpg"]}),
@@ -10039,6 +10039,56 @@ def check_js_undefined_calls(html):
         print("WARNING: possibly-undefined JS function calls, verify before shipping:", ", ".join(suspicious))
     else:
         print("JS undefined-call check: OK")
+
+def check_listing_types(html, listings):
+    """
+    Fail the build on a listing whose type is not one the UI actually offers.
+
+    Found 31 Aug 2026: 29 HCMC listings carried types like "2-спальная
+    квартира", invented by a daily-check session. Nothing looked broken --
+    the cards rendered normally -- but the type filter compares strictly
+    (l.type !== state.type) and the UI draws one chip per allowed type, so
+    those listings were unreachable for anyone who narrowed by type, and
+    typeName() had no English form for them, so the English page showed the
+    type in Russian. Silent by construction: the failure is visible only to
+    a user who filters, never to whoever added the data.
+
+    The allowed set is parsed out of the page's own JS instead of being
+    duplicated here, so this check cannot drift from what the UI offers.
+
+    Fatal on purpose. A warning would be ignored by the next automated
+    session exactly as the previous one ignored the convention.
+    """
+    allowed = set()
+    for name in ("RESIDENTIAL_TYPES", "COMMERCIAL_TYPES"):
+        m = re.search(r"var\s+" + name + r"\s*=\s*\[(.*?)\];", html, re.S)
+        if not m:
+            raise SystemExit(
+                "check_listing_types: could not find " + name + " in the page JS.\n"
+                "The guard cannot verify listing types against a list it cannot\n"
+                "read. Fix the parse rather than deleting the check."
+            )
+        allowed |= set(re.findall(r'"([^"]*)"', m.group(1)))
+
+    first_id = {}
+    for l in listings:
+        if l["type"] not in allowed and l["type"] not in first_id:
+            first_id[l["type"]] = l["id"]
+    if first_id:
+        offenders = "; ".join(
+            '"' + t + '" (e.g. id ' + str(i) + ')' for t, i in sorted(first_id.items())
+        )
+        raise SystemExit(
+            "Listing types the UI does not offer: " + offenders + "\n"
+            "These listings render fine but are unreachable through the type\n"
+            "filter, and have no English type name.\n"
+            "Allowed: " + ", ".join(sorted(allowed)) + "\n"
+            "Either use one of those, or add the new type to RESIDENTIAL_TYPES or\n"
+            "COMMERCIAL_TYPES and to TYPE_EN in the page JS so the UI can show it."
+        )
+    print("Listing-type check: OK (" + str(len(allowed)) + " allowed types)")
+
+check_listing_types(HTML, LISTINGS)
 
 check_js_undefined_calls(HTML)
 
