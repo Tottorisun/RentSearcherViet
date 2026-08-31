@@ -8652,64 +8652,64 @@
   "matched": "Nam Viên"
  },
  "2126": {
-  "lat": 10.7674015,
-  "lon": 106.6977106,
+  "lat": 13.7850322,
+  "lon": 109.2026913,
   "source": "geocode",
-  "matched": "Nguyễn Thái Bình"
+  "matched": "Điện Biên Phủ"
  },
  "2127": {
-  "lat": 10.7481374,
-  "lon": 106.7158591,
+  "lat": 13.7831003,
+  "lon": 109.2191803,
   "source": "geocode",
-  "matched": "Lâm Văn Bền"
+  "matched": "Trần Hưng Đạo"
  },
  "2128": {
-  "lat": 10.7351883,
-  "lon": 106.6953441,
+  "lat": 13.774786,
+  "lon": 109.2314719,
   "source": "geocode",
-  "matched": "Hoàng Trọng Mậu"
+  "matched": "Phan Bội Châu"
  },
  "2129": {
-  "lat": 10.7400258,
-  "lon": 106.6929421,
+  "lat": 15.8895165,
+  "lon": 108.3618095,
   "source": "geocode",
-  "matched": "Cầu Him Lam"
+  "matched": "Cẩm Thanh"
  },
  "2130": {
-  "lat": 10.7445621,
-  "lon": 106.7057271,
+  "lat": 11.9544419,
+  "lon": 108.4282224,
   "source": "geocode",
-  "matched": "Số 36"
+  "matched": "Kim Đồng"
  },
  "2131": {
-  "lat": 10.7003494,
-  "lon": 106.7326546,
+  "lat": 11.9661805,
+  "lon": 108.4555895,
   "source": "geocode",
-  "matched": "Era Town"
+  "matched": "Trần Anh Tông"
  },
  "2132": {
-  "lat": 10.7768914,
-  "lon": 106.7068627,
+  "lat": 11.9712758,
+  "lon": 108.3922434,
   "source": "geocode",
-  "matched": "Tôn Đức Thắng"
+  "matched": "Phước Thành"
  },
  "2133": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
+  "lat": 11.97356227274298,
+  "lon": 108.47368535615551,
+  "source": "ward-centroid",
+  "matched": null
  },
  "2134": {
-  "lat": 10.7768914,
-  "lon": 106.7068627,
+  "lat": 11.9656824,
+  "lon": 108.4506461,
   "source": "geocode",
-  "matched": "Tôn Đức Thắng"
+  "matched": "Mai Xuân Thưởng"
  },
  "2135": {
-  "lat": 10.8111809,
-  "lon": 106.7033938,
+  "lat": 11.9247937,
+  "lon": 108.4273121,
   "source": "geocode",
-  "matched": "Bình Thạnh"
+  "matched": "An Sơn"
  },
  "2136": {
   "lat": 10.7571562,
@@ -8776,5 +8776,233 @@
   "lon": 106.7336461,
   "source": "geocode",
   "matched": "Thảo Điền"
+ },
+ "2154": {
+  "lat": 16.0317772,
+  "lon": 108.2314808,
+  "source": "geocode",
+  "matched": "Lưu Trọng Lư"
+ },
+ "2155": {
+  "lat": 16.0437652,
+  "lon": 108.2077989,
+  "source": "geocode",
+  "matched": "Trưng Nữ Vương"
+ },
+ "2156": {
+  "lat": 16.0838105,
+  "lon": 108.2354492,
+  "source": "geocode",
+  "matched": "Lý Đạo Thành"
+ },
+ "2157": {
+  "lat": 16.0702604,
+  "lon": 108.2125117,
+  "source": "geocode",
+  "matched": "Trần Cao Vân"
+ },
+ "2158": {
+  "lat": 16.0101937,
+  "lon": 108.217863,
+  "source": "geocode",
+  "matched": "Nguyễn Tri Phương"
+ },
+ "2159": {
+  "lat": 16.0309614,
+  "lon": 108.2459535,
+  "source": "geocode",
+  "matched": "Đa Mặn 14"
+ },
+ "2160": {
+  "lat": 16.0135391,
+  "lon": 108.2548954,
+  "source": "geocode",
+  "matched": "Thủy Sơn 4"
+ },
+ "2161": {
+  "lat": 16.0309614,
+  "lon": 108.2459535,
+  "source": "geocode",
+  "matched": "Đa Mặn 14"
+ },
+ "2162": {
+  "lat": 16.0700623,
+  "lon": 108.2364217,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2163": {
+  "lat": 16.0059429,
+  "lon": 108.2289038,
+  "source": "geocode",
+  "matched": "Nguyễn Thi"
+ },
+ "2164": {
+  "lat": 16.0338362,
+  "lon": 108.2122055,
+  "source": "geocode",
+  "matched": "Phạm Thế Hiển"
+ },
+ "2165": {
+  "lat": 16.0426615,
+  "lon": 108.245486,
+  "source": "geocode",
+  "matched": "Chế Lan Viên"
+ },
+ "2166": {
+  "lat": 16.1104518,
+  "lon": 108.132495,
+  "source": "geocode",
+  "matched": "Nguyễn Tất Thành"
+ },
+ "2167": {
+  "lat": 16.0049492,
+  "lon": 108.2204494,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2168": {
+  "lat": 16.0589539,
+  "lon": 108.2194844,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2169": {
+  "lat": 16.0436084,
+  "lon": 108.169859,
+  "source": "geocode",
+  "matched": "Phước Lý"
+ },
+ "2170": {
+  "lat": 16.0852254,
+  "lon": 108.2441484,
+  "source": "geocode",
+  "matched": "Lê Văn Thủ"
+ },
+ "2171": {
+  "lat": 16.1084388,
+  "lon": 108.1321979,
+  "source": "geocode",
+  "matched": "Hòa Hiệp Nam"
+ },
+ "2172": {
+  "lat": 15.9647373,
+  "lon": 108.2600704,
+  "source": "geocode",
+  "matched": "Văn Tiến Dũng"
+ },
+ "2173": {
+  "lat": 16.0700623,
+  "lon": 108.2364217,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2174": {
+  "lat": 16.068501,
+  "lon": 108.2240242,
+  "source": "geocode",
+  "matched": "Plaza 3"
+ },
+ "2175": {
+  "lat": 16.0788207,
+  "lon": 108.2329019,
+  "source": "geocode",
+  "matched": "Ngô Quyền"
+ },
+ "2176": {
+  "lat": 10.3470886,
+  "lon": 107.0845651,
+  "source": "geocode",
+  "matched": "Nam Kỳ Khởi Nghĩa"
+ },
+ "2177": {
+  "lat": 10.348189,
+  "lon": 107.0753349,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2178": {
+  "lat": 10.3900545,
+  "lon": 107.1124023,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2179": {
+  "lat": 10.3589957,
+  "lon": 107.0905986,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2180": {
+  "lat": 10.348189,
+  "lon": 107.0753349,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2181": {
+  "lat": 10.3457166,
+  "lon": 107.0968534,
+  "source": "geocode",
+  "matched": "Thắng Tam"
+ },
+ "2182": {
+  "lat": 10.3461952,
+  "lon": 107.0785351,
+  "source": "geocode",
+  "matched": "Phường 1"
+ },
+ "2183": {
+  "lat": 10.3379037,
+  "lon": 107.0862257,
+  "source": "geocode",
+  "matched": "Vũng Tàu Melody"
+ },
+ "2184": {
+  "lat": 10.3333034,
+  "lon": 107.0855666,
+  "source": "geocode",
+  "matched": "Võ Thị Sáu"
+ },
+ "2185": {
+  "lat": 10.3379037,
+  "lon": 107.0862257,
+  "source": "geocode",
+  "matched": "Vũng Tàu Melody"
+ },
+ "2186": {
+  "lat": 10.3461952,
+  "lon": 107.0785351,
+  "source": "geocode",
+  "matched": "Phường 1"
+ },
+ "2187": {
+  "lat": 10.3461341,
+  "lon": 107.0954172,
+  "source": "geocode",
+  "matched": "Sơn Thịnh"
+ },
+ "2188": {
+  "lat": 10.3333034,
+  "lon": 107.0855666,
+  "source": "geocode",
+  "matched": "Võ Thị Sáu"
+ },
+ "2189": {
+  "lat": 10.3379037,
+  "lon": 107.0862257,
+  "source": "geocode",
+  "matched": "Vũng Tàu Melody"
+ },
+ "2190": {
+  "lat": 10.3776581,
+  "lon": 107.0556868,
+  "source": "geocode",
+  "matched": "Trần Phú"
+ },
+ "2191": {
+  "lat": 10.3492843,
+  "lon": 107.0776028,
+  "source": "geocode",
+  "matched": "Đồ Chiểu"
  }
 }

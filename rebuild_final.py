@@ -7056,112 +7056,443 @@ L(2125,"ho-chi-minh","tm","Дом",55000000,126,
   descEn="Whole house 7x18m (126m2), 3 floors, 4 bedrooms, fully furnished. Price 55 million VND/month, negotiable. KDC Nam Vien, Tan My (Phu My Hung), District 7.",
   details={"notice": "дата — по данным сайта batdongsan.com.vn («đăng hôm nay»), точная дата первой публикации не подтверждена.", "photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829121915-5076_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829121917-3bab_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829121919-3d7e_wm.jpg"]}),
 
-L(2126,"ho-chi-minh","bth","Комната",7000000,25,
+L(2300,"ho-chi-minh","bth","Комната",7000000,25,
   "Комната-мезонин (gác lửng) 25 м² в жилом доме NTB, ул. Nguyễn Thái Bình, Bến Thành (быв. Q1). Лифт, рядом ул. Hàm Nghi.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-1-tp-ho-chi-minh/134433647.htm","вчера",1,source="chotot",
   descEn="Mezzanine room (gác lửng) 25m2 in NTB residential building, Nguyen Thai Binh St, Ben Thanh (former District 1). Elevator, near Ham Nghi St.",
   details={"photos": ["https://cdn.chotot.com/qnaFdUFocfOUmimDcQRrvUXcKBe8-pzXevTKYhok7wk/preset:view/plain/91441cf5d22fed43fec4d647467c300a-2999904596164084864.jpg", "https://cdn.chotot.com/L-VpNA0Fb1La1Z5Ilk0n6dQS1Emio3wHkFl7Uqy25zk/preset:view/plain/fcaed75057d3812756d864cf15b81454-2999904603131197243.jpg", "https://cdn.chotot.com/1j4BTKuV6G8gUkTPSc_XM4FrIjhjheT3sB1x2tYlkcY/preset:view/plain/5758b8603285995c084ec2c8e58c6949-2999904595614938939.jpg"], "alsoOn": [{"source": "batdongsan", "url": "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-ben-thanh-tp-ho-chi-minh/cho-gac-lung-25m2-tach-bep-thang-may-nha-xe-bao-ve-4757-nguyen-thai-binh-cho-bt-pr46243875"}]}),
-L(2127,"ho-chi-minh","th","Комната",6000000,35,
+L(2301,"ho-chi-minh","th","Комната",6000000,35,
   "CHDV с антресолью (gác lửng), 35 м², ул. Lâm Văn Bền, Tân Hưng, Q7. Разрешено с животными, вход по карте, охрана 24/7.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134144995.htm","вчера",1,source="chotot",
   descEn="Service apartment with mezzanine (gác lửng), 35m2, Lam Van Ben St, Tan Hung, District 7. Pets allowed, keycard entry, 24/7 security.",
   details={"photos": ["https://cdn.chotot.com/flWd-IQkT-HU0G6Zjzkxvtt4CKSIQNh-DdAtNsBqsbI/preset:view/plain/0532884dcc8e346754ce2bce2b47059b-2997623168195713234.jpg", "https://cdn.chotot.com/lIbRBH9r6JOLt1ugvLyxdqTr8PydWDTb7NZEUOWwP0w/preset:view/plain/7925fac647f1451295a5f8de3b6ffa5a-2997623167627778437.jpg", "https://cdn.chotot.com/RLIsfHlZcMX3Xl4xKElHU853c6ZHvIfToa_dxRT59bs/preset:view/plain/f1c2eeadb984cd429312252cf09c13d9-2997623167993208004.jpg"]}),
-L(2128,"ho-chi-minh","th","Квартира",6000000,50,
+L(2302,"ho-chi-minh","th","Квартира",6000000,50,
   "1-спальная квартира с балконом, полная меблировка, 50 м², КДС Him Lam, ул. Hoàng Trọng Mậu, Tân Hưng, Q7. Отдельная кухня, рядом Lotte Mart.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134437704.htm","вчера",1,source="chotot",
   descEn="1-bedroom apartment with balcony, fully furnished, 50m2, Him Lam residential area, Hoang Trong Mau St, Tan Hung, District 7. Separate kitchen, near Lotte Mart.",
   details={"photos": ["https://cdn.chotot.com/Y3fWXXzNbnHSCIWwTp0dUJgXyVk56LPk6wWzEO8KkFo/preset:view/plain/11ac50bed95cd70aa59c1841d9d34501-2999937289054585984.jpg", "https://cdn.chotot.com/R0XSiP-Po5-qNs1FJUwPp-pBnI6ad_RD1KmL4wPwx3E/preset:view/plain/1ba59102c78b250cf2969a266879a810-2999937289494618918.jpg", "https://cdn.chotot.com/StPjT_j7u3oA_5wWMSz8-VGzp66BQBTsC-t5x2eQbzI/preset:view/plain/c9e59cddcd85d15f08467a71efa4d171-2999937289300416033.jpg"]}),
-L(2129,"ho-chi-minh","th","Квартира",6800000,40,
+L(2303,"ho-chi-minh","th","Квартира",6800000,40,
   "1-спальная квартира, 40 м², полная меблировка, рядом мост Cầu Him Lam, Tân Hưng, Q7. Тихий охраняемый квартал, рядом Q1/Q4/Q8 и Phú Mỹ Hưng.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134434195.htm","вчера",1,source="chotot",
   descEn="1-bedroom apartment, 40m2, fully furnished, near Him Lam Bridge, Tan Hung, District 7. Quiet gated area, close to District 1/4/8 and Phu My Hung.",
   details={"photos": ["https://cdn.chotot.com/zQDSOUrk4YSv8koKR_69xcRVQ3jJjvj1BPkxzVUkBrg/preset:view/plain/71139809fca4706d358e77b83206cfd8-2999908317942514816.jpg", "https://cdn.chotot.com/td5onwegSVtXo3ZpLGQc1jC2sgAL4sQr6M0h6M0w7ys/preset:view/plain/caecf9afdc2de72e2322ed22e4b3524c-2999908317955735484.jpg", "https://cdn.chotot.com/MRQe-iwKP5ENYXwcunRYmTzy2wXPh2HepZ7pZTomOgc/preset:view/plain/7d1d3c82d51433580705f45b62b8c43b-2999908318212855329.jpg"]}),
-L(2130,"ho-chi-minh","th","Студия",7000000,45,
+L(2304,"ho-chi-minh","th","Студия",7000000,45,
   "Студия ~45 м² с балконом, базовая меблировка, лифт и подземный паркинг, вода и сервисная плата включены в цену. Ул. Số 36, Tân Hưng, Q7.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134424349.htm","вчера",1,source="chotot",
   descEn="Studio ~45m2 with balcony, basic furniture, elevator and basement parking, water and service fee included in price. Street No. 36, Tan Hung, District 7.",
   details={"photos": ["https://cdn.chotot.com/GiArc_YOna7chjInEj1IN55VD4ftMLdvij2lyA0SQGk/preset:view/plain/b6ee0e71affec994a76152dd0abe47f5-2999806030067315650.jpg", "https://cdn.chotot.com/CwFkxd9fqe0HUgDSagpa8ORhKSAozO3hWTv1qV_eCcU/preset:view/plain/53a7150bfe1530d99168cbc7e6af35f8-2999806029885759238.jpg", "https://cdn.chotot.com/AOYaYclsQCy42pghlnREmPXEFkhYd9ZOkYexo27zaF8/preset:view/plain/b6322de1ce39ff460930ba76e3ec72c1-2999806030117731078.jpg"]}),
-L(2131,"ho-chi-minh","tm","Квартира",11000000,97,
+L(2305,"ho-chi-minh","tm","Квартира",11000000,97,
   "Квартира Era Town, 3 спальни, 97 м², вид на реку, меблированная. Ул. 15B, Tân Mỹ (Phú Mỹ Hưng), Q7. Депозит 2 мес., долгосрочная аренда.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/132510761.htm","вчера",1,source="chotot",
   descEn="Era Town apartment, 3 bedrooms, 97m2, river view, furnished. Street 15B, Tan My (Phu My Hung), District 7. 2-month deposit, long-term lease.",
   details={"photos": ["https://cdn.chotot.com/j8UgO6ltJK5szUOQJmdqqrr_976T0P8Sxrww1iRe3Ro/preset:view/plain/cd2c8d3421a408c6387ffc81ceb8423b-2985221202798306073.jpg", "https://cdn.chotot.com/0CcCOxRhoL0qzinqavUvUZqZf5aPherSRxCzhlYR7lg/preset:view/plain/ad8e9b1a1ebeb13f23bf3fec56d15d76-2985221202848348162.jpg", "https://cdn.chotot.com/ghzILEPsuWLQs_iEKf4AZZpTiI4QZQ5KMgbRlM6QFY8/preset:view/plain/6c4cd3577c833b5314392f96b3d1bc91-2985221202848731637.jpg"]}),
-L(2132,"ho-chi-minh","th","Квартира",6800000,30,
+L(2306,"ho-chi-minh","th","Квартира",6800000,30,
   "1-спальная квартира с балконом, 30 м², полная меблировка, ул. Hưng Gia 2, Tân Phong (Tân Hưng), Q7. Рядом ĐH Tôn Đức Thắng, RMIT, UFM.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134433787.htm","вчера",1,source="chotot",
   descEn="1-bedroom apartment with balcony, 30m2, fully furnished, Hung Gia 2 St, Tan Phong (Tan Hung), District 7. Near Ton Duc Thang University, RMIT, UFM.",
   details={"photos": ["https://cdn.chotot.com/R-t9SNpL2x7glJDq_jz9dAAtAT6FrY4wFZlzi6RlfQw/preset:view/plain/18f25fddd1c4fd4185b8af858734ba97-2999905594728649415.jpg", "https://cdn.chotot.com/NA__A8O2IEXwOd0SoPm4KF7BFq87DEwLTj6BY4piX1I/preset:view/plain/232c4b4a2b21576fa7b03b91986a07d3-2999905594722706214.jpg", "https://cdn.chotot.com/o6kjjtABTqV0_3oqCqfSfdfE2GiM9IQtsKJwD3cNjfo/preset:view/plain/8a5660833b2188472ba412c50f6ed38d-2999905594584975045.jpg"]}),
-L(2133,"ho-chi-minh","th","Комната",6000000,40,
+L(2307,"ho-chi-minh","th","Комната",6000000,40,
   "CHDV с высокой антресолью (gác cao 2м), 40 м², большой балкон, полная меблировка, лифт и подземный паркинг. Ул. Nguyễn Thị Thập, Tân Hưng, Q7. Рядом ĐH RMIT/TDTU/UFM, ТЦ Lotte/Vivo/Crescent Mall.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134425952.htm","вчера",1,source="chotot",
   descEn="Service apartment with high mezzanine (2m), 40m2, large balcony, fully furnished, elevator and basement parking. Nguyen Thi Thap St, Tan Hung, District 7. Near RMIT/TDTU/UFM universities, Lotte/Vivo/Crescent Mall.",
   details={"photos": ["https://cdn.chotot.com/-LyXSSOyypoUQjb1fUB4EBDXkG-bvH0GKQc4U4QxjxA/preset:view/plain/290347002bca192871dead0af2d0c1fa-2999856228106088228.jpg", "https://cdn.chotot.com/IRuQw4vNXqkHSUJEDEAuESrx3JzyUL_VAMFncolGVUQ/preset:view/plain/02b707dc38c24fdd8fc8e72e5c4ba412-2999856228640818304.jpg", "https://cdn.chotot.com/549PTHFtRwK-wN9lkat_jrB7aqWGXXX9V-Acgvmqvok/preset:view/plain/13f62d721433d15a1b16869bba9e277b-2999856229129563940.jpg"]}),
-L(2134,"ho-chi-minh","th","Комната",5000000,15,
+L(2308,"ho-chi-minh","th","Комната",5000000,15,
   "Комната, полная меблировка (кондиционер, холодильник, диван, стиральная машина), ул. Số 63, Tân Hưng, Q7, рядом ĐH Tôn Đức Thắng.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134425075.htm","вчера",1,source="chotot",
   descEn="Room, fully furnished (AC, fridge, sofa, washing machine), Street No. 63, Tan Hung, District 7, near Ton Duc Thang University.",
   details={"notice": "площадь по карточке сайта — 15 м², но в тексте объявления упомянуто 30 м² — расхождение не устранено продавцом, указана площадь карточки.", "photos": ["https://cdn.chotot.com/evSmr8E61gBu9RVsmHjp3lH2HQeAGI8FRl089n1lZok/preset:view/plain/e6d44604d8ab46f6e88420c055708554-2999847594649846912.jpg", "https://cdn.chotot.com/qsaBRt_8V8YyPYyCLt8jPyVNYAV9nQGMZVQPgIJQrpA/preset:view/plain/eac9565b2e1e6d8ebfa0364ff0fd06b9-2999847595305975740.jpg", "https://cdn.chotot.com/1mO-e6FfyUj6Ks-r1BymWSEaGcH5Hs1OsurM2wQ0WoQ/preset:view/plain/6ced0fa4d6cf18d565587fab7af4a239-2999847595386256141.jpg"]}),
-L(2135,"ho-chi-minh","bq","Квартира",7000000,30,
+L(2309,"ho-chi-minh","bq","Квартира",7000000,30,
   "2-спальная квартира, 30 м², свежий ремонт, лифт, общая стиральная машина, парковка для авто у дома. 82 Bình Quới, Bình Thạnh (Thanh Đa).",
   "https://www.nhatot.com/thue-can-ho-chung-cu-binh-thanh-tp-ho-chi-minh/134429003.htm","вчера",1,source="chotot",
   descEn="2-bedroom apartment, 30m2, freshly renovated, elevator, shared washing machine, car parking available. 82 Binh Quoi St, Binh Thanh (Thanh Da).",
   details={"photos": ["https://cdn.chotot.com/qOqpc0o4NNGNLjyHsXdmrMWhmTXIrxE9hUkRkgSSo3E/preset:view/plain/f1ce0becb97ea93e92ad929b199675c7-2999874300238081828.jpg", "https://cdn.chotot.com/80L7wtC6RhhfHLA5c_Hchw1O5V_gR_bo1WcUjFnU7TI/preset:view/plain/f5859aee510fd4be5737159b36d8fc62-2999874300106358716.jpg", "https://cdn.chotot.com/3TKueDfB-Gphz3tIcbxBOvDYAo3LYTIbKN5pQaXFIzk/preset:view/plain/0f9d8828dd3f6250040dbbd16abc8d00-2999874300331040528.jpg"]}),
-L(2136,"ho-chi-minh","kh","Студия",11000000,32,
+L(2310,"ho-chi-minh","kh","Студия",11000000,32,
   "Студия 32 м² в ЖК Millennium, полная меблировка, широкий балкон. 132 Bến Vân Đồn, Khánh Hội (быв. Q4). Заезд сразу.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/134409273.htm","2 дня назад",2,source="chotot",
   descEn="Studio 32m2 in Millennium building, fully furnished, wide balcony. 132 Ben Van Don St, Khanh Hoi (former District 4). Move-in ready.",
   details={"photos": ["https://cdn.chotot.com/-FLFtYHuBnCE8JZphpEpuY1CQnYiDD7CiGcPQIhd_JM/preset:view/plain/741f074d6e26d3b4f0be4873caf8e018-2999704791243775750.jpg", "https://cdn.chotot.com/Jd9CS2eCJ144tB4SAN7LFsdA6WBVj8YLF0eLveGgpKA/preset:view/plain/5810aaf1bc1f991a3d0c18de9c6bd044-2999704791353616058.jpg", "https://cdn.chotot.com/i46I9Mycq8StS-W2Kt_XCPkisoaANUyFlruvKNXJWYI/preset:view/plain/a1b84dd3b9c2721ba31d4d764f5c606b-2999704791235233817.jpg"]}),
-L(2137,"ho-chi-minh","th","Квартира",7500000,40,
+L(2311,"ho-chi-minh","th","Квартира",7500000,40,
   "1-спальная квартира/студия, 40 м², полностью новая меблировка, отдельная стиральная машина, собственный балкон. Ул. Nguyễn Thị Thập, Tân Quy (Tân Hưng), Q7, рядом Lotte Mart, Phú Mỹ Hưng, ĐH TDTU/RMIT.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134417179.htm","2 дня назад",2,source="chotot",
   descEn="1-bedroom/studio apartment, 40m2, all-new furniture, private washing machine, own balcony. Nguyen Thi Thap St, Tan Quy (Tan Hung), District 7, near Lotte Mart, Phu My Hung, TDTU/RMIT universities.",
   details={"photos": ["https://cdn.chotot.com/Y7iRfsPPb45NSLXzfEpReJrS4VVl2_PpFS1RLLQe5Ps/preset:view/plain/85733a7343d71df08f671e07c079218b-2999749411147745305.jpg", "https://cdn.chotot.com/QDRO7D6tSQEYJbafOLJIRFYRxIt5upxjV3kPhJv-c00/preset:view/plain/ee5df4b931a9257dc1fe5e12bb89feaf-2999749411245226991.jpg", "https://cdn.chotot.com/5YB7ECMQD86ficJs1oMlC91I9w0chdLceWAchjvQsdY/preset:view/plain/5d0addd5d462376ff60626f4444514fe-2999749411324878594.jpg"]}),
-L(2138,"ho-chi-minh","th","Комната",5500000,30,
+L(2312,"ho-chi-minh","th","Комната",5500000,30,
   "Комната в новом доме, 30 м², базовая меблировка (есть холодильник), большое окно-балкон. Ул. Số 85, Tân Hưng, Q7, рядом Lotte Mart и вузы (TDT/UFM/RMIT/NTT).",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133707236.htm","2 дня назад",2,source="chotot",
   descEn="Room in a newly built building, 30m2, basic furniture (fridge included), large window/balcony. Street No. 85, Tan Hung, District 7, near Lotte Mart and universities (TDT/UFM/RMIT/NTT).",
   details={"photos": ["https://cdn.chotot.com/13ONtnMbCyKb0B_5Zl6DAkyl5-mwBIY677-tt3uFyKQ/preset:view/plain/e3ae792a716722d0c979f9a895c04005-2994357421357829785.jpg", "https://cdn.chotot.com/aqQav7Sda0ZOwB_MRevCSWO6Am-mEtzfzx-24KCrmYU/preset:view/plain/9619d9740f4bd7b46fe89ffa5729f79c-2994357421281896360.jpg", "https://cdn.chotot.com/c6wFrVgaBu4Lo9cdrUaxfjCiQhb7NtZU5OvizzDSrSI/preset:view/plain/12e346a5129ff6ec29be2a0366146daf-2994357421449142819.jpg"]}),
-L(2139,"ho-chi-minh","tm","Квартира",14000000,85,
+L(2313,"ho-chi-minh","tm","Квартира",14000000,85,
   "Квартира Era Town, 2 спальни, 85 м², полная меблировка премиум-класса, вид прямо на реку. Ул. 15B, Tân Mỹ (Phú Mỹ Hưng), Q7. Депозит 2 мес., доступ по карте.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134421620.htm","2 дня назад",2,source="chotot",
   descEn="Era Town apartment, 2 bedrooms, 85m2, premium full furniture, direct river view. Street 15B, Tan My (Phu My Hung), District 7. 2-month deposit, keycard access.",
   details={"photos": ["https://cdn.chotot.com/nxQMhgzdhsBrsWKb0rP8xXkVdedKh0OEj2c-HB75Z-M/preset:view/plain/5bf173fbfc13b698ee47406e1d11595e-2999780667348202434.jpg", "https://cdn.chotot.com/Aw8Ff9nlduJa6hX3QuFOJo91VDVjH7OPx15FkZUwyiY/preset:view/plain/74ebfc9c5960aa918c6922b47e746805-2999780669613192130.jpg", "https://cdn.chotot.com/3qdZyhtL1g9ItDdXf_65447VO1SxC_jCUd84rvRtGS4/preset:view/plain/d5e8eb048d120dd71232bb854f518e74-2999780669806320121.jpg"]}),
-L(2140,"ho-chi-minh","th","Квартира",5800000,40,
+L(2314,"ho-chi-minh","th","Квартира",5800000,40,
   "Квартира-дуплекс с балконом, 40 м², полная меблировка, отдельная стиральная машина. Ул. Số 77, Tân Quy (Tân Hưng), Q7.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134417274.htm","2 дня назад",2,source="chotot",
   descEn="Duplex apartment with balcony, 40m2, fully furnished, private washing machine. Street No. 77, Tan Quy (Tan Hung), District 7.",
   details={"photos": ["https://cdn.chotot.com/TGD2Fho8zpOYrc5oY5qXyGy569PTRZq7nQMm3ONxgS0/preset:view/plain/6271d93853908c4a97af9c8285d4a8c4-2999749724627525378.jpg", "https://cdn.chotot.com/oIX4Bd8c7HmINcW_bkUWvz8VJbZjHv2yUUJjIbkl13U/preset:view/plain/3a68410ca8979a5d0c024b607129b137-2999749724203242937.jpg", "https://cdn.chotot.com/hAeoLpK5RT3mEg7dcBw__B07cijwFqsQ3G84-NAG4N0/preset:view/plain/7998f62172ad19aa12835cf722e14522-2999749724792665026.jpg"]}),
-L(2141,"ho-chi-minh","th","Дом",60000000,240,
+L(2315,"ho-chi-minh","th","Дом",60000000,240,
   "Вилла с садом 12×20 м (240 м²), общая площадь 540 м² (цоколь + 2 этажа), 6 спален, 6 с/у. КДС Tân Quy Đông, ул. Số 30, Tân Hưng, Q7. Подходит под офис/учебный центр или для большой семьи.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/133379405.htm","2 дня назад",2,source="chotot",
   descEn="Garden villa 12x20m (240m2 land), total floor area 540m2 (basement + 2 floors), 6 bedrooms, 6 bathrooms. Tan Quy Dong residential area, Street No. 30, Tan Hung, District 7. Suitable as an office/training center or for a large family.",
   details={"photos": ["https://cdn.chotot.com/r9GqlR32k3NeLX0HoTmgytpvwTxb2e27KcG8ekDwHEw/preset:view/plain/108a1575db029bc8a70b464a821f40af-2991823458994462127.jpg", "https://cdn.chotot.com/VVPsB8XgJl5ObjWx1S1Tsy3VMkt0CkDeqfahLnomJ4E/preset:view/plain/95be1a55efdb729fdf4fa1b7c80f19d9-2991823459114925714.jpg", "https://cdn.chotot.com/FtkTlMP0_Ko9b2jn6ziGOPoqeQ9q71fAFidsVYHRp3E/preset:view/plain/275699a3300438b634c3c4ad0419fb88-2991823459393724793.jpg"]}),
-L(2142,"ho-chi-minh","tm","Дом",70000000,126,
+L(2316,"ho-chi-minh","tm","Дом",70000000,126,
   "Вилла Nam Thông 3, 7×18 м (126 м²), цоколь + 4 этажа, 5 спален, современный дизайн, ориентация Северо-Запад. Ул. Số 20, Phú Mỹ Hưng, Q7. Депозит 3 мес.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134120956.htm","2 дня назад",2,source="chotot",
   descEn="Nam Thong 3 villa, 7x18m (126m2), basement + 4 floors, 5 bedrooms, modern design, Northwest facing. Street No. 20, Phu My Hung, District 7. 3-month deposit.",
   details={"photos": ["https://cdn.chotot.com/BjJoKpSCNBl-fDYh7OhFX0ga_KW1B02eNH3Mgne0kpA/preset:view/plain/415384b8a5f50161408a04ea87a0a6a0-2999751321340534426.jpg", "https://cdn.chotot.com/UqTgJEjOtpgmL2n6YO-w5ecJNleAsG4MNH6s4bS3cAQ/preset:view/plain/24e7bbeefcc20e28817cd0d87658a529-2999751319975211970.jpg", "https://cdn.chotot.com/x3ZmfIVmK_A7guiepMOcje6CFFfkmOpJTd1HvUlPPG4/preset:view/plain/f1dad7a5982dd0c7f0624d926a848c78-2999751321189471718.jpg"]}),
-L(2143,"ho-chi-minh","th","Дом",18000000,52,
+L(2317,"ho-chi-minh","th","Дом",18000000,52,
   "Дом целиком 4×13 м (52 м²), 1 этаж + 2 этажа + терраса на крыше, 3 спальни, 4 с/у, полная меблировка (3 кондиционера, солнечный водонагреватель). Переулок с ул. Trần Xuân Soạn, Tân Hưng, Q7. Подходит для семьи или онлайн-бизнеса.",
   "https://www.nhatot.com/thue-nha-dat-quan-7-tp-ho-chi-minh/134411940.htm","2 дня назад",2,source="chotot",
   descEn="Whole house 4x13m (52m2), 1 floor + 2 floors + rooftop terrace, 3 bedrooms, 4 bathrooms, fully furnished (3 AC units, solar water heater). Alley off Tran Xuan Soan St, Tan Hung, District 7. Suitable for a family or online business.",
   details={"photos": ["https://cdn.chotot.com/YC3UoUJxKQIY4g-E0GfuRZfRxbxGA4bm0poLxaKFMVA/preset:view/plain/b99928f87be9579f2e35503ef45dd4b5-2999721978799679162.jpg", "https://cdn.chotot.com/RLm0HytwozNfFsDIi-xPMVEwrQ4AHO7gDWsrKWhV6UY/preset:view/plain/b2dff5a243d53add87ca81ae5fe88330-2999721978829604889.jpg", "https://cdn.chotot.com/Y5_0Wmnadty6CfJBW34fQUuw1coHTVpYQ5X0pnLRlkM/preset:view/plain/b515561f5f6e054aefc65adeb45098dc-2999721981188355010.jpg"]}),
-L(2144,"ho-chi-minh","ak","Комната",7800000,30,
+L(2318,"ho-chi-minh","ak","Комната",7800000,30,
   "Комната, полная меблировка, отдельная стиральная машина в каждой комнате, 30 м². Ул. 40 Trần Não (в сторону набережной Сайгона), An Khánh, Thủ Đức. Рядом Thủ Thiêm, Q1, Bình Thạnh.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-thu-duc-tp-ho-chi-minh/134412739.htm","2 дня назад",2,source="chotot",
   descEn="Room, fully furnished, private washing machine in each room, 30m2. Street 40 Tran Nao (towards the Saigon riverbank), An Khanh, Thu Duc. Close to Thu Thiem, District 1, Binh Thanh.",
   details={"notice": "в тексте объявления упомянута цена 7,3 млн ₫ рядом с ценой 7,8 млн ₫ на карточке — вероятно устаревший текст, использована цена карточки.", "photos": ["https://cdn.chotot.com/qX-IK8Tsd8yatzz-Dvns2ehRUyCLPgHIhUfe1uUOaI8/preset:view/plain/40682d6dd8b8e827fb273013e729e488-2999725735875090091.jpg", "https://cdn.chotot.com/Lc-rtfcRaWjp7rDQWxilBs8os0VFqdlvygtpBnMQm1g/preset:view/plain/f01b6c2e96a5798b7d420a7973449796-2999725736955761308.jpg", "https://cdn.chotot.com/h-qsBmBe7g9PQgw5fsPQwG7HG8wnLMowlbtP1oeSFM0/preset:view/plain/94620c7aa5d8d0765869c55134830adc-2999725737084507577.jpg"]}),
 
-L(2145,"ho-chi-minh","ak","Дом",45000000,160,
+L(2319,"ho-chi-minh","ak","Дом",45000000,160,
   "Дом целиком, фасад 9,3×17 м, цоколь + 2 этажа + терраса на крыше, 5 спален, 4 с/у, двор и гараж для машины. Закрытый охраняемый квартал (compound), An Khánh, Thủ Đức.",
   "https://batdongsan.com.vn/cho-thue-nha-rieng-phuong-an-khanh-tp-ho-chi-minh/cho-q2-gia-45tr-thang-pr46244333","сегодня",0,source="batdongsan",
   descEn="Whole house, 9.3x17m frontage, ground floor + 2 floors + rooftop terrace, 5 bedrooms, 4 bathrooms, yard and car garage. Gated security compound, An Khanh, Thu Duc.",
   details={"notice": "дата — по данным сайта batdongsan.com.vn («đăng hôm nay»), точная дата первой публикации не подтверждена.", "photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831101832-5649_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831101832-8cf6_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831101831-15f2_wm.jpg"]}),
-L(2146,"ho-chi-minh","ak","Дом",80000000,250,
+L(2320,"ho-chi-minh","ak","Дом",80000000,250,
   "Вилла в центре Thảo Điền, цоколь + 2 этажа, 4 спальни, 5 с/у, собственный бассейн, большой сад. Есть кондиционеры и часть базовой мебели. Подходит для семьи или под офис.",
   "https://batdongsan.com.vn/cho-thue-nha-rieng-phuong-an-khanh-tp-ho-chi-minh/cho-biet-thu-san-vuon-boi-khu-thao-ien-gia-80-trieu-pr46240810","2 дня назад",2,source="batdongsan",
   descEn="Villa in central Thao Dien, ground floor + 2 floors, 4 bedrooms, 5 bathrooms, private pool, large garden. AC units and some basic furniture included. Suitable for a family or as an office.",
   details={"notice": "дата — по данным сайта batdongsan.com.vn («đăng hôm nay»), точная дата первой публикации не подтверждена.", "photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829152322-1e1a_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829152322-ef1f_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829152322-a666_wm.jpg"]}),
+
+L(2321,"quy-nhon","qnd","Квартира",3500000,42,
+  "Апартаменты в комплексе Ecolife Riverside, 2 спальни, 2 с/у, 42 м². Ул. Điện Biên Phủ, Nhơn Bình (Quy Nhơn Đông).",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-qui-nhon-binh-dinh/101292127.htm","вчера",1,source="chotot",
+  descEn="Apartment in Ecolife Riverside complex, 2 bedrooms, 2 bathrooms, 42m2. Dien Bien Phu St., Nhon Binh (Quy Nhon Dong).",
+  details={"photos":["https://cdn.chotot.com/yjOFmY_YUDHn0CkLsW1evX_GWqHUFN8RIhusQgrjDX0/preset:view/plain/c9564633cda87348a0738d5c7bfa6193-2800123006128208638.jpg","https://cdn.chotot.com/oHpvNUvEhVSRsPV6DuwI-H0iwwos9OfU-1SW-k0Z0ls/preset:view/plain/b80d3a58b469695d1a8c8e8e21b9b0f8-2800123044041668306.jpg","https://cdn.chotot.com/Ckqd2UnCukMJcU0CsXWnVmc3kQ1r8MDeSLjeWJ2bx8c/preset:view/plain/11c70d83653217f3d47484107bb6e4c8-2800123048648825083.jpg"]}),
+L(2322,"quy-nhon","qn","Дом",23000000,400,
+  "Дом целиком (уличный фасад), 4 спальни, подходит для жилья или бизнеса. Ул. Trần Hưng Đạo, Quy Nhơn.",
+  "https://batdongsan.com.vn/cho-thue-nha-mat-pho-duong-tran-hung-dao-phuong-quy-nhon-tinh-gia-lai/cho-tien-nguyen-can-ao-nhon-pr46240210","вчера",1,source="batdongsan",
+  descEn="Whole street-front house, 4 bedrooms, suitable for living or business. Tran Hung Dao St., Quy Nhon.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена; детальная страница объявления была заблокирована Cloudflare, цена и фото — только с карточки поиска.","photos":["https://file4.batdongsan.com.vn/crop/232x186/2026/08/29/20260829122928-b585_wm.jpg"]}),
+L(2323,"quy-nhon","qn","Дом",45000000,180,
+  "4-этажный дом, подходит для бизнеса. Ул. Phan Bội Châu, Quy Nhơn.",
+  "https://batdongsan.com.vn/cho-thue-nha-mat-pho-duong-phan-boi-chau-phuong-quy-nhon-tinh-gia-lai/cho-4-tang-tien-uong-phu-hop-e-kinh-doanh-pr46239057","вчера",1,source="batdongsan",
+  descEn="4-floor house, business-suitable. Phan Boi Chau St., Quy Nhon.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена; детальная страница объявления была заблокирована Cloudflare, цена и фото — только с карточки поиска.","photos":["https://file4.batdongsan.com.vn/crop/232x186/2026/08/29/20260829090510-9201_wm.jpg"]}),
+L(2324,"hoi-an","had","Квартира",12000000,45,
+  "Winhouse Eco Apartment, эко-дизайн, 1 спальня, помощь с временной регистрацией, охрана 24/7. Тхон Cồn Nhàn, Cẩm Thanh (Hội An Đông).",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-hoi-an-quang-nam/134428353.htm","вчера",1,source="chotot",
+  descEn="Winhouse Eco Apartment, eco-design, 1 bedroom, help with temporary residence registration, 24/7 security. Con Nhan hamlet, Cam Thanh (Hoi An Dong).",
+  details={"photos":["https://cdn.chotot.com/fpj-wEsitaoLB9FQDnST5X7PX4mdpKOBNVRsjXZuh8U/preset:view/plain/d55a571b83ecd52ca9b7e8021c8d3650-2999871165534027708.jpg","https://cdn.chotot.com/9gdjEgGj_x2HKwiTdqGdHpO4VW4QtEXjxdLtKOCalGY/preset:view/plain/00e154632745b1be89a5098a2b556a60-2999871222745251772.jpg","https://cdn.chotot.com/HMEurtFOj5gjQlzGsxp9CscFUeD55A5bi9owl3kGQPs/preset:view/plain/8866db73dcc9fb578ce045627206ae81-2999871227627487164.jpg"]}),
+L(2325,"da-lat","cl","Квартира",9000000,45,
+  "1-спальная квартира с балконом, отдельная кухня и гостиная. Ул. Nguyễn An Ninh (район Kim Đồng), ~3 км от рынка Далата.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-da-lat-lam-dong/134413771.htm","вчера",1,source="chotot",
+  descEn="1-bedroom apartment with balcony, separate kitchen and living room. Nguyen An Ninh St. (Kim Dong area), ~3km from Da Lat market.",
+  details={"photos":["https://cdn.chotot.com/cdjXgA6whaX7mrGUPtCE_zjHoOgMN9Z3fO78-Hp_qI0/preset:view/plain/f71171d330c2cf6645fef1620a3e9994-2999729965713306562.jpg","https://cdn.chotot.com/7LyDooiO9Tv7G7lwZZM49GznmKpIgGcZoTFMO6RRVE4/preset:view/plain/b39f520689a05042e83db0484b8786c2-2999729965742450362.jpg"]}),
+L(2326,"da-lat","lv","Дом",8000000,70,
+  "Дом, 3 спальни + комната для алтаря, 2 с/у, отдельная парковка. Ул. Trần Anh Tông, Lâm Viên.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/134428244.htm","вчера",1,source="chotot",
+  descEn="House, 3 bedrooms + altar room, 2 bathrooms, private parking. Tran Anh Tong St., Lam Vien.",
+  details={"photos":["https://cdn.chotot.com/6UdL9kKSS5F8oKbbm3QuQo8o2GYpe1WqWIRYFeHmnjU/preset:view/plain/1dcbfc3cc2f67dc8663a79b0d070a91e-2999870651284266073.jpg","https://cdn.chotot.com/voKIZGPjDmrf2ULajZnJ42Z8WhoEF0ZRqmJ5uxdB1P0/preset:view/plain/016dc702ff75e8e852d346e53fd1800c-2999870651725384430.jpg"]}),
+L(2327,"da-lat","lb","Дом",15000000,198,
+  "Вилла, два фасада на дорогу шириной 5 м, рядом мост Phước Thành, район Lang Biang.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/134428280.htm","вчера",1,source="chotot",
+  descEn="Villa, two street frontages on a 5m-wide road, near Phuoc Thanh bridge, Lang Biang area.",
+  details={"notice":"в тексте объявления указано ~195 м², в поле площади сайта — 198 м², незначительное расхождение.","photos":["https://cdn.chotot.com/3ysx8buLui5_gTHzK3B8ZFOLIiZM9K2__iU-NPkBmzw/preset:view/plain/1249e4c82f5c6d81b71a1dc232674098-2999870860839226094.jpg","https://cdn.chotot.com/ngcBvYReB_kh4Lv2yfRfjy7m_vMZ7ARId4DABRiAews/preset:view/plain/2c19716d864ee5533440e1d029d7a389-2999870860520112060.jpg"]}),
+L(2328,"da-lat","lv","Дом",15000000,100,
+  "Новый дом, 1 этаж + мансарда, 3 спальни, двор вмещает 7-местный автомобиль. Рядом почта LangBiang, Lâm Viên.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/134417018.htm","вчера",1,source="chotot",
+  descEn="New house, 1 floor + mezzanine, 3 bedrooms, yard fits a 7-seat car. Near LangBiang post office, Lam Vien.",
+  details={"photos":["https://cdn.chotot.com/5VK20fzMO18Gt8Yqdbu9T1nXfffQIN9wC6JI0oA5lkY/preset:view/plain/bed250c73ed979a1e83ba4153ae0d556-2999749316637391855.jpg","https://cdn.chotot.com/jmdTev3S70xNpD6Yoqt1o7aN9sLMtFfDj1F-W6TClz0/preset:view/plain/6bd9592d2f88835f9d4031e5a3663fe0-2999749317159970694.jpg"]}),
+L(2329,"da-lat","xh","Дом",27000000,302,
+  "Новая вилла 12×26 м, подходит для проживания или бизнеса. A4 Mai Xuân Thưởng, Xuân Hương.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/133410353.htm","вчера",1,source="chotot",
+  descEn="New villa 12x26m, suitable for living or business. A4 Mai Xuan Thuong St., Xuan Huong.",
+  details={"photos":["https://cdn.chotot.com/iQSCCxst3DDXWfJzSZFadb6nU9ZFSi__5hycUPPdC9w/preset:view/plain/0795d4dabaaa3b06412e0394c27126f8-2992065649855874437.jpg","https://cdn.chotot.com/OKgomI3q9r-de8N-2wJCi8zhCfzoeBvz_aXjQFNDU08/preset:view/plain/006042ce0562d5dc80fe9b3f51f7c04a-2992065681237664121.jpg"]}),
+L(2330,"da-lat","xh","Дом",4000000,50,
+  "Дом, 2 спальни, водонагреватель, просторная парковка, аренда долго- или краткосрочно. Ул. An Sơn, Xuân Hương.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-da-lat-lam-dong/130294289.htm","вчера",1,source="chotot",
+  descEn="House, 2 bedrooms, water heater, spacious parking, long- or short-term rental. An Son St., Xuan Huong.",
+  details={"photos":["https://cdn.chotot.com/hpCtjs0diO4AIihtjHtB-aBrpwDv0KL4hjChAlu7OFE/preset:view/plain/bd30d5ea53fb356bf6cc2b8024a4db46-2967132187248215336.jpg","https://cdn.chotot.com/7ybiCg_jVjJ3Bg9rfCVJbJPb5egvo-jzkLSLZGeWaCs/preset:view/plain/b4358787a0aa4a3023e611719740da16-2967132184832230696.jpg"]}),
+L(2331,"nha-trang","vp","Студия",9000000,30,
+  "Студия для аренды, можно с животными, 1 комната. Район Hòn Chồng, Bắc Nha Trang (Vĩnh Phước).",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134438459.htm","2 дня назад",2,source="chotot",
+  descEn="Studio for rent, pets allowed, 1 room. Hon Chong area, North Nha Trang (Vinh Phuoc).",
+  details={"notice":"район определён приблизительно — Hòn Chồng лежит на границе Vĩnh Phước и Vĩnh Hải.","photos":["https://cdn.chotot.com/tUVWvxUp_FxuXIKgfz6_eeX76Or2FytrcS4yxs8pA5g/preset:view/plain/9976c398d5daf3175fe8063163693572-2999944363030504230.jpg","https://cdn.chotot.com/iWaegTOuxl021hAC4qGwa-zUrCYc2fNNjn9rcDFiZWk/preset:view/plain/6d5bd53711c9e95570249f4bb924c2b6-2999944364685389536.jpg","https://cdn.chotot.com/kjlhqa7Yn-ki3M8dCwX3eF2s4Bt7vV1PgLH3b5DbWGM/preset:view/plain/273985a52be18d7a52eaf28d6bf4d2c5-2999944365104792193.jpg"]}),
+L(2332,"nha-trang","vp","Квартира",13000000,65,
+  "Mường Thanh Viễn Triều, 2 спальни, 2 с/у, минимальный срок аренды 6 месяцев. Ул. Phạm Văn Đồng, Vĩnh Phước.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134436115.htm","2 дня назад",2,source="chotot",
+  descEn="Muong Thanh Vien Trieu, 2 bedrooms, 2 bathrooms, minimum 6-month lease. Pham Van Dong St., Vinh Phuoc.",
+  details={"photos":["https://cdn.chotot.com/Jm3yzPqfidIkKCpYkPgCt54s2nIwXlX17uDoV_5l9X0/preset:view/plain/11ea8bcce57f2e46e23d2740df73d951-2999924863061408247.jpg","https://cdn.chotot.com/YhGaHUvhIEnIu1uYX8nnkV2FDBymEp7CnQzEFwfPGio/preset:view/plain/1022a69a6658d9c2658b291178c51af9-2999924862951363271.jpg"]}),
+L(2333,"nha-trang","lt","Квартира",16000000,55,
+  "Mường Thanh 60 Trần Phú, 2 спальни, 1 с/у, вид на море, освобождается со 2 сентября.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134425058.htm","2 дня назад",2,source="chotot",
+  descEn="Muong Thanh 60 Tran Phu, 2 bedrooms, 1 bathroom, sea view, available from Sep 2.",
+  details={"photos":["https://cdn.chotot.com/sHMtC15KZC6Nc4487k6oRa8L0ntJaNWpspBE-bOsPd4/preset:view/plain/10c37a5a9157520e1d404400c3aa4c2e-2999796932195751587.jpg"]}),
+L(2334,"nha-trang","lt","Квартира",14000000,65,
+  "TUI BLUE (башня Ariyana), угловой юнит, диагональный вид на море и город. Ул. Trần Hưng Đạo, центр города.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134423857.htm","2 дня назад",2,source="chotot",
+  descEn="TUI BLUE (Ariyana tower), corner unit, diagonal sea/city view. Tran Hung Dao St., city center.",
+  details={"photos":["https://cdn.chotot.com/j1Pk2SuLUd_oJiFS-sliTtbTKdQz0ksfUK1T0YMxpR4/preset:view/plain/8b94ae3dfcf404fb9bf5782a0e6a1755-2999796664758219714.jpg"]}),
+L(2335,"nha-trang","lt","Квартира",13500000,65,
+  "Mường Thanh 04 Trần Phú, 37 этаж, 2 спальни, 2 с/у, вид на реку.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134419967.htm","2 дня назад",2,source="chotot",
+  descEn="Muong Thanh 04 Tran Phu, floor 37, 2 bedrooms, 2 bathrooms, river view.",
+  details={"photos":["https://cdn.chotot.com/OFz2fNMgH9LFA5PjS4PqOehVv8KIeSopIAjMUBpcKms/preset:view/plain/7d424ff5fd08221daa5e8825e72e89e3-2999767170390143938.jpg"]}),
+L(2336,"nha-trang","ph2","Квартира",12000000,60,
+  "Башня Maple, 1 спальня, 1 с/у, 12 этаж, ул. Tôn Đản, рядом центральная площадь.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134430972.htm","2 дня назад",2,source="chotot",
+  descEn="Maple tower, 1 bedroom, 1 bathroom, floor 12, Ton Dan St., near the central square.",
+  details={"alsoOn":[{"source":"batdongsan","url":"https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-maple-nha-trang-phuong-nha-trang-tinh-khanh-hoa/cho-1phong-ngu-ngay-quang-truong-pr46239430"}],"photos":["https://cdn.chotot.com/_d59NSI2gRPXzSAekv7jgnsoxfZH2EufKtWpmkatNGs/preset:view/plain/61b754fc20bc6a1696207ce6683eb938-2999887472364142524.jpg"]}),
+L(2337,"nha-trang","ph","Квартира",18000000,66.6,
+  "CT2 VCN Phước Hải, 8 этаж, 2 спальни, 2 с/у. Ул. Tố Hữu, Nam Nha Trang.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-nha-trang-khanh-hoa/134433862.htm","2 дня назад",2,source="chotot",
+  descEn="CT2 VCN Phuoc Hai, floor 8, 2 bedrooms, 2 bathrooms. To Huu St., South Nha Trang.",
+  details={"photos":["https://cdn.chotot.com/g4FBmqhVhVDqyf3EPN0IatpWZBVdzxUPTbeqqzbF9Oo/preset:view/plain/6499e23f2c8940b16d9df9192c64abf4-2999906353215813435.jpg"]}),
+L(2338,"nha-trang","ph2","Дом",9000000,80,
+  "Дом 1 этаж + антресоль, доступен на мотоцикле по переулку. Район Phước Hoà, центр города.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134423962.htm","2 дня назад",2,source="chotot",
+  descEn="House 1 floor + mezzanine, accessible by motorbike alley. Phuoc Hoa area, city center.",
+  details={"photos":["https://cdn.chotot.com/ril5KFsb7RmMsrIZQ8FgcCZ7ysRyJo4fNkNHlDyWSDY/preset:view/plain/1b82865496297f3b39db66d2bd72f5da-2999797675390103601.jpg"]}),
+L(2339,"nha-trang","vp","Дом",7500000,46,
+  "Дом рядом с пляжем Hòn Sện, ~5 минут до моря. Ул. Phạm Văn Đồng, Bắc Nha Trang.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134423194.htm","2 дня назад",2,source="chotot",
+  descEn="House near Hon Sen beach, ~5 minutes to the sea. Pham Van Dong St., North Nha Trang.",
+  details={"photos":["https://cdn.chotot.com/TXXGUh5oYKTp1Q58apIyijr7zh21T22t5OIXlEwqAOU/preset:view/plain/78d8dcca295fdd0726e275731ebd1441-2999791384651718406.jpg"]}),
+L(2340,"nha-trang","tl","Дом",60000000,40,
+  "Уличный фасад на Nguyễn Thiện Thuật, ширина 4 м, 1 этаж + антресоль + 4 этажа. Tân Lập.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134417303.htm","сегодня",0,source="chotot",
+  descEn="Street-front on Nguyen Thien Thuat St., 4m wide, ground floor + mezzanine + 4 floors. Tan Lap.",
+  details={"photos":["https://cdn.chotot.com/trU6dV4zVsegQ37iuaCQ5bCnK3vXswsbygkBWLD-VG8/preset:view/plain/29ae7c82251fcfc2cdcb461ce439782b-2999750967448559362.jpg"]}),
+L(2341,"nha-trang","tl","Дом",100000000,312,
+  "Дом в старом квартале, ул. Mạc Đĩnh Chi, ширина фасада 16.5 м. Tân Lập.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134417216.htm","2 дня назад",2,source="chotot",
+  descEn="House in the old quarter, Mac Dinh Chi St., 16.5m frontage. Tan Lap.",
+  details={"photos":["https://cdn.chotot.com/krL2DwduMqC5NBsE4RMSpTQtaCdN-m4UR0TfxYeQe34/preset:view/plain/1b53880d5e2dcd0e5860f82e969f9d84-2999750600207294210.jpg"]}),
+L(2147,"nha-trang","tl","Дом",17000000,58,
+  "Хоумстей в рустик-стиле, 2 спальни, 1 с/у, освобождается с 1 сентября. Ул. Nguyễn Thiện Thuật, центр города.",
+  "https://www.nhatot.com/thue-nha-dat-thanh-pho-nha-trang-khanh-hoa/134401720.htm","3 дня назад",3,source="chotot",
+  descEn="Rustic-style homestay, 2 bedrooms, 1 bathroom, available from Sep 1. Nguyen Thien Thuat St., city center.",
+  details={"photos":["https://cdn.chotot.com/lPpyUCn33Q3SK70rFLUta6Gam_Euuw4hzxRMC8g4BSo/preset:view/plain/5d5fd38dde98b58fc11900f99ee352d3-2999605261602414342.jpg"]}),
+L(2148,"nha-trang","pl","Квартира",8500000,52,
+  "Hà Quang 2 (SSH07), 2 спальни, 2 с/у. Район Lê Hồng Phong I, Nam Nha Trang.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-khu-do-thi-le-hong-phong-i-phuong-nam-nha-trang-tinh-khanh-hoa/cho-ha-quang-2-ngu-ssh07-dien-tich-52m2-ket-cau-2-ngu-2-pr46244131","сегодня",0,source="batdongsan",
+  descEn="Ha Quang 2 (SSH07), 2 bedrooms, 2 bathrooms. Le Hong Phong I zone, South Nha Trang.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831091855-c5d4_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831091856-3c75_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831091856-589c_wm.jpg"]}),
+L(2149,"nha-trang","pl","Квартира",9000000,30,
+  "Отдельная 1-спальная квартира с балконом, район Hà Quang 1, рядом парк, Nam Nha Trang.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-nam-nha-trang-tinh-khanh-hoa/cho-1pn-rieng-ha-quang-1-full-noi-that-co-ban-cong-truoc-thoang-mat-gan-cong-vien-pr46244082","сегодня",0,source="batdongsan",
+  descEn="Separate 1-bedroom apartment with balcony, Ha Quang 1 zone, near a park, South Nha Trang.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831090503-c35f_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831090503-779b_wm.jpg"]}),
+L(2150,"nha-trang","vt","Квартира",13000000,60,
+  "КДТ Biển An Viên, 2 спальни, вид на море, Nam Nha Trang.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-khu-do-thi-bien-an-vien-phuong-nam-nha-trang-tinh-khanh-hoa/cho-2-phong-ngu-view-ep-pr46242518","вчера",1,source="batdongsan",
+  descEn="An Vien Beach urban zone, 2 bedrooms, sea view, South Nha Trang.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/30/20260830104718-c35e_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/30/20260830104726-8f19_wm.jpg"]}),
+L(2151,"nha-trang","pl","Квартира",10500000,66,
+  "CCU-01 HUD Phước Long, 2 спальни, 2 с/у, полностью меблирована.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-chung-cu-ccu-01-phuoc-long-phuong-nam-nha-trang-tinh-khanh-hoa/cho-01-hud-dien-tich-66m2-full-noi-that-pr46237031","3 дня назад",3,source="batdongsan",
+  descEn="CCU-01 HUD Phuoc Long, 2 bedrooms, 2 bathrooms, fully furnished.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828140341-d868_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828140342-6367_wm.jpg"]}),
+L(2152,"nha-trang","pl","Квартира",7500000,66,
+  "XH1 VCN Phước Long 2, 2 спальни, полностью меблирована.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-khu-do-thi-vcn-phuoc-long-2-phuong-nam-nha-trang-tinh-khanh-hoa/cho-2-phong-ngu-xh1-2-full-noi-that-gia-chi-7-5-tr-thang-dien-tich-66m-pr46235538","3 дня назад",3,source="batdongsan",
+  descEn="XH1 VCN Phuoc Long 2, 2 bedrooms, fully furnished.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828091356-fbc3_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828091347-be6d_wm.jpg"]}),
+L(2153,"nha-trang","vt","Дом",25000000,140,
+  "Дом 2 этажа, полностью меблирован, 140 м². Ул. Bùi Thiện Ngộ №03, Nam Nha Trang.",
+  "https://batdongsan.com.vn/cho-thue-nha-rieng-duong-bui-thien-ngo-phuong-nam-nha-trang-tinh-khanh-hoa/cho-ep-2-tang-full-noi-that-140m-03-gia-chi-25-trieu-thang-pr46237180","3 дня назад",3,source="batdongsan",
+  descEn="2-floor house, fully furnished, 140m2. Bui Thien Ngo St. No.03, South Nha Trang.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828143246-4956_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828143247-09c6_wm.jpg"]}),
+L(2154,"da-nang","hcg","Квартира",5800000,35,
+  "Новая квартира с балконом, полная меблировка. Ул. Lưu Trọng Lư, Hòa Cường, рядом Lotte, ĐH Kiến trúc и ĐH Đông Á.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-hai-chau-da-nang/134405675.htm","3 дня назад",3,source="chotot",
+  descEn="New apartment with balcony, fully furnished. Luu Trong Lu St., Hoa Cuong, near Lotte, Architecture University and Dong A University.",
+  details={"photos":["https://cdn.chotot.com/FOlcHrlQP3yhqLqn_TJ1aRd7u1h9PuOl61_ERrjgDZs/preset:view/plain/8891ce4ee63c79b11063e30019d4474b-3000012030678536903.jpg","https://cdn.chotot.com/h1We8GxYeirDgRk2lltax_qWdgzwF_91SDn8mKYFgHM/preset:view/plain/a4a98c47dcad89d056451957035f7e6d-3000012033560777607.jpg"]}),
+L(2155,"da-nang","hc","Студия",11800000,35,
+  "Студия в новом доме, терраса, уборка раз в неделю. Ул. Trưng Nữ Vương, Hải Châu.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-hai-chau-da-nang/134443190.htm","сегодня",0,source="chotot",
+  descEn="Studio in a new building, terrace, weekly cleaning included. Trung Nu Vuong St., Hai Chau.",
+  details={"notice":"район определён по тексту адреса (Trưng Nữ Vương относится к Hải Châu); поле ward_name_v3 у источника указывает Hòa Cường.","photos":["https://cdn.chotot.com/PrQoq94qcZs0REszD-pwFzfgXa1LIN1qRJQzZpS9Z1k/preset:view/plain/2f7fba021b11bdb7728a6cf26a45554f-3000012705410847431.jpg"]}),
+L(2156,"da-nang","st","Квартира",13000000,40,
+  "1 спальня, балкон с видом на море, депозит 1 месяц. Ул. Lý Đạo Thành, рядом пляж Mân Thái, Sơn Trà.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-son-tra-da-nang/134442479.htm","сегодня",0,source="chotot",
+  descEn="1 bedroom, balcony with sea view, 1-month deposit. Ly Dao Thanh St., near Man Thai beach, Son Tra.",
+  details={"photos":["https://cdn.chotot.com/jkvrage_GAtf8b8vXJKliro9A-xHLBw27aY2BqeHayY/preset:view/plain/bd606c84b5719e28b3fd259fd85bd86a-3000008410816714273.jpg"]}),
+L(2157,"da-nang","tk","Квартира",7500000,40,
+  "Дуплекс с новой мебелью, можно вести бизнес, цена договорная. Ул. Trần Cao Vân, Thanh Khê.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-thanh-khe-da-nang/134441733.htm","сегодня",0,source="chotot",
+  descEn="Duplex with new furniture, business use allowed, price negotiable. Tran Cao Van St., Thanh Khe.",
+  details={"photos":["https://cdn.chotot.com/nP20aK0K6pB0x-3rCixoP7U0V4l6ly-Rful4HPLOWVg/preset:view/plain/c61594fb94956c75b35c4d5d70472cf4-3000004304151591415.jpg"]}),
+L(2158,"da-nang","hx","Квартира",6000000,45,
+  "1 спальня, рядом рынок и парк. У моста Nguyễn Tri Phương, Hòa Xuân.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-cam-le-da-nang/134412763.htm","2 дня назад",2,source="chotot",
+  descEn="1 bedroom, near a market and park. By Nguyen Tri Phuong bridge, Hoa Xuan.",
+  details={"photos":["https://cdn.chotot.com/_H27aRsD1Kfgj_ORLGesNI198NmQhOIZ9SP2JYgDzJM/preset:view/plain/16732d3fa8ac72885c644069232a34ab-2999725564666229698.jpg"]}),
+L(2159,"da-nang","ns","Квартира",15000000,40,
+  "1 спальня, полная меблировка, бассейн и спортзал в комплексе. Ул. Đa Mặn 14, Ngũ Hành Sơn.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134441418.htm","сегодня",0,source="chotot",
+  descEn="1 bedroom, fully furnished, complex has pool and gym. Da Man 14 St., Ngu Hanh Son.",
+  details={"photos":["https://cdn.chotot.com/cvmKoG3t4g7Ffq3FLwrR8DiuPdjeiUPhx6efsc4nGFo/preset:view/plain/fc336e1bbe18d6c7d5c76079c874510b-3000001979444283502.jpg"]}),
+L(2160,"da-nang","ns","Студия",7500000,30,
+  "Студия, без животных, полная меблировка. Ул. Thủy Sơn 4, Ngũ Hành Sơn.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134441145.htm","сегодня",0,source="chotot",
+  descEn="Studio, no pets, fully furnished. Thuy Son 4 St., Ngu Hanh Son.",
+  details={"photos":["https://cdn.chotot.com/-jPJxquoJCkei0EMFBKXu9yI7EKczZIIaXrkX6KhdXQ/preset:view/plain/ff1c0e328188c9ab21e13a1e21425b5b-2999999990042278391.jpg"]}),
+L(2161,"da-nang","ns","Квартира",28000000,60,
+  "Пентхаус, 2 спальни, широкий балкон, полная меблировка, бассейн и спортзал в комплексе. Ул. Đa Mặn 14, Ngũ Hành Sơn.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-ngu-hanh-son-da-nang/134411775.htm","2 дня назад",2,source="chotot",
+  descEn="Penthouse, 2 bedrooms, wide balcony, fully furnished, complex has pool and gym. Da Man 14 St., Ngu Hanh Son.",
+  details={"photos":["https://cdn.chotot.com/K1ZviGr9j816f9hCOMv0KMsTrwNpRYn9LfitJlNtLpY/preset:view/plain/1e54222dea65b0279c8e3ee7c43208c2-2999721129859619144.jpg"]}),
+L(2162,"da-nang","ah","Квартира",9900000,40,
+  "1 спальня + отдельная гостиная, рядом мост Rồng и ночной рынок, An Hải.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-son-tra-da-nang/134418822.htm","2 дня назад",2,source="chotot",
+  descEn="1 bedroom + separate living room, near Dragon Bridge and the night market, An Hai.",
+  details={"photos":["https://cdn.chotot.com/Oo235P2r9fk79IclrQLsBvpPUijspJeDM5ed91LaGjM/preset:view/plain/02bbd35ede56160dc91f1dbbba9ba8b2-2999756202850387387.jpg"]}),
+L(2163,"da-nang","hcg","Дом",10000000,70,
+  "Дом 2 этажа, 3 спальни, 2 с/у. Ул. Nguyễn Thi, рядом Skyline и Lotte Mart, Hòa Cường.",
+  "https://www.nhatot.com/thue-nha-dat-quan-hai-chau-da-nang/134443417.htm","сегодня",0,source="chotot",
+  descEn="2-floor house, 3 bedrooms, 2 bathrooms. Nguyen Thi St., near Skyline and Lotte Mart, Hoa Cuong.",
+  details={"photos":["https://cdn.chotot.com/lvTutha8ZeO3gUhCPxrxfe1fV05Z0NRMhVkPz6bQSa0/preset:view/plain/cf5a494e2d16b06ff47d673abddf290f-3000013743615514145.jpg"]}),
+L(2164,"da-nang","cl2","Дом",20000000,75,
+  "Дом 3 этажа. Ул. Phạm Thế Hiển, Khuê Trung, рядом университет иностранных языков и Vinmec, Cẩm Lệ.",
+  "https://www.nhatot.com/thue-nha-dat-quan-cam-le-da-nang/134443344.htm","сегодня",0,source="chotot",
+  descEn="3-floor house. Pham The Hien St., Khue Trung, near the Foreign Languages University and Vinmec, Cam Le.",
+  details={"photos":["https://cdn.chotot.com/7nHXFPkmTkjYxtXbfw03i1cnHaNesj4998i8PzBP9X8/preset:view/plain/c615bb3d2d907734709fe2cd10f57bc8-3000013531928345079.jpg"]}),
+L(2165,"da-nang","ns","Дом",27000000,100,
+  "Дом 3 этажа, 4 спальни, 5 минут пешком до пляжа. Ул. Chế Lan Viên, кв. Mỹ An, Ngũ Hành Sơn.",
+  "https://www.nhatot.com/thue-nha-dat-quan-ngu-hanh-son-da-nang/134394076.htm","3 дня назад",3,source="chotot",
+  descEn="3-floor house, 4 bedrooms, 5-minute walk to the beach. Che Lan Vien St., My An quarter, Ngu Hanh Son.",
+  details={"photos":["https://cdn.chotot.com/nzy5ogEq4HIBqOUg757Y2de62eXhrwcXIca1kzDRylo/preset:view/plain/3dec636a4b88bc0e90cd1b68aa3c5b61-2999568026086671533.jpg"]}),
+L(2166,"da-nang","hc","Дом",22000000,100,
+  "Дом 4 этажа, у моря (20 м). Ул. Nguyễn Tất Thành, КДТ Đa Phước, Hải Châu.",
+  "https://www.nhatot.com/thue-nha-dat-quan-thanh-khe-da-nang/134443048.htm","сегодня",0,source="chotot",
+  descEn="4-floor house, 20m from the sea. Nguyen Tat Thanh St., Da Phuoc urban zone, Hai Chau.",
+  details={"notice":"район определён по тексту адреса (P. Thuận Phước, Q. Hải Châu); поле ward_name_v3 у источника указывает Thanh Khê.","photos":["https://cdn.chotot.com/C0JfcthUripI_LlU9MF268x1p2VpCW2KMYEo5puSgaA/preset:view/plain/059e05fcef3d2b57736eee031d7e1216-3000011871922165281.jpg"]}),
+L(2167,"da-nang","hx","Дом",18000000,150,
+  "Дом 2 этажа, два фасада, подходит под склад или офис. Рядом ул. 29/3, Hòa Xuân.",
+  "https://www.nhatot.com/thue-nha-dat-quan-cam-le-da-nang/134442601.htm","сегодня",0,source="chotot",
+  descEn="2-floor house, two street frontages, suitable as a warehouse or office. Near 29/3 St., Hoa Xuan.",
+  details={"photos":["https://cdn.chotot.com/KQV9f21DMhenZb32nJ86MqOio6EpSzqV2vjLthfIfng/preset:view/plain/9ab44ddcac7c105b440faf9b4c6290c9-3000009463398939127.jpg"]}),
+L(2168,"da-nang","hc","Дом",13000000,65,
+  "Дом 2 этажа, 3 спальни, 2 с/у, базовая мебель. Kiệt Lê Đình Lý, Hải Châu.",
+  "https://www.nhatot.com/thue-nha-dat-quan-hai-chau-da-nang/134442456.htm","сегодня",0,source="chotot",
+  descEn="2-floor house, 3 bedrooms, 2 bathrooms, basic furniture. Kiet Le Dinh Ly, Hai Chau.",
+  details={"photos":["https://cdn.chotot.com/bjrfAXFjDVnchgYmRUUTItqy_Eg3xQSQh15trX3DzaI/preset:view/plain/6052af22aa9b9307237390296ccbb32d-3000008538710540334.jpg"]}),
+L(2169,"da-nang","lc","Дом",11000000,80,
+  "Дом 2 этажа, 3 спальни, 2 с/у, рядом автовокзал. Ул. Phước Lý, Hòa Minh, Liên Chiểu.",
+  "https://www.nhatot.com/thue-nha-dat-quan-lien-chieu-da-nang/134442089.htm","сегодня",0,source="chotot",
+  descEn="2-floor house, 3 bedrooms, 2 bathrooms, near the bus station. Phuoc Ly St., Hoa Minh, Lien Chieu.",
+  details={"notice":"район определён по тексту адреса (P. Hòa Minh, Q. Liên Chiểu); поле ward_name_v3 у источника указывает Hòa Khánh.","photos":["https://cdn.chotot.com/cx_muhwTYLwUmGOaTzj2E_mvbV18fm2xehanSVtF0Xk/preset:view/plain/9ef5472d6304d854638edd7f34109d5e-3000006299289176174.jpg"]}),
+L(2170,"da-nang","ns","Дом",17000000,105,
+  "Дом 2.5 этажа, 2 спальни, 3 с/у, базовая мебель, сдаёт владелец напрямую. Ул. Lê Văn Thủ, кв. Nam Việt Á, Ngũ Hành Sơn.",
+  "https://www.nhatot.com/thue-nha-dat-quan-ngu-hanh-son-da-nang/134394482.htm","3 дня назад",3,source="chotot",
+  descEn="2.5-floor house, 2 bedrooms, 3 bathrooms, basic furniture, direct from owner. Le Van Thu St., Nam Viet A quarter, Ngu Hanh Son.",
+  details={"photos":["https://cdn.chotot.com/jeJ6WzZtWRnjpIbMorX-HbaRQnlnUfIYJDnbpyTo27Y/preset:view/plain/3f99a2ab4457538e3345bf05bca3b3b4-2999570842632292187.jpg"]}),
+L(2171,"da-nang","lc","Дом",13000000,100,
+  "Шопхаус 3 этажа, солнечные панели, 6 камер видеонаблюдения, подходит под офис. Ул. Mê Linh, Hòa Hiệp Nam, Liên Chiểu.",
+  "https://www.nhatot.com/thue-nha-dat-quan-lien-chieu-da-nang/134441939.htm","сегодня",0,source="chotot",
+  descEn="3-floor shophouse, solar panels, 6 CCTV cameras, suitable as an office. Me Linh St., Hoa Hiep Nam, Lien Chieu.",
+  details={"photos":["https://cdn.chotot.com/KnBYoBgehJMgeaJptQCTG-4c3O8mFJMnkqtHbI39_jw/preset:view/plain/4c47169d6ac64a489952377223e17760-3000005408184800801.jpg"]}),
+L(2172,"da-nang","ns","Дом",60000000,266,
+  "Вилла целиком, с садом, рядом кампус FPT. Ул. Văn Tiến Dũng, Ngũ Hành Sơn.",
+  "https://batdongsan.com.vn/cho-thue-nha-biet-thu-lien-ke-phuong-ngu-hanh-son-tp-da-nang/cho-nguyen-can-san-vuon-uong-van-tien-dung-sat-khu-fpt-pr46240667","2 дня назад",2,source="batdongsan",
+  descEn="Whole villa with garden, near FPT campus. Van Tien Dung St., Ngu Hanh Son.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829144220-6020_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829144230-566f_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829144230-4963_wm.jpg"]}),
+L(2173,"da-nang","ah","Квартира",27000000,35,
+  "The Soleil Wyndham Đà Nẵng, вид прямо на море, An Hải.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-mini-wyndham-soleil-da-nang-phuong-an-hai-tp-da-nang/cho-view-truc-dien-bien-tai-du-the-a-nang-pr46239241","2 дня назад",2,source="batdongsan",
+  descEn="The Soleil Wyndham Da Nang, direct sea view, An Hai.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена. В файле уже есть другой юнит The Soleil Wyndham (L1032, 50 млн ₫/94 м²) — это отдельный меньший юнит, не дубль.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829093829-f867_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829093829-b4d4_wm.jpg"]}),
+L(2174,"da-nang","ns","Квартира",10000000,47,
+  "FPT Plaza 3, 1 спальня + кабинет, рассчитано на иностранных арендаторов. Ngũ Hành Sơn.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-fpt-plaza-2-phuong-ngu-hanh-son-tp-da-nang/cho-plaza3-loai-1pn-1-gia-10-trieu-nhan-khach-nuoc-ngoai-pr46244354","сегодня",0,source="batdongsan",
+  descEn="FPT Plaza 3, 1 bedroom + office nook, geared toward foreign tenants. Ngu Hanh Son.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831102319-ac2a_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831102320-e083_wm.jpg"]}),
+L(2175,"da-nang","st","Квартира",12000000,50,
+  "Sơn Trà Ocean View, 1 спальня, полная меблировка, можно заезжать сразу. Ул. Ngô Quyền №95, Sơn Trà.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-son-tra-ocean-view-phuong-son-tra-tp-da-nang/cho-cc-cao-cap-ocen-95-ngo-quyen-1pn-full-noi-that-vao-o-ngay-12tr-thang-pr46244249","сегодня",0,source="batdongsan",
+  descEn="Son Tra Ocean View, 1 bedroom, fully furnished, move-in ready. Ngo Quyen St. No.95, Son Tra.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831095423-adee_wm.jpg","https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831095423-abfe_wm.jpg"]}),
+L(2176,"vung-tau","vtp","Квартира",7300000,90,
+  "Квартира в блоке B, 2 спальни, депозит 2 месяца. Ул. Nam Kỳ Khởi Nghĩa, Vũng Tàu.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-vung-tau-ba-ria-vung-tau/134440809.htm","сегодня",0,source="chotot",
+  descEn="Apartment in block B, 2 bedrooms, 2-month deposit. Nam Ky Khoi Nghia St., Vung Tau.",
+  details={"photos":["https://cdn.chotot.com/N0yB-4cof4himE0cF11IuBE1dS1AIsJSrso3WPmHAek/preset:view/plain/7452bc0828630929102222e37c43f9ad-2999996657773641774.jpg"]}),
+L(2177,"vung-tau","vtp","Квартира",40000000,300,
+  "Пентхаус Aria, 3 спальни + рабочий кабинет, собственный выход к пляжу. Ул. Hà Huy Tập №79, Vũng Tàu.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-vung-tau-ba-ria-vung-tau/134428477.htm","вчера",1,source="chotot",
+  descEn="Aria penthouse, 3 bedrooms + home office, private beach access. Ha Huy Tap St. No.79, Vung Tau.",
+  details={"photos":["https://cdn.chotot.com/_6FmaJeSiVW72pa_SFM69Zmy5gaRSQ_7rYBihlvSuxA/preset:view/plain/85b5061355b21daa854f76a7ef8283c0-2999872199631570048.jpg"]}),
+L(2178,"vung-tau","rd","Квартира",5000000,53,
+  "Chung cư Seaview 4, 1 спальня, полная меблировка, депозит 2 месяца. Rạch Dừa.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-vung-tau-ba-ria-vung-tau/134428128.htm","вчера",1,source="chotot",
+  descEn="Seaview 4 apartment building, 1 bedroom, fully furnished, 2-month deposit. Rach Dua.",
+  details={"photos":["https://cdn.chotot.com/UFb-L6sfcdIe32AiIU89wJgOG1xM2acveaZdfLVx-Cw/preset:view/plain/17ff80fc3f1a252dc54d04915246a4ee-2999870002591697646.jpg"]}),
+L(2179,"vung-tau","tth","Квартира",9500000,74,
+  "Chung cư Gateway, 2 спальни, вид на город, заезд с 1 октября. Tam Thắng.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-vung-tau-ba-ria-vung-tau/134427681.htm","вчера",1,source="chotot",
+  descEn="Gateway apartment building, 2 bedrooms, city view, move-in from Oct 1. Tam Thang.",
+  details={"photos":["https://cdn.chotot.com/QmuRmmB4_lcPsqLJDbzXLFdnPWZhUmuJS6a-m5I4zmg/preset:view/plain/92d776db57cea6af9764c9d3b0a6e89e-2999867574406688786.jpg"]}),
+L(2180,"vung-tau","vtp","Квартира",13000000,68,
+  "2 спальни, 2 с/у, полная меблировка, вид на море, центр Vũng Tàu.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-vung-tau-ba-ria-vung-tau/134414141.htm","2 дня назад",2,source="chotot",
+  descEn="2 bedrooms, 2 bathrooms, fully furnished, sea view, central Vung Tau.",
+  details={"photos":["https://cdn.chotot.com/FE0dwakUX85tBZtkcnVHKyw6BAkD4foQRlrU8rJmRFk/preset:view/plain/1f925ba7dd18779c905e03970e644c6e-2999732176764002050.jpg"]}),
+L(2181,"vung-tau","vtp","Квартира",16000000,101,
+  "The Imperial Complex, срочная сдача. Ул. Thùy Vân, Thắng Tam.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-thuy-van-the-imperial-complex/cho-gap-ch-16-trieu-101m2-p-thang-tam-vung-tau-pr46243971","сегодня",0,source="batdongsan",
+  descEn="The Imperial Complex, urgent rental. Thuy Van St., Thang Tam.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831080923-4ac4_wm.jpg"]}),
+L(2182,"vung-tau","vtp","Квартира",11000000,77,
+  "Квартира 77 м² в районе Phường 1 (Vũng Tàu).",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-vung-tau-tp-ho-chi-minh/cho-cc-77m2-11-trieu-vnd-tai-1-thanh-pho-tau-pr46243938","сегодня",0,source="batdongsan",
+  descEn="77m2 apartment in the Phuong 1 area (Vung Tau).",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена; в объявлении мало деталей, название дома не указано.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831074547-9d2c_wm.jpg"]}),
+L(2183,"vung-tau","vtp","Квартира",13000000,74,
+  "Vũng Tàu Melody, 2 спальни, 2 с/у. Ул. Hoàng Hoa Thám, Thắng Tam.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-hoang-hoa-tham-vung-tau-melody/hot-cho-cc-13-trieu-74-m2-2pn-2wc-pr46243926","сегодня",0,source="batdongsan",
+  descEn="Vung Tau Melody, 2 bedrooms, 2 bathrooms. Hoang Hoa Tham St., Thang Tam.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831073340-be43_wm.jpg"]}),
+L(2184,"vung-tau","vtp","Квартира",5500000,40,
+  "OSC Land, 1 спальня. Ул. Võ Thị Sáu.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-vo-thi-sau-cao-oc-osc-land/cho-cc-tai-gia-tot-5-5-trieu-40m2-pr46242129","вчера",1,source="batdongsan",
+  descEn="OSC Land, 1 bedroom. Vo Thi Sau St.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена. В файле уже есть другие юниты OSC Land с иными ценой/площадью — не дубль.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/30/20260830084832-a9d2_wm.jpg"]}),
+L(2185,"vung-tau","vtp","Квартира",6500000,52,
+  "Vũng Tàu Melody, 52 м². Ул. Hoàng Hoa Thám, Thắng Tam.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-hoang-hoa-tham-vung-tau-melody/cho-cc-gia-6-5-trieu-52m2-o-thang-tam-pr46242061","вчера",1,source="batdongsan",
+  descEn="Vung Tau Melody, 52m2. Hoang Hoa Tham St., Thang Tam.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/30/20260830080324-38a3_wm.jpg"]}),
+L(2186,"vung-tau","vtp","Квартира",10000000,72,
+  "Квартира 72 м² в районе Phường 1 (Vũng Tàu), срочная сдача.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-phuong-vung-tau-tp-ho-chi-minh/cho-gap-o-1-10-trieu-72m2-pr46242054","вчера",1,source="batdongsan",
+  descEn="72m2 apartment in the Phuong 1 area (Vung Tau), urgent rental.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/30/20260830075704-1183_wm.jpg"]}),
+L(2187,"vung-tau","vtp","Квартира",22000000,160,
+  "Chung cư Sơn Thịnh, 160 м². Ул. Thùy Vân.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-thuy-van-chung-cu-son-thinh/22-trieu-160m2-cho-hang-hot-pr46242046","вчера",1,source="batdongsan",
+  descEn="Son Thinh apartment building, 160m2. Thuy Van St.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена. В файле уже есть другой юнит Sơn Thịnh (L2077, 8 млн ₫/108 м²) — не дубль.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/30/20260830075058-5588_wm.jpg"]}),
+L(2188,"vung-tau","vtp","Квартира",5500000,58,
+  "OSC Land, 58 м². Ул. Võ Thị Sáu.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-vo-thi-sau-cao-oc-osc-land/cho-cc-58m2-tai-5-5-trieu-vung-tau-pr46242014","вчера",1,source="batdongsan",
+  descEn="OSC Land, 58m2. Vo Thi Sau St.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/30/20260830071531-3c99_wm.jpg"]}),
+L(2189,"vung-tau","vtp","Квартира",10000000,83,
+  "Vũng Tàu Melody, 2 спальни, 2 с/у, полная меблировка, 83 м². Ул. Hoàng Hoa Thám.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-hoang-hoa-tham-vung-tau-melody/cho-10-trieu-83-m2-2pn-2wc-full-noi-that-pr46242007","вчера",1,source="batdongsan",
+  descEn="Vung Tau Melody, 2 bedrooms, 2 bathrooms, fully furnished, 83m2. Hoang Hoa Tham St.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/30/20260830070959-7515_wm.jpg"]}),
+L(2190,"vung-tau","vtp","Дом",35000000,455,
+  "Вилла, вид на море, рядом канатная дорога. Ул. Trần Phú.",
+  "https://batdongsan.com.vn/cho-thue-nha-biet-thu-lien-ke-duong-tran-phu-phuong-vung-tau-tp-ho-chi-minh/cho-view-bien-gan-cap-treo-gia-35tr-1-thang-pr46240895","2 дня назад",2,source="batdongsan",
+  descEn="Villa, sea view, near the cable car. Tran Phu St.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829153528-3ff7_wm.jpg"]}),
+L(2191,"vung-tau","vtp","Дом",12000000,79,
+  "Дом для бизнеса, уличный фасад. Ул. Đồ Chiểu.",
+  "https://batdongsan.com.vn/cho-thue-nha-mat-pho-duong-do-chieu-phuong-vung-tau-tp-ho-chi-minh/cho-tien-kinh-doanh-17-o-tau-pr46238911","2 дня назад",2,source="batdongsan",
+  descEn="House for business use, street frontage. Do Chieu St.",
+  details={"notice":"дата — по данным сайта batdongsan.com.vn (дата загрузки фото в CDN), точная дата первой публикации не подтверждена.","photos":["https://file4.batdongsan.com.vn/crop/600x315/2026/08/29/20260829080626-3b44_wm.jpg"]}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
@@ -7282,6 +7613,264 @@ POIS = {
     ],
 }
 
+# ---------------- RESIDENTIAL COMPLEXES (ЖК) ----------------
+# A building/complex name is only ever written inside the free-text description,
+# so it is extracted here at build time and baked onto each listing as
+# `complex`. Two passes, most specific first:
+#   1. a curated dictionary, matched anywhere in the text. Every name below was
+#      read off the real descriptions in LISTINGS -- nothing is invented -- and
+#      each entry is pinned to the city the building physically stands in, so a
+#      name can never leak into another city's filter.
+#   2. a fallback "ЖК X" / "комплекс X" pattern over the Russian description
+#      only, so a building that first appears tomorrow still gets a name
+#      without a dictionary edit.
+# Both passes ignore a mention preceded by a proximity word ("рядом с ЖК
+# Monarchy"): being next to a complex is not living in it.
+import unicodedata
+
+COMPLEX_DICT = [
+    # (canonical name, city, [aliases -- matched diacritics- and case-insensitively])
+    # "ЖК Millennium" and "Masteri Millennium" are the same Q4 tower (132 Bến
+    # Vân Đồn); the marketplaces use both names, so they share one entry.
+    ("Masteri Millennium", "ho-chi-minh", ["masteri millennium", "millennium"]),
+    ("Masteri Thảo Điền", "ho-chi-minh", ["masteri thao dien"]),
+    ("Masteri An Phú", "ho-chi-minh", ["masteri an phu"]),
+    ("Era Town", "ho-chi-minh", ["era town"]),
+    ("Lavida Plus", "ho-chi-minh", ["lavida plus"]),
+    ("Tresor", "ho-chi-minh", ["tresor"]),
+    ("Sunshine Sky City", "ho-chi-minh", ["sunshine sky city"]),
+    ("Sunshine City", "ho-chi-minh", ["sunshine city"]),
+    ("M-One Nam Sài Gòn", "ho-chi-minh", ["m one nam sai gon", "m one"]),
+    ("Belleza", "ho-chi-minh", ["belleza", "beleza"]),
+    ("Q7 Boulevard", "ho-chi-minh", ["q7 boulevard"]),
+    ("RiverGate Residence", "ho-chi-minh", ["rivergate residence", "rivergate", "river gate"]),
+    ("Sunrise City View", "ho-chi-minh", ["sunrise city view", "sunrise cityview"]),
+    ("Sunrise City", "ho-chi-minh", ["sunrise city"]),
+    ("Sunrise Riverside", "ho-chi-minh", ["sunrise riverside"]),
+    ("New City Thủ Thiêm", "ho-chi-minh", ["new city thu thiem", "new city"]),
+    ("River Panorama", "ho-chi-minh", ["river panorama"]),
+    ("Florita", "ho-chi-minh", ["florita"]),
+    ("Kim Sơn", "ho-chi-minh", ["kim son"]),
+    ("Hoàng Anh Gia Lai", "ho-chi-minh", ["hoang anh gia lai", "hagl"]),
+    ("Hoàng Anh Thanh Bình", "ho-chi-minh", ["hoang anh thanh binh"]),
+    ("Phú Hoàng Anh", "ho-chi-minh", ["phu hoang anh"]),
+    ("Goldview", "ho-chi-minh", ["goldview"]),
+    ("Midtown", "ho-chi-minh", ["midtown"]),
+    ("Star Hill", "ho-chi-minh", ["star hill"]),
+    ("Scenic Valley", "ho-chi-minh", ["scenic valley"]),
+    ("Green Valley", "ho-chi-minh", ["green valley"]),
+    ("Happy Valley", "ho-chi-minh", ["happy valley"]),
+    ("Sky Garden", "ho-chi-minh", ["sky garden"]),
+    ("Riverside Residence", "ho-chi-minh", ["riverside residence"]),
+    ("Riverpark Premier", "ho-chi-minh", ["riverpark premier", "riverpark"]),
+    ("Cardinal Court", "ho-chi-minh", ["cardinal court"]),
+    ("Hưng Phúc", "ho-chi-minh", ["hung phuc"]),
+    ("Him Lam Kênh Tẻ", "ho-chi-minh", ["him lam kenh te"]),
+    ("Him Lam Tân Hưng", "ho-chi-minh", ["him lam tan hung"]),
+    ("Cosmo City", "ho-chi-minh", ["cosmo city"]),
+    ("De Capella", "ho-chi-minh", ["de capella"]),
+    ("Docklands", "ho-chi-minh", ["docklands"]),
+    ("Sadora", "ho-chi-minh", ["sadora"]),
+    ("Green Star", "ho-chi-minh", ["green star"]),
+    ("Paris Hoàng Kim", "ho-chi-minh", ["paris hoang kim"]),
+    ("The Ascentia", "ho-chi-minh", ["the ascentia", "ascentia"]),
+    ("The Antonia", "ho-chi-minh", ["the antonia", "antonia"]),
+    ("Riviera Point", "ho-chi-minh", ["infiniti riviera point", "riviera point"]),
+    ("Cantavil An Phú", "ho-chi-minh", ["cantavil an phu", "cantavil"]),
+    ("The Metropole Thủ Thiêm", "ho-chi-minh", ["metropole thu thiem", "metropole"]),
+    ("Thanh Đa View", "ho-chi-minh", ["thanh da view"]),
+    ("CityNest Saigon", "ho-chi-minh", ["citynest"]),
+    ("Mỹ Khánh", "ho-chi-minh", ["my khanh"]),
+    ("Mỹ Phát", "ho-chi-minh", ["my phat"]),
+    ("Mỹ Đức", "ho-chi-minh", ["my duc"]),
+    ("Res 3", "ho-chi-minh", ["res iii", "res 3", "res3"]),
+    ("H1 Hoàng Diệu", "ho-chi-minh", ["h1 hoang dieu"]),
+    ("Hồng Lĩnh", "ho-chi-minh", ["hong linh"]),
+    ("Minh Thành", "ho-chi-minh", ["minh thanh"]),
+    ("Sky Thủ Thiêm", "ho-chi-minh", ["sky thu thiem"]),
+    ("Sunrise North", "ho-chi-minh", ["sunrise north"]),
+    ("Phú Mỹ Vạn Phát Hưng", "ho-chi-minh", ["phu my van phat hung"]),
+
+    ("Mường Thanh Viễn Triều", "nha-trang", ["muong thanh vien trieu"]),
+    ("Mường Thanh Khánh Hòa", "nha-trang", ["muong thanh khanh hoa"]),
+    ("Mường Thanh", "nha-trang", ["muong thanh"]),
+    ("Oceanus", "nha-trang", ["oceanus"]),
+    ("CCU-01", "nha-trang", ["ccu 01", "ccu01"]),
+    ("HUD Building", "nha-trang", ["hud building"]),
+    ("VCN Phước Long", "nha-trang", ["vcn phuoc long"]),
+    ("VCN Phước Hải", "nha-trang", ["vcn phuoc hai"]),
+    ("Vega City", "nha-trang", ["vega city"]),
+    ("Panorama", "nha-trang", ["panorama"]),
+    ("Gold Coast", "nha-trang", ["gold coast", "goldcoast"]),
+    ("Maple", "nha-trang", ["maple"]),
+    ("Megas", "nha-trang", ["megas"]),
+    ("Hoàng Quân", "nha-trang", ["hoang quan"]),
+    ("Napoleon", "nha-trang", ["napoleon"]),
+    ("Mipeco", "nha-trang", ["mipeco"]),
+    ("Scenia Bay", "nha-trang", ["scenia bay"]),
+    ("Sông Đà Nha Trang", "nha-trang", ["song da nha trang"]),
+    ("Mỹ Gia", "nha-trang", ["my gia"]),
+    ("Hà Quang 2", "nha-trang", ["ha quang 2"]),
+    ("Hà Quang 1", "nha-trang", ["ha quang 1"]),
+    ("CT4 HUD", "nha-trang", ["ct4 hud"]),
+    ("Biển An Viên", "nha-trang", ["bien an vien"]),
+    ("Vĩnh Điềm Trung", "nha-trang", ["vinh diem trung"]),
+
+    ("Panoma", "da-nang", ["panoma"]),
+    ("Monarchy", "da-nang", ["monarchy"]),
+    ("Hiyori Garden Tower", "da-nang", ["hiyori garden tower", "hiyori"]),
+    ("Golden Bay", "da-nang", ["golden bay"]),
+    ("Euro Village", "da-nang", ["euro village"]),
+    ("FPT Plaza", "da-nang", ["fpt plaza"]),
+    ("Mường Thanh", "da-nang", ["muong thanh"]),
+    ("Sơn Trà Ocean View", "da-nang", ["son tra ocean view"]),
+    ("Lapaz Tower", "da-nang", ["lapaz"]),
+    ("MIA Center Point", "da-nang", ["mia center point"]),
+    ("F.Home", "da-nang", ["f home"]),
+    ("Sam Towers", "da-nang", ["sam towers"]),
+    ("Đà Nẵng Plaza", "da-nang", ["da nang plaza"]),
+    ("HAGL Lake View Residence", "da-nang", ["hagl lake view"]),
+    ("Wyndham Soleil", "da-nang", ["wyndham soleil", "soleil anh duong"]),
+    ("Sun Cosmo", "da-nang", ["sun cosmo"]),
+    ("Nam Việt Á", "da-nang", ["nam viet a"]),
+
+    ("Vũng Tàu Melody", "vung-tau", ["vung tau melody", "melody"]),
+    ("Gateway", "vung-tau", ["gateway"]),
+    ("Sơn Thịnh", "vung-tau", ["son thinh"]),
+    ("Silver Sea", "vung-tau", ["silver sea"]),
+    ("DIC Phoenix", "vung-tau", ["dic phoenix"]),
+    ("The Imperial", "vung-tau", ["the imperial", "imperial"]),
+    ("Goldsea", "vung-tau", ["goldsea"]),
+    ("La Vida Residences", "vung-tau", ["la vida residences"]),
+    ("Vũng Tàu Center Point", "vung-tau", ["vung tau center point"]),
+
+    ("FLC SeaTower", "quy-nhon", ["flc seatower", "flc sea tower"]),
+    ("Altara Residences", "quy-nhon", ["altara"]),
+    ("Ecolife Riverside", "quy-nhon", ["ecolife"]),
+    ("TMS Quy Nhơn", "quy-nhon", ["tms quy nhon"]),
+
+    ("Apec Mandala Mũi Né", "phan-thiet", ["apec mandala"]),
+    ("Casamia", "hoi-an", ["casamia"]),
+]
+
+# Names that describe a whole quarter (khu đô thị / KDC) rather than one
+# building. They are real and worth filtering by, but a listing that also names
+# an actual building inside the quarter must be filed under the building, so
+# these are only consulted once every other alias has missed.
+COMPLEX_AREA_NAMES = {"Him Lam Tân Hưng", "Him Lam Kênh Tẻ", "Hà Quang 1", "Hà Quang 2",
+                      "Mỹ Gia", "Nam Việt Á", "Vĩnh Điềm Trung", "Biển An Viên",
+                      "VCN Phước Long", "VCN Phước Hải"}
+
+# A mention behind one of these is a landmark, not the listing's own address.
+COMPLEX_NEAR_WORDS = ("рядом", "недалеко", "близко", "напротив", "неподалеку",
+                      "мин до", "минут до", "минуты до", "мин пешком", "мин ходьбы",
+                      "моста", "мосту", "cau ", "bridge",
+                      "near", "next to", "close to", "walk to", "walking distance",
+                      "minutes to", "min to", "opposite", "steps from", "minutes from")
+
+# Heads the ЖК-pattern must never turn into a name: generic Vietnamese/English
+# nouns that introduce the real name rather than being part of it.
+COMPLEX_STOPWORDS = {"chung", "khu", "can", "nha", "block", "toa", "the", "duong",
+                     "phuong", "quan", "kdt", "kdc", "cc", "apartment", "apartments",
+                     "building", "residence", "residences", "tower", "towers", "view",
+                     "premium", "luxury", "new", "old"}
+
+
+def _cx_norm(s):
+    """Lowercase, strip Vietnamese diacritics, squash punctuation to single spaces."""
+    s = s.lower().replace("đ", "d")
+    s = unicodedata.normalize("NFD", s)
+    s = "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
+    s = re.sub(r"[^a-z0-9а-яё]+", " ", s)
+    return " " + re.sub(r"\s+", " ", s).strip() + " "
+
+
+# Buildings before quarters, then longest alias first -- so "Sunrise City View"
+# beats "Sunrise City", and "ЖК Megas, район Hà Quang 2" files under Megas.
+_CX_ALIASES = sorted(
+    [(_cx_norm(a), name, city)
+     for name, city, aliases in COMPLEX_DICT for a in aliases],
+    key=lambda t: (t[1] in COMPLEX_AREA_NAMES, -len(t[0])))
+
+_CX_LEAD = re.compile(r'(?:ЖК|Ж/К|жило[мг]\s+комплексе?|комплекс[а-я]*|КДТ|КГТ)\s+')
+# A complex name reads as Latin or Vietnamese and is always capitalised.
+_CX_TOKEN = re.compile(
+    r'^[A-ZĐÂÊÔƯĂÁÀẢÃẠÉÈẺẼẸÍÌỈĨỊÓÒỎÕỌÚÙỦŨỤÝỲỶỸỴ]'
+    r"[A-Za-zĐđÂâÊêÔôƯưĂăáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ0-9'\-\.]*$")
+
+
+def _cx_is_landmark(norm_text, pos):
+    """True when the mention at `pos` is a nearby landmark rather than the address."""
+    return any(w in norm_text[max(0, pos - 30):pos] for w in COMPLEX_NEAR_WORDS)
+
+
+def _cx_text(l):
+    # Only the listing's own headline text. `details.notice`/`contract` are full
+    # of nearby landmarks ("рядом Lotte Mart, ЖК ..."), which cost more in wrong
+    # names than they win in extra ones.
+    return (l.get("desc") or "") + " " + (l.get("descEn") or "")
+
+
+def detect_complex(l):
+    norm = _cx_norm(_cx_text(l))
+    for alias, name, city in _CX_ALIASES:
+        if city != l["city"]:
+            continue
+        start = 0
+        while True:
+            pos = norm.find(alias, start)
+            if pos == -1:
+                break
+            if not _cx_is_landmark(norm, pos):
+                return name
+            start = pos + 1
+    # Fallback: "ЖК X" in the Russian description only. English prose uses
+    # "complex" as an ordinary word ("the complex has a pool"), which yielded
+    # nothing but junk, so descEn is deliberately not scanned here.
+    ru = l.get("desc") or ""
+    for m in _CX_LEAD.finditer(ru):
+        head = _cx_norm(ru[:m.start()])
+        if any(w in head[-30:] for w in COMPLEX_NEAR_WORDS):
+            continue
+        words = []
+        for raw in re.split(r"\s+", ru[m.end():m.end() + 90].strip()):
+            tk = raw.strip("«»\"'(),;:.—-")
+            # A bare "2"/"1" right after the name belongs to it (Hoàng Anh 2).
+            if words and re.match(r"^\d{1,2}$", tk):
+                words.append(tk)
+                break
+            if not tk or not _CX_TOKEN.match(tk):
+                break
+            if _cx_norm(tk).strip() in COMPLEX_STOPWORDS:
+                break
+            words.append(tk)
+            # A comma or bracket ends the name: "ЖК Hưng Vượng, Tân Phong" is
+            # the Hưng Vượng complex in Tân Phong, not a four-word building.
+            if raw != tk and re.search(r"[,;:()«»]", raw):
+                break
+            if len(words) == 4:
+                break
+        if not words:
+            continue
+        if len(words) == 1 and len(words[0]) < 4:
+            continue
+        return " ".join(words)
+    return None
+
+
+# Bake the detected name onto every listing (and only when one was found, so
+# the JSON stays small and the JS can test `l.complex` directly).
+_cx_total = 0
+_cx_names = set()
+for _l in LISTINGS:
+    _cx = detect_complex(_l)
+    if _cx:
+        _l["complex"] = _cx
+        _cx_total += 1
+        _cx_names.add((_l["city"], _cx))
+print("Complexes: %d listings named, %d distinct (city, name) pairs" % (_cx_total, len(_cx_names)))
+
+
 DATA = {
     "CITIES": CITIES, "SOURCES": SOURCES,
     "LISTINGS": LISTINGS, "WARD_BOUNDARIES": WARD_BOUNDARIES, "POIS": POIS
@@ -7395,6 +7984,9 @@ HTML = r"""<meta charset="utf-8">
 
   .filters{padding:22px 22px 18px;display:flex;flex-direction:column;gap:18px;}
   .field{display:flex;flex-direction:column;gap:8px;}
+  /* `display:flex` above beats the UA's [hidden]{display:none}, so the JS-hidden
+     fields (#poi-sort-field, #complex-field) need this to actually disappear. */
+  .field[hidden]{display:none;}
   .field label,.field-label{font-size:0.82rem;font-weight:700;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.045em;}
   .field-hint{font-size:0.78rem;color:var(--ink-faint);margin:0;}
 
@@ -7436,8 +8028,9 @@ HTML = r"""<meta charset="utf-8">
   .autocomplete input{width:100%;padding:11px 36px 11px 14px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font-size:1rem;}
   .autocomplete .clear-btn{position:absolute;right:6px;top:6px;width:28px;height:28px;border:none;background:transparent;color:var(--ink-faint);font-size:1.1rem;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;}
   .autocomplete .clear-btn:hover{background:var(--surface-2);}
-  #poi-sort-select{width:100%;padding:11px 14px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font-size:1rem;}
+  #poi-sort-select,#complex-select{width:100%;max-width:100%;padding:11px 14px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font-size:1rem;}
   .poi-dist-badge{font-size:0.78rem;color:var(--ink-dim);white-space:nowrap;}
+  .complex-pill{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:999px;background:var(--paper);border:1px solid var(--line-strong);font-size:0.78rem;color:var(--ink);}
   .suggest-list{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-md);list-style:none;margin:0;padding:6px;z-index:20;max-height:260px;overflow:auto;}
   .suggest-list li{border-radius:8px;}
   .suggest-list button{width:100%;text-align:left;background:none;border:none;padding:9px 10px;border-radius:8px;cursor:pointer;color:var(--ink);display:flex;justify-content:space-between;gap:10px;font-size:0.94rem;}
@@ -7633,6 +8226,11 @@ HTML = r"""<meta charset="utf-8">
         </div>
       </div>
 
+      <div class="field" id="complex-field" hidden>
+        <label for="complex-select" data-i18n="complexLabel">ЖК / жилой комплекс</label>
+        <select id="complex-select"></select>
+      </div>
+
       <div class="field">
         <span class="field-label" data-i18n="postedLabel">Когда опубликовано</span>
         <div class="chip-row" id="days-chips"></div>
@@ -7771,6 +8369,7 @@ HTML = r"""<meta charset="utf-8">
       searchLabel:"Поиск по описанию", searchPlaceholder:"например: бассейн, метро, вид на море", searchClear:"Очистить поиск",
       budgetLabel:"Бюджет, млн ₫ / мес", from:"от", to:"до", mln:"млн ₫",
       districtLabel:"Район", districtPlaceholder:"Начните вводить название района", districtClear:"Сбросить район",
+      complexLabel:"ЖК / жилой комплекс", complexAny:"Любой ЖК", complexCtx:"ЖК",
       postedLabel:"Когда опубликовано", sourcesLabel:"Источники",
       datesLabel:"Даты заезда (Airbnb / Agoda / Trip.com / CozyCozy)",
       datesHint:"Появится, когда подключим посуточные сервисы — там снимают на даты, а не на месяцы.",
@@ -7813,6 +8412,7 @@ HTML = r"""<meta charset="utf-8">
       searchLabel:"Search descriptions", searchPlaceholder:"e.g. pool, metro, sea view", searchClear:"Clear search",
       budgetLabel:"Budget, million ₫ / month", from:"from", to:"to", mln:"mln ₫",
       districtLabel:"District", districtPlaceholder:"Start typing a district name", districtClear:"Clear district",
+      complexLabel:"Residential complex", complexAny:"Any complex", complexCtx:"complex",
       postedLabel:"Posted within", sourcesLabel:"Sources",
       datesLabel:"Check-in dates (Airbnb / Agoda / Trip.com / CozyCozy)",
       datesHint:"Coming when per-night services are added — those are booked by date, not by month.",
@@ -7879,7 +8479,7 @@ HTML = r"""<meta charset="utf-8">
     });
     // re-render everything that builds its own strings in JS
     renderCityTabs(); renderCityMap(); renderBudgetChips(); renderDaysChips();
-    renderSourceChips(); renderTypeChips(); applyFilters();
+    renderSourceChips(); renderTypeChips(); renderComplexFilter(); applyFilters();
     el.favFilterToggle.textContent = (state.showFavoritesOnly ? "★" : "☆") + " " + t("favFilter");
   }
 
@@ -7903,7 +8503,7 @@ HTML = r"""<meta charset="utf-8">
   function descText(l){ return (lang === "en" && l.descEn) ? l.descEn : l.desc; }
 
   var state = {
-    city: "nha-trang", district: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
+    city: "nha-trang", district: null, complex: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
     sources: new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; })),
     openDetails: new Set()
   };
@@ -7966,6 +8566,8 @@ HTML = r"""<meta charset="utf-8">
     districtInput: document.getElementById("district-input"),
     districtClear: document.getElementById("district-clear"),
     districtSuggest: document.getElementById("district-suggest"),
+    complexField: document.getElementById("complex-field"),
+    complexSelect: document.getElementById("complex-select"),
     daysChips: document.getElementById("days-chips"),
     sourceChips: document.getElementById("source-chips"),
     typeChips: document.getElementById("type-chips"),
@@ -8003,7 +8605,7 @@ HTML = r"""<meta charset="utf-8">
   function listingSearchText(l){
     if (l._searchText) return l._searchText;
     var d = districtByKey(l.city, l.district);
-    var parts = [l.desc, l.descEn || "", l.type, d ? d.name : ""];
+    var parts = [l.desc, l.descEn || "", l.type, d ? d.name : "", l.complex || ""];
     if (l.details){
       ["amenities","notice","contract","deposit"].forEach(function(k){ if (l.details[k]) parts.push(l.details[k]); });
     }
@@ -8014,6 +8616,39 @@ HTML = r"""<meta charset="utf-8">
     var counts = {};
     LISTINGS.forEach(function(l){ if (l.city !== cityKey) return; counts[l.district] = (counts[l.district]||0) + 1; });
     return counts;
+  }
+
+  // `complex` is filled in at build time (see the COMPLEX_DICT pass in
+  // rebuild_final.py) and only a minority of listings carry one, so the whole
+  // control hides itself in a city where nothing was detected.
+  function complexesForCity(cityKey){
+    var counts = {};
+    LISTINGS.forEach(function(l){
+      if (l.city !== cityKey || !l.complex) return;
+      if (l.details && l.details.duplicateOf) return;
+      counts[l.complex] = (counts[l.complex]||0) + 1;
+    });
+    return Object.keys(counts).sort(function(a,b){
+      return counts[b]-counts[a] || a.localeCompare(b);
+    }).map(function(n){ return {name:n, count:counts[n]}; });
+  }
+
+  function renderComplexFilter(){
+    var items = complexesForCity(state.city);
+    var stillThere = false;
+    items.forEach(function(c){ if (c.name === state.complex) stillThere = true; });
+    if (state.complex && !stillThere) state.complex = null;
+    el.complexField.hidden = (items.length === 0);
+    el.complexSelect.innerHTML = "";
+    var any = document.createElement("option");
+    any.value = ""; any.textContent = t("complexAny");
+    el.complexSelect.appendChild(any);
+    items.forEach(function(c){
+      var o = document.createElement("option");
+      o.value = c.name; o.textContent = c.name + " (" + c.count + ")";
+      el.complexSelect.appendChild(o);
+    });
+    el.complexSelect.value = state.complex || "";
   }
 
   function renderCityTabs(){
@@ -8030,8 +8665,8 @@ HTML = r"""<meta charset="utf-8">
   }
 
   function selectCity(key){
-    state.city = key; state.district = null; el.districtInput.value = "";
-    renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); applyFilters();
+    state.city = key; state.district = null; state.complex = null; el.districtInput.value = "";
+    renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); renderComplexFilter(); applyFilters();
   }
 
   var WARD_BOUNDARIES = DATA.WARD_BOUNDARIES || {};
@@ -8411,6 +9046,11 @@ HTML = r"""<meta charset="utf-8">
     applyFilters();
   });
 
+  el.complexSelect.addEventListener("change", function(){
+    state.complex = el.complexSelect.value || null;
+    applyFilters();
+  });
+
   function detailsHtml(l){
     if (!l.details) return "";
     var rows = DETAIL_ORDER.filter(function(k){ return l.details[k]; }).map(function(k){
@@ -8428,6 +9068,7 @@ HTML = r"""<meta charset="utf-8">
       if (l.details && l.details.duplicateOf) return false;
       if (!state.sources.has(l.source)) return false;
       if (state.district && l.district !== state.district) return false;
+      if (state.complex && l.complex !== state.complex) return false;
       if (state.minBudget !== null && l.price < state.minBudget*1000000) return false;
       if (state.maxBudget !== null && l.price > state.maxBudget*1000000) return false;
       if (l.daysAgo > state.maxDays) return false;
@@ -8471,7 +9112,8 @@ HTML = r"""<meta charset="utf-8">
     else budgetLabel = t("from") + " " + fmtPrice(state.minBudget*1000000) + " " + t("to") + " " + fmtPrice(state.maxBudget*1000000) + " " + t("perMonth");
     var typeLabel = state.type ? typeName(state.type).toLowerCase() : t("anyType");
     var searchLabel = state.textSearch ? (' · ' + t("searchCtx") + ': "' + state.textSearch + '"') : "";
-    el.resultsContext.textContent = cityName(city) + " · " + distLabel + " · " + typeLabel + " · " + budgetLabel + " · " + t("forDays") + " " + state.maxDays + " " + dayWord(state.maxDays) + searchLabel;
+    var complexLabel = state.complex ? (" · " + t("complexCtx") + " " + state.complex) : "";
+    el.resultsContext.textContent = cityName(city) + " · " + distLabel + complexLabel + " · " + typeLabel + " · " + budgetLabel + " · " + t("forDays") + " " + state.maxDays + " " + dayWord(state.maxDays) + searchLabel;
 
     el.resultsList.innerHTML = "";
     el.emptyState.hidden = list.length !== 0;
@@ -8521,6 +9163,7 @@ HTML = r"""<meta charset="utf-8">
           '<div class="listing-type">' + typeName(l.type) + '</div>' +
           '<div class="listing-meta">' + d.name + (l.area ? (" · " + l.area + " " + t("m2")) : "") +
             (state.poiSort && l._poiDist!=null ? (' · <span class="poi-dist-badge">' + POI_STYLE[state.poiSort].icon + " " + fmtDist(l._poiDist) + '</span>') : "") +
+            (l.complex ? ('<br><span class="complex-pill">🏢 ' + l.complex + '</span>') : "") +
           '</div>' +
         '</div>' +
         '<p class="listing-desc">' + descText(l) + '</p>' +
@@ -8570,12 +9213,12 @@ HTML = r"""<meta charset="utf-8">
   }
 
   el.resetBtn.addEventListener("click", function(){
-    state.district = null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false;
+    state.district = null; state.complex=null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false;
     state.sources = new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; }));
     el.districtInput.value=""; el.poiSortSelect.value=""; el.textSearchInput.value=""; el.perM2Toggle.checked=false;
     el.favFilterToggle.setAttribute("aria-pressed","false"); el.favFilterToggle.textContent="☆ " + t("favFilter");
     Array.prototype.forEach.call(el.sortToggle.querySelectorAll("button"), function(b){ b.classList.toggle("active", b.getAttribute("data-sort")==="asc"); });
-    syncBudgetUI(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderCityMap(); applyFilters();
+    syncBudgetUI(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderComplexFilter(); renderCityMap(); applyFilters();
   });
 
   var lightboxPhotos = [], lightboxIndex = 0;
@@ -8659,7 +9302,7 @@ HTML = r"""<meta charset="utf-8">
 
   initTheme();
   initLeafletMap();
-  renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); setupBudgetSlider(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); applyFilters();
+  renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); setupBudgetSlider(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderComplexFilter(); applyFilters();
   initLang();
 })();
 </script>
