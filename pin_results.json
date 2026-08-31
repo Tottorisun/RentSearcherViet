@@ -9760,5 +9760,23 @@
   "lon": 106.7172107,
   "source": "geocode",
   "matched": "Phạm Hữu Lầu"
+ },
+ "1000117": {
+  "lat": 10.7631702,
+  "lon": 106.6996404,
+  "source": "geocode",
+  "matched": "Masteri Millennium"
+ },
+ "1000118": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "1000119": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
  }
 }
