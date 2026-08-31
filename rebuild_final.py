@@ -11169,6 +11169,53 @@ L(2000315,"binh-duong","tu","Склад",15000000,230,
   "https://www.nhatot.com/thue-van-phong-mat-bang-kinh-doanh-thi-xa-tan-uyen-binh-duong/134302979.htm","8 дней назад",8,source="chotot",
   details={"photos": ["https://cdn.chotot.com/h3jEyyWk4d3LjZy5hWi8VYoFb7z-gVwo8kmRb_EPn_k/preset:view/plain/0cde7e8b919087c0c7647ab372384165-2998844494662502226.jpg", "https://cdn.chotot.com/pdzAGQ54iZe2KMNUCImHiuW-c8ElIzU026haGJRjo1U/preset:view/plain/549ed02cc0e7797d9f8262ee1ec540c9-2998844496220605324.jpg", "https://cdn.chotot.com/t0d_LXPsEGmpOPvsvVUIUfv0q0SwKIyEEhWDD6g3kho/preset:view/plain/711ee09b7f38b318fe076aec991c4c1a-2998844496185573161.jpg"], "notice": "Объявление от посредника, который подбирает склады под запрос.", "noticeEn": "Posted by a broker who also sources warehouses to order."},
   descEn="New 230 m² workshop in Tân Vĩnh Hiệp, Tân Uyên: three-phase power, container-truck access; never used before."),
+
+L(1000130,"ho-chi-minh","th","Квартира",5800000,35,
+  "Дуплекс (2 уровня), 35 м², рядом Lotte Mart Q7, Phú Mỹ Hưng, RMIT, Tân Hưng, Q7. Полная меблировка, высокие потолки, тихий охраняемый квартал.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/132339645.htm","3 дня назад",3,source="chotot",
+  descEn="Duplex (2 levels), 35m2, near Lotte Mart Q7, Phu My Hung, RMIT, Tan Hung, District 7. Fully furnished, high ceilings, quiet secured neighborhood.",
+  details={"notice": "объявление агента с сеткой тарифов по всей системе квартир в районе (студии 4-10 млн, дуплексы 4,5-15 млн, 1PN/2PN 6-20 млн); записанные цена и площадь (5,8 млн ₫ / 35 м²) соответствуют структурному полю самого объявления, а не выбраны из текста вручную.","noticeEn":"agent listing quoting a tariff grid across the whole apartment system in the area (studios 4-10M, duplexes 4.5-15M, 1BR/2BR 6-20M); the recorded price and area (5.8M VND / 35m2) match the listing's own structured field, not hand-picked from the text.", "photos": ["https://cdn.chotot.com/bXRFsa7g0M3Ypk7EoOCxJfj94JXZGYokjCocPRmaUkg/preset:view/plain/4e31c209807d0666fe2c373917c3708b-2983939304397903956.jpg", "https://cdn.chotot.com/aoj2Cbiwlw81-I_219n3bnxxZPP8EvLGau62XCj1w9s/preset:view/plain/cb5a0067fae06b867620637f6f42546c-2983939304221496415.jpg", "https://cdn.chotot.com/qFKI1XxinCXaxWJyMtcHP67DI8h49aqkcJz5i-C1u3E/preset:view/plain/1cb3f3f0ba099c98973d3e5219c20e3d-2983939304371254064.jpg"]}),
+L(1000131,"ho-chi-minh","th","Комната",3000000,25,
+  "Комната, 25 м², Tân Hưng (Phú Mỹ Hưng), Q7. Есть антресоль (гак), базовая меблировка, кондиционер.",
+  "https://www.nhatot.com/thue-phong-tro-quan-7-tp-ho-chi-minh/130999283.htm","2 дня назад",2,source="chotot",
+  descEn="Room, 25m2, Tan Hung (Phu My Hung), District 7. Has a sleeping loft, basic furnishing, air conditioning.",
+  details={"notice": "объявление агента со списком комнат разной ценовой категории (от 2,4 млн без гака до 7+ млн за 2-комнатные варианты); записанные цена и площадь (3 млн ₫ / 25 м²) — структурное поле самого объявления, соответствует тарифу «3-3,8 млн: с гаком, студия, базовая меблировка».","noticeEn":"agent listing with rooms across several price tiers (from 2.4M without a loft to 7M+ for 2-room options); the recorded price and area (3M VND / 25m2) are the listing's own structured field, matching the \"3-3.8M: with loft, studio, basic furnishing\" tier.", "photos": ["https://cdn.chotot.com/EuziQY4bd_KegfbdoK8Ty7Ni7Hgl6BvIQMjkcqKlsmA/preset:view/plain/7fe0ad796bcf76922e4a15736294c34a-2973952795549897723.jpg", "https://cdn.chotot.com/pOL7GPYVuvJL9eZuTpKFtYSFi0Frz5daXKoTFopFR2Q/preset:view/plain/dd099885075f8b2345c2ca1c849389b4-2973952795616882903.jpg", "https://cdn.chotot.com/yd_xl2UOmEyYbk0ZHibgaoSHxFVbxqa0e0qcPx-Kqog/preset:view/plain/d78ecdb255dcd17bdcdcf2abb563cf7b-2973952795529708853.jpg"]}),
+L(1000132,"ho-chi-minh","ak","Квартира",12000000,70,
+  "Квартира (2 спальни), 70 м², сеть апартаментов на ул. Nguyễn Văn Hưởng, Thảo Điền (An Khánh), Thủ Đức. Большой переулок, полный набор удобств, возможна краткосрочная аренда.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/134422438.htm","2 дня назад",2,source="chotot",
+  descEn="Apartment (2 bedrooms), 70m2, an apartment network on Nguyen Van Huong St, Thao Dien (An Khanh), Thu Duc. Wide alley, full amenities, short-term rental also available.",
+  details={"notice": "объявление агента по системе апартаментов (студии/1PN/2PN); записанные цена и площадь (12 млн ₫ / 70 м²) — структурное поле самого объявления, соответствует варианту 2PN.","noticeEn":"agent listing for an apartment network (studio/1BR/2BR); the recorded price and area (12M VND / 70m2) are the listing's own structured field, matching the 2BR option.", "photos": ["https://cdn.chotot.com/1SEiL51i1d_aXruP_LsDMKX62ON9hhm0od2e6jnTV9k/preset:view/plain/fd94ecb93e8738c9dc2287bcd04456ac-2999786126807053250.jpg", "https://cdn.chotot.com/vTnK0nA6vuQZWBGaiC3H7PhbNVSYcgyRVAoO8AxWSsc/preset:view/plain/0d005fbbe65e6421f1bb0709dbc72eb5-2999786127265143289.jpg", "https://cdn.chotot.com/Bg1oej-wPSGuJ3s8yUI6DrIxZ04z9--aYCrOrE2OLfg/preset:view/plain/2478dd8e86ec3133650c7408e2a92703-2999786129172706242.jpg"]}),
+L(1000133,"ho-chi-minh","ak","Торговая площадь",170000000,340,
+  "Коммерческое помещение (тэт + 1 этаж), 340 м², шоухаус с 3 фасадами в КГТ Sala, An Khánh, Thủ Đức. Подходит под офис, шоурум, магазин, образовательный центр. Депозит 3 месяца, цена растёт на 5%/год, плата за управление отдельно, электричество по своему счётчику.",
+  "https://www.nhatot.com/thue-van-phong-mat-bang-kinh-doanh-thanh-pho-thu-duc-tp-ho-chi-minh/134132899.htm","2 дня назад",2,source="chotot",
+  descEn="Commercial premises (ground + 1st floor), 340m2, a 3-frontage shophouse in the Sala urban area, An Khanh, Thu Duc. Suitable for an office, showroom, retail store, education center. 3-month deposit, price rises 5%/year, management fee separate, private electricity meter.",
+  details={"photos": ["https://cdn.chotot.com/nhou1Tmt3LmhzPE9C9QcM_ixi4HNBJAFDh1Lt6ceP-s/preset:view/plain/7fd9b6df66d30407b87123cc92e456e9-2997554846981157579.jpg", "https://cdn.chotot.com/dTJNDTs9c1Zh_ry8ypKeVJhzotbaKw_o71fQEAUTA2w/preset:view/plain/6789ca1d397edc1a1033de48a3e1d917-2997555509550602450.jpg", "https://cdn.chotot.com/yMdvQ0tt7o635sk6yJJyac5BYS9TL8LFe7To_jR4fZs/preset:view/plain/b637d8b78b9330fc07752ac40b91dd83-2999428987111542339.jpg"]}),
+L(1000134,"ho-chi-minh","ak","Квартира",16500000,80,
+  "Квартира (2 спальни), 80 м², ЖК De Capella, 116 Lương Định Của, An Khánh (Thảo Điền), Thủ Đức. Свежий ремонт, полная меблировка, заезд с чемоданом. Рядом школы (средняя, старшая, международные) — удобно для семей с детьми.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-pho-luong-dinh-cua-de-capella/cho-2-phong-ngu-decapella-ay-u-noi-that-don-vao-o-ngay-chot-nhanh-16-5tr-thang-pr46238119","3 дня назад",3,source="batdongsan",
+  descEn="Apartment (2 bedrooms), 80m2, De Capella complex, 116 Luong Dinh Cua, An Khanh (Thao Dien), Thu Duc. Freshly renovated, fully furnished, move in with just a suitcase. Near schools (secondary, high school, international) — convenient for families with children.",
+  details={"notice": "точная дата первой публикации не подтверждена; оценка «3 дня назад» сделана по дате загрузки фото на batdongsan.com.vn (28 авг). Цена подтверждена дважды — в карточке и в поле «Khoảng giá» на странице объявления (16,5 triệu/tháng). В базе уже есть другой юнит в этом же доме (116 Lương Định Của) площадью 72 м² за 25 млн ₫ — это отдельный, меньший по цене юнит.","noticeEn":"the exact date of first publication is not confirmed; the \"3 days ago\" estimate is based on the photo upload date on batdongsan.com.vn (28 Aug). The price is confirmed twice — in the search card and in the \"Khoảng giá\" field on the listing page (16.5 triệu/tháng). The database already has another unit in the same building (116 Luong Dinh Cua) at 72m2 for 25M VND — this is a separate, cheaper unit.", "photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828173022-82e3_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828173022-b7ef_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828173023-bb67_wm.jpg"]}),
+
+L(1000135,"ho-chi-minh","th","Комната",3000000,25,
+  "Комната (со спальным чердаком, студийного типа, базовая меблировка), 25 м², ул. Nguyễn Thị Thập, Tân Hưng (Phú Mỹ Hưng), Q7. Объявление посредника с несколькими вариантами комнат по разным ценам (от 2,4 до 7+ млн ₫); записанные цена и площадь относятся к варианту «3–3,8 млн ₫: с чердаком, студия, базовая мебель».",
+  "https://www.nhatot.com/thue-phong-tro-quan-7-tp-ho-chi-minh/130999283.htm","2 дня назад",2,source="chotot",
+  descEn="Room (with sleeping loft, studio-style, basic furnishing), 25m2, Nguyen Thi Thap St, Tan Hung (Phu My Hung), District 7. Broker listing offering several rooms at different prices (from 2.4 to 7+ million VND); the recorded price and area correspond to the \"3-3.8 million VND: loft, studio, basic furniture\" tier.",
+  details={"notice": "объявление посредника перечисляет несколько ценовых сегментов разных комнат в одном тексте; записаны цена и площадь, соответствующие структурированным полям самого объявления (3 млн ₫, 25 м²).","noticeEn":"the broker's listing text lists several price tiers for different rooms in one post; the recorded price and area match the ad's own structured fields (3 million VND, 25m2).", "photos": ["https://cdn.chotot.com/EuziQY4bd_KegfbdoK8Ty7Ni7Hgl6BvIQMjkcqKlsmA/preset:view/plain/7fe0ad796bcf76922e4a15736294c34a-2973952795549897723.jpg", "https://cdn.chotot.com/pOL7GPYVuvJL9eZuTpKFtYSFi0Frz5daXKoTFopFR2Q/preset:view/plain/dd099885075f8b2345c2ca1c849389b4-2973952795616882903.jpg", "https://cdn.chotot.com/yd_xl2UOmEyYbk0ZHibgaoSHxFVbxqa0e0qcPx-Kqog/preset:view/plain/d78ecdb255dcd17bdcdcf2abb563cf7b-2973952795529708853.jpg"]}),
+L(1000136,"ho-chi-minh","tm","Квартира",8000000,67,
+  "2-спальная квартира (2 с/у), 67 м², ЖК Era Town, Tân Mỹ (Phú Mỹ Hưng), Q7. Полная меблировка, высокий этаж. Заезд с 1 октября, договор на 2 года.",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-the-era-town/cho-2pn-fullnt-cc-uc-khai-q7-dt-67m2-gia-re-8-trieu-pr46245632","сегодня",0,source="batdongsan",
+  descEn="2-bedroom apartment (2 bathrooms), 67m2, Era Town complex, Tan My (Phu My Hung), District 7. Fully furnished, high floor. Move-in from October 1, 2-year lease.",
+  details={"notice": "точная дата первой публикации не подтверждена; оценка «сегодня» сделана по дате загрузки фото на batdongsan.com.vn (31 авг). Цена подтверждена дважды — в карточке и в поле «Khoảng giá» (8 triệu/tháng). В базе уже есть другой юнит в этом же ЖК (85 м², 9 млн ₫) — это отдельный, меньший юнит.","noticeEn":"the exact date of first publication is not confirmed; the \"today\" estimate is based on the photo upload date on batdongsan.com.vn (31 Aug). The price is confirmed twice — in the search card and in the \"Khoảng giá\" field (8 triệu/tháng). The database already has another unit in the same complex (85m2, 9 million VND) — this is a separate, smaller unit.", "photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831202422-84ae_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831202423-9ea7_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831202424-abf8_wm.jpg"]}),
+L(1000137,"ho-chi-minh","ak","Дом",90000000,300,
+  "Вилла целиком, участок 300 м², трэт + 2 этажа + мансарда, 5 спален, 6 с/у, собственный бассейн. Ул. Nguyễn Ư Dĩ, An Khánh (Thảo Điền), Thủ Đức. Подходит под жильё, компанию, шоурум или кафе.",
+  "https://batdongsan.com.vn/cho-thue-nha-rieng-pho-nguyen-u-di-phuong-an-khanh-tp-ho-chi-minh/cho-biet-thu-4-tang-tai-thao-ien-khuon-vien-300m2-5-phong-pr46245576","сегодня",0,source="batdongsan",
+  descEn="Whole villa, 300m2 lot, ground floor + 2 floors + attic, 5 bedrooms, 6 bathrooms, private pool. Nguyen U Di St, An Khanh (Thao Dien), Thu Duc. Suited for housing, a company office, showroom, or cafe.",
+  details={"notice": "точная дата первой публикации не подтверждена; оценка «сегодня» сделана по дате загрузки фото на batdongsan.com.vn (31 авг). Цена подтверждена дважды — в карточке и в поле «Khoảng giá» (90 triệu/tháng). В базе уже есть другая вилла на той же улице (250 м², 99 млн ₫, источник Chợ Tốt) — площадь и цена отличаются, это отдельный объект.","noticeEn":"the exact date of first publication is not confirmed; the \"today\" estimate is based on the photo upload date on batdongsan.com.vn (31 Aug). The price is confirmed twice — in the search card and in the \"Khoảng giá\" field (90 triệu/tháng). The database already has another villa on the same street (250m2, 99 million VND, from Cho Tot) — the area and price differ, so this is a separate property.", "photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831192320-d36d_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831192320-894d_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/31/20260831192321-5a08_wm.jpg"]}),
+L(1000138,"ho-chi-minh","ak","Квартира",16500000,80,
+  "2-спальная квартира, 80 м², ЖК De Capella, 116 Lương Định Của, An Khánh (Thảo Điền), Thủ Đức. Полная меблировка, свежий ремонт, заезд сразу. Рядом школы (средние и международные).",
+  "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-pho-luong-dinh-cua-de-capella/cho-2-phong-ngu-decapella-ay-u-noi-that-don-vao-o-ngay-chot-nhanh-16-5tr-thang-pr46238119","3 дня назад",3,source="batdongsan",
+  descEn="2-bedroom apartment, 80m2, De Capella complex, 116 Luong Dinh Cua, An Khanh (Thao Dien), Thu Duc. Fully furnished, freshly renovated, move in immediately. Schools (secondary and international) nearby.",
+  details={"notice": "точная дата первой публикации не подтверждена; фото на странице объявления загружены 28 авг, поэтому дата указана консервативно (3 дня, а не «сегодня»). Цена подтверждена дважды — в карточке и в поле «Khoảng giá» (16,5 triệu/tháng). В базе уже есть другой юнит в этом же доме (71,6 м², другая цена) — площадь отличается, это отдельный юнит.","noticeEn":"the exact date of first publication is not confirmed; the photos on the listing page were uploaded on 28 Aug, so the date is recorded conservatively (3 days, not \"today\"). The price is confirmed twice — in the search card and in the \"Khoảng giá\" field (16.5 triệu/tháng). The database already has another unit in the same building (71.6m2, different price) — the area differs, so this is a separate unit.", "photos": ["https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828173022-82e3_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828173022-b7ef_wm.jpg", "https://file4.batdongsan.com.vn/crop/600x315/2026/08/28/20260828173023-bb67_wm.jpg"]}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
@@ -12055,9 +12102,22 @@ HTML = r"""<meta charset="utf-8">
   COMMERCIAL_TYPES.forEach(function(t){ COMMERCIAL_SET[t] = true; });
   function kindOf(l){ return COMMERCIAL_SET[l.type] ? "commercial" : "residential"; }
 
-  var LANG_KEY = "rentSearcherLang";
+  // The page's own language wins on load. index.html IS the Russian page and
+  // en.html IS the English one, each with its own <title>, meta and hreflang,
+  // so the URL already states which language the visitor asked for.
+  //
+  // A stored preference used to override this, and it produced exactly the
+  // failure en.html exists to prevent: anyone who had once picked Russian --
+  // including on the other page, since both share an origin -- then landed on
+  // en.html from an English search and got Russian text. The page looked
+  // broken to the half of the audience it was built for, and nothing errored.
+  //
+  // The toggle still switches instantly and keeps your filters, but the choice
+  // is not persisted across a reload: the URL decides. Navigating between the
+  // two pages on click would keep the address bar in step, but the Artifact
+  // build is a single self-contained file with no en.html beside it, so a
+  // link there would 404.
   var lang = (typeof DEFAULT_LANG !== "undefined") ? DEFAULT_LANG : "ru";
-  try { var savedLang = localStorage.getItem(LANG_KEY); if (savedLang === "ru" || savedLang === "en") lang = savedLang; } catch (e) {}
 
   var I18N = {
     ru: {
@@ -12158,7 +12218,6 @@ HTML = r"""<meta charset="utf-8">
 
   function applyLang(next){
     lang = next;
-    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
     document.documentElement.setAttribute("lang", lang);
     var lt = document.getElementById("lang-toggle");
     if (lt){
