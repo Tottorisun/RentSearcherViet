@@ -8371,6 +8371,10 @@ HTML = r"""<meta charset="utf-8">
   .lang-toggle button{appearance:none;border:none;background:var(--surface);color:var(--ink-dim);padding:6px 14px;font-size:0.82rem;font-weight:700;cursor:pointer;letter-spacing:0.03em;}
   .lang-toggle button + button{border-left:1px solid var(--line-strong);}
   .lang-toggle button.active{background:var(--accent);color:var(--accent-ink);}
+  .kind-toggle{display:flex;border:1px solid var(--line-strong);border-radius:999px;overflow:hidden;}
+  .kind-toggle button{appearance:none;border:none;background:var(--surface);color:var(--ink-dim);padding:9px 16px;font-size:0.88rem;font-weight:600;cursor:pointer;flex:1;}
+  .kind-toggle button + button{border-left:1px solid var(--line-strong);}
+  .kind-toggle button.active{background:var(--accent);color:var(--accent-ink);}
   .theme-toggle{display:flex;border:1px solid var(--line-strong);border-radius:999px;overflow:hidden;flex:none;align-self:flex-start;}
   .theme-toggle button{appearance:none;border:none;background:var(--surface);color:var(--ink-dim);padding:6px 12px;font-size:0.82rem;font-weight:600;cursor:pointer;}
   .theme-toggle button + button{border-left:1px solid var(--line-strong);}
@@ -8598,6 +8602,14 @@ HTML = r"""<meta charset="utf-8">
   <section class="control-panel">
     <div class="filters card">
       <div class="field">
+        <span class="field-label" data-i18n="kindLabel">Тип недвижимости</span>
+        <div class="kind-toggle" id="kind-toggle" role="group" data-i18n-aria="kindLabel" aria-label="Тип недвижимости">
+          <button type="button" data-kind="residential" class="active" data-i18n="kindResidential">Жильё</button>
+          <button type="button" data-kind="commercial" data-i18n="kindCommercial">Коммерция</button>
+        </div>
+      </div>
+
+      <div class="field">
         <label for="text-search-input" data-i18n="searchLabel">Поиск по описанию</label>
         <div class="autocomplete">
           <input id="text-search-input" type="text" autocomplete="off" data-i18n-ph="searchPlaceholder" placeholder="например: бассейн, метро, вид на море">
@@ -8765,8 +8777,18 @@ HTML = r"""<meta charset="utf-8">
   var DETAIL_ORDER = ["deposit","electricity","water","internet","managementFee","contract","policy","amenities","notice"];
 
   // Listing `type` is stored in Russian in the data; this maps it for display.
-  var TYPE_OPTIONS = ["Комната","Студия","Квартира","Дом","Другое"];
-  var TYPE_EN = {"Комната":"Room","Студия":"Studio","Квартира":"Apartment","Дом":"House","Другое":"Other"};
+  // The project covers two kinds of property. Listing `type` stays in Russian
+  // in the data; TYPE_EN maps it for display, KIND_TYPES splits it by kind.
+  var RESIDENTIAL_TYPES = ["Комната","Студия","Квартира","Дом","Другое"];
+  var COMMERCIAL_TYPES  = ["Офис","Торговая площадь","Склад"];
+  var TYPE_OPTIONS = RESIDENTIAL_TYPES.concat(COMMERCIAL_TYPES);
+  var TYPE_EN = {
+    "Комната":"Room","Студия":"Studio","Квартира":"Apartment","Дом":"House","Другое":"Other",
+    "Офис":"Office","Торговая площадь":"Retail space","Склад":"Warehouse"
+  };
+  var COMMERCIAL_SET = {};
+  COMMERCIAL_TYPES.forEach(function(t){ COMMERCIAL_SET[t] = true; });
+  function kindOf(l){ return COMMERCIAL_SET[l.type] ? "commercial" : "residential"; }
 
   var LANG_KEY = "rentSearcherLang";
   var lang = (typeof DEFAULT_LANG !== "undefined") ? DEFAULT_LANG : "ru";
@@ -8774,6 +8796,7 @@ HTML = r"""<meta charset="utf-8">
 
   var I18N = {
     ru: {
+      kindLabel:"Тип недвижимости", kindResidential:"Жильё", kindCommercial:"Коммерция",
       tagline:"Комнаты, студии, квартиры и коммерческие помещения в Хошимине, Ханое, Дананге и Нячанге — из реальных объявлений, отсортированные по цене.",
       themeGroup:"Тема оформления", themeAuto:"Авто", themeLight:"Светлая", themeDark:"Тёмная",
       cityGroup:"Город",
@@ -8817,6 +8840,7 @@ HTML = r"""<meta charset="utf-8">
       stamp:"Данные актуальны на __TODAY_DATE__ · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
     },
     en: {
+      kindLabel:"Property kind", kindResidential:"Housing", kindCommercial:"Commercial",
       tagline:"Rooms, studios, apartments and commercial space in Ho Chi Minh City, Hanoi, Da Nang and Nha Trang — from real listings, sorted by price.",
       themeGroup:"Colour theme", themeAuto:"Auto", themeLight:"Light", themeDark:"Dark",
       cityGroup:"City",
@@ -8914,7 +8938,7 @@ HTML = r"""<meta charset="utf-8">
   function descText(l){ return (lang === "en" && l.descEn) ? l.descEn : l.desc; }
 
   var state = {
-    city: "nha-trang", district: null, complex: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
+    city: "nha-trang", district: null, complex: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, kind: "residential", poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
     sources: new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; })),
     openDetails: new Set()
   };
@@ -8962,7 +8986,13 @@ HTML = r"""<meta charset="utf-8">
     saveFavorites();
   }
 
-  var BUDGET_MIN = 0, BUDGET_MAX = 45;
+  // Commercial rents reach ~160M VND/month while almost all housing sits under
+  // 45M. One shared ceiling cannot serve both: at 45 the commercial listings are
+  // invisible, at 300 the residential slider is unusable because everything
+  // bunches into its first sixth. So the ceiling follows the selected kind.
+  var BUDGET_MIN = 0;
+  var BUDGET_MAX_RESIDENTIAL = 45, BUDGET_MAX_COMMERCIAL = 300;
+  var BUDGET_MAX = BUDGET_MAX_RESIDENTIAL;
 
   var el = {
     cityTabs: document.getElementById("city-tabs"),
@@ -9342,6 +9372,11 @@ HTML = r"""<meta charset="utf-8">
   }
 
   function syncBudgetUI(){
+    // The bounds live here, not only in setupBudgetSlider: that runs once at
+    // init, so when BUDGET_MAX moves (housing 45M -> commercial 300M) the
+    // inputs kept the old ceiling and the wider range was unreachable.
+    el.budgetMinRange.min = el.budgetMaxRange.min = el.budgetMinInput.min = el.budgetMaxInput.min = BUDGET_MIN;
+    el.budgetMinRange.max = el.budgetMaxRange.max = el.budgetMinInput.max = el.budgetMaxInput.max = BUDGET_MAX;
     var lo = state.minBudget===null ? BUDGET_MIN : state.minBudget;
     var hi = state.maxBudget===null ? BUDGET_MAX : state.maxBudget;
     el.budgetMinInput.value = lo;
@@ -9428,14 +9463,45 @@ HTML = r"""<meta charset="utf-8">
     allBtn.setAttribute("aria-pressed", state.type===null ? "true":"false");
     allBtn.addEventListener("click", function(){ state.type=null; renderTypeChips(); applyFilters(); });
     el.typeChips.appendChild(allBtn);
+    // Only the types belonging to the selected kind: showing "Warehouse" while
+    // the user is browsing housing is noise, and vice versa.
+    var typesForKind = state.kind === "commercial" ? COMMERCIAL_TYPES
+                     : state.kind === "residential" ? RESIDENTIAL_TYPES
+                     : TYPE_OPTIONS;
     // NB: the loop variable must not be named `t` -- that would shadow the
     // t() translation helper inside this closure.
-    TYPE_OPTIONS.forEach(function(tp){
+    typesForKind.forEach(function(tp){
       var b = document.createElement("button");
       b.type="button"; b.className="chip"; b.textContent=typeName(tp);
       b.setAttribute("aria-pressed", state.type===tp ? "true":"false");
       b.addEventListener("click", function(){ state.type = (state.type===tp) ? null : tp; renderTypeChips(); applyFilters(); });
       el.typeChips.appendChild(b);
+    });
+  }
+
+  function setKind(kind){
+    if (state.kind === kind) return;
+    state.kind = kind;
+    // A type from the other kind would silently match nothing.
+    if (state.type && kindOf({type: state.type}) !== kind) state.type = null;
+    BUDGET_MAX = (kind === "commercial") ? BUDGET_MAX_COMMERCIAL : BUDGET_MAX_RESIDENTIAL;
+    // Any ceiling-relative budget must be reinterpreted against the new range,
+    // otherwise "up to 45" silently becomes a hard filter on a 300-wide scale.
+    state.minBudget = null; state.maxBudget = null;
+    var tg = document.getElementById("kind-toggle");
+    if (tg){
+      Array.prototype.forEach.call(tg.querySelectorAll("button"), function(b){
+        b.classList.toggle("active", b.getAttribute("data-kind") === kind);
+      });
+    }
+    syncBudgetUI(); renderBudgetChips(); renderTypeChips(); renderComplexFilter(); applyFilters();
+  }
+
+  var kindToggleEl = document.getElementById("kind-toggle");
+  if (kindToggleEl){
+    kindToggleEl.addEventListener("click", function(e){
+      var btn = e.target.closest("button[data-kind]");
+      if (btn) setKind(btn.getAttribute("data-kind"));
     });
   }
 
@@ -9483,6 +9549,7 @@ HTML = r"""<meta charset="utf-8">
       if (state.minBudget !== null && l.price < state.minBudget*1000000) return false;
       if (state.maxBudget !== null && l.price > state.maxBudget*1000000) return false;
       if (l.daysAgo > state.maxDays) return false;
+      if (state.kind && kindOf(l) !== state.kind) return false;
       if (state.type && l.type !== state.type) return false;
       if (state.textSearch && listingSearchText(l).indexOf(state.textSearch) === -1) return false;
       if (state.showFavoritesOnly && !favorites.has(l.id)) return false;
@@ -9624,7 +9691,13 @@ HTML = r"""<meta charset="utf-8">
   }
 
   el.resetBtn.addEventListener("click", function(){
-    state.district = null; state.complex=null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false;
+    state.district = null; state.complex=null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false
+    // Reset returns to housing, so the budget ceiling must come back with it --
+    // otherwise the slider keeps the 300M commercial scale on residential data.
+    state.kind="residential"; BUDGET_MAX = BUDGET_MAX_RESIDENTIAL;
+    var kt = document.getElementById("kind-toggle");
+    if (kt){ Array.prototype.forEach.call(kt.querySelectorAll("button"), function(b){
+      b.classList.toggle("active", b.getAttribute("data-kind")==="residential"); }); }
     state.sources = new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; }));
     el.districtInput.value=""; el.poiSortSelect.value=""; el.textSearchInput.value=""; el.perM2Toggle.checked=false;
     el.favFilterToggle.setAttribute("aria-pressed","false"); el.favFilterToggle.textContent="☆ " + t("favFilter");
