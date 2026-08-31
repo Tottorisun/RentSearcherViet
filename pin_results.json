@@ -9538,5 +9538,227 @@
   "lon": 106.7033938,
   "source": "geocode",
   "matched": "Bình Thạnh"
+ },
+ "1000079": {
+  "lat": 10.7753836,
+  "lon": 106.6910196,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Minh Khai"
+ },
+ "1000080": {
+  "lat": 10.7785749,
+  "lon": 106.7016045,
+  "source": "geocode",
+  "matched": "Lý Tự Trọng"
+ },
+ "1000081": {
+  "lat": 10.8430358,
+  "lon": 106.7732305,
+  "source": "geocode",
+  "matched": "Phan Bội Châu"
+ },
+ "1000082": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1000083": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1000084": {
+  "lat": 10.7333623,
+  "lon": 106.7094098,
+  "source": "geocode",
+  "matched": "Hưng Gia 1"
+ },
+ "1000085": {
+  "lat": 10.7549518,
+  "lon": 106.6776402,
+  "source": "geocode",
+  "matched": "Tân Kiểng"
+ },
+ "1000086": {
+  "lat": 10.7351883,
+  "lon": 106.6953441,
+  "source": "geocode",
+  "matched": "Hoàng Trọng Mậu"
+ },
+ "1000087": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1000088": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000089": {
+  "lat": 10.7396069,
+  "lon": 106.7051958,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập 330"
+ },
+ "1000090": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000091": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000092": {
+  "lat": 10.717204,
+  "lon": 106.7265248,
+  "source": "geocode",
+  "matched": "Phú Mỹ V"
+ },
+ "1000093": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000094": {
+  "lat": 10.83987,
+  "lon": 106.6695842,
+  "source": "geocode",
+  "matched": "Bách Hóa Xanh"
+ },
+ "1000095": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000096": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000097": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1000098": {
+  "lat": 10.8111809,
+  "lon": 106.7033938,
+  "source": "geocode",
+  "matched": "Bình Thạnh"
+ },
+ "1000099": {
+  "lat": 10.8005113,
+  "lon": 106.7336461,
+  "source": "geocode",
+  "matched": "Thảo Điền"
+ },
+ "1000100": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1000101": {
+  "lat": 10.7811584,
+  "lon": 106.7356588,
+  "source": "geocode",
+  "matched": "Phạm Văn Ngôn"
+ },
+ "1000102": {
+  "lat": 10.7737261,
+  "lon": 106.7166008,
+  "source": "geocode",
+  "matched": "Dạ Cầu Sài Gòn 1"
+ },
+ "1000103": {
+  "lat": 10.7781073,
+  "lon": 106.7133328,
+  "source": "geocode",
+  "matched": "The Metropole"
+ },
+ "1000104": {
+  "lat": 10.7958124,
+  "lon": 106.7649123,
+  "source": "geocode",
+  "matched": "Mường Vi"
+ },
+ "1000105": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1000106": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1000108": {
+  "lat": 10.7674015,
+  "lon": 106.6977106,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Bình"
+ },
+ "1000109": {
+  "lat": 10.7851263,
+  "lon": 106.6890843,
+  "source": "geocode",
+  "matched": "Nam Kỳ Khởi Nghĩa"
+ },
+ "1000110": {
+  "lat": 10.7623141,
+  "lon": 106.7022361,
+  "source": "geocode",
+  "matched": "Hoàng Diệu"
+ },
+ "1000111": {
+  "lat": 10.7629917,
+  "lon": 106.7043593,
+  "source": "geocode",
+  "matched": "Đoàn Văn Bơ"
+ },
+ "1000112": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "1000113": {
+  "lat": 10.7394976,
+  "lon": 106.7107407,
+  "source": "geocode",
+  "matched": "Số 85"
+ },
+ "1000114": {
+  "lat": 10.7405653,
+  "lon": 106.704148,
+  "source": "geocode",
+  "matched": "Hoàng Anh Gia Lai 1"
+ },
+ "1000115": {
+  "lat": 10.7293742,
+  "lon": 106.723387,
+  "source": "geocode",
+  "matched": "Victory Tower"
+ },
+ "1000116": {
+  "lat": 10.6928289,
+  "lon": 106.7172107,
+  "source": "geocode",
+  "matched": "Phạm Hữu Lầu"
  }
 }
