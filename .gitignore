@@ -11,3 +11,4 @@ id_reservations.json
 # Telegram ingestion / notification working state
 telegram_candidates.json
 posted_to_telegram.json
+telegram_topics.json

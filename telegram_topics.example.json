@@ -1,0 +1,14 @@
+{
+  "_comment": "Copy to telegram_topics.json and fill in after running --setup. chat_id is the forum supergroup (numeric -100... id, or @username if it is public).",
+  "chat_id": "@REPLACE_ME",
+  "topics": {
+    "ho-chi-minh:residential": null,
+    "ha-noi:residential": null,
+    "da-nang:residential": null,
+    "nha-trang:residential": null,
+    "binh-duong:residential": null,
+    "other:residential": null,
+    "commercial": null,
+    "default": null
+  }
+}
