@@ -253,6 +253,10 @@ def main():
                     help="seconds between posts (default 4, under Telegram's ~20/min)")
     ap.add_argument("--repost", help="comma-separated listing ids to force-resend "
                     "(e.g. after a formatting bug) even if already marked posted")
+    ap.add_argument("--min-photos", type=int, default=3,
+                    help="skip listings with fewer photos than this (default 3) -- a "
+                    "1-2 photo post looks thin in a public feed; the site itself still "
+                    "shows these listings regardless, only the hub feed is pickier")
     args = ap.parse_args()
     token = os.environ.get("TG_BOT_TOKEN")
 
@@ -279,9 +283,19 @@ def main():
         to_post = [by_id[i] for i in force if i in by_id]
         rest = []
     else:
-        fresh = sorted((l for l in listings if l["id"] not in posted),
-                       key=lambda l: (l.get("daysAgo", 99), -l["id"]))
+        # Not-enough-photos listings are left OUT of `posted` on purpose: a later
+        # daily-check run can still backfill photos for one of them, and the next
+        # gradual-posting pass will then pick it up instead of it being excluded
+        # forever by a decision made when it had fewer photos.
+        candidates = [l for l in listings if l["id"] not in posted]
+        thin = sum(1 for l in candidates if len(details_photos(l)) < args.min_photos)
+        candidates = [l for l in candidates if len(details_photos(l)) >= args.min_photos]
+        fresh = sorted(candidates, key=lambda l: (l.get("daysAgo", 99), -l["id"]))
         to_post, rest = fresh[: args.limit], []
+        if thin:
+            print("skipping %d listing(s) with fewer than %d photos "
+                  "(not marked posted -- eligible again if photos are added later)"
+                  % (thin, args.min_photos))
         if not state.get("initialised"):
             rest = [l["id"] for l in fresh[args.limit:]]
             print("first run: %d existing listings will be marked as seen; "

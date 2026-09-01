@@ -12,7 +12,7 @@ listings = data["LISTINGS"]
 
 CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City",
            "vung-tau":"Vung Tau","quy-nhon":"Quy Nhon","phan-thiet":"Phan Thiet",
-           "ha-noi":"Hanoi","binh-duong":"Binh Duong"}
+           "ha-noi":"Hanoi","binh-duong":"Binh Duong","phu-quoc":"Phu Quoc"}
 DIST_NAME = {}
 for ckey, cval in data["CITIES"].items():
     for d in cval["districts"]:
@@ -39,6 +39,21 @@ if _unprojected:
         "coordinates or map pins. Add a projection (bbox + district centroids;\n"
         "the centroids can be geocoded from Nominatim) before running this, or\n"
         "add the city to GEO_EXEMPT if another script handles its pins."
+    )
+
+# Same guard, second list. CITY_VN is a second, independent place a new city
+# has to be registered, and its own KeyError doesn't fire at startup -- only
+# once a listing from that city is actually processed (which is exactly why
+# Phú Quốc slipped through this morning: the city existed but was still empty,
+# so no listing ever hit this dict until real data landed on 1 Sep 2026).
+_no_city_vn = sorted((set(data["CITIES"]) - GEO_EXEMPT) - set(CITY_VN))
+if _no_city_vn:
+    raise SystemExit(
+        "CITY_VN has no entry for: " + ", ".join(_no_city_vn) + "\n"
+        "Geocoding a listing from one of these cities would crash with a bare\n"
+        "KeyError the first time it actually had a listing to process, not now\n"
+        "while the city is still empty. Add its plain English/Vietnamese name\n"
+        "(used only to build a Nominatim search query) to CITY_VN above."
     )
 
 CANDIDATE_RE = re.compile(r'\b(?:[A-ZĐ][a-zà-ỹ]*(?:\s+[A-ZĐ0-9][a-zà-ỹ0-9]*){1,4})')

@@ -4686,5 +4686,137 @@
   "lat": 10.7420195,
   "lon": 106.7154618,
   "display_name": "Đường Số 47, Khu phố 17, Phường Tân Hưng, Thành phố Hồ Chí Minh, 72911, Việt Nam"
- }
+ },
+ "Xô Viết Nghệ Tĩnh 114, Da Lat, Vietnam": {
+  "lat": 11.9569455,
+  "lon": 108.4339124,
+  "display_name": "Xô Viết Nghệ Tĩnh, Ấp Cao Bá Quát, Phường Lang Biang - Đà Lạt, Đà Lạt, Tỉnh Lâm Đồng, 66100, Việt Nam"
+ },
+ "The Nest Mây Lang Thang, Da Lat, Vietnam": null,
+ "The Nest Mây Lang Thang, Phường Lang Biang, Da Lat, Vietnam": null,
+ "Lý Nhã Kỳ, Da Lat, Vietnam": null,
+ "Lý Nhã Kỳ, Phường Lang Biang, Da Lat, Vietnam": null,
+ "Trần Bạch Đằng, Da Nang, Vietnam": {
+  "lat": 16.0549204,
+  "lon": 108.2460038,
+  "display_name": "Đường Trần Bạch Đằng, Tổ dân phố Mỹ Hiệp, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Hòa Cường Nam, Da Nang, Vietnam": {
+  "lat": 16.029414,
+  "lon": 108.2215245,
+  "display_name": "Chung cư Hoà Cường Nam, Tổ dân phố 50, Phường Hòa Cường, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Nam Long, Da Nang, Vietnam": {
+  "lat": 16.0025221,
+  "lon": 108.2428844,
+  "display_name": "Đường Nam Long, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Nguyễn Chánh, Da Nang, Vietnam": {
+  "lat": 16.0846357,
+  "lon": 108.1509512,
+  "display_name": "Đường Nguyễn Chánh, Phường Hòa Khánh, Thành phố Đà Nẵng, 84236, Việt Nam"
+ },
+ "Hòa Thọ Đông, Da Nang, Vietnam": {
+  "lat": 16.0106526,
+  "lon": 108.1944816,
+  "display_name": "Hòa Thọ Đông, Tổ dân phố 20, Phường Cẩm Lệ, Hội An, Thành phố Đà Nẵng, 51000, Việt Nam"
+ },
+ "Hòa Thuận Tây, Phường Hòa Cường, Da Nang, Vietnam": null,
+ "Võ Chí Công, Da Nang, Vietnam": {
+  "lat": 15.5574819,
+  "lon": 108.5596137,
+  "display_name": "Võ Chí Công, Phường Quảng Phú, Xã Tam Xuân, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Võ Chí Công, Phường Ngũ Hành Sơn, Da Nang, Vietnam": {
+  "lat": 15.9962864,
+  "lon": 108.2347801,
+  "display_name": "Võ Chí Công, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Thuận Phước, Phường Hải Châu, Da Nang, Vietnam": {
+  "lat": 16.0951418,
+  "lon": 108.2205974,
+  "display_name": "Cầu Thuận Phước, Tổ dân phố 01 Thuận Phước, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Duy Tân, Da Nang, Vietnam": {
+  "lat": 15.5802488,
+  "lon": 108.5136532,
+  "display_name": "Duy Tân, Phường Quảng Phú, Tam Kỳ, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Duy Tân, Phường Hòa Cường, Da Nang, Vietnam": {
+  "lat": 16.0482514,
+  "lon": 108.2127516,
+  "display_name": "Đường Duy Tân, Tổ dân phố 22, Phường Hòa Cường, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Hẻm 25 Nguyễn Hữu Cảnh, Vung Tau, Vietnam": null,
+ "Hẻm 25 Nguyễn Hữu Cảnh, Phường Rạch Dừa, Vung Tau, Vietnam": null,
+ "Vũng Tàu Centre Point, Vung Tau, Vietnam": null,
+ "Vũng Tàu Centre Point, Phường Rạch Dừa, Vung Tau, Vietnam": null,
+ "Nguyễn Hữu Cảnh, Vung Tau, Vietnam": {
+  "lat": 10.3774141,
+  "lon": 107.1122353,
+  "display_name": "VRB, Đường Nguyễn Hữu Cảnh, Lo D1-2, Phường Tam Thắng, Thành phố Hồ Chí Minh, 78000, Việt Nam"
+ },
+ "Bình Giã, Vung Tau, Vietnam": {
+  "lat": 10.3490013,
+  "lon": 107.077223,
+  "display_name": "Bình, 10, Đồ Chiểu, Khu phố 18, Phường Vũng Tàu, Thành phố Hồ Chí Minh, 78207, Việt Nam"
+ },
+ "Trần Hưng Đạo 68, Vung Tau, Vietnam": {
+  "lat": 10.3459023,
+  "lon": 107.0764384,
+  "display_name": "Trần Hưng Đạo, Khu phố 19, Phường Vũng Tàu, Thành phố Hồ Chí Minh, 78207, Việt Nam"
+ },
+ "Đồ Chiểu 17, Vung Tau, Vietnam": {
+  "lat": 10.3492843,
+  "lon": 107.0776028,
+  "display_name": "Đồ Chiểu, Khu phố 18, Phường Vũng Tàu, Thành phố Hồ Chí Minh, 78207, Việt Nam"
+ },
+ "Bình Giã 154, Vung Tau, Vietnam": {
+  "lat": 10.3428058,
+  "lon": 107.0812372,
+  "display_name": "Lê Văn Một, Khu phố 12, Phường Vũng Tàu, Thành phố Hồ Chí Minh, 78207, Việt Nam"
+ },
+ "Thái Văn Lung, Vung Tau, Vietnam": {
+  "lat": 10.3361858,
+  "lon": 107.0833305,
+  "display_name": "Thái Văn Lung, Khu phố 5, Phường Vũng Tàu, Thành phố Hồ Chí Minh, 78207, Việt Nam"
+ },
+ "Phan Huy Chú H4, Vung Tau, Vietnam": {
+  "lat": 10.3368394,
+  "lon": 107.0835004,
+  "display_name": "Phan Huy Chú, Khu phố 5, Phường Vũng Tàu, Thành phố Hồ Chí Minh, 78207, Việt Nam"
+ },
+ "The Sóng, Vung Tau, Vietnam": {
+  "lat": 10.3497673,
+  "lon": 107.0962511,
+  "display_name": "The Song Apartments, Phường Vũng Tàu, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Nguyễn Đình Chiểu, Phan Thiet, Vietnam": {
+  "lat": 10.9529495,
+  "lon": 108.2147892,
+  "display_name": "Nguyễn Đình Chiểu, Phường Mũi Né, Phan Thiết, Tỉnh Lâm Đồng, Việt Nam"
+ },
+ "Bình Chuẩn 17, Binh Duong, Vietnam": null,
+ "Bình Chuẩn 17, Thuận An, Binh Duong, Vietnam": null,
+ "Bình Chuẩn, Binh Duong, Vietnam": {
+  "lat": 21.3288937,
+  "lon": 105.6628709,
+  "display_name": "Huyện Bình Xuyên, Xã Bình Xuyên, Tỉnh Phú Thọ, Việt Nam"
+ },
+ "Bình Chuẩn, Thuận An, Binh Duong, Vietnam": {
+  "lat": 10.9838632,
+  "lon": 106.723509,
+  "display_name": "Trường mẫu giáo gần ngã tư Bình Chuẩn, Đường tỉnh 743A, Khu phố Bình Chuẩn 2, Phường An Phú, Thành phố Hồ Chí Minh, 75256, Việt Nam"
+ },
+ "Bà Huyện Thanh Quan, Binh Duong, Vietnam": null,
+ "Bà Huyện Thanh Quan, Dĩ An, Binh Duong, Vietnam": null,
+ "Nhị Đồng 2, Binh Duong, Vietnam": {
+  "lat": 10.9464989,
+  "lon": 106.8175022,
+  "display_name": "Nhà Thiếu nhi Tỉnh Đồng Nai, Đường Cách Mạng Tháng 8, Khu phố Hòa Bình, Phường Trấn Biên, Đồng Nai, Thành phố Đồng Nai, 76106, Việt Nam"
+ },
+ "Namaste Phú Quốc, Phu Quoc, Vietnam": null,
+ "Namaste Phú Quốc, Cửa Cạn, Phu Quoc, Vietnam": null,
+ "Happy Kids, Phu Quoc, Vietnam": null,
+ "Happy Kids, Cửa Cạn, Phu Quoc, Vietnam": null
 }
