@@ -10618,5 +10618,155 @@
   "lon": 106.7235888,
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
+ },
+ "1000219": {
+  "lat": 10.7878232,
+  "lon": 106.7343792,
+  "source": "geocode",
+  "matched": "Lương Định Của"
+ },
+ "1000220": {
+  "lat": 10.7703806,
+  "lon": 106.6951066,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000221": {
+  "lat": 10.7936359,
+  "lon": 106.7724465,
+  "source": "geocode",
+  "matched": "Lakeview City"
+ },
+ "1000222": {
+  "lat": 10.8085535,
+  "lon": 106.755277,
+  "source": "geocode",
+  "matched": "Rạch Chiếc"
+ },
+ "1000223": {
+  "lat": 10.7949908,
+  "lon": 106.745278,
+  "source": "geocode",
+  "matched": "Nguyễn Hoàng"
+ },
+ "1000224": {
+  "lat": 10.8084778,
+  "lon": 106.8015629,
+  "source": "geocode",
+  "matched": "Riverside Park"
+ },
+ "1000225": {
+  "lat": 10.7897625,
+  "lon": 106.7766022,
+  "source": "geocode",
+  "matched": "Thủ Thiêm Xanh"
+ },
+ "1000226": {
+  "lat": 10.7999367,
+  "lon": 106.7387709,
+  "source": "geocode",
+  "matched": "An Phú"
+ },
+ "1000227": {
+  "lat": 10.7928515,
+  "lon": 106.7590843,
+  "source": "geocode",
+  "matched": "Palm Heights"
+ },
+ "1000228": {
+  "lat": 10.7936359,
+  "lon": 106.7724465,
+  "source": "geocode",
+  "matched": "Lakeview City"
+ },
+ "1000229": {
+  "lat": 10.7934445,
+  "lon": 106.7421911,
+  "source": "geocode",
+  "matched": "Cao Đức Lân"
+ },
+ "1000230": {
+  "lat": 10.7857087,
+  "lon": 106.7622951,
+  "source": "geocode",
+  "matched": "Nguyễn Tư Nghiêm"
+ },
+ "1000231": {
+  "lat": 10.8143963,
+  "lon": 106.7750997,
+  "source": "geocode",
+  "matched": "Đỗ Xuân Hợp"
+ },
+ "1000232": {
+  "lat": 10.7914175,
+  "lon": 106.7996443,
+  "source": "geocode",
+  "matched": "Nguyễn Duy Trinh"
+ },
+ "1000233": {
+  "lat": 10.7904061,
+  "lon": 106.7721272,
+  "source": "geocode",
+  "matched": "Bình Trưng Đông"
+ },
+ "1000234": {
+  "lat": 10.7914175,
+  "lon": 106.7996443,
+  "source": "geocode",
+  "matched": "Nguyễn Duy Trinh"
+ },
+ "1000235": {
+  "lat": 10.7914175,
+  "lon": 106.7996443,
+  "source": "geocode",
+  "matched": "Nguyễn Duy Trinh"
+ },
+ "1000236": {
+  "lat": 10.799767,
+  "lon": 106.7753638,
+  "source": "geocode",
+  "matched": "The Global City"
+ },
+ "1000237": {
+  "lat": 10.799767,
+  "lon": 106.7753638,
+  "source": "geocode",
+  "matched": "The Global City"
+ },
+ "1000238": {
+  "lat": 10.799767,
+  "lon": 106.7753638,
+  "source": "geocode",
+  "matched": "The Global City"
+ },
+ "1000239": {
+  "lat": 10.7856194,
+  "lon": 106.7647478,
+  "source": "geocode",
+  "matched": "Nguyễn Tuyển"
+ },
+ "1000240": {
+  "lat": 10.7914175,
+  "lon": 106.7996443,
+  "source": "geocode",
+  "matched": "Nguyễn Duy Trinh"
+ },
+ "1000241": {
+  "lat": 10.7904061,
+  "lon": 106.7721272,
+  "source": "geocode",
+  "matched": "Bình Trưng Đông"
+ },
+ "1000242": {
+  "lat": 10.8048503,
+  "lon": 106.7506792,
+  "source": "geocode",
+  "matched": "The Vista"
+ },
+ "1000243": {
+  "lat": 10.7003494,
+  "lon": 106.7326546,
+  "source": "geocode",
+  "matched": "Era Town"
  }
 }
