@@ -11,7 +11,8 @@ data = json.loads(m.group(1))
 listings = data["LISTINGS"]
 
 CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City",
-           "vung-tau":"Vung Tau","quy-nhon":"Quy Nhon","phan-thiet":"Phan Thiet"}
+           "vung-tau":"Vung Tau","quy-nhon":"Quy Nhon","phan-thiet":"Phan Thiet",
+           "ha-noi":"Hanoi","binh-duong":"Binh Duong"}
 DIST_NAME = {}
 for ckey, cval in data["CITIES"].items():
     for d in cval["districts"]:
