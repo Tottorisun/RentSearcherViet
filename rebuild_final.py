@@ -10217,6 +10217,18 @@ L(2000375,"phu-quoc","cc","Комната",5000000,32,
   details={"photos": ['https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030256-4395_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030255-f5d1_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030256-1b47_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030257-9dfb_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030257-8117_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030257-71b9_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030258-2c1d_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030258-5858_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030258-034b_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030259-07bd_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030300-c8dc_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030300-5a9f_wm.jpg', 'https://file4.batdongsan.com.vn/crop/600x315/2026/08/21/20260821030300-22c2_wm.jpg']},
   descEn="Fully furnished room, 32 m², Ấp Lê Bát (Cửa Cạn), 8 m frontage. Near Zmart supermarket, Namaste Phú Quốc park, Happy Kids kindergarten. Minimum lease term is 6 months."),
 
+L(2000376,"nha-trang","ph","Студия",7500000,30,
+  "Студия с балконом, район Hà Quang 1 (Phước Hải), южная часть Нячанга. 30 м², 5 этаж (лифт и лестница), полностью меблирована, своя стиральная машина, современный интерьер, тихий безопасный район. До моря 10–15 минут на байке. Свободна с 1 сентября.",
+  "https://t.me/obyavlenia_vetnam","сегодня",0,source="telegram",
+  details={"deposit":"1 месяц (оплата помесячно)","electricity":"5.000 ₫/кВт·ч","water":"120.000 ₫/чел.","internet":"200.000 ₫/мес (Wi-Fi + сервисные услуги)","contract":"3–6 месяцев","amenities":"бесплатная уборка 1 раз в месяц","notice":"источник — Telegram-группа; ссылка ведёт на канал, а не на конкретный пост.","noticeEn":"source is a Telegram group; the link opens the channel, not the specific post."},
+  descEn="Studio with a balcony, Hà Quang 1 area (Phước Hải ward), southern Nha Trang. 30 m², 5th floor (elevator and stairs), fully furnished, own washing machine, modern interior, quiet safe area. 10-15 minutes to the sea by bike. Available from September 1."),
+
+L(2000377,"da-lat","lv","Дом",15000000,120,
+  "Дом целиком в переулке у ул. Phù Đổng Thiên Vương, район Lâm Viên. 4 спальни, 5 с/у, кухня, гостиная, крыша-терраса. Проезд и парковка для машины. Подходит и под жильё, и под офис.",
+  "https://www.facebook.com/groups/975470559939040/posts/2337289520423797","9 дней назад",9,source="facebook",
+  details={"deposit":"2 месяца (оплата за 3 месяца вперёд)","contact":"0896520000","notice":"площадь в объявлении не указана, оценена по количеству комнат (4 спальни, 5 с/у); источник — закрытая Facebook-группа, ссылка может потребовать вход в Facebook.","noticeEn":"floor area was not stated by the poster and is estimated from the room count (4 bedrooms, 5 bathrooms); source is a closed Facebook group, the link may require a Facebook login."},
+  descEn="Whole house on an alley off Phù Đổng Thiên Vương St, Lâm Viên area. 4 bedrooms, 5 bathrooms, kitchen, living room, rooftop terrace. Car access with parking. Suits either residential or office use."),
+
 L(1000170,"ho-chi-minh","tm","Квартира",9000000,80,
   "2-спальная квартира (2 с/у), 80 м², ЖК Era Town/Đức Khải, ул. 15B Nguyễn Lương Bằng, Tân Mỹ — угловая, светлая, полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133826647.htm","сегодня",0,source="chotot",

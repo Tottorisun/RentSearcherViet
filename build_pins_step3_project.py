@@ -39,6 +39,12 @@ for l in listings:
         skipped += 1
         continue
     proj = projections[city]
+    if "lon0" not in proj:
+        # binh-duong/phu-quoc etc: manually authored bbox+ward_centroids only, no real OSM
+        # ward polygons to project onto (see pin_projections.json comments in the pipeline
+        # scripts) -- these cities render on the Leaflet map only, not the SVG mosaic map.
+        skipped += 1
+        continue
     r = pin_results.get(str(lid))
     if not r:
         skipped += 1

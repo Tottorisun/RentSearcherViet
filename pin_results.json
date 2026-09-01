@@ -10313,6 +10313,12 @@
   "source": "ward-centroid",
   "matched": null
  },
+ "2000377": {
+  "lat": 11.9633052,
+  "lon": 108.4430839,
+  "source": "geocode",
+  "matched": "Phù Đổng Thiên Vương"
+ },
  "1000170": {
   "lat": 10.7346766,
   "lon": 106.7180522,
