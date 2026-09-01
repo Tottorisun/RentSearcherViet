@@ -9,14 +9,27 @@ topics keeps a single join link while letting people mute what they do not
 need. The bot posts into a topic via `message_thread_id`: one token, one chat,
 every section.
 
-BILINGUAL ON PURPOSE. Every post carries Russian and English. The audience is
-Russian- and English-speaking expats, and a single-language post silently
-excludes half of them -- the same failure the site itself had until the English
-page was fixed on 31 Aug 2026.
+RUSSIAN ONLY, ON PURPOSE. This hub's audience is Russian-speaking -- confirmed
+by the owner on 1 Sep 2026, overriding the bilingual design this file started
+with. The SITE stays bilingual (index.html / en.html); this is specifically
+about what goes into THIS Telegram group. Do not re-add English here without
+being asked again.
+
+ALL PHOTOS, NOT JUST ONE. A listing's `details.photos` can hold several images;
+the first version of this script only ever sent photos[0]. That is a real
+product gap for a property feed, not a style choice -- fixed by sending every
+photo as an album (sendMediaGroup) when there are 2 or more, and a single
+sendPhoto only when there is exactly one. Telegram allows 2-10 items per album
+and shows a caption only on the first item -- confirmed against the Bot API
+reference before relying on it, since getting this wrong a second time would
+mean editing or deleting posts again.
 
 RATE LIMIT. Telegram allows a bot about 20 messages per minute into a group.
 The default delay stays under that deliberately, and --limit exists so a first
-run cannot try to dump the whole catalogue and get throttled.
+run cannot try to dump the whole catalogue and get throttled. An album counts
+as several messages in one API call, so it can spend more of that budget per
+listing than a single photo would -- the delay is between LISTINGS, not
+between photos within one album, which Telegram sends as a single unit anyway.
 
 SETUP
   1. Create a supergroup, turn Topics on, add your bot as an administrator with
@@ -31,9 +44,10 @@ SETUP
 
   TG_BOT_TOKEN must be set in the environment. It is never written to the repo.
 
-STATE: posted_to_telegram.json remembers what was already sent. The first real
-run posts only --limit newest and marks the rest as seen, so switching this on
-does not dump two thousand listings into the hub.
+STATE: posted_to_telegram.json remembers what was already sent, and which
+message ids each listing produced -- the first run of this script posted with
+the wrong photo count and there was no way to find and delete those messages
+afterwards, so the ids are now kept for exactly that situation.
 """
 import argparse
 import json
@@ -59,30 +73,27 @@ STATE_FILE = "posted_to_telegram.json"
 TOPICS_FILE = "telegram_topics.json"
 BUILT_HTML = "index.html"
 SITE_URL = "https://tottorisun.github.io/RentSearcherViet/"
-SITE_URL_EN = "https://tottorisun.github.io/RentSearcherViet/en.html"
 
 # The photo-caption limit is not stated in the Bot API reference, and an
 # overlong caption is rejected outright rather than truncated, so this budget
 # stays well short of the 1024 characters the API is generally held to allow.
-CAPTION_BUDGET = 850
+CAPTION_BUDGET = 900
 
 COMMERCIAL = {"Офис", "Торговая площадь", "Склад"}
-TYPE_EN = {"Комната": "Room", "Студия": "Studio", "Квартира": "Apartment",
-           "Дом": "House", "Другое": "Other", "Офис": "Office",
-           "Торговая площадь": "Retail space", "Склад": "Warehouse"}
 
 # Topics exist for the cities that actually carry inventory; everything else
-# shares one topic rather than sitting in an empty room of its own.
+# shares one topic rather than sitting in an empty room of its own. There is
+# deliberately no catch-all "all listings" topic -- the owner asked for it to
+# be removed on 1 Sep 2026.
 TOPIC_CITIES = ["ho-chi-minh", "ha-noi", "da-nang", "nha-trang", "binh-duong"]
 TOPIC_TITLES = {
-    "ho-chi-minh:residential": "Хошимин · жильё / HCMC housing",
-    "ha-noi:residential": "Ханой · жильё / Hanoi housing",
-    "da-nang:residential": "Дананг · жильё / Da Nang housing",
-    "nha-trang:residential": "Нячанг · жильё / Nha Trang housing",
-    "binh-duong:residential": "Биньзыонг · жильё / Binh Duong housing",
-    "other:residential": "Другие города / Other cities",
-    "commercial": "Коммерция · весь Вьетнам / Commercial",
-    "default": "Все объявления / All listings",
+    "ho-chi-minh:residential": "Хошимин · жильё",
+    "ha-noi:residential": "Ханой · жильё",
+    "da-nang:residential": "Дананг · жильё",
+    "nha-trang:residential": "Нячанг · жильё",
+    "binh-duong:residential": "Биньзыонг · жильё",
+    "other:residential": "Другие города",
+    "commercial": "Коммерция · весь Вьетнам",
 }
 
 
@@ -116,12 +127,9 @@ def topic_key(l):
 
 
 def thread_for(l, topics):
-    """Exact topic, then the catch-all, then the group's General topic."""
-    for key in (topic_key(l), "default"):
-        tid = topics.get(key)
-        if tid:
-            return tid
-    return None
+    """The listing's own topic, or the group's General topic if that is
+    somehow missing (there is no catch-all topic to fall back to any more)."""
+    return topics.get(topic_key(l))
 
 
 def load_listings():
@@ -137,47 +145,38 @@ def load_listings():
             continue                    # secondary copy of a listing already shown
         c = cities.get(l["city"], {})
         l["_city_ru"] = c.get("name", l["city"])
-        l["_city_en"] = c.get("nameEn", l["city"])
         l["_district"] = next((d["name"] for d in c.get("districts", [])
                                if d["key"] == l["district"]), "")
         out.append(l)
     return out
 
 
-def fmt_price(v, en=False):
+def fmt_price(v):
     if v is None:
-        return "price on request" if en else "цена по запросу"
+        return "цена по запросу"
     m = v / 1000000
     s = str(int(m)) if m == int(m) else ("%.1f" % m)
-    return (s + "M ₫/mo") if en else (s.replace(".", ",") + " млн ₫/мес")
+    return s.replace(".", ",") + " млн ₫/мес"
 
 
 def build_caption(l):
-    area = (" · %s м² / m²" % l["area"]) if l.get("area") else ""
+    area = (" · %s м²" % l["area"]) if l.get("area") else ""
     head = [
         "🏠 <b>%s</b> · %s · %s" % (l["type"], l["_city_ru"], fmt_price(l.get("price"))),
-        "🏠 <b>%s</b> · %s · %s" % (TYPE_EN.get(l["type"], l["type"]), l["_city_en"],
-                                    fmt_price(l.get("price"), en=True)),
         "📍 %s%s" % (l["_district"], area),
         "",
     ]
-    tail = ['<a href="%s">Открыть объявление · Open the ad</a>' % l["url"],
-            '<a href="%s">все объявления</a> · <a href="%s">all listings</a>'
-            % (SITE_URL, SITE_URL_EN)]
-    details = l.get("details") or {}
-    notice, notice_en = details.get("notice"), details.get("noticeEn")
-    fixed = len("\n".join(head + tail)) + len(notice or "") + len(notice_en or "") + 8
+    tail = ['<a href="%s">Открыть объявление</a> · <a href="%s">все объявления</a>'
+            % (l["url"], SITE_URL)]
+    notice = (l.get("details") or {}).get("notice")
+    fixed = len("\n".join(head + tail)) + len(notice or "") + 4
     room = max(120, CAPTION_BUDGET - fixed)
-    body = [clip(l["desc"], room // 2)]
-    if l.get("descEn"):
-        body.append(clip(l["descEn"], room // 2))
+    body = [clip(l["desc"], room)]
     if notice:
         body += ["", "⚠ " + notice]
-        if notice_en:
-            body.append("⚠ " + notice_en)
     caption = "\n".join(head + body + [""] + tail)
     if len(caption) > CAPTION_BUDGET:
-        # The per-part budget is an estimate; this is the hard stop. An overlong
+        # The estimate above can still miss; this is the hard stop. An overlong
         # caption is rejected by Telegram outright, so the post would be lost
         # rather than shortened.
         joined = "\n".join(tail)
@@ -197,6 +196,34 @@ def clip(text, limit):
     if space > limit * 0.6:
         cut = cut[:space]
     return cut.rstrip(" ,.;:—-") + "…"
+
+
+def details_photos(l):
+    return (l.get("details") or {}).get("photos") or []
+
+
+def send_listing(token, chat_id, thread, l):
+    """Returns the list of message_id(s) Telegram created for this listing."""
+    caption = build_caption(l)
+    photos = details_photos(l)[:10]           # sendMediaGroup's own hard cap
+    payload = {"chat_id": chat_id, "parse_mode": "HTML"}
+    if thread:
+        payload["message_thread_id"] = thread
+
+    if len(photos) >= 2:
+        # Only the FIRST item's caption is shown for the whole album --
+        # confirmed against the Bot API reference, not assumed.
+        media = [{"type": "photo", "media": photos[0], "caption": caption,
+                  "parse_mode": "HTML"}]
+        media += [{"type": "photo", "media": u} for u in photos[1:]]
+        result = api(token, "sendMediaGroup", dict(payload, media=json.dumps(media)))
+        return [m["message_id"] for m in result]
+    if len(photos) == 1:
+        result = api(token, "sendPhoto", dict(payload, photo=photos[0], caption=caption))
+        return [result["message_id"]]
+    result = api(token, "sendMessage",
+                 dict(payload, text=caption, disable_web_page_preview="true"))
+    return [result["message_id"]]
 
 
 def do_setup(token, cfg):
@@ -224,6 +251,8 @@ def main():
     ap.add_argument("--limit", type=int, default=10, help="max posts per run (default 10)")
     ap.add_argument("--delay", type=float, default=4.0,
                     help="seconds between posts (default 4, under Telegram's ~20/min)")
+    ap.add_argument("--repost", help="comma-separated listing ids to force-resend "
+                    "(e.g. after a formatting bug) even if already marked posted")
     args = ap.parse_args()
     token = os.environ.get("TG_BOT_TOKEN")
 
@@ -240,31 +269,41 @@ def main():
     try:
         state = json.load(open(STATE_FILE, encoding="utf-8"))
     except FileNotFoundError:
-        state = {"posted": [], "initialised": False}
+        state = {"posted": [], "initialised": False, "message_ids": {}}
+    state.setdefault("message_ids", {})
     posted = set(state.get("posted", []))
 
-    fresh = sorted((l for l in listings if l["id"] not in posted),
-                   key=lambda l: (l.get("daysAgo", 99), -l["id"]))
-    to_post, rest = fresh[: args.limit], []
-    if not state.get("initialised"):
-        rest = [l["id"] for l in fresh[args.limit:]]
-        print("first run: %d existing listings will be marked as seen; "
-              "posting the %d newest" % (len(rest), len(to_post)))
+    if args.repost:
+        force = {int(x) for x in args.repost.split(",")}
+        by_id = {l["id"]: l for l in listings}
+        to_post = [by_id[i] for i in force if i in by_id]
+        rest = []
+    else:
+        fresh = sorted((l for l in listings if l["id"] not in posted),
+                       key=lambda l: (l.get("daysAgo", 99), -l["id"]))
+        to_post, rest = fresh[: args.limit], []
+        if not state.get("initialised"):
+            rest = [l["id"] for l in fresh[args.limit:]]
+            print("first run: %d existing listings will be marked as seen; "
+                  "posting the %d newest" % (len(rest), len(to_post)))
+
     if not to_post:
         print("nothing new to post")
         return
 
+    cfg = load_topics() if (args.dry_run and os.path.exists(TOPICS_FILE)) else None
+
     if args.dry_run:
-        cfg = load_topics() if os.path.exists(TOPICS_FILE) else {"topics": {}}
+        cfg = cfg or {"topics": {}}
         print("DRY RUN -- nothing will be sent. %d post(s):\n" % len(to_post))
         for l in to_post:
             cap = build_caption(l)
+            photos = details_photos(l)
             print("-" * 66)
-            print("topic: %s (thread id %s) | caption %d chars"
-                  % (topic_key(l), cfg["topics"].get(topic_key(l)), len(cap)))
+            print("topic: %s (thread id %s) | caption %d chars | %d photo(s)"
+                  % (topic_key(l), cfg["topics"].get(topic_key(l)), len(cap), len(photos)))
             print(re.sub(r"</?b>", "", cap))
-            ph = details_photos(l)
-            print("[photo: %s]" % ((ph[0][:66] + "...") if ph else "none"))
+            print("[photos: %s]" % (", ".join(p[:40] + "..." for p in photos) or "none"))
         return
 
     if not token:
@@ -273,19 +312,11 @@ def main():
 
     sent = 0
     for l in to_post:
-        caption = build_caption(l)
         thread = thread_for(l, cfg["topics"])
-        photos = details_photos(l)
-        payload = {"chat_id": cfg["chat_id"], "parse_mode": "HTML"}
-        if thread:
-            payload["message_thread_id"] = thread
         try:
-            if photos:
-                api(token, "sendPhoto", dict(payload, photo=photos[0], caption=caption))
-            else:
-                api(token, "sendMessage",
-                    dict(payload, text=caption, disable_web_page_preview="true"))
+            msg_ids = send_listing(token, cfg["chat_id"], thread, l)
             posted.add(l["id"])
+            state["message_ids"][str(l["id"])] = msg_ids
             sent += 1
             time.sleep(args.delay)
         except Exception as e:
@@ -293,13 +324,10 @@ def main():
             break
 
     posted.update(rest)
-    json.dump({"posted": sorted(posted), "initialised": True},
-              open(STATE_FILE, "w", encoding="utf-8"), indent=1)
+    state["posted"] = sorted(posted)
+    state["initialised"] = True
+    json.dump(state, open(STATE_FILE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("posted %d listing(s); %d ids now marked as seen" % (sent, len(posted)))
-
-
-def details_photos(l):
-    return (l.get("details") or {}).get("photos") or []
 
 
 if __name__ == "__main__":
