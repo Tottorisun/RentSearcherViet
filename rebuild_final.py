@@ -168,6 +168,20 @@ CITIES = {
             {"key":"tu","name":"Tân Uyên","hint":"северо-восток, новые промзоны","hintEn":"north-east, newer industrial parks","color":"#B07AA1"}
         ]
     }
+
+,
+    "phu-quoc": {
+        "name": "Фукуок", "nameEn": "Phu Quoc",
+        "districts": [
+            {"key":"ddg","name":"Dương Đông","hint":"главный город острова, рынок, набережная, ночная жизнь","hintEn":"the island's main town, market, waterfront, nightlife","color":"#4E79A7"},
+            {"key":"ath","name":"An Thới","hint":"юг острова, паромный порт, ночной рынок","hintEn":"south of the island, ferry port, night market","color":"#F28E2B"},
+            {"key":"dto","name":"Dương Tơ","hint":"курортная полоса Bãi Trường (Long Beach), аэропорт","hintEn":"Bãi Trường / Long Beach resort strip, the airport","color":"#E15759"},
+            {"key":"cc","name":"Cửa Cạn","hint":"пляж Ông Lang, тихие бутик-курорты","hintEn":"Ông Lang beach, quieter boutique resorts","color":"#76B7B2"},
+            {"key":"gd","name":"Gành Dầu","hint":"север острова, Vinpearl Safari и Grand World","hintEn":"north of the island, Vinpearl Safari and Grand World","color":"#B07AA1"},
+            {"key":"hn","name":"Hàm Ninh","hint":"восток, рыбацкая деревня, вид на материк","hintEn":"east coast, fishing village, views to the mainland","color":"#EDC949"},
+            {"key":"cdbt","name":"Cửa Dương – Bãi Thơm","hint":"север-центр, малоосвоенная часть острова","hintEn":"north-central, the island's least developed part","color":"#9C755F"}
+        ]
+    }
 }
 
 # `label` is the filter-chip text and needs an English form; `short` is only
