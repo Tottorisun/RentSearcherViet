@@ -4930,5 +4930,27 @@
   "lat": 10.8048503,
   "lon": 106.7506792,
   "display_name": "The Vista, Đường Giang Văn Minh, Khu phố 1, Phường An Khánh, Thành phố Hồ Chí Minh, 71108, Việt Nam"
+ },
+ "Hoàng Anh Gold House, Ho Chi Minh City, Vietnam": null,
+ "Hoàng Anh Gold House, Phường Tân Hưng, Ho Chi Minh City, Vietnam": null,
+ "Số 36, Phường An Khánh, Ho Chi Minh City, Vietnam": {
+  "lat": 10.8055309,
+  "lon": 106.7298958,
+  "display_name": "Ristreet, 36, Thái Ly, Khu phố 14, Phường An Khánh, Thành phố Hồ Chí Minh, 71107, Việt Nam"
+ },
+ "Lý Long Tường, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7236348,
+  "lon": 106.7130569,
+  "display_name": "Lý Long Tường, Khu phố 35, Phường Tân Hưng, Nhà Bè, Thành phố Hồ Chí Minh, 72915, Việt Nam"
+ },
+ "Tân Vĩnh, Ho Chi Minh City, Vietnam": {
+  "lat": 10.786921,
+  "lon": 106.554303,
+  "display_name": "Xã Tân Vĩnh Lộc, Thành phố Hồ Chí Minh, Việt Nam"
+ },
+ "Tân Vĩnh, Phường Khánh Hội, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7592807,
+  "lon": 106.6998117,
+  "display_name": "Chung cư Tân Vĩnh, Phường Khánh Hội, Thành phố Hồ Chí Minh, Việt Nam"
  }
 }

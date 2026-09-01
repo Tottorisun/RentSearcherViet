@@ -10768,5 +10768,77 @@
   "lon": 106.7326546,
   "source": "geocode",
   "matched": "Era Town"
+ },
+ "1000244": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000245": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1000246": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "1000247": {
+  "lat": 10.7405653,
+  "lon": 106.704148,
+  "source": "geocode",
+  "matched": "Hoàng Anh Gia Lai"
+ },
+ "1000248": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1000249": {
+  "lat": 10.8055309,
+  "lon": 106.7298958,
+  "source": "geocode",
+  "matched": "Số 36"
+ },
+ "1000250": {
+  "lat": 10.7969577,
+  "lon": 106.7504543,
+  "source": "geocode",
+  "matched": "Landmark 81"
+ },
+ "1000251": {
+  "lat": 10.7655835,
+  "lon": 106.6931006,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "1000252": {
+  "lat": 10.7236348,
+  "lon": 106.7130569,
+  "source": "geocode",
+  "matched": "Lý Long Tường"
+ },
+ "1000253": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000254": {
+  "lat": 10.7592807,
+  "lon": 106.6998117,
+  "source": "geocode",
+  "matched": "Tân Vĩnh"
+ },
+ "1000255": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
  }
 }

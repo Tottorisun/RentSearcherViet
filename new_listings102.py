@@ -1,0 +1,78 @@
+# -*- coding: utf-8 -*-
+NEW_SRC = '''
+L(1000244,"ho-chi-minh","th","Квартира",6800000,55,
+  "1-спальная сервисная квартира (căn hộ dịch vụ) 55 м², большой балкон, полная меблировка премиум-класса. Ул. Nguyễn Thị Thập, Tân Hưng, рядом Đại học Tôn Đức Thắng, RMIT и ТЦ Lotte/Vivo. Камеры видеонаблюдения, лифт, паркинг.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/134428114.htm","2 дня назад",2,source="chotot",
+  descEn="1-bedroom serviced apartment (căn hộ dịch vụ), 55m², large balcony, premium full furnishing. Nguyễn Thị Thập St, Tân Hưng, near Tôn Đức Thắng University, RMIT and Lotte/Vivo malls. CCTV, elevator, parking.",
+  details={'photos': ['https://cdn.chotot.com/WNET-7wWh4PEGw4Ypxsprl2yTcYbCWddZVi06C1ITNM/preset:view/plain/c1f9901334972919699102aa7cf387db-2999869846002074752.jpg', 'https://cdn.chotot.com/YvY6N8NLET2_nQiU0xYib7f1kWPoqyj7kQylqxjZgjg/preset:view/plain/c7b9496fd35edafbfbf345733aa95e6d-2999869846129169353.jpg', 'https://cdn.chotot.com/PnW0RE8y_e_rY2LeEdVRgumYAVlUtykcoCmwU9Eeb5Q/preset:view/plain/bc8dd4bc8e3e29db47d736c187d04c15-2999869846019686332.jpg']}),
+L(1000245,"ho-chi-minh","th","Комната",3000000,15,
+  "Комната в квартире ЖК Hoàng Anh Gold House, полная меблировка (матрас, шкаф, кондиционер), терраса. Ул. Nguyễn Hữu Thọ, Tân Hưng, у границы с Nhà Bè. Разрешено с животными, свободный график, коммунальные по гостарифу (~400 тыс ₫/чел.).",
+  "https://www.nhatot.com/thue-phong-tro-quan-7-tp-ho-chi-minh/132628763.htm","2 дня назад",2,source="chotot",
+  descEn="Room in an apartment in the Hoàng Anh Gold House complex, fully furnished (mattress, wardrobe, AC), terrace. Nguyễn Hữu Thọ St, Tân Hưng, near the Nhà Bè border. Pets allowed, free access hours, utilities at state rates (~400k VND/person).",
+  details={'photos': ['https://cdn.chotot.com/74ILDnseRBenAoBFJ7Nq-eaDRdB0FRygLItnQb7kwBk/preset:view/plain/718f27358580cdb08f2532b1381bcdb7-2997915391618734469.jpg', 'https://cdn.chotot.com/u-Mg70hxhIIHP5YTMTNciOuyNLRYQp5jgA4OD9pEhXo/preset:view/plain/dff96acae9d448fefeeb70791ce442e4-2997915391841776013.jpg', 'https://cdn.chotot.com/8Yv5AyV4J5Ugr6wfl-y0MkexuQtrO54Yij21HzoXlT8/preset:view/plain/46b08ce4e9e17908758885e4207983c1-2997915391766123426.jpg']}),
+L(1000246,"ho-chi-minh","ak","Квартира",26000000,69,
+  "2-спальная квартира (2 с/у), 69 м², ЖК Masteri Thảo Điền, башня T5, вид на квартал Thảo Điền. Полная меблировка, бассейн, спортзал, парк в комплексе. Ул. Võ Nguyên Giáp, An Khánh.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/134398660.htm","4 дня назад",4,source="chotot",
+  descEn="2-bedroom apartment (2 bathrooms), 69m², Masteri Thảo Điền complex, tower T5, view of the Thảo Điền quarter. Fully furnished, pool, gym, park on site. Võ Nguyên Giáp St, An Khánh.",
+  details={'notice': 'при заключении договора на 2 года агент предлагает 25 млн ₫/мес вместо указанных 26 млн ₫.', 'noticeEn': 'the agent offers 25M VND/month instead of the listed 26M for a 2-year lease.', 'photos': ['https://cdn.chotot.com/jfQjinOWVZxLhIV0cp6IoOdKtq2pGgxD1TFkYHqws0Q/preset:view/plain/1f0e2b48fb9b2df38dbc7c79636d3fba-2999589527862293442.jpg', 'https://cdn.chotot.com/kjAGzOEzDh2snm5HyJpYfpB596HHMV6UwAR0N-86Y-Q/preset:view/plain/0215030556e2be799eaba6cf008c2161-2999589527919334367.jpg', 'https://cdn.chotot.com/ZFh3egFDVDU-uMQRUuSicKTJ8IYMV5NR9lL6-702LC8/preset:view/plain/40886190c7369e0609e74e056be4c624-2999589529160913887.jpg']}),
+L(1000247,"ho-chi-minh","th","Комната",3200000,25,
+  "Комната в квартире ЖК Hoàng Anh Gia Lai, 25 м², полная меблировка, рядом Lotte Mart. Ул. Lê Văn Lương, Tân Hưng (у моста Nguyễn Văn Cừ). Свободный график, электричество/вода по гостарифу.",
+  "https://www.nhatot.com/thue-phong-tro-quan-7-tp-ho-chi-minh/127662707.htm","6 дней назад",6,source="chotot",
+  descEn="Room in an apartment in the Hoàng Anh Gia Lai complex, 25m², fully furnished, near Lotte Mart. Lê Văn Lương St, Tân Hưng (by the Nguyễn Văn Cừ bridge). Free access hours, electricity/water at state rates.",
+  details={'notice': 'у арендодателя есть похожие комнаты в других домах того же портфеля (Trần Xuân Soạn, Huỳnh Tấn Phát) по цене 3-4,5 млн ₫; здесь указан самый доступный вариант.', 'noticeEn': 'the landlord has similar rooms in other buildings of the same portfolio (Trần Xuân Soạn, Huỳnh Tấn Phát) priced 3-4.5M VND; the cheapest option is recorded here.', 'photos': ['https://cdn.chotot.com/olT0_qrYFeDUY-2w2Zo3BDw5tFvr0RUklcn1MFWqI0A/preset:view/plain/f571bd9b006b2a8cafb0f8624f7c9414-2948765747870724065.jpg', 'https://cdn.chotot.com/d82cXnLSuFCbHVa2LDq5EJw0pJUerbOIZAEbsHKnk3k/preset:view/plain/008f4ec8f482b19dca5e9f0bf79d5f94-2948765747911914636.jpg', 'https://cdn.chotot.com/BPmRHbChRKF8kNhHsDoUd6XLlQj0otS3Ti5N3cAxuaM/preset:view/plain/83ccc1a96c060d414ec186e60116a583-2948765747842822569.jpg']}),
+L(1000248,"ho-chi-minh","th","Комната",1700000,10,
+  "Небольшая комната 10 м², полная меблировка (шкаф, кондиционер, вентилятор), общая кухня. Ул. Nguyễn Hữu Thọ, Tân Hưng, рядом Vivo City, 5 минут до Phú Mỹ Hưng и Đại học Tôn Đức Thắng. Свободный график, охрана 24/7.",
+  "https://www.nhatot.com/thue-phong-tro-quan-7-tp-ho-chi-minh/129989678.htm","6 дней назад",6,source="chotot",
+  details={'notice': 'цена со скидкой (была 2 млн ₫, стала 1,7 млн ₫); площадь очень маленькая (10 м²) — уточняйте при осмотре.', 'noticeEn': 'discounted price (was 2M VND, now 1.7M VND); the room is very small (10m²) — confirm on viewing.', 'photos': ['https://cdn.chotot.com/GEomIMyRuAMQt3uzsUaIgKfqR_6i0xEzNTOFT0cqarA/preset:view/plain/4ba755ec80ac4ba08a541ff5de17ff46-2999751428113719046.jpg', 'https://cdn.chotot.com/AcuJerxOLXJBMM24PlVU_S0gWTKcXK3mTcptTcqPi0c/preset:view/plain/44683a9d4a986c6467fa658ca38551be-2999751428159830790.jpg', 'https://cdn.chotot.com/mm0HYCXOfyUOpIxsjq9lhYbh0-2Jm01InzM74x-lAGs/preset:view/plain/c627b2cbc87a59fb8473234948d0deec-2999751427875634159.jpg']},
+  descEn="Small room, 10m², fully furnished (wardrobe, AC, fan), shared kitchen. Nguyễn Hữu Thọ St, Tân Hưng, near Vivo City, 5 minutes to Phú Mỹ Hưng and Tôn Đức Thắng University. Free access hours, 24/7 security."),
+L(1000249,"ho-chi-minh","ak","Квартира",12000000,50,
+  "1-спальная квартира 50 м², с видом на город, полная меблировка. Ул. Số 36, An Khánh (бывший Q2). Вход по отпечатку пальца, охрана 24/7, большой подземный паркинг.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-thanh-pho-thu-duc-tp-ho-chi-minh/132222877.htm","8 дней назад",8,source="chotot",
+  descEn="1-bedroom apartment, 50m², city view, fully furnished. Số 36 St, An Khánh (former Q2). Fingerprint entry, 24/7 security, large underground parking.",
+  details={'notice': 'у агента широкий пул квартир по нескольким районам (студии от 6,9 млн, 1-спальные от 10 млн, 2-спальные от 12 млн ₫) — фото в объявлении могут быть иллюстративными, не конкретного юнита.', 'noticeEn': "the agent has a wide pool of apartments across several districts (studios from 6.9M, 1-bedrooms from 10M, 2-bedrooms from 12M VND) — the ad's photos may be illustrative, not of this specific unit.", 'photos': ['https://cdn.chotot.com/NhSVec37NsED1AKCtEUapDJ_TpytGfisGhczkSW9Gys/preset:view/plain/3d6769927dcd55c628fc4f39dcd5f162-2983089750762011485.jpg', 'https://cdn.chotot.com/ix7nPtMRS0rtTkS_M9yR1hlnPG0lw3hGQf8x1Wm1WpI/preset:view/plain/f211c3d01ed2fcd2999a4d5c7d640586-2983089750923623612.jpg', 'https://cdn.chotot.com/FqcLQzVCl-bYUElW3HuDH6wsNteh-tWpGLBE0uHRqag/preset:view/plain/0e584b799c59a87cc443bd067e30afc9-2983089750764520137.jpg']}),
+L(1000250,"ho-chi-minh","bq","Студия",4500000,30,
+  "Новая студия 30 м² с балконом, дизайнерский ремонт. Ул. Bình Quới, Bình Quới (Thanh Đa). Охраняемый паркинг для авто, разрешено с животными по договорённости, на крыше зона отдыха с видом на Landmark 81 и Bitexco.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-binh-thanh-tp-ho-chi-minh/117593241.htm","11 дней назад",11,source="chotot",
+  descEn="New studio, 30m², with a balcony, designer renovation. Bình Quới St, Bình Quới (Thanh Đa). Guarded car parking, pets allowed by arrangement, rooftop lounge with a view of Landmark 81 and Bitexco.",
+  details={'photos': ['https://cdn.chotot.com/YqPB-MPN8-PvTthXreSnHSaOa5FgxT6iyHzPio7Ie_c/preset:view/plain/e23733c460e257668ec0034d33daf35d-2979303095449402206.jpg', 'https://cdn.chotot.com/HkZZfooDH28gkJw-MfPnQBBWAH3n0MFNYrxmg_-du28/preset:view/plain/bc9002ef82d25f4efe22c3b00d003dcf-2979303095559948917.jpg', 'https://cdn.chotot.com/qA7wDcwOzGMZUfiLTP6y1hxadqimsBACnlPflTMBz3k/preset:view/plain/677066519c28801cd47a3038f029bf14-2979303095670449428.jpg']}),
+L(1000251,"ho-chi-minh","bth","Комната",7700000,25,
+  "Открытие нового комплекса сервисных комнат (CHDV), 25 м², в центре Q1. Полная меблировка, вход по отпечатку пальца, камеры видеонаблюдения. Ул. Trần Hưng Đạo (у Bùi Viện), Bến Thành.",
+  "https://www.nhatot.com/thue-phong-tro-quan-1-tp-ho-chi-minh/134278184.htm","11 дней назад",11,source="chotot",
+  descEn="Grand opening of a new serviced-room complex (CHDV), 25m², in the Q1 centre. Fully furnished, fingerprint entry, CCTV. Trần Hưng Đạo St (near Bùi Viện), Bến Thành.",
+  details={'notice': 'агент указывает диапазон цены 6-8 млн ₫ в зависимости от юнита; здесь записана верхняя граница.', 'noticeEn': 'the agent quotes a 6-8M VND range depending on the unit; the upper bound is recorded here.', 'photos': ['https://cdn.chotot.com/fWzs6gM9AiyBKCX1KutdHgZ21ZqxKgTgj-nU5iF9tBQ/preset:view/plain/17b953cf1062687be1e0fb9f7b128b28-2998601895729253260.jpg', 'https://cdn.chotot.com/P2c4xjnonEr4uyCS5BRxp9Q8ii8bCTINO8-9XEQH12c/preset:view/plain/6dd2b9d9cf5bdc4019801623fb72cc30-2998601895874627410.jpg', 'https://cdn.chotot.com/cKldVF2NGzob9LsedqX0HtD5SY7ZwuXGaUsNAzKfq2o/preset:view/plain/3f431b0e31c809e57976d5ea43cf218a-2998601896954055564.jpg']}),
+L(1000252,"ho-chi-minh","th","Торговая площадь",20000000,120,
+  "Торговое здание на красной линии ул. Lý Long Tường (квартал Cảnh Đồi), Phú Mỹ Hưng, 6×20 м на этаж, 3 этажа, можно снять поэтажно. 3-й этаж — от 20 млн ₫/мес, 2-й — 23 млн, 1-й — 25 млн (плюс отдельно сервисная квартира 2 сп. от 9 млн ₫). Просторный лифт, отделка под чистовую. Подходит под офис, спа, шоурум.",
+  "https://www.nhatot.com/thue-van-phong-mat-bang-kinh-doanh-quan-7-tp-ho-chi-minh/134247290.htm","12 дней назад",12,source="chotot",
+  descEn="Commercial building on the main frontage of Lý Long Tường St (Cảnh Đồi quarter), Phú Mỹ Hưng, 6x20m per floor, 3 floors, can be rented floor by floor. 3rd floor from 20M VND/month, 2nd floor 23M, 1st floor 25M (plus a separate 2-bedroom serviced apartment from 9M VND). Spacious elevator, ready-to-fit condition. Suits an office, spa, or showroom.",
+  details={'notice': 'цена сильно зависит от выбранного этажа (20-25 млн ₫); записана минимальная (3-й этаж).', 'noticeEn': 'the price depends heavily on the chosen floor (20-25M VND); the minimum (3rd floor) is recorded here.', 'photos': ['https://cdn.chotot.com/scMUCXwN-HIJw3A-tRBAPkL8IKuC9Da9rtq3TMEpRFc/preset:view/plain/7e9a6cf75c2892e83644c2014568acbb-2998414216641211575.jpg', 'https://cdn.chotot.com/OeuPC3FKx-dDucTRyhMoTnofDtCgtthcSEvNUFjytwA/preset:view/plain/2284eca9727c5d07186c2f4936aa3673-2998414217061045617.jpg', 'https://cdn.chotot.com/GEBFyWskU6OGgMPwQjSi-JTPNqLQgLbEu7MH_fxeLWY/preset:view/plain/8c9bfbae5eb8841bbbb8da78d3f9470b-2998414216963883161.jpg']}),
+L(1000253,"ho-chi-minh","th","Торговая площадь",50000000,180,
+  "Подборка торговых помещений на красной линии ул. Nguyễn Thị Thập, Tân Hưng — от 4×20 м (35 млн ₫/мес) до 8×30 м с 2 этажами (150 млн ₫/мес). Записан вариант 5×20 м, 1 этаж + 2 верхних (180 м² застройки) — 50 млн ₫/мес.",
+  "https://www.nhatot.com/thue-van-phong-mat-bang-kinh-doanh-quan-7-tp-ho-chi-minh/134246013.htm","12 дней назад",12,source="chotot",
+  descEn="A selection of commercial units on the main frontage of Nguyễn Thị Thập St, Tân Hưng — from 4x20m (35M VND/month) to 8x30m with 2 floors (150M VND/month). The recorded option is 5x20m, ground + 2 upper floors (180m² built area) — 50M VND/month.",
+  details={'notice': 'это подборка от агента с несколькими вариантами по разным ценам (35-180 млн ₫/мес по разным адресам на той же улице); при обращении уточняйте конкретный адрес и метраж.', 'noticeEn': "this is an agent's selection with several options at different prices (35-180M VND/month at different addresses on the same street); confirm the exact address and floor area when contacting.", 'photos': ['https://cdn.chotot.com/zgosauNXZbyGbeJwGssgqe3Dch6iXMJH15LKfLvfKt4/preset:view/plain/657519c75b964c41b0b40890c781ddcd-2998408124479728823.jpg', 'https://cdn.chotot.com/Rk3lldkf-G-aapwGxlBarDXc4BBn01ldlvLBOZN413o/preset:view/plain/6fd98527a2ee916dad83396a4a3aa82c-2998408124185762931.jpg', 'https://cdn.chotot.com/lQS5dtl6lY1QsO0DwwJJaRuRh55QNOfhGkSSiHxYfZI/preset:view/plain/293f3b0bffa6dfa2d809c1c57fe2b286-2998408124626536274.jpg']}),
+L(1000254,"ho-chi-minh","kh","Комната",4800000,20,
+  "Комната-студия 20 м², новый ремонт, полная меблировка, разрешено с животными по договорённости. Ул. Tân Vĩnh, Khánh Hội, Q4. Депозит 1 месяц, минимальный срок аренды 6 месяцев, охрана 24/7.",
+  "https://www.nhatot.com/thue-phong-tro-quan-4-tp-ho-chi-minh/134243526.htm","12 дней назад",12,source="chotot",
+  descEn="Studio room, 20m², newly renovated, fully furnished, pets allowed by arrangement. Tân Vĩnh St, Khánh Hội, Q4. 1-month deposit, 6-month minimum lease, 24/7 security.",
+  details={'notice': 'у арендодателя несколько форматов по цене от 4 до 8 млн ₫ в зависимости от площади (студия/дуплекс); здесь записана минимальная.', 'noticeEn': 'the landlord has several room formats priced 4-8M VND depending on floor area (studio/duplex); the minimum is recorded here.', 'photos': ['https://cdn.chotot.com/cSTWrjkIhqtnyg3YFyIccCmiuYOJBsd2_LSHAlavz5Q/preset:view/plain/6ae41315e3e74d8cbba308952cdf0de7-2998352204098676371.jpg', 'https://cdn.chotot.com/KrXvhWzpmjYnVFn1tDTNbVLhiL9lC8rP4fB_gbAkif8/preset:view/plain/845f9fbb7179cde7c6a728b16500a7bc-2998352204219341939.jpg', 'https://cdn.chotot.com/TY-ZW0YYthjn-d2PDEc-fgBfSDoOxDYb3-OOWKWPQZQ/preset:view/plain/e891970d426613f8509ee891238f0ecf-2998352205319615204.jpg']}),
+L(1000255,"ho-chi-minh","kh","Студия",13000000,40,
+  "Студия 40 м², 1 спальня, полная меблировка. Ул. Bến Vân Đồn, Khánh Hội, ЖК Millennium. У арендодателя более 16 юнитов в этом доме.",
+  "https://www.nhatot.com/thue-can-ho-chung-cu-quan-4-tp-ho-chi-minh/132802878.htm","13 дней назад",13,source="chotot",
+  descEn="Studio, 40m², 1 bedroom, fully furnished. Bến Vân Đồn St, Khánh Hội, Millennium complex. The landlord has more than 16 units in this building.",
+  details={'notice': 'цена по портфелю арендодателя 12-15 млн ₫ в зависимости от юнита; здесь записана заявленная (13 млн ₫).', 'noticeEn': "price across the landlord's portfolio is 12-15M VND depending on the unit; the quoted 13M VND is recorded here.", 'photos': ['https://cdn.chotot.com/CCmmGNBz8YTD19E2zO0-ouz0zibypcGm5ZqmZmXvha4/preset:view/plain/473d84e1712069646ef7fbb65ee2dffc-2987425089873522438.jpg', 'https://cdn.chotot.com/47yKhiANb8WhGxENh0dHpC-muT43qTLkAuwEcJAbknI/preset:view/plain/07ce8243537c46fbaff9370f937aa941-2987425090060108477.jpg', 'https://cdn.chotot.com/LvBSX-L5UAPIkBi3-Zjk87Pqauhl_0MaWHHkfBwaRaM/preset:view/plain/8b1af8886fa0434e7878ee560dcc9bc9-2987425089974047304.jpg']}),
+'''
+
+with open("rebuild_final.py", encoding="utf-8") as f:
+    content = f.read()
+
+marker = "]\n\n# Real lat/lon"
+idx = content.find(marker)
+if idx == -1:
+    raise SystemExit("marker not found")
+
+new_content = content[:idx] + NEW_SRC + content[idx:]
+
+with open("rebuild_final.py", "w", encoding="utf-8") as f:
+    f.write(new_content)
+
+print("Inserted", NEW_SRC.count("\nL("), "new listings")
