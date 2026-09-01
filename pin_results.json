@@ -10312,5 +10312,29 @@
   "lon": 103.92356,
   "source": "ward-centroid",
   "matched": null
+ },
+ "1000170": {
+  "lat": 10.70316,
+  "lon": 106.73216,
+  "source": "chotot-gps",
+  "matched": null
+ },
+ "1000171": {
+  "lat": 10.70316,
+  "lon": 106.73216,
+  "source": "chotot-gps",
+  "matched": null
+ },
+ "1000172": {
+  "lat": 10.748318,
+  "lon": 106.69364,
+  "source": "chotot-gps",
+  "matched": null
+ },
+ "1000173": {
+  "lat": 10.733626,
+  "lon": 106.70178,
+  "source": "chotot-gps",
+  "matched": null
  }
 }
