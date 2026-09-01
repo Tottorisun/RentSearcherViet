@@ -10229,6 +10229,12 @@ L(2000377,"da-lat","lv","Дом",15000000,120,
   details={"deposit":"2 месяца (оплата за 3 месяца вперёд)","contact":"0896520000","notice":"площадь в объявлении не указана, оценена по количеству комнат (4 спальни, 5 с/у); источник — закрытая Facebook-группа, ссылка может потребовать вход в Facebook.","noticeEn":"floor area was not stated by the poster and is estimated from the room count (4 bedrooms, 5 bathrooms); source is a closed Facebook group, the link may require a Facebook login."},
   descEn="Whole house on an alley off Phù Đổng Thiên Vương St, Lâm Viên area. 4 bedrooms, 5 bathrooms, kitchen, living room, rooftop terrace. Car access with parking. Suits either residential or office use."),
 
+L(2000378,"da-nang","st","Квартира",17500000,45,
+  "1-спальная квартира, ул. Tân Thái 8, район Sơn Trà, до моря менее 300 м. 45 м², парковка, лифт.",
+  "https://t.me/DaNangRentAFlat","сегодня",0,source="telegram",
+  details={"deposit":"1 месяц (оплата помесячно)","contract":"от 3 месяцев","amenities":"бесплатный Wi-Fi, уборка","contact":"+84 96 692 0027","notice":"источник — Telegram-группа; ссылка ведёт на канал, а не на конкретный пост.","noticeEn":"source is a Telegram group; the link opens the channel, not the specific post."},
+  descEn="1-bedroom apartment, Tân Thái 8 St, Sơn Trà area, less than 300 m to the sea. 45 m², parking, elevator."),
+
 L(1000170,"ho-chi-minh","tm","Квартира",9000000,80,
   "2-спальная квартира (2 с/у), 80 м², ЖК Era Town/Đức Khải, ул. 15B Nguyễn Lương Bằng, Tân Mỹ — угловая, светлая, полная меблировка.",
   "https://www.nhatot.com/thue-can-ho-chung-cu-quan-7-tp-ho-chi-minh/133826647.htm","сегодня",0,source="chotot",
