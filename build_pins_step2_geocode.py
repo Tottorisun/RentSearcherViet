@@ -146,7 +146,11 @@ for l in listings:
     city = l["city"]
     if city not in GEO_CITIES:
         continue  # nha-trang handled by a separate mosaic-jitter script
-    src_coords = CHOTOT_COORDS.get(str(l["id"]))
+    # Accept either key: the site listing id, or the Chợ Tốt ad id that sits in
+    # the listing's URL (/<ad id>.htm) -- the first session to use the file
+    # keyed it by ad id, which is the number it actually had in hand.
+    ad_id = re.search(r"/(\d{8,9})\.htm", l.get("url", ""))
+    src_coords = CHOTOT_COORDS.get(str(l["id"])) or (ad_id and CHOTOT_COORDS.get(ad_id.group(1)))
     if src_coords:
         # The ad itself told us where it is -- no Nominatim guesswork.
         pin_results[l["id"]] = {"lat": float(src_coords["lat"]), "lon": float(src_coords["lon"]),
