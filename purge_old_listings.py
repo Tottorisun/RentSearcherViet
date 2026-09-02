@@ -12,11 +12,21 @@ would still display "2 дня назад" today. This script anchors every listi
 to a real absolute post date (backfilled once via git history for anything
 already in the file, cached from then on in posted_dates.json) and
 recomputes the display fields from that anchor every time it runs.
+
+How blocks are located: through `ast`, not regex. rebuild_final.py is valid
+Python, so every L(...) element of the LISTINGS list comes with exact
+line numbers and its positional args (id is args[0], posted label args[8],
+daysAgo args[9]). The previous regex version silently skipped any block
+whose daysAgo was followed by `descEn=` (an older row format) -- four
+Da Nang listings stayed on the site for ever with a frozen "14 дней назад"
+label and no line in the output saying so. With ast there is nothing to
+mis-match, and the rewritten file is re-parsed before it is written.
 """
-import re, json, datetime
+import ast, re, sys, os, json, datetime
 
 CUTOFF_DAYS = 14
 POSTED_DATES_FILE = "posted_dates.json"
+SRC = "rebuild_final.py"
 
 RU_DAY_WORDS = ["день", "дня", "дней"]
 def ru_day_word(n):
@@ -41,68 +51,94 @@ try:
 except FileNotFoundError:
     posted_dates = {}
 
-src = open("rebuild_final.py", encoding="utf-8").read()
+src = open(SRC, encoding="utf-8").read()
+tree = ast.parse(src)
+lines = src.split("\n")
 
-# Parse each L(...) call: id, then skip to the daysAgo positional arg (7th
-# top-level arg: id,city,district,type,price,area,desc,url,posted,daysAgo,...).
-# Full-block regex mirrors the pattern already used elsewhere in this project
-# (_dupe_scan.py, _resolve_conflict.py) for locating a listing's whole span.
-block_re = re.compile(r'^L\((\d+),.*?\),\s*$', re.M | re.S)
+listings_assign = [n for n in tree.body
+                   if isinstance(n, ast.Assign)
+                   and any(getattr(t, "id", None) == "LISTINGS" for t in n.targets)]
+if len(listings_assign) != 1 or not isinstance(listings_assign[0].value, ast.List):
+    raise SystemExit("could not find exactly one `LISTINGS = [...]` list in rebuild_final.py -- refusing to touch the file")
+elements = listings_assign[0].value.elts
+
+def const(node):
+    return node.value if isinstance(node, ast.Constant) else None
+
+blocks = []   # (lineno, end_lineno, id, posted_label_old, days_ago_old)
+skipped = []
+for e in elements:
+    ok = (isinstance(e, ast.Call) and getattr(e.func, "id", None) == "L" and len(e.args) >= 10
+          and lines[e.lineno - 1].startswith("L(") and lines[e.end_lineno - 1].rstrip().endswith("),"))
+    lid = const(e.args[0]) if ok else None
+    posted_old = const(e.args[8]) if ok else None
+    days_old = const(e.args[9]) if ok else None
+    if not ok or lid is None or not isinstance(days_old, int) or not isinstance(posted_old, str):
+        # never guess/delete on a block we don't fully understand -- but SAY so
+        skipped.append((getattr(e, "lineno", "?"), lid))
+        continue
+    blocks.append((e.lineno, e.end_lineno, str(lid), posted_old, days_old))
+
+if skipped:
+    print(f"WARNING: {len(skipped)} block(s) could not be parsed as a plain L(id,...,posted,daysAgo,...) call and were left untouched:")
+    for ln, lid in skipped:
+        print(f"  line {ln}: id={lid}")
 
 kept = 0
 removed_ids = []
-new_src_parts = []
-last_end = 0
-
-for m in block_re.finditer(src):
-    block = m.group(0)
-    lid = m.group(1)
-    days_m = re.search(r'"[^"]*",(\d+)(?:,\s*(?:source=|details=)|\))', block)
-    if not days_m:
-        # couldn't confidently locate daysAgo -- leave this block untouched,
-        # never guess/delete on uncertain data
-        continue
-    old_days_ago = int(days_m.group(1))
-
+relabelled = 0
+# Edit from the bottom up so earlier line numbers stay valid.
+for lineno, end_lineno, lid, posted_old, days_old in sorted(blocks, key=lambda b: b[0], reverse=True):
     if lid in posted_dates:
         anchor = datetime.date.fromisoformat(posted_dates[lid])
     else:
-        anchor = today - datetime.timedelta(days=old_days_ago)
+        anchor = today - datetime.timedelta(days=days_old)
         posted_dates[lid] = anchor.isoformat()
+    true_days = (today - anchor).days
 
-    true_days_ago = (today - anchor).days
-
-    if true_days_ago > CUTOFF_DAYS:
+    if true_days > CUTOFF_DAYS:
         removed_ids.append(lid)
         del posted_dates[lid]
-        # drop this block (and its blank line separator) from the output
-        new_src_parts.append(src[last_end:m.start()])
-        last_end = m.end()
-        # also eat one following blank line if present, to avoid double gaps
-        if src[last_end:last_end+1] == "\n":
-            last_end += 1
+        start, end = lineno - 1, end_lineno          # slice bounds over `lines`
+        # also eat one following blank line, so removals don't leave double gaps
+        if end < len(lines) and lines[end].strip() == "":
+            end += 1
+        del lines[start:end]
         continue
 
     kept += 1
-    if true_days_ago != old_days_ago:
-        new_posted = posted_label(true_days_ago)
-        # replace the "<old posted label>",<old_days_ago> pair with fresh values,
-        # preserving whatever separator follows (,source=  or  ,\s*details=  or  closing paren)
-        updated_block = re.sub(
-            r'"[^"]*",' + str(old_days_ago) + r'(?=,\s*(?:source=|details=)|\))',
-            '"' + new_posted + '",' + str(true_days_ago),
-            block, count=1
-        )
-        new_src_parts.append(src[last_end:m.start()])
-        new_src_parts.append(updated_block)
-        last_end = m.end()
+    if true_days != days_old or posted_old != posted_label(true_days):
+        new_label = posted_label(true_days)
+        block_text = "\n".join(lines[lineno - 1:end_lineno])
+        pattern = '"' + re.escape(posted_old) + '",' + str(days_old)
+        new_block, n = re.subn(pattern, '"' + new_label + '",' + str(true_days), block_text, count=1)
+        if n != 1:
+            raise SystemExit(f"id {lid}: expected exactly one `\"{posted_old}\",{days_old}` in its block, found {n} -- refusing to write")
+        lines[lineno - 1:end_lineno] = new_block.split("\n")
+        relabelled += 1
 
-new_src_parts.append(src[last_end:])
-new_src = "".join(new_src_parts)
+new_src = "\n".join(lines)
 
-open("rebuild_final.py", "w", encoding="utf-8").write(new_src)
-json.dump(posted_dates, open(POSTED_DATES_FILE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+# Safety net: the result must still be valid Python with exactly the expected number of blocks.
+try:
+    new_tree = ast.parse(new_src)
+except SyntaxError as ex:
+    raise SystemExit(f"rewritten rebuild_final.py does not parse ({ex}) -- NOT written, original left intact")
+new_count = len([n for n in new_tree.body if isinstance(n, ast.Assign)
+                 and any(getattr(t, "id", None) == "LISTINGS" for t in n.targets)][0].value.elts)
+expected = len(elements) - len(removed_ids)
+if new_count != expected:
+    raise SystemExit(f"block count after rewrite is {new_count}, expected {expected} -- NOT written, original left intact")
 
-print(f"kept: {kept}, removed (>{CUTOFF_DAYS} days old): {len(removed_ids)}")
+tmp = SRC + ".tmp"
+with open(tmp, "w", encoding="utf-8") as f:
+    f.write(new_src)
+os.replace(tmp, SRC)
+tmp_pd = POSTED_DATES_FILE + ".tmp"
+with open(tmp_pd, "w", encoding="utf-8") as f:
+    json.dump(posted_dates, f, ensure_ascii=False, indent=1)
+os.replace(tmp_pd, POSTED_DATES_FILE)
+
+print(f"kept: {kept}, relabelled: {relabelled}, removed (>{CUTOFF_DAYS} days old): {len(removed_ids)}")
 if removed_ids:
     print("removed ids:", ", ".join(removed_ids))
