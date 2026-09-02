@@ -11347,7 +11347,9 @@ HTML = r"""<meta charset="utf-8">
   .chip .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:5px;opacity:0.6;vertical-align:middle;}
 
   .date-row{display:flex;gap:8px;align-items:center;}
-  .date-row input{flex:1;min-width:0;padding:9px 10px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink-faint);font-size:0.92rem;}
+  /* 1rem = 16px on purpose: iOS Safari zooms the whole page in when a focused
+     input is smaller than 16px, and there is no way to zoom back out cleanly. */
+  .date-row input{flex:1;min-width:0;padding:9px 10px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink-faint);font-size:1rem;}
   .date-row span{color:var(--ink-faint);font-size:0.85rem;}
 
   .autocomplete{position:relative;}
@@ -11422,6 +11424,19 @@ HTML = r"""<meta charset="utf-8">
   .listing-top-right{display:flex;align-items:center;gap:8px;}
   .fav-btn{appearance:none;background:none;border:none;padding:0;cursor:pointer;font-size:1.15rem;line-height:1;color:var(--ink-faint);}
   .fav-btn[aria-pressed="true"]{color:#D8A02A;}
+  /* Touch screens: the same controls, finger-sized. Desktop keeps the compact
+     sizes. Found on the owner's phone (2 Sep 2026): the favourite star was a
+     15x18px target, chips 31px, the budget fields 24px, the clear buttons 28px. */
+  @media (pointer: coarse){
+    .chip{min-height:38px;padding:8px 14px;font-size:0.9rem;}
+    .lang-toggle button,.theme-toggle button{min-height:38px;padding:8px 16px;}
+    .autocomplete .clear-btn{width:36px;height:36px;right:3px;top:3px;font-size:1.3rem;}
+    .range-cell input{padding:8px 0;font-size:1.05rem;}
+    .range-thumb::-webkit-slider-thumb{width:26px;height:26px;margin-top:1px;}
+    .range-thumb::-moz-range-thumb{width:26px;height:26px;}
+    .fav-btn{font-size:1.4rem;padding:8px;margin:-8px;}
+    .pt-view{min-height:40px;line-height:22px;}
+  }
 
   .results-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:16px;align-items:start;}
 
