@@ -81,18 +81,22 @@ CAPTION_BUDGET = 900
 
 COMMERCIAL = {"Офис", "Торговая площадь", "Склад"}
 
-# Topics exist for the cities that actually carry inventory; everything else
-# shares one topic rather than sitting in an empty room of its own. There is
-# deliberately no catch-all "all listings" topic -- the owner asked for it to
-# be removed on 1 Sep 2026.
-TOPIC_CITIES = ["ho-chi-minh", "ha-noi", "da-nang", "nha-trang", "binh-duong"]
+# Every city on the site gets its own topic -- there is deliberately no
+# catch-all "other cities" topic any more (removed 2 Sep 2026 at the owner's
+# request: it read as a junk drawer). A city missing from TOPIC_TITLES is a
+# bug -- topic_key() below raises rather than silently routing it anywhere.
 TOPIC_TITLES = {
     "ho-chi-minh:residential": "Хошимин · жильё",
     "ha-noi:residential": "Ханой · жильё",
     "da-nang:residential": "Дананг · жильё",
     "nha-trang:residential": "Нячанг · жильё",
     "binh-duong:residential": "Биньзыонг · жильё",
-    "other:residential": "Другие города",
+    "da-lat:residential": "Далат · жильё",
+    "vung-tau:residential": "Вунгтау · жильё",
+    "quy-nhon:residential": "Куинён · жильё",
+    "hoi-an:residential": "Хойан · жильё",
+    "phan-thiet:residential": "Фантьет / Муйне · жильё",
+    "phu-quoc:residential": "Фукуок · жильё",
     "commercial": "Коммерция · весь Вьетнам",
 }
 
@@ -122,13 +126,19 @@ def kind_of(l):
 def topic_key(l):
     if kind_of(l) == "commercial":
         return "commercial"
-    city = l["city"] if l["city"] in TOPIC_CITIES else "other"
-    return city + ":residential"
+    key = l["city"] + ":residential"
+    if key not in TOPIC_TITLES:
+        # Fail loudly: a silent fallback here means a listing quietly lands
+        # in the wrong topic (or worse, a resurrected catch-all) instead of
+        # someone noticing a new city was added to the site without a topic
+        # for it in this script.
+        sys.exit("no Telegram topic configured for city %r (listing %s) -- "
+                  "add it to TOPIC_TITLES and run --setup" % (l["city"], l.get("id")))
+    return key
 
 
 def thread_for(l, topics):
-    """The listing's own topic, or the group's General topic if that is
-    somehow missing (there is no catch-all topic to fall back to any more)."""
+    """The listing's own topic. There is no catch-all topic to fall back to."""
     return topics.get(topic_key(l))
 
 
