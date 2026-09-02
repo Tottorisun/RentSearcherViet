@@ -11026,5 +11026,23 @@
   "lon": 106.7235888,
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
+ },
+ "1000305": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
+ },
+ "1000306": {
+  "lat": 10.7623141,
+  "lon": 106.7022361,
+  "source": "geocode",
+  "matched": "Hoàng Diệu"
+ },
+ "1000307": {
+  "lat": 10.8131455,
+  "lon": 106.7206046,
+  "source": "geocode",
+  "matched": "Thanh Đa"
  }
 }
