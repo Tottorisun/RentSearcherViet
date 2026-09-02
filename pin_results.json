@@ -10498,5 +10498,395 @@
   "lon": 106.7326546,
   "source": "geocode",
   "matched": "Era Town"
+ },
+ "2000386": {
+  "lat": 16.0101937,
+  "lon": 108.217863,
+  "source": "geocode",
+  "matched": "Nguyễn Tri Phương"
+ },
+ "2000387": {
+  "lat": 16.068501,
+  "lon": 108.2240242,
+  "source": "geocode",
+  "matched": "Plaza 3"
+ },
+ "2000388": {
+  "lat": 16.0049492,
+  "lon": 108.2204494,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000389": {
+  "lat": 16.0731998,
+  "lon": 108.2201495,
+  "source": "geocode",
+  "matched": "Lê Lợi"
+ },
+ "2000390": {
+  "lat": 16.0209559,
+  "lon": 108.2085932,
+  "source": "geocode",
+  "matched": "Thành Thái"
+ },
+ "2000391": {
+  "lat": 16.0425765,
+  "lon": 108.2157862,
+  "source": "geocode",
+  "matched": "Lan Nguyên Phi"
+ },
+ "2000392": {
+  "lat": 16.0426615,
+  "lon": 108.245486,
+  "source": "geocode",
+  "matched": "Chế Lan Viên"
+ },
+ "2000393": {
+  "lat": 16.0595822,
+  "lon": 108.2121456,
+  "source": "geocode",
+  "matched": "Đỗ Quang"
+ },
+ "2000394": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000395": {
+  "lat": 16.0829842,
+  "lon": 108.222509,
+  "source": "geocode",
+  "matched": "Tháng 2"
+ },
+ "2000396": {
+  "lat": 16.0191879,
+  "lon": 108.2115565,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "2000397": {
+  "lat": 16.0691157,
+  "lon": 108.235859,
+  "source": "geocode",
+  "matched": "Tạ Mỹ Duật"
+ },
+ "2000398": {
+  "lat": 16.0683513,
+  "lon": 108.2459339,
+  "source": "geocode",
+  "matched": "Biển Đông"
+ },
+ "2000399": {
+  "lat": 16.0607904,
+  "lon": 108.2303821,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "2000400": {
+  "lat": 16.0603836,
+  "lon": 108.2458465,
+  "source": "geocode",
+  "matched": "Mỹ Khê"
+ },
+ "2000401": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000402": {
+  "lat": 16.0049492,
+  "lon": 108.2204494,
+  "source": "geocode",
+  "matched": "Hòa Xuân"
+ },
+ "2000403": {
+  "lat": 16.0611682,
+  "lon": 108.2278968,
+  "source": "geocode",
+  "matched": "Cầu Rồng"
+ },
+ "2000404": {
+  "lat": 16.0049492,
+  "lon": 108.2204494,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000405": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000406": {
+  "lat": 16.0005165,
+  "lon": 108.2207319,
+  "source": "geocode",
+  "matched": "Trần Viện"
+ },
+ "2000407": {
+  "lat": 16.0185526,
+  "lon": 108.2514684,
+  "source": "geocode",
+  "matched": "Nguyễn Đức Thuận"
+ },
+ "2000408": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000409": {
+  "lat": 16.0946275,
+  "lon": 108.1250468,
+  "source": "geocode",
+  "matched": "Nguyễn Thành Long"
+ },
+ "2000410": {
+  "lat": 16.1062263,
+  "lon": 108.2582825,
+  "source": "geocode",
+  "matched": "Lê Văn Lương"
+ },
+ "2000411": {
+  "lat": 16.0357525,
+  "lon": 108.2253449,
+  "source": "geocode",
+  "matched": "Đoàn Khuê"
+ },
+ "2000412": {
+  "lat": 16.0805523,
+  "lon": 108.1606379,
+  "source": "geocode",
+  "matched": "Kinh Dương Vương"
+ },
+ "2000413": {
+  "lat": 16.0357525,
+  "lon": 108.2253449,
+  "source": "geocode",
+  "matched": "Đoàn Khuê"
+ },
+ "2000414": {
+  "lat": 16.0348238,
+  "lon": 108.2101958,
+  "source": "geocode",
+  "matched": "Lý Nhân Tông"
+ },
+ "2000415": {
+  "lat": 16.0536549,
+  "lon": 108.1771786,
+  "source": "geocode",
+  "matched": "Bắc Sơn"
+ },
+ "2000416": {
+  "lat": 16.0734491,
+  "lon": 108.2133973,
+  "source": "geocode",
+  "matched": "Quang Trung"
+ },
+ "2000417": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000418": {
+  "lat": 16.0513077,
+  "lon": 108.2350476,
+  "source": "geocode",
+  "matched": "Trần Thị Lý"
+ },
+ "2000419": {
+  "lat": 16.0437652,
+  "lon": 108.2077989,
+  "source": "geocode",
+  "matched": "Trưng Nữ Vương"
+ },
+ "2000420": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "geocode",
+  "matched": "Sơn Trà"
+ },
+ "2000421": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "geocode",
+  "matched": "Ngũ Hành Sơн"
+ },
+ "2000422": {
+  "lat": 11.0426242,
+  "lon": 106.6582695,
+  "source": "geocode",
+  "matched": "Phú Hòa"
+ },
+ "2000423": {
+  "lat": 10.946401,
+  "lon": 106.691568,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000424": {
+  "lat": 10.8426087,
+  "lon": 106.8424918,
+  "source": "geocode",
+  "matched": "Vincom Dĩ An"
+ },
+ "2000425": {
+  "lat": 10.9817525,
+  "lon": 106.6496998,
+  "source": "geocode",
+  "matched": "Bình Dương"
+ },
+ "2000426": {
+  "lat": 10.8396799,
+  "lon": 106.7092951,
+  "source": "geocode",
+  "matched": "Bình Phước"
+ },
+ "2000427": {
+  "lat": 10.9355293,
+  "lon": 106.7372572,
+  "source": "geocode",
+  "matched": "Thuận Giao"
+ },
+ "2000428": {
+  "lat": 10.9083204,
+  "lon": 106.7415107,
+  "source": "geocode",
+  "matched": "Vincom Plaza Dĩ An"
+ },
+ "2000429": {
+  "lat": 10.9355293,
+  "lon": 106.7372572,
+  "source": "geocode",
+  "matched": "Thuận Giao"
+ },
+ "2000430": {
+  "lat": 10.908048,
+  "lon": 106.758987,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000431": {
+  "lat": 11.0654936,
+  "lon": 106.6911397,
+  "source": "geocode",
+  "matched": "Phạm Văn Đồng"
+ },
+ "2000432": {
+  "lat": 10.8857774,
+  "lon": 106.8294514,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Cảnh"
+ },
+ "2000433": {
+  "lat": 10.908048,
+  "lon": 106.758987,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000434": {
+  "lat": 10.908048,
+  "lon": 106.758987,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000435": {
+  "lat": 10.9355293,
+  "lon": 106.7372572,
+  "source": "geocode",
+  "matched": "An Phú"
+ },
+ "1000267": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1000268": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1000269": {
+  "lat": 10.8067285,
+  "lon": 106.7257182,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Hưởng"
+ },
+ "1000270": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1000271": {
+  "lat": 10.7670352,
+  "lon": 106.6874492,
+  "source": "geocode",
+  "matched": "Cống Quỳnh"
+ },
+ "1000272": {
+  "lat": 10.7974171,
+  "lon": 106.7298983,
+  "source": "geocode",
+  "matched": "Số 34"
+ },
+ "1000273": {
+  "lat": 10.7571562,
+  "lon": 106.6917141,
+  "source": "geocode",
+  "matched": "Bến Vân Đồn"
+ },
+ "1000274": {
+  "lat": 10.7690525,
+  "lon": 106.712753,
+  "source": "geocode",
+  "matched": "Empire City"
+ },
+ "1000275": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1000276": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1000277": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000278": {
+  "lat": 10.8020001,
+  "lon": 106.7406138,
+  "source": "geocode",
+  "matched": "Vincom Mega Mall Thảo Điền"
+ },
+ "1000279": {
+  "lat": 10.7006338,
+  "lon": 106.7324785,
+  "source": "geocode",
+  "matched": "Era Town Đức Khải"
+ },
+ "1000280": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000281": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
  }
 }

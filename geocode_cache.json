@@ -4967,5 +4967,142 @@
   "lat": 10.8061908,
   "lon": 106.7422689,
   "display_name": "Số 4, Khu phố 3, Phường An Khánh, Thành phố Hồ Chí Minh, 71108, Việt Nam"
+ },
+ "Lê Lợi, Da Nang, Vietnam": {
+  "lat": 15.8791567,
+  "lon": 108.3286587,
+  "display_name": "Lê Lợi, Hoi An Old Town, Phường Hội An, Hội An, Thành phố Đà Nẵng, 64000, Việt Nam"
+ },
+ "Lê Lợi, Phường Hải Châu, Da Nang, Vietnam": {
+  "lat": 16.0731998,
+  "lon": 108.2201495,
+  "display_name": "Đường Lê Lợi, Tổ dân phố 28 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Thành Thái, Da Nang, Vietnam": {
+  "lat": 16.0209559,
+  "lon": 108.2085932,
+  "display_name": "Đường Thành Thái, Tổ dân phố 9, Phường Cẩm Lệ, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Lan Nguyên Phi, Da Nang, Vietnam": {
+  "lat": 16.0425765,
+  "lon": 108.2157862,
+  "display_name": "Hẻm 58 Kiệt 148 Ỷ Lan Nguyên Phi, Tổ dân phố 35, Phường Hòa Cường, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Đỗ Quang, Da Nang, Vietnam": {
+  "lat": 15.5749675,
+  "lon": 108.4701618,
+  "display_name": "Đỗ Quang, Phường Bàn Thạch, Tam Kỳ, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Đỗ Quang, Phường Thanh Khê, Da Nang, Vietnam": {
+  "lat": 16.0595822,
+  "lon": 108.2121456,
+  "display_name": "Đường Đỗ Quang, Tổ dân phố 21 Vĩnh Trung, Phường Thanh Khê, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Tháng 2, Da Nang, Vietnam": {
+  "lat": 16.0829842,
+  "lon": 108.222509,
+  "display_name": "Café Caracoli, 2, Đường 3 Tháng 2, Tổ dân phố 03 Thuận Phước, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Đà Nẵng Times Square, Da Nang, Vietnam": null,
+ "Đà Nẵng Times Square, Phường An Hải, Da Nang, Vietnam": null,
+ "Biển Đông, Da Nang, Vietnam": {
+  "lat": 16.0683513,
+  "lon": 108.2459339,
+  "display_name": "Công viên Biển Đông, Tổ dân phố Mỹ Thạnh, Phường An Hải, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Sun Ponte Residence, Phường An Hải, Da Nang, Vietnam": null,
+ "Sun Ponte, Da Nang, Vietnam": null,
+ "Sun Ponte, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Hòa Xuân, Da Nang, Vietnam": {
+  "lat": 16.0049492,
+  "lon": 108.2204494,
+  "display_name": "Phường Hòa Xuân, Hội An, Thành phố Đà Nẵng, 50707, Việt Nam"
+ },
+ "Sun Cosmo, Da Nang, Vietnam": null,
+ "Sun Cosmo, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Trần Viện, Da Nang, Vietnam": {
+  "lat": 16.0005165,
+  "lon": 108.2207319,
+  "display_name": "Đường Trần Viện, Tổ dân phố Lỗ Giáng 5, Phường Hòa Xuân, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "Nguyễn Đức Thuận, Da Nang, Vietnam": {
+  "lat": 16.0185526,
+  "lon": 108.2514684,
+  "display_name": "Đường Nguyễn Đức Thuận, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Nguyễn Thành Long, Da Nang, Vietnam": {
+  "lat": 16.0946275,
+  "lon": 108.1250468,
+  "display_name": "Đường Nguyễn Thành Long, Tổ dân phố Xuân Thiều 3, Phường Hải Vân, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Lê Văn Lương, Da Nang, Vietnam": {
+  "lat": 16.1062263,
+  "lon": 108.2582825,
+  "display_name": "Đường Lê Văn Lương, Phường Sơn Trà, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "Kinh Dương Vương, Da Nang, Vietnam": {
+  "lat": 16.0805523,
+  "lon": 108.1606379,
+  "display_name": "Đường Kinh Dương Vương, Phường Hòa Khánh, Thành phố Đà Nẵng, 84236, Việt Nam"
+ },
+ "Lý Nhân Tông, Da Nang, Vietnam": {
+  "lat": 16.0348238,
+  "lon": 108.2101958,
+  "display_name": "Đường Lý Nhân Tông, Tổ dân phố 1, Phường Cẩm Lệ, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Bắc Sơn, Da Nang, Vietnam": {
+  "lat": 16.0536549,
+  "lon": 108.1771786,
+  "display_name": "Đường Bắc Sơn, Hòa An, Tổ dân phố Nhơn Hòa 2, Phường An Khê, Thành phố Đà Nẵng, 84236, Việt Nam"
+ },
+ "Quang Trung, Da Nang, Vietnam": {
+  "lat": 15.7784759,
+  "lon": 108.3292952,
+  "display_name": "Quang Trung, Xã Xuân Phú, Thành phố Đà Nẵng, 05103, Việt Nam"
+ },
+ "Quang Trung, Phường Hải Châu, Da Nang, Vietnam": {
+  "lat": 16.0734491,
+  "lon": 108.2133973,
+  "display_name": "Đường Quang Trung, Tổ dân phố 25 Thạch Thang, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Euro Villa 1, Da Nang, Vietnam": null,
+ "Euro Villa 1, Phường An Hải, Da Nang, Vietnam": null,
+ "Ngũ Hành Sơн, Da Nang, Vietnam": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "display_name": "Phường Ngũ Hành Sơn, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "The Habitat V, Binh Duong, Vietnam": null,
+ "The Habitat V, Thuận An, Binh Duong, Vietnam": null,
+ "Vĩnh Phú 02, Binh Duong, Vietnam": null,
+ "Vĩnh Phú 02, Thuận An, Binh Duong, Vietnam": null,
+ "Bình Phước, Binh Duong, Vietnam": {
+  "lat": 10.7407602,
+  "lon": 106.6389071,
+  "display_name": "Nhà thờ Bình Phước, Đường Phạm Văn Chí, Khu phố 16, Phường Bình Tiên, Thành phố Hồ Chí Minh, 71910, Việt Nam"
+ },
+ "Bình Phước, Thuận An, Binh Duong, Vietnam": {
+  "lat": 10.8396799,
+  "lon": 106.7092951,
+  "display_name": "Trường Mầm non Hiệp Bình Phước, Đường 23, Khu đô thị Vạn Phúc, Phường Hiệp Bình, Thành phố Hồ Chí Minh, 70000, Việt Nam"
+ },
+ "Bcons Tower, Binh Duong, Vietnam": null,
+ "Bcons Tower, Dĩ An, Binh Duong, Vietnam": null,
+ "Nguyễn Hữu Cảnh, Binh Duong, Vietnam": {
+  "lat": 10.8857774,
+  "lon": 106.8294514,
+  "display_name": "Đền thờ Lễ Thành hầu Nguyễn Hữu Cảnh, Đường N1, Khu tái định cư Long Sơn, Phường Long Bình, Thành phố Hồ Chí Minh, 71216, Việt Nam"
+ },
+ "Dĩ An 1, Binh Duong, Vietnam": null,
+ "Dĩ An 1, Dĩ An, Binh Duong, Vietnam": null,
+ "Số 34, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7974171,
+  "lon": 106.7298983,
+  "display_name": "34, Đường số 20, Khu phố 15, Phường An Khánh, Thành phố Hồ Chí Minh, 71108, Việt Nam"
+ },
+ "Empire City, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7690525,
+  "lon": 106.712753,
+  "display_name": "Empire City Tilia Residences, Phường An Khánh, Thành phố Hồ Chí Minh, Việt Nam"
  }
 }
