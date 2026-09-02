@@ -9,8 +9,14 @@ the 40 oldest Chợ Tốt rows). This script asks Chợ Tốt whether each ad st
 exists (check_freshness.fetch: 404/410 = GONE, anything else = still there
 or a transport error, which never counts as gone) and removes the GONE
 rows from rebuild_final.py under the write lock, then drops their
-posted_dates anchors. Run it BEFORE purge_old_listings.py in the daily
-pipeline; cleanup_telegram_posts.py later deletes their hub posts.
+posted_dates anchors. The same answer carries the ad's own timestamps, so
+it also (a) removes rows Chợ Tốt itself proves are older than 14 whole
+days (STALE -- a session once dated five listings "today" that were 2-12
+days old) and (b) corrects the posted_dates anchor of every FRESH row
+whose recorded date differs from orig_list_time, so the age purge and the
+"N дней назад" label rest on the source's date, not on an estimate. Run
+it BEFORE purge_old_listings.py in the daily pipeline;
+cleanup_telegram_posts.py later deletes the removed rows' hub posts.
 
 A full pass over ~1 800 Chợ Tốt rows takes ~40 minutes at the polite 0.3 s
 spacing, so by default a run checks only the --limit (300) rows checked
@@ -68,26 +74,53 @@ rows.sort(key=lambda r: cache.get(str(r[0]), {}).get("checked", 0))
 todo = rows if ALL else rows[:LIMIT]
 print("liveness: %d Chợ Tốt rows in the base, checking %d%s" % (len(rows), len(todo), " (dry run)" if DRY else ""))
 
-gone, errors, alive = [], 0, 0
+MAX_DAYS = 14.0
+pd = load_json(POSTED_DATES_FILE, {})
+now = time.time()
+gone, stale, redated, errors, alive = [], [], [], 0, 0
 t0 = time.time()
 for ad_id, lid, city in todo:
     try:
-        cf.fetch(ad_id)
-        alive += 1
-        cache[str(ad_id)] = {"checked": int(time.time()), "listing": lid}
+        ad = cf.fetch(ad_id)
     except cf.Gone:
         gone.append((lid, ad_id, city))
-        cache[str(ad_id)] = {"checked": int(time.time()), "listing": lid, "gone": True}
+        cache[str(ad_id)] = {"checked": int(now), "listing": lid, "gone": True}
+        time.sleep(0.3)
+        continue
     except Exception as ex:
         errors += 1
         print("  %s (listing %s): %s -- not counted as gone" % (ad_id, lid, type(ex).__name__))
         if errors >= 10 and alive + len(gone) == 0:
             sys.exit("liveness: 10 transport errors in a row and no answers -- Chợ Tốt is unreachable, stopping without changes")
+        time.sleep(0.3)
+        continue
+    alive += 1
+    cache[str(ad_id)] = {"checked": int(now), "listing": lid}
+    # The same answer carries the ad's own timestamps -- use them. Chợ Tốt's
+    # verdict (check_freshness.verdict) is the source of truth the site's
+    # anchor date was only ever an estimate of: a session once dated five
+    # listings "today" that were 2-12 days old.
+    v, age, via = cf.verdict(ad, now, MAX_DAYS)
+    # Same rule as purge_old_listings.py: gone when OLDER THAN 14 whole days,
+    # so a 14.3-day-old ad is not removed half a day before the age purge
+    # would have removed it anyway. (cf.verdict says STALE from 14.0.)
+    if v == "STALE" and age is not None and int(age) > MAX_DAYS:
+        stale.append((lid, ad_id, city, age, via))
+    elif v == "FRESH" and ad.get("orig_list_time"):
+        true_anchor = time.strftime("%Y-%m-%d", time.localtime(ad["orig_list_time"] / 1000))
+        if pd.get(str(lid)) != true_anchor:
+            redated.append((lid, pd.get(str(lid)), true_anchor))
+            pd[str(lid)] = true_anchor
     time.sleep(0.3)
 
-print("checked %d in %.0fs: alive %d, GONE %d, errors %d" % (len(todo), time.time() - t0, alive, len(gone), errors))
+print("checked %d in %.0fs: alive %d, GONE %d, STALE %d, re-dated %d, errors %d"
+      % (len(todo), time.time() - t0, alive, len(gone), len(stale), len(redated), errors))
 for lid, ad_id, city in gone:
-    print("  GONE  listing %s  (%s, ad %s)" % (lid, city, ad_id))
+    print("  GONE   listing %s  (%s, ad %s)" % (lid, city, ad_id))
+for lid, ad_id, city, age, via in stale:
+    print("  STALE  listing %s  (%s, ad %s): %.1f days old via %s" % (lid, city, ad_id, age, via))
+for lid, old, new in redated:
+    print("  DATE   listing %s: anchor %s -> %s (Chợ Tốt orig_list_time)" % (lid, old, new))
 
 if not DRY:
     # forget cache entries whose listing left the base by any other route
@@ -96,17 +129,21 @@ if not DRY:
         del cache[k]
     save_json(CACHE_FILE, cache)
 
-if not gone:
-    print("nothing to remove")
+to_remove = [lid for lid, _, _ in gone] + [lid for lid, _, _, _, _ in stale]
+if not to_remove and not redated:
+    print("nothing to change")
     sys.exit(0)
 if DRY:
-    print("DRY RUN -- %d listing(s) would be removed" % len(gone))
+    print("DRY RUN -- %d listing(s) would be removed (%d gone, %d stale), %d anchor date(s) corrected"
+          % (len(to_remove), len(gone), len(stale), len(redated)))
     sys.exit(0)
 
-removed = remove_listings([lid for lid, _, _ in gone], owner="remove_gone_listings")
-pd = load_json(POSTED_DATES_FILE, {})
+removed = remove_listings(to_remove, owner="remove_gone_listings") if to_remove else []
 for lid in removed:
     pd.pop(str(lid), None)
 save_json(POSTED_DATES_FILE, pd)
-print("removed %d listing(s) taken down at the source: %s" % (len(removed), removed))
-print("now rebuild (rebuild_final.py -> build_leaflet_data.py -> rebuild_final.py) and run cleanup_telegram_posts.py")
+print("removed %d listing(s) (%d taken down, %d provably older than %d days): %s"
+      % (len(removed), len(gone), len(stale), int(MAX_DAYS), removed))
+if redated:
+    print("corrected %d anchor date(s) in %s; purge_old_listings.py will relabel them" % (len(redated), POSTED_DATES_FILE))
+print("now run purge_old_listings.py, rebuild (rebuild_final.py -> build_leaflet_data.py -> rebuild_final.py) and cleanup_telegram_posts.py")
