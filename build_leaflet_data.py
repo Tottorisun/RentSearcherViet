@@ -127,7 +127,8 @@ for l in listings:
         continue
     r = pin_results.get(lid)
     if r:
-        lat_lon[lid] = {"lat": r["lat"], "lon": r["lon"], "geocoded": r["source"]=="geocode"}
+        # "chotot" = coordinates shipped by the ad itself (chotot_coords.json), as precise as it gets
+        lat_lon[lid] = {"lat": r["lat"], "lon": r["lon"], "geocoded": r["source"] in ("geocode", "chotot")}
     else:
         missing += 1
 

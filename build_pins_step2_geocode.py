@@ -3,11 +3,22 @@
 # Vietnamese proper nouns are the only Latin capitalized runs in the text, so a simple regex is a
 # reliable extractor here), geocode unique candidates via Nominatim (rate-limited, cached, validated
 # against each city's real bounding box), fall back to ward centroid when nothing validates.
-import json, re, time, urllib.request, urllib.parse
+import json, re, os, time, urllib.request, urllib.parse, urllib.error
 
 from site_data import load_data
 data = load_data()
 listings = data["LISTINGS"]
+
+# Source-provided coordinates (Chợ Tốt ships lat/lon with every ad). Kept in
+# a tracked file the daily checks append to; ids present here are recorded
+# as precise and never sent to Nominatim. Before 2 Sep 2026 the prompt told
+# sessions to write these into leaflet_listing_latlon.json, which this
+# pipeline regenerates from scratch -- so every such coordinate was lost.
+CHOTOT_COORDS_FILE = "chotot_coords.json"
+try:
+    CHOTOT_COORDS = json.load(open(CHOTOT_COORDS_FILE, encoding="utf-8"))
+except FileNotFoundError:
+    CHOTOT_COORDS = {}
 
 CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City",
            "vung-tau":"Vung Tau","quy-nhon":"Quy Nhon","phan-thiet":"Phan Thiet",
@@ -77,21 +88,47 @@ try:
 except FileNotFoundError:
     cache = {}
 
+_net_failures = []      # consecutive network failures; reset on any success
+
 def geocode(query):
     if query in cache:
         return cache[query]
     params = urllib.parse.urlencode({"q": query, "format": "json", "limit": 1, "countrycodes": "vn"})
     url = "https://nominatim.openstreetmap.org/search?" + params
     req = urllib.request.Request(url, headers={"User-Agent": "rent-searcher-personal-project/1.0 (non-commercial, single-user rental aggregator)"})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            results = json.loads(resp.read().decode("utf-8"))
-    except Exception as ex:
-        cache[query] = None
+    # Only a real answer is cached. A timeout, a 429 or a 5xx used to be
+    # stored as `null` -- i.e. "this address does not exist" -- for ever, so
+    # one bad Nominatim minute permanently parked every listing it touched on
+    # a ward centroid (646 of 1 540 cache entries were null on 2 Sep 2026,
+    # and nobody can tell which were genuine). Now: retry with backoff, and
+    # if the network keeps failing, stop the run instead of quietly degrading.
+    results = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                results = json.loads(resp.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as ex:
+            if ex.code == 429 or ex.code >= 500:
+                time.sleep(5 * (attempt + 1))
+                continue
+            print(f"  geocode: HTTP {ex.code} for {query!r} -- not cached")
+            return None
+        except Exception as ex:
+            time.sleep(5 * (attempt + 1))
+            continue
+    if results is None:
+        _net_failures.append(query)
+        print(f"  geocode: network failure for {query!r} after 3 attempts -- NOT cached, retried next run")
+        if len(_net_failures) >= 10:
+            json.dump(cache, open("geocode_cache.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            raise SystemExit("geocode: 10 consecutive network failures -- Nominatim is down or rate-limiting us. "
+                             "Stopping rather than parking every remaining listing on a ward centroid; rerun later.")
         return None
+    _net_failures.clear()
     time.sleep(1.1)
     if not results:
-        cache[query] = None
+        cache[query] = None       # a genuine "nothing found" -- this one IS worth remembering
         return None
     r = results[0]
     result = {"lat": float(r["lat"]), "lon": float(r["lon"]), "display_name": r.get("display_name","")}
@@ -109,6 +146,13 @@ for l in listings:
     city = l["city"]
     if city not in GEO_CITIES:
         continue  # nha-trang handled by a separate mosaic-jitter script
+    src_coords = CHOTOT_COORDS.get(str(l["id"]))
+    if src_coords:
+        # The ad itself told us where it is -- no Nominatim guesswork.
+        pin_results[l["id"]] = {"lat": float(src_coords["lat"]), "lon": float(src_coords["lon"]),
+                                "source": "chotot", "matched": None}
+        processed += 1
+        continue
     proj = projections[city]
     district_name = DIST_NAME.get((city, l["district"]), "")
     cands = candidates_for(l["desc"], district_name)
