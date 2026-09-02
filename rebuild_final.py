@@ -12780,6 +12780,71 @@ def check_listing_types(html, listings):
 
 check_listing_types(HTML, LISTINGS)
 
+
+def _ru_days_label(n):
+    """Mirror of purge_old_listings.posted_label -- kept tiny and local so the
+    build has no import dependency on a maintenance script."""
+    if n <= 0:
+        return "сегодня"
+    if n == 1:
+        return "вчера"
+    a = abs(n)
+    word = "день" if (a % 10 == 1 and a % 100 != 11) else ("дня" if (2 <= a % 10 <= 4 and not 12 <= a % 100 <= 14) else "дней")
+    return "%d %s назад" % (n, word)
+
+
+def check_listings(listings, cities):
+    """
+    Fail the build on data that renders fine but is wrong -- invariants that
+    until 2 Sep 2026 held only by convention (audit, MEDIUM: "build guards
+    check only the listing type"):
+
+      * ids unique -- every state file (posted_to_telegram.json,
+        posted_dates.json, users' favourites) is keyed by id;
+      * district exists for the city -- a bad key gives an empty district
+        line on the card, no map pin, and the listing is unreachable by the
+        district filter, all silently;
+      * descEn present -- the EN page falls back to Russian without a word;
+      * noticeEn present whenever there is a notice -- same silent fallback;
+      * `posted` label agrees with `daysAgo` -- the RU page shows the label,
+        the EN page computes from the number, so they disagreed for 24 rows.
+
+    URL uniqueness is reported, not fatal: 39 legacy duplicate pairs are a
+    known debt, and Telegram-sourced listings share a channel URL by design.
+
+    Fatal on purpose, same reasoning as check_listing_types above.
+    """
+    valid = {(c, d["key"]) for c, cv in cities.items() for d in cv["districts"]}
+    errors = []
+    seen = set()
+    for l in listings:
+        i = l["id"]
+        if i in seen:
+            errors.append("duplicate id %s" % i)
+        seen.add(i)
+        if (l["city"], l["district"]) not in valid:
+            errors.append("id %s: district %r is not defined for city %r" % (i, l["district"], l["city"]))
+        if not l.get("descEn"):
+            errors.append("id %s: no descEn (the EN page would silently show Russian)" % i)
+        d = l.get("details") or {}
+        if d.get("notice") and not d.get("noticeEn"):
+            errors.append("id %s: notice without noticeEn" % i)
+        if isinstance(l.get("daysAgo"), int) and l.get("posted") != _ru_days_label(l["daysAgo"]):
+            errors.append("id %s: posted label %r does not match daysAgo=%s (expected %r) -- run purge_old_listings.py"
+                          % (i, l.get("posted"), l["daysAgo"], _ru_days_label(l["daysAgo"])))
+    if errors:
+        raise SystemExit("check_listings: %d problem(s), nothing written:\n  " % len(errors)
+                         + "\n  ".join(errors[:40]) + ("\n  ... (%d more)" % (len(errors) - 40) if len(errors) > 40 else ""))
+    by_url = {}
+    for l in listings:
+        by_url.setdefault(l["url"], []).append(l["id"])
+    shared = sum(1 for ids in by_url.values() if len(ids) > 1)
+    print("Listing check: OK (%d listings, %d URLs shared by several listings -- legacy duplicates / Telegram channel links)"
+          % (len(listings), shared))
+
+
+check_listings(LISTINGS, CITIES)
+
 check_js_undefined_calls(HTML)
 
 HTML = HTML.replace("__DATA_JSON__", DATA_JSON)
