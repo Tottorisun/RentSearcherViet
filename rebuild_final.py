@@ -11262,6 +11262,9 @@ HTML = r"""<meta charset="utf-8">
   .kind-toggle button{appearance:none;border:none;background:var(--surface);color:var(--ink-dim);padding:9px 16px;font-size:0.88rem;font-weight:600;cursor:pointer;flex:1;}
   .kind-toggle button + button{border-left:1px solid var(--line-strong);}
   .kind-toggle button.active{background:var(--accent);color:var(--accent-ink);}
+  /* On the per-city pages the city tabs are links to sibling pages. */
+  a.city-tab{text-decoration:none;color:inherit;display:inline-block;}
+  .city-tab.empty{opacity:.55;}
   .theme-toggle{display:flex;border:1px solid var(--line-strong);border-radius:999px;overflow:hidden;flex:none;align-self:flex-start;}
   .theme-toggle button{appearance:none;border:none;background:var(--surface);color:var(--ink-dim);padding:6px 12px;font-size:0.82rem;font-weight:600;cursor:pointer;}
   .theme-toggle button + button{border-left:1px solid var(--line-strong);}
@@ -11672,11 +11675,26 @@ HTML = r"""<meta charset="utf-8">
 (function(){
   "use strict";
 
+  // Two ways this script gets its data. The all-in-one page (vietnam-rent-finder.html)
+  // inlines everything right here. The per-city pages (assets/app.js) get a
+  // small inline <script> before this one that sets window.PAGE_DATA (that
+  // city + kind only), window.PAGE_DEFAULT_LANG and window.PAGE = {city, kind};
+  // in that mode city tabs and the kind toggle are links to sibling pages.
+  // The DATA assignment below must stay one plain literal statement in the
+  // all-in-one page: site_data.load_data() and check_js_undefined_calls()
+  // locate the data by that exact shape (and this comment must not spell it
+  // out, or the regex matches the comment first). The per-city override is
+  // therefore a separate line.
   var DEFAULT_LANG = "__DEFAULT_LANG__";
   var DATA = __DATA_JSON__;
+  if (typeof window.PAGE_DEFAULT_LANG !== "undefined") DEFAULT_LANG = window.PAGE_DEFAULT_LANG;
+  if (typeof window.PAGE_DATA !== "undefined") DATA = window.PAGE_DATA;
+  var PAGE = window.PAGE || null;
+  var COUNTS = DATA.COUNTS || null;
   var CITIES = DATA.CITIES;
   var SOURCES = DATA.SOURCES;
   var LISTINGS = DATA.LISTINGS;
+  function pageHref(city, kind){ return city + (kind === "commercial" ? "-commercial" : "") + ".html"; }
 
   var SOURCE_LABEL = {};
   SOURCES.forEach(function(s){ SOURCE_LABEL[s.key] = s; });
@@ -11873,7 +11891,7 @@ HTML = r"""<meta charset="utf-8">
   }
 
   var state = {
-    city: "nha-trang", district: null, complex: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, kind: "residential", poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
+    city: PAGE ? PAGE.city : "nha-trang", district: null, complex: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, kind: PAGE ? PAGE.kind : "residential", poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
     sources: new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; })),
     openDetails: new Set()
   };
@@ -12031,16 +12049,30 @@ HTML = r"""<meta charset="utf-8">
     el.cityTabs.innerHTML = "";
     Object.keys(CITIES).forEach(function(key){
       var c = CITIES[key];
-      var btn = document.createElement("button");
-      btn.className = "city-tab"; btn.type = "button"; btn.setAttribute("role","tab");
+      // Per-city pages: the tab is a real link to that city's page for the
+      // same kind, with the listing count for the kind. All-in-one page: a
+      // button that switches in place, with the district count as before.
+      var n = COUNTS && COUNTS[key] ? (COUNTS[key][state.kind] || 0) : null;
+      var sub = (n !== null) ? (n + " " + t("adsShort")) : (c.districts.length + " " + t("districtsWord"));
+      var btn;
+      if (PAGE){
+        btn = document.createElement("a");
+        btn.href = pageHref(key, state.kind);
+      } else {
+        btn = document.createElement("button");
+        btn.type = "button";
+        btn.addEventListener("click", function(){ selectCity(key); });
+      }
+      btn.className = "city-tab"; btn.setAttribute("role","tab");
       btn.setAttribute("aria-selected", state.city===key ? "true":"false");
-      btn.innerHTML = cityName(c) + '<span class="sub">' + c.districts.length + " " + t("districtsWord") + "</span>";
-      btn.addEventListener("click", function(){ selectCity(key); });
+      if (PAGE && n === 0) btn.classList.add("empty");
+      btn.innerHTML = cityName(c) + '<span class="sub">' + sub + "</span>";
       el.cityTabs.appendChild(btn);
     });
   }
 
   function selectCity(key){
+    if (PAGE){ location.href = pageHref(key, state.kind); return; }
     state.city = key; state.district = null; state.complex = null; el.districtInput.value = "";
     renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); renderComplexFilter(); applyFilters();
   }
@@ -12502,7 +12534,11 @@ HTML = r"""<meta charset="utf-8">
   if (kindToggleEl){
     kindToggleEl.addEventListener("click", function(e){
       var btn = e.target.closest("button[data-kind]");
-      if (btn) setKind(btn.getAttribute("data-kind"));
+      if (!btn) return;
+      var kind = btn.getAttribute("data-kind");
+      // Per-city pages hold one kind each: the other kind is a sibling page.
+      if (PAGE){ if (kind !== PAGE.kind) location.href = pageHref(PAGE.city, kind); return; }
+      setKind(kind);
     });
   }
 
@@ -12695,10 +12731,12 @@ HTML = r"""<meta charset="utf-8">
     state.district = null; state.complex=null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false
     // Reset returns to housing, so the budget ceiling must come back with it --
     // otherwise the slider keeps the 300M commercial scale on residential data.
-    state.kind="residential"; BUDGET_MAX = BUDGET_MAX_RESIDENTIAL;
+    // On a per-city page the kind is the page itself and stays.
+    state.kind = PAGE ? PAGE.kind : "residential";
+    BUDGET_MAX = (state.kind === "commercial") ? BUDGET_MAX_COMMERCIAL : BUDGET_MAX_RESIDENTIAL;
     var kt = document.getElementById("kind-toggle");
     if (kt){ Array.prototype.forEach.call(kt.querySelectorAll("button"), function(b){
-      b.classList.toggle("active", b.getAttribute("data-kind")==="residential"); }); }
+      b.classList.toggle("active", b.getAttribute("data-kind")===state.kind); }); }
     state.sources = new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; }));
     el.districtInput.value=""; el.poiSortSelect.value=""; el.textSearchInput.value=""; el.perM2Toggle.checked=false;
     el.favFilterToggle.setAttribute("aria-pressed","false"); el.favFilterToggle.textContent="☆ " + t("favFilter");
@@ -12785,6 +12823,13 @@ HTML = r"""<meta charset="utf-8">
     });
   }
 
+  if (PAGE && PAGE.kind === "commercial"){
+    // A commercial page starts on the commercial budget scale and with the
+    // toggle showing which page this is; setKind() is never called here.
+    BUDGET_MAX = BUDGET_MAX_COMMERCIAL;
+    if (kindToggleEl){ Array.prototype.forEach.call(kindToggleEl.querySelectorAll("button"), function(b){
+      b.classList.toggle("active", b.getAttribute("data-kind") === "commercial"); }); }
+  }
   initTheme();
   initLeafletMap();
   renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); setupBudgetSlider(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderComplexFilter(); applyFilters();
@@ -12955,6 +13000,7 @@ check_listings(LISTINGS, CITIES)
 
 check_js_undefined_calls(HTML)
 
+TEMPLATE_HTML = HTML      # the template with placeholders intact -- the per-city build below needs it
 HTML = HTML.replace("__DATA_JSON__", DATA_JSON)
 # __LISTING_COUNT__ is deliberately NOT substituted here -- finalise() below
 # matches the RU meta descriptions verbatim to swap in English ones, so the
@@ -12965,7 +13011,9 @@ HTML = HTML.replace("__USDT_ADDR__", USDT_TRC20_ADDRESS)
 HTML = HTML.replace("__USDT_QR__", USDT_QR_SVG)
 
 SITE_ROOT = "https://tottorisun.github.io/RentSearcherViet/"
-EN_PATH = "en.html"
+# The all-in-one English page. en.html itself is the English LANDING since the
+# multi-page build (2 Sep 2026), mirroring index.html.
+EN_PATH = "vietnam-rent-finder-en.html"
 
 # Two real pages, one per language. A single page cannot rank for both
 # languages: crawlers read the STATIC title/description/lang, and the
@@ -13033,25 +13081,213 @@ def _write_atomic(path, text):
     os.replace(tmp, path)
 
 
-for p in ("/vietnam-rent-finder.html", "/index.html"):
-    _write_atomic(W + p, RU_HTML)
+# The all-in-one pages. vietnam-rent-finder.html is what every pipeline script
+# reads the complete DATA out of (site_data.load_data) and what the Artifact
+# copy is; keep writing it first, before anything below can fail.
+_write_atomic(W + "/vietnam-rent-finder.html", RU_HTML)
 _write_atomic(W + "/" + EN_PATH, EN_HTML)
-print("Wrote vietnam-rent-finder.html, index.html (ru) and " + EN_PATH + " (en), size", len(RU_HTML))
+print("Wrote vietnam-rent-finder.html (ru) and " + EN_PATH + " (en), size", len(RU_HTML))
+
+
+# ================== MULTI-PAGE BUILD (2 Sep 2026) ==================
+# Why: the all-in-one page carries every listing inline -- 3.2 MB, 1 MB
+# gzipped, parsed on every open, on a phone too. Each city now also gets a
+# page per kind (nha-trang.html / nha-trang-commercial.html, ...) that shares
+# one CSS and one JS file (cached after the first page) and inlines only its
+# own slice of DATA; index.html is a light landing that links to them. The JS
+# is the same file in both modes -- see the PAGE comment at the top of the
+# script block: on a per-city page the city tabs and the kind toggle are
+# links to sibling pages, everything else works on the slice it was given.
+import os as _os
+_os.makedirs(W + "/assets", exist_ok=True)
+
+
+def _fill_common(tpl):
+    return (tpl.replace("__TODAY_DATE__", ru_today_stamp()).replace("__TODAY_DATE_EN__", en_today_stamp())
+               .replace("__USDT_ADDR__", USDT_TRC20_ADDRESS).replace("__USDT_QR__", USDT_QR_SVG))
+
+
+_TPL = _fill_common(TEMPLATE_HTML)
+_css_m = re.search(r"<style>\n(.*?)\n</style>", _TPL, re.S)
+_js_m = re.search(r"<script>\n(\(function\(\)\{.*?\}\)\(\);)\n</script>", _TPL, re.S)
+if not _css_m or not _js_m:
+    raise SystemExit("multi-page build: could not locate the <style> or the app <script> block in the template")
+APP_CSS = _css_m.group(1)
+APP_JS = _js_m.group(1).replace("__DATA_JSON__", "null").replace('"__DEFAULT_LANG__"', '"ru"')
+_write_atomic(W + "/assets/app.css", APP_CSS)
+_write_atomic(W + "/assets/app.js", APP_JS)
+
+# Page shell: the same markup with styles and script linked, and a hook for
+# the page's own data script right before the app.
+PAGE_SHELL = _TPL.replace(_css_m.group(0), '<link rel="stylesheet" href="assets/app.css">', 1)
+PAGE_SHELL = PAGE_SHELL.replace(_js_m.group(0), '__PAGE_DATA_SCRIPT__\n<script src="assets/app.js"></script>', 1)
+if "__PAGE_DATA_SCRIPT__" not in PAGE_SHELL or "__DATA_JSON__" in PAGE_SHELL:
+    raise SystemExit("multi-page build: page shell assembly went wrong")
+
+COMMERCIAL_TYPES_PY = ("Офис", "Торговая площадь", "Склад")   # mirrors COMMERCIAL_TYPES in the JS
+
+
+def _kind(l):
+    return "commercial" if l["type"] in COMMERCIAL_TYPES_PY else "residential"
+
+
+COUNTS = {}
+for _l in LISTINGS:
+    COUNTS.setdefault(_l["city"], {"residential": 0, "commercial": 0})[_kind(_l)] += 1
+
+
+def ru_ads(n):
+    if 11 <= n % 100 <= 14:
+        return "%d объявлений" % n
+    if n % 10 == 1:
+        return "%d объявление" % n
+    if n % 10 in (2, 3, 4):
+        return "%d объявления" % n
+    return "%d объявлений" % n
+
+
+RU_TITLE_FULL = "Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг"
+RU_DESC_LONG = ("Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Хошимин, Ханой, Дананг, Нячанг, Далат, "
+                "Хойан, Вунгтау, Куинён, Фантьет), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном "
+                "месте — с фото, картой и фильтрами.")
+RU_DESC_OG = "Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте — с фото, картой и фильтрами."
+RU_DESC_TW = "Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте."
+
+
+def page_name(city, kind):
+    return city + ("-commercial" if kind == "commercial" else "") + ".html"
+
+
+def city_page(city, kind):
+    c = CITIES[city]
+    rows = [l for l in LISTINGS if l["city"] == city and _kind(l) == kind]
+    n = len(rows)
+    data = {"CITIES": CITIES, "SOURCES": SOURCES, "LISTINGS": rows, "COUNTS": COUNTS,
+            "WARD_BOUNDARIES": ({city: WARD_BOUNDARIES[city]} if city in WARD_BOUNDARIES else {}),
+            "POIS": ({city: POIS[city]} if city in POIS else {})}
+    if kind == "commercial":
+        title = "Коммерческая аренда: %s — %s" % (c["name"], ru_ads(n))
+        desc = ("Офисы, торговые площади и склады в аренду: %s. %s с Chợ Tốt, Batdongsan и других площадок — "
+                "с фото, картой и фильтрами." % (c["name"], ru_ads(n)))
+    else:
+        title = "Аренда жилья: %s — %s" % (c["name"], ru_ads(n))
+        desc = ("Комнаты, студии, квартиры и дома в аренду: %s. %s с Chợ Tốt, Batdongsan, Facebook и Telegram — "
+                "с фото, картой и фильтрами." % (c["name"], ru_ads(n)))
+    fname = page_name(city, kind)
+    url = SITE_ROOT + fname
+    html = PAGE_SHELL
+    html = html.replace("<title>" + RU_TITLE_FULL + "</title>", "<title>" + title + "</title>", 1)
+    html = html.replace('content="' + RU_TITLE_FULL + '"', 'content="' + title + '"')
+    for old in (RU_DESC_LONG, RU_DESC_OG, RU_DESC_TW):
+        html = html.replace(old, desc)
+    html = html.replace('<meta property="og:url" content="' + SITE_ROOT + '">',
+                        '<meta property="og:url" content="' + url + '">', 1)
+    html = html.replace('<link rel="canonical" href="' + SITE_ROOT + '">',
+                        '<link rel="canonical" href="' + url + '">', 1)
+    page_script = ('<script>window.PAGE_DATA=' + json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+                   + ';window.PAGE_DEFAULT_LANG="ru";window.PAGE=' + json.dumps({"city": city, "kind": kind})
+                   + ';</script>')
+    html = html.replace("__PAGE_DATA_SCRIPT__", page_script, 1)
+    html = html.replace("__DEFAULT_LANG__", "ru").replace("__LISTING_COUNT__", str(n))
+    _write_atomic(W + "/" + fname, html)
+    return fname, n
+
+
+CITY_PAGES = []
+for _city in CITIES:
+    for _k in ("residential", "commercial"):
+        CITY_PAGES.append(city_page(_city, _k))
+print("Wrote %d per-city pages (assets/app.css %d KB, assets/app.js %d KB); largest page: %s"
+      % (len(CITY_PAGES), len(APP_CSS) // 1024, len(APP_JS) // 1024,
+         max(CITY_PAGES, key=lambda p: _os.path.getsize(W + "/" + p[0]))[0]))
+
+
+def landing(lang):
+    en = (lang == "en")
+    cards = ""
+    for key, c in CITIES.items():
+        n_r = COUNTS.get(key, {}).get("residential", 0)
+        n_c = COUNTS.get(key, {}).get("commercial", 0)
+        name = c["nameEn"] if en else c["name"]
+        res_label = ("%d residential" % n_r) if en else ru_ads(n_r) + " · жильё"
+        com_label = ("%d commercial" % n_c) if en else ru_ads(n_c) + " · коммерция"
+        cards += ('<div class="lc">'
+                  '<h2>' + name + '</h2>'
+                  '<a class="lc-link" href="' + page_name(key, "residential") + '"><span>' + res_label + '</span><span>→</span></a>'
+                  + ('<a class="lc-link lc-com" href="' + page_name(key, "commercial") + '"><span>' + com_label + '</span><span>→</span></a>' if n_c else
+                     '<span class="lc-link lc-none">' + ("no commercial listings yet" if en else "коммерции пока нет") + '</span>')
+                  + '</div>')
+    total = len(LISTINGS)
+    if en:
+        title = "Rental housing in Vietnam — by city"
+        desc = "Over %d rental listings across Vietnam, one page per city, residential and commercial apart: Ho Chi Minh City, Hanoi, Da Nang, Nha Trang, Da Lat, Vung Tau, Quy Nhon, Hoi An, Phan Thiet, Binh Duong, Phu Quoc." % total
+        h1 = "Rental housing in Vietnam"
+        tagline = "Pick a city: residential and commercial listings are separate pages, each loads only its own data."
+        full_link = "All cities on one page"
+        other = '<a href="./">Русская версия</a>'
+        stamp = "Updated " + en_today_stamp()
+    else:
+        title = "Жильё во Вьетнаме — по городам"
+        desc = "Более %d объявлений об аренде во Вьетнаме, отдельная страница на каждый город, жильё и коммерция врозь: Хошимин, Ханой, Дананг, Нячанг, Далат, Вунгтау, Куинён, Хойан, Фантьет, Биньзыонг, Фукуок." % total
+        h1 = "Жильё во Вьетнаме"
+        tagline = "Выберите город: жильё и коммерция — отдельные страницы, каждая грузит только свои объявления."
+        full_link = "Все города на одной странице"
+        other = '<a href="en.html">English</a>'
+        stamp = "Обновлено " + ru_today_stamp()
+    self_url = SITE_ROOT + ("en.html" if en else "")
+    return ('<!doctype html>\n<html lang="' + lang + '">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            '<title>' + title + '</title>\n'
+            '<meta name="description" content="' + desc + '">\n'
+            '<link rel="canonical" href="' + self_url + '">\n'
+            '<link rel="alternate" hreflang="ru" href="' + SITE_ROOT + '">\n'
+            '<link rel="alternate" hreflang="en" href="' + SITE_ROOT + 'en.html">\n'
+            '<link rel="alternate" hreflang="x-default" href="' + SITE_ROOT + '">\n'
+            '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ctext y=\'.9em\' font-size=\'90\'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">\n'
+            '<link rel="stylesheet" href="assets/app.css">\n'
+            '<style>\n'
+            '.landing{max-width:1100px;margin:0 auto;padding:28px 18px 60px;}\n'
+            '.landing .hero{margin-bottom:22px;}\n'
+            '.lgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));}\n'
+            '.lc{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-md);padding:16px 16px 12px;box-shadow:var(--shadow-md);}\n'
+            '.lc h2{margin:0 0 10px;font-size:1.15rem;}\n'
+            '.lc-link{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;margin-top:8px;border-radius:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;font-size:0.95rem;min-height:40px;}\n'
+            '.lc-link.lc-com{background:var(--surface-2);color:var(--ink);border:1px solid var(--line-strong);}\n'
+            '.lc-none{background:transparent;border:1px dashed var(--line-strong);color:var(--ink-faint);font-weight:500;}\n'
+            '.lfoot{margin-top:26px;color:var(--ink-dim);font-size:0.9rem;display:flex;flex-wrap:wrap;gap:10px 22px;}\n'
+            '.lfoot a{color:var(--accent);}\n'
+            '</style>\n</head>\n<body>\n'
+            '<div class="page landing">\n'
+            '<header class="hero"><div class="brand"><span class="brand-mark" aria-hidden="true">'
+            '<svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 4l8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            '</span><div><h1>' + h1 + '</h1><p class="tagline">' + tagline + '</p></div></div></header>\n'
+            '<section class="lgrid">' + cards + '</section>\n'
+            '<p class="lfoot"><a href="vietnam-rent-finder' + ("-en" if en else "") + '.html">' + full_link + ' →</a>'
+            + other + '<span>' + stamp + '</span></p>\n'
+            '</div>\n</body>\n</html>\n')
+
+
+_write_atomic(W + "/index.html", landing("ru"))
+_write_atomic(W + "/en.html", landing("en"))
+print("Wrote index.html (ru landing) and en.html (en landing)")
 
 with open(W + "/robots.txt", "w", encoding="utf-8") as f:
     f.write("User-agent: *\nAllow: /\n\nSitemap: " + SITE_ROOT + "sitemap.xml\n")
 with open(W + "/sitemap.xml", "w", encoding="utf-8") as f:
     today = datetime.date.today().isoformat()
     urls = ""
-    for loc in (SITE_ROOT, SITE_ROOT + EN_PATH):
+    locs = [(SITE_ROOT, "1.0"), (SITE_ROOT + "en.html", "0.9"),
+            (SITE_ROOT + "vietnam-rent-finder.html", "0.6"), (SITE_ROOT + EN_PATH, "0.5")]
+    locs += [(SITE_ROOT + fname, "0.8" if n else "0.3") for fname, n in CITY_PAGES]
+    for loc, prio in locs:
         urls += ('  <url>\n'
                  '    <loc>' + loc + '</loc>\n'
                  '    <lastmod>' + today + '</lastmod>\n'
                  '    <changefreq>daily</changefreq>\n'
-                 '    <priority>1.0</priority>\n'
+                 '    <priority>' + prio + '</priority>\n'
                  '  </url>\n')
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             + urls +
             '</urlset>\n')
-print("Wrote robots.txt and sitemap.xml")
+print("Wrote robots.txt and sitemap.xml (%d URLs)" % len(locs))
