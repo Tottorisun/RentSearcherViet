@@ -11702,6 +11702,7 @@ HTML = r"""<meta charset="utf-8">
       mapNoBounds:"нет официальных границ районов — показаны только точки объявлений",
       mapCreditNoBounds:"После реформы 2025 года у Нячанга нет официальных границ на уровне районов, поэтому контуры не показаны — только примерные точки объявлений по районам. Карта — © участники OpenStreetMap (ODbL).",
       mapCreditBounds:"Карта и границы районов — © участники OpenStreetMap (ODbL), границы актуальны после реформы административного деления 2025 года.",
+      mapCreditHistoric:"Карта и границы — © участники OpenStreetMap (ODbL). Показаны 12 городских районов Ханоя в границах до реформы 2025 года: именно так район называют арендодатели и агенты, а новые кварталы с теми же именами занимают лишь часть прежней территории.",
       mapUnavailable:"Карта недоступна в этом окне — внешние карты (OpenStreetMap) заблокированы политикой безопасности. Откройте страницу как локальный файл, чтобы увидеть интерактивную карту.",
       favFilter:"Избранное", reset:"Сбросить фильтры",
       emptyTitle:"По этим критериям пока пусто", emptyBody:"Попробуйте увеличить бюджет, выбрать другой район или снять фильтр по сроку публикации.",
@@ -11747,6 +11748,7 @@ HTML = r"""<meta charset="utf-8">
       mapNoBounds:"no official district boundaries — only listing points are shown",
       mapCreditNoBounds:"After the 2025 reform Nha Trang has no official district-level boundaries, so outlines are not shown — only approximate listing points by district. Map — © OpenStreetMap contributors (ODbL).",
       mapCreditBounds:"Map and district boundaries — © OpenStreetMap contributors (ODbL), boundaries reflect the 2025 administrative reform.",
+      mapCreditHistoric:"Map and boundaries — © OpenStreetMap contributors (ODbL). Hanoi is shown as its 12 urban districts as they were before the 2025 reform: that is how landlords and agents still name an area, and the new wards that reuse those names cover only part of the old district.",
       mapUnavailable:"The map is unavailable in this window — external maps (OpenStreetMap) are blocked by the security policy. Open the page as a local file to see the interactive map.",
       favFilter:"Favourites", reset:"Reset filters",
       emptyTitle:"Nothing matches these filters yet", emptyBody:"Try raising the budget, picking another district, or clearing the posted-within filter.",
@@ -12115,7 +12117,8 @@ HTML = r"""<meta charset="utf-8">
       creditEl.textContent = t("mapCreditNoBounds");
     } else {
       noteEl.textContent = t("mapNote");
-      creditEl.textContent = t("mapCreditBounds");
+      // Hanoi's outlines are the pre-2025 districts on purpose (see build_leaflet_data.py)
+      creditEl.textContent = (state.city === "ha-noi") ? t("mapCreditHistoric") : t("mapCreditBounds");
     }
     if (!leafletReady){
       el.mapSvgWrap.innerHTML = '<div style="padding:32px 16px;text-align:center;color:var(--ink-dim);font-size:0.88rem;">' + t("mapUnavailable") + '</div>';
@@ -12165,12 +12168,42 @@ HTML = r"""<meta charset="utf-8">
       '<a class="pt-hint" href="' + l.url + '" target="_blank" rel="noopener">' + t("openListing") + '</a>';
   }
 
+  // Listings that share one coordinate -- every ward-centroid fallback in a
+  // district, or several units in one building -- used to stack on a single
+  // pixel: only the top marker was clickable and the other 75 (the worst
+  // HCMC case) were unreachable. Spread each such group on a sunflower
+  // spiral a few metres across; stable per id, so pins don't jump between
+  // renders. Precisely-geocoded singletons are left exactly where they are.
+  function spreadStackedPins(list){
+    var groups = {};
+    list.forEach(function(l){
+      if (typeof l.lat !== "number" || typeof l.lon !== "number") return;
+      var key = l.lat.toFixed(5) + "," + l.lon.toFixed(5);
+      (groups[key] = groups[key] || []).push(l);
+    });
+    var pos = {};
+    Object.keys(groups).forEach(function(key){
+      var g = groups[key];
+      if (g.length === 1){ pos[g[0].id] = [g[0].lat, g[0].lon]; return; }
+      g.sort(function(a, b){ return a.id - b.id; });
+      var lat0 = g[0].lat, lon0 = g[0].lon;
+      var mPerDegLat = 111320, mPerDegLon = 111320 * Math.cos(lat0 * Math.PI / 180);
+      var spacing = g.length > 20 ? 7 : 9;                 // metres between neighbours
+      g.forEach(function(l, i){
+        var r = spacing * Math.sqrt(i + 1), a = i * 2.39996;   // golden angle
+        pos[l.id] = [lat0 + (r * Math.sin(a)) / mPerDegLat, lon0 + (r * Math.cos(a)) / mPerDegLon];
+      });
+    });
+    return pos;
+  }
+
   function renderLeafletMarkers(list){
     if (!leafletReady) return;
     markerLayerGroup.clearLayers();
+    var pos = spreadStackedPins(list);
     list.forEach(function(l){
       if (typeof l.lat !== "number" || typeof l.lon !== "number") return;
-      var marker = L.circleMarker([l.lat, l.lon], {
+      var marker = L.circleMarker(pos[l.id] || [l.lat, l.lon], {
         radius: 7, weight: 1.6, color: "var(--surface)",
         fillColor: "#1E7A4C", fillOpacity: 0.9
       });

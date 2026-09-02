@@ -78,6 +78,17 @@ QN_NAMES = ["Phường Quy Nhơn","Phường Quy Nhơn Đông","Phường Quy Nh
 QN_KEYS = {"Phường Quy Nhơn":"qn","Phường Quy Nhơn Đông":"qnd","Phường Quy Nhơn Tây":"qnt","Phường Quy Nhơn Nam":"qnn","Phường Quy Nhơn Bắc":"qnb"}
 PT_NAMES = ["Phường Phan Thiết","Phường Bình Thuận","Phường Phú Thủy","Phường Mũi Né","Phường Tiến Thành","Phường Hàm Thắng"]
 PT_KEYS = {"Phường Phan Thiết":"pt","Phường Bình Thuận":"bt","Phường Phú Thủy":"put","Phường Mũi Né":"mn","Phường Tiến Thành":"tt","Phường Hàm Thắng":"hth"}
+# Hanoi: the site groups listings by the 12 pre-2025 urban districts (quận) --
+# that is how every landlord, agent and expat still names the area. OSM keeps
+# those as boundary=historic (end_date 2025-06-30), which is exactly the
+# polygon set we want; the post-reform wards that reuse the same names
+# ("Phường Tây Hồ") cover only a fraction of the old district and would put
+# listings outside their own outline.
+HN_NAMES = ["Quận Tây Hồ","Quận Ba Đình","Quận Hoàn Kiếm","Quận Cầu Giấy","Quận Nam Từ Liêm","Quận Đống Đa","Quận Hai Bà Trưng","Quận Long Biên","Quận Thanh Xuân","Quận Hoàng Mai","Quận Bắc Từ Liêm","Quận Hà Đông"]
+HN_KEYS = {"Quận Tây Hồ":"tyh","Quận Ba Đình":"bd","Quận Hoàn Kiếm":"hkm","Quận Cầu Giấy":"cg","Quận Nam Từ Liêm":"ntl","Quận Đống Đa":"dd","Quận Hai Bà Trưng":"hbt","Quận Long Biên":"lbn","Quận Thanh Xuân":"tx","Quận Hoàng Mai":"hm","Quận Bắc Từ Liêm":"btl","Quận Hà Đông":"hd"}
+# Former Bình Dương (merged into HCMC in 2025): the five post-reform wards map 1:1 onto the site's keys.
+BD_NAMES = ["Phường Thuận An","Phường Dĩ An","Phường Thủ Dầu Một","Phường Bến Cát","Phường Tân Uyên"]
+BD_KEYS = {"Phường Thuận An":"ta","Phường Dĩ An":"da","Phường Thủ Dầu Một":"tdm","Phường Bến Cát":"bc","Phường Tân Uyên":"tu"}
 
 dl = load("dalat_overpass.json")["elements"]
 dn = load("danang_overpass.json")["elements"]
@@ -86,6 +97,8 @@ hcmc = load("hcmc_overpass.json")["elements"] + load("hcmc_extra_overpass.json")
 vt = load("vungtau_overpass.json")["elements"]
 qn = load("quynhon_overpass.json")["elements"]
 pt = load("phanthiet_overpass.json")["elements"]
+hn = load("hanoi_overpass.json")["elements"]        # 12 boundary=historic quận, fetched 2 Sep 2026
+bd = load("binhduong_overpass.json")["elements"]    # 5 post-reform phường, fetched 2 Sep 2026
 
 ward_boundaries = {
     "da-lat": wards_latlon(dl, DL_NAMES, DL_KEYS),
@@ -95,7 +108,15 @@ ward_boundaries = {
     "vung-tau": wards_latlon(vt, VT_NAMES, VT_KEYS),
     "quy-nhon": wards_latlon(qn, QN_NAMES, QN_KEYS),
     "phan-thiet": wards_latlon(pt, PT_NAMES, PT_KEYS),
+    "ha-noi": wards_latlon(hn, HN_NAMES, HN_KEYS),
+    "binh-duong": wards_latlon(bd, BD_NAMES, BD_KEYS),
 }
+# Every key the site knows for these two cities must have come back with a
+# polygon -- a silent miss here shows up only as a district with no outline.
+for _city, _keys in (("ha-noi", HN_KEYS), ("binh-duong", BD_KEYS)):
+    _missing = sorted(set(_keys.values()) - set(ward_boundaries[_city]))
+    if _missing:
+        raise SystemExit("%s: no boundary polygon extracted for district key(s) %s -- check the overpass dump" % (_city, _missing))
 json.dump(ward_boundaries, open("leaflet_ward_boundaries.json","w",encoding="utf-8"), ensure_ascii=False)
 for c,w in ward_boundaries.items():
     print(c, "wards:", len(w))
