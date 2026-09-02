@@ -1,28 +1,4 @@
 {
- "120": {
-  "lat": 16.0153046,
-  "lon": 108.2013088,
-  "source": "geocode",
-  "matched": "Cẩm Lệ"
- },
- "138": {
-  "lat": 16.010798,
-  "lon": 108.253178,
-  "source": "ward-centroid",
-  "matched": null
- },
- "163": {
-  "lat": 16.010798,
-  "lon": 108.253178,
-  "source": "ward-centroid",
-  "matched": null
- },
- "292": {
-  "lat": 16.0502691,
-  "lon": 108.1546403,
-  "source": "ward-centroid",
-  "matched": null
- },
  "861": {
   "lat": 10.7732464,
   "lon": 106.6989751,
