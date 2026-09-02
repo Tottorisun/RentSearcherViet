@@ -14,6 +14,7 @@ id_reservations.json
 .listings_write.lock
 .listings_write.lock.stale.*
 rebuild_final.py.tmp*
+*.html.tmp.*
 posted_dates.json.tmp
 posted_to_telegram.json.tmp
 posted_to_telegram.json.bak-*

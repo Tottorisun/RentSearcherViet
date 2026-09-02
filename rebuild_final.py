@@ -12911,11 +12911,23 @@ def finalise(html, lang):
 RU_HTML = finalise(HTML, "ru")
 EN_HTML = finalise(HTML, "en")
 
+def _write_atomic(path, text):
+    """Write through a temp file and rename, so a concurrent reader of the
+    built HTML (build_pins_step2_geocode.py, build_leaflet_data.py,
+    cleanup_telegram_posts.py, post_new_to_telegram.py -- all of which
+    re.search `var DATA` and crash on a half-written file) sees either the
+    old page or the new one, never a torn one. The PostToolUse hook rebuilds
+    on every edit, so two sessions really do overlap here (2 Sep audit)."""
+    import os
+    tmp = "%s.tmp.%d" % (path, os.getpid())
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(text)
+    os.replace(tmp, path)
+
+
 for p in ("/vietnam-rent-finder.html", "/index.html"):
-    with open(W + p, "w", encoding="utf-8") as f:
-        f.write(RU_HTML)
-with open(W + "/" + EN_PATH, "w", encoding="utf-8") as f:
-    f.write(EN_HTML)
+    _write_atomic(W + p, RU_HTML)
+_write_atomic(W + "/" + EN_PATH, EN_HTML)
 print("Wrote vietnam-rent-finder.html, index.html (ru) and " + EN_PATH + " (en), size", len(RU_HTML))
 
 with open(W + "/robots.txt", "w", encoding="utf-8") as f:
