@@ -10888,5 +10888,143 @@
   "lon": 106.7235888,
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
+ },
+ "1000282": {
+  "lat": 10.8273371,
+  "lon": 106.7368775,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000283": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000284": {
+  "lat": 10.770937,
+  "lon": 106.7053196,
+  "source": "geocode",
+  "matched": "Hàm Nghi 12"
+ },
+ "1000285": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000286": {
+  "lat": 10.7197676,
+  "lon": 106.7019993,
+  "source": "geocode",
+  "matched": "Hoàng Anh Gia Lai 3"
+ },
+ "1000287": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000288": {
+  "lat": 10.7511006,
+  "lon": 106.7096353,
+  "source": "geocode",
+  "matched": "Bế Văn Cấm"
+ },
+ "1000289": {
+  "lat": 10.6980033,
+  "lon": 106.7389396,
+  "source": "geocode",
+  "matched": "Huỳnh Tấn Phát"
+ },
+ "1000290": {
+  "lat": 10.7674015,
+  "lon": 106.6977106,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Bình"
+ },
+ "1000291": {
+  "lat": 10.7703806,
+  "lon": 106.6951066,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000292": {
+  "lat": 10.7512819,
+  "lon": 106.6915513,
+  "source": "geocode",
+  "matched": "Trần Xuân Soạn"
+ },
+ "1000293": {
+  "lat": 10.744758,
+  "lon": 106.7219421,
+  "source": "geocode",
+  "matched": "Nguyễn Văn Linh"
+ },
+ "1000294": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1000295": {
+  "lat": 10.7702241,
+  "lon": 106.691696,
+  "source": "geocode",
+  "matched": "Nguyễn Trãi"
+ },
+ "1000296": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
+ },
+ "1000297": {
+  "lat": 10.7311388,
+  "lon": 106.7351885,
+  "source": "geocode",
+  "matched": "Phú Thuận"
+ },
+ "1000298": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1000299": {
+  "lat": 10.798676,
+  "lon": 106.7331692,
+  "source": "geocode",
+  "matched": "Trần Não"
+ },
+ "1000300": {
+  "lat": 10.6928289,
+  "lon": 106.7172107,
+  "source": "geocode",
+  "matched": "Phạm Hữu Lầu"
+ },
+ "1000301": {
+  "lat": 10.7674015,
+  "lon": 106.6977106,
+  "source": "geocode",
+  "matched": "Nguyễn Thái Bình"
+ },
+ "1000302": {
+  "lat": 10.7016066,
+  "lon": 106.7400578,
+  "source": "geocode",
+  "matched": "Dương Cát Lợi"
+ },
+ "1000303": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000304": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
  }
 }
