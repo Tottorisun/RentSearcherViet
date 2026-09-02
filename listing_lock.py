@@ -116,6 +116,52 @@ def write_source_atomic(new_src):
     os.replace(tmp, SOURCE)
 
 
+def find_blocks(src):
+    """{listing id: (first line, last line)} for every L(...) element of the
+    LISTINGS list, via ast -- exact, never a regex guess. Lines are 1-based
+    and inclusive, so `lines[a-1:b]` is the block."""
+    tree = ast.parse(src)
+    lists = [n for n in tree.body if isinstance(n, ast.Assign)
+             and any(getattr(t, "id", None) == "LISTINGS" for t in n.targets)]
+    if len(lists) != 1 or not isinstance(lists[0].value, ast.List):
+        sys.exit("could not find exactly one `LISTINGS = [...]` list in %s" % SOURCE)
+    out = {}
+    for e in lists[0].value.elts:
+        if isinstance(e, ast.Call) and e.args and isinstance(e.args[0], ast.Constant):
+            out[int(e.args[0].value)] = (e.lineno, e.end_lineno)
+    return out
+
+
+def remove_listings(ids, owner="remove"):
+    """Delete the L(...) blocks of `ids` under the write lock. Ids not in the
+    file are reported and skipped; the rewrite is re-parsed and its block
+    count checked before anything is written. Returns the ids removed."""
+    ids = sorted({int(i) for i in ids})
+    if not ids:
+        return []
+    with listings_write_lock(owner):
+        src = open(SOURCE, encoding="utf-8").read()
+        blocks = find_blocks(src)
+        missing = [i for i in ids if i not in blocks]
+        if missing:
+            print("remove_listings: not in %s (already gone?): %s" % (SOURCE, missing))
+        todo = [i for i in ids if i in blocks]
+        if not todo:
+            return []
+        lines = src.split("\n")
+        for i in sorted(todo, key=lambda i: blocks[i][0], reverse=True):
+            a, b = blocks[i]
+            start, end = a - 1, b
+            if end < len(lines) and lines[end].strip() == "":
+                end += 1                       # swallow one trailing blank line
+            del lines[start:end]
+        new_src = "\n".join(lines)
+        if len(find_blocks(new_src)) != len(blocks) - len(todo):
+            sys.exit("remove_listings: block count after rewrite is wrong -- nothing written")
+        write_source_atomic(new_src)
+    return todo
+
+
 def insert_listings(new_src, ids, owner="batch"):
     """Insert NEW_SRC -- one or more complete `L(...),` rows, each starting at
     column 0 -- at the end of the LISTINGS list. Idempotent and self-checking."""

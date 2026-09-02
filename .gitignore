@@ -22,6 +22,7 @@ id_reservations.json
 rebuild_final.py.tmp*
 *.html.tmp.*
 posted_dates.json.tmp
+liveness_cache.json.tmp
 posted_to_telegram.json.tmp
 posted_to_telegram.json.bak-*
 
