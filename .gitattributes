@@ -1,0 +1,4 @@
+# Bash must see LF: with core.autocrlf=true a hook script checked out as
+# CRLF breaks on the first `case`/`if` line ending in "\r".
+*.sh text eol=lf
+.claude/hooks/* text eol=lf
