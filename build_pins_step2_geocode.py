@@ -5,9 +5,8 @@
 # against each city's real bounding box), fall back to ward centroid when nothing validates.
 import json, re, time, urllib.request, urllib.parse
 
-html = open("vietnam-rent-finder.html", encoding="utf-8").read()
-m = re.search(r'var DATA = (\{.*?\});\s*\n', html, re.S)
-data = json.loads(m.group(1))
+from site_data import load_data
+data = load_data()
 listings = data["LISTINGS"]
 
 CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City",

@@ -10,11 +10,8 @@ projections = json.load(open("pin_projections.json", encoding="utf-8"))
 pin_results = json.load(open("pin_results.json", encoding="utf-8"))
 nt_pins = json.load(open("pin_results_nhatrang.json", encoding="utf-8"))
 
-html = open("vietnam-rent-finder.html", encoding="utf-8").read()
-import re
-m = re.search(r'var DATA = (\{.*?\});\s*\n', html, re.S)
-data = json.loads(m.group(1))
-listings = data["LISTINGS"]
+from site_data import load_listings
+listings = load_listings()
 
 def stable_unit(seed_str):
     h = hashlib.md5(seed_str.encode("utf-8")).hexdigest()

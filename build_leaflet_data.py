@@ -104,10 +104,8 @@ for c,w in ward_boundaries.items():
 pin_results = load("pin_results.json")           # da-lat, da-nang, hoi-an, ho-chi-minh
 projections = load("pin_projections.json")        # ward_centroids per city (already lat/lon)
 
-html = open("vietnam-rent-finder.html", encoding="utf-8").read()
-m = re.search(r'var DATA = (\{.*?\});\s*\n', html, re.S)
-data = json.loads(m.group(1))
-listings = data["LISTINGS"]
+from site_data import load_listings
+listings = load_listings()
 
 # Nha Trang: no real geography — use each district's centroid computed from the *_overpass source
 # it never had real modern ward polygons for (see project memory), so fall back to a fixed

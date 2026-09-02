@@ -201,12 +201,8 @@ def thread_for(l, topics):
 
 
 def load_listings():
-    src = open(BUILT_HTML, encoding="utf-8").read()
-    m = re.search(r"var DATA = (\{.*?\});\s*\n", src, re.S)
-    if not m:
-        sys.exit("no DATA in " + BUILT_HTML + " -- run rebuild_final.py first "
-                 "(or another session is rewriting it this second; retry)")
-    data = json.loads(m.group(1))
+    from site_data import load_data
+    data = load_data(BUILT_HTML)
     cities = data["CITIES"]
     out = []
     for l in data["LISTINGS"]:

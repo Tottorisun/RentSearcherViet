@@ -43,12 +43,8 @@ if not TOKEN and not DRY_RUN:
 topics = json.load(open("telegram_topics.json", encoding="utf-8"))
 CHAT_ID = topics["chat_id"]
 
-html = open("vietnam-rent-finder.html", encoding="utf-8").read()
-m = re.search(r'var DATA = (\{.*?\});\s*\n', html, re.S)
-if not m:
-    raise SystemExit("vietnam-rent-finder.html has no `var DATA = {...}` block -- was the site rebuilt? Is another session writing it right now?")
-data = json.loads(m.group(1))
-live_ids = {str(l["id"]) for l in data["LISTINGS"]}
+from site_data import load_listings
+live_ids = {str(l["id"]) for l in load_listings()}
 
 try:
     state = json.load(open(STATE_FILE, encoding="utf-8"))

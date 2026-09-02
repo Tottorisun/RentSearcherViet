@@ -121,9 +121,8 @@ def collect_ids(argv):
             ids += [int(l.strip()) for l in open(argv[i], encoding="utf-8")
                     if l.strip().isdigit()]
         elif a == "--in-base":
-            html = open("vietnam-rent-finder.html", encoding="utf-8").read()
-            data = json.loads(re.search(r"var DATA = (\{.*?\});\s*\n", html, re.S).group(1))
-            for l in data["LISTINGS"]:
+            from site_data import load_listings
+            for l in load_listings():
                 if l.get("source") == "chotot":
                     m = re.search(r"/(\d{8,9})\.htm", l.get("url", ""))
                     if m:

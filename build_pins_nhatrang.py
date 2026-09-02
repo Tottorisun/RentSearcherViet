@@ -13,11 +13,8 @@ cells_by_key = {}
 for c in nt["cells"]:
     cells_by_key.setdefault(c["key"], []).append(c)
 
-html = open("vietnam-rent-finder.html", encoding="utf-8").read()
-import re
-m = re.search(r'var DATA = (\{.*?\});\s*\n', html, re.S)
-data = json.loads(m.group(1))
-listings = [l for l in data["LISTINGS"] if l["city"] == "nha-trang"]
+from site_data import load_listings
+listings = [l for l in load_listings() if l["city"] == "nha-trang"]
 
 def stable_unit(seed_str):
     h = hashlib.md5(seed_str.encode("utf-8")).hexdigest()
