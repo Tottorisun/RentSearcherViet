@@ -48,13 +48,34 @@ STATE: posted_to_telegram.json remembers what was already sent, and which
 message ids each listing produced -- the first run of this script posted with
 the wrong photo count and there was no way to find and delete those messages
 afterwards, so the ids are now kept for exactly that situation.
+
+FAILURE HANDLING (audit, 2 Sep 2026). A hub post cannot be un-sent, so every
+uncertain path stops rather than guesses:
+  * state is written after EVERY successful send (tmp + os.replace), never
+    only at the end of the run -- a crash or Ctrl+C no longer re-posts the
+    whole batch next time;
+  * a 4xx from Telegram (bad caption, unknown thread) is read out of the
+    HTTPError body and SKIPS that listing, so one bad row no longer blocks
+    every listing behind it on every run;
+  * 429 sleeps for `retry_after` and retries once;
+  * a timeout / connection reset / 5xx after a send leaves the listing in
+    `suspect`: Telegram may or may not have delivered it. The run stops and
+    the script refuses to post again until you look at the hub and run
+    --suspect-posted <ids> (it is there) or --suspect-clear (it is not);
+  * dynamic caption fields are HTML-escaped (22 descriptions already contain
+    a bare "&"; the first "<" would have been a 400 that blocked the queue);
+  * --repost appends message ids instead of overwriting them, so the old
+    copy stays deletable by cleanup_telegram_posts.py.
 """
 import argparse
+import html
 import json
 import os
 import re
+import socket
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -71,7 +92,7 @@ for _s in (sys.stdout, sys.stderr):
 
 STATE_FILE = "posted_to_telegram.json"
 TOPICS_FILE = "telegram_topics.json"
-BUILT_HTML = "index.html"
+BUILT_HTML = "vietnam-rent-finder.html"   # index.html is a byte-identical copy; read the canonical one
 SITE_URL = "https://tottorisun.github.io/RentSearcherViet/"
 
 # The photo-caption limit is not stated in the Bot API reference, and an
@@ -101,14 +122,44 @@ TOPIC_TITLES = {
 }
 
 
+class BotRefused(Exception):
+    """Telegram answered with a definite refusal (4xx: bad caption, unknown
+    thread, too many photos...). This LISTING is wrong; the run is fine --
+    skip it, report it, carry on. Nothing was delivered."""
+
+
+class DeliveryUnknown(Exception):
+    """The request may or may not have reached Telegram (timeout, reset,
+    5xx). Nothing about this listing can be marked with confidence."""
+
+
 def api(token, method, payload):
     url = "https://api.telegram.org/bot%s/%s" % (token, method)
     data = urllib.parse.urlencode(payload).encode("utf-8")
-    with urllib.request.urlopen(urllib.request.Request(url, data=data), timeout=25) as r:
-        out = json.loads(r.read().decode("utf-8"))
-    if not out.get("ok"):
-        raise RuntimeError("%s: %s" % (method, out.get("description")))
-    return out["result"]
+    for attempt in (1, 2):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, data=data), timeout=25) as r:
+                out = json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            if e.code >= 500:
+                raise DeliveryUnknown("%s: HTTP %s from Telegram" % (method, e.code))
+            # 4xx: the real reason is in the JSON body, not in str(e)
+            try:
+                out = json.loads(e.read().decode("utf-8"))
+            except Exception:
+                out = {"ok": False, "error_code": e.code, "description": str(e)}
+        except (urllib.error.URLError, socket.timeout, TimeoutError, ConnectionError, OSError) as e:
+            raise DeliveryUnknown("%s: %s" % (method, e))
+        if out.get("ok"):
+            return out["result"]
+        if out.get("error_code") == 429 and attempt == 1:
+            # A 429 means the request was NOT processed, so retrying is safe.
+            wait = int((out.get("parameters") or {}).get("retry_after", 5)) + 1
+            print("  rate-limited by Telegram, sleeping %ds" % wait)
+            time.sleep(wait)
+            continue
+        raise BotRefused("%s: %s" % (method, out.get("description")))
+    raise BotRefused("%s: still rate-limited after one retry" % method)
 
 
 def load_topics():
@@ -138,15 +189,23 @@ def topic_key(l):
 
 
 def thread_for(l, topics):
-    """The listing's own topic. There is no catch-all topic to fall back to."""
-    return topics.get(topic_key(l))
+    """The listing's own topic. There is no catch-all topic to fall back to --
+    and no thread id at all would post into the group's General topic, which
+    is the same junk drawer under another name, so that is refused too."""
+    key = topic_key(l)
+    thread = topics.get(key)
+    if not thread:
+        sys.exit("%s has no thread id for %r -- run --setup first; refusing to post "
+                 "into the General topic" % (TOPICS_FILE, key))
+    return thread
 
 
 def load_listings():
     src = open(BUILT_HTML, encoding="utf-8").read()
-    m = re.search(r"var DATA = (\{.*?\});", src, re.S)
+    m = re.search(r"var DATA = (\{.*?\});\s*\n", src, re.S)
     if not m:
-        sys.exit("no DATA in " + BUILT_HTML + " -- run rebuild_final.py first")
+        sys.exit("no DATA in " + BUILT_HTML + " -- run rebuild_final.py first "
+                 "(or another session is rewriting it this second; retry)")
     data = json.loads(m.group(1))
     cities = data["CITIES"]
     out = []
@@ -169,30 +228,33 @@ def fmt_price(v):
     return s.replace(".", ",") + " млн ₫/мес"
 
 
+def esc(s):
+    """Caption goes out as parse_mode=HTML: a bare '<' or '&' in a description
+    is a 400 from Telegram, not text. Escape every dynamic field."""
+    return html.escape(str(s), quote=False)
+
+
 def build_caption(l):
     area = (" · %s м²" % l["area"]) if l.get("area") else ""
     head = [
-        "🏠 <b>%s</b> · %s · %s" % (l["type"], l["_city_ru"], fmt_price(l.get("price"))),
-        "📍 %s%s" % (l["_district"], area),
+        "🏠 <b>%s</b> · %s · %s" % (esc(l["type"]), esc(l["_city_ru"]), fmt_price(l.get("price"))),
+        "📍 %s%s" % (esc(l["_district"]), area),
         "",
     ]
     tail = ['<a href="%s">Открыть объявление</a> · <a href="%s">все объявления</a>'
-            % (l["url"], SITE_URL)]
+            % (html.escape(l["url"], quote=True), SITE_URL)]
     notice = (l.get("details") or {}).get("notice")
-    fixed = len("\n".join(head + tail)) + len(notice or "") + 4
+    notice_lines = ["", "⚠ " + esc(notice)] if notice else []
+    fixed = len("\n".join(head + notice_lines + [""] + tail)) + 1
     room = max(120, CAPTION_BUDGET - fixed)
-    body = [clip(l["desc"], room)]
-    if notice:
-        body += ["", "⚠ " + notice]
-    caption = "\n".join(head + body + [""] + tail)
-    if len(caption) > CAPTION_BUDGET:
-        # The estimate above can still miss; this is the hard stop. An overlong
-        # caption is rejected by Telegram outright, so the post would be lost
-        # rather than shortened.
-        joined = "\n".join(tail)
-        keep = CAPTION_BUDGET - len(joined) - 3     # the "…" plus the two newlines
-        caption = caption[:keep].rstrip() + "…\n\n" + joined
-    return caption
+    # Clip the RAW description, then escape -- never slice escaped text: a cut
+    # through "&amp;" leaves a broken entity and Telegram rejects the caption.
+    # Escaping only ever lengthens the text, so shrinking `room` converges.
+    while True:
+        caption = "\n".join(head + [esc(clip(l["desc"], room))] + notice_lines + [""] + tail)
+        if len(caption) <= CAPTION_BUDGET or room <= 60:
+            return caption
+        room -= 40
 
 
 def clip(text, limit):
@@ -267,6 +329,10 @@ def main():
                     help="skip listings with fewer photos than this (default 3) -- a "
                     "1-2 photo post looks thin in a public feed; the site itself still "
                     "shows these listings regardless, only the hub feed is pickier")
+    ap.add_argument("--suspect-posted", help="comma-separated ids from `suspect` that you "
+                    "SAW in the hub: mark them posted and clear them")
+    ap.add_argument("--suspect-clear", action="store_true",
+                    help="the `suspect` listings are NOT in the hub: clear them so they are sent again")
     args = ap.parse_args()
     token = os.environ.get("TG_BOT_TOKEN")
 
@@ -276,16 +342,47 @@ def main():
         do_setup(token, load_topics())
         return
 
-    listings = load_listings()
-    if args.city:
-        listings = [l for l in listings if l["city"] == args.city]
-
     try:
         state = json.load(open(STATE_FILE, encoding="utf-8"))
     except FileNotFoundError:
         state = {"posted": [], "initialised": False, "message_ids": {}}
+    except json.JSONDecodeError as e:
+        sys.exit("%s is not valid JSON (%s) -- restore it from a .bak copy. Do NOT delete it: "
+                 "that would drop every recorded message id and re-post the whole catalogue."
+                 % (STATE_FILE, e))
     state.setdefault("message_ids", {})
+    state.setdefault("suspect", [])
     posted = set(state.get("posted", []))
+
+    def save_state():
+        state["posted"] = sorted(posted)
+        tmp = STATE_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(state, f, ensure_ascii=False, indent=1)
+        os.replace(tmp, STATE_FILE)
+
+    if args.suspect_posted:
+        ids = {int(x) for x in args.suspect_posted.split(",")}
+        posted.update(ids)
+        state["suspect"] = [s for s in state["suspect"] if s not in ids]
+        save_state()
+        print("marked %d suspect listing(s) as posted (no message ids on record for them); "
+              "%d still suspect" % (len(ids), len(state["suspect"])))
+        return
+    if args.suspect_clear:
+        n = len(state["suspect"])
+        state["suspect"] = []
+        save_state()
+        print("cleared %d suspect listing(s); they are eligible to be sent again" % n)
+        return
+    if state["suspect"]:
+        sys.exit("refusing to post: %d listing(s) have UNKNOWN delivery status: %s\n"
+                 "Look for them in the hub, then run --suspect-posted <ids> for the ones that are "
+                 "there and --suspect-clear for the rest." % (len(state["suspect"]), state["suspect"]))
+
+    listings = load_listings()
+    if args.city:
+        listings = [l for l in listings if l["city"] == args.city]
 
     if args.repost:
         force = {int(x) for x in args.repost.split(",")}
@@ -334,24 +431,47 @@ def main():
         sys.exit("TG_BOT_TOKEN must be set (or use --dry-run)")
     cfg = load_topics()
 
-    sent = 0
+    # Resolve every thread id BEFORE the first send: a missing topic must abort
+    # the run with nothing delivered, not halfway through a batch.
+    threads = {l["id"]: thread_for(l, cfg["topics"]) for l in to_post}
+
+    sent, refused = 0, []
     for l in to_post:
-        thread = thread_for(l, cfg["topics"])
+        lid = l["id"]
         try:
-            msg_ids = send_listing(token, cfg["chat_id"], thread, l)
-            posted.add(l["id"])
-            state["message_ids"][str(l["id"])] = msg_ids
-            sent += 1
-            time.sleep(args.delay)
-        except Exception as e:
-            print("failed on listing %s: %s" % (l["id"], e))
-            break
+            msg_ids = send_listing(token, cfg["chat_id"], threads[lid], l)
+        except BotRefused as e:
+            # Definitely not delivered. Skip THIS listing, keep the run going --
+            # one bad caption must not block every listing behind it forever.
+            print("Telegram refused listing %s (skipped, not marked posted): %s" % (lid, e))
+            refused.append(lid)
+            time.sleep(1)
+            continue
+        except (DeliveryUnknown, KeyboardInterrupt) as e:
+            # Maybe delivered, maybe not. Sending again would risk a duplicate
+            # that cannot be un-sent; marking it posted would risk losing it.
+            # Park it and stop until a human has looked at the hub.
+            state["suspect"].append(lid)
+            save_state()
+            print("STOPPED: listing %s may or may not have reached the hub (%s: %s). It is recorded "
+                  "as SUSPECT; look for it in the hub, then run --suspect-posted %s if it is there "
+                  "or --suspect-clear if it is not. Posted before this: %d."
+                  % (lid, type(e).__name__, e, lid, sent))
+            return
+        posted.add(lid)
+        # append, never overwrite: after --repost the OLD copy must stay deletable
+        state["message_ids"].setdefault(str(lid), []).extend(msg_ids)
+        sent += 1
+        save_state()                    # after every send, never only at the end
+        time.sleep(args.delay)
 
     posted.update(rest)
-    state["posted"] = sorted(posted)
     state["initialised"] = True
-    json.dump(state, open(STATE_FILE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    save_state()
     print("posted %d listing(s); %d ids now marked as seen" % (sent, len(posted)))
+    if refused:
+        print("%d listing(s) refused by Telegram and left unposted (fix the data, they will be "
+              "retried next run): %s" % (len(refused), refused))
 
 
 if __name__ == "__main__":
