@@ -6,7 +6,17 @@ daily_check_logs/
 # be shared or committed: a stale ledger from another machine would hand out
 # ids that are already used here.
 .id_alloc.lock
+.id_alloc.lock.stale.*
 id_reservations.json
+
+# Write lock around rebuild_final.py (listing_lock.py) and the temp file its
+# atomic write goes through -- per-machine runtime state, never committed.
+.listings_write.lock
+.listings_write.lock.stale.*
+rebuild_final.py.tmp*
+posted_dates.json.tmp
+posted_to_telegram.json.tmp
+posted_to_telegram.json.bak-*
 
 # Telegram ingestion / notification working state
 telegram_candidates.json

@@ -86,7 +86,17 @@ def acquire_lock():
             try:
                 age = time.time() - os.path.getmtime(LOCK_FILE)
                 if age > LOCK_STALE_S:
-                    os.unlink(LOCK_FILE)   # previous holder died
+                    # Previous holder died. Only ONE waiter may clear the
+                    # corpse: rename is atomic, so exactly one os.replace wins
+                    # and the losers just loop -- a plain unlink here let two
+                    # waiters both "break" the lock and both hand out the same
+                    # ids (2 Sep 2026 audit).
+                    corpse = "%s.stale.%d" % (LOCK_FILE, os.getpid())
+                    try:
+                        os.replace(LOCK_FILE, corpse)
+                        os.unlink(corpse)
+                    except FileNotFoundError:
+                        pass
                     continue
             except FileNotFoundError:
                 continue                    # holder released between our checks
@@ -136,7 +146,14 @@ def cmd_allocate(args):
         if dropped:
             print("note: ignoring %d reservation(s) older than %.1fh" % (dropped, args.stale_hours))
 
-        floor = max_in_file(args.block)
+        # High-water mark: the highest id EVER handed out in this block, kept
+        # in the ledger. max_in_file() alone rolls backwards whenever the top
+        # rows disappear from rebuild_final.py (git checkout/stash, a purged
+        # duplicate, a lost concurrent write) and would then re-issue numbers
+        # that posted_to_telegram.json / posted_dates.json / users' favourites
+        # already know under another listing (2 Sep 2026 audit).
+        hwm = int(led.setdefault("hwm", {}).get(str(args.block), 0))
+        floor = max(max_in_file(args.block), hwm)
         for r in live:
             if r["block"] == args.block:
                 floor = max(floor, r["last"])
@@ -146,6 +163,7 @@ def cmd_allocate(args):
         live.append({"block": args.block, "first": first, "last": last,
                      "owner": args.owner, "ts": now, "pid": os.getpid()})
         led["reservations"] = live
+        led["hwm"][str(args.block)] = last
         save_ledger(led)
     finally:
         release_lock()
