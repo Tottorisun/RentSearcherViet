@@ -22,19 +22,27 @@ try {
     if (-not $prompt) { throw "Prompt file was empty or unreadable: $promptFile" }
 
     $claudeExe = "$env:USERPROFILE\.local\bin\claude.exe"
-    # Tee-Object on this PowerShell build has no -Encoding parameter -- write log as
-    # PowerShell's default (UTF-16LE) rather than crashing; it's still readable in any
-    # real editor, and streaming live means partial output survives a kill/timeout.
-    $prompt | & $claudeExe -p --permission-mode dontAsk *>&1 | Tee-Object -FilePath $logFile
+    # Stream every line to the console AND append it to the log as UTF-8.
+    # Tee-Object on this PowerShell build has no -Encoding parameter and wrote
+    # UTF-16LE, which `cat`/`grep`/Python-by-default cannot read (2 Sep 2026
+    # audit); Add-Content -Encoding UTF8 keeps the live streaming, so partial
+    # output still survives a kill/timeout.
+    $prompt | & $claudeExe -p --permission-mode dontAsk *>&1 | ForEach-Object {
+        $_
+        Add-Content -LiteralPath $logFile -Value ([string]$_) -Encoding UTF8
+    }
     # A pipeline doesn't throw on its own -- claude.exe can fail (e.g. expired auth)
     # while this script still reaches here and would otherwise report success.
     if ($LASTEXITCODE -ne 0) {
-        "SCRIPT ERROR: claude.exe exited with code $LASTEXITCODE -- see output above (often an auth/session problem, run 'claude auth status' to check)." | Tee-Object -FilePath $logFile -Append
+        $msg = "SCRIPT ERROR: claude.exe exited with code $LASTEXITCODE -- see output above (often an auth/session problem, run 'claude auth status' to check)."
+        $msg; Add-Content -LiteralPath $logFile -Value $msg -Encoding UTF8
         exit 1
     }
 }
 catch {
-    ($_ | Out-String) | Tee-Object -FilePath $logFile -Append
-    "SCRIPT ERROR: $($_.Exception.Message)" | Tee-Object -FilePath $logFile -Append
+    $err = ($_ | Out-String)
+    $err; Add-Content -LiteralPath $logFile -Value $err -Encoding UTF8
+    $msg = "SCRIPT ERROR: $($_.Exception.Message)"
+    $msg; Add-Content -LiteralPath $logFile -Value $msg -Encoding UTF8
     exit 1
 }

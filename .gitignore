@@ -2,6 +2,12 @@ __pycache__/
 *.pyc
 daily_check_logs/
 
+# Per-session scratch files (fetched HTML, candidate JSON, one-off parsers)
+# that daily-check sessions leave in the project root. Convention: anything
+# starting with "_" is scratch and never committed. Nothing tracked starts
+# with "_" (verified 2 Sep 2026).
+_*
+
 # Runtime state for the atomic listing-id allocator -- per-machine, must never
 # be shared or committed: a stale ledger from another machine would hand out
 # ids that are already used here.
