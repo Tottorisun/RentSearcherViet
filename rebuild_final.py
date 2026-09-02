@@ -12327,17 +12327,17 @@ HTML = r"""<meta charset="utf-8">
     return Math.max(BUDGET_MIN, Math.min(BUDGET_MAX, v));
   }
 
-  function setBudgetRange(lo, hi){
+  function setBudgetRange(lo, hi, opts){
     lo = clampBudget(lo); hi = clampBudget(hi);
     if (lo > hi){ var t=lo; lo=hi; hi=t; }
     state.minBudget = (lo <= BUDGET_MIN) ? null : lo;
     state.maxBudget = (hi >= BUDGET_MAX) ? null : hi;
-    syncBudgetUI();
+    syncBudgetUI(opts);
     renderBudgetChips();
     applyFilters();
   }
 
-  function syncBudgetUI(){
+  function syncBudgetUI(opts){
     // The bounds live here, not only in setupBudgetSlider: that runs once at
     // init, so when BUDGET_MAX moves (housing 45M -> commercial 300M) the
     // inputs kept the old ceiling and the wider range was unreachable.
@@ -12345,8 +12345,16 @@ HTML = r"""<meta charset="utf-8">
     el.budgetMinRange.max = el.budgetMaxRange.max = el.budgetMinInput.max = el.budgetMaxInput.max = BUDGET_MAX;
     var lo = state.minBudget===null ? BUDGET_MIN : state.minBudget;
     var hi = state.maxBudget===null ? BUDGET_MAX : state.maxBudget;
-    el.budgetMinInput.value = lo;
-    el.budgetMaxInput.value = hi;
+    // While the user is typing in one of the number fields, leave BOTH text
+    // fields alone: writing the normalised value back on every keystroke made
+    // it impossible to clear a field or type "6" over "45" on a phone (the
+    // empty field snapped straight back to 0 / 45). The fields are
+    // normalised on "change" (blur / Enter) instead. Sliders and the fill
+    // bar still follow every keystroke.
+    if (!(opts && opts.skipInputs)){
+      el.budgetMinInput.value = lo;
+      el.budgetMaxInput.value = hi;
+    }
     el.budgetMinRange.value = lo;
     el.budgetMaxRange.value = hi;
     var pctLo = (lo - BUDGET_MIN) / (BUDGET_MAX - BUDGET_MIN) * 100;
@@ -12375,16 +12383,29 @@ HTML = r"""<meta charset="utf-8">
       state.maxBudget = (hi >= BUDGET_MAX) ? null : hi;
       syncBudgetUI(); renderBudgetChips(); applyFilters();
     });
+    // Typed budget: read what is in the field, never write into it mid-edit.
+    // An empty or half-typed field means "no bound for now"; the value is
+    // only clamped/ordered in state, and the field itself is tidied on
+    // "change" (blur or Enter). Without this, phones could not delete a digit.
+    function typedBudget(inp, fallback){
+      var raw = inp.value.trim().replace(",", ".");
+      if (raw === "" || raw === "." || raw === "-") return fallback;
+      var v = parseFloat(raw);
+      return isNaN(v) ? fallback : v;
+    }
     el.budgetMinInput.addEventListener("input", function(){
-      var v = parseFloat(el.budgetMinInput.value.replace(",", "."));
       var hi = state.maxBudget===null ? BUDGET_MAX : state.maxBudget;
-      setBudgetRange(isNaN(v) ? BUDGET_MIN : v, hi);
+      var lo = Math.min(typedBudget(el.budgetMinInput, BUDGET_MIN), hi);
+      setBudgetRange(lo, hi, {skipInputs:true});
     });
     el.budgetMaxInput.addEventListener("input", function(){
-      var v = parseFloat(el.budgetMaxInput.value.replace(",", "."));
       var lo = state.minBudget===null ? BUDGET_MIN : state.minBudget;
-      setBudgetRange(lo, isNaN(v) ? BUDGET_MAX : v);
+      var hi = Math.max(typedBudget(el.budgetMaxInput, BUDGET_MAX), lo);
+      setBudgetRange(lo, hi, {skipInputs:true});
     });
+    // Leaving the field (or pressing Enter) writes the normalised value back.
+    el.budgetMinInput.addEventListener("change", function(){ syncBudgetUI(); });
+    el.budgetMaxInput.addEventListener("change", function(){ syncBudgetUI(); });
     syncBudgetUI();
   }
 
