@@ -191,6 +191,13 @@
   .pt-desc{color:var(--ink);}
   .pt-hint{display:block;margin-top:6px;color:var(--accent);font-size:0.74rem;font-weight:600;text-decoration:none;}
   .pt-hint:hover{text-decoration:underline;}
+  /* The only way from a map card to the source: a real button-sized target,
+     because on a phone the card is read first and tapped second. */
+  .pt-view{display:block;margin-top:8px;padding:9px 12px;border-radius:8px;background:var(--accent);color:#fff;
+    font-size:0.82rem;font-weight:700;text-align:center;text-decoration:none;letter-spacing:.01em;min-height:36px;line-height:18px;}
+  .pt-view:hover{filter:brightness(1.08);text-decoration:none;}
+  .pt-view:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+  .leaflet-container a.leaflet-popup-close-button{width:28px;height:28px;font-size:20px;line-height:28px;color:var(--ink-dim);}
   .pt-approx{margin-top:4px;color:var(--ink-faint);font-size:0.7rem;font-style:italic;}
 
   .map-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:0.78rem;color:var(--ink-dim);}
@@ -556,6 +563,7 @@
       any:"Любой", all:"Все", upTo:"до", soon:"· скоро",
       priceOnRequest:"цена по запросу", perMonth:"₫ / мес", wasPrice:"было",
       openListing:"Открыть объявление →", alsoOn:"Также встречается на:",
+      popupView:"Посмотреть →",
       detailsToggle:"Подробнее (депозит, коммуналка, удобства)",
       approxPos:"📍 положение на карте приблизительное",
       addFav:"В избранное",
@@ -602,6 +610,7 @@
       any:"Any", all:"All", upTo:"up to", soon:"· soon",
       priceOnRequest:"price on request", perMonth:"₫ / month", wasPrice:"was",
       openListing:"Open listing →", alsoOn:"Also listed on:",
+      popupView:"View listing →",
       detailsToggle:"More details (deposit, utilities, amenities)",
       approxPos:"📍 approximate position on the map",
       addFav:"Add to favourites",
@@ -1006,7 +1015,7 @@
       '<div class="pt-meta">' + typeName(l.type) + ' · ' + d.name + (l.area ? (" · " + l.area + " " + t("m2")) : "") + '</div>' +
       '<div class="pt-desc">' + desc + '</div>' +
       '<div class="pt-approx">' + t("approxPos") + '</div>' +
-      '<a class="pt-hint" href="' + l.url + '" target="_blank" rel="noopener">' + t("openListing") + '</a>';
+      '<a class="pt-view" href="' + l.url + '" target="_blank" rel="noopener">' + t("popupView") + '</a>';
   }
 
   // Listings that share one coordinate -- every ward-centroid fallback in a
@@ -1042,17 +1051,31 @@
     if (!leafletReady) return;
     markerLayerGroup.clearLayers();
     var pos = spreadStackedPins(list);
+    // Fingers are wider than cursors: a 7px dot is hard to hit on a phone.
+    var coarsePointer = !!(window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
+    var baseRadius = coarsePointer ? 9 : 7;
     list.forEach(function(l){
       if (typeof l.lat !== "number" || typeof l.lon !== "number") return;
       var marker = L.circleMarker(pos[l.id] || [l.lat, l.lon], {
-        radius: 7, weight: 1.6, color: "var(--surface)",
+        radius: baseRadius, weight: 1.6, color: "var(--surface)",
         fillColor: "#1E7A4C", fillOpacity: 0.9
       });
-      marker.bindPopup(popupHtml(l), {closeButton:false, maxWidth:240});
-      var openListing = function(){ window.open(l.url, "_blank", "noopener"); };
-      marker.on("mouseover", function(){ marker.openPopup(); marker.setStyle({radius:10}); });
-      marker.on("mouseout", function(){ marker.closePopup(); marker.setStyle({radius:7}); });
-      marker.on("click", openListing);
+      // A tap/click never navigates away: it opens the card and PINS it, so
+      // the person can read it; the card's own "Посмотреть" link is the only
+      // way to the source. (Before: click = window.open, which on a phone
+      // meant every tap on a dot threw you out of the site with no chance to
+      // see what it was.) Hover still previews on mouse devices; on touch
+      // there is no hover, and emulated mouseout must not close a pinned card
+      // before the link inside it can be tapped.
+      marker.bindPopup(popupHtml(l), {closeButton:true, maxWidth:240, autoPanPadding:[24,24]});
+      marker.off("click");                       // drop Leaflet's open/close toggle
+      var pinned = false;
+      marker.on("click", function(){ pinned = true; marker.openPopup(); marker.setStyle({radius:10}); });
+      marker.on("popupclose", function(){ pinned = false; marker.setStyle({radius: baseRadius}); });
+      if (!coarsePointer){
+        marker.on("mouseover", function(){ if (!pinned) marker.openPopup(); marker.setStyle({radius:10}); });
+        marker.on("mouseout", function(){ if (!pinned){ marker.closePopup(); marker.setStyle({radius: baseRadius}); } });
+      }
       marker.addTo(markerLayerGroup);
     });
   }
