@@ -11020,5 +11020,53 @@
   "lon": 106.7206046,
   "source": "geocode",
   "matched": "Thanh Đa"
+ },
+ "1000308": {
+  "lat": 10.7361701,
+  "lon": 106.7119498,
+  "source": "geocode",
+  "matched": "Đường Số 38"
+ },
+ "1000309": {
+  "lat": 10.7346766,
+  "lon": 106.7180522,
+  "source": "geocode",
+  "matched": "Nguyễn Lương Bằng"
+ },
+ "1000310": {
+  "lat": 10.799767,
+  "lon": 106.7753638,
+  "source": "geocode",
+  "matched": "The Global City"
+ },
+ "1000311": {
+  "lat": 10.7822906,
+  "lon": 106.7602323,
+  "source": "geocode",
+  "matched": "Bình Trưng Tây"
+ },
+ "1000312": {
+  "lat": 10.737953,
+  "lon": 106.7235888,
+  "source": "geocode",
+  "matched": "Nguyễn Thị Thập"
+ },
+ "1000313": {
+  "lat": 10.7768914,
+  "lon": 106.7068627,
+  "source": "geocode",
+  "matched": "Tôn Đức Thắng"
+ },
+ "1000314": {
+  "lat": 10.7822906,
+  "lon": 106.7602323,
+  "source": "geocode",
+  "matched": "Bình Trưng Tây"
+ },
+ "1000315": {
+  "lat": 10.7936359,
+  "lon": 106.7724465,
+  "source": "geocode",
+  "matched": "Lakeview City"
  }
 }
