@@ -1,4 +1,4 @@
-﻿param(
+param(
     [string]$PromptFile = "daily_hcmc_check_prompt.txt",
     [string]$LogPrefix = "hcmc"
 )
@@ -29,35 +29,7 @@ function Send-OwnerAlert {
     param([string]$Text)
     try {
         $say = 'D:\Мои разработки\AI_CONTEXT\TASKS\gelios_say.py'
-        if (-not (Test-Path -LiteralPath $say)) { "Оповещение пропущено: нет $say"; return }
-
-        # Не повторять одну и ту же беду. Проверка идёт в 15:00, 18:00 и 21:00;
-        # при просроченном входе владелец получил бы три одинаковых сообщения за
-        # вечер. Он и так просил убрать лишний шум — а шум делает и настоящие
-        # оповещения незаметными.
-        $memo = Join-Path $logDir ".last_alert.json"
-        $key  = $Text.Substring(0, [Math]::Min(70, $Text.Length))
-        if (Test-Path -LiteralPath $memo) {
-            $prev = Get-Content -LiteralPath $memo -Raw | ConvertFrom-Json
-            $age  = (Get-Date) - [DateTime]::Parse($prev.at)
-            if ($prev.key -eq $key -and $age.TotalHours -lt 6) {
-                $skip = "Оповещение пропущено: то же самое сообщали $([int]$age.TotalMinutes) мин назад"
-                $skip; Add-Content -LiteralPath $script:logFile -Value $skip -Encoding UTF8
-                return
-            }
-        }
-        # Итог отправки пишем в лог: раньше он уходил в Out-Null, и было не
-        # отличить доставленное оповещение от проглоченного.
-        $res = & python $say $Text
-        $line = "Оповещение владельцу: $res"
-        $line; Add-Content -LiteralPath $script:logFile -Value $line -Encoding UTF8
-        # Отметку «уже сообщали» ставим ТОЛЬКО после подтверждённой доставки.
-        # Если поставить её заранее, сорвавшаяся отправка заткнула бы канал на
-        # шесть часов — сбой прятал бы сам себя.
-        if ($res -match 'отправлено') {
-            @{ key = $key; at = (Get-Date).ToString('o') } | ConvertTo-Json |
-                Set-Content -LiteralPath $memo -Encoding UTF8
-        }
+        if (Test-Path -LiteralPath $say) { & python $say $Text | Out-Null }
     } catch { "Оповестить владельца не удалось: $($_.Exception.Message)" }
 }
 
