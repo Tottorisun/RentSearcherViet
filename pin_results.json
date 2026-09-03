@@ -5477,12 +5477,6 @@
   "source": "geocode",
   "matched": "Bến Vân Đồn"
  },
- "2123": {
-  "lat": 10.7629917,
-  "lon": 106.7043593,
-  "source": "geocode",
-  "matched": "Đoàn Văn Bơ"
- },
  "2124": {
   "lat": 10.7252344,
   "lon": 106.7289984,
@@ -5969,12 +5963,6 @@
   "source": "geocode",
   "matched": "Lý Tự Trọng"
  },
- "1000010": {
-  "lat": 10.7699795,
-  "lon": 106.6966136,
-  "source": "geocode",
-  "matched": "Phạm Ngũ Lão"
- },
  "1000011": {
   "lat": 10.7699795,
   "lon": 106.6966136,
@@ -6245,12 +6233,6 @@
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
  },
- "1000056": {
-  "lat": 10.7512819,
-  "lon": 106.6915513,
-  "source": "geocode",
-  "matched": "Trần Xuân Soạn"
- },
  "1000057": {
   "lat": 10.7258082,
   "lon": 106.7238126,
@@ -6263,23 +6245,11 @@
   "source": "geocode",
   "matched": "Lê Văn Lương"
  },
- "1000059": {
-  "lat": 10.7498009,
-  "lon": 106.7064006,
-  "source": "geocode",
-  "matched": "Hẻm 95 Lê Văn Lương"
- },
  "1000060": {
   "lat": 10.7768914,
   "lon": 106.7068627,
   "source": "geocode",
   "matched": "Tôn Đức Thắng"
- },
- "1000061": {
-  "lat": 10.8386837,
-  "lon": 106.6707729,
-  "source": "geocode",
-  "matched": "Lotte Mart"
  },
  "1000062": {
   "lat": 10.7512819,
@@ -6586,12 +6556,6 @@
   "lon": 106.7107407,
   "source": "geocode",
   "matched": "Số 85"
- },
- "1000114": {
-  "lat": 10.7405653,
-  "lon": 106.704148,
-  "source": "geocode",
-  "matched": "Hoàng Anh Gia Lai 1"
  },
  "1000115": {
   "lat": 10.7293742,
@@ -6928,12 +6892,6 @@
   "lon": 105.797779,
   "source": "geocode",
   "matched": "Nguyễn Văn Huyên"
- },
- "2000042": {
-  "lat": 21.043209,
-  "lon": 105.7669511,
-  "source": "geocode",
-  "matched": "Goldmark City"
  },
  "2000043": {
   "lat": 20.9741008,
@@ -10316,6 +10274,102 @@
  "1000333": {
   "lat": 10.783371,
   "lon": 106.76655,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000334": {
+  "lat": 10.741573,
+  "lon": 106.71589,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000335": {
+  "lat": 10.72619,
+  "lon": 106.7246,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000336": {
+  "lat": 10.70494,
+  "lon": 106.73567,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000337": {
+  "lat": 10.725961,
+  "lon": 106.73389,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000338": {
+  "lat": 10.742761,
+  "lon": 106.69596,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000339": {
+  "lat": 10.738486,
+  "lon": 106.71468,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000340": {
+  "lat": 10.704245,
+  "lon": 106.72961,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000341": {
+  "lat": 10.805703,
+  "lon": 106.73027,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000342": {
+  "lat": 10.816065,
+  "lon": 106.71914,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000343": {
+  "lat": 10.768804,
+  "lon": 106.68975,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000344": {
+  "lat": 10.765885,
+  "lon": 106.69081,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000345": {
+  "lat": 10.768918,
+  "lon": 106.69939,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000346": {
+  "lat": 10.766877,
+  "lon": 106.69094,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000347": {
+  "lat": 10.771003,
+  "lon": 106.700966,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000348": {
+  "lat": 10.759857,
+  "lon": 106.700615,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000349": {
+  "lat": 10.76365,
+  "lon": 106.69964,
   "source": "chotot",
   "matched": null
  }
