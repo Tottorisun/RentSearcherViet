@@ -30,3 +30,6 @@ posted_to_telegram.json.bak-*
 telegram_candidates.json
 posted_to_telegram.json
 telegram_topics.json
+
+# Ad-hoc backups of scripts (run_daily_check.ps1.bak-..., etc) stay local.
+*.bak-*
