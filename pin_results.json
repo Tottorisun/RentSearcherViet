@@ -7097,12 +7097,6 @@
   "source": "geocode",
   "matched": "Nguyễn Ngọc Vũ"
  },
- "2000078": {
-  "lat": 20.9989517,
-  "lon": 105.8419887,
-  "source": "geocode",
-  "matched": "Phố Vọng"
- },
  "2000079": {
   "lat": 20.9613222,
   "lon": 105.827299,
@@ -7637,12 +7631,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "2000168": {
-  "lat": 11.0091878,
-  "lon": 106.6695268,
-  "source": "geocode",
-  "matched": "Mỹ Phước"
- },
  "2000169": {
   "lat": 10.980862,
   "lon": 106.653742,
@@ -7895,12 +7883,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "2000211": {
-  "lat": 10.9035086,
-  "lon": 106.8506403,
-  "source": "geocode",
-  "matched": "Tân Long"
- },
  "2000212": {
   "lat": 10.9751287,
   "lon": 106.6761338,
@@ -7925,12 +7907,6 @@
   "source": "geocode",
   "matched": "Phạm Ngọc Thạch"
  },
- "2000218": {
-  "lat": 11.0714901,
-  "lon": 106.6801111,
-  "source": "geocode",
-  "matched": "Midori Park"
- },
  "2000219": {
   "lat": 11.151419,
   "lon": 106.598692,
@@ -7948,12 +7924,6 @@
   "lon": 106.598692,
   "source": "ward-centroid",
   "matched": null
- },
- "2000222": {
-  "lat": 10.9314701,
-  "lon": 106.8675973,
-  "source": "geocode",
-  "matched": "Hiệp Thành 3"
  },
  "2000223": {
   "lat": 10.980862,
@@ -8135,12 +8105,6 @@
   "source": "geocode",
   "matched": "Đồng An 3"
  },
- "2000253": {
-  "lat": 10.908048,
-  "lon": 106.758987,
-  "source": "ward-centroid",
-  "matched": null
- },
  "2000254": {
   "lat": 11.0552268,
   "lon": 106.7209925,
@@ -8153,23 +8117,11 @@
   "source": "geocode",
   "matched": "An Phú"
  },
- "2000256": {
-  "lat": 11.1035205,
-  "lon": 106.6769626,
-  "source": "geocode",
-  "matched": "Đồng An 3"
- },
  "2000257": {
   "lat": 10.9355293,
   "lon": 106.7372572,
   "source": "geocode",
   "matched": "Bình Hòa"
- },
- "2000258": {
-  "lat": 10.946401,
-  "lon": 106.691568,
-  "source": "ward-centroid",
-  "matched": null
  },
  "2000259": {
   "lat": 10.908048,
@@ -8183,12 +8135,6 @@
   "source": "geocode",
   "matched": "Bình Đức 2"
  },
- "2000261": {
-  "lat": 11.1035205,
-  "lon": 106.6769626,
-  "source": "geocode",
-  "matched": "Đồng An 3"
- },
  "2000262": {
   "lat": 10.9355293,
   "lon": 106.7372572,
@@ -8201,12 +8147,6 @@
   "source": "geocode",
   "matched": "Thuận Giao"
  },
- "2000264": {
-  "lat": 10.9817525,
-  "lon": 106.6496998,
-  "source": "geocode",
-  "matched": "Bình Dương"
- },
  "2000266": {
   "lat": 10.8284791,
   "lon": 106.7030312,
@@ -8218,36 +8158,6 @@
   "lon": 106.6862625,
   "source": "geocode",
   "matched": "Nguyễn Văn Thành"
- },
- "2000268": {
-  "lat": 10.9355293,
-  "lon": 106.7372572,
-  "source": "geocode",
-  "matched": "Bình Đáng"
- },
- "2000269": {
-  "lat": 11.0552268,
-  "lon": 106.7209925,
-  "source": "geocode",
-  "matched": "Nguyễn Tri Phương"
- },
- "2000270": {
-  "lat": 10.898669,
-  "lon": 106.810076,
-  "source": "geocode",
-  "matched": "Đông Hòa"
- },
- "2000271": {
-  "lat": 11.0552268,
-  "lon": 106.7209925,
-  "source": "geocode",
-  "matched": "Nguyễn Tri Phương"
- },
- "2000272": {
-  "lat": 10.8426087,
-  "lon": 106.8424918,
-  "source": "geocode",
-  "matched": "Vincom Dĩ An"
  },
  "2000273": {
   "lat": 10.9355293,
@@ -8368,12 +8278,6 @@
   "lon": 106.687527,
   "source": "geocode",
   "matched": "World Trade Center"
- },
- "2000296": {
-  "lat": 10.9817525,
-  "lon": 106.6496998,
-  "source": "geocode",
-  "matched": "Bình Dương"
  },
  "2000297": {
   "lat": 10.9355293,
@@ -8573,12 +8477,6 @@
   "source": "geocode",
   "matched": "Thảo Điền"
  },
- "1000164": {
-  "lat": 10.8111809,
-  "lon": 106.7033938,
-  "source": "geocode",
-  "matched": "Bình Thạnh"
- },
  "1000165": {
   "lat": 10.7706758,
   "lon": 106.6892542,
@@ -8639,12 +8537,6 @@
   "source": "geocode",
   "matched": "Hòa Cường Nam"
  },
- "2000329": {
-  "lat": 16.0907229,
-  "lon": 108.2197635,
-  "source": "geocode",
-  "matched": "Như Nguyệt"
- },
  "2000330": {
   "lat": 15.9903652,
   "lon": 108.2670651,
@@ -8674,12 +8566,6 @@
   "lon": 108.1509512,
   "source": "geocode",
   "matched": "Nguyễn Chánh"
- },
- "2000335": {
-  "lat": 16.0106526,
-  "lon": 108.1944816,
-  "source": "geocode",
-  "matched": "Hòa Thọ Đông"
  },
  "2000338": {
   "lat": 16.0537199,
@@ -10370,6 +10256,120 @@
  "1000349": {
   "lat": 10.76365,
   "lon": 106.69964,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000350": {
+  "lat": 10.731839,
+  "lon": 106.70283,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000351": {
+  "lat": 10.745482,
+  "lon": 106.70796,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000352": {
+  "lat": 10.738719,
+  "lon": 106.6955,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000353": {
+  "lat": 10.736471,
+  "lon": 106.720184,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000354": {
+  "lat": 10.705523,
+  "lon": 106.72794,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000355": {
+  "lat": 10.744369,
+  "lon": 106.710045,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000356": {
+  "lat": 10.747524,
+  "lon": 106.714455,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000357": {
+  "lat": 10.8158865,
+  "lon": 106.72764,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000358": {
+  "lat": 10.72905,
+  "lon": 106.70349,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000359": {
+  "lat": 10.74998,
+  "lon": 106.7097,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000360": {
+  "lat": 10.750704,
+  "lon": 106.6917,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000361": {
+  "lat": 10.811689,
+  "lon": 106.72903,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000362": {
+  "lat": 10.707197,
+  "lon": 106.73208,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000363": {
+  "lat": 10.80195,
+  "lon": 106.75376,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000364": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000365": {
+  "lat": 10.789331,
+  "lon": 106.753426,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000366": {
+  "lat": 10.78871,
+  "lon": 106.77778,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000367": {
+  "lat": 10.7485075,
+  "lon": 106.704834,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000368": {
+  "lat": 10.738719,
+  "lon": 106.6955,
   "source": "chotot",
   "matched": null
  }
