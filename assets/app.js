@@ -106,7 +106,7 @@
       m2:"м²", thousandPerM2:"тыс ₫/м²", mlnShort:"млн", metres:"м", km:"км",
       detailLabels:{deposit:"Депозит", electricity:"Электричество", water:"Вода", internet:"Интернет/wifi",
         managementFee:"Управление", amenities:"Удобства", policy:"Правила", contract:"Договор", notice:"Важно"},
-      stamp:"Данные актуальны на 2 сентября 2026 · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
+      stamp:"Данные актуальны на 3 сентября 2026 · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
     },
     en: {
       h1Title:"Rental housing in Vietnam",
@@ -153,7 +153,7 @@
       m2:"m²", thousandPerM2:"k ₫/m²", mlnShort:"mln", metres:"m", km:"km",
       detailLabels:{deposit:"Deposit", electricity:"Electricity", water:"Water", internet:"Internet/wifi",
         managementFee:"Management fee", amenities:"Amenities", policy:"House rules", contract:"Contract", notice:"Important"},
-      stamp:"Data current as of 2 September 2026 · listings older than 14 days are excluded · always confirm price and availability via the original listing before calling the owner."
+      stamp:"Data current as of 3 September 2026 · listings older than 14 days are excluded · always confirm price and availability via the original listing before calling the owner."
     }
   };
 
