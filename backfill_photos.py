@@ -153,11 +153,15 @@ def main():
             new_list = "[" + ", ".join(json.dumps(u, ensure_ascii=False) for u in imgs) + "]"
             if details is None:
                 # No details= at all (common among the 0-photo rows): add one,
-                # just before the call's closing paren. Keyword order is free.
-                at = _off(src, call.end_lineno, call.end_col_offset) - 1
-                if src[at] != ")":
-                    skipped.append((lid, "could not locate the call's closing paren"))
-                    continue
+                # right after the LAST argument -- not before the closing paren.
+                # Some rows put that paren on its own line after a trailing
+                # comma, so inserting ",\n details=..." there produced ",\n,"
+                # and the rewrite failed to parse (caught by the guard below,
+                # nothing was written, 3 Sep 2026). Appending after the last
+                # argument is valid whether or not a trailing comma follows.
+                ends = list(call.args) + [k.value for k in call.keywords]
+                last = max(ends, key=lambda n: (n.end_lineno, n.end_col_offset))
+                at = _off(src, last.end_lineno, last.end_col_offset)
                 edits.append((at, at, ',\n  details={"photos": ' + new_list + "}"))
                 continue
             if not isinstance(details, ast.Dict):
