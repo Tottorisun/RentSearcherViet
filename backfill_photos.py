@@ -15,10 +15,12 @@ write lock, located through ast (never a regex over the whole file), with
 the result re-parsed and every touched row's photo list read back before
 anything is written.
 
-CAP is 8, not "all": the URLs are ~150 bytes each and they live in the
-page's inline JSON, so the difference between 3 and 8 photos across the
-base is a few hundred KB gzipped, while 12 would be over a megabyte for
-a gallery nobody scrolls to the end of.
+CAP is 6, not "all": the URLs live in the page's inline JSON, so photos
+cost page weight even before a single image is fetched. Measured 3 Sep
+2026 on 1 800 listings: going 3 -> 6 adds ~0.7 MB raw across the base
+(+418 KB on the largest per-city page), which the URL compaction in
+rebuild_final.py/site_data.py roughly cancels out; 8 would be +1.2 MB and
+12 well over two, for photos most people never scroll to.
 
   python backfill_photos.py --dry-run          # report only
   python backfill_photos.py --limit 300        # default: 300 least-recently-tried rows
@@ -34,7 +36,7 @@ from site_data import load_listings
 from listing_lock import listings_write_lock, write_source_atomic, find_blocks, SOURCE
 import check_freshness as cf
 
-CAP = 8
+CAP = 6
 CACHE_FILE = "photos_backfill_cache.json"
 
 args = sys.argv[1:]

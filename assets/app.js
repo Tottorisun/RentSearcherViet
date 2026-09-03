@@ -17,6 +17,21 @@
   if (typeof window.PAGE_DATA !== "undefined") DATA = window.PAGE_DATA;
   var PAGE = window.PAGE || null;
   var COUNTS = DATA.COUNTS || null;
+  // Photo URLs arrive with their common prefix folded away (see the compaction
+  // note in rebuild_final.py). Expand once, here, so every later use -- the
+  // card strip, the lightbox, the map popup -- just reads l.details.photos.
+  (function expandPhotos(){
+    var CDN = "https://cdn.chotot.com/", MID = "/preset:view/plain/";
+    (DATA.LISTINGS || []).forEach(function(l){
+      var d = l.details;
+      if (!d || !d.photos) return;
+      d.photos = d.photos.map(function(u){
+        if (u.charAt(0) !== "~") return u;
+        var i = u.indexOf("/");
+        return CDN + u.slice(1, i) + MID + u.slice(i + 1);
+      });
+    });
+  })();
   var CITIES = DATA.CITIES;
   var SOURCES = DATA.SOURCES;
   var LISTINGS = DATA.LISTINGS;

@@ -24,11 +24,11 @@ _DATA_RE = re.compile(r"var DATA = (\{.*?\});\s*\n", re.S)
 # Photo URLs are stored compactly in the built pages: 5 448 of the 5 771 Chợ
 # Tốt URLs are exactly "https://cdn.chotot.com/<token>/preset:view/plain/<tail>",
 # i.e. 42 bytes of identical boilerplate each, which the page would otherwise
-# carry ~13 000 times. rebuild_final.py writes them as "\x01<token>/<tail>"
-# and the page expands them in JS; this does the same for every Python
-# consumer, so nothing outside these two places ever sees the short form.
+# carry ~9 000 times. rebuild_final.py writes them as "~<token>/<tail>" and
+# the page expands them in JS; this does the same for every Python consumer,
+# so nothing outside those two places ever sees the short form.
 PHOTO_PREFIXES = {
-    "\x01": ("https://cdn.chotot.com/", "/preset:view/plain/"),
+    "~": ("https://cdn.chotot.com/", "/preset:view/plain/"),
 }
 
 
