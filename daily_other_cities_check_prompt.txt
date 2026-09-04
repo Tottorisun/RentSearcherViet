@@ -8,7 +8,14 @@ Vietnam merged/renamed provinces and wards in mid-2025 (63→34 provinces, distr
 - Batdongsan.com.vn has MOVED TO THE NEW (post-2025) structure -- its URL slugs (tinh-X/tp-X for province, phuong-X for ward) use the current merged provinces and renamed wards.
 This means for a given city, the ward names you filter by on Chợ Tốt and the ward names in Batdongsan URLs will often NOT match each other, and neither will always match this project's own district `key`/`name` list below (which mostly uses the new 2025 names, since that's the current reality on the ground). This is NOT a bug or a sign you have the wrong code -- it's a real source discrepancy. When it happens: use Chợ Tốt's old-structure code to fetch by CITY (area_v2), skip trying to force exact ward-level Chợ Tốt filters where no clean mapping exists, and instead read each ad's actual address/description text to decide which of this project's district keys (below) it belongs to -- exactly like every existing new_listingsNN.py batch file already does. Ward-level Chợ Tốt codes are given below where they were verified; treat them as a nice-to-have narrowing filter, not a requirement.
 
-THE 7 CITIES (city key -> project districts -> source access):
+EVERY CITY THIS CHECK OWNS -- all ten (city key -> project districts -> source access).
+The site has eleven cities; Ho Chi Minh City is the other prompt's, and every one of the
+remaining ten belongs to this one. Numbered 1-7 below, then Hanoi, Phú Quốc and Bình Dương
+in their own sections further down. Do not treat the numbered list as the whole job: this
+heading used to read "THE 7 CITIES", and Hanoi -- the site's third-largest city -- sat
+outside both prompts until 4 Sep 2026 because nobody re-read the heading when it was added.
+Whenever a city is added to CITIES in rebuild_final.py, add it here (or to the HCMC prompt)
+in the same change.
 
 1. NHA TRANG (nha-trang) -- Khánh Hòa province
    Districts: vh=Vĩnh Hải, vp=Vĩnh Phước, vt2=Vạn Thạnh, ps=Phương Sài, nh=Ngọc Hiệp, ph=Phước Hải, lt=Lộc Thọ, ph2=Phước Hòa, tl=Tân Lập, pl=Phước Long, vt=Vĩnh Trường, vn=Vĩnh Nguyên
@@ -61,6 +68,20 @@ SOURCE ACCESS -- general mechanics (same across all cities):
 If a source is fully inaccessible today, say so plainly in your final report rather than skipping it silently or inventing data.
 
 RE-PUSH DATE TRAP (important, easy to get wrong): both Chợ Tốt and Batdongsan let sellers "re-push" (đẩy tin) old ads, which resets the *displayed* date without it being a new listing. For Chợ Tốt, always compute daysAgo from `orig_list_time`, never `list_time` (list_time is the bumped/re-pushed time). Batdongsan publishes no original date at all, so for it: only accept ads whose product ID (`-prNNNNNNNN` in the URL) is in the current-day range, confirm the price twice (search-results card AND the detail page, where the field is labeled `Khoảng giá`, not `Mức giá`), and record in the listing's details notice that the date shown is just the site's own relative stamp, not a verified post date.
+
+HANOI (city key `ha-noi`, on the site since the start -- was MISSING from this prompt until 4 Sep 2026, check it every run):
+- How the gap happened, so it is not repeated: this file opened with "THE 7 CITIES" and the HCMC prompt covers only Ho Chi Minh City, so Hanoi -- 123 listings, the site's third-largest city -- belonged to neither daily check. Everything it had arrived through one-off sessions. If a city exists in `CITIES` in rebuild_final.py, it must appear in one of the two prompts; compare the two lists whenever a city is added.
+- Chợ Tốt address: `region_v2=12000` (Hà Nội). Confirmed live 4 Sep 2026 for `cg=1010` (căn hộ chung cư), `cg=1020` (nhà đất) and `cg=1050` (phòng trọ); one sweep of the three categories, 300 ads deep each, returned 660 ads and 87 that were fresh (<=14 days) and not yet on the site.
+- Chợ Tốt is on the PRE-2025 district map here too, which is exactly what this project's 12 Hanoi districts are, so `area_name` maps straight onto the district key -- no ward guesswork. Strip the `Quận `/`Huyện ` prefix and match:
+    Tây Hồ=78 -> tyh    Ba Đình=74 -> bd     Hoàn Kiếm=73 -> hkm    Cầu Giấy=79 -> cg
+    Nam Từ Liêm=121 -> ntl   Đống Đa=75 -> dd    Hai Bà Trưng=76 -> hbt   Long Biên=81 -> lbn
+    Thanh Xuân=77 -> tx   Hoàng Mai=80 -> hm    Bắc Từ Liêm=129 -> btl   Hà Đông=86 -> hd
+  Those area codes are the values of the ad's `area` field (the `area_v2` field is the same number prefixed with the region, e.g. 12074 for Ba Đình). Anything OUTSIDE these 12 -- Gia Lâm, Đông Anh, Thanh Trì, Hoài Đức, Sóc Sơn and the rest of the outer huyện -- is NOT on the site and must be dropped, not "corrected" into the nearest district.
+- `ward_name_v3` carries POST-2025 ward names and will contradict the district: Hồng Hà ward, for instance, appears on ads whose district is Tây Hồ AND on ads whose district is Hoàn Kiếm, because the reformed ward spans the old boundary. The `area`/`area_name` field is the one to trust for the district key; use `ward_name_v3` only as street-level colour in the description.
+- Listing URL shape (matches the links already on the site): `https://www.nhatot.com/{thue-can-ho-chung-cu|thue-nha-dat|thue-phong-tro|thue-van-phong-mat-bang-kinh-doanh}-quan-{tay-ho|ba-dinh|hoan-kiem|cau-giay|nam-tu-liem|dong-da|hai-ba-trung|long-bien|thanh-xuan|hoang-mai|bac-tu-liem|ha-dong}-ha-noi/{list_id}.htm`.
+- Batdongsan: Hanoi did not merge into anything in 2025, but its districts were dissolved into wards, so the district-level URLs no longer exist -- use the ward-level form `https://batdongsan.com.vn/nha-dat-cho-thue-phuong-{ward}-ha-noi` with a post-2025 ward name, not a pre-2025 district name.
+- Where the supply is: the 4 Sep sweep found fresh ads concentrated in Tây Hồ (17), Nam Từ Liêm, Cầu Giấy and Đống Đa (11 each) and Hoàng Mai (10); Hoàn Kiếm and Bắc Từ Liêm were thinnest (2 each). Tây Hồ is the main expat district and deserves the closest look even though the site already lists it.
+- Commercial: the `thue-van-phong-mat-bang-kinh-doanh` category (`cg=1030`) is well represented on the site for Hanoi already (24 offices, 16 retail, 4 warehouse) and was NOT swept on 4 Sep -- start there next run.
 
 PHÚ QUỐC (city key `phu-quoc`, added 1 Sep 2026, currently EMPTY -- fill it):
 - Chợ Tốt address: `region_v2=5031` (region 5 Cần Thơ - Tây Nam Bộ, area 31 Kiên Giang). This code covers the WHOLE former Kiên Giang province, not just the island -- filter results to `area_name == "Thành phố Phú Quốc"` (Chợ Tốt's old-map field) or `ward_name_v3 == "Đặc khu Phú Quốc"` (the new-map field) before treating an ad as belonging here.
