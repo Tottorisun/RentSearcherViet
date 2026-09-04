@@ -106,6 +106,10 @@ COMMERCIAL = {"Офис", "Торговая площадь", "Склад"}
 # catch-all "other cities" topic any more (removed 2 Sep 2026 at the owner's
 # request: it read as a junk drawer). A city missing from TOPIC_TITLES is a
 # bug -- topic_key() below raises rather than silently routing it anywhere.
+# Хаб привязан к одной стране. Объявления других стран сюда не идут --
+# ни автоматически, ни «раз город есть на сайте».
+HUB_COUNTRY = "vn"
+
 TOPIC_TITLES = {
     "ho-chi-minh:residential": "Хошимин · жильё",
     "ha-noi:residential": "Ханой · жильё",
@@ -118,9 +122,6 @@ TOPIC_TITLES = {
     "hoi-an:residential": "Хойан · жильё",
     "phan-thiet:residential": "Фантьет / Муйне · жильё",
     "phu-quoc:residential": "Фукуок · жильё",
-  "dumaguete:residential": "Думагете · жильё",
-  "cebu:residential": "Себу · жильё",
-  "manila:residential": "Манила · жильё",
     "commercial": "Коммерция · весь Вьетнам",
 }
 
@@ -207,15 +208,26 @@ def load_listings():
     from site_data import load_data
     data = load_data(BUILT_HTML)
     cities = data["CITIES"]
-    out = []
+    out, skipped_country = [], []
     for l in data["LISTINGS"]:
         if (l.get("details") or {}).get("duplicateOf"):
             continue                    # secondary copy of a listing already shown
         c = cities.get(l["city"], {})
+        # Хаб называется «Недвижимость Вьетнам». 4 сентября 2026 сюда ушли восемь
+        # филиппинских объявлений (Себу и Манила) -- потому что города завели на
+        # сайте, а у постера не было ни одной причины отказать. Аудитория хаба
+        # ждёт Вьетнам; вторая страна -- это отдельный канал и отдельное решение
+        # владельца, а не следствие того, что город появился в CITIES.
+        if c.get("country", "vn") != HUB_COUNTRY:
+            skipped_country.append(l.get("id"))
+            continue
         l["_city_ru"] = c.get("name", l["city"])
         l["_district"] = next((d["name"] for d in c.get("districts", [])
                                if d["key"] == l["district"]), "")
         out.append(l)
+    if skipped_country:
+        print("skipping %d listing(s) outside %s -- this hub is Vietnam-only "
+              "(see HUB_COUNTRY)" % (len(skipped_country), HUB_COUNTRY.upper()))
     return out
 
 
