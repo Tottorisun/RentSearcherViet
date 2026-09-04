@@ -40,3 +40,11 @@ telegram_topics.json
 # concurrent session's working files into the index. Both conventions ignored now.
 scratch_*
 retry*.html
+
+# Профиль браузера сборщика Facebook: живые cookies залогиненной сессии.
+# Никогда не коммитить -- это доступ к аккаунту владельца.
+_fb_profile/
+
+# Скачанные фотографии Facebook-объявлений: их кладёт fb_collect.py.
+# Пока сборщик не проверен на живом прогоне, в репозиторий они не идут.
+fb_photos/
