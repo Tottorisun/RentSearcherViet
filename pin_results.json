@@ -10318,5 +10318,593 @@
   "lon": 123.262737,
   "source": "ward-centroid",
   "matched": null
+ },
+ "3000018": {
+  "lat": 10.346519,
+  "lon": 123.911112,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000019": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000020": {
+  "lat": 10.369357,
+  "lon": 123.916932,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000021": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000022": {
+  "lat": 10.327418,
+  "lon": 123.942152,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000023": {
+  "lat": 10.243021,
+  "lon": 123.848825,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000024": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000025": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000026": {
+  "lat": 10.32288,
+  "lon": 123.883939,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000027": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000028": {
+  "lat": 10.327418,
+  "lon": 123.942152,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000029": {
+  "lat": 10.369357,
+  "lon": 123.916932,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000030": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000031": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000032": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000033": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000034": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000035": {
+  "lat": 10.327418,
+  "lon": 123.942152,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000036": {
+  "lat": 10.243021,
+  "lon": 123.848825,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000037": {
+  "lat": 10.346519,
+  "lon": 123.911112,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000038": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000039": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000040": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000041": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000042": {
+  "lat": 10.327418,
+  "lon": 123.942152,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000043": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000044": {
+  "lat": 10.369357,
+  "lon": 123.916932,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000045": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000046": {
+  "lat": 10.346519,
+  "lon": 123.911112,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000047": {
+  "lat": 10.346519,
+  "lon": 123.911112,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000048": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000049": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000050": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000051": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000052": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000053": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000054": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000055": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000056": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000057": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000058": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000059": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000060": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000061": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000062": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000063": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000064": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000065": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000066": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000067": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000068": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000069": {
+  "lat": 10.369357,
+  "lon": 123.916932,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000070": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000071": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000072": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000073": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000074": {
+  "lat": 10.243021,
+  "lon": 123.848825,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000075": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000076": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000077": {
+  "lat": 10.369357,
+  "lon": 123.916932,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000078": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000079": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000080": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000081": {
+  "lat": 14.651055,
+  "lon": 121.048625,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000082": {
+  "lat": 14.651055,
+  "lon": 121.048625,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000083": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000084": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000085": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000086": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000087": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000088": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000089": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000090": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000091": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000092": {
+  "lat": 14.583247,
+  "lon": 121.062701,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000093": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000094": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000095": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000096": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000097": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000098": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000099": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000100": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000101": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000102": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000103": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000104": {
+  "lat": 14.5437,
+  "lon": 120.99465,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000105": {
+  "lat": 14.5437,
+  "lon": 120.99465,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000106": {
+  "lat": 14.5437,
+  "lon": 120.99465,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000107": {
+  "lat": 14.5437,
+  "lon": 120.99465,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000108": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000109": {
+  "lat": 14.577439,
+  "lon": 121.033897,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000110": {
+  "lat": 14.419033,
+  "lon": 121.044338,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000111": {
+  "lat": 14.577439,
+  "lon": 121.033897,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000112": {
+  "lat": 14.419033,
+  "lon": 121.044338,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000113": {
+  "lat": 14.419033,
+  "lon": 121.044338,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000114": {
+  "lat": 14.419033,
+  "lon": 121.044338,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000115": {
+  "lat": 14.419033,
+  "lon": 121.044338,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
