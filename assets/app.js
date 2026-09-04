@@ -82,6 +82,7 @@
       tagline:"Комнаты, студии, квартиры и коммерческие помещения в Хошимине, Ханое, Дананге и Нячанге — из реальных объявлений, отсортированные по цене.",
       themeGroup:"Тема оформления", themeAuto:"Авто", themeLight:"Светлая", themeDark:"Тёмная",
       cityGroup:"Город",
+      ratesOn:"курс на",
       countryVn:"Вьетнам",
       countryPh:"Филиппины",
       searchLabel:"Поиск по описанию", searchPlaceholder:"например: бассейн, метро, вид на море", searchClear:"Очистить поиск",
@@ -112,7 +113,7 @@
       close:"Закрыть", prevPhoto:"Предыдущее фото", nextPhoto:"Следующее фото",
       districtsWord:"районов", noDistricts:"Районы не найдены",
       any:"Любой", all:"Все", upTo:"до", soon:"· скоро",
-      priceOnRequest:"цена по запросу", perMonth:"₫ / мес", wasPrice:"было",
+      priceOnRequest:"цена по запросу", perMonth:"/ мес", wasPrice:"было",
       openListing:"Открыть объявление →", alsoOn:"Также встречается на:",
       popupView:"Посмотреть →",
       detailsToggle:"Подробнее (депозит, коммуналка, удобства)",
@@ -131,6 +132,7 @@
       tagline:"Rooms, studios, apartments and commercial space in Ho Chi Minh City, Hanoi, Da Nang and Nha Trang — from real listings, sorted by price.",
       themeGroup:"Colour theme", themeAuto:"Auto", themeLight:"Light", themeDark:"Dark",
       cityGroup:"City",
+      ratesOn:"rates as of",
       countryVn:"Vietnam",
       countryPh:"Philippines",
       searchLabel:"Search descriptions", searchPlaceholder:"e.g. pool, metro, sea view", searchClear:"Clear search",
@@ -161,7 +163,7 @@
       close:"Close", prevPhoto:"Previous photo", nextPhoto:"Next photo",
       districtsWord:"districts", noDistricts:"No districts found",
       any:"Any", all:"All", upTo:"up to", soon:"· soon",
-      priceOnRequest:"price on request", perMonth:"₫ / month", wasPrice:"was",
+      priceOnRequest:"price on request", perMonth:"/ month", wasPrice:"was",
       openListing:"Open listing →", alsoOn:"Also listed on:",
       popupView:"View listing →",
       detailsToggle:"More details (deposit, utilities, amenities)",
@@ -328,6 +330,36 @@
     var m = v/1000000;
     var s = (m % 1 === 0) ? String(m) : decSep(m.toFixed(1));
     return s + " " + t("mlnShort");
+  }
+  // Валюта объявления. Основная сумма всегда в ней: человек, который смотрит
+  // жильё в Себу, должен видеть песо, а не наш пересчёт.
+  var CUR_SYM = {VND:"₫", PHP:"₱", RUB:"₽", USD:"$", EUR:"€", CNY:"¥"};
+  var RATES = DATA.RATES || null;
+  function curOf(l){ return l.cur || (RATES ? RATES.base : "VND"); }
+  function groupNum(n){
+    return String(Math.round(n)).replace(/(\d)(?=(\d{3})+$)/g, "$1 ");
+  }
+  function fmtMoney(v, cur){
+    // донг показываем миллионами, как и раньше; остальные валюты -- целым числом
+    if (cur === "VND") return fmtPrice(v) + " ₫";
+    return groupNum(v) + " " + (CUR_SYM[cur] || cur);
+  }
+  function convShort(n){
+    if (n >= 1000000) return groupNum(n/1000000 * 10)/10 + " млн";
+    if (n >= 1000) return groupNum(Math.round(n/100)*100);
+    return groupNum(n);
+  }
+  // Пересчёт в скобках: рубли, доллары, евро, юани -- по курсу с датой.
+  function convLine(v, cur){
+    if (!RATES || v == null) return "";
+    var usd = v / RATES.perUsd[cur];
+    var out = [];
+    for (var i = 0; i < RATES.show.length; i++){
+      var c = RATES.show[i];
+      if (c === cur) continue;
+      out.push(convShort(usd * RATES.perUsd[c]) + " " + (CUR_SYM[c] || c));
+    }
+    return out.join(" · ");
   }
   function pricePerM2(l){
     if (l.price == null || !l.area) return null;
@@ -588,7 +620,7 @@
     var src = SOURCE_LABEL[l.source];
     var dsc = descText(l);
     var desc = dsc.length > 100 ? dsc.slice(0,100) + "…" : dsc;
-    var priceHtml = (l.price===null) ? t("priceOnRequest") : (fmtPrice(l.price) + ' ₫');
+    var priceHtml = (l.price===null) ? t("priceOnRequest") : fmtMoney(l.price, curOf(l));
     return '<div class="pt-top"><span class="pt-src">' + src.short + '</span><span class="pt-price">' + priceHtml + '</span></div>' +
       '<div class="pt-meta">' + typeName(l.type) + ' · ' + d.name + (l.area ? (" · " + l.area + " " + t("m2")) : "") + '</div>' +
       '<div class="pt-desc">' + desc + '</div>' +
@@ -939,8 +971,11 @@
       if (!state.sources.has(l.source)) return false;
       if (state.district && l.district !== state.district) return false;
       if (state.complex && l.complex !== state.complex) return false;
-      if (state.minBudget !== null && l.price < state.minBudget*1000000) return false;
-      if (state.maxBudget !== null && l.price > state.maxBudget*1000000) return false;
+      // pv -- цена, приведённая к базовой валюте на сборке. Сравнивать
+      // 45 000 песо с 7 500 000 донгов напрямую нельзя.
+      var pvv = (l.pv == null ? l.price : l.pv);
+      if (state.minBudget !== null && pvv < state.minBudget*1000000) return false;
+      if (state.maxBudget !== null && pvv > state.maxBudget*1000000) return false;
       if (l.daysAgo > state.maxDays) return false;
       if (state.kind && kindOf(l) !== state.kind) return false;
       if (state.type && l.type !== state.type) return false;
@@ -969,8 +1004,9 @@
         if (a.price===null && b.price===null) return 0;
         if (a.price===null) return 1;
         if (b.price===null) return -1;
-        if (state.sort==="new") return a.daysAgo-b.daysAgo || a.price-b.price;
-        return state.sort==="asc" ? a.price-b.price : b.price-a.price;
+        var ap = (a.pv == null ? a.price : a.pv), bp = (b.pv == null ? b.price : b.pv);
+        if (state.sort==="new") return a.daysAgo-b.daysAgo || ap-bp;
+        return state.sort==="asc" ? ap-bp : bp-ap;
       });
     }
 
@@ -1042,7 +1078,8 @@
         alsoOnHtml +
         detailsHtml(l) +
         '<div class="listing-bottom">' +
-          '<span><span class="price">' + (l.price===null ? t("priceOnRequest") : (fmtPrice(l.price) + ' <small>' + t("perMonth") + '</small>')) + '</span>' + perM2Html + priceChangeHtml + '</span>' +
+          '<span><span class="price">' + (l.price===null ? t("priceOnRequest") : (fmtMoney(l.price, curOf(l)) + ' <small>' + t("perMonth") + '</small>')) + '</span>'
+          + (l.price===null ? '' : '<span class="price-conv" title="' + t("ratesOn") + ' ' + (RATES ? RATES.date : "") + '">≈ ' + convLine(l.price, curOf(l)) + '</span>') + perM2Html + priceChangeHtml + '</span>' +
           '<a class="open-link" href="' + l.url + '" target="_blank" rel="noopener">' + t("openListing") + '</a>' +
         '</div>';
       var favBtn = card.querySelector(".fav-btn");
