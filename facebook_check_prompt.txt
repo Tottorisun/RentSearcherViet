@@ -25,6 +25,15 @@ So do NOT wire this into the scheduler. Run it only in an interactive session,
 while the desktop app is open, and preferably when the owner is not mid-work in
 Chrome. Say in the final report that the pass ran attended.
 
+OWNER'S DECISION, 4 Sep 2026: run from the PERSONAL account, and manually only.
+Not from a separate account, and not from the scheduler. That decision is made --
+do not re-open it. What it means in practice, and why the limits below are not
+optional: everything at risk sits in that one account (Messenger, the
+conversations with landlords, membership of all 29 rental groups), so a
+checkpoint costs the owner all of it at once. So: visible window, one city per
+run, 10-15 items, once a day at most, read-only, and stop at the first sign of a
+challenge rather than retrying.
+
 Account risk, stated plainly because it is the owner's personal account: Facebook
 detects and acts on automated browsing. The concrete loss is that their own
 account -- the same one their Messenger conversations live in -- gets checkpointed
