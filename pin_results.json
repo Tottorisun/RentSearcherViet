@@ -1967,18 +1967,6 @@
   "source": "geocode",
   "matched": "Lê Văn Duyệt"
  },
- "1474": {
-  "lat": 16.1021731,
-  "lon": 108.2485821,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1475": {
-  "lat": 16.1021731,
-  "lon": 108.2485821,
-  "source": "ward-centroid",
-  "matched": null
- },
  "1476": {
   "lat": 16.0892968,
   "lon": 108.2466754,
@@ -10211,114 +10199,6 @@
   "source": "chotot",
   "matched": null
  },
- "3000000": {
-  "lat": 9.313245,
-  "lon": 123.262737,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000001": {
-  "lat": 9.248483,
-  "lon": 123.292926,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000002": {
-  "lat": 9.248483,
-  "lon": 123.292926,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000003": {
-  "lat": 9.248483,
-  "lon": 123.292926,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000004": {
-  "lat": 9.248483,
-  "lon": 123.292926,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000005": {
-  "lat": 9.299457,
-  "lon": 123.293889,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000006": {
-  "lat": 9.299457,
-  "lon": 123.293889,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000007": {
-  "lat": 9.248483,
-  "lon": 123.292926,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000008": {
-  "lat": 9.248483,
-  "lon": 123.292926,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000009": {
-  "lat": 9.359718,
-  "lon": 123.284764,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000010": {
-  "lat": 9.359718,
-  "lon": 123.284764,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000011": {
-  "lat": 9.359718,
-  "lon": 123.284764,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000012": {
-  "lat": 9.359718,
-  "lon": 123.284764,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000013": {
-  "lat": 9.311661,
-  "lon": 123.237335,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000014": {
-  "lat": 9.131887,
-  "lon": 123.146399,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000015": {
-  "lat": 9.32077,
-  "lon": 123.309362,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000016": {
-  "lat": 9.32077,
-  "lon": 123.309362,
-  "source": "ward-centroid",
-  "matched": null
- },
- "3000017": {
-  "lat": 9.313245,
-  "lon": 123.262737,
-  "source": "ward-centroid",
-  "matched": null
- },
  "3000018": {
   "lat": 10.346519,
   "lon": 123.911112,
@@ -10865,46 +10745,154 @@
   "source": "ward-centroid",
   "matched": null
  },
- "3000109": {
-  "lat": 14.577439,
-  "lon": 121.033897,
+ "3000000": {
+  "lat": 9.313245,
+  "lon": 123.262737,
   "source": "ward-centroid",
   "matched": null
  },
- "3000110": {
-  "lat": 14.419033,
-  "lon": 121.044338,
+ "3000001": {
+  "lat": 9.248483,
+  "lon": 123.292926,
   "source": "ward-centroid",
   "matched": null
  },
- "3000111": {
-  "lat": 14.577439,
-  "lon": 121.033897,
+ "3000002": {
+  "lat": 9.248483,
+  "lon": 123.292926,
   "source": "ward-centroid",
   "matched": null
  },
- "3000112": {
-  "lat": 14.419033,
-  "lon": 121.044338,
+ "3000003": {
+  "lat": 9.248483,
+  "lon": 123.292926,
   "source": "ward-centroid",
   "matched": null
  },
- "3000113": {
-  "lat": 14.419033,
-  "lon": 121.044338,
+ "3000004": {
+  "lat": 9.248483,
+  "lon": 123.292926,
   "source": "ward-centroid",
   "matched": null
  },
- "3000114": {
-  "lat": 14.419033,
-  "lon": 121.044338,
+ "3000005": {
+  "lat": 9.299457,
+  "lon": 123.293889,
   "source": "ward-centroid",
   "matched": null
  },
- "3000115": {
-  "lat": 14.419033,
-  "lon": 121.044338,
+ "3000006": {
+  "lat": 9.299457,
+  "lon": 123.293889,
   "source": "ward-centroid",
+  "matched": null
+ },
+ "3000007": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000008": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000009": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000010": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000011": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000012": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000013": {
+  "lat": 9.311661,
+  "lon": 123.237335,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000014": {
+  "lat": 9.131887,
+  "lon": 123.146399,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000015": {
+  "lat": 9.32077,
+  "lon": 123.309362,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000016": {
+  "lat": 9.32077,
+  "lon": 123.309362,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000017": {
+  "lat": 9.313245,
+  "lon": 123.262737,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000405": {
+  "lat": 10.79161,
+  "lon": 106.75348,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000406": {
+  "lat": 10.729682,
+  "lon": 106.70759,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000407": {
+  "lat": 10.771272,
+  "lon": 106.689766,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000408": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000409": {
+  "lat": 10.781944,
+  "lon": 106.768234,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000410": {
+  "lat": 10.823193,
+  "lon": 106.73165,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000411": {
+  "lat": 10.765885,
+  "lon": 106.69081,
+  "source": "chotot",
   "matched": null
  }
 }
