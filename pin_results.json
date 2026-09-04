@@ -10108,5 +10108,107 @@
   "lon": 106.7347062,
   "source": "geocode",
   "matched": "Xuân Thủy"
+ },
+ "1000388": {
+  "lat": 10.7929,
+  "lon": 106.7304,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000389": {
+  "lat": 10.8158865,
+  "lon": 106.72764,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000390": {
+  "lat": 10.787745,
+  "lon": 106.72973,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000391": {
+  "lat": 10.771272,
+  "lon": 106.689766,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000392": {
+  "lat": 10.773475,
+  "lon": 106.68936,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000393": {
+  "lat": 10.77011,
+  "lon": 106.69228,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000394": {
+  "lat": 10.79161,
+  "lon": 106.75348,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000395": {
+  "lat": 10.754763,
+  "lon": 106.70565,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000396": {
+  "lat": 10.738486,
+  "lon": 106.71468,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000397": {
+  "lat": 10.740141,
+  "lon": 106.70261,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000398": {
+  "lat": 10.72905,
+  "lon": 106.70349,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000399": {
+  "lat": 10.738486,
+  "lon": 106.71468,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000400": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000401": {
+  "lat": 10.747492,
+  "lon": 106.702194,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000402": {
+  "lat": 10.747492,
+  "lon": 106.702194,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000403": {
+  "lat": 10.740141,
+  "lon": 106.70261,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000404": {
+  "lat": 10.708131,
+  "lon": 106.738205,
+  "source": "chotot",
+  "matched": null
  }
 }
