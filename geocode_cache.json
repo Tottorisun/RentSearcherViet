@@ -5288,5 +5288,16 @@
  "Hillsborough Alabang, Manila, Vietnam": null,
  "Hillsborough Alabang, Alabang, Manila, Vietnam": null,
  "Ayala Alabang Village, Manila, Vietnam": null,
- "Ayala Alabang Village, Alabang, Manila, Vietnam": null
+ "Ayala Alabang Village, Alabang, Manila, Vietnam": null,
+ "Lotte Mart Nam Sài Gòn, Ho Chi Minh City, Vietnam": {
+  "lat": 10.3503828,
+  "lon": 107.0940437,
+  "display_name": "Lotte Mart, Đường 3 Tháng 2, khóm Rẫy, Phường Tam Thắng, Thành phố Hồ Chí Minh, 76666, Việt Nam"
+ },
+ "Lotte Mart Nam Sài Gòn, Phường Tân Hưng, Ho Chi Minh City, Vietnam": null,
+ "Phó Đức Chính, Ho Chi Minh City, Vietnam": {
+  "lat": 10.7998492,
+  "lon": 106.6971501,
+  "display_name": "Phó Đức Chính, Khu phố 30, Phường Gia Định, Thành phố Hồ Chí Minh, 72210, Việt Nam"
+ }
 }

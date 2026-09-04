@@ -5159,12 +5159,6 @@
   "source": "geocode",
   "matched": "Bình Thạnh"
  },
- "1000005": {
-  "lat": 10.7597722,
-  "lon": 106.7134623,
-  "source": "geocode",
-  "matched": "Ngoại Thương"
- },
  "1000006": {
   "lat": 10.8273371,
   "lon": 106.7368775,
@@ -5987,12 +5981,6 @@
   "source": "geocode",
   "matched": "Trần Thái Tông"
  },
- "2000020": {
-  "lat": 21.0004862,
-  "lon": 105.7484798,
-  "source": "geocode",
-  "matched": "Tây Mỗ"
- },
  "2000021": {
   "lat": 21.0448813,
   "lon": 105.797779,
@@ -6023,23 +6011,11 @@
   "source": "geocode",
   "matched": "Thiên Đường Bảo Sơn"
  },
- "2000027": {
-  "lat": 21.0095738,
-  "lon": 105.8353142,
-  "source": "geocode",
-  "matched": "Phạm Ngọc Thạch"
- },
  "2000028": {
   "lat": 21.0306636,
   "lon": 105.7763789,
   "source": "geocode",
   "matched": "Trần Bình"
- },
- "2000029": {
-  "lat": 21.0296188,
-  "lon": 105.7772815,
-  "source": "geocode",
-  "matched": "Mỹ Đình Plaza 2"
  },
  "2000030": {
   "lat": 21.0691418,
@@ -6167,12 +6143,6 @@
   "source": "geocode",
   "matched": "Phạm Ngọc Thạch"
  },
- "2000052": {
-  "lat": 21.0052276,
-  "lon": 105.7988875,
-  "source": "geocode",
-  "matched": "Trần Duy Hưng"
- },
  "2000053": {
   "lat": 20.9926614,
   "lon": 105.8695893,
@@ -6208,12 +6178,6 @@
   "lon": 105.7863353,
   "source": "geocode",
   "matched": "Dịch Vọng Hậu"
- },
- "2000059": {
-  "lat": 21.0463572,
-  "lon": 105.807238,
-  "source": "geocode",
-  "matched": "Hoàng Hoa Thám"
  },
  "2000060": {
   "lat": 21.0835397,
@@ -6268,12 +6232,6 @@
   "lon": 105.7650691,
   "source": "geocode",
   "matched": "Hồ Tùng Mậu"
- },
- "2000070": {
-  "lat": 21.0498094,
-  "lon": 105.7480851,
-  "source": "geocode",
-  "matched": "Đình Quán"
  },
  "2000071": {
   "lat": 20.9752796,
@@ -6473,12 +6431,6 @@
   "source": "geocode",
   "matched": "Dương Đình Nghệ"
  },
- "2000106": {
-  "lat": 21.0122971,
-  "lon": 105.8530508,
-  "source": "geocode",
-  "matched": "Nguyễn Công Trứ"
- },
  "2000107": {
   "lat": 21.0115663,
   "lon": 105.7613681,
@@ -6508,12 +6460,6 @@
   "lon": 105.807155,
   "source": "geocode",
   "matched": "Lê Văn Lương"
- },
- "2000112": {
-  "lat": 20.983776,
-  "lon": 105.7898404,
-  "source": "geocode",
-  "matched": "An Hoà"
  },
  "2000113": {
   "lat": 21.0637621,
@@ -6568,12 +6514,6 @@
   "lon": 105.827299,
   "source": "geocode",
   "matched": "Hoàng Liệt"
- },
- "2000122": {
-  "lat": 21.0283334,
-  "lon": 105.854041,
-  "source": "geocode",
-  "matched": "Ngõ 44 Phố Hàm Tử"
  },
  "2000123": {
   "lat": 21.0197045,
@@ -11104,5 +11044,101 @@
   "lon": 106.73195,
   "source": "chotot",
   "matched": null
+ },
+ "1000450": {
+  "lat": 10.704245,
+  "lon": 106.72961,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000451": {
+  "lat": 10.70729,
+  "lon": 106.73198,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000452": {
+  "lat": 10.72619,
+  "lon": 106.7246,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000453": {
+  "lat": 10.75161,
+  "lon": 106.70895,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000454": {
+  "lat": 10.70494,
+  "lon": 106.73567,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000455": {
+  "lat": 10.704245,
+  "lon": 106.72961,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000456": {
+  "lat": 10.787745,
+  "lon": 106.72973,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000457": {
+  "lat": 10.787614,
+  "lon": 106.76518,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000458": {
+  "lat": 10.78652,
+  "lon": 106.73207,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000459": {
+  "lat": 10.772334,
+  "lon": 106.696365,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000460": {
+  "lat": 10.739937,
+  "lon": 106.7034261,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000461": {
+  "lat": 10.7657414,
+  "lon": 106.6907571,
+  "source": "geocode",
+  "matched": "Bùi Viện"
+ },
+ "1000462": {
+  "lat": 10.7998492,
+  "lon": 106.6971501,
+  "source": "geocode",
+  "matched": "Phó Đức Chính"
+ },
+ "1000463": {
+  "lat": 10.7934445,
+  "lon": 106.7421911,
+  "source": "geocode",
+  "matched": "Cao Đức Lân"
+ },
+ "1000464": {
+  "lat": 10.7878232,
+  "lon": 106.7343792,
+  "source": "geocode",
+  "matched": "Lương Định Của"
+ },
+ "1000471": {
+  "lat": 10.7296837,
+  "lon": 106.7003943,
+  "source": "geocode",
+  "matched": "Nguyễn Hữu Thọ"
  }
 }
