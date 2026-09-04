@@ -118,6 +118,9 @@ TOPIC_TITLES = {
     "hoi-an:residential": "Хойан · жильё",
     "phan-thiet:residential": "Фантьет / Муйне · жильё",
     "phu-quoc:residential": "Фукуок · жильё",
+  "dumaguete:residential": "Думагете · жильё",
+  "cebu:residential": "Себу · жильё",
+  "manila:residential": "Манила · жильё",
     "commercial": "Коммерция · весь Вьетнам",
 }
 
@@ -216,12 +219,20 @@ def load_listings():
     return out
 
 
-def fmt_price(v):
+CUR_SYM = {"VND": "₫", "PHP": "₱"}
+
+
+def fmt_price(v, cur="VND"):
+    """Цена в валюте объявления. Донг показываем миллионами, как на сайте;
+    песо -- целым числом: 15 000 ₱ в виде «0,015 млн» нечитаемо."""
     if v is None:
         return "цена по запросу"
-    m = v / 1000000
-    s = str(int(m)) if m == int(m) else ("%.1f" % m)
-    return s.replace(".", ",") + " млн ₫/мес"
+    if cur == "VND":
+        m = v / 1000000
+        s = str(int(m)) if m == int(m) else ("%.1f" % m)
+        return s.replace(".", ",") + " млн ₫/мес"
+    n = "{:,}".format(int(v)).replace(",", " ")
+    return "%s %s/мес" % (n, CUR_SYM.get(cur, cur))
 
 
 def esc(s):
@@ -233,7 +244,8 @@ def esc(s):
 def build_caption(l):
     area = (" · %s м²" % l["area"]) if l.get("area") else ""
     head = [
-        "🏠 <b>%s</b> · %s · %s" % (esc(l["type"]), esc(l["_city_ru"]), fmt_price(l.get("price"))),
+        "🏠 <b>%s</b> · %s · %s" % (esc(l["type"]), esc(l["_city_ru"]),
+                                    fmt_price(l.get("price"), l.get("cur", "VND"))),
         "📍 %s%s" % (esc(l["_district"]), area),
         "",
     ]
