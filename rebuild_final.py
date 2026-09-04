@@ -181,6 +181,49 @@ CITIES = {
             {"key":"hn","name":"Hàm Ninh","hint":"восток, рыбацкая деревня, вид на материк","hintEn":"east coast, fishing village, views to the mainland","color":"#EDC949"},
             {"key":"cdbt","name":"Cửa Dương – Bãi Thơm","hint":"север-центр, малоосвоенная часть острова","hintEn":"north-central, the island's least developed part","color":"#9C755F"}
         ]
+    },
+    "dumaguete": {
+        "name": "Думагете", "nameEn": "Dumaguete", "country": "ph",
+        "districts": [
+            {"key":"pob","name":"Poblacion","hint":"центр, набережная Rizal Boulevard, порт","hintEn":"the centre, Rizal Boulevard seafront, the pier","color":"#4E79A7"},
+            {"key":"pia","name":"Piapi","hint":"к северу от центра, ближе к морю, тихие улицы","hintEn":"north of the centre, closer to the sea, quiet streets","color":"#F28E2B"},
+            {"key":"dar","name":"Daro","hint":"северная окраина, дома с садами","hintEn":"northern edge, houses with gardens","color":"#E15759"},
+            {"key":"ban","name":"Bantayan","hint":"север, рядом с пляжем и школами","hintEn":"north, near the beach and the schools","color":"#76B7B2"},
+            {"key":"tac","name":"Taclobo","hint":"внутренняя часть города, жилые кварталы","hintEn":"inland residential quarters","color":"#B07AA1"},
+            {"key":"cal","name":"Calindagan","hint":"юг, ближе к аэропорту и торговым центрам","hintEn":"south, towards the airport and the malls","color":"#EDC949"},
+            {"key":"val","name":"Valencia","hint":"предгорья в 15 минутах, прохладнее, популярна у экспатов","hintEn":"the hills 15 minutes inland, cooler, popular with expats","color":"#9C755F"},
+            {"key":"dau","name":"Dauin","hint":"дайв-побережье южнее города","hintEn":"the dive coast south of the city","color":"#D37295"},
+            {"key":"sib","name":"Sibulan","hint":"север, аэропорт и переправа на Себу","hintEn":"north, the airport and the Cebu ferry","color":"#86BCB6"},
+        ]
+    },
+    "cebu": {
+        "name": "Себу", "nameEn": "Cebu", "country": "ph",
+        "districts": [
+            {"key":"itp","name":"IT Park / Apas","hint":"деловой кластер, кондо и рестораны, жизнь круглосуточно","hintEn":"the BPO cluster, condos and restaurants, awake around the clock","color":"#4E79A7"},
+            {"key":"lah","name":"Lahug","hint":"рядом с IT Park, зеленее, вид на город","hintEn":"next to IT Park, greener, city views","color":"#F28E2B"},
+            {"key":"bnl","name":"Banilad","hint":"север центра, школы и торговые центры","hintEn":"north of the centre, schools and malls","color":"#E15759"},
+            {"key":"mab","name":"Mabolo","hint":"между центром и портом, средний ценовой сегмент","hintEn":"between the centre and the port, mid-market","color":"#76B7B2"},
+            {"key":"gua","name":"Guadalupe","hint":"запад, на холмах, доступное жильё","hintEn":"west, on the hills, affordable","color":"#B07AA1"},
+            {"key":"tlm","name":"Talamban","hint":"северо-восток, университеты, тихие субдивизионы","hintEn":"north-east, universities, quiet subdivisions","color":"#EDC949"},
+            {"key":"cap","name":"Capitol Site","hint":"исторический центр, Fuente Osmeña","hintEn":"the old centre, Fuente Osmeña","color":"#9C755F"},
+            {"key":"mac","name":"Mactan","hint":"остров Мактан, Лапу-Лапу, курорты и аэропорт","hintEn":"Mactan island, Lapu-Lapu, the resorts and the airport","color":"#D37295"},
+            {"key":"man","name":"Mandaue","hint":"промышленный сосед Себу, дешевле","hintEn":"Cebu's industrial neighbour, cheaper","color":"#86BCB6"},
+            {"key":"tls","name":"Talisay","hint":"юг, побережье, спальный пригород","hintEn":"south, a coastal commuter suburb","color":"#FF9DA7"},
+        ]
+    },
+    "manila": {
+        "name": "Манила", "nameEn": "Manila", "country": "ph",
+        "districts": [
+            {"key":"mak","name":"Makati","hint":"деловой центр, посольства, классический экспат-район","hintEn":"the business district, embassies, the classic expat area","color":"#4E79A7"},
+            {"key":"bgc","name":"BGC / Taguig","hint":"новый деловой район, самый дорогой","hintEn":"the new business district, the most expensive","color":"#F28E2B"},
+            {"key":"ort","name":"Ortigas / Pasig","hint":"второй деловой центр, восточнее","hintEn":"the second business district, further east","color":"#E15759"},
+            {"key":"mla","name":"Malate / Ermita","hint":"старая Манила, залив, дешевле","hintEn":"old Manila, the bay, cheaper","color":"#76B7B2"},
+            {"key":"qzc","name":"Quezon City","hint":"самый большой город агломерации, университеты","hintEn":"the largest city in the metro, universities","color":"#B07AA1"},
+            {"key":"mdl","name":"Mandaluyong","hint":"между Макати и Ортигасом, кондо среднего класса","hintEn":"between Makati and Ortigas, mid-range condos","color":"#EDC949"},
+            {"key":"alb","name":"Alabang","hint":"юг, закрытые зелёные посёлки, семьи","hintEn":"south, green gated subdivisions, families","color":"#9C755F"},
+            {"key":"psy","name":"Pasay / MOA","hint":"у аэропорта и Mall of Asia","hintEn":"by the airport and the Mall of Asia","color":"#D37295"},
+            {"key":"prq","name":"Parañaque / BF Homes","hint":"юг, малоэтажная застройка, дома а не кондо","hintEn":"south, low-rise, houses rather than condos","color":"#86BCB6"},
+        ]
     }
 }
 
@@ -10240,17 +10283,17 @@ print("Data JSON size: %d (photo URLs compacted: %.0f KB saved)"
 # ================== HTML TEMPLATE ==================
 HTML = r"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг</title>
+<title>Жильё во Вьетнаме и на Филиппинах — Хошимин · Ханой · Себу · Манила</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">
 <meta name="description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Хошимин, Ханой, Дананг, Нячанг, Далат, Хойан, Вунгтау, Куинён, Фантьет), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном месте — с фото, картой и фильтрами.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг">
-<meta property="og:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте — с фото, картой и фильтрами.">
+<meta property="og:title" content="Жильё во Вьетнаме и на Филиппинах — Хошимин · Ханой · Себу · Манила">
+<meta property="og:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме и на Филиппинах, собранных с разных площадок в одном месте — с фото, картой и фильтрами.">
 <meta property="og:url" content="https://tottorisun.github.io/RentSearcherViet/">
 <link rel="canonical" href="https://tottorisun.github.io/RentSearcherViet/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг">
-<meta name="twitter:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте.">
+<meta name="twitter:title" content="Жильё во Вьетнаме и на Филиппинах — Хошимин · Ханой · Себу · Манила">
+<meta name="twitter:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме и на Филиппинах, собранных с разных площадок в одном месте.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
@@ -10335,7 +10378,9 @@ HTML = r"""<meta charset="utf-8">
   .brand h1{font-size:clamp(1.5rem,1.1rem + 1.3vw,2.05rem);letter-spacing:-0.01em;}
   .tagline{margin:4px 0 0;color:var(--ink-dim);font-size:0.98rem;max-width:60ch;}
 
-  .city-tabs{display:flex;gap:8px;flex-wrap:wrap;}
+  .city-tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .city-group{flex-basis:100%;font-size:0.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);margin:8px 0 -2px;}
+  .city-group:first-child{margin-top:0;}
   .city-tab{appearance:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);padding:10px 18px;border-radius:999px;font-size:0.96rem;font-weight:600;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease;}
   .city-tab .sub{display:block;font-weight:400;font-size:0.76rem;color:var(--ink-faint);margin-top:1px;}
   .city-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);}
@@ -10556,7 +10601,7 @@ HTML = r"""<meta charset="utf-8">
         <svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 4l8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
       <div>
-        <h1 data-i18n="h1Title">Жильё во Вьетнаме</h1>
+        <h1 data-i18n="h1Title">Жильё во Вьетнаме и на Филиппинах</h1>
         <p class="tagline" data-i18n="tagline">Комнаты, студии, квартиры и коммерческие помещения в Хошимине, Ханое, Дананге и Нячанге — из реальных объявлений, отсортированные по цене.</p>
       </div>
     </div>
@@ -10812,11 +10857,13 @@ HTML = r"""<meta charset="utf-8">
 
   var I18N = {
     ru: {
-      h1Title:"Жильё во Вьетнаме",
+      h1Title:"Жильё во Вьетнаме и на Филиппинах",
       kindLabel:"Тип недвижимости", kindResidential:"Жильё", kindCommercial:"Коммерция",
       tagline:"Комнаты, студии, квартиры и коммерческие помещения в Хошимине, Ханое, Дананге и Нячанге — из реальных объявлений, отсортированные по цене.",
       themeGroup:"Тема оформления", themeAuto:"Авто", themeLight:"Светлая", themeDark:"Тёмная",
       cityGroup:"Город",
+      countryVn:"Вьетнам",
+      countryPh:"Филиппины",
       searchLabel:"Поиск по описанию", searchPlaceholder:"например: бассейн, метро, вид на море", searchClear:"Очистить поиск",
       budgetLabel:"Бюджет, млн ₫ / мес", from:"от", to:"до", mln:"млн ₫",
       districtLabel:"Район", districtPlaceholder:"Начните вводить название района", districtClear:"Сбросить район",
@@ -10859,11 +10906,13 @@ HTML = r"""<meta charset="utf-8">
       stamp:"Данные актуальны на __TODAY_DATE__ · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
     },
     en: {
-      h1Title:"Rental housing in Vietnam",
+      h1Title:"Rental housing in Vietnam and the Philippines",
       kindLabel:"Property kind", kindResidential:"Housing", kindCommercial:"Commercial",
       tagline:"Rooms, studios, apartments and commercial space in Ho Chi Minh City, Hanoi, Da Nang and Nha Trang — from real listings, sorted by price.",
       themeGroup:"Colour theme", themeAuto:"Auto", themeLight:"Light", themeDark:"Dark",
       cityGroup:"City",
+      countryVn:"Vietnam",
+      countryPh:"Philippines",
       searchLabel:"Search descriptions", searchPlaceholder:"e.g. pool, metro, sea view", searchClear:"Clear search",
       budgetLabel:"Budget, million ₫ / month", from:"from", to:"to", mln:"mln ₫",
       districtLabel:"District", districtPlaceholder:"Start typing a district name", districtClear:"Clear district",
@@ -11123,8 +11172,19 @@ HTML = r"""<meta charset="utf-8">
 
   function renderCityTabs(){
     el.cityTabs.innerHTML = "";
+    var lastCountry = null;
     Object.keys(CITIES).forEach(function(key){
       var c = CITIES[key];
+      // Вторая страна появилась 4 сентября 2026. Без подписи Думагете стоял бы
+      // вплотную к Далату и ничто не сказало бы, что это другая страна.
+      var country = c.country || "vn";
+      if (country !== lastCountry){
+        var head = document.createElement("span");
+        head.className = "city-group";
+        head.textContent = t(country === "ph" ? "countryPh" : "countryVn");
+        el.cityTabs.appendChild(head);
+        lastCountry = country;
+      }
       // Per-city pages: the tab is a real link to that city's page for the
       // same kind, with the listing count for the kind. All-in-one page: a
       // button that switches in place, with the district count as before.
@@ -12097,11 +12157,11 @@ EN_PATH = "vietnam-rent-finder-en.html"
 # Each page therefore ships its own meta and its own DEFAULT_LANG, and
 # both carry hreflang so search engines treat them as translations of
 # one another rather than duplicates.
-EN_TITLE = "Rental housing in Vietnam — Ho Chi Minh City, Hanoi, Da Nang, Nha Trang"
+EN_TITLE = "Rental housing in Vietnam and the Philippines — Ho Chi Minh City, Hanoi, Cebu, Manila"
 EN_DESC = ("Over __LISTING_COUNT__ rental listings across Vietnam (Ho Chi Minh City, Hanoi, Da Nang, "
            "Nha Trang, Da Lat, Hoi An, Vung Tau, Quy Nhon, Phan Thiet), gathered from Cho Tot, Batdongsan and "
            "other sources in one place — with photos, a map and filters.")
-EN_DESC_SHORT = ("Over __LISTING_COUNT__ rental listings across Vietnam, gathered from several "
+EN_DESC_SHORT = ("Over __LISTING_COUNT__ rental listings across Vietnam and the Philippines, gathered from several "
                  "marketplaces in one place — with photos, a map and filters.")
 
 HREFLANG = (
@@ -12118,19 +12178,19 @@ def finalise(html, lang):
     html = html.replace("__DEFAULT_LANG__", lang)
     if lang == "en":
         html = html.replace(
-            "<title>Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг</title>",
+            "<title>Жильё во Вьетнаме и на Филиппинах — Хошимин · Ханой · Себу · Манила</title>",
             "<title>" + EN_TITLE + "</title>", 1)
         html = html.replace(
             'content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Хошимин, Ханой, Дананг, Нячанг, Далат, Хойан, Вунгтау, Куинён, Фантьет), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном месте — с фото, картой и фильтрами."',
             'content="' + EN_DESC + '"', 1)
         html = html.replace(
-            'content="Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг"',
+            'content="Жильё во Вьетнаме и на Филиппинах — Хошимин · Ханой · Себу · Манила"',
             'content="' + EN_TITLE + '"')
         html = html.replace(
-            'content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте — с фото, картой и фильтрами."',
+            'content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме и на Филиппинах, собранных с разных площадок в одном месте — с фото, картой и фильтрами."',
             'content="' + EN_DESC_SHORT + '"', 1)
         html = html.replace(
-            'content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте."',
+            'content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме и на Филиппинах, собранных с разных площадок в одном месте."',
             'content="' + EN_DESC_SHORT + '"', 1)
         html = html.replace('<meta property="og:url" content="' + SITE_ROOT + '">',
                             '<meta property="og:url" content="' + SITE_ROOT + EN_PATH + '">', 1)
@@ -12222,12 +12282,12 @@ def ru_ads(n):
     return "%d объявлений" % n
 
 
-RU_TITLE_FULL = "Жильё во Вьетнаме — Хошимин · Ханой · Дананг · Нячанг"
+RU_TITLE_FULL = "Жильё во Вьетнаме и на Филиппинах — Хошимин · Ханой · Себу · Манила"
 RU_DESC_LONG = ("Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме (Хошимин, Ханой, Дананг, Нячанг, Далат, "
                 "Хойан, Вунгтау, Куинён, Фантьет), собранных с Chợ Tốt, Batdongsan, Facebook и других источников в одном "
                 "месте — с фото, картой и фильтрами.")
-RU_DESC_OG = "Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте — с фото, картой и фильтрами."
-RU_DESC_TW = "Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме, собранных с разных площадок в одном месте."
+RU_DESC_OG = "Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме и на Филиппинах, собранных с разных площадок в одном месте — с фото, картой и фильтрами."
+RU_DESC_TW = "Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме и на Филиппинах, собранных с разных площадок в одном месте."
 
 
 def page_name(city, kind):
@@ -12280,32 +12340,44 @@ print("Wrote %d per-city pages (assets/app.css %d KB, assets/app.js %d KB); larg
 
 def landing(lang):
     en = (lang == "en")
-    cards = ""
+    COUNTRY_TITLE = {"vn": ("Вьетнам", "Vietnam"), "ph": ("Филиппины", "Philippines")}
+    by_country, order = {}, []
     for key, c in CITIES.items():
         n_r = COUNTS.get(key, {}).get("residential", 0)
         n_c = COUNTS.get(key, {}).get("commercial", 0)
         name = c["nameEn"] if en else c["name"]
         res_label = ("%d residential" % n_r) if en else ru_ads(n_r) + " · жильё"
         com_label = ("%d commercial" % n_c) if en else ru_ads(n_c) + " · коммерция"
-        cards += ('<div class="lc">'
+        card = ('<div class="lc">'
                   '<h2>' + name + '</h2>'
                   '<a class="lc-link" href="' + page_name(key, "residential") + '"><span>' + res_label + '</span><span>→</span></a>'
                   + ('<a class="lc-link lc-com" href="' + page_name(key, "commercial") + '"><span>' + com_label + '</span><span>→</span></a>' if n_c else
                      '<span class="lc-link lc-none">' + ("no commercial listings yet" if en else "коммерции пока нет") + '</span>')
                   + '</div>')
+        cc = c.get("country", "vn")
+        if cc not in by_country:
+            by_country[cc] = []
+            order.append(cc)
+        by_country[cc].append(card)
+    # одна секция на страну, каждая со своим заголовком
+    cards = ""
+    for cc in order:
+        cc_title = COUNTRY_TITLE.get(cc, (cc, cc))[1 if en else 0]
+        cards += ('<h2 class="lgroup">' + cc_title + '</h2>'
+                  '<section class="lgrid">' + "".join(by_country[cc]) + '</section>')
     total = len(LISTINGS)
     if en:
-        title = "Rental housing in Vietnam — by city"
+        title = "Rental housing in Vietnam and the Philippines — by city"
         desc = "Over %d rental listings across Vietnam, one page per city, residential and commercial apart: Ho Chi Minh City, Hanoi, Da Nang, Nha Trang, Da Lat, Vung Tau, Quy Nhon, Hoi An, Phan Thiet, Binh Duong, Phu Quoc." % total
-        h1 = "Rental housing in Vietnam"
+        h1 = "Rental housing in Vietnam and the Philippines"
         tagline = "Pick a city: residential and commercial listings are separate pages, each loads only its own data."
         full_link = "All cities on one page"
         other = '<a href="./">Русская версия</a>'
         stamp = "Updated " + en_today_stamp()
     else:
-        title = "Жильё во Вьетнаме — по городам"
+        title = "Жильё во Вьетнаме и на Филиппинах — по городам"
         desc = "Более %d объявлений об аренде во Вьетнаме, отдельная страница на каждый город, жильё и коммерция врозь: Хошимин, Ханой, Дананг, Нячанг, Далат, Вунгтау, Куинён, Хойан, Фантьет, Биньзыонг, Фукуок." % total
-        h1 = "Жильё во Вьетнаме"
+        h1 = "Жильё во Вьетнаме и на Филиппинах"
         tagline = "Выберите город: жильё и коммерция — отдельные страницы, каждая грузит только свои объявления."
         full_link = "Все города на одной странице"
         other = '<a href="en.html">English</a>'
@@ -12325,6 +12397,9 @@ def landing(lang):
             '.landing{max-width:1100px;margin:0 auto;padding:28px 18px 60px;}\n'
             '.landing .hero{margin-bottom:22px;}\n'
             '.lgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));}\n'
+            '.lgroup{margin:26px 0 10px;font-size:0.82rem;font-weight:700;letter-spacing:.05em;'
+            'text-transform:uppercase;color:var(--ink-faint);}\n'
+            '.lgroup:first-of-type{margin-top:6px;}\n'
             '.lc{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-md);padding:16px 16px 12px;box-shadow:var(--shadow-md);}\n'
             '.lc h2{margin:0 0 10px;font-size:1.15rem;}\n'
             '.lc-link{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;margin-top:8px;border-radius:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;font-size:0.95rem;min-height:40px;}\n'
@@ -12337,7 +12412,7 @@ def landing(lang):
             '<header class="hero"><div class="brand"><span class="brand-mark" aria-hidden="true">'
             '<svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 4l8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
             '</span><div><h1>' + h1 + '</h1><p class="tagline">' + tagline + '</p></div></div></header>\n'
-            '<section class="lgrid">' + cards + '</section>\n'
+            + cards + '\n'
             '<p class="lfoot"><a href="vietnam-rent-finder' + ("-en" if en else "") + '.html">' + full_link + ' →</a>'
             + other + '<span>' + stamp + '</span></p>\n'
             '</div>\n</body>\n</html>\n')

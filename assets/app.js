@@ -77,11 +77,13 @@
 
   var I18N = {
     ru: {
-      h1Title:"Жильё во Вьетнаме",
+      h1Title:"Жильё во Вьетнаме и на Филиппинах",
       kindLabel:"Тип недвижимости", kindResidential:"Жильё", kindCommercial:"Коммерция",
       tagline:"Комнаты, студии, квартиры и коммерческие помещения в Хошимине, Ханое, Дананге и Нячанге — из реальных объявлений, отсортированные по цене.",
       themeGroup:"Тема оформления", themeAuto:"Авто", themeLight:"Светлая", themeDark:"Тёмная",
       cityGroup:"Город",
+      countryVn:"Вьетнам",
+      countryPh:"Филиппины",
       searchLabel:"Поиск по описанию", searchPlaceholder:"например: бассейн, метро, вид на море", searchClear:"Очистить поиск",
       budgetLabel:"Бюджет, млн ₫ / мес", from:"от", to:"до", mln:"млн ₫",
       districtLabel:"Район", districtPlaceholder:"Начните вводить название района", districtClear:"Сбросить район",
@@ -124,11 +126,13 @@
       stamp:"Данные актуальны на 4 сентября 2026 · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
     },
     en: {
-      h1Title:"Rental housing in Vietnam",
+      h1Title:"Rental housing in Vietnam and the Philippines",
       kindLabel:"Property kind", kindResidential:"Housing", kindCommercial:"Commercial",
       tagline:"Rooms, studios, apartments and commercial space in Ho Chi Minh City, Hanoi, Da Nang and Nha Trang — from real listings, sorted by price.",
       themeGroup:"Colour theme", themeAuto:"Auto", themeLight:"Light", themeDark:"Dark",
       cityGroup:"City",
+      countryVn:"Vietnam",
+      countryPh:"Philippines",
       searchLabel:"Search descriptions", searchPlaceholder:"e.g. pool, metro, sea view", searchClear:"Clear search",
       budgetLabel:"Budget, million ₫ / month", from:"from", to:"to", mln:"mln ₫",
       districtLabel:"District", districtPlaceholder:"Start typing a district name", districtClear:"Clear district",
@@ -388,8 +392,19 @@
 
   function renderCityTabs(){
     el.cityTabs.innerHTML = "";
+    var lastCountry = null;
     Object.keys(CITIES).forEach(function(key){
       var c = CITIES[key];
+      // Вторая страна появилась 4 сентября 2026. Без подписи Думагете стоял бы
+      // вплотную к Далату и ничто не сказало бы, что это другая страна.
+      var country = c.country || "vn";
+      if (country !== lastCountry){
+        var head = document.createElement("span");
+        head.className = "city-group";
+        head.textContent = t(country === "ph" ? "countryPh" : "countryVn");
+        el.cityTabs.appendChild(head);
+        lastCountry = country;
+      }
       // Per-city pages: the tab is a real link to that city's page for the
       // same kind, with the listing count for the kind. All-in-one page: a
       // button that switches in place, with the district count as before.
