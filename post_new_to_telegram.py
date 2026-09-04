@@ -123,6 +123,7 @@ HUBS = {
         "country": "vn",
         "title": "Недвижимость Вьетнам",
         "token_env": "TG_BOT_TOKEN",
+        "lang": "ru",
         "topics_file": "telegram_topics.json",
         "topics": {
             "ho-chi-minh:residential": "Хошимин · жильё",
@@ -141,20 +142,24 @@ HUBS = {
     },
     "ph": {
         "country": "ph",
-        "title": "Недвижимость Филиппины (@RentPhilippineBot)",
+        "title": "Rent Philippine (@RentPhilippineBot)",
         "token_env": "TG_BOT_TOKEN_PH",
         "topics_file": "telegram_topics_ph.json",
+        # Филиппинский хаб ведётся на английском: аудитория там не русскоязычная.
+        # Это меняет не только подписи постов, но и названия разделов.
+        "lang": "en",
         "topics": {
-            "dumaguete:residential": "Думагете · жильё",
-            "cebu:residential": "Себу · жильё",
-            "manila:residential": "Манила · жильё",
-            "commercial": "Коммерция · Филиппины",
+            "dumaguete:residential": "Dumaguete · Housing",
+            "cebu:residential": "Cebu · Housing",
+            "manila:residential": "Manila · Housing",
+            "commercial": "Commercial · Philippines",
         },
     },
 }
 
 # Выбирается ключом --hub; значения ниже подставляет main() до всякой работы.
 HUB = "vn"
+HUB_LANG = HUBS["vn"]["lang"]
 HUB_COUNTRY = HUBS["vn"]["country"]
 TOPIC_TITLES = dict(HUBS["vn"]["topics"])
 TOPICS_FILE = HUBS["vn"]["topics_file"]
@@ -164,11 +169,12 @@ TOKEN_ENV = HUBS["vn"]["token_env"]
 def select_hub(name):
     """Переключает модуль на выбранный хаб. Всё, что дальше по коду читает
     HUB_COUNTRY/TOPIC_TITLES/TOPICS_FILE/TOKEN_ENV, получает значения этого хаба."""
-    global HUB, HUB_COUNTRY, TOPIC_TITLES, TOPICS_FILE, TOKEN_ENV
+    global HUB, HUB_LANG, HUB_COUNTRY, TOPIC_TITLES, TOPICS_FILE, TOKEN_ENV
     if name not in HUBS:
         sys.exit("неизвестный хаб %r -- есть: %s" % (name, ", ".join(HUBS)))
     h = HUBS[name]
     HUB = name
+    HUB_LANG = h.get("lang", "ru")
     HUB_COUNTRY = h["country"]
     TOPIC_TITLES = dict(h["topics"])
     TOPICS_FILE = h["topics_file"]
@@ -270,9 +276,11 @@ def load_listings():
         if c.get("country", "vn") != HUB_COUNTRY:
             skipped_country.append(l.get("id"))
             continue
-        l["_city_ru"] = c.get("name", l["city"])
-        l["_district"] = next((d["name"] for d in c.get("districts", [])
-                               if d["key"] == l["district"]), "")
+        en = HUB_LANG == "en"
+        l["_city_name"] = (c.get("nameEn") if en else None) or c.get("name", l["city"])
+        _d = next((d for d in c.get("districts", []) if d["key"] == l["district"]), None)
+        # у района английского имени нет -- оно и так латиницей (Makati, Piapi)
+        l["_district"] = (_d or {}).get("name", "")
         out.append(l)
     if skipped_country:
         print("skipping %d listing(s) outside %s -- this hub carries one country only "
@@ -285,16 +293,20 @@ CUR_SYM = {"VND": "₫", "PHP": "₱"}
 
 
 def fmt_price(v, cur="VND"):
-    """Цена в валюте объявления. Донг показываем миллионами, как на сайте;
-    песо -- целым числом: 15 000 ₱ в виде «0,015 млн» нечитаемо."""
+    """Цена в валюте объявления, на языке хаба. Донг показываем миллионами, как
+    на сайте; песо -- целым числом: 15 000 ₱ в виде «0,015 млн» нечитаемо."""
+    en = HUB_LANG == "en"
     if v is None:
-        return "цена по запросу"
+        return "price on request" if en else "цена по запросу"
+    per = "/mo" if en else "/мес"
     if cur == "VND":
         m = v / 1000000
         s = str(int(m)) if m == int(m) else ("%.1f" % m)
-        return s.replace(".", ",") + " млн ₫/мес"
+        if not en:
+            s = s.replace(".", ",")
+        return s + (" mln ₫" if en else " млн ₫") + per
     n = "{:,}".format(int(v)).replace(",", " ")
-    return "%s %s/мес" % (n, CUR_SYM.get(cur, cur))
+    return "%s %s%s" % (n, CUR_SYM.get(cur, cur), per)
 
 
 def esc(s):
@@ -303,17 +315,35 @@ def esc(s):
     return html.escape(str(s), quote=False)
 
 
+# Типы в данных хранятся по-русски -- для англоязычного хаба переводим.
+# Список закрытый, тот же, что проверяет сборка сайта.
+TYPE_EN = {"Комната": "Room", "Студия": "Studio", "Квартира": "Apartment",
+           "Дом": "House", "Другое": "Other", "Офис": "Office",
+           "Торговая площадь": "Retail space", "Склад": "Warehouse"}
+
+LABELS = {
+    "ru": {"open": "Открыть объявление", "all": "все объявления", "m2": "м²"},
+    "en": {"open": "Open the listing", "all": "all listings", "m2": "m²"},
+}
+
+
 def build_caption(l):
-    area = (" · %s м²" % l["area"]) if l.get("area") else ""
+    en = HUB_LANG == "en"
+    lab = LABELS["en" if en else "ru"]
+    area = (" · %s %s" % (l["area"], lab["m2"])) if l.get("area") else ""
+    type_name = TYPE_EN.get(l["type"], l["type"]) if en else l["type"]
     head = [
-        "🏠 <b>%s</b> · %s · %s" % (esc(l["type"]), esc(l["_city_ru"]),
+        "🏠 <b>%s</b> · %s · %s" % (esc(type_name), esc(l["_city_name"]),
                                     fmt_price(l.get("price"), l.get("cur", "VND"))),
         "📍 %s%s" % (esc(l["_district"]), area),
         "",
     ]
-    tail = ['<a href="%s">Открыть объявление</a> · <a href="%s">все объявления</a>'
-            % (html.escape(l["url"], quote=True), SITE_URL)]
-    notice = (l.get("details") or {}).get("notice")
+    tail = ['<a href="%s">%s</a> · <a href="%s">%s</a>'
+            % (html.escape(l["url"], quote=True), lab["open"], SITE_URL, lab["all"])]
+    det = l.get("details") or {}
+    # На английском хабе берём английские описание и оговорку. Подсунуть русский
+    # текст англоязычной аудитории хуже, чем пропустить объявление.
+    notice = (det.get("noticeEn") if en else det.get("notice")) or None
     notice_lines = ["", "⚠ " + esc(notice)] if notice else []
     fixed = len("\n".join(head + notice_lines + [""] + tail)) + 1
     room = max(120, CAPTION_BUDGET - fixed)
@@ -321,7 +351,8 @@ def build_caption(l):
     # through "&amp;" leaves a broken entity and Telegram rejects the caption.
     # Escaping only ever lengthens the text, so shrinking `room` converges.
     while True:
-        caption = "\n".join(head + [esc(clip(l["desc"], room))] + notice_lines + [""] + tail)
+        body = (l.get("descEn") if en else None) or l["desc"]
+        caption = "\n".join(head + [esc(clip(body, room))] + notice_lines + [""] + tail)
         if len(caption) <= CAPTION_BUDGET or room <= 60:
             return caption
         room -= 40
