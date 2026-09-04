@@ -1,0 +1,5 @@
+{
+ "_comment": "Скопировать в telegram_topics_ph.json и вписать chat_id филиппинской группы, затем: python post_new_to_telegram.py --hub ph --setup. chat_id -- числовой id форум-супергруппы (-100...) или @username, если группа публичная. Узнать можно через find_chat_id.py с TG_BOT_TOKEN_PH в окружении.",
+ "chat_id": "",
+ "topics": {}
+}

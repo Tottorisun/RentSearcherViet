@@ -42,7 +42,10 @@ SETUP
   4. python post_new_to_telegram.py --dry-run   see exactly what would go out.
   5. python post_new_to_telegram.py             post for real.
 
-  TG_BOT_TOKEN must be set in the environment. It is never written to the repo.
+  Токен берётся из переменной окружения того хаба, в который постим, и никогда
+  не пишется в репозиторий: TG_BOT_TOKEN для вьетнамского хаба,
+  TG_BOT_TOKEN_PH для филиппинского (@RentPhilippineBot). Хаб выбирается
+  ключом --hub vn|ph, по умолчанию vn.
 
 STATE: posted_to_telegram.json remembers what was already sent, and which
 message ids each listing produced -- the first run of this script posted with
@@ -91,7 +94,6 @@ for _s in (sys.stdout, sys.stderr):
         pass
 
 STATE_FILE = "posted_to_telegram.json"
-TOPICS_FILE = "telegram_topics.json"
 BUILT_HTML = "vietnam-rent-finder.html"   # index.html is a byte-identical copy; read the canonical one
 SITE_URL = "https://tottorisun.github.io/RentSearcherViet/"
 
@@ -106,24 +108,71 @@ COMMERCIAL = {"Офис", "Торговая площадь", "Склад"}
 # catch-all "other cities" topic any more (removed 2 Sep 2026 at the owner's
 # request: it read as a junk drawer). A city missing from TOPIC_TITLES is a
 # bug -- topic_key() below raises rather than silently routing it anywhere.
-# Хаб привязан к одной стране. Объявления других стран сюда не идут --
-# ни автоматически, ни «раз город есть на сайте».
-HUB_COUNTRY = "vn"
-
-TOPIC_TITLES = {
-    "ho-chi-minh:residential": "Хошимин · жильё",
-    "ha-noi:residential": "Ханой · жильё",
-    "da-nang:residential": "Дананг · жильё",
-    "nha-trang:residential": "Нячанг · жильё",
-    "binh-duong:residential": "Биньзыонг · жильё",
-    "da-lat:residential": "Далат · жильё",
-    "vung-tau:residential": "Вунгтау · жильё",
-    "quy-nhon:residential": "Куинён · жильё",
-    "hoi-an:residential": "Хойан · жильё",
-    "phan-thiet:residential": "Фантьет / Муйне · жильё",
-    "phu-quoc:residential": "Фукуок · жильё",
-    "commercial": "Коммерция · весь Вьетнам",
+# ХАБЫ. Один хаб = одна страна = свой бот, своя группа, свой файл разделов.
+#
+# Почему раздельно, а не один канал с разделами по странам: 4 сентября 2026
+# восемь филиппинских объявлений ушли в хаб «Недвижимость Вьетнам», потому что
+# города появились на сайте и постеру нечем было их отклонить. Аудитория хаба
+# приходила за Вьетнамом. Владелец завёл отдельного бота @RentPhilippineBot --
+# страны больше не смешиваются ни при каких обстоятельствах.
+#
+# Токен каждого хаба берётся из своей переменной окружения и никогда не
+# попадает в репозиторий.
+HUBS = {
+    "vn": {
+        "country": "vn",
+        "title": "Недвижимость Вьетнам",
+        "token_env": "TG_BOT_TOKEN",
+        "topics_file": "telegram_topics.json",
+        "topics": {
+            "ho-chi-minh:residential": "Хошимин · жильё",
+            "ha-noi:residential": "Ханой · жильё",
+            "da-nang:residential": "Дананг · жильё",
+            "nha-trang:residential": "Нячанг · жильё",
+            "binh-duong:residential": "Биньзыонг · жильё",
+            "da-lat:residential": "Далат · жильё",
+            "vung-tau:residential": "Вунгтау · жильё",
+            "quy-nhon:residential": "Куинён · жильё",
+            "hoi-an:residential": "Хойан · жильё",
+            "phan-thiet:residential": "Фантьет / Муйне · жильё",
+            "phu-quoc:residential": "Фукуок · жильё",
+            "commercial": "Коммерция · весь Вьетнам",
+        },
+    },
+    "ph": {
+        "country": "ph",
+        "title": "Недвижимость Филиппины (@RentPhilippineBot)",
+        "token_env": "TG_BOT_TOKEN_PH",
+        "topics_file": "telegram_topics_ph.json",
+        "topics": {
+            "dumaguete:residential": "Думагете · жильё",
+            "cebu:residential": "Себу · жильё",
+            "manila:residential": "Манила · жильё",
+            "commercial": "Коммерция · Филиппины",
+        },
+    },
 }
+
+# Выбирается ключом --hub; значения ниже подставляет main() до всякой работы.
+HUB = "vn"
+HUB_COUNTRY = HUBS["vn"]["country"]
+TOPIC_TITLES = dict(HUBS["vn"]["topics"])
+TOPICS_FILE = HUBS["vn"]["topics_file"]
+TOKEN_ENV = HUBS["vn"]["token_env"]
+
+
+def select_hub(name):
+    """Переключает модуль на выбранный хаб. Всё, что дальше по коду читает
+    HUB_COUNTRY/TOPIC_TITLES/TOPICS_FILE/TOKEN_ENV, получает значения этого хаба."""
+    global HUB, HUB_COUNTRY, TOPIC_TITLES, TOPICS_FILE, TOKEN_ENV
+    if name not in HUBS:
+        sys.exit("неизвестный хаб %r -- есть: %s" % (name, ", ".join(HUBS)))
+    h = HUBS[name]
+    HUB = name
+    HUB_COUNTRY = h["country"]
+    TOPIC_TITLES = dict(h["topics"])
+    TOPICS_FILE = h["topics_file"]
+    TOKEN_ENV = h["token_env"]
 
 
 class BotRefused(Exception):
@@ -226,8 +275,9 @@ def load_listings():
                                if d["key"] == l["district"]), "")
         out.append(l)
     if skipped_country:
-        print("skipping %d listing(s) outside %s -- this hub is Vietnam-only "
-              "(see HUB_COUNTRY)" % (len(skipped_country), HUB_COUNTRY.upper()))
+        print("skipping %d listing(s) outside %s -- this hub carries one country only "
+              "(--hub %s); the others have their own hub"
+              % (len(skipped_country), HUB_COUNTRY.upper(), HUB))
     return out
 
 
@@ -335,6 +385,10 @@ def do_setup(token, cfg):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--hub", default="vn", choices=sorted(HUBS),
+                    help="which hub to post to: vn (Вьетнам) or ph (Филиппины). "
+                         "Each has its own bot, group and topics file; a listing "
+                         "only ever goes to the hub of its own country.")
     ap.add_argument("--dry-run", action="store_true",
                     help="print what would be sent, send nothing")
     ap.add_argument("--setup", action="store_true",
@@ -354,11 +408,13 @@ def main():
     ap.add_argument("--suspect-clear", action="store_true",
                     help="the `suspect` listings are NOT in the hub: clear them so they are sent again")
     args = ap.parse_args()
-    token = os.environ.get("TG_BOT_TOKEN")
+    select_hub(args.hub)
+    print("hub: %s -- %s" % (HUB, HUBS[HUB]["title"]))
+    token = os.environ.get(TOKEN_ENV)
 
     if args.setup:
         if not token:
-            sys.exit("TG_BOT_TOKEN must be set to create topics")
+            sys.exit(TOKEN_ENV + " must be set to create topics")
         do_setup(token, load_topics())
         return
 
@@ -448,7 +504,7 @@ def main():
         return
 
     if not token:
-        sys.exit("TG_BOT_TOKEN must be set (or use --dry-run)")
+        sys.exit(TOKEN_ENV + " must be set (or use --dry-run)")
     cfg = load_topics()
 
     # Resolve every thread id BEFORE the first send: a missing topic must abort
