@@ -29,9 +29,21 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-token = os.environ.get("TG_BOT_TOKEN")
+# Ботов теперь два: вьетнамский и филиппинский (@RentPhilippineBot). Какой
+# именно опрашивать -- решает ключ --hub, чтобы не искать чат вьетнамского бота
+# в филиппинской группе и наоборот.
+_HUB_ENV = {"vn": "TG_BOT_TOKEN", "ph": "TG_BOT_TOKEN_PH"}
+_hub = "vn"
+for _i, _a in enumerate(sys.argv):
+    if _a == "--hub" and _i + 1 < len(sys.argv):
+        _hub = sys.argv[_i + 1]
+if _hub not in _HUB_ENV:
+    sys.exit("неизвестный хаб %r -- есть: %s" % (_hub, ", ".join(_HUB_ENV)))
+_ENV = _HUB_ENV[_hub]
+print("hub: %s (токен из %s)" % (_hub, _ENV))
+token = os.environ.get(_ENV)
 if not token:
-    sys.exit("set TG_BOT_TOKEN first (the token @BotFather gave you)")
+    sys.exit("set " + _ENV + " first (the token @BotFather gave you)")
 
 url = "https://api.telegram.org/bot%s/getUpdates" % token
 with urllib.request.urlopen(url, timeout=20) as r:
