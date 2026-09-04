@@ -6899,12 +6899,6 @@
   "source": "geocode",
   "matched": "Phú Lợi"
  },
- "2000188": {
-  "lat": 10.9817525,
-  "lon": 106.6496998,
-  "source": "geocode",
-  "matched": "Bình Dương"
- },
  "2000189": {
   "lat": 10.8948561,
   "lon": 106.7069391,
@@ -7012,12 +7006,6 @@
   "lon": 106.8303974,
   "source": "geocode",
   "matched": "Tân Đông Hiệp"
- },
- "2000207": {
-  "lat": 11.0624787,
-  "lon": 106.6769284,
-  "source": "geocode",
-  "matched": "Trần Quang Diệu"
  },
  "2000208": {
   "lat": 10.9989253,
@@ -7295,12 +7283,6 @@
   "source": "geocode",
   "matched": "Thuận Giao"
  },
- "2000267": {
-  "lat": 11.090953,
-  "lon": 106.6862625,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Thành"
- },
  "2000273": {
   "lat": 10.9355293,
   "lon": 106.7372572,
@@ -7576,12 +7558,6 @@
   "lon": 106.6953441,
   "source": "geocode",
   "matched": "Hoàng Trọng Mậu"
- },
- "1000158": {
-  "lat": 10.733188,
-  "lon": 106.6901635,
-  "source": "geocode",
-  "matched": "Số 39"
  },
  "1000159": {
   "lat": 10.7394976,
@@ -8201,12 +8177,6 @@
   "source": "geocode",
   "matched": "Bến Vân Đồn"
  },
- "1000215": {
-  "lat": 10.7361701,
-  "lon": 106.7119498,
-  "source": "geocode",
-  "matched": "Đường Số 38"
- },
  "1000219": {
   "lat": 10.7878232,
   "lon": 106.7343792,
@@ -8242,12 +8212,6 @@
   "lon": 106.8015629,
   "source": "geocode",
   "matched": "Riverside Park"
- },
- "1000225": {
-  "lat": 10.7897625,
-  "lon": 106.7766022,
-  "source": "geocode",
-  "matched": "Thủ Thiêm Xanh"
  },
  "1000226": {
   "lat": 10.7999367,
@@ -11140,5 +11104,29 @@
   "lon": 106.7003943,
   "source": "geocode",
   "matched": "Nguyễn Hữu Thọ"
+ },
+ "1000475": {
+  "lat": 10.725961,
+  "lon": 106.73389,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000476": {
+  "lat": 10.738486,
+  "lon": 106.71468,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000477": {
+  "lat": 10.79159,
+  "lon": 106.73052,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000478": {
+  "lat": 10.746901,
+  "lon": 106.71014,
+  "source": "chotot",
+  "matched": null
  }
 }
