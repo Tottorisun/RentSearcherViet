@@ -1,0 +1,167 @@
+This is the Facebook pass for the Rent Searcher project. It is NOT one of the two
+automated daily checks -- read WHEN THIS CAN RUN before anything else, because
+this pass cannot work the way they do.
+
+Everything here was verified by hand on 4 Sep 2026 against a live logged-in
+Facebook session. Where a claim is a measurement, the measurement is given.
+
+
+WHEN THIS CAN RUN
+=================
+Facebook is reachable ONLY through the owner's own logged-in Chrome, driven by
+the `claude-in-chrome` MCP tools. Verified the same day:
+
+- `curl` with a browser User-Agent -> HTTP 400 on www.facebook.com,
+  m.facebook.com, mbasic.facebook.com and graph.facebook.com alike. Not 403,
+  not a login redirect -- 400 for all four. There is no unauthenticated path.
+- WebFetch -> login wall (unchanged since the note in the other two prompts).
+- The Graph API is not an option either: Marketplace has no public API, and the
+  Groups API that once allowed reading group posts was withdrawn by Meta.
+
+`run_daily_check.ps1` invokes `claude -p --permission-mode dontAsk` -- a headless
+print-mode session. It has no Chrome extension attached, and even if it did, this
+pass drives the OWNER'S REAL BROWSER WINDOW: it would seize their Chrome at 05:00.
+So do NOT wire this into the scheduler. Run it only in an interactive session,
+while the desktop app is open, and preferably when the owner is not mid-work in
+Chrome. Say in the final report that the pass ran attended.
+
+Account risk, stated plainly because it is the owner's personal account: Facebook
+detects and acts on automated browsing. The concrete loss is that their own
+account -- the same one their Messenger conversations live in -- gets checkpointed
+and locked behind an ID-verification wall. To keep that unlikely: read only,
+never message a seller, never click "Notify Me" or any button that writes,
+keep to a human pace (a few seconds between pages), and do one city per pass
+rather than sweeping all eleven in a row.
+
+
+WHAT WORKS
+==========
+URL parameters on the category feed do take effect (verified: `radius=25` changed
+the page's own filter chip to "Within 25 km"):
+
+  https://www.facebook.com/marketplace/{city}/propertyrentals/?sortBy=creation_time_descend&daysSinceListed=1&radius=25
+
+City slugs seen working: `hanoi`. Sub-categories exist as their own paths and are
+narrower than the parent -- `/marketplace/{city}/apartments-for-rent/`,
+`/condos-for-rent/`, `/houses-for-rent/`, `/townhouses-for-rent/`.
+
+The sidebar carries a **"Listings from individuals only"** switch. Turn it on. It
+is the single most valuable filter on the page for this project, because it drops
+the agency reposts that make up most of the noise.
+
+Read the feed with `read_page` (accessibility tree), NOT with screenshots. Every
+listing link carries a usable aria-label of the shape:
+
+  "<title>, ₫<price>, <place>, listing <id>"   href="/marketplace/item/<id>/..."
+
+so titles, ids and places parse straight out of it. Dedupe on the numeric id in
+the href, exactly the way the Chợ Tốt passes dedupe on `/(\d{8,9})\.htm`.
+
+
+THE ITEM PAGE IS WHERE THE REAL DATA IS
+=======================================
+Open `https://www.facebook.com/marketplace/item/<id>/` and read it with
+`get_page_text`. A real example from this run:
+
+  title   Cho thuê chung cư mini tại 47 Nam Dư 30-35m2 full đồ
+  price   ₫4,900,000
+  place   Listed in Quận Đống Đa, Hà Nội        <-- WRONG, see below
+  body    🏡 Địa chỉ : 47 Nam Dư, Hoàng Mai, Hà Nội
+          Phòng 30m2-35m2, 4tr9 và 5tr2, máy giặt chung, cửa sổ to,
+          full nội thất..., hợp đồng 12 tháng, cọc 1 đóng 1,5
+  seller  Đỗ Ngọc Lan Oanh · Joined Facebook in 2014
+
+That body is often BETTER than a Chợ Tốt ad: a street address, the contract
+length, the deposit terms and the per-unit price spread all in one place.
+
+
+THE FIVE TRAPS (all four seen in a single 24-listing sweep)
+===========================================================
+1. **The district field lies.** The example above says "Listed in Quận Đống Đa"
+   while its own address is in Hoàng Mai -- a different district on the other
+   side of the city. Facebook also prints "Location is approximate" on the map.
+   Assign the project's district key from the ADDRESS IN THE BODY, never from
+   Facebook's own place field, and never from the map pin.
+
+2. **The price field is not a price.** Sellers type millions as plain numbers,
+   so the feed shows "₫115" for an 11.5-million house, "₫11" and "₫12" for
+   apartments, "₫6,688" for 6.688 million. Take the price from the title or the
+   body text and convert it yourself. A price that came out of Facebook's price
+   field alone must never reach a listing row.
+
+3. **Sales are mixed into the rentals category.** "Park 2ngủ 75m nhỉnh 7tỷ" --
+   7 tỷ is 7 billion đồng, a purchase price, sitting in Property Rentals. Any
+   figure in tỷ is a sale. Drop it.
+
+4. **Unrelated services are in there too.** "Sơn nhà giá rẻ" (cheap house
+   painting) was the 8th result. The category is not self-cleaning.
+
+5. **Dates are coarse.** There is no timestamp. The page carries relative ages in
+   `abbr`/`time` elements -- "11h", "1w", "2w" -- and the feed labels the newest
+   ones "Just listed". So "1w" means somewhere in 7-13 days. Use
+   `daysSinceListed=1` (or 7) in the URL to bound it at the source, record the
+   age honestly, and put the imprecision in the listing's `notice`: the project's
+   14-day rule cannot be applied to a Facebook post with the precision it gets
+   applied to a Chợ Tốt one.
+
+
+PHOTOS: THE HARD CONSTRAINT
+===========================
+Facebook photo URLs are signed and short-lived. Measured on a live Marketplace
+image on 4 Sep 2026: the URL's `oe` parameter decoded to 2026-09-08T16:25Z --
+**four days**. Storing one in `details.photos` the way Chợ Tốt URLs are stored
+would put a broken image on the site within the week.
+
+Re-hosting them is not available either: the harness blocks signed/query-string
+URLs from being returned out of the browser, so a photo URL cannot be handed to a
+downloader. (This is a deliberate guard, not a bug to work around.)
+
+So, until someone solves this properly, **Facebook listings go in without
+photos.** Consequences to state in the run's report, not to paper over:
+  - they render on the site without a gallery;
+  - `post_new_to_telegram.py --min-photos 3` will never pick them up, so they
+    are site-only and never reach the hub;
+  - that is why the only Facebook listing on the site before this pass (one, in
+    Đà Lạt) has no photos either.
+If photos are ever wanted, the one workable route is `computer` screenshots with
+`save_to_disk`, committed into the repo and referenced by relative path -- heavy,
+manual, and it only works on GitHub Pages, not inside the Artifact. Do not start
+that without asking the owner first.
+
+
+THE PASS
+========
+1. Ask before starting if the owner is using Chrome; this takes over a tab.
+2. `list_connected_browsers` -> `tabs_context_mcp{createIfEmpty:true}`.
+3. Open the category feed for ONE city with `sortBy=creation_time_descend`,
+   `daysSinceListed=1`, a radius that covers the city, and switch on
+   "Listings from individuals only".
+4. `read_page` the feed. Collect id + title + place from the aria-labels.
+5. Drop anything already on the site: load the built page with
+   `site_data.load_listings()` and match on the Facebook item id in the URL.
+6. Open each surviving item page, `get_page_text`, and read it as a human would.
+   Apply the five traps above. Discard anything whose body gives no address --
+   that rule is already the site's and it disqualifies a large share of
+   Facebook posts.
+7. Write the rows the same way every other batch does: `new_listingsNN.py`,
+   ids from `allocate_ids.py`, `source="fbmarketplace"`, bilingual `desc`
+   and `descEn`, a `notice`/`noticeEn` naming the date imprecision and the
+   absent photos, url `https://www.facebook.com/marketplace/item/<id>/`.
+   No `details.photos`.
+8. There are no source coordinates. Facebook's pin is deliberately approximate,
+   so do NOT put anything in `chotot_coords.json`; let the normal geocoder work
+   from the address text in the description, same as any Batdongsan row.
+9. `python rebuild_final.py` -> pin pipeline -> rebuild -> commit -> push, exactly
+   as the other prompts describe.
+10. Close the tab you opened (`tabs_close_mcp`) before finishing.
+
+
+GROUPS
+======
+Facebook groups (source key `facebook`) are richer than Marketplace for long-term
+rentals but were not exercised in this pass. They are reachable the same way once
+Chrome is driving, at `https://www.facebook.com/groups/<id>`, and the owner is
+already a member of the relevant expat/rental groups. Same traps apply, plus one
+more: group posts are conversations, so the price and address are often in a
+comment rather than the post. Treat a post whose own text lacks an address as
+disqualified rather than digging through comments.
