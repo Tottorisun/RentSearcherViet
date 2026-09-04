@@ -9940,5 +9940,173 @@
   "lon": 105.80261,
   "source": "chotot",
   "matched": null
+ },
+ "2000500": {
+  "lat": 11.9293283,
+  "lon": 108.4488477,
+  "source": "geocode",
+  "matched": "Tháng 2"
+ },
+ "2000501": {
+  "lat": 11.9365426,
+  "lon": 108.4585556,
+  "source": "geocode",
+  "matched": "Khe Sanh"
+ },
+ "2000502": {
+  "lat": 11.9569455,
+  "lon": 108.4339124,
+  "source": "geocode",
+  "matched": "Xô Viết Nghệ Tĩnh"
+ },
+ "2000503": {
+  "lat": 16.0907229,
+  "lon": 108.2197635,
+  "source": "geocode",
+  "matched": "Như Nguyệt"
+ },
+ "2000504": {
+  "lat": 16.029414,
+  "lon": 108.2215245,
+  "source": "geocode",
+  "matched": "Hòa Cường Nam"
+ },
+ "2000505": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000506": {
+  "lat": 16.0114033,
+  "lon": 108.2541917,
+  "source": "geocode",
+  "matched": "Hải Triều"
+ },
+ "2000507": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "geocode",
+  "matched": "Ngũ Hành Sơn 226"
+ },
+ "2000508": {
+  "lat": 16.0495348,
+  "lon": 108.2443888,
+  "source": "geocode",
+  "matched": "An Thượng 19"
+ },
+ "2000509": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000510": {
+  "lat": 15.9933928,
+  "lon": 108.2390404,
+  "source": "geocode",
+  "matched": "Bình Kỳ"
+ },
+ "2000511": {
+  "lat": 16.0917477,
+  "lon": 108.2358129,
+  "source": "geocode",
+  "matched": "Nại Hiên Đông"
+ },
+ "2000512": {
+  "lat": 16.0691157,
+  "lon": 108.235859,
+  "source": "geocode",
+  "matched": "Tạ Mỹ Duật"
+ },
+ "2000513": {
+  "lat": 16.0607904,
+  "lon": 108.2303821,
+  "source": "geocode",
+  "matched": "Trần Hưng Đạo"
+ },
+ "2000514": {
+  "lat": 16.0669747,
+  "lon": 108.1997848,
+  "source": "geocode",
+  "matched": "Điện Biên Phủ"
+ },
+ "2000515": {
+  "lat": 16.0663461,
+  "lon": 108.2067683,
+  "source": "geocode",
+  "matched": "Lê Duẩn"
+ },
+ "2000516": {
+  "lat": 16.0704464,
+  "lon": 108.1538527,
+  "source": "geocode",
+  "matched": "Ngô Thì Nhậm 61"
+ },
+ "2000517": {
+  "lat": 16.0634657,
+  "lon": 108.150546,
+  "source": "geocode",
+  "matched": "Phạm Như Xương"
+ },
+ "2000518": {
+  "lat": 16.0391867,
+  "lon": 108.1837155,
+  "source": "geocode",
+  "matched": "Tôn Đản 1"
+ },
+ "2000519": {
+  "lat": 16.0049492,
+  "lon": 108.2204494,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000520": {
+  "lat": 16.0091916,
+  "lon": 108.2227353,
+  "source": "geocode",
+  "matched": "Phạm Xuân"
+ },
+ "2000521": {
+  "lat": 10.3333034,
+  "lon": 107.0855666,
+  "source": "geocode",
+  "matched": "Võ Thị Sáu"
+ },
+ "2000522": {
+  "lat": 10.3425579,
+  "lon": 107.0958939,
+  "source": "geocode",
+  "matched": "Bãi Sau"
+ },
+ "2000523": {
+  "lat": 10.3331151,
+  "lon": 107.0818757,
+  "source": "geocode",
+  "matched": "Phan Chu Trinh"
+ },
+ "2000524": {
+  "lat": 10.3483619,
+  "lon": 107.0773918,
+  "source": "geocode",
+  "matched": "Lý Tự Trọng"
+ },
+ "2000525": {
+  "lat": 10.3603985,
+  "lon": 107.0773905,
+  "source": "geocode",
+  "matched": "Lê Hồng Phong"
+ },
+ "1000386": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000387": {
+  "lat": 10.803753,
+  "lon": 106.7347062,
+  "source": "geocode",
+  "matched": "Xuân Thủy"
  }
 }

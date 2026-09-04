@@ -33,3 +33,10 @@ telegram_topics.json
 
 # Ad-hoc backups of scripts (run_daily_check.ps1.bak-..., etc) stay local.
 *.bak-*
+
+# A second scratch convention: daily-check sessions also write `scratch_*`
+# (fetched pages, candidate dumps, one-off parsers) and the odd `retryN.html`.
+# Only `_*` was covered before, so on 4 Sep 2026 a `git add -A` swept 180 of a
+# concurrent session's working files into the index. Both conventions ignored now.
+scratch_*
+retry*.html

@@ -45,9 +45,9 @@ City slugs seen working: `hanoi`. Sub-categories exist as their own paths and ar
 narrower than the parent -- `/marketplace/{city}/apartments-for-rent/`,
 `/condos-for-rent/`, `/houses-for-rent/`, `/townhouses-for-rent/`.
 
-The sidebar carries a **"Listings from individuals only"** switch. Turn it on. It
-is the single most valuable filter on the page for this project, because it drops
-the agency reposts that make up most of the noise.
+The sidebar carries a **"Listings from individuals only"** switch. Turn it on --
+but see the first pass's lesson below: it thins the agency reposts, it does not
+remove them. Set it through the URL (`isC2CListingOnly=1`) rather than clicking.
 
 Read the feed with `read_page` (accessibility tree), NOT with screenshots. Every
 listing link carries a usable aria-label of the shape:
@@ -56,6 +56,45 @@ listing link carries a usable aria-label of the shape:
 
 so titles, ids and places parse straight out of it. Dedupe on the numeric id in
 the href, exactly the way the Chợ Tốt passes dedupe on `/(\d{8,9})\.htm`.
+
+
+LESSONS FROM THE FIRST REAL PASS (HCMC, 4 Sep 2026 -- 14 listings in, 2 usable out)
+=================================================================================
+- The "Listings from individuals only" switch writes `isC2CListingOnly=1` into the
+  URL. Put it in the URL directly instead of hunting for the switch and clicking it.
+  The full working feed URL is:
+    /marketplace/{city}/propertyrentals?daysSinceListed=7&isC2CListingOnly=1&sortBy=creation_time_descend&exact=false&radius=30
+  City slug `hochiminhcity` works, as does `hanoi`.
+- **That filter does not actually exclude agencies.** With it on, the best find of
+  the pass was posted by "Thảo (Khải Lộc Land)" -- an agency, with its brand in the
+  ad text. Judge the seller from the body and the hashtags, not from the filter.
+- **Read item pages with `get_page_text`, never by slicing `document.body.innerText`
+  yourself.** Marketplace renders its own nav and a "Today's picks" rail into the
+  body text, and hand-rolled slicing repeatedly returned the rail instead of the
+  listing -- including prices belonging to completely different ads. `get_page_text`
+  does the article extraction correctly.
+- **Two different item-page formats exist.** The older one shows "· In stock",
+  "Listed in <district>" and a `Details` block. The newer "Rentals" one shows
+  "₫X / Month", "Rental Location" and a `Description` block -- and carries NO age at
+  all, not even a relative one. So:
+    * a listing taken from a `daysSinceListed=N` feed has a real upper bound on its
+      age -- use N and say in the notice that it is a bound, not a publication date;
+    * a listing taken from the "Today's picks" rail has NO age information
+      whatsoever. Do not put it in the dataset. Report it to the owner directly
+      instead. Writing a made-up number into `daysAgo` would be a lie in the one
+      field this whole site is built on.
+- The price trap is worse than "sellers are sloppy": it is systematic and usually a
+  factor of 1000 or 10. Seen in one pass: ₫13,500 for 13.5 million, ₫1,400,000 for
+  14 million, ₫4,000,000 for 40 million, ₫8 and ₫105 and "Free" for real rentals.
+  Every price must be read out of the body text.
+- Roughly one in seven listings survives. Of 14: three were sales sitting in the
+  rentals category (5.5 tỷ, 5.45 tỷ, "5xty"), one was house-painting services,
+  several had no price anywhere in the body, one offered several different units
+  with no size for any of them. Two were usable. Budget for that ratio.
+- The sidebar rail is worth reading even though its listings are undated: it
+  surfaced an Ascentia 3-bedroom in Phú Mỹ Hưng, which is one of the owner's own
+  three search areas, when the filtered feed had not. Harvest it for the owner, not
+  for the dataset.
 
 
 THE ITEM PAGE IS WHERE THE REAL DATA IS
