@@ -10210,5 +10210,113 @@
   "lon": 106.738205,
   "source": "chotot",
   "matched": null
+ },
+ "3000000": {
+  "lat": 9.313245,
+  "lon": 123.262737,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000001": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000002": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000003": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000004": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000005": {
+  "lat": 9.299457,
+  "lon": 123.293889,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000006": {
+  "lat": 9.299457,
+  "lon": 123.293889,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000007": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000008": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000009": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000010": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000011": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000012": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000013": {
+  "lat": 9.311661,
+  "lon": 123.237335,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000014": {
+  "lat": 9.131887,
+  "lon": 123.146399,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000015": {
+  "lat": 9.32077,
+  "lon": 123.309362,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000016": {
+  "lat": 9.32077,
+  "lon": 123.309362,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000017": {
+  "lat": 9.313245,
+  "lon": 123.262737,
+  "source": "ward-centroid",
+  "matched": null
  }
 }

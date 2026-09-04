@@ -30,6 +30,25 @@ import ast, re, os, json, datetime
 from listing_lock import listings_write_lock, write_source_atomic, SOURCE as SRC
 
 CUTOFF_DAYS = 14
+
+# Источники, которые ВООБЩЕ не публикуют дату размещения. Для них возраст в
+# daysAgo -- производная величина (для dotproperty.com.ph он декодируется из
+# UUIDv7 в идентификаторе объявления, то есть это момент создания строки в их
+# базе), а не дата публикации, и он не сдвигается, когда агент обновляет
+# залежавшееся объявление.
+#
+# Правило 14 дней написано под Chợ Tốt и Batdongsan, где объявления
+# оборачиваются за дни. Агентский портал -- другая физика: на весь Думагете там
+# двенадцать объявлений, и это и есть рынок. Применять к ним возрастную чистку
+# значит гарантированно опустошать филиппинские города через две недели после
+# каждого захода, независимо от того, сдаются квартиры или нет.
+#
+# Поэтому такие источники освобождены от чистки ПО ВОЗРАСТУ, но не от проверки
+# на живость: remove_gone_listings.py по-прежнему удаляет их, когда страница
+# отвечает 404. Живость здесь -- правильный сигнал, возраст -- нет.
+# Подпись "N дней назад" им продолжает пересчитываться, так что карточка не врёт
+# о своём возрасте, а в notice каждой такой строки сказано, что дата выведенная.
+DATELESS_SOURCES = {"dotproperty"}
 POSTED_DATES_FILE = "posted_dates.json"
 
 RU_DAY_WORDS = ["день", "дня", "дней"]
@@ -83,7 +102,8 @@ def main():
                 # never guess/delete on a block we don't fully understand -- but SAY so
                 skipped.append((getattr(e, "lineno", "?"), lid))
                 continue
-            blocks.append((e.lineno, e.end_lineno, str(lid), posted_old, days_old))
+            src_kw = next((const(k.value) for k in e.keywords if k.arg == "source"), "chotot")
+            blocks.append((e.lineno, e.end_lineno, str(lid), posted_old, days_old, src_kw))
 
         if skipped:
             print(f"WARNING: {len(skipped)} block(s) could not be parsed as a plain L(id,...,posted,daysAgo,...) call and were left untouched:")
@@ -94,7 +114,7 @@ def main():
         removed_ids = []
         relabelled = 0
         # Edit from the bottom up so earlier line numbers stay valid.
-        for lineno, end_lineno, lid, posted_old, days_old in sorted(blocks, key=lambda b: b[0], reverse=True):
+        for lineno, end_lineno, lid, posted_old, days_old, src_kw in sorted(blocks, key=lambda b: b[0], reverse=True):
             if lid in posted_dates:
                 anchor = datetime.date.fromisoformat(posted_dates[lid])
             else:
@@ -102,7 +122,7 @@ def main():
                 posted_dates[lid] = anchor.isoformat()
             true_days = (today - anchor).days
 
-            if true_days > CUTOFF_DAYS:
+            if true_days > CUTOFF_DAYS and src_kw not in DATELESS_SOURCES:
                 removed_ids.append(lid)
                 del posted_dates[lid]
                 start, end = lineno - 1, end_lineno          # slice bounds over `lines`

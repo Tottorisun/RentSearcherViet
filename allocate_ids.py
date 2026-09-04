@@ -36,7 +36,10 @@ USAGE
   # after the listings are actually written into rebuild_final.py:
   python allocate_ids.py --release 1000042-1000053
 
-Blocks: 1000000 = daily HCMC check, 2000000 = daily 7-city check.
+Blocks: 1000000 = daily HCMC check, 2000000 = daily 7-city check,
+3000000 = Philippines (added 4 Sep 2026 -- a separate pass, run at different
+times by different tooling, so it gets its own range for the same reason the
+other two do).
 Reservations older than --stale-hours (default 24) are ignored, so a crashed
 run cannot wedge the allocator forever -- see the note on DEFAULT_STALE_HOURS
 for why that threshold is deliberately generous rather than tight.
@@ -224,13 +227,13 @@ def cmd_status(_args):
         print("block %d | %d..%d | owner=%s | age=%.1fh"
               % (r["block"], r["first"], r["last"], r.get("owner", "?"),
                  (now - r["ts"]) / 3600))
-    for block, name in ((1000000, "HCMC check"), (2000000, "7-city check")):
+    for block, name in ((1000000, "HCMC check"), (2000000, "7-city check"), (3000000, "Philippines")):
         print("max written in block %d (%s): %d" % (block, name, max_in_file(block)))
 
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--block", type=int, help="1000000 (HCMC) or 2000000 (7-city)")
+    p.add_argument("--block", type=int, help="1000000 (HCMC), 2000000 (7-city) or 3000000 (Philippines)")
     p.add_argument("--count", type=int, default=1)
     p.add_argument("--owner", default="unnamed")
     p.add_argument("--release", help="FIRST-LAST, after the ids are written to " + SOURCE)
@@ -246,8 +249,8 @@ def main():
     elif args.release:
         cmd_release(args)
     elif args.block:
-        if args.block not in (1000000, 2000000):
-            sys.exit("--block must be 1000000 (HCMC) or 2000000 (7-city)")
+        if args.block not in (1000000, 2000000, 3000000):
+            sys.exit("--block must be 1000000 (HCMC), 2000000 (7-city) or 3000000 (Philippines)")
         cmd_allocate(args)
     else:
         p.print_help()

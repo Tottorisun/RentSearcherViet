@@ -22,7 +22,7 @@ except FileNotFoundError:
 
 CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City",
            "vung-tau":"Vung Tau","quy-nhon":"Quy Nhon","phan-thiet":"Phan Thiet",
-           "ha-noi":"Hanoi","binh-duong":"Binh Duong","phu-quoc":"Phu Quoc"}
+           "ha-noi":"Hanoi","binh-duong":"Binh Duong","phu-quoc":"Phu Quoc","dumaguete":"Dumaguete","cebu":"Cebu","manila":"Manila"}
 DIST_NAME = {}
 for ckey, cval in data["CITIES"].items():
     for d in cval["districts"]:
