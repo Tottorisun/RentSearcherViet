@@ -268,7 +268,9 @@
   .listing-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);}
   .price{font-family:var(--font-display);font-size:1.28rem;font-weight:700;font-variant-numeric:tabular-nums;}
   .price small{font-family:var(--font-body);font-size:0.68rem;font-weight:600;color:var(--ink-faint);text-transform:uppercase;}
-  .price-conv{display:block;font-size:0.72rem;color:var(--ink-faint);font-variant-numeric:tabular-nums;margin-top:1px;}
+  /* Пересчёт в другие валюты -- справочная строка, не цена: обычный шрифт,
+     без жирности, приглушённый цвет. Явно, чтобы не наследовать от .price. */
+  .price-conv{display:block;font-family:var(--font-body);font-size:0.7rem;font-weight:400;color:var(--ink-faint);font-variant-numeric:tabular-nums;letter-spacing:0;margin-top:2px;}
   .price-change{display:block;font-size:0.72rem;font-weight:600;}
   .price-change.down{color:var(--accent);}
   .price-change.up{color:var(--danger);}
