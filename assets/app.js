@@ -39,6 +39,7 @@
 
   var SOURCE_LABEL = {};
   SOURCES.forEach(function(s){ SOURCE_LABEL[s.key] = s; });
+  var SOURCES_BY_CITY = DATA.SOURCES_BY_CITY || {};
 
   var DAY_OPTIONS = [1,3,7,14];
   var BUDGET_CHIPS = [3,5,10,15];
@@ -462,7 +463,7 @@
   function selectCity(key){
     if (PAGE){ location.href = pageHref(key, state.kind); return; }
     state.city = key; state.district = null; state.complex = null; el.districtInput.value = "";
-    renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); renderComplexFilter(); applyFilters();
+    renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); renderSourceChips(); renderComplexFilter(); applyFilters();
   }
 
   var WARD_BOUNDARIES = DATA.WARD_BOUNDARIES || {};
@@ -860,9 +861,19 @@
     return "дней";
   }
 
+  // Только те источники, у которых в этом городе и разделе есть строки. Чип
+  // «Chợ Tốt» на странице Себу ничего не находит и читается как поломка, а не
+  // как пустой фильтр. Если карты почему-то нет -- показываем всё, как раньше.
+  function sourcesForCity(){
+    var byKind = SOURCES_BY_CITY[state.city];
+    var keys = byKind && byKind[state.kind];
+    if (!keys || !keys.length) return SOURCES;
+    return SOURCES.filter(function(s){ return keys.indexOf(s.key) !== -1; });
+  }
+
   function renderSourceChips(){
     el.sourceChips.innerHTML = "";
-    SOURCES.forEach(function(s){
+    sourcesForCity().forEach(function(s){
       var b = document.createElement("button");
       b.type="button"; b.className="chip"; b.disabled = !s.active;
       b.innerHTML = '<span class="dot" style="background:'+s.color+'"></span>' + sourceLabel(s) + (s.active ? "" : " " + t("soon"));
@@ -915,7 +926,7 @@
         b.classList.toggle("active", b.getAttribute("data-kind") === kind);
       });
     }
-    syncBudgetUI(); renderBudgetChips(); renderTypeChips(); renderComplexFilter(); applyFilters();
+    syncBudgetUI(); renderBudgetChips(); renderSourceChips(); renderTypeChips(); renderComplexFilter(); applyFilters();
   }
 
   var kindToggleEl = document.getElementById("kind-toggle");
