@@ -8561,12 +8561,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000470": {
-  "lat": 21.015371,
-  "lon": 105.81288,
-  "source": "chotot",
-  "matched": null
- },
  "2000471": {
   "lat": 20.987251,
   "lon": 105.76695,
@@ -8866,12 +8860,6 @@
   "lon": 108.2303821,
   "source": "geocode",
   "matched": "Trần Hưng Đạo"
- },
- "2000514": {
-  "lat": 16.0669747,
-  "lon": 108.1997848,
-  "source": "geocode",
-  "matched": "Điện Biên Phủ"
  },
  "2000515": {
   "lat": 16.0663461,
@@ -10503,6 +10491,66 @@
   "lat": 10.330934,
   "lon": 123.898132,
   "source": "ward-centroid",
+  "matched": null
+ },
+ "1000524": {
+  "lat": 10.770009,
+  "lon": 106.7039,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000525": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000526": {
+  "lat": 10.803889,
+  "lon": 106.73543,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000527": {
+  "lat": 10.793797,
+  "lon": 106.744934,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000528": {
+  "lat": 10.713854,
+  "lon": 106.74035,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000529": {
+  "lat": 10.738719,
+  "lon": 106.6955,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000530": {
+  "lat": 10.74107,
+  "lon": 106.69544,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000531": {
+  "lat": 10.790731,
+  "lon": 106.74405,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000532": {
+  "lat": 10.790731,
+  "lon": 106.74405,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000533": {
+  "lat": 10.785401,
+  "lon": 106.729744,
+  "source": "chotot",
   "matched": null
  }
 }
