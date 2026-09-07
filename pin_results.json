@@ -9413,7 +9413,12 @@
   "source": "ward-centroid",
   "matched": null
  },
- "3000184": null,
+ "3000184": {
+  "lat": 9.283046,
+  "lon": 123.295222,
+  "source": "ward-centroid",
+  "matched": null
+ },
  "3000185": {
   "lat": 9.311661,
   "lon": 123.237335,
@@ -9474,7 +9479,12 @@
   "source": "ward-centroid",
   "matched": null
  },
- "3000195": null,
+ "3000195": {
+  "lat": 9.293043,
+  "lon": 123.262705,
+  "source": "ward-centroid",
+  "matched": null
+ },
  "3000196": {
   "lat": 9.299457,
   "lon": 123.293889,
@@ -9505,7 +9515,12 @@
   "source": "ward-centroid",
   "matched": null
  },
- "3000201": null,
+ "3000201": {
+  "lat": 10.297371,
+  "lon": 123.900107,
+  "source": "ward-centroid",
+  "matched": null
+ },
  "3000202": {
   "lat": 10.243021,
   "lon": 123.848825,
@@ -9518,8 +9533,18 @@
   "source": "ward-centroid",
   "matched": null
  },
- "3000204": null,
- "3000205": null,
+ "3000204": {
+  "lat": 10.299385,
+  "lon": 123.879093,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000205": {
+  "lat": 10.297371,
+  "lon": 123.900107,
+  "source": "ward-centroid",
+  "matched": null
+ },
  "3000206": {
   "lat": 10.288309,
   "lon": 123.972347,
@@ -9550,7 +9575,12 @@
   "source": "ward-centroid",
   "matched": null
  },
- "3000211": null,
+ "3000211": {
+  "lat": 10.302058,
+  "lon": 123.868958,
+  "source": "ward-centroid",
+  "matched": null
+ },
  "3000212": {
   "lat": 14.460911,
   "lon": 121.022378,

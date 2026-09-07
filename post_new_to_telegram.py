@@ -326,6 +326,11 @@ LABELS = {
     "en": {"open": "Open the listing", "all": "all listings", "m2": "m²"},
 }
 
+# Домик над офисом на 2 090 м² читается как ошибка вёрстки. Ключи -- русские
+# названия типов, то есть те же, что в данных и в закрытом списке сборки.
+TYPE_EMOJI = {"Офис": "🏢", "Торговая площадь": "🏬", "Склад": "📦",
+              "Комната": "🛏", "Студия": "🏙"}
+
 
 def build_caption(l):
     en = HUB_LANG == "en"
@@ -333,7 +338,8 @@ def build_caption(l):
     area = (" · %s %s" % (l["area"], lab["m2"])) if l.get("area") else ""
     type_name = TYPE_EN.get(l["type"], l["type"]) if en else l["type"]
     head = [
-        "🏠 <b>%s</b> · %s · %s" % (esc(type_name), esc(l["_city_name"]),
+        "%s <b>%s</b> · %s · %s" % (TYPE_EMOJI.get(l["type"], "🏠"), esc(type_name),
+                                    esc(l["_city_name"]),
                                     fmt_price(l.get("price"), l.get("cur", "VND"))),
         "📍 %s%s" % (esc(l["_district"]), area),
         "",
