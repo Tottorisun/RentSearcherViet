@@ -34,14 +34,38 @@ hidden, so the answer will be visible in this script's output.
 import os, re, sys, json, time, urllib.request, urllib.parse, urllib.error
 
 DRY_RUN = "--dry-run" in sys.argv
-STATE_FILE = "posted_to_telegram.json"
 
-TOKEN = os.environ.get("TG_BOT_TOKEN")
+# Хаб выбирается явно: --hub vn (по умолчанию) или --hub ph.
+#
+# Почему это обязано быть параметром, а не константой. Номер сообщения в
+# Telegram уникален только внутри чата -- сообщение №42 есть и во вьетнамской
+# группе, и в филиппинской. Пока этот скрипт брал вьетнамский токен и
+# вьетнамский чат, но шёл по общему файлу состояния, удаление филиппинского
+# поста означало deleteMessage(вьетнамский чат, №42) -- то есть снос ЧУЖОГО
+# вьетнамского сообщения с тем же номером, молча и с отчётом об успехе.
+# Теперь у каждого хаба свой файл состояния, свой токен и свой чат, и ни один
+# номер не может уехать в чужую группу.
+HUBS = {
+    "vn": {"token_env": "TG_BOT_TOKEN", "topics": "telegram_topics.json",
+           "state": "posted_to_telegram.json", "block": 1000000, "title": "Недвижимость Вьетнам"},
+    "ph": {"token_env": "TG_BOT_TOKEN_PH", "topics": "telegram_topics_ph.json",
+           "state": "posted_to_telegram_ph.json", "block": 3000000, "title": "Rent Philippine"},
+}
+_hub = "vn"
+if "--hub" in sys.argv:
+    _hub = sys.argv[sys.argv.index("--hub") + 1]
+if _hub not in HUBS:
+    raise SystemExit("неизвестный хаб %r -- есть: %s" % (_hub, ", ".join(HUBS)))
+HUB = HUBS[_hub]
+STATE_FILE = HUB["state"]
+
+TOKEN = os.environ.get(HUB["token_env"])
 if not TOKEN and not DRY_RUN:
-    raise SystemExit("Set TG_BOT_TOKEN (not needed for --dry-run)")
+    raise SystemExit("Set %s (not needed for --dry-run)" % HUB["token_env"])
 
-topics = json.load(open("telegram_topics.json", encoding="utf-8"))
+topics = json.load(open(HUB["topics"], encoding="utf-8"))
 CHAT_ID = topics["chat_id"]
+print("hub: %s -- %s (chat %s, state %s)" % (_hub, HUB["title"], CHAT_ID, STATE_FILE))
 
 from site_data import load_listings
 live_ids = {str(l["id"]) for l in load_listings()}
@@ -55,6 +79,20 @@ except json.JSONDecodeError as ex:
 
 message_ids = state.setdefault("message_ids", {})
 posted = set(state.get("posted", []))
+
+# Ремень поверх подтяжек: id Филиппин выдаются из блока 3000000, всё остальное
+# -- Вьетнам (блоки 0 legacy, 1000000 HCMC, 2000000 семь городов). Если в файле
+# состояния оказался чужой id, значит файлы разъехались, и продолжать нельзя:
+# каждый такой номер сообщения указывает не в тот чат.
+_alien = sorted((int(i) for i in set(message_ids) | {str(p) for p in posted}
+                 if (int(i) >= 3000000) != (_hub == "ph")))
+if _alien:
+    raise SystemExit(
+        "%s содержит %d id из чужого хаба (%s...): номера сообщений Telegram "
+        "уникальны только внутри чата, и удалять их этим ботом в этом чате "
+        "означало бы снести чужие сообщения. Разведите файлы состояния и "
+        "запустите снова." % (STATE_FILE, len(_alien),
+                              ", ".join(str(i) for i in _alien[:5])))
 
 def save_state():
     state["message_ids"] = message_ids

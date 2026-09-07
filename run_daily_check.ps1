@@ -28,7 +28,7 @@ $logFile = Join-Path $logDir "${LogPrefix}_check_$stamp.log"
 function Send-OwnerAlert {
     param([string]$Text)
     try {
-        $say = 'D:\Мои разработки\AI_CONTEXT\TASKS\gelios_say.py'
+        $say = 'D:\MyDev\AI_CONTEXT\TASKS\gelios_say.py'
         if (-not (Test-Path -LiteralPath $say)) { "Оповещение пропущено: нет $say"; return }
 
         # Не повторять одну и ту же беду. Проверка идёт в 15:00, 18:00 и 21:00;

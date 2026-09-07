@@ -4,7 +4,7 @@
     {
       "name": "rent-finder-preview",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8792", "--directory", "D:\\Мои разработки\\Rent Searcher"],
+      "runtimeArgs": ["-m", "http.server", "8792", "--directory", "D:\\MyDev\\Rent Searcher"],
       "port": 8792
     }
   ]

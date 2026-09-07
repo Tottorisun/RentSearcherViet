@@ -25,10 +25,13 @@ posted_dates.json.tmp
 liveness_cache.json.tmp
 posted_to_telegram.json.tmp
 posted_to_telegram.json.bak-*
+posted_to_telegram_ph.json.tmp
+posted_to_telegram_ph.json.bak-*
 
 # Telegram ingestion / notification working state
 telegram_candidates.json
 posted_to_telegram.json
+posted_to_telegram_ph.json
 telegram_topics.json
 telegram_topics_ph.json
 

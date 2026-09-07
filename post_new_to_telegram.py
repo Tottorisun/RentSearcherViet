@@ -93,6 +93,12 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
+# Файл состояния свой у каждого хаба, и это не аккуратность, а безопасность.
+# Идентификаторы сообщений в Telegram уникальны только внутри чата: сообщение
+# №42 есть и во вьетнамской группе, и в филиппинской. Один общий файл означал
+# бы, что cleanup_telegram_posts.py, удаляя филиппинский пост вьетнамским
+# ботом в вьетнамском чате, снесёт там чужое сообщение с тем же номером --
+# молча и с отчётом об успехе. select_hub() подставляет нужный файл.
 STATE_FILE = "posted_to_telegram.json"
 BUILT_HTML = "vietnam-rent-finder.html"   # index.html is a byte-identical copy; read the canonical one
 SITE_URL = "https://tottorisun.github.io/RentSearcherViet/"
@@ -125,6 +131,7 @@ HUBS = {
         "token_env": "TG_BOT_TOKEN",
         "lang": "ru",
         "topics_file": "telegram_topics.json",
+        "state_file": "posted_to_telegram.json",
         "topics": {
             "ho-chi-minh:residential": "Хошимин · жильё",
             "ha-noi:residential": "Ханой · жильё",
@@ -145,6 +152,7 @@ HUBS = {
         "title": "Rent Philippine (@RentPhilippineBot)",
         "token_env": "TG_BOT_TOKEN_PH",
         "topics_file": "telegram_topics_ph.json",
+        "state_file": "posted_to_telegram_ph.json",
         # Филиппинский хаб ведётся на английском: аудитория там не русскоязычная.
         # Это меняет не только подписи постов, но и названия разделов.
         "lang": "en",
@@ -169,7 +177,7 @@ TOKEN_ENV = HUBS["vn"]["token_env"]
 def select_hub(name):
     """Переключает модуль на выбранный хаб. Всё, что дальше по коду читает
     HUB_COUNTRY/TOPIC_TITLES/TOPICS_FILE/TOKEN_ENV, получает значения этого хаба."""
-    global HUB, HUB_LANG, HUB_COUNTRY, TOPIC_TITLES, TOPICS_FILE, TOKEN_ENV
+    global HUB, HUB_LANG, HUB_COUNTRY, TOPIC_TITLES, TOPICS_FILE, TOKEN_ENV, STATE_FILE
     if name not in HUBS:
         sys.exit("неизвестный хаб %r -- есть: %s" % (name, ", ".join(HUBS)))
     h = HUBS[name]
@@ -179,6 +187,7 @@ def select_hub(name):
     TOPIC_TITLES = dict(h["topics"])
     TOPICS_FILE = h["topics_file"]
     TOKEN_ENV = h["token_env"]
+    STATE_FILE = h["state_file"]
 
 
 class BotRefused(Exception):
@@ -392,11 +401,33 @@ def send_listing(token, chat_id, thread, l):
     if len(photos) >= 2:
         # Only the FIRST item's caption is shown for the whole album --
         # confirmed against the Bot API reference, not assumed.
-        media = [{"type": "photo", "media": photos[0], "caption": caption,
-                  "parse_mode": "HTML"}]
-        media += [{"type": "photo", "media": u} for u in photos[1:]]
-        result = api(token, "sendMediaGroup", dict(payload, media=json.dumps(media)))
-        return [m["message_id"] for m in result]
+        for attempt in range(3):
+            media = [{"type": "photo", "media": photos[0], "caption": caption,
+                      "parse_mode": "HTML"}]
+            media += [{"type": "photo", "media": u} for u in photos[1:]]
+            try:
+                result = api(token, "sendMediaGroup", dict(payload, media=json.dumps(media)))
+                return [m["message_id"] for m in result]
+            except BotRefused as ex:
+                # Telegram скачивает картинки сам, и иногда не может скачать
+                # ровно одну: "failed to send message #3 ... WEBPAGE_CURL_FAILED".
+                # У 3000023 (Cebu, dotproperty) это воспроизводится подряд, хотя
+                # все шесть ссылок отдают 200 image/jpeg с нашей стороны -- то
+                # есть спотыкается их загрузчик, а не наши данные. Без этого
+                # объявление зависало навсегда: каждый прогон пробовал тот же
+                # набор и получал тот же отказ. Выкидываем именно ту картинку,
+                # на которой споткнулись, и шлём остаток -- пост с пятью фото
+                # лучше, чем отсутствие поста. На сайте все фото остаются.
+                m = re.search(r"failed to send message #(\d+)", str(ex))
+                if not m or "CURL_FAILED" not in str(ex).upper():
+                    raise
+                bad = int(m.group(1)) - 1          # Telegram нумерует с единицы
+                if not (0 <= bad < len(photos)) or len(photos) - 1 < 2:
+                    raise
+                print("      фото #%d не скачалось у Telegram -- шлю без него (%d вместо %d)"
+                      % (bad + 1, len(photos) - 1, len(photos)))
+                photos = photos[:bad] + photos[bad + 1:]
+        raise BotRefused("не удалось отправить даже после отбрасывания битых фото")
     if len(photos) == 1:
         result = api(token, "sendPhoto", dict(payload, photo=photos[0], caption=caption))
         return [result["message_id"]]
