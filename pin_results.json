@@ -1,675 +1,9 @@
 {
- "1198": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1202": {
-  "lat": 10.7289952,
-  "lon": 106.7189174,
-  "source": "geocode",
-  "matched": "Crescent Mall"
- },
- "1203": {
-  "lat": 10.7768914,
-  "lon": 106.7068627,
-  "source": "geocode",
-  "matched": "Tôn Đức Thắng"
- },
- "1204": {
-  "lat": 10.8386837,
-  "lon": 106.6707729,
-  "source": "geocode",
-  "matched": "Lotte Mart"
- },
- "1205": {
-  "lat": 10.7435652,
-  "lon": 106.7042398,
-  "source": "geocode",
-  "matched": "Kim Sơn"
- },
- "1208": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1209": {
-  "lat": 10.7549518,
-  "lon": 106.6776402,
-  "source": "geocode",
-  "matched": "Tân Kiểng"
- },
- "1210": {
-  "lat": 10.7462581,
-  "lon": 106.6377238,
-  "source": "geocode",
-  "matched": "Him Lam"
- },
- "1211": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1213": {
-  "lat": 10.7512819,
-  "lon": 106.6915513,
-  "source": "geocode",
-  "matched": "Trần Xuân Soạn"
- },
- "1216": {
-  "lat": 10.8005113,
-  "lon": 106.7336461,
-  "source": "geocode",
-  "matched": "Thảo Điền"
- },
- "1218": {
-  "lat": 10.7969577,
-  "lon": 106.7504543,
-  "source": "geocode",
-  "matched": "Landmark 81"
- },
- "1219": {
-  "lat": 10.7703806,
-  "lon": 106.6951066,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1220": {
-  "lat": 10.7674015,
-  "lon": 106.6977106,
-  "source": "geocode",
-  "matched": "Nguyễn Thái Bình"
- },
- "1221": {
-  "lat": 10.7655835,
-  "lon": 106.6931006,
-  "source": "geocode",
-  "matched": "Trần Hưng Đạo"
- },
- "1223": {
-  "lat": 10.7598576,
-  "lon": 106.7023355,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1224": {
-  "lat": 10.7631702,
-  "lon": 106.6996404,
-  "source": "geocode",
-  "matched": "Masteri Millennium"
- },
- "1225": {
-  "lat": 10.8386837,
-  "lon": 106.6707729,
-  "source": "geocode",
-  "matched": "Lotte Mart"
- },
- "1226": {
-  "lat": 10.8386837,
-  "lon": 106.6707729,
-  "source": "geocode",
-  "matched": "Lotte Mart"
- },
- "1227": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
- },
- "1234": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
- },
- "1237": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1238": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1239": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1241": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
- },
- "1242": {
-  "lat": 10.7335286,
-  "lon": 106.7159168,
-  "source": "geocode",
-  "matched": "Green Valley"
- },
- "1243": {
-  "lat": 10.7925228,
-  "lon": 106.73296,
-  "source": "geocode",
-  "matched": "Đường Số 13"
- },
- "1244": {
-  "lat": 10.8067285,
-  "lon": 106.7257182,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Hưởng"
- },
- "1246": {
-  "lat": 10.829004,
-  "lon": 106.6830591,
-  "source": "geocode",
-  "matched": "Phan Văn Trị"
- },
- "1247": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1248": {
-  "lat": 10.8465467,
-  "lon": 106.774414,
-  "source": "geocode",
-  "matched": "Tôn Thất Thuyết"
- },
- "1249": {
-  "lat": 10.7571562,
-  "lon": 106.6917141,
-  "source": "geocode",
-  "matched": "Bến Vân Đồn"
- },
- "1250": {
-  "lat": 10.7462581,
-  "lon": 106.6377238,
-  "source": "geocode",
-  "matched": "Him Lam"
- },
- "1251": {
-  "lat": 10.7462581,
-  "lon": 106.6377238,
-  "source": "geocode",
-  "matched": "Him Lam"
- },
- "1252": {
-  "lat": 10.7674015,
-  "lon": 106.6977106,
-  "source": "geocode",
-  "matched": "Nguyễn Thái Bình"
- },
- "1260": {
-  "lat": 10.7960438,
-  "lon": 106.6924865,
-  "source": "geocode",
-  "matched": "Circle K"
- },
- "1261": {
-  "lat": 10.7512819,
-  "lon": 106.6915513,
-  "source": "geocode",
-  "matched": "Trần Xuân Soạn"
- },
- "1263": {
-  "lat": 10.8379245,
-  "lon": 106.6713343,
-  "source": "geocode",
-  "matched": "Lotte Mart Q7"
- },
- "1264": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1265": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1266": {
-  "lat": 10.7289952,
-  "lon": 106.7189174,
-  "source": "geocode",
-  "matched": "Crescent Mall"
- },
- "1267": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
- },
- "1268": {
-  "lat": 10.7512819,
-  "lon": 106.6915513,
-  "source": "geocode",
-  "matched": "Trần Xuân Soạn"
- },
- "1270": {
-  "lat": 10.8016927,
-  "lon": 106.7393614,
-  "source": "geocode",
-  "matched": "Song Hành"
- },
- "1271": {
-  "lat": 10.7346766,
-  "lon": 106.7180522,
-  "source": "geocode",
-  "matched": "Nguyễn Lương Bằng"
- },
- "1272": {
-  "lat": 10.6980033,
-  "lon": 106.7389396,
-  "source": "geocode",
-  "matched": "Huỳnh Tấn Phát"
- },
- "1273": {
-  "lat": 10.7289952,
-  "lon": 106.7189174,
-  "source": "geocode",
-  "matched": "Crescent Mall"
- },
- "1274": {
-  "lat": 10.7227835,
-  "lon": 106.703405,
-  "source": "geocode",
-  "matched": "Sunrise Riverside"
- },
- "1275": {
-  "lat": 10.7258082,
-  "lon": 106.7238126,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1276": {
-  "lat": 10.7311388,
-  "lon": 106.7351885,
-  "source": "geocode",
-  "matched": "Phú Thuận"
- },
- "1277": {
-  "lat": 10.7346766,
-  "lon": 106.7180522,
-  "source": "geocode",
-  "matched": "Nguyễn Lương Bằng"
- },
- "1278": {
-  "lat": 10.8386837,
-  "lon": 106.6707729,
-  "source": "geocode",
-  "matched": "Lotte Mart"
- },
- "1279": {
-  "lat": 10.7512819,
-  "lon": 106.6915513,
-  "source": "geocode",
-  "matched": "Trần Xuân Soạn"
- },
- "1280": {
-  "lat": 10.6980033,
-  "lon": 106.7389396,
-  "source": "geocode",
-  "matched": "Huỳnh Tấn Phát"
- },
- "1281": {
-  "lat": 10.7289952,
-  "lon": 106.7189174,
-  "source": "geocode",
-  "matched": "Crescent Mall"
- },
- "1291": {
-  "lat": 10.7571562,
-  "lon": 106.6917141,
-  "source": "geocode",
-  "matched": "Bến Vân Đồn"
- },
- "1292": {
-  "lat": 10.7289952,
-  "lon": 106.7189174,
-  "source": "geocode",
-  "matched": "Crescent Mall"
- },
- "1293": {
-  "lat": 10.7481374,
-  "lon": 106.7158591,
-  "source": "geocode",
-  "matched": "Lâm Văn Bền"
- },
- "1294": {
-  "lat": 10.7429954,
-  "lon": 106.7040855,
-  "source": "geocode",
-  "matched": "Lê Văn Lương"
- },
- "1295": {
-  "lat": 10.7296837,
-  "lon": 106.7003943,
-  "source": "geocode",
-  "matched": "Nguyễn Hữu Thọ"
- },
- "1296": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1297": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1298": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1299": {
-  "lat": 10.8073843,
-  "lon": 106.7308879,
-  "source": "geocode",
-  "matched": "Quốc Hương"
- },
- "1300": {
-  "lat": 10.8026487,
-  "lon": 106.7423989,
-  "source": "geocode",
-  "matched": "Masteri Thảo Điền"
- },
- "1302": {
-  "lat": 16.0683614,
-  "lon": 108.1067993,
-  "source": "geocode",
-  "matched": "Hóa Sơn 8"
- },
- "1303": {
-  "lat": 16.071571,
-  "lon": 108.2093029,
-  "source": "geocode",
-  "matched": "Đà Nẵng"
- },
- "1304": {
-  "lat": 16.040691,
-  "lon": 108.1339604,
-  "source": "geocode",
-  "matched": "Hoàng Văn Thái"
- },
- "1305": {
-  "lat": 16.0876375,
-  "lon": 108.2397853,
-  "source": "geocode",
-  "matched": "Cao Bá Nhạ"
- },
- "1306": {
-  "lat": 16.0678712,
-  "lon": 108.2388065,
-  "source": "geocode",
-  "matched": "An Hải Bắc"
- },
- "1307": {
-  "lat": 16.0632432,
-  "lon": 108.1910061,
-  "source": "geocode",
-  "matched": "Đoàn Nhữ Hài"
- },
- "1308": {
-  "lat": 16.0474162,
-  "lon": 108.240674,
-  "source": "geocode",
-  "matched": "An Thượng 4"
- },
- "1309": {
-  "lat": 16.0685075,
-  "lon": 108.2440223,
-  "source": "geocode",
-  "matched": "Đa Phước 2"
- },
- "1310": {
-  "lat": 16.0669747,
-  "lon": 108.1997848,
-  "source": "geocode",
-  "matched": "Điện Biên Phủ"
- },
- "1311": {
-  "lat": 15.997448,
-  "lon": 108.2610516,
-  "source": "geocode",
-  "matched": "Hòa Hải"
- },
- "1312": {
-  "lat": 16.0069515,
-  "lon": 108.2418825,
-  "source": "geocode",
-  "matched": "Hói Kiểng 23"
- },
- "1313": {
-  "lat": 16.0029251,
-  "lon": 108.2238312,
-  "source": "geocode",
-  "matched": "Nguyễn Sắc Kim"
- },
- "1314": {
-  "lat": 15.997448,
-  "lon": 108.2610516,
-  "source": "geocode",
-  "matched": "Hòa Hải"
- },
- "1315": {
-  "lat": 15.9846027,
-  "lon": 108.2537381,
-  "source": "geocode",
-  "matched": "Huỳnh Lắm"
- },
- "1316": {
-  "lat": 16.0051891,
-  "lon": 108.2482736,
-  "source": "geocode",
-  "matched": "Đầm Sen 5"
- },
- "1317": {
-  "lat": 16.1104518,
-  "lon": 108.132495,
-  "source": "geocode",
-  "matched": "Nguyễn Tất Thành"
- },
- "1318": {
-  "lat": 16.081827,
-  "lon": 108.2454304,
-  "source": "geocode",
-  "matched": "Đinh Đạt"
- },
- "1319": {
-  "lat": 16.0432512,
-  "lon": 108.2179878,
-  "source": "geocode",
-  "matched": "Hòa Cường Bắc"
- },
- "1320": {
-  "lat": 16.0502245,
-  "lon": 108.2300162,
-  "source": "geocode",
-  "matched": "Trần Thị Lý"
- },
- "1321": {
-  "lat": 16.0586225,
-  "lon": 108.1875136,
-  "source": "geocode",
-  "matched": "Trần Xuân Lê"
- },
- "1322": {
-  "lat": 16.1020509,
-  "lon": 108.2579476,
-  "source": "geocode",
-  "matched": "Hoàng Sa"
- },
- "1323": {
-  "lat": 16.0752069,
-  "lon": 108.2405878,
-  "source": "geocode",
-  "matched": "Trần Thanh Mại"
- },
- "1324": {
-  "lat": 16.0322345,
-  "lon": 108.2393779,
-  "source": "geocode",
-  "matched": "Mỹ Đa Tây 6"
- },
- "1325": {
-  "lat": 16.0513077,
-  "lon": 108.2350476,
-  "source": "geocode",
-  "matched": "Trần Thị Lý"
- },
- "1326": {
-  "lat": 16.0678712,
-  "lon": 108.2388065,
-  "source": "geocode",
-  "matched": "An Hải Bắc"
- },
- "1327": {
-  "lat": 16.0669747,
-  "lon": 108.1997848,
-  "source": "geocode",
-  "matched": "Điện Biên Phủ"
- },
- "1345": {
-  "lat": 11.97356227274298,
-  "lon": 108.47368535615551,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1346": {
-  "lat": 11.9526292,
-  "lon": 108.4299039,
-  "source": "geocode",
-  "matched": "Ngô Quyền"
- },
- "1347": {
-  "lat": 11.9530299,
-  "lon": 108.4376972,
-  "source": "geocode",
-  "matched": "Thông Thiên Học"
- },
- "1348": {
-  "lat": 11.9247937,
-  "lon": 108.4273121,
-  "source": "geocode",
-  "matched": "An Sơn"
- },
- "1349": {
-  "lat": 10.3470886,
-  "lon": 107.0845651,
-  "source": "geocode",
-  "matched": "Nam Kỳ Khởi Nghĩa"
- },
- "1351": {
-  "lat": 13.762502,
-  "lon": 109.2213907,
-  "source": "geocode",
-  "matched": "An Dương Vương"
- },
- "1352": {
-  "lat": 15.9067647,
-  "lon": 108.3155525,
-  "source": "geocode",
-  "matched": "Đồng Nà 1"
- },
- "1354": {
-  "lat": 10.8067285,
-  "lon": 106.7257182,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Hưởng"
- },
- "1355": {
-  "lat": 10.7670352,
-  "lon": 106.6874492,
-  "source": "geocode",
-  "matched": "Cống Quỳnh"
- },
- "1359": {
-  "lat": 10.7768914,
-  "lon": 106.7068627,
-  "source": "geocode",
-  "matched": "Tôn Đức Thắng"
- },
- "1360": {
-  "lat": 10.7258082,
-  "lon": 106.7238126,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1361": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
- },
- "1362": {
-  "lat": 10.7346766,
-  "lon": 106.7180522,
-  "source": "geocode",
-  "matched": "Nguyễn Lương Bằng"
- },
- "1363": {
-  "lat": 10.7629924,
-  "lon": 106.69605,
-  "source": "geocode",
-  "matched": "Đề Thám"
- },
- "1364": {
-  "lat": 10.7387292,
-  "lon": 106.7264604,
-  "source": "geocode",
-  "matched": "The Golden Star"
- },
- "1367": {
-  "lat": 10.7009549,
-  "lon": 106.7336308,
-  "source": "geocode",
-  "matched": "Phú Xuân"
- },
- "1368": {
-  "lat": 10.7137641,
-  "lon": 106.7342136,
-  "source": "geocode",
-  "matched": "Hoàng Quốc Việt"
- },
- "1369": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
  "1370": {
   "lat": 10.7725301,
   "lon": 106.6980365,
   "source": "geocode",
   "matched": "Chợ Bến Thành"
- },
- "1371": {
-  "lat": 10.7699795,
-  "lon": 106.6966136,
-  "source": "geocode",
-  "matched": "Phạm Ngũ Lão"
- },
- "1372": {
-  "lat": 10.7598576,
-  "lon": 106.7023355,
-  "source": "ward-centroid",
-  "matched": null
  },
  "1373": {
   "lat": 10.7629917,
@@ -683,18 +17,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "1375": {
-  "lat": 10.7598576,
-  "lon": 106.7023355,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1376": {
-  "lat": 10.7567803,
-  "lon": 106.7185992,
-  "source": "geocode",
-  "matched": "Nguyễn Tất Thành"
- },
  "1377": {
   "lat": 10.7006338,
   "lon": 106.7324785,
@@ -706,12 +28,6 @@
   "lon": 106.7040855,
   "source": "geocode",
   "matched": "Lê Văn Lương"
- },
- "1379": {
-  "lat": 10.8386837,
-  "lon": 106.6707729,
-  "source": "geocode",
-  "matched": "Lotte Mart"
  },
  "1380": {
   "lat": 10.6980033,
@@ -767,12 +83,6 @@
   "source": "geocode",
   "matched": "Nguyễn Lương Bằng"
  },
- "1389": {
-  "lat": 10.7631702,
-  "lon": 106.6996404,
-  "source": "geocode",
-  "matched": "Masteri Millennium"
- },
  "1390": {
   "lat": 10.6928289,
   "lon": 106.7172107,
@@ -785,65 +95,17 @@
   "source": "ward-centroid",
   "matched": null
  },
- "1392": {
-  "lat": 10.7631702,
-  "lon": 106.6996404,
-  "source": "geocode",
-  "matched": "Masteri Millennium"
- },
  "1393": {
   "lat": 10.7512819,
   "lon": 106.6915513,
   "source": "geocode",
   "matched": "Trần Xuân Soạn"
  },
- "1394": {
-  "lat": 10.7258082,
-  "lon": 106.7238126,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1395": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1396": {
-  "lat": 10.7567803,
-  "lon": 106.7185992,
-  "source": "geocode",
-  "matched": "Nguyễn Tất Thành"
- },
- "1397": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
  "1398": {
   "lat": 10.7702241,
   "lon": 106.691696,
   "source": "geocode",
   "matched": "Nguyễn Trãi"
- },
- "1399": {
-  "lat": 10.7969577,
-  "lon": 106.7504543,
-  "source": "geocode",
-  "matched": "Landmark 81"
- },
- "1400": {
-  "lat": 10.71453,
-  "lon": 106.6615098,
-  "source": "geocode",
-  "matched": "One Nam Sài Gòn"
- },
- "1401": {
-  "lat": 10.8005113,
-  "lon": 106.7336461,
-  "source": "geocode",
-  "matched": "Thảo Điền"
  },
  "1403": {
   "lat": 11.9481953,
@@ -875,24 +137,6 @@
   "source": "geocode",
   "matched": "Xuân Hương"
  },
- "1408": {
-  "lat": 11.9507569,
-  "lon": 108.4599016,
-  "source": "geocode",
-  "matched": "Nguyễn Đình Chiểu"
- },
- "1411": {
-  "lat": 13.762502,
-  "lon": 109.2213907,
-  "source": "geocode",
-  "matched": "An Dương Vương"
- },
- "1412": {
-  "lat": 13.762502,
-  "lon": 109.2213907,
-  "source": "geocode",
-  "matched": "An Dương Vương"
- },
  "1414": {
   "lat": 13.7831003,
   "lon": 109.2191803,
@@ -904,18 +148,6 @@
   "lon": 107.08413,
   "source": "geocode",
   "matched": "Hoàng Văn Hòe"
- },
- "1421": {
-  "lat": 10.3900545,
-  "lon": 107.1124023,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1422": {
-  "lat": 10.3474658,
-  "lon": 107.0743043,
-  "source": "geocode",
-  "matched": "Lê Lợi"
  },
  "1424": {
   "lat": 16.0791161,
@@ -970,12 +202,6 @@
   "lon": 108.1689167,
   "source": "geocode",
   "matched": "Bùi Tấn Diên"
- },
- "1434": {
-  "lat": 16.0572883,
-  "lon": 108.184602,
-  "source": "geocode",
-  "matched": "Cần Giuộc"
  },
  "1435": {
   "lat": 16.019605,
@@ -1091,18 +317,6 @@
   "source": "geocode",
   "matched": "An Thượng 15"
  },
- "1457": {
-  "lat": 16.0268353,
-  "lon": 108.2449323,
-  "source": "geocode",
-  "matched": "Nguyễn Đình Chiểu"
- },
- "1458": {
-  "lat": 16.0153234,
-  "lon": 108.2555052,
-  "source": "geocode",
-  "matched": "Nguyễn Xiển 94"
- },
  "1459": {
   "lat": 16.0135391,
   "lon": 108.2548954,
@@ -1169,23 +383,11 @@
   "source": "geocode",
   "matched": "Đà Nẵng"
  },
- "1470": {
-  "lat": 16.0426615,
-  "lon": 108.245486,
-  "source": "geocode",
-  "matched": "Chế Lan Viên"
- },
  "1473": {
   "lat": 16.095211,
   "lon": 108.2245757,
   "source": "geocode",
   "matched": "Lê Văn Duyệt"
- },
- "1476": {
-  "lat": 16.0892968,
-  "lon": 108.2466754,
-  "source": "geocode",
-  "matched": "Trương Định"
  },
  "1477": {
   "lat": 16.1021731,
@@ -1217,18 +419,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "1482": {
-  "lat": 16.0713815,
-  "lon": 108.1822792,
-  "source": "geocode",
-  "matched": "Yên Khê 2"
- },
- "1483": {
-  "lat": 16.0683682,
-  "lon": 108.1966311,
-  "source": "ward-centroid",
-  "matched": null
- },
  "1484": {
   "lat": 16.0626028,
   "lon": 108.1683623,
@@ -1242,12 +432,6 @@
   "matched": null
  },
  "1486": {
-  "lat": 16.0416286,
-  "lon": 108.2175304,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1487": {
   "lat": 16.0416286,
   "lon": 108.2175304,
   "source": "ward-centroid",
@@ -1270,12 +454,6 @@
   "lon": 108.2226575,
   "source": "geocode",
   "matched": "Thạch Thang"
- },
- "1492": {
-  "lat": 16.0589539,
-  "lon": 108.2194844,
-  "source": "ward-centroid",
-  "matched": null
  },
  "1525": {
   "lat": 10.7346766,
@@ -1300,90 +478,6 @@
   "lon": 106.7022361,
   "source": "geocode",
   "matched": "Hoàng Diệu"
- },
- "1529": {
-  "lat": 10.8067285,
-  "lon": 106.7257182,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Hưởng"
- },
- "1530": {
-  "lat": 10.8026487,
-  "lon": 106.7423989,
-  "source": "geocode",
-  "matched": "Masteri Thảo Điền"
- },
- "1531": {
-  "lat": 10.8040548,
-  "lon": 106.7290708,
-  "source": "geocode",
-  "matched": "Nguyễn Bá Huân"
- },
- "1532": {
-  "lat": 10.8067285,
-  "lon": 106.7257182,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Hưởng"
- },
- "1533": {
-  "lat": 10.8067285,
-  "lon": 106.7257182,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Hưởng"
- },
- "1535": {
-  "lat": 10.8067285,
-  "lon": 106.7257182,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Hưởng"
- },
- "1544": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
- "1545": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1550": {
-  "lat": 10.71453,
-  "lon": 106.6615098,
-  "source": "geocode",
-  "matched": "One Nam Sài Gòn"
- },
- "1552": {
-  "lat": 10.7481374,
-  "lon": 106.7158591,
-  "source": "geocode",
-  "matched": "Lâm Văn Bền"
- },
- "1553": {
-  "lat": 10.744758,
-  "lon": 106.7219421,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Linh"
- },
- "1564": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
- },
- "1567": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
- },
- "1569": {
-  "lat": 10.6928289,
-  "lon": 106.7172107,
-  "source": "geocode",
-  "matched": "Phạm Hữu Lầu"
  },
  "1578": {
   "lat": 10.737953,
@@ -1432,12 +526,6 @@
   "lon": 106.7235888,
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
- },
- "1589": {
-  "lat": 10.7878232,
-  "lon": 106.7343792,
-  "source": "geocode",
-  "matched": "Lương Định Của"
  },
  "1590": {
   "lat": 10.8026487,
@@ -1679,12 +767,6 @@
   "source": "geocode",
   "matched": "Lưu Đình Lễ"
  },
- "1633": {
-  "lat": 10.7878232,
-  "lon": 106.7343792,
-  "source": "geocode",
-  "matched": "Lương Định Của"
- },
  "1634": {
   "lat": 10.8067285,
   "lon": 106.7257182,
@@ -1829,12 +911,6 @@
   "source": "geocode",
   "matched": "Bình Thạnh"
  },
- "1659": {
-  "lat": 10.8005113,
-  "lon": 106.7336461,
-  "source": "geocode",
-  "matched": "Thảo Điền"
- },
  "1688": {
   "lat": 10.7703806,
   "lon": 106.6951066,
@@ -1876,12 +952,6 @@
   "lon": 106.7189174,
   "source": "geocode",
   "matched": "Crescent Mall"
- },
- "1695": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
  },
  "1696": {
   "lat": 10.7296837,
@@ -2213,12 +1283,6 @@
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
  },
- "1800": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
- },
  "1801": {
   "lat": 10.737953,
   "lon": 106.7235888,
@@ -2248,12 +1312,6 @@
   "lon": 106.7040855,
   "source": "geocode",
   "matched": "Lê Văn Lương"
- },
- "1806": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "geocode",
-  "matched": "Số 30"
  },
  "1807": {
   "lat": 10.7481374,
@@ -3574,12 +2632,6 @@
   "lon": 106.7389396,
   "source": "geocode",
   "matched": "Huỳnh Tấn Phát"
- },
- "2017": {
-  "lat": 10.739937,
-  "lon": 106.7034261,
-  "source": "ward-centroid",
-  "matched": null
  },
  "2018": {
   "lat": 10.7429954,
@@ -5129,12 +4181,6 @@
   "source": "geocode",
   "matched": "Nguyễn Trãi"
  },
- "2000015": {
-  "lat": 20.9943521,
-  "lon": 105.8549619,
-  "source": "geocode",
-  "matched": "Chùa Hưng Ký"
- },
  "2000016": {
   "lat": 21.0551226,
   "lon": 105.7974262,
@@ -5171,12 +4217,6 @@
   "source": "geocode",
   "matched": "Nước Ngầm"
  },
- "2000023": {
-  "lat": 21.0356503,
-  "lon": 105.7611472,
-  "source": "geocode",
-  "matched": "Vinhomes Gardenia"
- },
  "2000024": {
   "lat": 20.9972561,
   "lon": 105.8610932,
@@ -5212,12 +4252,6 @@
   "lon": 105.7978307,
   "source": "geocode",
   "matched": "Ngoại Giao Đoàn"
- },
- "2000034": {
-  "lat": 21.0358817,
-  "lon": 105.7506687,
-  "source": "geocode",
-  "matched": "Trịnh Văn Bô"
  },
  "2000035": {
   "lat": 20.9938987,
@@ -5351,12 +4385,6 @@
   "source": "geocode",
   "matched": "Trần Quốc Vượng"
  },
- "2000063": {
-  "lat": 21.0141136,
-  "lon": 105.810892,
-  "source": "geocode",
-  "matched": "Vũ Ngọc Phan"
- },
  "2000064": {
   "lat": 21.0369867,
   "lon": 105.8357925,
@@ -5399,12 +4427,6 @@
   "source": "geocode",
   "matched": "Kim Mã"
  },
- "2000074": {
-  "lat": 20.9752796,
-  "lon": 105.7510178,
-  "source": "geocode",
-  "matched": "Dương Nội"
- },
  "2000075": {
   "lat": 20.9639031,
   "lon": 105.8645723,
@@ -5416,12 +4438,6 @@
   "lon": 105.8441448,
   "source": "geocode",
   "matched": "Tạ Quang Bửu"
- },
- "2000077": {
-  "lat": 21.0106967,
-  "lon": 105.8094617,
-  "source": "geocode",
-  "matched": "Nguyễn Ngọc Vũ"
  },
  "2000079": {
   "lat": 20.9613222,
@@ -5440,12 +4456,6 @@
   "lon": 105.8168301,
   "source": "geocode",
   "matched": "Giảng Võ"
- },
- "2000083": {
-  "lat": 21.0430646,
-  "lon": 105.8218397,
-  "source": "geocode",
-  "matched": "Thụy Khuê"
  },
  "2000084": {
   "lat": 21.006941,
@@ -5476,12 +4486,6 @@
   "lon": 105.7856678,
   "source": "geocode",
   "matched": "Lê Quý Đôn"
- },
- "2000090": {
-  "lat": 21.0077644,
-  "lon": 105.8684652,
-  "source": "geocode",
-  "matched": "Lạc Trung"
  },
  "2000091": {
   "lat": 20.9938987,
@@ -5537,12 +4541,6 @@
   "source": "geocode",
   "matched": "Hàm Long"
  },
- "2000100": {
-  "lat": 21.0643773,
-  "lon": 105.8056869,
-  "source": "geocode",
-  "matched": "Võ Chí Công"
- },
  "2000101": {
   "lat": 20.9385802,
   "lon": 105.7674215,
@@ -5596,12 +4594,6 @@
   "lon": 105.807155,
   "source": "geocode",
   "matched": "Lê Văn Lương"
- },
- "2000114": {
-  "lat": 21.0152132,
-  "lon": 105.8954555,
-  "source": "geocode",
-  "matched": "Thống Nhất"
  },
  "2000115": {
   "lat": 21.0006496,
@@ -5662,12 +4654,6 @@
   "lon": 105.797779,
   "source": "geocode",
   "matched": "Nguyễn Văn Huyên"
- },
- "2000127": {
-  "lat": 10.9751287,
-  "lon": 106.6761338,
-  "source": "geocode",
-  "matched": "Phú Lợi"
  },
  "2000128": {
   "lat": 10.9751287,
@@ -5837,12 +4823,6 @@
   "source": "geocode",
   "matched": "Võ Nguyên Giáp"
  },
- "2000158": {
-  "lat": 11.0262326,
-  "lon": 106.6779252,
-  "source": "geocode",
-  "matched": "Trần Phú"
- },
  "2000159": {
   "lat": 10.8426087,
   "lon": 106.8424918,
@@ -5854,12 +4834,6 @@
   "lon": 106.653742,
   "source": "ward-centroid",
   "matched": null
- },
- "2000161": {
-  "lat": 11.0262326,
-  "lon": 106.6779252,
-  "source": "geocode",
-  "matched": "Trần Phú"
  },
  "2000162": {
   "lat": 11.0505026,
@@ -5909,12 +4883,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "2000172": {
-  "lat": 10.8284791,
-  "lon": 106.7030312,
-  "source": "geocode",
-  "matched": "Làng Đại"
- },
  "2000173": {
   "lat": 10.980862,
   "lon": 106.653742,
@@ -5927,23 +4895,11 @@
   "source": "ward-centroid",
   "matched": null
  },
- "2000175": {
-  "lat": 10.946401,
-  "lon": 106.691568,
-  "source": "ward-centroid",
-  "matched": null
- },
  "2000176": {
   "lat": 11.0688446,
   "lon": 106.6665847,
   "source": "geocode",
   "matched": "Võ Nguyên Giáp"
- },
- "2000177": {
-  "lat": 11.045388,
-  "lon": 106.67878,
-  "source": "geocode",
-  "matched": "Aeon Mall Bình Dương"
  },
  "2000178": {
   "lat": 10.9355293,
@@ -5993,12 +4949,6 @@
   "source": "geocode",
   "matched": "Honas Residence"
  },
- "2000186": {
-  "lat": 10.9314701,
-  "lon": 106.8675973,
-  "source": "geocode",
-  "matched": "Hiệp Thành 3"
- },
  "2000187": {
   "lat": 10.9751287,
   "lon": 106.6761338,
@@ -6010,12 +4960,6 @@
   "lon": 106.7069391,
   "source": "geocode",
   "matched": "Quốc Lộ 13"
- },
- "2000190": {
-  "lat": 10.946401,
-  "lon": 106.691568,
-  "source": "ward-centroid",
-  "matched": null
  },
  "2000191": {
   "lat": 11.045388,
@@ -6046,12 +4990,6 @@
   "lon": 106.691568,
   "source": "ward-centroid",
   "matched": null
- },
- "2000196": {
-  "lat": 11.045388,
-  "lon": 106.67878,
-  "source": "geocode",
-  "matched": "Aeon Mall"
  },
  "2000197": {
   "lat": 11.0049908,
@@ -6101,23 +5039,11 @@
   "source": "geocode",
   "matched": "Phú Hòa"
  },
- "2000205": {
-  "lat": 10.9751287,
-  "lon": 106.6761338,
-  "source": "geocode",
-  "matched": "Phú Lợi"
- },
  "2000206": {
   "lat": 10.9573833,
   "lon": 106.8303974,
   "source": "geocode",
   "matched": "Tân Đông Hiệp"
- },
- "2000208": {
-  "lat": 10.9989253,
-  "lon": 106.646401,
-  "source": "geocode",
-  "matched": "Hoàng Nam 5"
  },
  "2000209": {
   "lat": 10.908048,
@@ -6220,12 +5146,6 @@
   "lon": 106.6496998,
   "source": "geocode",
   "matched": "Bình Dương"
- },
- "2000232": {
-  "lat": 10.908048,
-  "lon": 106.758987,
-  "source": "ward-centroid",
-  "matched": null
  },
  "2000233": {
   "lat": 11.0683577,
@@ -6335,12 +5255,6 @@
   "source": "geocode",
   "matched": "Bùi Hữu Nghĩa"
  },
- "2000251": {
-  "lat": 11.0301983,
-  "lon": 106.7007171,
-  "source": "geocode",
-  "matched": "Sóng Thần 1"
- },
  "2000252": {
   "lat": 11.1035205,
   "lon": 106.6769626,
@@ -6359,30 +5273,6 @@
   "source": "geocode",
   "matched": "An Phú"
  },
- "2000257": {
-  "lat": 10.9355293,
-  "lon": 106.7372572,
-  "source": "geocode",
-  "matched": "Bình Hòa"
- },
- "2000259": {
-  "lat": 10.908048,
-  "lon": 106.758987,
-  "source": "ward-centroid",
-  "matched": null
- },
- "2000262": {
-  "lat": 10.9355293,
-  "lon": 106.7372572,
-  "source": "geocode",
-  "matched": "Bình Dương"
- },
- "2000263": {
-  "lat": 10.9355293,
-  "lon": 106.7372572,
-  "source": "geocode",
-  "matched": "Thuận Giao"
- },
  "2000273": {
   "lat": 10.9355293,
   "lon": 106.7372572,
@@ -6400,12 +5290,6 @@
   "lon": 106.653742,
   "source": "ward-centroid",
   "matched": null
- },
- "2000276": {
-  "lat": 10.9314701,
-  "lon": 106.8675973,
-  "source": "geocode",
-  "matched": "Hiệp Thành 3"
  },
  "2000277": {
   "lat": 10.8284791,
@@ -6455,12 +5339,6 @@
   "source": "geocode",
   "matched": "Vincom Dĩ An"
  },
- "2000286": {
-  "lat": 10.9573833,
-  "lon": 106.8303974,
-  "source": "geocode",
-  "matched": "Tân Đông Hiệp"
- },
  "2000288": {
   "lat": 11.0248412,
   "lon": 106.7098606,
@@ -6479,23 +5357,11 @@
   "source": "geocode",
   "matched": "Tân Hiệp"
  },
- "2000291": {
-  "lat": 10.908048,
-  "lon": 106.758987,
-  "source": "ward-centroid",
-  "matched": null
- },
  "2000292": {
   "lat": 11.0654936,
   "lon": 106.6911397,
   "source": "geocode",
   "matched": "Phạm Văn Đồng"
- },
- "2000293": {
-  "lat": 10.8827582,
-  "lon": 106.6962331,
-  "source": "geocode",
-  "matched": "Vĩnh Phú"
  },
  "2000294": {
   "lat": 11.0573217,
@@ -6533,29 +5399,11 @@
   "source": "geocode",
   "matched": "Thuận Giao"
  },
- "2000302": {
-  "lat": 11.0036645,
-  "lon": 106.720888,
-  "source": "geocode",
-  "matched": "Tân Khánh"
- },
- "2000304": {
-  "lat": 11.0422162,
-  "lon": 106.6902651,
-  "source": "geocode",
-  "matched": "Võ Văn Kiệt"
- },
  "2000308": {
   "lat": 11.0451228,
   "lon": 106.7067286,
   "source": "geocode",
   "matched": "Kim Huy"
- },
- "2000309": {
-  "lat": 10.9355293,
-  "lon": 106.7372572,
-  "source": "geocode",
-  "matched": "An Phú"
  },
  "2000310": {
   "lat": 10.908048,
@@ -6563,29 +5411,11 @@
   "source": "ward-centroid",
   "matched": null
  },
- "2000311": {
-  "lat": 11.0037416,
-  "lon": 106.7220664,
-  "source": "geocode",
-  "matched": "Tân Phước Khánh"
- },
  "2000312": {
   "lat": 10.9095453,
   "lon": 106.8597925,
   "source": "geocode",
   "matched": "Thái Hòa"
- },
- "2000314": {
-  "lat": 11.0454825,
-  "lon": 106.7558906,
-  "source": "geocode",
-  "matched": "Khánh Bình"
- },
- "2000315": {
-  "lat": 11.0035869,
-  "lon": 106.7031146,
-  "source": "geocode",
-  "matched": "Tân Vĩnh Hiệp"
  },
  "1000130": {
   "lat": 10.8379245,
@@ -6995,12 +5825,6 @@
   "source": "ward-centroid",
   "matched": null
  },
- "2000377": {
-  "lat": 11.9633052,
-  "lon": 108.4430839,
-  "source": "geocode",
-  "matched": "Phù Đổng Thiên Vương"
- },
  "2000378": {
   "lat": 16.0861399,
   "lon": 108.245488,
@@ -7235,18 +6059,6 @@
   "source": "geocode",
   "matched": "Nguyễn Thị Thập"
  },
- "1000209": {
-  "lat": 10.8338696,
-  "lon": 106.770248,
-  "source": "geocode",
-  "matched": "Đường Số 79"
- },
- "1000210": {
-  "lat": 10.744758,
-  "lon": 106.7219421,
-  "source": "geocode",
-  "matched": "Nguyễn Văn Linh"
- },
  "1000219": {
   "lat": 10.7878232,
   "lon": 106.7343792,
@@ -7420,12 +6232,6 @@
   "lon": 106.7003943,
   "source": "geocode",
   "matched": "Nguyễn Hữu Thọ"
- },
- "1000249": {
-  "lat": 10.8055309,
-  "lon": 106.7298958,
-  "source": "geocode",
-  "matched": "Số 36"
  },
  "1000256": {
   "lat": 10.7547129,
@@ -7823,30 +6629,6 @@
   "source": "geocode",
   "matched": "Trần Xuân Soạn"
  },
- "1000276": {
-  "lat": 10.7296837,
-  "lon": 106.7003943,
-  "source": "geocode",
-  "matched": "Nguyễn Hữu Thọ"
- },
- "1000277": {
-  "lat": 10.737953,
-  "lon": 106.7235888,
-  "source": "geocode",
-  "matched": "Nguyễn Thị Thập"
- },
- "1000278": {
-  "lat": 10.8020001,
-  "lon": 106.7406138,
-  "source": "geocode",
-  "matched": "Vincom Mega Mall Thảo Điền"
- },
- "1000279": {
-  "lat": 10.7006338,
-  "lon": 106.7324785,
-  "source": "geocode",
-  "matched": "Era Town Đức Khải"
- },
  "1000282": {
   "lat": 10.8273371,
   "lon": 106.7368775,
@@ -7936,12 +6718,6 @@
   "lon": 106.7351885,
   "source": "geocode",
   "matched": "Phú Thuận"
- },
- "1000298": {
-  "lat": 10.7768914,
-  "lon": 106.7068627,
-  "source": "geocode",
-  "matched": "Tôn Đức Thắng"
  },
  "1000305": {
   "lat": 10.6980033,
@@ -8531,18 +7307,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000465": {
-  "lat": 21.075655,
-  "lon": 105.82213,
-  "source": "chotot",
-  "matched": null
- },
- "2000466": {
-  "lat": 21.01418,
-  "lon": 105.810776,
-  "source": "chotot",
-  "matched": null
- },
  "2000467": {
   "lat": 21.026558,
   "lon": 105.84004,
@@ -8669,12 +7433,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000528": {
-  "lat": 20.962847,
-  "lon": 105.76829,
-  "source": "chotot",
-  "matched": null
- },
  "2000529": {
   "lat": 21.012379,
   "lon": 105.83916,
@@ -8693,27 +7451,9 @@
   "source": "chotot",
   "matched": null
  },
- "2000532": {
-  "lat": 21.020054,
-  "lon": 105.82462,
-  "source": "chotot",
-  "matched": null
- },
- "2000533": {
-  "lat": 20.972412,
-  "lon": 105.76153,
-  "source": "chotot",
-  "matched": null
- },
  "2000535": {
   "lat": 20.961853,
   "lon": 105.87307,
-  "source": "chotot",
-  "matched": null
- },
- "2000536": {
-  "lat": 20.99591,
-  "lon": 105.85765,
   "source": "chotot",
   "matched": null
  },
@@ -8744,12 +7484,6 @@
  "2000541": {
   "lat": 20.970037,
   "lon": 105.78561,
-  "source": "chotot",
-  "matched": null
- },
- "2000542": {
-  "lat": 21.015085,
-  "lon": 105.82583,
   "source": "chotot",
   "matched": null
  },
@@ -10899,6 +9633,252 @@
   "lat": 14.5437,
   "lon": 120.99465,
   "source": "ward-centroid",
+  "matched": null
+ },
+ "1000534": {
+  "lat": 10.787745,
+  "lon": 106.72973,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000535": {
+  "lat": 10.748124,
+  "lon": 106.71586,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000536": {
+  "lat": 10.704245,
+  "lon": 106.72961,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000537": {
+  "lat": 10.72619,
+  "lon": 106.7246,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000538": {
+  "lat": 10.81549,
+  "lon": 106.72086,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000539": {
+  "lat": 10.70316,
+  "lon": 106.73216,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000540": {
+  "lat": 10.79675,
+  "lon": 106.75218,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000541": {
+  "lat": 10.785133,
+  "lon": 106.72941,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000542": {
+  "lat": 10.762586,
+  "lon": 106.698105,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000543": {
+  "lat": 10.74506,
+  "lon": 106.69885,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000544": {
+  "lat": 10.803889,
+  "lon": 106.73543,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000545": {
+  "lat": 10.768127,
+  "lon": 106.69194,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000546": {
+  "lat": 10.79179,
+  "lon": 106.75327,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000547": {
+  "lat": 10.73867,
+  "lon": 106.712074,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000548": {
+  "lat": 10.759857,
+  "lon": 106.700615,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000549": {
+  "lat": 10.787745,
+  "lon": 106.72973,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000550": {
+  "lat": 10.785133,
+  "lon": 106.72941,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000551": {
+  "lat": 10.8112755,
+  "lon": 106.73112,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000552": {
+  "lat": 10.8158865,
+  "lon": 106.72764,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000553": {
+  "lat": 10.803889,
+  "lon": 106.73543,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000554": {
+  "lat": 10.81549,
+  "lon": 106.72086,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000555": {
+  "lat": 10.816012,
+  "lon": 106.719215,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000556": {
+  "lat": 10.768127,
+  "lon": 106.69194,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000557": {
+  "lat": 10.79675,
+  "lon": 106.75218,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000558": {
+  "lat": 10.790685,
+  "lon": 106.7367,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000559": {
+  "lat": 10.788861,
+  "lon": 106.75499,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000560": {
+  "lat": 10.781904,
+  "lon": 106.76945,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000561": {
+  "lat": 10.762586,
+  "lon": 106.698105,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000562": {
+  "lat": 10.748124,
+  "lon": 106.71586,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000563": {
+  "lat": 10.748343,
+  "lon": 106.69632,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000564": {
+  "lat": 10.74506,
+  "lon": 106.69885,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000565": {
+  "lat": 10.738486,
+  "lon": 106.71468,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000566": {
+  "lat": 10.742552,
+  "lon": 106.70402,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000567": {
+  "lat": 10.73953,
+  "lon": 106.70981,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000568": {
+  "lat": 10.738486,
+  "lon": 106.71468,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000569": {
+  "lat": 10.741136,
+  "lon": 106.71585,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000570": {
+  "lat": 10.704245,
+  "lon": 106.72961,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000571": {
+  "lat": 10.72619,
+  "lon": 106.7246,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000572": {
+  "lat": 10.70316,
+  "lon": 106.73216,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000573": {
+  "lat": 10.708131,
+  "lon": 106.738205,
+  "source": "chotot",
+  "matched": null
+ },
+ "1000574": {
+  "lat": 10.700803,
+  "lon": 106.728745,
+  "source": "chotot",
   "matched": null
  }
 }
