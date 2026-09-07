@@ -86,30 +86,22 @@ def parse_batch(path):
     m = re.search(r"NEW_SRC\s*=\s*r?'''(.*?)'''", src, re.S)
     if not m:
         sys.exit("в %s не нашёлся блок NEW_SRC = '''...'''" % path)
-    body = m.group(1)
+    # Блок NEW_SRC -- это последовательность вызовов L(...) через запятую, то
+    # есть готовое кортежное выражение. Разбирать его целиком надёжнее, чем
+    # считать скобки вручную: ручной счётчик спотыкался о скобки внутри текстов
+    # описания и возвращал Tuple вместо Call.
+    body = m.group(1).strip().rstrip(",")
+    try:
+        node = ast.parse("[" + body + "]", mode="eval").body
+    except SyntaxError as ex:
+        sys.exit("не удалось разобрать NEW_SRC из %s: %s" % (path, ex))
     rows = []
-    for call in re.finditer(r"^L\(", body, re.M):
-        start = call.start()
-        depth, i = 0, start + 1
-        while i < len(body):
-            if body[i] in "([{":
-                depth += 1
-            elif body[i] in ")]}":
-                if depth == 0:
-                    break
-                depth -= 1
-            elif body[i] in "\"'":
-                q = body[i]; i += 1
-                while i < len(body) and body[i] != q:
-                    i += 2 if body[i] == "\\" else 1
-            i += 1
-        try:
-            node = ast.parse(body[start:i + 1], mode="eval").body
-        except SyntaxError:
+    for call in node.elts:
+        if not (isinstance(call, ast.Call) and getattr(call.func, "id", "") == "L"):
             continue
-        args = [a.value if isinstance(a, ast.Constant) else None for a in node.args]
+        args = [a.value if isinstance(a, ast.Constant) else None for a in call.args]
         kw = {k.arg: (k.value.value if isinstance(k.value, ast.Constant) else None)
-              for k in node.keywords}
+              for k in call.keywords}
         if len(args) < 7:
             continue
         rows.append((args[0], args[1], args[4], kw.get("source", "chotot"),

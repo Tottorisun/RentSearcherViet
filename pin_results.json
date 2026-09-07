@@ -9910,5 +9910,41 @@
   "lon": 106.728745,
   "source": "chotot",
   "matched": null
+ },
+ "3000227": {
+  "lat": 9.293043,
+  "lon": 123.262705,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000228": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000229": {
+  "lat": 9.304706,
+  "lon": 123.307453,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000230": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000231": {
+  "lat": 9.32077,
+  "lon": 123.309362,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000232": {
+  "lat": 9.318746,
+  "lon": 123.302255,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
