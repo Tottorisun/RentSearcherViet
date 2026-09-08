@@ -641,23 +641,25 @@ def listing_id_key(t):
 # ------------------------------------------------------- existing listings --
 
 def load_existing(index_path):
-    """Parse `var DATA = {...};` out of the built index.html."""
+    """Что уже есть на сайте -- через site_data, единственного читателя DATA.
+
+    Здесь стоял свой разбор index.html. Со 2 сентября 2026 index.html -- это
+    лендинг, а данные лежат в vietnam-rent-finder.html, и разбор перестал
+    находить `var DATA`. Молча: сверка с заведённым просто отключалась, строка
+    «dropped as already in index.html: 0» означала не «повторов нет», а
+    «проверка не выполнялась», и сборщик каждый раз предлагал одно и то же.
+    Плюс свой разбор не разворачивал сжатые ссылки на фотографии, так что
+    сверка по фото не сработала бы и на правильном файле."""
     out = {"urls": set(), "hashes": set(), "photos": set(), "id_keys": set(),
            "cities": {}, "count": 0, "ok": False, "error": None}
     try:
-        with open(index_path, encoding="utf-8") as f:
-            html = f.read()
-    except Exception as e:
-        out["error"] = "cannot read %s: %s" % (index_path, e)
+        from site_data import load_data
+        data = load_data(index_path) if index_path else load_data()
+    except SystemExit as e:
+        out["error"] = str(e)
         return out
-    m = re.search(r"var DATA = (\{.*?\});\s*\n", html, re.S)
-    if not m:
-        out["error"] = "`var DATA = {...};` not found in %s" % index_path
-        return out
-    try:
-        data = json.loads(m.group(1))
     except Exception as e:
-        out["error"] = "DATA is not valid JSON: %s" % e
+        out["error"] = "не удалось прочитать данные сайта: %s" % e
         return out
 
     out["ok"] = True
@@ -771,7 +773,9 @@ def main():
     ap.add_argument("--delay", type=float, default=0.5,
                     help="seconds between fetches (default 0.5)")
     ap.add_argument("--out", default=os.path.join(HERE, "telegram_candidates.json"))
-    ap.add_argument("--index", default=os.path.join(HERE, "index.html"))
+    ap.add_argument("--index", default=os.path.join(HERE, "vietnam-rent-finder.html"),
+                    help="built page to read existing listings from "
+                         "(index.html is the landing page since 2 Sep 2026 and has no data)")
     ap.add_argument("--min-price", type=float, default=0,
                     help="drop priced candidates below this many VND")
     ap.add_argument("--max-price", type=float, default=0,
@@ -781,7 +785,11 @@ def main():
     wanted = [c.strip() for c in args.channels.split(",") if c.strip()]
     existing = load_existing(args.index)
     if not existing["ok"]:
-        print("[warn] existing-listing dedup DISABLED: %s" % existing["error"])
+        # Не предупреждение в потоке строк, а остановка: без сверки скрипт
+        # каждый раз предлагает уже заведённое, и это незаметно.
+        sys.exit("сверка с заведёнными объявлениями невозможна: %s\n"
+                 "Соберите сайт (python rebuild_final.py) или укажите --index."
+                 % existing["error"])
     cities = existing["cities"]
 
     per_channel, all_posts, fetch_errors = {}, [], {}
@@ -933,7 +941,7 @@ def main():
         where = " + ".join(spans) if len(spans) > 1 else spans[0] + " (repost in same channel)"
         print("   %d copy(ies) via %-10s spanned: %s" % (n, how, where))
     print("possible cross-post pairs flagged: %d  (same city+price+area, different channel)" % soft)
-    print("dropped as already in index.html : %d  %s" % (sum(drops.values()), drops))
+    print("dropped as already on the site  : %d  %s" % (sum(drops.values()), drops))
     print("candidates written               : %d  (%d with a parsed price)"
           % (len(survivors), st["candidates_with_price"]))
     print("output                           : %s" % args.out)
