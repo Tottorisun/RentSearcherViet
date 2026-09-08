@@ -222,6 +222,10 @@ def describe(ad, type_ru, ward, city_ru, city_en):
     # «ул. Đường 15B» и «ул. Số 79».
     street = re.sub(r"^Đường\s+", "", nfc(ad.get("street_name")))
     street = re.sub(r"^(Số|số)\s+", "№ ", street)
+    # Продавец иногда пишет в поле улицы одно служебное слово и ничего больше --
+    # «số» без номера. «ул. số» на сайте выглядит как опечатка, а не как адрес.
+    if re.fullmatch(r"(?i)\s*(số|đường|hẻm|№)?\s*", street or ""):
+        street = ""
 
     head_ru = type_ru
     head_en = {"Квартира": "Flat", "Дом": "House", "Комната": "Room", "Офис": "Office"}[type_ru]
