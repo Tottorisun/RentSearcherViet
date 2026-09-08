@@ -132,16 +132,44 @@ def run(step, log):
     except subprocess.TimeoutExpired:
         say(log, "  ПРОВАЛ: не уложился в %d с" % step.timeout)
         return "timeout", ""
-    tail = "\n".join((p.stdout or "").strip().split("\n")[-6:])
+    # Хвост берём из ОБОИХ потоков. Сначала брался только stdout, и отказ
+    # fb_collect.py («not logged in», stderr) в сводке выглядел пустым местом:
+    # шаг провалился, а причина не показана -- ровно та беда, ради которой
+    # сводка и заведена.
+    merged = "\n".join(x for x in ((p.stdout or "").strip(), (p.stderr or "").strip()) if x)
+    tail = "\n".join([ln for ln in merged.split("\n") if ln.strip()][-6:])
     log.write("$ %s\n%s\n%s\n" % (" ".join(step.argv), p.stdout or "", p.stderr or ""))
     log.flush()
     dt = time.time() - t0
     if p.returncode != 0:
         say(log, "  ПРОВАЛ (код %d, %.0f с). Последнее, что сказал:\n%s"
-            % (p.returncode, dt, indent(tail or (p.stderr or "").strip()[-500:])))
+            % (p.returncode, dt, indent(tail)))
         return "failed", tail
     say(log, "  готово за %.0f с\n%s" % (dt, indent(tail)))
     return "ok", tail
+
+
+NEEDS_LOGIN = "not logged in"
+ALERT_MEMO = os.path.join(LOG_DIR, ".pipeline_last_alert.json")
+
+
+def alert_once(text, key, hours=24):
+    """Одна беда -- одно сообщение в сутки. Прогон может идти трижды в день, и
+    три одинаковых сообщения про протухший вход делают незаметными настоящие."""
+    try:
+        memo = json.load(open(ALERT_MEMO, encoding="utf-8"))
+    except Exception:
+        memo = {}
+    last = memo.get(key)
+    if last and (time.time() - last) < hours * 3600:
+        return "оповещение пропущено: то же самое сообщали %d ч назад" % ((time.time() - last) / 3600)
+    res = alert_owner(text)
+    memo[key] = time.time()
+    try:
+        json.dump(memo, open(ALERT_MEMO, "w", encoding="utf-8"))
+    except Exception:
+        pass
+    return res
 
 
 def indent(text):
@@ -254,14 +282,25 @@ def main():
             say(log, "=== прогон %s ===" % stamp)
             for s in plan:
                 say(log, "\n[%s]" % s.name)
-                state, _tail = run(s, log)
-                results.append((s, state))
+                state, tail = run(s, log)
+                results.append((s, state, tail))
                 if state != "ok" and s.fatal:
                     break
 
-            bad = [s.name for s, st in results if st in ("failed", "timeout") and s.fatal]
-            soft = [s.name for s, st in results if st in ("failed", "timeout") and not s.fatal]
-            skip = [s.name for s, st in results if st == "skipped"]
+            bad = [s.name for s, st, _t in results if st in ("failed", "timeout") and s.fatal]
+            soft = [s.name for s, st, _t in results if st in ("failed", "timeout") and not s.fatal]
+            skip = [s.name for s, st, _t in results if st == "skipped"]
+
+            # Протухший вход в Facebook -- не сбой прогона, а работа для
+            # владельца: только он может войти руками, и пока он этого не
+            # сделает, источник просто молчит. Молчащий источник заметен
+            # только если о нём сказать.
+            if any(NEEDS_LOGIN in (t or "") for _s, _st, t in results):
+                say(log, "Facebook: вход протух. %s" % alert_once(
+                    "RentSearcher: сбор из групп Facebook остановлен -- вход в профиле "
+                    "истёк. Нужен один вход руками: python fb_collect.py --login "
+                    "(из D:\\MyDev\\Rent Searcher). До этого группы не собираются.",
+                    "fb-login"))
             note = "шагов %d, из них не сделано: %s" % (
                 len(results), ", ".join(bad + soft + skip) or "ничего")
             say(log, "\n=== итог ===\n%s" % note)
@@ -274,7 +313,7 @@ def main():
                 publish(log, note)
             elif dirty():
                 say(log, "результат не опубликован (--publish не задан); в дереве есть изменения")
-        json.dump({"stamp": stamp, "steps": [(s.name, st) for s, st in results]},
+        json.dump({"stamp": stamp, "steps": [(s.name, st) for s, st, _t in results]},
                   open(os.path.join(LOG_DIR, "pipeline_last.json"), "w", encoding="utf-8"),
                   ensure_ascii=False, indent=1)
     finally:
@@ -282,7 +321,7 @@ def main():
             os.unlink(LOCK)
         except FileNotFoundError:
             pass
-    return 1 if any(st in ("failed", "timeout") and s.fatal for s, st in results) else 0
+    return 1 if any(st in ("failed", "timeout") and s.fatal for s, st, _t in results) else 0
 
 
 if __name__ == "__main__":
