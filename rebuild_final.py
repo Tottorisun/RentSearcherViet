@@ -9206,6 +9206,31 @@ L(3000248,"manila","ort","Студия",27000,29,
   "https://www.facebook.com/groups/715451165293916/posts/3363268593845480/","сегодня",0,source="fbgroup",cur="PHP",
   descEn="Fully furnished studio of 29 m² at The Vantage at Kapitolyo by Rockwell Land, Pasig — association dues included. Walking distance to Pioneer Center, Estancia Mall and Unimart at Capitol Commons. Close to the Kalayaan BGC–Ortigas bridge, Ortigas itself and Mandaluyong.",
   details={"notice":"Источник — пост в группе Facebook. Точной даты размещения группа не отдаёт: в данных страницы её нет, а видимые метки времени принадлежат комментариям. Указанный возраст — это время с проверки: 8 сентября 2026 объявление было открыто по прямой ссылке и подтверждено живым. Фотографий нет: ссылки Facebook на изображения подписаны и живут около четырёх дней, смотрите фото по ссылке.","noticeEn":"Source: a post in a Facebook group. The group gives no exact posting date — it is absent from the page data, and the visible timestamps belong to comments. The age shown is time since verification: on 8 September 2026 the post was opened at its permalink and confirmed live. No photos: Facebook image links are signed and last about four days, so see the photos on the post."}),
+L(1000575,"ho-chi-minh","ak","Квартира",25000000,110,
+  "1-спальный пентхаус 110 м² рядом с улицей Суантхюи, Тхао Дьен — полная меблировка, свободен сразу. В стоимость входят уборка раз в неделю, парковка и быстрый интернет. В центре Тхао Дьена: международные школы, супермаркеты и кафе рядом.",
+  "https://www.facebook.com/groups/chungcumini.canhodichvu.phongtrotphcm/posts/1806478077337582/","сегодня",0,source="fbgroup",
+  descEn="One-bedroom penthouse of 110 m² near Xuân Thủy street, Thảo Điền — fully furnished and available now. Weekly cleaning, parking and high-speed internet are included in the rent. In the heart of Thảo Điền, with international schools, supermarkets and cafés nearby.",
+  details={"notice":"Источник — пост в группе Facebook. Точной даты размещения группа не отдаёт: в данных страницы её нет, а видимые метки времени принадлежат комментариям. Указанный возраст — это время с проверки: 8 сентября 2026 объявление было открыто по прямой ссылке и подтверждено живым. Фотографий нет: ссылки Facebook на изображения подписаны и живут около четырёх дней, смотрите фото по ссылке.","noticeEn":"Source: a post in a Facebook group. The group gives no exact posting date — it is absent from the page data, and the visible timestamps belong to comments. The age shown is time since verification: on 8 September 2026 the post was opened at its permalink and confirmed live. No photos: Facebook image links are signed and last about four days, so see the photos on the post."}),
+L(1000576,"ho-chi-minh","ak","Студия",13000000,None,
+  "Студия в новом доме Aura Living на улице 60, Тхао Дьен — 17 студий, балкон, полная меблировка. В доме лифт, спортзал, сад и питьевая вода из-под крана. Цена указана как начальная: 13 000 000 ₫, конкретная зависит от юнита.",
+  "https://www.facebook.com/groups/chungcumini.canhodichvu.phongtrotphcm/posts/1850976909554365/","сегодня",0,source="fbgroup",
+  descEn="Studio at Aura Living, a new building on Street 60, Thảo Điền — 17 studios, each with a balcony and fully furnished. The building has a lift, a gym, a garden and filtered drinking water on tap. The price is quoted as a starting figure of ₫13,000,000; the exact rent depends on the unit.",
+  details={"notice":"Источник — пост в группе Facebook. Точной даты размещения группа не отдаёт: в данных страницы её нет, а видимые метки времени принадлежат комментариям. Указанный возраст — это время с проверки: 8 сентября 2026 объявление было открыто по прямой ссылке и подтверждено живым. Фотографий нет: ссылки Facebook на изображения подписаны и живут около четырёх дней, смотрите фото по ссылке.","noticeEn":"Source: a post in a Facebook group. The group gives no exact posting date — it is absent from the page data, and the visible timestamps belong to comments. The age shown is time since verification: on 8 September 2026 the post was opened at its permalink and confirmed live. No photos: Facebook image links are signed and last about four days, so see the photos on the post."}),
+L(1000577,"ho-chi-minh","ak","Торговая площадь",160000000,150,
+  "Помещение с витриной на первой линии улицы Суантхюи, Тхао Дьен — пятно 10 на 15 м, первый этаж плюс один. Оживлённая центральная улица района, много иностранцев, помещение хорошо заметно с дороги. Под ресторан, кофейню, шоурум, спа или магазин.",
+  "https://www.facebook.com/groups/2439677179643705/posts/4644169972527737/","сегодня",0,source="fbgroup",
+  descEn="Shopfront premises on the Xuân Thủy frontage in Thảo Điền — a 10 by 15 m footprint over a ground floor plus one. A busy central street of the district with a large foreign community and high visibility from the road. Suited to a restaurant, café, showroom, spa or shop.",
+  details={"notice":"Источник — пост в группе Facebook. Точной даты размещения группа не отдаёт: в данных страницы её нет, а видимые метки времени принадлежат комментариям. Указанный возраст — это время с проверки: 8 сентября 2026 объявление было открыто по прямой ссылке и подтверждено живым. Фотографий нет: ссылки Facebook на изображения подписаны и живут около четырёх дней, смотрите фото по ссылке.","noticeEn":"Source: a post in a Facebook group. The group gives no exact posting date — it is absent from the page data, and the visible timestamps belong to comments. The age shown is time since verification: on 8 September 2026 the post was opened at its permalink and confirmed live. No photos: Facebook image links are signed and last about four days, so see the photos on the post."}),
+L(1000578,"ho-chi-minh","ak","Офис",70000000,70,
+  "Помещение под офис в Тхао Дьене — пятно 3,5 на 20 м, первый этаж плюс три. Подойдёт под офис, шоурум, спа или магазин. Депозит за три месяца, оплата помесячно.",
+  "https://www.facebook.com/groups/2439677179643705/posts/4680245392253528/","сегодня",0,source="fbgroup",
+  descEn="Office premises in Thảo Điền — a 3.5 by 20 m footprint over a ground floor plus three. Suited to an office, showroom, spa or shop. Three months' deposit, paid monthly.",
+  details={"notice":"Источник — пост в группе Facebook. Точной даты размещения группа не отдаёт: в данных страницы её нет, а видимые метки времени принадлежат комментариям. Указанный возраст — это время с проверки: 8 сентября 2026 объявление было открыто по прямой ссылке и подтверждено живым. Фотографий нет: ссылки Facebook на изображения подписаны и живут около четырёх дней, смотрите фото по ссылке.","noticeEn":"Source: a post in a Facebook group. The group gives no exact posting date — it is absent from the page data, and the visible timestamps belong to comments. The age shown is time since verification: on 8 September 2026 the post was opened at its permalink and confirmed live. No photos: Facebook image links are signed and last about four days, so see the photos on the post."}),
+L(1000579,"ho-chi-minh","ak","Офис",3300,110,
+  "Дом под офис в Тхао Дьене — пятно 10 на 11 м, первый этаж плюс два, помещение пустое, заезжать можно сразу. Тихий жилой квартал с удобным подъездом на машине. Владелец предлагает под офис компании, шоурум или студию — то есть под дело, которому не нужна витрина на людной улице.",
+  "https://www.facebook.com/groups/2439677179643705/posts/4625048791106522/","сегодня",0,source="fbgroup",cur="USD",
+  descEn="House let as office space in Thảo Điền — a 10 by 11 m footprint over a ground floor plus two, empty and ready to occupy. A quiet residential block with easy car access. The owner offers it for a company office, a showroom or a studio: a business that does not need a busy street frontage.",
+  details={"notice":"Источник — пост в группе Facebook. Точной даты размещения группа не отдаёт: в данных страницы её нет, а видимые метки времени принадлежат комментариям. Указанный возраст — это время с проверки: 8 сентября 2026 объявление было открыто по прямой ссылке и подтверждено живым. Фотографий нет: ссылки Facebook на изображения подписаны и живут около четырёх дней, смотрите фото по ссылке.","noticeEn":"Source: a post in a Facebook group. The group gives no exact posting date — it is absent from the page data, and the visible timestamps belong to comments. The age shown is time since verification: on 8 September 2026 the post was opened at its permalink and confirmed live. No photos: Facebook image links are signed and last about four days, so see the photos on the post."}),
 ]
 
 # Real lat/lon per listing for the Leaflet map — precise geocoded address where extractable from
@@ -10512,9 +10537,17 @@ HTML = r"""<meta charset="utf-8">
     }
     return out.join(" · ");
   }
+  // Считаем от НОРМАЛИЗОВАННОЙ цены (pv, приведена к донгам на сборке), а не от
+  // l.price. Подпись у этой строки -- «тыс ₫/м²», и делить на площадь цену в
+  // песо или долларах значило подписывать донгами чужую валюту: квартира за
+  // 15 000 ₱ на 35 м² показывала «0 тыс ₫/м²» вместо ~178. Так было у всех
+  // филиппинских строк с площадью, и так же ломалась сортировка по цене за метр
+  // -- она уводила их в самый низ. Найдено 8 сентября 2026 на первой строке в
+  // долларах, но задето было ещё 217 филиппинских.
   function pricePerM2(l){
-    if (l.price == null || !l.area) return null;
-    return l.price / l.area;
+    var base = (l.pv != null) ? l.pv : l.price;
+    if (base == null || !l.area) return null;
+    return base / l.area;
   }
   function fmtPricePerM2(v){
     return Math.round(v/1000) + " " + t("thousandPerM2");

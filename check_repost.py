@@ -30,6 +30,13 @@
 служит перекрытие |A∩B| / min(|A|,|B|), а не Жаккар: пересказ короче исходника,
 и делить на объединение значило бы наказывать за краткость.
 
+ГДЕ ИНСТРУМЕНТ СЛАБЕЕ. По Филиппинам он разводит случаи чисто: настоящая
+перевыкладка дала 0.77 по 23 редким словам, шум -- 0.50 по трём. По Хошимину
+шумит заметно сильнее: массив там в семь раз больше, а описания коммерции пишем
+мы и пишем одинаково, поэтому партия из пяти строк дала семь срабатываний, и все
+ложные. Это помощник для глаз, а не воротник: код возврата 1 означает «посмотри»,
+а не «не заводи».
+
 Три режима:
   python check_repost.py --audit                 весь массив, пары внутри города
   python check_repost.py --file new_listings99.py батч перед вставкой
@@ -76,7 +83,7 @@ def load_site():
     out = []
     for l in load_listings():
         out.append((l["id"], l["city"], l.get("price"), l.get("source", "chotot"),
-                    [t for t in (l.get("desc"), l.get("descEn")) if t]))
+                    [t for t in (l.get("desc"), l.get("descEn")) if t], l.get("type")))
     return out
 
 
@@ -105,23 +112,49 @@ def parse_batch(path):
         if len(args) < 7:
             continue
         rows.append((args[0], args[1], args[4], kw.get("source", "chotot"),
-                     [t for t in (args[6], kw.get("descEn")) if t]))
+                     [t for t in (args[6], kw.get("descEn")) if t], args[3]))
     return rows
 
 
 def build_common(rows):
-    """Слова-шаблоны считаются отдельно по каждому городу: в Себу шаблон свой,
-    в Думагете свой, и общий список на всю страну смазал бы оба."""
+    """Слова-шаблоны считаются в двух разрезах, и второй пришлось добавить.
+
+    По ГОРОДУ: в Себу свой местный шаблон, в Думагете свой, общий список на всю
+    страну смазал бы оба.
+
+    По ТИПУ объекта, по всему массиву: описания пишем мы, и у коммерции свой
+    канцелярит -- «под ресторан, кафе, шоурум, спа или офис», «фасад», «этаж».
+    В Хошимине таких строк меньше 12% города, поэтому городской порог их не
+    срезал, и 8 сентября 2026 партия из пяти строк дала десять «совпадений», из
+    которых настоящим не было ни одно: витрина в Тхао Дьене «совпала» на 0.83 с
+    домом в Бентхани только по этой фразе.
+    """
     from collections import Counter
-    per_city, total = {}, {}
-    for _i, city, _p, _s, texts in rows:
+    per_city, city_total = {}, {}
+    per_type, type_total = {}, {}
+    for row in rows:
+        city, texts, typ = row[1], row[4], (row[5] if len(row) > 5 else None)
         words = set()
         for t in texts:
             words |= norm(t)
         per_city.setdefault(city, Counter()).update(words)
-        total[city] = total.get(city, 0) + 1
-    return {city: {w for w, n in c.items() if n > max(2, COMMON_DF * total[city])}
-            for city, c in per_city.items()}
+        city_total[city] = city_total.get(city, 0) + 1
+        if typ:
+            per_type.setdefault(typ, Counter()).update(words)
+            type_total[typ] = type_total.get(typ, 0) + 1
+    by_type = {t: {w for w, n in c.items() if n > max(2, COMMON_DF * type_total[t])}
+               for t, c in per_type.items()}
+    out = {}
+    for city, c in per_city.items():
+        out[city] = {w for w, n in c.items() if n > max(2, COMMON_DF * city_total[city])}
+    out["__by_type__"] = by_type
+    return out
+
+
+def common_for(common, city, typ):
+    """Шаблон города плюс шаблон типа: общее слово хотя бы в одном разрезе
+    значимым не считается."""
+    return common.get(city, set()) | common.get("__by_type__", {}).get(typ, set())
 
 
 def best_match(a_texts, b_texts, common):
@@ -157,12 +190,12 @@ def flagged(r, shared, same_price):
 
 def report(candidates, existing, label, common):
     hits = 0
-    for cid, ccity, cprice, csrc, ctexts in candidates:
+    for cid, ccity, cprice, csrc, ctexts, ctype in candidates:
         best = []
-        for eid, ecity, eprice, esrc, etexts in existing:
+        for eid, ecity, eprice, esrc, etexts, etype in existing:
             if eid == cid or ecity != ccity:
                 continue
-            r, shared = best_match(ctexts, etexts, common.get(ccity, set()))
+            r, shared = best_match(ctexts, etexts, common_for(common, ccity, ctype))
             if flagged(r, shared, eprice == cprice):
                 best.append((r, shared, eid, eprice, esrc))
         for r, shared, eid, eprice, esrc in sorted(best, reverse=True)[:3]:
@@ -196,7 +229,7 @@ def main():
     if a.text:
         if not a.city:
             sys.exit("--text требует --city")
-        one = [(0, a.city, None, "?", [a.text])]
+        one = [(0, a.city, None, "?", [a.text], None)]
         sys.exit(1 if report(one, site, "строка", build_common(site + one)) else 0)
 
     if a.audit:
@@ -204,12 +237,12 @@ def main():
         common = build_common(site)
         norms = site
         for x in range(len(norms)):
-            i1, c1, p1, s1, n1 = norms[x]
+            i1, c1, p1, s1, n1, t1 = norms[x]
             for y in range(x + 1, len(norms)):
-                i2, c2, p2, s2, n2 = norms[y]
+                i2, c2, p2, s2, n2, t2 = norms[y]
                 if c1 != c2:
                     continue
-                r, shared = best_match(n1, n2, common.get(c1, set()))
+                r, shared = best_match(n1, n2, common_for(common, c1, t1))
                 if flagged(r, shared, p1 == p2) and (i1, i2) not in seen:
                     seen.add((i1, i2)); hits += 1
                     print("  %s ~ %s  %.2f по %d редким  %s/%s  %s  цены %s / %s"

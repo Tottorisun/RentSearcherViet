@@ -125,7 +125,7 @@
       m2:"м²", thousandPerM2:"тыс ₫/м²", mlnShort:"млн", metres:"м", km:"км",
       detailLabels:{deposit:"Депозит", electricity:"Электричество", water:"Вода", internet:"Интернет/wifi",
         managementFee:"Управление", amenities:"Удобства", policy:"Правила", contract:"Договор", notice:"Важно"},
-      stamp:"Данные актуальны на 7 сентября 2026 · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
+      stamp:"Данные актуальны на 8 сентября 2026 · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
     },
     en: {
       h1Title:"Rental housing in Vietnam and the Philippines",
@@ -175,7 +175,7 @@
       m2:"m²", thousandPerM2:"k ₫/m²", mlnShort:"mln", metres:"m", km:"km",
       detailLabels:{deposit:"Deposit", electricity:"Electricity", water:"Water", internet:"Internet/wifi",
         managementFee:"Management fee", amenities:"Amenities", policy:"House rules", contract:"Contract", notice:"Important"},
-      stamp:"Data current as of 7 September 2026 · listings older than 14 days are excluded · always confirm price and availability via the original listing before calling the owner."
+      stamp:"Data current as of 8 September 2026 · listings older than 14 days are excluded · always confirm price and availability via the original listing before calling the owner."
     }
   };
 
@@ -362,9 +362,17 @@
     }
     return out.join(" · ");
   }
+  // Считаем от НОРМАЛИЗОВАННОЙ цены (pv, приведена к донгам на сборке), а не от
+  // l.price. Подпись у этой строки -- «тыс ₫/м²», и делить на площадь цену в
+  // песо или долларах значило подписывать донгами чужую валюту: квартира за
+  // 15 000 ₱ на 35 м² показывала «0 тыс ₫/м²» вместо ~178. Так было у всех
+  // филиппинских строк с площадью, и так же ломалась сортировка по цене за метр
+  // -- она уводила их в самый низ. Найдено 8 сентября 2026 на первой строке в
+  // долларах, но задето было ещё 217 филиппинских.
   function pricePerM2(l){
-    if (l.price == null || !l.area) return null;
-    return l.price / l.area;
+    var base = (l.pv != null) ? l.pv : l.price;
+    if (base == null || !l.area) return null;
+    return base / l.area;
   }
   function fmtPricePerM2(v){
     return Math.round(v/1000) + " " + t("thousandPerM2");
