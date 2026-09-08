@@ -10060,5 +10060,23 @@
   "lon": 106.7293654,
   "source": "ward-centroid",
   "matched": null
+ },
+ "1000580": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "1000582": {
+  "lat": 10.7258082,
+  "lon": 106.7238126,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000251": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
  }
 }

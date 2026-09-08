@@ -162,6 +162,46 @@ def remove_listings(ids, owner="remove"):
     return todo
 
 
+# Источники, у которых одна ссылка на несколько объявлений -- норма, а не ошибка:
+# телеграм-строки ссылаются на канал, а не на конкретный пост.
+SHARED_URL_SOURCES = {"telegram", "facebook"}
+
+
+def _listing_urls(src):
+    """{нормализованный url: id} по всем L(...) в тексте -- через ast, не регуляркой.
+
+    Работает и с целым rebuild_final.py, и с фрагментом партии: фрагмент
+    `L(...),\nL(...),` разбирается как кортежное выражение, поэтому просто
+    обходим все вызовы L в дереве, а не ищем присваивание LISTINGS.
+    """
+    out = {}
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return out
+    for node in ast.walk(tree):
+        if not (isinstance(node, ast.Call) and getattr(node.func, "id", "") == "L"):
+            continue
+        if len(node.args) < 8:
+            continue
+        kw = {k.arg: (k.value.value if isinstance(k.value, ast.Constant) else None)
+              for k in node.keywords}
+        if kw.get("source", "chotot") in SHARED_URL_SOURCES:
+            continue
+        lid = node.args[0].value if isinstance(node.args[0], ast.Constant) else None
+        url = node.args[7].value if isinstance(node.args[7], ast.Constant) else None
+        if lid is None or not isinstance(url, str):
+            continue
+        out.setdefault(url.split("?")[0].rstrip("/"), lid)
+    return out
+
+
+def _url_clashes(src, new_src):
+    """[(url, id уже заведённой строки)] для ссылок партии, которые уже в файле."""
+    have = _listing_urls(src)
+    return [(u, have[u]) for u in _listing_urls(new_src) if u in have]
+
+
 def insert_listings(new_src, ids, owner="batch"):
     """Insert NEW_SRC -- one or more complete `L(...),` rows, each starting at
     column 0 -- at the end of the LISTINGS list. Idempotent and self-checking."""
@@ -177,6 +217,16 @@ def insert_listings(new_src, ids, owner="batch"):
         if clash:
             sys.exit("refusing to insert: id(s) already in %s: %s -- was this batch already "
                      "applied, or were the ids handed out twice? Nothing written." % (SOURCE, clash))
+        dup_urls = _url_clashes(src, new_src)
+        if dup_urls:
+            sys.exit("refusing to insert: %d listing(s) whose URL is already in %s.\n%s\n"
+                     "Один и тот же URL -- это одно и то же объявление. Проверка по id этого "
+                     "не ловит: две сессии одного дня берут с Chợ Tốt один ад и получают разные "
+                     "id. 8 сентября 2026 так набралось 49 задвоенных ссылок, 13 из них за одни "
+                     "сутки. Уберите повтор из партии; если это осознанное исключение (ссылка на "
+                     "канал, а не на объявление) -- добавьте источник в SHARED_URL_SOURCES."
+                     % (len(dup_urls), SOURCE,
+                        "\n".join("  %s уже заведён как id %s" % (u, i) for u, i in dup_urls)))
         if src.count(MARKER) != 1:
             sys.exit("marker %r found %d time(s) in %s, expected exactly 1 -- nothing written"
                      % (MARKER, src.count(MARKER), SOURCE))
