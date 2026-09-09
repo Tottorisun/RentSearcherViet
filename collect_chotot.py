@@ -7,9 +7,13 @@ run_daily_check.ps1 скармливал инструкцию в claude.exe -p, 
 модель. Программами были только обслуживающие шаги (чистка, живость, курсы,
 сборка). Поэтому «перенести парсер на сервер» было нечего: его не существовало.
 
-Этот скрипт закрывает главный источник: 1376 из 1723 строк сайта -- Chợ Tốt.
-Он обходится стандартной библиотекой, не требует ни браузера, ни входа, ни
-модели, и потому может работать по расписанию где угодно.
+Этот скрипт закрывает главный источник -- Chợ Tốt. Он обходится стандартной
+библиотекой, не требует ни браузера, ни входа, ни модели, и потому может
+работать по расписанию где угодно.
+
+9 сентября 2026 расширен с одного города до девяти: Хошимин, Ханой, Дананг,
+Хойан, Далат, Вунгтау, Куинён, Фантьет, Фукуок и Бинь Зыонг. Коды провинций и
+районов -- в TARGETS, там же сказано, почему Нячанга среди них пока нет.
 
 ЧЕГО ОН НАМЕРЕННО НЕ ДЕЛАЕТ
   * Не выдумывает район. `ward_name_v3` в ответе API -- это ровно то название,
@@ -40,11 +44,30 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
                     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 API = "https://gateway.chotot.com/v1/public/ad-listing"
 
-# region_v2 -- провинция, area_v2 -- район старой нарезки. Ward'ы новой нарезки
-# приходят в ward_name_v3 и сопоставляются с CITIES по точному имени.
+# region_v2 -- провинция, area_v2 -- район внутри неё. Коды сняты 9 сентября 2026
+# с https://gateway.chotot.com/v1/public/chapy-pro/regions и проверены запросами:
+# Хошимин и Ханой нумеруются пятью цифрами (13000/12000 + номер района), остальные
+# провинции -- четырьмя (макрорегион×1000 + провинция), а их районы шестью.
+# Макрорегионы из того же справочника (3000 «Quảng Nam Đà Nẵng» и прочие) как
+# region_v2 НЕ работают: на них API отвечает пустым списком.
 TARGETS = [
     # (город сайта, region_v2, [area_v2 ...])
     ("ho-chi-minh", "13000", ["13102", "13119", "13109", "13096", "13099"]),
+    ("ha-noi",      "12000", ["12073", "12074", "12075", "12076", "12077", "12078",
+                              "12079", "12080", "12081", "12086", "12121", "12129"]),
+    ("da-nang",     "3017",  ["301701", "301702", "301703", "301704", "301705", "301706"]),
+    ("hoi-an",      "3016",  ["301602"]),
+    ("da-lat",      "9057",  ["905701"]),
+    ("vung-tau",    "2010",  ["201001"]),
+    ("quy-nhon",    "7043",  ["704301"]),
+    ("phan-thiet",  "7042",  ["704201"]),
+    ("phu-quoc",    "5031",  ["503112"]),
+    ("binh-duong",  "2011",  ["201101", "201107", "201108"]),
+    # Нячанг (7044/704401) намеренно НЕ включён. После укрупнения площадка отдаёт
+    # там четыре новых района -- «Phường Nha Trang», «Bắc/Tây/Nam Nha Trang», -- а в
+    # CITIES у нас лежат двенадцать прежних (Vạn Thạnh, Lộc Thọ, Phước Hải...).
+    # Совпадений не будет ни одного, пока район города не пересобран; включать
+    # его сейчас значит гонять запросы ради счётчика пропусков.
 ]
 # Категории Chợ Tốt -> тип объекта на сайте. 1040 (земля) не берём: это не жильё.
 CATEGORIES = {
@@ -137,6 +160,19 @@ def street_ru(street):
     return "ул. " + street
 
 
+def strip_city_tail(name, city):
+    """«Phường Xuân Hương - Đà Lạt» -> «Xuân Hương»: в Далате название района
+    несёт в себе город, и в описании он выходил дважды -- «Xuân Hương - Đà Lạt,
+    Далат». Отрезаем хвост только если он и есть название города, а не любой
+    дефис: «Bà Rịa - Vũng Tàu» терять нельзя."""
+    m = re.match(r"^(.*?)\s*-\s*([^-]+)$", name)
+    if m and slugify(m.group(2)) == city.replace("-", ""):
+        return m.group(1).strip()
+    if m and slugify(m.group(2)) == city:
+        return m.group(1).strip()
+    return name
+
+
 def short_ward(name):
     """«Phường Tân Mỹ» -> «Tân Mỹ». Названия районов остаются вьетнамскими и в
     русском описании: так уже написаны заведённые строки («ул. Lý Tự Trọng,
@@ -158,17 +194,40 @@ def get(url, tries=3):
     return None
 
 
+AREA_PREFIX = re.compile(r"^(Thành phố|Thị xã|Quận|Huyện)\s+")
+
+
 def site_wards():
-    """{(город, имя района в NFC): ключ} -- прямо из CITIES, без ручных таблиц."""
+    """{(город, имя района в NFC): ключ} и {город: (имя RU, имя EN)} -- прямо из
+    CITIES, без ручных таблиц."""
     src = open("rebuild_final.py", encoding="utf-8").read()
     node = next(n for n in ast.walk(ast.parse(src))
                 if isinstance(n, ast.Assign) and any(getattr(t, "id", None) == "CITIES" for t in n.targets))
     cities = ast.literal_eval(node.value)
-    out = {}
+    out, labels = {}, {}
     for city, c in cities.items():
+        labels[city] = (c["name"], c.get("nameEn") or c["name"])
         for d in c["districts"]:
             out[(city, nfc(d["name"]))] = d["key"]
-    return out
+    return out, labels
+
+
+def district_key(wards, city, ad):
+    """Ключ района -- по ward_name_v3, а если не совпало, по району площадки.
+
+    Зачем второй заход. В Ханое и Бинь Зыонге наши «районы» -- это quận и
+    thành phố целиком (Thanh Xuân, Thuận An), а ward_name_v3 отдаёт кварталы
+    внутри них (Phường Khương Đình, Phường Lái Thiêu): совпадений нет ни одного,
+    хотя город наш. Поле area_name там называет ровно нашу единицу.
+
+    Второй заход НЕ размывает первый: он сравнивает с теми же именами из CITIES,
+    а у городов, где район -- это phường (Дананг, Хошимин), «Quận Sơn Trà» после
+    снятия префикса даёт «Sơn Trà», что с «Phường Sơn Trà» не совпадает. То есть
+    квартал кварталом и остаётся, а не подменяется целым районом."""
+    key = wards.get((city, nfc(ad.get("ward_name_v3"))))
+    if key:
+        return key
+    return wards.get((city, AREA_PREFIX.sub("", nfc(ad.get("area_name")))))
 
 
 PHOTO_HASH = re.compile(r"/plain/([0-9a-f]{32})-")
@@ -252,8 +311,6 @@ def describe(ad, type_ru, ward, city_ru, city_en):
     return ru, en
 
 
-CITY_LABEL = {"ho-chi-minh": ("Хошимин", "Ho Chi Minh City")}
-
 NOTICE_RU = ("Описание собрано программой из полей объявления на Chợ Tốt — тип, комнаты, площадь, "
              "улица, район, удобства по ключевым словам. Рекламный текст продавца не пересказан, "
              "названия районов оставлены вьетнамскими. Подробности смотрите по ссылке.")
@@ -328,9 +385,12 @@ def batch_text(rows, ids, days):
     return "\n".join(doc + rows + tail)
 
 
+CITY_LABELS = {}   # заполняется в main() из CITIES
+
+
 def row_text(lid, city, key, type_ru, ad, age):
-    ward = short_ward(nfc(ad.get("ward_name_v3")))
-    city_ru, city_en = CITY_LABEL[city]
+    ward = strip_city_tail(short_ward(nfc(ad.get("ward_name_v3"))), city)
+    city_ru, city_en = CITY_LABELS[city]
     ru, en = describe(ad, type_ru, ward, city_ru, city_en)
     det = {"photos": [u for u in (ad.get("images") or [])[:6]],
            "notice": "RU_N", "noticeEn": "EN_N"}
@@ -351,7 +411,8 @@ def main():
     ap.add_argument("--insert", action="store_true", help="и вставить его (только вместе с --write)")
     a = ap.parse_args()
 
-    wards = site_wards()
+    wards, labels = site_wards()
+    CITY_LABELS.update(labels)
     known_urls, known_ids, known_photos = known_from_site()
     now = time.time()
     picked, skipped = [], {"чужой район": 0, "старое": 0, "уже есть": 0, "без фото": 0,
@@ -369,7 +430,7 @@ def main():
                     continue
                 for ad in data.get("ads", []):
                     lid = str(ad.get("list_id"))
-                    key = wards.get((city, nfc(ad.get("ward_name_v3"))))
+                    key = district_key(wards, city, ad)
                     if not key:
                         skipped["чужой район"] += 1; continue
                     ts = ad.get("orig_list_time") or ad.get("list_time")
@@ -394,6 +455,10 @@ def main():
     picked = picked[:a.limit]
     print("найдено пригодных: %d (не старше %.1f дн.)" % (len(picked), a.days))
     print("пропущено:", ", ".join("%s %d" % (k, v) for k, v in skipped.items() if v))
+    by_city = {}
+    for city, _k, _t, _ad, _age in picked:
+        by_city[city] = by_city.get(city, 0) + 1
+    print("по городам:", ", ".join("%s %d" % kv for kv in sorted(by_city.items(), key=lambda x: -x[1])))
     for city, key, type_ru, ad, age in picked[:12]:
         print("  %-4s %-9s %-11s %10s ₫  %s" % (key, type_ru, "%d дн." % age,
                                                 format(ad["price"], ","), nfc(ad.get("subject"))[:52]))
