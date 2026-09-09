@@ -19,6 +19,11 @@ id_reservations.json
 # atomic write goes through -- per-machine runtime state, never committed.
 .listings_write.lock
 .listings_write.lock.stale.*
+
+# Замок вокруг суточного прогона (run_pipeline.py). Он существует только пока
+# прогон идёт, но `git add -A` внутри самого прогона успевал его закоммитить, а
+# конец прогона -- удалить: в истории появлялся файл, которого нет.
+.pipeline.lock
 rebuild_final.py.tmp*
 *.html.tmp.*
 posted_dates.json.tmp

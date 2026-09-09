@@ -12952,5 +12952,149 @@
   "lon": 106.75859,
   "source": "chotot",
   "matched": null
+ },
+ "3000283": {
+  "lat": 10.2415111,
+  "lon": 123.7992616,
+  "source": "geocode",
+  "matched": "Cebu I"
+ },
+ "3000284": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000285": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000286": {
+  "lat": 10.346519,
+  "lon": 123.911112,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000287": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000288": {
+  "lat": 10.2415111,
+  "lon": 123.7992616,
+  "source": "geocode",
+  "matched": "Cebu I"
+ },
+ "3000289": {
+  "lat": 10.2415111,
+  "lon": 123.7992616,
+  "source": "geocode",
+  "matched": "Cebu I"
+ },
+ "3000290": {
+  "lat": 10.346519,
+  "lon": 123.911112,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000291": {
+  "lat": 10.346519,
+  "lon": 123.911112,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000292": {
+  "lat": 9.318746,
+  "lon": 123.302255,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000293": {
+  "lat": 10.2415111,
+  "lon": 123.7992616,
+  "source": "geocode",
+  "matched": "Cebu I"
+ },
+ "3000294": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000295": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000296": {
+  "lat": 14.583247,
+  "lon": 121.062701,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000297": {
+  "lat": 10.369357,
+  "lon": 123.916932,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000298": {
+  "lat": 10.32288,
+  "lon": 123.883939,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000299": {
+  "lat": 10.2415111,
+  "lon": 123.7992616,
+  "source": "geocode",
+  "matched": "Cebu I"
+ },
+ "3000300": {
+  "lat": 10.327418,
+  "lon": 123.942152,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000301": {
+  "lat": 14.5095273,
+  "lon": 121.0380244,
+  "source": "geocode",
+  "matched": "Western Bicutan"
+ },
+ "3000302": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000303": {
+  "lat": 10.346519,
+  "lon": 123.911112,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000304": {
+  "lat": 14.583247,
+  "lon": 121.062701,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000305": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000306": {
+  "lat": 10.341066,
+  "lon": 123.8992449,
+  "source": "geocode",
+  "matched": "Marco Polo Residences"
  }
 }

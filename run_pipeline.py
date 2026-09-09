@@ -24,7 +24,10 @@ run_daily_check.ps1 запускает не программу, а сессию:
     поста -- свободный, адрес в нём написан как попало, и превратить его в
     строку сайта пока может только человек или сессия. Программа не делает
     вид, что умеет: она собирает и отсеивает, а не сочиняет.
-  * Telegram -- наполовину, ровно по той же причине.
+  * dotproperty.com.ph -- полностью, с 9 сентября 2026. У портала на каждой
+    карточке лежит schema.org-разметка, а район ставится либо точным совпадением
+    с CITIES, либо однозначным прецедентом, уже заведённым на сайте.
+  * Telegram -- наполовину, ровно по той же причине, что и Facebook.
   * Обслуживание, сборка, карта, публикация -- полностью.
 
 То есть после этого файла модель нужна ТОЛЬКО на разбор свободного текста двух
@@ -97,6 +100,13 @@ def steps_for(a):
                                 [py, "fb_collect.py", "--groups", "--city", city,
                                  "--max-groups", str(a.fb_groups)],
                                 fatal=False, timeout=2400, skip_if=why))
+    if not a.no_dotproperty:
+        # Медленный по устройству: возраст записи виден только на её странице,
+        # поэтому старые приходится открыть, чтобы отбросить. Отсюда и таймаут.
+        out.append(Step("dotproperty: сбор и вставка",
+                        [py, "collect_dotproperty.py", "--days", "14", "--pages", "3",
+                         "--limit", "40", "--write", "--insert"],
+                        fatal=False, timeout=2400))
     if not a.no_tg:
         out.append(Step("Telegram: каналы",
                         [py, "fetch_telegram_listings.py", "--pages", str(a.tg_pages)],
@@ -243,6 +253,7 @@ def main():
     ap.add_argument("--tg-pages", type=int, default=2)
     ap.add_argument("--no-chotot", action="store_true")
     ap.add_argument("--no-fb", action="store_true")
+    ap.add_argument("--no-dotproperty", action="store_true")
     ap.add_argument("--no-tg", action="store_true")
     ap.add_argument("--no-maintain", action="store_true")
     ap.add_argument("--publish", action="store_true", help="закоммитить и запушить результат")
