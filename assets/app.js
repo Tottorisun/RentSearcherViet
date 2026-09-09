@@ -97,7 +97,7 @@
       sortAsc:"Дешевле", sortDesc:"Дороже", sortNew:"Новые", perM2:"сортировать по цене за м²",
       poiLabel:"Ближе к...", poiNone:"не важно", poiMetro:"🚇 метро", poiSchool:"🎓 школе", poiHospital:"✚ больнице",
       mapTitle:"Карта района", mapNote:"реальные границы районов, OpenStreetMap",
-      mapLegendPin:"объявление (положение приблизительное)", mapLegendClick:"клик по району на карте — фильтр по нему",
+      mapLegendPin:"точка из объявления", mapLegendPinApprox:"приблизительно — центр района", mapLegendClick:"клик по району на карте — фильтр по нему",
       poiToggle:"метро / школы / госпитали",
       mapCredit:"Карта и адреса — © участники OpenStreetMap (ODbL). Границы районов актуальны после реформы административного деления 2025 года.",
       mapNoBounds:"нет официальных границ районов — показаны только точки объявлений",
@@ -118,7 +118,8 @@
       openListing:"Открыть объявление →", alsoOn:"Также встречается на:",
       popupView:"Посмотреть →",
       detailsToggle:"Подробнее (депозит, коммуналка, удобства)",
-      approxPos:"📍 положение на карте приблизительное",
+      approxPos:"📍 положение на карте приблизительное — центр района",
+      exactPos:"📍 координаты из самого объявления",
       addFav:"В избранное",
       anyDistrict:"любой район", anyBudget:"любой бюджет", anyType:"любой тип",
       searchCtx:"поиск", forDays:"за", noAdsYet:"пока нет объявлений", adsShort:"объяв.",
@@ -147,7 +148,7 @@
       sortAsc:"Cheaper", sortDesc:"Pricier", sortNew:"Newest", perM2:"sort by price per m²",
       poiLabel:"Closer to...", poiNone:"doesn't matter", poiMetro:"🚇 metro", poiSchool:"🎓 school", poiHospital:"✚ hospital",
       mapTitle:"District map", mapNote:"real district boundaries, OpenStreetMap",
-      mapLegendPin:"listing (approximate position)", mapLegendClick:"click a district on the map to filter by it",
+      mapLegendPin:"point from the listing", mapLegendPinApprox:"approximate — the district centre", mapLegendClick:"click a district on the map to filter by it",
       poiToggle:"metro / schools / hospitals",
       mapCredit:"Map and addresses — © OpenStreetMap contributors (ODbL). District boundaries reflect the 2025 administrative reform.",
       mapNoBounds:"no official district boundaries — only listing points are shown",
@@ -168,7 +169,8 @@
       openListing:"Open listing →", alsoOn:"Also listed on:",
       popupView:"View listing →",
       detailsToggle:"More details (deposit, utilities, amenities)",
-      approxPos:"📍 approximate position on the map",
+      approxPos:"📍 approximate position — the district centre",
+      exactPos:"📍 coordinates from the listing itself",
       addFav:"Add to favourites",
       anyDistrict:"any district", anyBudget:"any budget", anyType:"any type",
       searchCtx:"search", forDays:"within", noAdsYet:"no listings yet", adsShort:"listings",
@@ -633,7 +635,11 @@
     return '<div class="pt-top"><span class="pt-src">' + src.short + '</span><span class="pt-price">' + priceHtml + '</span></div>' +
       '<div class="pt-meta">' + typeName(l.type) + ' · ' + d.name + (l.area ? (" · " + l.area + " " + t("m2")) : "") + '</div>' +
       '<div class="pt-desc">' + desc + '</div>' +
-      '<div class="pt-approx">' + t("approxPos") + '</div>' +
+      // До 9 сентября 2026 эта строка стояла у КАЖДОГО пина. Тогда это была
+      // правда: почти все точки были центроидами районов. Теперь 91% пинов --
+      // это координаты из самого объявления, и называть их приблизительными
+      // значит врать про собственные данные в обе стороны сразу.
+      '<div class="pt-approx">' + t(l.geocoded ? "exactPos" : "approxPos") + '</div>' +
       '<a class="pt-view" href="' + l.url + '" target="_blank" rel="noopener">' + t("popupView") + '</a>';
   }
 
@@ -677,7 +683,7 @@
       if (typeof l.lat !== "number" || typeof l.lon !== "number") return;
       var marker = L.circleMarker(pos[l.id] || [l.lat, l.lon], {
         radius: baseRadius, weight: 1.6, color: "var(--surface)",
-        fillColor: "#1E7A4C", fillOpacity: 0.9
+        fillColor: "#1E7A4C", fillOpacity: l.geocoded ? 0.9 : 0.35
       });
       // A tap/click never navigates away: it opens the card and PINS it, so
       // the person can read it; the card's own "Посмотреть" link is the only

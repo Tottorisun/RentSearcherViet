@@ -197,6 +197,8 @@
   .swatch-selected{background:var(--accent);border-color:var(--accent);}
   .swatch-has{background:var(--grey-has);}
   .swatch-empty{background:var(--grey-empty);}
+  /* Приблизительная точка бледнее -- ровно так же, как её пин на карте. */
+  .swatch-approx{background:var(--accent);opacity:.35;border-color:var(--accent);}
   .map-credit{font-size:0.72rem;color:var(--ink-faint);}
 
   .results-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;}
