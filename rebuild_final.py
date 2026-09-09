@@ -13907,6 +13907,7 @@ print("Wrote vietnam-rent-finder.html (ru) and " + EN_PATH + " (en), size", len(
 # is the same file in both modes -- see the PAGE comment at the top of the
 # script block: on a per-city page the city tabs and the kind toggle are
 # links to sibling pages, everything else works on the slice it was given.
+import hashlib as _hashlib
 import os as _os
 _os.makedirs(W + "/assets", exist_ok=True)
 
@@ -13926,10 +13927,22 @@ APP_JS = _js_m.group(1).replace("__DATA_JSON__", "null").replace('"__DEFAULT_LAN
 _write_atomic(W + "/assets/app.css", APP_CSS)
 _write_atomic(W + "/assets/app.js", APP_JS)
 
+# Ссылки на ассеты версионируются содержимым. Без этого правка в app.js не
+# доходит до вернувшегося посетителя: браузер держит старую копию, а адрес не
+# меняется. Поймано 9 сентября 2026 -- новая легенда карты уже лежала на
+# сервере, а страница показывала прежнюю, потому что словарь переводов живёт
+# в закэшированном app.js.
+_ASSET_V = {
+    "css": _hashlib.sha256(APP_CSS.encode("utf-8")).hexdigest()[:8],
+    "js": _hashlib.sha256(APP_JS.encode("utf-8")).hexdigest()[:8],
+}
+
 # Page shell: the same markup with styles and script linked, and a hook for
 # the page's own data script right before the app.
-PAGE_SHELL = _TPL.replace(_css_m.group(0), '<link rel="stylesheet" href="assets/app.css">', 1)
-PAGE_SHELL = PAGE_SHELL.replace(_js_m.group(0), '__PAGE_DATA_SCRIPT__\n<script src="assets/app.js"></script>', 1)
+PAGE_SHELL = _TPL.replace(_css_m.group(0), '<link rel="stylesheet" href="assets/app.css?v=' + _ASSET_V["css"] + '">', 1)
+PAGE_SHELL = PAGE_SHELL.replace(
+    _js_m.group(0),
+    '__PAGE_DATA_SCRIPT__\n<script src="assets/app.js?v=' + _ASSET_V["js"] + '"></script>', 1)
 if "__PAGE_DATA_SCRIPT__" not in PAGE_SHELL or "__DATA_JSON__" in PAGE_SHELL:
     raise SystemExit("multi-page build: page shell assembly went wrong")
 
@@ -14081,7 +14094,7 @@ def landing(lang):
             '<link rel="alternate" hreflang="en" href="' + SITE_ROOT + 'en.html">\n'
             '<link rel="alternate" hreflang="x-default" href="' + SITE_ROOT + '">\n'
             '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ctext y=\'.9em\' font-size=\'90\'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">\n'
-            '<link rel="stylesheet" href="assets/app.css">\n'
+            '<link rel="stylesheet" href="assets/app.css?v=' + _ASSET_V["css"] + '">\n'
             '<style>\n'
             '.landing{max-width:1100px;margin:0 auto;padding:28px 18px 60px;}\n'
             '.landing .hero{margin-bottom:22px;}\n'
