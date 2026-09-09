@@ -236,8 +236,11 @@ def describe(ad, type_ru, ward, city_ru, city_en):
     parts_en = [head_en[0].upper() + head_en[1:]]
     if size:
         parts_ru.append("%d м²" % size); parts_en.append("%d m²" % size)
-    place_ru = ", ".join(x for x in (street_ru(street), ward, city_ru) if x)
-    place_en = ", ".join(x for x in (street, ward, city_en) if x)
+    # Улицы во Вьетнаме часто названы по своему же району: «пер. 480 Bình Quới,
+    # Bình Quới, Хошимин» -- район в такой строке сказан дважды.
+    ward_shown = "" if ward and ward.lower() in street.lower() else ward
+    place_ru = ", ".join(x for x in (street_ru(street), ward_shown, city_ru) if x)
+    place_en = ", ".join(x for x in (street, ward_shown, city_en) if x)
     parts_ru.append(place_ru); parts_en.append(place_en)
 
     tail_ru = ([ru_plural(ad["toilets"], "санузел", "санузла", "санузлов")]
