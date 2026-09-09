@@ -9610,5 +9610,161 @@
   "lon": 121.058855,
   "source": "ward-centroid",
   "matched": null
+ },
+ "1000715": {
+  "lat": 10.8026487,
+  "lon": 106.7423989,
+  "source": "geocode",
+  "matched": "Masteri Thảo Điền"
+ },
+ "2000550": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000551": {
+  "lat": 16.0700623,
+  "lon": 108.2364217,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000260": {
+  "lat": 9.32077,
+  "lon": 123.309362,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000261": {
+  "lat": 9.32077,
+  "lon": 123.309362,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000262": {
+  "lat": 9.32077,
+  "lon": 123.309362,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000263": {
+  "lat": 10.302058,
+  "lon": 123.868958,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000264": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000265": {
+  "lat": 10.32288,
+  "lon": 123.883939,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000266": {
+  "lat": 10.302058,
+  "lon": 123.868958,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000267": {
+  "lat": 10.32288,
+  "lon": 123.883939,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000268": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000269": {
+  "lat": 10.330934,
+  "lon": 123.898132,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000270": {
+  "lat": 10.243021,
+  "lon": 123.848825,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000271": {
+  "lat": 10.243021,
+  "lon": 123.848825,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000272": {
+  "lat": 10.32288,
+  "lon": 123.883939,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000273": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000274": {
+  "lat": 14.651055,
+  "lon": 121.048625,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000275": {
+  "lat": 14.651055,
+  "lon": 121.048625,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000276": {
+  "lat": 14.651055,
+  "lon": 121.048625,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000277": {
+  "lat": 14.583247,
+  "lon": 121.062701,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000278": {
+  "lat": 14.577439,
+  "lon": 121.033897,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000279": {
+  "lat": 14.577439,
+  "lon": 121.033897,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000280": {
+  "lat": 14.575944,
+  "lon": 120.986473,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000281": {
+  "lat": 14.575944,
+  "lon": 120.986473,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000282": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
