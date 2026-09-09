@@ -11883,8 +11883,8 @@ HTML = r"""<meta charset="utf-8">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Жильё во Вьетнаме и на Филиппинах — Хошимин · Ханой · Себу · Манила">
 <meta name="twitter:description" content="Более __LISTING_COUNT__ объявлений об аренде жилья во Вьетнаме и на Филиппинах, собранных с разных площадок в одном месте.">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+__LEAFLET_CSS__
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
   :root{
     --paper:#F2F5EC;
@@ -13820,6 +13820,17 @@ HTML = HTML.replace("__DATA_JSON__", DATA_JSON)
 # __LISTING_COUNT__ is deliberately NOT substituted here -- finalise() below
 # matches the RU meta descriptions verbatim to swap in English ones, so the
 # placeholder must survive until then. finalise() does the substitution.
+# Стиль Leaflet встраивается, а не подключается ссылкой. Причина -- Артефакт:
+# его политика безопасности пускает скрипты только с нескольких CDN (cdnjs в их
+# числе, unpkg -- нет), а ВНЕШНИЕ СТИЛИ не пускает ниоткуда, кроме шрифтов Google.
+# Пока обе части Leaflet грузились с unpkg, в Артефакте не загружалась ни одна, и
+# карта была пустым местом. Файл лежит в vendor/ и совпадает по sha256 с тем, что
+# отдаёт cdnjs. Ссылки на картинки внутри (marker-icon, layers) остаются, но не
+# запрашиваются: сайт рисует кружки и полигоны, а не стандартные маркеры и не
+# переключатель слоёв.
+import os.path as _osp                      # _os появляется ниже, здесь его ещё нет
+_LEAFLET_CSS = open(_osp.join(W, "vendor", "leaflet-1.9.4.css"), encoding="utf-8").read()
+HTML = HTML.replace("__LEAFLET_CSS__", "<style>\n" + _LEAFLET_CSS + "\n</style>")
 HTML = HTML.replace("__TODAY_DATE__", ru_today_stamp())
 HTML = HTML.replace("__TODAY_DATE_EN__", en_today_stamp())
 HTML = HTML.replace("__USDT_ADDR__", USDT_TRC20_ADDRESS)
@@ -13928,7 +13939,11 @@ _css_m = re.search(r"<style>\n(.*?)\n</style>", _TPL, re.S)
 _js_m = re.search(r"<script>\n(\(function\(\)\{.*?\}\)\(\);)\n</script>", _TPL, re.S)
 if not _css_m or not _js_m:
     raise SystemExit("multi-page build: could not locate the <style> or the app <script> block in the template")
-APP_CSS = _css_m.group(1)
+# Стиль Leaflet едет и сюда: постраничные города берут его из assets/app.css
+# (свой источник, ограничения Артефакта на них не распространяются). Без этой
+# строки карта на них осталась бы вовсе без стилей -- поймано сразу после
+# перевода полной страницы на встроенный стиль.
+APP_CSS = _LEAFLET_CSS + "\n" + _css_m.group(1)
 APP_JS = _js_m.group(1).replace("__DATA_JSON__", "null").replace('"__DEFAULT_LANG__"', '"ru"')
 _write_atomic(W + "/assets/app.css", APP_CSS)
 _write_atomic(W + "/assets/app.js", APP_JS)
@@ -13946,6 +13961,9 @@ _ASSET_V = {
 # Page shell: the same markup with styles and script linked, and a hook for
 # the page's own data script right before the app.
 PAGE_SHELL = _TPL.replace(_css_m.group(0), '<link rel="stylesheet" href="assets/app.css?v=' + _ASSET_V["css"] + '">', 1)
+# Плейсхолдер подставляется только в полной странице; здесь он лишний и без
+# этой строки уезжал в разметку города видимым текстом.
+PAGE_SHELL = PAGE_SHELL.replace("__LEAFLET_CSS__\n", "").replace("__LEAFLET_CSS__", "")
 PAGE_SHELL = PAGE_SHELL.replace(
     _js_m.group(0),
     '__PAGE_DATA_SCRIPT__\n<script src="assets/app.js?v=' + _ASSET_V["js"] + '"></script>', 1)
