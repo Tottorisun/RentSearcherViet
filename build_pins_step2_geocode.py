@@ -23,6 +23,14 @@ except FileNotFoundError:
 CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City",
            "vung-tau":"Vung Tau","quy-nhon":"Quy Nhon","phan-thiet":"Phan Thiet",
            "ha-noi":"Hanoi","binh-duong":"Binh Duong","phu-quoc":"Phu Quoc","dumaguete":"Dumaguete","cebu":"Cebu","manila":"Manila"}
+# Страна для запроса к Nominatim. До 9 сентября 2026 в запрос была вшита строка
+# "Vietnam", и все 246 филиппинских строк спрашивались как «Banilad, Cebu, Vietnam»
+# -- такого адреса нет, поэтому ни одна из них не была геокодирована ни разу, и
+# все они стояли в центроидах районов. Тихо: geocode() просто не находил ничего,
+# а счётчик попаданий никто не сверял с числом строк по городам.
+COUNTRY = {"dumaguete": "Philippines", "cebu": "Philippines", "manila": "Philippines"}
+COUNTRY_CODE = {"dumaguete": "ph", "cebu": "ph", "manila": "ph"}
+
 DIST_NAME = {}
 for ckey, cval in data["CITIES"].items():
     for d in cval["districts"]:
@@ -90,10 +98,15 @@ except FileNotFoundError:
 
 _net_failures = []      # consecutive network failures; reset on any success
 
-def geocode(query):
+def geocode(query, cc="vn"):
+    """cc -- код страны для Nominatim. До 9 сентября 2026 здесь стояло жёсткое
+    "vn", и это отсекало Филиппины на уровне запроса, независимо от текста: все
+    246 филиппинских строк не могли быть геокодированы ни разу и стояли в
+    центроидах районов. Проверено вручную: "Banilad, Cebu, Philippines" находится
+    сразу, а тот же адрес с countrycodes=vn не находится никогда."""
     if query in cache:
         return cache[query]
-    params = urllib.parse.urlencode({"q": query, "format": "json", "limit": 1, "countrycodes": "vn"})
+    params = urllib.parse.urlencode({"q": query, "format": "json", "limit": 1, "countrycodes": cc})
     url = "https://nominatim.openstreetmap.org/search?" + params
     req = urllib.request.Request(url, headers={"User-Agent": "rent-searcher-personal-project/1.0 (non-commercial, single-user rental aggregator)"})
     # Only a real answer is cached. A timeout, a 429 or a 5xx used to be
@@ -144,8 +157,6 @@ geocoded_hits = 0
 
 for l in listings:
     city = l["city"]
-    if city not in GEO_CITIES:
-        continue  # nha-trang handled by a separate mosaic-jitter script
     # Accept either key: the site listing id, or the Chợ Tốt ad id that sits in
     # the listing's URL (/<ad id>.htm) -- the first session to use the file
     # keyed it by ad id, which is the number it actually had in hand.
@@ -153,10 +164,20 @@ for l in listings:
     src_coords = CHOTOT_COORDS.get(str(l["id"])) or (ad_id and CHOTOT_COORDS.get(ad_id.group(1)))
     if src_coords:
         # The ad itself told us where it is -- no Nominatim guesswork.
+        #
+        # This runs for EVERY city, including ones with no SVG projection. Until
+        # 9 Sep 2026 the `city not in GEO_CITIES` skip sat above this block, so
+        # Nha Trang -- which has no projection because its SVG pins come from the
+        # mosaic script -- never reached it. The consequence was invisible on the
+        # SVG map and severe on the Leaflet one: all 61 Nha Trang listings were
+        # placed on twelve hardcoded points, one per old ward, even when the ad
+        # itself carried its own coordinates.
         pin_results[l["id"]] = {"lat": float(src_coords["lat"]), "lon": float(src_coords["lon"]),
                                 "source": "chotot", "matched": None}
         processed += 1
         continue
+    if city not in GEO_CITIES:
+        continue  # nothing to geocode against: no bbox to validate a hit with
     proj = projections[city]
     district_name = DIST_NAME.get((city, l["district"]), "")
     cands = candidates_for(l["desc"], district_name)
@@ -166,8 +187,10 @@ for l in listings:
         # named POI + city far better than POI + district + city — a district name mixed in
         # broke otherwise-correct lookups like "The Ascentia" during testing). Fall back to
         # appending the district only if the city-scoped query comes up empty.
-        for query in (f"{cand}, {CITY_VN[city]}, Vietnam", f"{cand}, {district_name.split(' - ')[0]}, {CITY_VN[city]}, Vietnam"):
-            g = geocode(query)
+        country = COUNTRY.get(city, "Vietnam")
+        cc = COUNTRY_CODE.get(city, "vn")
+        for query in (f"{cand}, {CITY_VN[city]}, {country}", f"{cand}, {district_name.split(' - ')[0]}, {CITY_VN[city]}, {country}"):
+            g = geocode(query, cc)
             if g and in_bbox(g["lat"], g["lon"], proj["bbox"]):
                 resolved = {"lat": g["lat"], "lon": g["lon"], "source": "geocode", "matched": cand}
                 geocoded_hits += 1

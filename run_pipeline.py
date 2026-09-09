@@ -17,7 +17,8 @@ run_daily_check.ps1 запускает не программу, а сессию:
 ========================================
   * Chợ Tốt -- полностью. collect_chotot.py сам отбирает, сам пишет партию,
     сам вставляет: район берётся точным совпадением, описание собирается из
-    полей объявления. 1275 из 1617 строк сайта -- этот источник.
+    полей объявления. Это главный источник сайта, и с 9 сентября 2026 он
+    покрывает девять городов, а не один.
   * Facebook -- наполовину. fb_collect.py сам заходит в группы своим профилем
     и сам скачивает фотографии, но останавливается на файле кандидатов. Текст
     поста -- свободный, адрес в нём написан как попало, и превратить его в
@@ -106,6 +107,10 @@ def steps_for(a):
             Step("обслуживание: снятые на порталах", [py, "remove_gone_web.py"], timeout=1800),
             Step("обслуживание: чистка по возрасту", [py, "purge_old_listings.py"]),
             Step("обслуживание: курсы валют", [py, "fetch_rates.py"], fatal=False, timeout=300),
+            # Догоняет координаты у строк, заведённых до появления chotot_coords.json.
+            # Порциями и не фатально: это улучшение карты, а не условие публикации.
+            Step("обслуживание: координаты объявлений",
+                 [py, "backfill_chotot_coords.py", "--limit", "150"], fatal=False, timeout=1800),
         ]
     # Порядок сборки не произволен: build_pins_step2_geocode.py читает DATA из
     # СОБРАННОЙ страницы, а не из rebuild_final.py, поэтому сборка идёт и до
@@ -230,7 +235,9 @@ def publish(log, note):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=float, default=3.0, help="возраст объявлений Chợ Tốt")
-    ap.add_argument("--limit", type=int, default=40, help="максимум новых строк с Chợ Tốt")
+    # 40 было рассчитано на один город. С девятью источник даёт больше тысячи
+    # подходящих в сутки, и 40 означало бы отставать от него каждый день.
+    ap.add_argument("--limit", type=int, default=150, help="максимум новых строк с Chợ Tốt")
     ap.add_argument("--fb-cities", default="dumaguete,cebu,manila")
     ap.add_argument("--fb-groups", type=int, default=2, help="групп на город за прогон")
     ap.add_argument("--tg-pages", type=int, default=2)

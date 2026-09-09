@@ -142,6 +142,14 @@ missing = 0
 for l in listings:
     city = l["city"]; lid = str(l["id"])
     if city == "nha-trang":
+        # Real coordinates first. NT_APPROX is a fallback, not the rule: since
+        # 9 Sep 2026 step2 records the ad's own lat/lon for Nha Trang too, and
+        # backfill_chotot_coords.py filled them in for the older rows. A pin on
+        # the ad's own coordinates is worth more than one of twelve fixed points.
+        r = pin_results.get(lid)
+        if r:
+            lat_lon[lid] = {"lat": r["lat"], "lon": r["lon"], "geocoded": r["source"] in ("geocode", "chotot")}
+            continue
         c = NT_APPROX.get(l["district"])
         if c: lat_lon[lid] = {"lat": c[0], "lon": c[1], "geocoded": False}
         else: missing += 1

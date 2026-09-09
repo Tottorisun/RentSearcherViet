@@ -5538,5 +5538,491 @@
  "Antel Serenity Suites, Manila, Vietnam": null,
  "Antel Serenity Suites, Makati, Manila, Vietnam": null,
  "Pavillon Villa, Da Nang, Vietnam": null,
- "Pavillon Villa, Phường Hải Châu, Da Nang, Vietnam": null
+ "Pavillon Villa, Phường Hải Châu, Da Nang, Vietnam": null,
+ "Mactan Newtown Residences, Cebu, Philippines": null,
+ "Mactan Newtown Residences, Mactan, Cebu, Philippines": null,
+ "Cebu I, Cebu, Philippines": {
+  "lat": 10.2415111,
+  "lon": 123.7992616,
+  "display_name": "O!Save Supermarket Philippines, Market Road, Poblacion Ward Ⅰ, Calajo-an, Minglanilla, Cebu, Central Visayas, 6046, Philippines"
+ },
+ "Sheraton Cebu Mactan, Cebu, Philippines": null,
+ "Sheraton Cebu Mactan, Mactan, Cebu, Philippines": null,
+ "The Residences, Cebu, Philippines": {
+  "lat": 10.3252172,
+  "lon": 123.8702302,
+  "display_name": "The Residences, Monterrazas de Cebu, Banawa, Guadalupe, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Park Avenue, Cebu, Philippines": {
+  "lat": 10.3319612,
+  "lon": 123.9083073,
+  "display_name": "38 Park Avenue, India Street, Cebu I.T. Park, Apas, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Marco Polo Residences, Cebu, Philippines": {
+  "lat": 10.341066,
+  "lon": 123.8992449,
+  "display_name": "Marco Polo Residences, Apas, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Punta Engaño, Cebu, Philippines": {
+  "lat": 10.3243052,
+  "lon": 124.0368849,
+  "display_name": "Punta Engaño Elementary School, Punta Engaño Road, Punta Engaño, Lapu-Lapu, Central Visayas, 6015, Philippines"
+ },
+ "Lawaan I, Cebu, Philippines": {
+  "lat": 10.258248,
+  "lon": 123.8230524,
+  "display_name": "Lawaan I, Talisay, Cebu, Central Visayas, 6045, Philippines"
+ },
+ "San Lorenzo Village, Manila, Philippines": {
+  "lat": 14.5469044,
+  "lon": 121.0209387,
+  "display_name": "San Lorenzo Village, San Lorenzo, District I, Makati, Southern Manila District, Metro Manila, 1223, Philippines"
+ },
+ "Dona Angela Garden, Manila, Philippines": {
+  "lat": 14.5550624,
+  "lon": 121.0191421,
+  "display_name": "Doña Angela's Garden, 110, Carlos Palanca Street, Legazpi Village, San Lorenzo, District I, Makati, Southern Manila District, Metro Manila, 1200, Philippines"
+ },
+ "Dasmariñas Village, Manila, Philippines": {
+  "lat": 14.5407654,
+  "lon": 121.0261979,
+  "display_name": "Dasmariñas Village, Dasmariñas, District I, Makati, Southern Manila District, Metro Manila, Philippines"
+ },
+ "Murphy Center, Manila, Philippines": {
+  "lat": 14.6126398,
+  "lon": 121.0616162,
+  "display_name": "Murphy Center, 187, Colonel Bonny Serrano Avenue, Socorro, Cubao, 3rd District, Quezon City, Eastern Manila District, Metro Manila, 1109, Philippines"
+ },
+ "One Bonifacio High Street, Manila, Philippines": {
+  "lat": 14.5514393,
+  "lon": 121.0467008,
+  "display_name": "One Bonifacio High Street, 4th Avenue, Bonifacio Global City, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1634, Philippines"
+ },
+ "Keyland Building, Manila, Philippines": null,
+ "Keyland Building, Makati, Manila, Philippines": null,
+ "Legazpi Village, Manila, Philippines": {
+  "lat": 14.5541121,
+  "lon": 121.0175139,
+  "display_name": "Legazpi Village, San Lorenzo, District I, Makati, Southern Manila District, Metro Manila, 1229, Philippines"
+ },
+ "Bonifacio Global City, Manila, Philippines": {
+  "lat": 14.550806,
+  "lon": 121.050972,
+  "display_name": "Bonifacio Global City, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1635, Philippines"
+ },
+ "Grand Hyatt Manila Residences, Manila, Philippines": null,
+ "Grand Hyatt Manila Residences, BGC / Taguig, Manila, Philippines": null,
+ "The Grove, Manila, Philippines": {
+  "lat": 14.5858105,
+  "lon": 121.0815541,
+  "display_name": "The Grove, Ugong, Pasig First District, Pasig, Eastern Manila District, Metro Manila, 1604, Philippines"
+ },
+ "The Salcedo Park, Manila, Philippines": null,
+ "The Salcedo Park, Makati, Manila, Philippines": null,
+ "Salcedo Village, Manila, Philippines": {
+  "lat": 14.5595719,
+  "lon": 121.0226644,
+  "display_name": "Salcedo Village, Bel-Air, District I, Makati, Southern Manila District, Metro Manila, 1227, Philippines"
+ },
+ "Palm Group, Manila, Philippines": null,
+ "Palm Group, Pasay / MOA, Manila, Philippines": null,
+ "Casa Alicia, Dumaguete, Philippines": {
+  "lat": 9.3135469,
+  "lon": 123.2698655,
+  "display_name": "Casa Alicia, Candau-ay, Dumaguete, Negros Oriental, Negros Island Region, Philippines"
+ },
+ "Jose Romero Road, Dumaguete, Philippines": {
+  "lat": 9.2970881,
+  "lon": 123.2852937,
+  "display_name": "Jose Romero Road, Ecoville Subdivision, Junob, Dumaguete, Negros Oriental, Negros Island Region, 6200, Philippines"
+ },
+ "Tierra Alta, Dumaguete, Philippines": null,
+ "Tierra Alta, Valencia, Dumaguete, Philippines": null,
+ "Hibbard Avenue, Dumaguete, Philippines": {
+  "lat": 9.31906,
+  "lon": 123.3071621,
+  "display_name": "Hibbard Avenue, ECCA Homes, Piapi, Dumaguete, Negros Oriental, Negros Island Region, 6200, Philippines"
+ },
+ "Blanco Avenue, Dumaguete, Philippines": null,
+ "Blanco Avenue, Piapi, Dumaguete, Philippines": null,
+ "Camella Homes Candauay, Dumaguete, Philippines": null,
+ "Camella Homes Candauay, Candau-Ay, Dumaguete, Philippines": null,
+ "Sudtungan Road, Cebu, Philippines": null,
+ "Sudtungan Road, Mactan, Cebu, Philippines": null,
+ "Rodriguez Sr, Manila, Philippines": {
+  "lat": 14.624365,
+  "lon": 121.0546806,
+  "display_name": "United Church of the Philippines, Oxford Street, E. Rodriguez Sr., Cubao, 3rd District, Quezon City, Eastern Manila District, Metro Manila, 1102, Philippines"
+ },
+ "Avida Towers Vireo, Manila, Philippines": {
+  "lat": 14.5028623,
+  "lon": 121.0466803,
+  "display_name": "Avida Towers Vireo, Western Bicutan, Taguig District 2, Taguig, Southern Manila District, Metro Manila, Philippines"
+ },
+ "Discovery Suites, Manila, Philippines": {
+  "lat": 14.5859158,
+  "lon": 121.0602132,
+  "display_name": "Discovery Suites, 25, ADB Avenue, San Antonio, Pasig First District, Pasig, Eastern Manila District, Metro Manila, 1605, Philippines"
+ },
+ "Salinas Drive, Cebu, Philippines": {
+  "lat": 10.3293348,
+  "lon": 123.9018147,
+  "display_name": "Salinas Drive, Ucma Village, Lahug, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Doña Rita Village, Cebu, Philippines": {
+  "lat": 10.3505705,
+  "lon": 123.9109202,
+  "display_name": "Doña Rita Village, Banilad, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Round Valley Drive, Cebu, Philippines": null,
+ "Round Valley Drive, Talamban, Cebu, Philippines": null,
+ "Domingo M, Manila, Philippines": {
+  "lat": 14.6030732,
+  "lon": 121.0082079,
+  "display_name": "Domingo Santiago Street, Barangay 584, Sampaloc, Fourth District, Manila, Capital District, Metro Manila, 1016, Philippines"
+ },
+ "Field Residences Building 1, Manila, Philippines": {
+  "lat": 14.4794602,
+  "lon": 120.9924924,
+  "display_name": "Field Residences, San Dionisio, Parañaque District 1, Parañaque, Southern Manila District, Metro Manila, 1700, Philippines"
+ },
+ "Bayanihan Flats Mactan 2 Condominium, Cebu, Philippines": null,
+ "Bayanihan Flats Mactan 2 Condominium, Mactan, Cebu, Philippines": null,
+ "Mabolo Garden Flats, Cebu, Philippines": {
+  "lat": 10.3193819,
+  "lon": 123.9129514,
+  "display_name": "Mabolo Garden Flats, Tres Borces Padres Street, Holy Name, Luz, Cebu City, Central Visayas, 6666, Philippines"
+ },
+ "Bayanihan Flats Mactan 1 Condominium, Cebu, Philippines": null,
+ "Bayanihan Flats Mactan 1 Condominium, Mactan, Cebu, Philippines": null,
+ "Santa Catalina Street, Manila, Philippines": {
+  "lat": 14.6228607,
+  "lon": 120.9626159,
+  "display_name": "Santa Catalina Street, Magsaysay Village, Tondo, First District, Manila, Capital District, Metro Manila, 1013, Philippines"
+ },
+ "Balagtas Street, Manila, Philippines": {
+  "lat": 14.6050565,
+  "lon": 120.9652228,
+  "display_name": "Balagtas Street, Barangay 245, Tondo, First District, Manila, Capital District, Metro Manila, 1012, Philippines"
+ },
+ "Valencia Drive, Dumaguete, Philippines": {
+  "lat": 9.3172354,
+  "lon": 123.3009751,
+  "display_name": "Valencia Drive, Claytown, Daro, Dumaguete, Negros Oriental, Negros Island Region, 6200, Philippines"
+ },
+ "Qualfon 3, Dumaguete, Philippines": null,
+ "Qualfon 3, Pulantubig, Dumaguete, Philippines": null,
+ "Rosario Heights, Dumaguete, Philippines": {
+  "lat": 9.2987578,
+  "lon": 123.2842772,
+  "display_name": "Santo Rosario Heights, Junob, Dumaguete, Negros Oriental, Negros Island Region, Philippines"
+ },
+ "Azumi Residences 2, Dumaguete, Philippines": {
+  "lat": 9.3192063,
+  "lon": 123.2801225,
+  "display_name": "2, Boni Catarata Street, Azumi Residences Phase 2, Batinguel, Dumaguete, Negros Oriental, Negros Island Region, 6200, Philippines"
+ },
+ "Lopez Jaena, Dumaguete, Philippines": null,
+ "Lopez Jaena, Bacong, Dumaguete, Philippines": null,
+ "Ong Chete, Dumaguete, Philippines": null,
+ "Ong Chete, Bacong, Dumaguete, Philippines": null,
+ "Purok Nangka, Dumaguete, Philippines": null,
+ "Purok Nangka, Cadawinonan, Dumaguete, Philippines": null,
+ "Star Apple 2, Dumaguete, Philippines": null,
+ "Star Apple 2, Cadawinonan, Dumaguete, Philippines": null,
+ "Nivel Hills, Cebu, Philippines": {
+  "lat": 10.3423411,
+  "lon": 123.8954213,
+  "display_name": "Nivel Hills, Lahug, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Mandani Bay Suites, Cebu, Philippines": null,
+ "Mandani Bay Suites, Mandaue, Cebu, Philippines": null,
+ "Sorrento Oasis, Manila, Philippines": {
+  "lat": 14.5876385,
+  "lon": 121.0901112,
+  "display_name": "Sorrento Oasis, Rosario, Pasig Second District, Pasig, Eastern Manila District, Metro Manila, 1609, Philippines"
+ },
+ "Asia Enclaves, Manila, Philippines": {
+  "lat": 14.4386278,
+  "lon": 121.0424988,
+  "display_name": "Asia Enclaves, Cupang, Muntinlupa District 2, Muntinlupa, Southern Manila District, Metro Manila, Philippines"
+ },
+ "Ayala Alabang Village, Manila, Philippines": {
+  "lat": 14.4059365,
+  "lon": 121.0237195,
+  "display_name": "Ayala Alabang Village, Ayala Alabang, Muntinlupa District 2, Muntinlupa, Southern Manila District, Metro Manila, Philippines"
+ },
+ "Mercury Drug, Manila, Philippines": {
+  "lat": 14.6108632,
+  "lon": 120.9821119,
+  "display_name": "Mercury Drug, Bambang Street, Santa Cruz, Third District, Manila, Capital District, Metro Manila, 1003, Philippines"
+ },
+ "Araneta Cubao, Manila, Philippines": {
+  "lat": 14.6194657,
+  "lon": 121.0511326,
+  "display_name": "Araneta - Cubao, EDSA, San Martin de Porres, Cubao, 4th District, Quezon City, Eastern Manila District, Metro Manila, 1111, Philippines"
+ },
+ "Richwood Homes, Dumaguete, Philippines": null,
+ "Richwood Homes, Bacong, Dumaguete, Philippines": null,
+ "Latino Apartments, Dumaguete, Philippines": null,
+ "Latino Apartments, Valencia, Dumaguete, Philippines": null,
+ "Palmey Way, Dumaguete, Philippines": null,
+ "Palmey Way, Valencia, Dumaguete, Philippines": null,
+ "Orient Wood Residences, Dumaguete, Philippines": null,
+ "Orient Wood Residences, Sibulan, Dumaguete, Philippines": null,
+ "Robinsons Hypermarket 10, Dumaguete, Philippines": null,
+ "Robinsons Hypermarket 10, Талай, Dumaguete, Philippines": null,
+ "Don Carlos Gothong, Cebu, Philippines": {
+  "lat": 10.2942847,
+  "lon": 123.8899604,
+  "display_name": "Don Carlos Gothong Memorial National High School, Candido Padilla Street, Tabo-an, San Nicolas Proper, Duljo Fatima, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Robinsons South Town Mall, Cebu, Philippines": null,
+ "Robinsons South Town Mall, Talisay, Cebu, Philippines": null,
+ "Gaisano Tabunok, Cebu, Philippines": {
+  "lat": 10.2657356,
+  "lon": 123.8421125,
+  "display_name": "Mang Inasal, Natalio Bacalso Avenue, Palm View Village, Tabunok, Talisay, Cebu, Central Visayas, 6045, Philippines"
+ },
+ "Country Mall, Cebu, Philippines": {
+  "lat": 10.33965,
+  "lon": 123.9105413,
+  "display_name": "Gaisano Country Mall, Camp Lapu-Lapu Road, San Antonio Village, Apas, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Cebu Normal University, Cebu, Philippines": {
+  "lat": 10.3016486,
+  "lon": 123.8967853,
+  "display_name": "Cebu Normal University, Osmeña Boulevard, Kabulihan, Sambag I, Calamba, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Mactan Newtown, Cebu, Philippines": null,
+ "Mactan Newtown, Mactan, Cebu, Philippines": null,
+ "Mactan Oasis, Cebu, Philippines": null,
+ "Mactan Oasis, Mactan, Cebu, Philippines": null,
+ "Robinsons Supermarket, Cebu, Philippines": {
+  "lat": 10.3093385,
+  "lon": 123.8940836,
+  "display_name": "Robinsons Supermarket, Fuente Osmeña Circle, Santa Cruz, Camputhaw, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Casa Mira Mandaue, Cebu, Philippines": null,
+ "Casa Mira Mandaue, Mandaue, Cebu, Philippines": null,
+ "Mivela Garden Residences, Cebu, Philippines": null,
+ "Mivela Garden Residences, IT Park / Apas, Cebu, Philippines": null,
+ "Avida Towers Riala, Cebu, Philippines": {
+  "lat": 10.3330557,
+  "lon": 123.9080781,
+  "display_name": "Avída Towers Riala, 2nd Street, Villa Amores, Apas, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Gaisano Tisa, Cebu, Philippines": {
+  "lat": 10.2995541,
+  "lon": 123.869331,
+  "display_name": "Gaisano Capital Tisa, Felimon Caburnay Street, Villa Isidra Village, Tisa, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Opeña St, Manila, Philippines": {
+  "lat": 14.5310982,
+  "lon": 120.994705,
+  "display_name": "Opeña Street, Baclaran, Parañaque District 1, Parañaque, Southern Manila District, Metro Manila, 1702, Philippines"
+ },
+ "Urban Deca Pasig, Manila, Philippines": {
+  "lat": 14.5914248,
+  "lon": 121.1008129,
+  "display_name": "Urban Deca Homes Ortigas, Rosario, Pasig Second District, Pasig, Eastern Manila District, Metro Manila, 1609, Philippines"
+ },
+ "Paquita St, Manila, Philippines": {
+  "lat": 14.606576,
+  "lon": 120.9870212,
+  "display_name": "Paquita Street, Barangay 463, Sampaloc, Fourth District, Manila, Capital District, Metro Manila, 1015, Philippines"
+ },
+ "Ortigas Ave, Manila, Philippines": {
+  "lat": 14.5903894,
+  "lon": 121.0834771,
+  "display_name": "Ortigas Avenue, Doña Andrea Village, Rosario, Pasig Second District, Pasig, Eastern Manila District, Metro Manila, 1609, Philippines"
+ },
+ "Hampton Gardens Condominium, Manila, Philippines": null,
+ "Hampton Gardens Condominium, Ortigas / Pasig, Manila, Philippines": null,
+ "Green Apartment, Manila, Philippines": null,
+ "Green Apartment, Quezon City, Manila, Philippines": null,
+ "Villa Florencia, Manila, Philippines": {
+  "lat": 14.69199,
+  "lon": 121.0279,
+  "display_name": "Villa Florencia Subdivision, Talipapa, 6th District, Quezon City, Eastern Manila District, Metro Manila, 1116, Philippines"
+ },
+ "Amaia Skies Cubao, Manila, Philippines": {
+  "lat": 14.6154697,
+  "lon": 121.0538129,
+  "display_name": "Amaia Skies Cubao, Socorro, Cubao, 3rd District, Quezon City, Eastern Manila District, Metro Manila, 1109, Philippines"
+ },
+ "Gregorio Araneta Ave, Manila, Philippines": {
+  "lat": 14.627485,
+  "lon": 121.0140335,
+  "display_name": "Gregorio Araneta Avenue, Bicol brigade, Tatalon, 4th District, Quezon City, Eastern Manila District, Metro Manila, 1113, Philippines"
+ },
+ "Belton Place, Manila, Philippines": {
+  "lat": 14.5616116,
+  "lon": 121.0116027,
+  "display_name": "PNB, 2296 Belton Place, Yakal Street, San Antonio, District I, Makati, Southern Manila District, Metro Manila, 1203, Philippines"
+ },
+ "Robinsons Manila, Manila, Philippines": {
+  "lat": 14.5764417,
+  "lon": 120.9837939,
+  "display_name": "Robinsons Manila, A. Mabini Street, Barangay 668, Ermita, Fifth District, Manila, Capital District, Metro Manila, 1000, Philippines"
+ },
+ "Cityland One Premier Alabang, Manila, Philippines": null,
+ "Cityland One Premier Alabang, Alabang, Manila, Philippines": null,
+ "San Beda Alabang, Manila, Philippines": {
+  "lat": 14.4330746,
+  "lon": 121.0255441,
+  "display_name": "San Beda College Alabang, Don Manolo Drive, Alabang Hills Village, Cupang, Muntinlupa District 2, Muntinlupa, Southern Manila District, Metro Manila, 1799, Philippines"
+ },
+ "Quantum Residences, Manila, Philippines": {
+  "lat": 14.5527715,
+  "lon": 120.9981106,
+  "display_name": "Quantum Residences, Barangay 49, Zone 6, District 2, Pasay, Southern Manila District, Metro Manila, Philippines"
+ },
+ "Avida Towers Prime Taft, Manila, Philippines": {
+  "lat": 14.557633,
+  "lon": 120.9959595,
+  "display_name": "Avida Towers Prime Taft 2, Taft Avenue, Barangay 36, Zone 3, District 1, Pasay, Southern Manila District, Metro Manila, 1234, Philippines"
+ },
+ "Robinsons 10, Dumaguete, Philippines": null,
+ "Robinsons 10, Талай, Dumaguete, Philippines": null,
+ "Talay Bliss, Dumaguete, Philippines": null,
+ "Talay Bliss, Талай, Dumaguete, Philippines": null,
+ "La Guardia, Cebu, Philippines": {
+  "lat": 10.3292617,
+  "lon": 123.9030042,
+  "display_name": "La Guardia Street, Ucma Village, Lahug, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Urban Deca Homes Banilad, Cebu, Philippines": {
+  "lat": 10.3364807,
+  "lon": 123.9211847,
+  "display_name": "Urban Deca Homes - H. Cortes, Banilad, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "St Jude, Cebu, Philippines": {
+  "lat": 10.3127013,
+  "lon": 123.9076522,
+  "display_name": "Saint Jude Street, Magpalacir, Hipodromo, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Casa Mira Towers Labangon, Cebu, Philippines": {
+  "lat": 10.301157,
+  "lon": 123.878052,
+  "display_name": "Casa Mira Towers, Labangon, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Victor Village, Cebu, Philippines": {
+  "lat": 10.2969594,
+  "lon": 123.8735463,
+  "display_name": "Victor Village, Punta Princesa, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Better Living Homes, Cebu, Philippines": null,
+ "Better Living Homes, Mactan, Cebu, Philippines": null,
+ "The Persimmon, Cebu, Philippines": null,
+ "The Persimmon, Mabolo, Cebu, Philippines": null,
+ "Villa San Pedro 2, Cebu, Philippines": null,
+ "Villa San Pedro 2, Пардо, Cebu, Philippines": null,
+ "Rainbow Village, Cebu, Philippines": {
+  "lat": 10.2819252,
+  "lon": 123.8593818,
+  "display_name": "Rainbow Village, Kinasang-an Pardo, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Pioneer Heights 1, Manila, Philippines": {
+  "lat": 14.571272,
+  "lon": 121.0537058,
+  "display_name": "Pioneer Heights 1, Pioneer Street, GK Concepcion, Buayang Bato, Mandaluyong, Eastern Manila District, Metro Manila, 1640, Philippines"
+ },
+ "Mariano Avenue, Manila, Philippines": {
+  "lat": 14.6726859,
+  "lon": 121.0810649,
+  "display_name": "OMF International, Philippines, 900, Commonwealth Avenue, Matandang Balara, 3rd District, Quezon City, Eastern Manila District, Metro Manila, 1119, Philippines"
+ },
+ "Capitol Commons, Manila, Philippines": {
+  "lat": 14.5759371,
+  "lon": 121.0635035,
+  "display_name": "Capitol Commons, Oranbo, Pasig First District, Pasig, Eastern Manila District, Metro Manila, Philippines"
+ },
+ "Quarry Road, Cebu, Philippines": {
+  "lat": 10.4133312,
+  "lon": 123.9262655,
+  "display_name": "Virlo Quarry Office, Bacayan - Pit-os Road, Bacayan, Binaliw, Cebu City, Central Visayas, 6001, Philippines"
+ },
+ "One Pavilion, Cebu, Philippines": null,
+ "One Pavilion, Guadalupe, Cebu, Philippines": null,
+ "Grand Hyatt Residences, Manila, Philippines": {
+  "lat": 14.5558848,
+  "lon": 121.0516624,
+  "display_name": "Grand Hyatt Manila Residences South, 35th Street, Bonifacio Global City, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1635, Philippines"
+ },
+ "Park Triangle Residences, Manila, Philippines": {
+  "lat": 14.5529229,
+  "lon": 121.0544692,
+  "display_name": "Park Triangle Residences, 11th Avenue, Bonifacio Global City, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1634, Philippines"
+ },
+ "Marina Spatial, Dumaguete, Philippines": {
+  "lat": 9.321903,
+  "lon": 123.3115496,
+  "display_name": "Marina Spatial Building A, Eduardo J. Blanco Drive, ECCA Homes, Piapi, Dumaguete, Negros Oriental, Negros Island Region, 6200, Philippines"
+ },
+ "Robinsons Casa Mira, Cebu, Philippines": null,
+ "Robinsons Casa Mira, Guadalupe, Cebu, Philippines": null,
+ "Puregold Guadalupe, Cebu, Philippines": {
+  "lat": 10.3236707,
+  "lon": 123.8837057,
+  "display_name": "Puregold Guadalupe, Vicente Rama Avenue, Banawa, Guadalupe, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Indiana Aerospace 700, Cebu, Philippines": null,
+ "Indiana Aerospace 700, Mactan, Cebu, Philippines": null,
+ "Mactan Doctors 1, Cebu, Philippines": null,
+ "Mactan Doctors 1, Mactan, Cebu, Philippines": null,
+ "Fuente Osmeña, Cebu, Philippines": {
+  "lat": 10.3098513,
+  "lon": 123.8931485,
+  "display_name": "Fuente Osmeña, Fuente Osmeña Circle, Santa Cruz, Camputhaw, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Avida Towers Cebu I, Cebu, Philippines": {
+  "lat": 10.332728,
+  "lon": 123.9060311,
+  "display_name": "Avida Towers Cebu, I. Villa Street, Cebu I.T. Park, Apas, Cebu City, Central Visayas, 6000, Philippines"
+ },
+ "Xavier Hills Condominium, Manila, Philippines": {
+  "lat": 14.6115526,
+  "lon": 121.0364487,
+  "display_name": "Xavier Hills Condominium, 32, Valencia, New Manila, 4th District, Quezon City, Eastern Manila District, Metro Manila, 1112, Philippines"
+ },
+ "Manhattan Plaza, Manila, Philippines": {
+  "lat": 14.621194,
+  "lon": 121.0561248,
+  "display_name": "Manhattan Plaza, General MacArthur Avenue, Araneta City, Socorro, Cubao, 3rd District, Quezon City, Eastern Manila District, Metro Manila, 1109, Philippines"
+ },
+ "Infina Towers, Manila, Philippines": {
+  "lat": 14.6276134,
+  "lon": 121.0675548,
+  "display_name": "Infina Towers, Marilag, Project 4, 3rd District, Quezon City, Eastern Manila District, Metro Manila, 1109, Philippines"
+ },
+ "Villa Alegre, Manila, Philippines": {
+  "lat": 14.5595,
+  "lon": 121.096481,
+  "display_name": "Villa Alegre, Pinagbuhatan, Pasig Second District, Pasig, Eastern Manila District, Metro Manila, 1602, Philippines"
+ },
+ "Pioneer Woodlands, Manila, Philippines": {
+  "lat": 14.5726892,
+  "lon": 121.0486049,
+  "display_name": "Pioneer Woodlands, Barangka Ilaya, Mandaluyong, Eastern Manila District, Metro Manila, Philippines"
+ },
+ "Bamboo Grove Residences, Manila, Philippines": null,
+ "Bamboo Grove Residences, Mandaluyong, Manila, Philippines": null,
+ "Rockwell 5, Manila, Philippines": {
+  "lat": 14.565127,
+  "lon": 121.0370091,
+  "display_name": "Rockwell Center, Poblacion, District I, Makati, Southern Manila District, Metro Manila, 1210, Philippines"
+ },
+ "St Anthony, Manila, Philippines": {
+  "lat": 14.4938968,
+  "lon": 121.0130009,
+  "display_name": "Saint Anthony, Mariano Centerpoint Townhomes, Moonwalk, Parañaque District 2, Parañaque, Southern Manila District, Metro Manila, 1708, Philippines"
+ },
+ "Adventist Medical Center, Manila, Philippines": {
+  "lat": 14.5560176,
+  "lon": 120.9952378,
+  "display_name": "Adventist Medical Center Manila, 1945, Donada Street, Barangay 35, Zone 3, District 1, Pasay, Southern Manila District, Metro Manila, 1300, Philippines"
+ },
+ "Antel Serenity Suites, Manila, Philippines": null,
+ "Antel Serenity Suites, Makati, Manila, Philippines": null
 }
