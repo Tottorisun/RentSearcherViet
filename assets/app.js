@@ -451,7 +451,13 @@
       // Per-city pages: the tab is a real link to that city's page for the
       // same kind, with the listing count for the kind. All-in-one page: a
       // button that switches in place, with the district count as before.
-      var n = COUNTS && COUNTS[key] ? (COUNTS[key][state.kind] || 0) : null;
+      // Отсутствие записи в COUNTS означает «ноль», а не «неизвестно»: COUNTS
+      // строится по объявлениям, и город без единого объявления в него просто
+      // не попадает. Пока здесь стоял null, такой город показывал число районов
+      // («Фукуок · 7 районов») и потому не получал пометку empty, хотя сосед с
+      // одним коммерческим объявлением честно показывал «0 объяв.». Число
+      // районов остаётся запасным вариантом только когда COUNTS нет вовсе.
+      var n = COUNTS ? ((COUNTS[key] && COUNTS[key][state.kind]) || 0) : null;
       var sub = (n !== null) ? (n + " " + t("adsShort")) : (c.districts.length + " " + t("districtsWord"));
       var btn;
       if (PAGE){
