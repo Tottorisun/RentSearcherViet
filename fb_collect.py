@@ -671,7 +671,15 @@ def check_alive(page):
             "and consider whether this collector should keep running at all.")
 
 
-def open_context(pw, headless, channel):
+def open_context(pw, headless, channel, intercept=True):
+    """intercept=False -- только для --login.
+
+    ctx.route("**/*") перехватывает КАЖДЫЙ запрос страницы, включая fetch, которым
+    отправляется форма входа. 9 сентября 2026 владелец ввёл логин и пароль, нажал
+    кнопку и получил вечный кружок: запрос ушёл в перехватчик и не вернулся.
+    Инвариант «только чтение» защищает проходы СБОРА -- там мы ходим по чужим
+    страницам сами. Ручной вход владельца защищать не от чего: он сам за клавиатурой,
+    и единственное, что он делает, -- вводит свой пароль."""
     os.makedirs(PROFILE_DIR, exist_ok=True)
     kwargs = dict(
         user_data_dir=PROFILE_DIR,
@@ -691,7 +699,8 @@ def open_context(pw, headless, channel):
               % (channel, e))
         ctx = pw.chromium.launch_persistent_context(**kwargs)
     ctx.set_default_timeout(45000)
-    ctx.route("**/*", _block_writes)
+    if intercept:
+        ctx.route("**/*", _block_writes)
     return ctx
 
 
@@ -707,7 +716,7 @@ def do_login(headless, channel):
     if headless:
         raise SystemExit("--login needs a visible window; drop --headless")
     with sync_playwright() as pw:
-        ctx = open_context(pw, headless=False, channel=channel)
+        ctx = open_context(pw, headless=False, channel=channel, intercept=False)
         page = ctx.pages[0] if ctx.pages else ctx.new_page()
         page.goto("https://www.facebook.com/", wait_until="domcontentloaded")
         print("\nA browser window is open on its OWN profile (%s)." % PROFILE_DIR)
