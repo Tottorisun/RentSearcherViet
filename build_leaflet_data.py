@@ -99,6 +99,14 @@ qn = load("quynhon_overpass.json")["elements"]
 pt = load("phanthiet_overpass.json")["elements"]
 hn = load("hanoi_overpass.json")["elements"]        # 12 boundary=historic quận, fetched 2 Sep 2026
 bd = load("binhduong_overpass.json")["elements"]    # 5 post-reform phường, fetched 2 Sep 2026
+# Nha Trang: the four enlarged post-2025 wards DO have real OSM polygons, and
+# they were sitting unused in nt_overpass.json all along. The city's twelve
+# familiar old wards have none -- OSM keeps only the historic city outline, not
+# the pre-reform wards -- so this covers 4 of the site's 16 Nha Trang keys and
+# the rest keep the pin-only view. Which is still four more than before.
+nt = load("nt_overpass.json")["elements"]
+NT_NAMES = ["Phường Nha Trang","Phường Bắc Nha Trang","Phường Tây Nha Trang","Phường Nam Nha Trang"]
+NT_KEYS = {"Phường Nha Trang":"nt","Phường Bắc Nha Trang":"btr","Phường Tây Nha Trang":"ttr","Phường Nam Nha Trang":"ntr"}
 
 ward_boundaries = {
     "da-lat": wards_latlon(dl, DL_NAMES, DL_KEYS),
@@ -110,6 +118,7 @@ ward_boundaries = {
     "phan-thiet": wards_latlon(pt, PT_NAMES, PT_KEYS),
     "ha-noi": wards_latlon(hn, HN_NAMES, HN_KEYS),
     "binh-duong": wards_latlon(bd, BD_NAMES, BD_KEYS),
+    "nha-trang": wards_latlon(nt, NT_NAMES, NT_KEYS),
 }
 # Every key the site knows for these two cities must have come back with a
 # polygon -- a silent miss here shows up only as a district with no outline.
