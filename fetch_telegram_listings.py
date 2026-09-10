@@ -600,11 +600,22 @@ def parse_geo(text, city, city_districts):
         sq = re.sub(r"[^a-z0-9]+", "", needle)
         return len(sq) >= 6 and sq in squashed
 
+    # Реформа 2025 года создала районы, названные именем САМОГО ГОРОДА
+    # («Phường Nha Trang»). Совпадение с таким названием ничего не говорит о
+    # месте: слово «Нячанг» стоит почти в каждом посте про Нячанг. 10 сентября
+    # 2026 из-за этого шесть постов про СЕВЕР города («НЯЧАНГ СЕВЕР»,
+    # «Северный Нячанг», Oceanus, Scenia Bay) получили попадание в ЦЕНТРАЛЬНЫЙ
+    # район -- то есть ровно в противоположный конец города. Выдать такое
+    # попадание хуже, чем не выдать ничего: разбирающий кандидатов ему верит,
+    # а пометка district_needs_judgement до него не доходит.
+    city_word = re.sub(r"[^a-z0-9]+", "", (city or "").lower())
     hits = []
     for d in city_districts:
         name = fold(d.get("name", "")).lower()
         name = re.sub(r"^(phuong|quan|xa)\s+", "", name)
         name = name.replace(" - da lat", "").strip()
+        if city_word and re.sub(r"[^a-z0-9]+", "", name) == city_word:
+            continue
         if present(name):
             hits.append({"key": d.get("key"), "name": d.get("name")})
     lands = [k for k in LANDMARKS.get(city or "", []) if present(k)]
