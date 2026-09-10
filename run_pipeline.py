@@ -27,6 +27,9 @@ run_daily_check.ps1 запускает не программу, а сессию:
   * dotproperty.com.ph -- полностью, с 9 сентября 2026. У портала на каждой
     карточке лежит schema.org-разметка, а район ставится либо точным совпадением
     с CITIES, либо однозначным прецедентом, уже заведённым на сайте.
+  * hoppler.com.ph -- полностью, с 10 сентября 2026. Метро Манила целиком:
+    карточка списка несёт все поля сразу, а лимит тратится по кругу семи
+    городов, чтобы самый крупный раздел не выбирал его в одиночку.
   * Telegram -- наполовину, ровно по той же причине, что и Facebook.
   * Обслуживание, сборка, карта, публикация -- полностью.
 
@@ -106,6 +109,18 @@ def steps_for(a):
         out.append(Step("dotproperty: сбор и вставка",
                         [py, "collect_dotproperty.py", "--days", "14", "--pages", "3",
                          "--limit", "40", "--write", "--insert"],
+                        fatal=False, timeout=2400))
+    if not a.no_hoppler:
+        # ОКНО 14 ДНЕЙ, А НЕ 30, хотя портал отдаёт и месячную давность:
+        # hoppler не освобождён от чистки по возрасту, поэтому строка старше
+        # двух недель была бы удалена тем же прогоном, что её завёл. Заводить и
+        # тут же удалять -- это не сбор, а холостой ход по чужому сайту.
+        # Практика показывает, что теряется при этом почти ничего: агенты
+        # обновляют объявления постоянно, и у подавляющего большинства
+        # «последнее изменение» -- сегодняшнее.
+        out.append(Step("hoppler: сбор и вставка",
+                        [py, "collect_hoppler.py", "--days", "14", "--pages", "2",
+                         "--limit", "30", "--write", "--insert"],
                         fatal=False, timeout=2400))
     if not a.no_tg:
         out.append(Step("Telegram: каналы",
@@ -254,6 +269,7 @@ def main():
     ap.add_argument("--no-chotot", action="store_true")
     ap.add_argument("--no-fb", action="store_true")
     ap.add_argument("--no-dotproperty", action="store_true")
+    ap.add_argument("--no-hoppler", action="store_true")
     ap.add_argument("--no-tg", action="store_true")
     ap.add_argument("--no-maintain", action="store_true")
     ap.add_argument("--publish", action="store_true", help="закоммитить и запушить результат")
