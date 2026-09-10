@@ -1,28 +1,4 @@
 {
- "1696": {
-  "lat": 10.74367,
-  "lon": 106.70149,
-  "source": "chotot",
-  "matched": null
- },
- "1697": {
-  "lat": 10.79159,
-  "lon": 106.73052,
-  "source": "chotot",
-  "matched": null
- },
- "1699": {
-  "lat": 10.7571562,
-  "lon": 106.6917141,
-  "source": "geocode",
-  "matched": "Bến Vân Đồn"
- },
- "1700": {
-  "lat": 10.761975,
-  "lon": 106.70596,
-  "source": "chotot",
-  "matched": null
- },
  "1768": {
   "lat": 10.815382,
   "lon": 106.73495,
@@ -38,12 +14,6 @@
  "1770": {
   "lat": 10.8158865,
   "lon": 106.72764,
-  "source": "chotot",
-  "matched": null
- },
- "1771": {
-  "lat": 10.80134,
-  "lon": 106.73999,
   "source": "chotot",
   "matched": null
  },
@@ -95,24 +65,6 @@
   "source": "chotot",
   "matched": null
  },
- "1780": {
-  "lat": 10.767645,
-  "lon": 106.6863,
-  "source": "chotot",
-  "matched": null
- },
- "1781": {
-  "lat": 10.770231,
-  "lon": 106.6917,
-  "source": "chotot",
-  "matched": null
- },
- "1782": {
-  "lat": 10.768918,
-  "lon": 106.69939,
-  "source": "chotot",
-  "matched": null
- },
  "1783": {
   "lat": 10.76365,
   "lon": 106.69964,
@@ -128,48 +80,6 @@
  "1785": {
   "lat": 10.761975,
   "lon": 106.70596,
-  "source": "chotot",
-  "matched": null
- },
- "1786": {
-  "lat": 10.76365,
-  "lon": 106.69964,
-  "source": "chotot",
-  "matched": null
- },
- "1787": {
-  "lat": 10.76384,
-  "lon": 106.70228,
-  "source": "chotot",
-  "matched": null
- },
- "1788": {
-  "lat": 10.76365,
-  "lon": 106.69964,
-  "source": "chotot",
-  "matched": null
- },
- "1789": {
-  "lat": 10.76365,
-  "lon": 106.69964,
-  "source": "chotot",
-  "matched": null
- },
- "1790": {
-  "lat": 10.761975,
-  "lon": 106.70596,
-  "source": "chotot",
-  "matched": null
- },
- "1791": {
-  "lat": 10.761845,
-  "lon": 106.70506,
-  "source": "chotot",
-  "matched": null
- },
- "1792": {
-  "lat": 10.755336,
-  "lon": 106.694214,
   "source": "chotot",
   "matched": null
  },
@@ -233,12 +143,6 @@
   "source": "chotot",
   "matched": null
  },
- "1805": {
-  "lat": 10.733626,
-  "lon": 106.70178,
-  "source": "chotot",
-  "matched": null
- },
  "1807": {
   "lat": 10.748124,
   "lon": 106.71586,
@@ -278,30 +182,6 @@
  "1813": {
   "lat": 10.74998,
   "lon": 106.7097,
-  "source": "chotot",
-  "matched": null
- },
- "1814": {
-  "lat": 10.73729,
-  "lon": 106.70997,
-  "source": "chotot",
-  "matched": null
- },
- "1815": {
-  "lat": 10.731839,
-  "lon": 106.70283,
-  "source": "chotot",
-  "matched": null
- },
- "1816": {
-  "lat": 10.738486,
-  "lon": 106.71468,
-  "source": "chotot",
-  "matched": null
- },
- "1817": {
-  "lat": 10.71422,
-  "lon": 106.73743,
   "source": "chotot",
   "matched": null
  },
@@ -362,24 +242,6 @@
  "1827": {
   "lat": 10.70316,
   "lon": 106.73216,
-  "source": "chotot",
-  "matched": null
- },
- "1828": {
-  "lat": 10.72605,
-  "lon": 106.72377,
-  "source": "chotot",
-  "matched": null
- },
- "1829": {
-  "lat": 10.73798,
-  "lon": 106.71826,
-  "source": "chotot",
-  "matched": null
- },
- "1831": {
-  "lat": 10.747897,
-  "lon": 106.6999,
   "source": "chotot",
   "matched": null
  },
@@ -569,45 +431,9 @@
   "source": "chotot",
   "matched": null
  },
- "1864": {
-  "lat": 10.76589,
-  "lon": 106.689705,
-  "source": "chotot",
-  "matched": null
- },
- "1866": {
-  "lat": 10.751721,
-  "lon": 106.698494,
-  "source": "chotot",
-  "matched": null
- },
- "1867": {
-  "lat": 10.738486,
-  "lon": 106.71468,
-  "source": "chotot",
-  "matched": null
- },
  "1868": {
   "lat": 10.740141,
   "lon": 106.70261,
-  "source": "chotot",
-  "matched": null
- },
- "1869": {
-  "lat": 10.7388,
-  "lon": 106.69832,
-  "source": "chotot",
-  "matched": null
- },
- "1871": {
-  "lat": 10.741573,
-  "lon": 106.71589,
-  "source": "chotot",
-  "matched": null
- },
- "1872": {
-  "lat": 10.748124,
-  "lon": 106.71586,
   "source": "chotot",
   "matched": null
  },
@@ -617,27 +443,9 @@
   "source": "chotot",
   "matched": null
  },
- "1874": {
-  "lat": 10.70316,
-  "lon": 106.73216,
-  "source": "chotot",
-  "matched": null
- },
  "1875": {
   "lat": 10.738486,
   "lon": 106.71468,
-  "source": "chotot",
-  "matched": null
- },
- "1876": {
-  "lat": 10.73867,
-  "lon": 106.712074,
-  "source": "chotot",
-  "matched": null
- },
- "1877": {
-  "lat": 10.74107,
-  "lon": 106.69544,
   "source": "chotot",
   "matched": null
  },
@@ -647,51 +455,9 @@
   "source": "chotot",
   "matched": null
  },
- "1881": {
-  "lat": 10.743049,
-  "lon": 106.69693,
-  "source": "chotot",
-  "matched": null
- },
- "1882": {
-  "lat": 10.825006,
-  "lon": 106.74116,
-  "source": "chotot",
-  "matched": null
- },
- "1883": {
-  "lat": 10.80134,
-  "lon": 106.73999,
-  "source": "chotot",
-  "matched": null
- },
  "1884": {
   "lat": 10.79159,
   "lon": 106.73052,
-  "source": "chotot",
-  "matched": null
- },
- "1885": {
-  "lat": 10.8157,
-  "lon": 106.7276,
-  "source": "chotot",
-  "matched": null
- },
- "1886": {
-  "lat": 10.788417,
-  "lon": 106.73551,
-  "source": "chotot",
-  "matched": null
- },
- "1887": {
-  "lat": 10.78158,
-  "lon": 106.73918,
-  "source": "chotot",
-  "matched": null
- },
- "1888": {
-  "lat": 10.80134,
-  "lon": 106.73999,
   "source": "chotot",
   "matched": null
  },
@@ -803,18 +569,6 @@
   "source": "chotot",
   "matched": null
  },
- "1907": {
-  "lat": 10.742963,
-  "lon": 106.7138,
-  "source": "chotot",
-  "matched": null
- },
- "1908": {
-  "lat": 10.74107,
-  "lon": 106.69544,
-  "source": "chotot",
-  "matched": null
- },
  "1909": {
   "lat": 10.727323,
   "lon": 106.70595,
@@ -923,24 +677,6 @@
   "source": "chotot",
   "matched": null
  },
- "1927": {
-  "lat": 10.70729,
-  "lon": 106.73198,
-  "source": "chotot",
-  "matched": null
- },
- "1928": {
-  "lat": 10.72605,
-  "lon": 106.72377,
-  "source": "chotot",
-  "matched": null
- },
- "1929": {
-  "lat": 10.70729,
-  "lon": 106.73198,
-  "source": "chotot",
-  "matched": null
- },
  "1930": {
   "lat": 10.7138815,
   "lon": 106.73513,
@@ -962,12 +698,6 @@
  "1933": {
   "lat": 10.80134,
   "lon": 106.73999,
-  "source": "chotot",
-  "matched": null
- },
- "1934": {
-  "lat": 10.802575,
-  "lon": 106.72779,
   "source": "chotot",
   "matched": null
  },
@@ -1001,12 +731,6 @@
   "source": "chotot",
   "matched": null
  },
- "1942": {
-  "lat": 10.773475,
-  "lon": 106.68936,
-  "source": "chotot",
-  "matched": null
- },
  "1943": {
   "lat": 10.765885,
   "lon": 106.69081,
@@ -1022,18 +746,6 @@
  "1945": {
   "lat": 10.771286,
   "lon": 106.69119,
-  "source": "chotot",
-  "matched": null
- },
- "1946": {
-  "lat": 10.766877,
-  "lon": 106.69094,
-  "source": "chotot",
-  "matched": null
- },
- "1947": {
-  "lat": 10.7736,
-  "lon": 106.69442,
   "source": "chotot",
   "matched": null
  },
@@ -1097,18 +809,6 @@
   "source": "chotot",
   "matched": null
  },
- "1959": {
-  "lat": 10.80134,
-  "lon": 106.73999,
-  "source": "chotot",
-  "matched": null
- },
- "1960": {
-  "lat": 10.80134,
-  "lon": 106.73999,
-  "source": "chotot",
-  "matched": null
- },
  "1961": {
   "lat": 10.815382,
   "lon": 106.73495,
@@ -1169,18 +869,6 @@
   "source": "chotot",
   "matched": null
  },
- "1972": {
-  "lat": 10.80328,
-  "lon": 106.73232,
-  "source": "chotot",
-  "matched": null
- },
- "1973": {
-  "lat": 10.801349,
-  "lon": 106.73273,
-  "source": "chotot",
-  "matched": null
- },
  "2054": {
   "lat": 12.272228,
   "lon": 109.198,
@@ -1196,12 +884,6 @@
  "2057": {
   "lat": 10.76925,
   "lon": 106.67838,
-  "source": "chotot",
-  "matched": null
- },
- "2058": {
-  "lat": 12.216942,
-  "lon": 109.189766,
   "source": "chotot",
   "matched": null
  },
@@ -1367,12 +1049,6 @@
   "source": "chotot",
   "matched": null
  },
- "1987": {
-  "lat": 10.76589,
-  "lon": 106.689705,
-  "source": "chotot",
-  "matched": null
- },
  "1988": {
   "lat": 10.76365,
   "lon": 106.69964,
@@ -1391,27 +1067,9 @@
   "source": "chotot",
   "matched": null
  },
- "1991": {
-  "lat": 10.755336,
-  "lon": 106.694214,
-  "source": "chotot",
-  "matched": null
- },
  "1992": {
   "lat": 10.76365,
   "lon": 106.69964,
-  "source": "chotot",
-  "matched": null
- },
- "1993": {
-  "lat": 10.76384,
-  "lon": 106.70228,
-  "source": "chotot",
-  "matched": null
- },
- "1994": {
-  "lat": 10.761975,
-  "lon": 106.70596,
   "source": "chotot",
   "matched": null
  },
@@ -1541,12 +1199,6 @@
   "source": "chotot",
   "matched": null
  },
- "2018": {
-  "lat": 10.733626,
-  "lon": 106.70178,
-  "source": "chotot",
-  "matched": null
- },
  "2019": {
   "lat": 10.74506,
   "lon": 106.69885,
@@ -1562,12 +1214,6 @@
  "2021": {
   "lat": 10.817042,
   "lon": 106.723625,
-  "source": "chotot",
-  "matched": null
- },
- "2022": {
-  "lat": 10.80134,
-  "lon": 106.73999,
   "source": "chotot",
   "matched": null
  },
@@ -1655,18 +1301,6 @@
   "source": "geocode",
   "matched": "Bến Vân Đồn"
  },
- "2091": {
-  "lat": 10.728128,
-  "lon": 106.7244243,
-  "source": "geocode",
-  "matched": "Cardinal Court"
- },
- "2092": {
-  "lat": 10.7571562,
-  "lon": 106.6917141,
-  "source": "geocode",
-  "matched": "Bến Vân Đồn"
- },
  "2093": {
   "lat": 10.7196889,
   "lon": 106.7278344,
@@ -1702,24 +1336,6 @@
   "lon": 106.7033938,
   "source": "geocode",
   "matched": "Bình Thạnh"
- },
- "2099": {
-  "lat": 10.708131,
-  "lon": 106.738205,
-  "source": "chotot",
-  "matched": null
- },
- "2100": {
-  "lat": 10.71422,
-  "lon": 106.73743,
-  "source": "chotot",
-  "matched": null
- },
- "2101": {
-  "lat": 10.71422,
-  "lon": 106.73743,
-  "source": "chotot",
-  "matched": null
  },
  "2102": {
   "lat": 10.725101,
@@ -3089,12 +2705,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000014": {
-  "lat": 20.988735,
-  "lon": 105.818756,
-  "source": "chotot",
-  "matched": null
- },
  "2000016": {
   "lat": 21.063442,
   "lon": 105.80954,
@@ -3119,12 +2729,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000022": {
-  "lat": 20.966213,
-  "lon": 105.84815,
-  "source": "chotot",
-  "matched": null
- },
  "2000024": {
   "lat": 20.9963,
   "lon": 105.86131,
@@ -3143,51 +2747,9 @@
   "source": "chotot",
   "matched": null
  },
- "2000030": {
-  "lat": 21.063442,
-  "lon": 105.80954,
-  "source": "chotot",
-  "matched": null
- },
- "2000031": {
-  "lat": 21.043001,
-  "lon": 105.81572,
-  "source": "chotot",
-  "matched": null
- },
- "2000032": {
-  "lat": 21.063442,
-  "lon": 105.80954,
-  "source": "chotot",
-  "matched": null
- },
- "2000035": {
-  "lat": 20.99649,
-  "lon": 105.8672,
-  "source": "chotot",
-  "matched": null
- },
  "2000036": {
   "lat": 20.951685,
   "lon": 105.79154,
-  "source": "chotot",
-  "matched": null
- },
- "2000037": {
-  "lat": 21.03662,
-  "lon": 105.78595,
-  "source": "chotot",
-  "matched": null
- },
- "2000038": {
-  "lat": 21.03598,
-  "lon": 105.76053,
-  "source": "chotot",
-  "matched": null
- },
- "2000039": {
-  "lat": 21.022554,
-  "lon": 105.77457,
   "source": "chotot",
   "matched": null
  },
@@ -3260,18 +2822,6 @@
  "2000058": {
   "lat": 21.031965,
   "lon": 105.7884,
-  "source": "chotot",
-  "matched": null
- },
- "2000060": {
-  "lat": 21.08334,
-  "lon": 105.780914,
-  "source": "chotot",
-  "matched": null
- },
- "2000061": {
-  "lat": 21.034452,
-  "lon": 105.78401,
   "source": "chotot",
   "matched": null
  },
@@ -3401,30 +2951,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000108": {
-  "lat": 20.982235,
-  "lon": 105.8444,
-  "source": "chotot",
-  "matched": null
- },
- "2000110": {
-  "lat": 21.03216,
-  "lon": 105.78699,
-  "source": "chotot",
-  "matched": null
- },
- "2000111": {
-  "lat": 21.012888,
-  "lon": 105.80821,
-  "source": "chotot",
-  "matched": null
- },
- "2000129": {
-  "lat": 10.98517,
-  "lon": 106.66749,
-  "source": "chotot",
-  "matched": null
- },
  "2000130": {
   "lat": 11.01356,
   "lon": 106.67646,
@@ -3434,12 +2960,6 @@
  "2000131": {
   "lat": 11.013716,
   "lon": 106.68219,
-  "source": "chotot",
-  "matched": null
- },
- "2000133": {
-  "lat": 10.892358,
-  "lon": 106.70112,
   "source": "chotot",
   "matched": null
  },
@@ -3575,12 +3095,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000162": {
-  "lat": 10.92473,
-  "lon": 106.72363,
-  "source": "chotot",
-  "matched": null
- },
  "2000164": {
   "lat": 10.892358,
   "lon": 106.70112,
@@ -3611,12 +3125,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000174": {
-  "lat": 10.892358,
-  "lon": 106.70112,
-  "source": "chotot",
-  "matched": null
- },
  "2000176": {
   "lat": 10.894831,
   "lon": 106.81699,
@@ -3635,24 +3143,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000180": {
-  "lat": 10.892358,
-  "lon": 106.70112,
-  "source": "chotot",
-  "matched": null
- },
- "2000181": {
-  "lat": 10.92473,
-  "lon": 106.72363,
-  "source": "chotot",
-  "matched": null
- },
- "2000182": {
-  "lat": 10.92473,
-  "lon": 106.72363,
-  "source": "chotot",
-  "matched": null
- },
  "2000183": {
   "lat": 10.87574,
   "lon": 106.75495,
@@ -3668,12 +3158,6 @@
  "2000185": {
   "lat": 10.894831,
   "lon": 106.81699,
-  "source": "chotot",
-  "matched": null
- },
- "2000187": {
-  "lat": 10.985002,
-  "lon": 106.66742,
   "source": "chotot",
   "matched": null
  },
@@ -3734,12 +3218,6 @@
  "2000201": {
   "lat": 11.096584,
   "lon": 106.674095,
-  "source": "chotot",
-  "matched": null
- },
- "2000202": {
-  "lat": 11.0722885,
-  "lon": 106.679634,
   "source": "chotot",
   "matched": null
  },
@@ -3806,42 +3284,6 @@
  "2000227": {
   "lat": 10.947814,
   "lon": 106.738205,
-  "source": "chotot",
-  "matched": null
- },
- "2000228": {
-  "lat": 10.90033,
-  "lon": 106.71618,
-  "source": "chotot",
-  "matched": null
- },
- "2000229": {
-  "lat": 10.905831,
-  "lon": 106.73064,
-  "source": "chotot",
-  "matched": null
- },
- "2000230": {
-  "lat": 11.013716,
-  "lon": 106.68219,
-  "source": "chotot",
-  "matched": null
- },
- "2000231": {
-  "lat": 11.013716,
-  "lon": 106.68219,
-  "source": "chotot",
-  "matched": null
- },
- "2000233": {
-  "lat": 10.976385,
-  "lon": 106.68893,
-  "source": "chotot",
-  "matched": null
- },
- "2000234": {
-  "lat": 11.0005,
-  "lon": 106.66057,
   "source": "chotot",
   "matched": null
  },
@@ -3959,33 +3401,9 @@
   "source": "chotot",
   "matched": null
  },
- "2000280": {
-  "lat": 11.03669,
-  "lon": 106.75885,
-  "source": "chotot",
-  "matched": null
- },
- "2000281": {
-  "lat": 10.867685,
-  "lon": 106.74965,
-  "source": "chotot",
-  "matched": null
- },
  "2000282": {
   "lat": 10.947814,
   "lon": 106.738205,
-  "source": "chotot",
-  "matched": null
- },
- "2000283": {
-  "lat": 11.008335,
-  "lon": 106.67903,
-  "source": "chotot",
-  "matched": null
- },
- "2000284": {
-  "lat": 10.896463,
-  "lon": 106.75282,
   "source": "chotot",
   "matched": null
  },
@@ -4004,30 +3422,6 @@
  "2000290": {
   "lat": 10.947814,
   "lon": 106.738205,
-  "source": "chotot",
-  "matched": null
- },
- "2000297": {
-  "lat": 10.964238,
-  "lon": 106.72919,
-  "source": "chotot",
-  "matched": null
- },
- "2000298": {
-  "lat": 10.906503,
-  "lon": 106.76816,
-  "source": "chotot",
-  "matched": null
- },
- "2000300": {
-  "lat": 10.947814,
-  "lon": 106.738205,
-  "source": "chotot",
-  "matched": null
- },
- "2000301": {
-  "lat": 10.959291,
-  "lon": 106.71187,
   "source": "chotot",
   "matched": null
  },
@@ -4289,12 +3683,6 @@
   "source": "geocode",
   "matched": "Duy Tân"
  },
- "2000346": {
-  "lat": 10.352844,
-  "lon": 107.087494,
-  "source": "chotot",
-  "matched": null
- },
  "2000348": {
   "lat": 10.386132,
   "lon": 107.09451,
@@ -4313,18 +3701,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000351": {
-  "lat": 10.344993,
-  "lon": 107.07675,
-  "source": "chotot",
-  "matched": null
- },
- "2000352": {
-  "lat": 10.349231,
-  "lon": 107.07749,
-  "source": "chotot",
-  "matched": null
- },
  "2000353": {
   "lat": 10.35535,
   "lon": 107.09322,
@@ -4334,12 +3710,6 @@
  "2000354": {
   "lat": 10.336288,
   "lon": 107.0833,
-  "source": "chotot",
-  "matched": null
- },
- "2000355": {
-  "lat": 10.337108,
-  "lon": 107.08387,
   "source": "chotot",
   "matched": null
  },
@@ -4625,24 +3995,6 @@
   "source": "chotot",
   "matched": null
  },
- "1000199": {
-  "lat": 10.747947,
-  "lon": 106.70871,
-  "source": "chotot",
-  "matched": null
- },
- "1000200": {
-  "lat": 10.71422,
-  "lon": 106.73743,
-  "source": "chotot",
-  "matched": null
- },
- "1000201": {
-  "lat": 10.740958,
-  "lon": 106.7102,
-  "source": "chotot",
-  "matched": null
- },
  "1000219": {
   "lat": 10.785401,
   "lon": 106.729744,
@@ -4802,18 +4154,6 @@
  "1000246": {
   "lat": 10.801354,
   "lon": 106.73987,
-  "source": "chotot",
-  "matched": null
- },
- "1000247": {
-  "lat": 10.7485075,
-  "lon": 106.704834,
-  "source": "chotot",
-  "matched": null
- },
- "1000248": {
-  "lat": 10.735086,
-  "lon": 106.7,
   "source": "chotot",
   "matched": null
  },
@@ -5225,12 +4565,6 @@
   "source": "chotot",
   "matched": null
  },
- "1000272": {
-  "lat": 10.743049,
-  "lon": 106.69693,
-  "source": "chotot",
-  "matched": null
- },
  "1000282": {
   "lat": 10.825006,
   "lon": 106.74116,
@@ -5252,30 +4586,6 @@
  "1000286": {
   "lat": 10.742587,
   "lon": 106.70127,
-  "source": "chotot",
-  "matched": null
- },
- "1000287": {
-  "lat": 10.73867,
-  "lon": 106.712074,
-  "source": "chotot",
-  "matched": null
- },
- "1000288": {
-  "lat": 10.746901,
-  "lon": 106.71014,
-  "source": "chotot",
-  "matched": null
- },
- "1000289": {
-  "lat": 10.709337,
-  "lon": 106.73719,
-  "source": "chotot",
-  "matched": null
- },
- "1000290": {
-  "lat": 10.768918,
-  "lon": 106.69939,
   "source": "chotot",
   "matched": null
  },
@@ -5885,12 +5195,6 @@
   "source": "chotot",
   "matched": null
  },
- "2000473": {
-  "lat": 20.962486,
-  "lon": 105.82257,
-  "source": "chotot",
-  "matched": null
- },
  "2000474": {
   "lat": 21.003136,
   "lon": 105.850945,
@@ -6032,24 +5336,6 @@
  "2000490": {
   "lat": 12.216942,
   "lon": 109.189766,
-  "source": "chotot",
-  "matched": null
- },
- "2000491": {
-  "lat": 12.2558155,
-  "lon": 109.195435,
-  "source": "chotot",
-  "matched": null
- },
- "2000492": {
-  "lat": 12.229951,
-  "lon": 109.160965,
-  "source": "chotot",
-  "matched": null
- },
- "2000493": {
-  "lat": 12.2558155,
-  "lon": 109.195435,
   "source": "chotot",
   "matched": null
  },
@@ -6296,12 +5582,6 @@
  "1000403": {
   "lat": 10.740141,
   "lon": 106.70261,
-  "source": "chotot",
-  "matched": null
- },
- "1000404": {
-  "lat": 10.708131,
-  "lon": 106.738205,
   "source": "chotot",
   "matched": null
  },
@@ -6748,12 +6028,6 @@
   "lon": 121.050972,
   "source": "geocode",
   "matched": "Bonifacio Global City"
- },
- "3000095": {
-  "lat": 14.5595719,
-  "lon": 121.0226644,
-  "source": "geocode",
-  "matched": "Salcedo Village"
  },
  "3000000": {
   "lat": 9.3135469,
@@ -7534,12 +6808,6 @@
   "lon": 121.0602132,
   "source": "geocode",
   "matched": "Discovery Suites"
- },
- "3000143": {
-  "lat": 10.3293348,
-  "lon": 123.9018147,
-  "source": "geocode",
-  "matched": "Salinas Drive"
  },
  "3000144": {
   "lat": 10.3143,
@@ -15369,6 +14637,930 @@
   "lat": 12.245004,
   "lon": 109.18429,
   "source": "chotot",
+  "matched": null
+ },
+ "1001756": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001757": {
+  "lat": 10.74506,
+  "lon": 106.69885,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001758": {
+  "lat": 10.74107,
+  "lon": 106.69544,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001759": {
+  "lat": 10.751848,
+  "lon": 106.71244,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001760": {
+  "lat": 10.74506,
+  "lon": 106.69885,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001761": {
+  "lat": 10.740545,
+  "lon": 106.70701,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001762": {
+  "lat": 10.73359,
+  "lon": 106.72153,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001763": {
+  "lat": 10.740299,
+  "lon": 106.708664,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001764": {
+  "lat": 10.74265,
+  "lon": 106.696,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001765": {
+  "lat": 10.730316,
+  "lon": 106.73086,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001766": {
+  "lat": 10.70316,
+  "lon": 106.73216,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001767": {
+  "lat": 10.70316,
+  "lon": 106.73216,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001768": {
+  "lat": 10.70316,
+  "lon": 106.73216,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001769": {
+  "lat": 10.740958,
+  "lon": 106.7102,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001770": {
+  "lat": 10.740958,
+  "lon": 106.7102,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001771": {
+  "lat": 10.740958,
+  "lon": 106.7102,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001772": {
+  "lat": 10.741573,
+  "lon": 106.71589,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001773": {
+  "lat": 10.741131,
+  "lon": 106.69596,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001774": {
+  "lat": 10.737949,
+  "lon": 106.721596,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001775": {
+  "lat": 10.738875,
+  "lon": 106.70249,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001776": {
+  "lat": 10.704245,
+  "lon": 106.72961,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001777": {
+  "lat": 10.747897,
+  "lon": 106.6999,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001778": {
+  "lat": 10.740958,
+  "lon": 106.7102,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001779": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001780": {
+  "lat": 10.749698,
+  "lon": 106.69924,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001781": {
+  "lat": 10.739916,
+  "lon": 106.70805,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001782": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001783": {
+  "lat": 10.731034,
+  "lon": 106.72336,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001784": {
+  "lat": 10.741573,
+  "lon": 106.71589,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001785": {
+  "lat": 10.728608,
+  "lon": 106.7122,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001786": {
+  "lat": 10.728608,
+  "lon": 106.7122,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001787": {
+  "lat": 10.72905,
+  "lon": 106.70349,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001788": {
+  "lat": 10.740124,
+  "lon": 106.70209,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001789": {
+  "lat": 10.744556,
+  "lon": 106.699165,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001790": {
+  "lat": 10.735086,
+  "lon": 106.7,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001791": {
+  "lat": 10.740141,
+  "lon": 106.70261,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001792": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001793": {
+  "lat": 10.749123,
+  "lon": 106.7102,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001794": {
+  "lat": 10.708131,
+  "lon": 106.738205,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001795": {
+  "lat": 10.73019,
+  "lon": 106.70033,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001796": {
+  "lat": 10.739639,
+  "lon": 106.704994,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001797": {
+  "lat": 10.744556,
+  "lon": 106.699165,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001798": {
+  "lat": 10.743451,
+  "lon": 106.71119,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001799": {
+  "lat": 10.751721,
+  "lon": 106.698494,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001800": {
+  "lat": 10.740141,
+  "lon": 106.70261,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001801": {
+  "lat": 10.733626,
+  "lon": 106.70178,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001802": {
+  "lat": 10.74107,
+  "lon": 106.69544,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001803": {
+  "lat": 10.708131,
+  "lon": 106.738205,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001804": {
+  "lat": 10.740124,
+  "lon": 106.70209,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001805": {
+  "lat": 10.722835,
+  "lon": 106.70975,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001806": {
+  "lat": 10.751721,
+  "lon": 106.698494,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001807": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001808": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001809": {
+  "lat": 10.743049,
+  "lon": 106.69693,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001810": {
+  "lat": 10.725101,
+  "lon": 106.72641,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001811": {
+  "lat": 10.725101,
+  "lon": 106.72641,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001812": {
+  "lat": 10.739952,
+  "lon": 106.69724,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001813": {
+  "lat": 10.734565,
+  "lon": 106.72118,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001814": {
+  "lat": 10.742587,
+  "lon": 106.70127,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001815": {
+  "lat": 10.751721,
+  "lon": 106.698494,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001816": {
+  "lat": 10.740141,
+  "lon": 106.70261,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001817": {
+  "lat": 10.79179,
+  "lon": 106.75327,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001818": {
+  "lat": 10.793591,
+  "lon": 106.737724,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001819": {
+  "lat": 10.793245,
+  "lon": 106.73913,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001820": {
+  "lat": 10.801913,
+  "lon": 106.76475,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001821": {
+  "lat": 10.785133,
+  "lon": 106.72941,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001822": {
+  "lat": 10.785133,
+  "lon": 106.72941,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001823": {
+  "lat": 10.795178,
+  "lon": 106.73482,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001824": {
+  "lat": 10.781944,
+  "lon": 106.768234,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001825": {
+  "lat": 10.804767,
+  "lon": 106.73993,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001826": {
+  "lat": 10.815382,
+  "lon": 106.73495,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001827": {
+  "lat": 10.787745,
+  "lon": 106.72973,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001828": {
+  "lat": 10.792343,
+  "lon": 106.735,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001829": {
+  "lat": 10.7857,
+  "lon": 106.764725,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001830": {
+  "lat": 10.785133,
+  "lon": 106.72941,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001831": {
+  "lat": 10.816536,
+  "lon": 106.72199,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001832": {
+  "lat": 10.768918,
+  "lon": 106.69939,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001833": {
+  "lat": 10.77021,
+  "lon": 106.68882,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001834": {
+  "lat": 10.770009,
+  "lon": 106.7039,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001835": {
+  "lat": 10.770231,
+  "lon": 106.6917,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001836": {
+  "lat": 10.765885,
+  "lon": 106.69081,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001837": {
+  "lat": 10.768353,
+  "lon": 106.68458,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001838": {
+  "lat": 10.767065,
+  "lon": 106.68738,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001839": {
+  "lat": 10.770974,
+  "lon": 106.70247,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001840": {
+  "lat": 10.7736,
+  "lon": 106.69442,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001841": {
+  "lat": 10.768997,
+  "lon": 106.69129,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001842": {
+  "lat": 10.768804,
+  "lon": 106.68975,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001843": {
+  "lat": 10.780745,
+  "lon": 106.700455,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001844": {
+  "lat": 10.7748375,
+  "lon": 106.69815,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001845": {
+  "lat": 10.772334,
+  "lon": 106.696365,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001846": {
+  "lat": 10.7736,
+  "lon": 106.69442,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001847": {
+  "lat": 10.771621,
+  "lon": 106.69766,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001848": {
+  "lat": 10.7736,
+  "lon": 106.69442,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001849": {
+  "lat": 10.768997,
+  "lon": 106.69129,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001850": {
+  "lat": 10.76517,
+  "lon": 106.70701,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001851": {
+  "lat": 10.761975,
+  "lon": 106.70596,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001852": {
+  "lat": 10.757978,
+  "lon": 106.6998,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001853": {
+  "lat": 10.759857,
+  "lon": 106.700615,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001854": {
+  "lat": 10.754763,
+  "lon": 106.70565,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001855": {
+  "lat": 10.76028,
+  "lon": 106.699326,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001856": {
+  "lat": 21.022995,
+  "lon": 105.85168,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001857": {
+  "lat": 21.043318,
+  "lon": 105.84683,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001858": {
+  "lat": 21.035336,
+  "lon": 105.82389,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001859": {
+  "lat": 21.039759,
+  "lon": 105.806564,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001860": {
+  "lat": 21.027061,
+  "lon": 105.81949,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001861": {
+  "lat": 21.035969,
+  "lon": 105.83124,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001862": {
+  "lat": 21.03509,
+  "lon": 105.82292,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001863": {
+  "lat": 21.037815,
+  "lon": 105.82829,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001864": {
+  "lat": 21.027061,
+  "lon": 105.81949,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001865": {
+  "lat": 21.045261,
+  "lon": 105.84566,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001866": {
+  "lat": 21.044363,
+  "lon": 105.81292,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001867": {
+  "lat": 21.035336,
+  "lon": 105.82389,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001868": {
+  "lat": 21.009472,
+  "lon": 105.81789,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001869": {
+  "lat": 21.020054,
+  "lon": 105.82462,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001870": {
+  "lat": 21.028984,
+  "lon": 105.829765,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001871": {
+  "lat": 21.01655,
+  "lon": 105.82515,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001872": {
+  "lat": 21.005644,
+  "lon": 105.82248,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001873": {
+  "lat": 21.020054,
+  "lon": 105.82462,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001874": {
+  "lat": 21.014875,
+  "lon": 105.81776,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001875": {
+  "lat": 21.029425,
+  "lon": 105.82728,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001876": {
+  "lat": 21.013288,
+  "lon": 105.83306,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001877": {
+  "lat": 21.027256,
+  "lon": 105.8327,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001878": {
+  "lat": 21.012579,
+  "lon": 105.81354,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001879": {
+  "lat": 21.019154,
+  "lon": 105.80507,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001880": {
+  "lat": 21.003036,
+  "lon": 105.82093,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001881": {
+  "lat": 21.016005,
+  "lon": 105.837906,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001882": {
+  "lat": 20.995117,
+  "lon": 105.85655,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001883": {
+  "lat": 20.99649,
+  "lon": 105.8672,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001884": {
+  "lat": 20.990927,
+  "lon": 105.84832,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001885": {
+  "lat": 20.999498,
+  "lon": 105.850395,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001886": {
+  "lat": 20.996761,
+  "lon": 105.84327,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001887": {
+  "lat": 21.017574,
+  "lon": 105.85143,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001888": {
+  "lat": 21.00107,
+  "lon": 105.86032,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001889": {
+  "lat": 20.99591,
+  "lon": 105.85765,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001890": {
+  "lat": 20.983088,
+  "lon": 105.8161,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001891": {
+  "lat": 20.99167,
+  "lon": 105.84111,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001892": {
+  "lat": 20.99715,
+  "lon": 105.82169,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001893": {
+  "lat": 20.996315,
+  "lon": 105.8305,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001894": {
+  "lat": 20.992582,
+  "lon": 105.8393,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001895": {
+  "lat": 20.999857,
+  "lon": 105.82798,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001896": {
+  "lat": 21.000086,
+  "lon": 105.810005,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001897": {
+  "lat": 20.988735,
+  "lon": 105.818756,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001898": {
+  "lat": 21.069664,
+  "lon": 105.80633,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001899": {
+  "lat": 21.060282,
+  "lon": 105.80889,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001900": {
+  "lat": 21.05896,
+  "lon": 105.83103,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001901": {
+  "lat": 21.053043,
+  "lon": 105.81288,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001902": {
+  "lat": 21.087048,
+  "lon": 105.811485,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001903": {
+  "lat": 21.06705,
+  "lon": 105.807396,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001904": {
+  "lat": 21.054596,
+  "lon": 105.80456,
+  "source": "chotot",
+  "matched": null
+ },
+ "1001905": {
+  "lat": 21.054596,
+  "lon": 105.80456,
+  "source": "chotot",
+  "matched": null
+ },
+ "3000307": {
+  "lat": 10.341066,
+  "lon": 123.8992449,
+  "source": "geocode",
+  "matched": "Marco Polo Residences"
+ },
+ "3000308": {
+  "lat": 10.3143,
+  "lon": 123.914703,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000309": {
+  "lat": 10.324687,
+  "lon": 123.890241,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000310": {
+  "lat": 10.288309,
+  "lon": 123.972347,
+  "source": "ward-centroid",
   "matched": null
  }
 }
