@@ -15562,5 +15562,245 @@
   "lon": 123.972347,
   "source": "ward-centroid",
   "matched": null
+ },
+ "3000391": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000392": {
+  "lat": 14.5462322,
+  "lon": 121.0482351,
+  "source": "geocode",
+  "matched": "Arya Residences"
+ },
+ "3000393": {
+  "lat": 14.581685,
+  "lon": 121.0557802,
+  "source": "geocode",
+  "matched": "One Shangri"
+ },
+ "3000394": {
+  "lat": 14.5496335,
+  "lon": 121.0247893,
+  "source": "geocode",
+  "matched": "Garden Towers"
+ },
+ "3000395": {
+  "lat": 14.5462322,
+  "lon": 121.0482351,
+  "source": "geocode",
+  "matched": "Arya Residences"
+ },
+ "3000396": {
+  "lat": 14.4059365,
+  "lon": 121.0237195,
+  "source": "geocode",
+  "matched": "Ayala Alabang Village"
+ },
+ "3000397": {
+  "lat": 14.5629403,
+  "lon": 121.0169872,
+  "source": "geocode",
+  "matched": "The Lerato"
+ },
+ "3000398": {
+  "lat": 14.545755,
+  "lon": 121.0454509,
+  "source": "geocode",
+  "matched": "Fairways Tower"
+ },
+ "3000399": {
+  "lat": 14.4309002,
+  "lon": 121.0392812,
+  "source": "geocode",
+  "matched": "Alabang 400"
+ },
+ "3000400": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000401": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000402": {
+  "lat": 14.4397813,
+  "lon": 121.0368948,
+  "source": "geocode",
+  "matched": "Hillsborough Alabang"
+ },
+ "3000403": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000404": {
+  "lat": 14.5063537,
+  "lon": 121.0491333,
+  "source": "geocode",
+  "matched": "Arbor Lanes"
+ },
+ "3000405": {
+  "lat": 14.585384,
+  "lon": 121.061299,
+  "source": "geocode",
+  "matched": "The Orient Square"
+ },
+ "3000406": {
+  "lat": 14.5594782,
+  "lon": 121.02889,
+  "source": "geocode",
+  "matched": "One Roxas Triangle"
+ },
+ "3000407": {
+  "lat": 14.551488,
+  "lon": 121.058855,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000408": {
+  "lat": 14.585384,
+  "lon": 121.061299,
+  "source": "geocode",
+  "matched": "The Orient Square"
+ },
+ "3000409": {
+  "lat": 14.577439,
+  "lon": 121.033897,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000410": {
+  "lat": 14.5589272,
+  "lon": 121.020394,
+  "source": "geocode",
+  "matched": "Valero Plaza"
+ },
+ "3000411": {
+  "lat": 14.5481736,
+  "lon": 121.0450772,
+  "source": "geocode",
+  "matched": "Pacific Plaza Towers"
+ },
+ "3000412": {
+  "lat": 14.5594649,
+  "lon": 121.0234122,
+  "source": "geocode",
+  "matched": "Escala Salcedo"
+ },
+ "3000413": {
+  "lat": 14.5481736,
+  "lon": 121.0450772,
+  "source": "geocode",
+  "matched": "Pacific Plaza Towers"
+ },
+ "3000414": {
+  "lat": 14.5652264,
+  "lon": 121.0375904,
+  "source": "geocode",
+  "matched": "Joya Lofts"
+ },
+ "3000415": {
+  "lat": 14.5481736,
+  "lon": 121.0450772,
+  "source": "geocode",
+  "matched": "Pacific Plaza Towers"
+ },
+ "3000416": {
+  "lat": 14.565127,
+  "lon": 121.0370091,
+  "source": "geocode",
+  "matched": "Rockwell Center"
+ },
+ "3000417": {
+  "lat": 14.5481736,
+  "lon": 121.0450772,
+  "source": "geocode",
+  "matched": "Pacific Plaza Towers"
+ },
+ "3000418": {
+  "lat": 14.5539651,
+  "lon": 121.0263513,
+  "source": "geocode",
+  "matched": "Makati Tuscany"
+ },
+ "3000419": {
+  "lat": 14.5464811,
+  "lon": 121.0528527,
+  "source": "geocode",
+  "matched": "Two Serendra"
+ },
+ "3000420": {
+  "lat": 14.5523261,
+  "lon": 121.0281238,
+  "source": "geocode",
+  "matched": "Pacific Plaza Ayala"
+ },
+ "3000421": {
+  "lat": 14.5514393,
+  "lon": 121.0467008,
+  "source": "geocode",
+  "matched": "One Bonifacio High Street"
+ },
+ "3000422": {
+  "lat": 14.5611843,
+  "lon": 121.0227083,
+  "source": "geocode",
+  "matched": "Alpha Salcedo"
+ },
+ "3000423": {
+  "lat": 14.4059365,
+  "lon": 121.0237195,
+  "source": "geocode",
+  "matched": "Ayala Alabang Village"
+ },
+ "3000424": {
+  "lat": 14.4059365,
+  "lon": 121.0237195,
+  "source": "geocode",
+  "matched": "Ayala Alabang Village"
+ },
+ "3000425": {
+  "lat": 14.4059365,
+  "lon": 121.0237195,
+  "source": "geocode",
+  "matched": "Ayala Alabang Village"
+ },
+ "3000426": {
+  "lat": 14.5870884,
+  "lon": 121.0484321,
+  "source": "geocode",
+  "matched": "Shang Residences"
+ },
+ "3000427": {
+  "lat": 14.5870884,
+  "lon": 121.0484321,
+  "source": "geocode",
+  "matched": "Shang Residences"
+ },
+ "3000428": {
+  "lat": 14.651055,
+  "lon": 121.048625,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000429": {
+  "lat": 14.6131949,
+  "lon": 120.9769116,
+  "source": "geocode",
+  "matched": "S Tower"
+ },
+ "3000430": {
+  "lat": 14.4059365,
+  "lon": 121.0237195,
+  "source": "geocode",
+  "matched": "Ayala Alabang Village"
  }
 }
