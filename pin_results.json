@@ -7218,8 +7218,8 @@
   "matched": "Masteri Thảo Điền"
  },
  "2000550": {
-  "lat": 16.1021731,
-  "lon": 108.2485821,
+  "lat": 16.0700623,
+  "lon": 108.2364217,
   "source": "ward-centroid",
   "matched": null
  },
@@ -14778,8 +14778,8 @@
   "matched": null
  },
  "2000574": {
-  "lat": 16.1021731,
-  "lon": 108.2485821,
+  "lat": 16.0700623,
+  "lon": 108.2364217,
   "source": "ward-centroid",
   "matched": null
  },
@@ -14814,8 +14814,8 @@
   "matched": null
  },
  "2000580": {
-  "lat": 16.1021731,
-  "lon": 108.2485821,
+  "lat": 16.0700623,
+  "lon": 108.2364217,
   "source": "ward-centroid",
   "matched": null
  },
@@ -17046,8 +17046,8 @@
   "matched": null
  },
  "2000599": {
-  "lat": 16.0589539,
-  "lon": 108.2194844,
+  "lat": 16.0416286,
+  "lon": 108.2175304,
   "source": "ward-centroid",
   "matched": null
  },
@@ -17136,8 +17136,8 @@
   "matched": null
  },
  "3000541": {
-  "lat": 16.1021731,
-  "lon": 108.2485821,
+  "lat": 16.0700623,
+  "lon": 108.2364217,
   "source": "ward-centroid",
   "matched": null
  },
@@ -17148,8 +17148,32 @@
   "matched": null
  },
  "3000543": {
-  "lat": 16.1021731,
-  "lon": 108.2485821,
+  "lat": 16.0700623,
+  "lon": 108.2364217,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000604": {
+  "lat": 16.0700623,
+  "lon": 108.2364217,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000605": {
+  "lat": 16.0502691,
+  "lon": 108.1546403,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000606": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000607": {
+  "lat": 16.0589539,
+  "lon": 108.2194844,
   "source": "ward-centroid",
   "matched": null
  }
