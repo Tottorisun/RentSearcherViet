@@ -677,9 +677,13 @@ def load_existing(index_path):
     out["cities"] = {k: v.get("districts", []) for k, v in data.get("CITIES", {}).items()}
     for l in data.get("LISTINGS", []):
         out["count"] += 1
-        u = (l.get("url") or "").strip().rstrip("/").lower()
-        if u:
-            out["urls"].add(u)
+        # alsoOn -- тот же объект в другом канале или на другом сайте: такой
+        # пост уже учтён, и предлагать его снова незачем. Туда пишет перепосты
+        # ingest_telegram.py, и без этой строки они возвращались бы кандидатами.
+        for u in [l.get("url")] + [a.get("url") for a in (l.get("details") or {}).get("alsoOn") or []]:
+            u = (u or "").strip().rstrip("/").lower()
+            if u:
+                out["urls"].add(u)
         for field in ("desc", "descEn"):
             h = text_hash(l.get(field))
             if h:

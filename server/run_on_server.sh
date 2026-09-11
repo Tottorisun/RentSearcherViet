@@ -9,9 +9,15 @@
 #
 # Сессия на ПК владельца тоже пушит -- строки из Facebook и Telegram. Поэтому
 # прогон всегда начинается с origin/main: иначе его пуш упёрся бы в чужой коммит.
+#
+# Telegram идёт здесь с 12 сентября 2026: шаблонные посты агентств заводит
+# ingest_telegram.py, остальное остаётся кандидатами для сессии на ПК.
+#
+# Правка этого файла действует со СЛЕДУЮЩЕГО прогона: оболочка уже прочла
+# старый текст, а git reset кладёт новый файл рядом, не трогая открытый.
 set -eu
 cd /opt/rentsearcher/app
 git fetch -q origin
 git reset -q --hard origin/main
 git clean -fdq
-exec /usr/bin/python3 run_pipeline.py --publish --no-fb --no-tg
+exec /usr/bin/python3 run_pipeline.py --publish --no-fb

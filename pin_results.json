@@ -16991,12 +16991,6 @@
   "source": "geocode",
   "matched": "One Rockwell"
  },
- "2000590": {
-  "lat": 16.010798,
-  "lon": 108.253178,
-  "source": "ward-centroid",
-  "matched": null
- },
  "2000591": {
   "lat": 16.010798,
   "lon": 108.253178,
@@ -17176,5 +17170,11 @@
   "lon": 108.2194844,
   "source": "ward-centroid",
   "matched": null
+ },
+ "2000613": {
+  "lat": 16.0638546,
+  "lon": 108.2306555,
+  "source": "geocode",
+  "matched": "Cao Bá Quát"
  }
 }
