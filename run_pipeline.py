@@ -83,7 +83,18 @@ class Step:
 
     def __init__(self, name, argv, fatal=True, timeout=1800, skip_if=None):
         self.name, self.argv, self.fatal = name, argv, fatal
-        self.timeout, self.skip_if = timeout, skip_if
+        self.timeout, self.skip_if = int(timeout * TIMEOUT_SCALE), skip_if
+
+
+# Пределы шагов рассчитаны на ПК во Вьетнаме. С сервера в Германии каждый из сотен
+# последовательных запросов к вьетнамским и филиппинским сайтам идёт заметно
+# дольше: 11 сентября 2026 шаг Chợ Tốt, занимающий на ПК 206-264 с, на Netcup
+# шёл больше 480 с при пределе 900 -- упираясь не в процессор (занят на треть),
+# а в расстояние. Множитель задаётся в окружении службы, на ПК он 1.
+try:
+    TIMEOUT_SCALE = max(1.0, float(os.environ.get("PIPELINE_TIMEOUT_SCALE") or 1))
+except ValueError:
+    TIMEOUT_SCALE = 1.0
 
 
 def steps_for(a):

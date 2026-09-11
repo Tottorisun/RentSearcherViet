@@ -37,4 +37,5 @@ MemorySwapMax=200M
 CPUQuota=60%
 Nice=19
 IOSchedulingClass=idle
-TimeoutStartSec=2h
+# На ПК прогон идёт ~45 минут; отсюда запросы во Вьетнам заметно дольше.
+TimeoutStartSec=3h
