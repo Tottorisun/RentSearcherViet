@@ -17050,5 +17050,107 @@
   "lon": 108.2194844,
   "source": "ward-centroid",
   "matched": null
+ },
+ "3000523": {
+  "lat": 9.3135469,
+  "lon": 123.2698655,
+  "source": "geocode",
+  "matched": "Casa Alicia"
+ },
+ "3000525": {
+  "lat": 9.311661,
+  "lon": 123.237335,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000526": {
+  "lat": 9.304706,
+  "lon": 123.307453,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000527": {
+  "lat": 10.334541,
+  "lon": 123.8955297,
+  "source": "geocode",
+  "matched": "Mivesa Garden Residences"
+ },
+ "3000528": {
+  "lat": 10.2657356,
+  "lon": 123.8421125,
+  "source": "geocode",
+  "matched": "Gaisano Tabunok"
+ },
+ "3000529": {
+  "lat": 10.330798,
+  "lon": 123.906826,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000531": {
+  "lat": 10.3039134,
+  "lon": 123.8772844,
+  "source": "geocode",
+  "matched": "Salvador Extension"
+ },
+ "3000532": {
+  "lat": 14.6346722,
+  "lon": 121.0674462,
+  "source": "geocode",
+  "matched": "Xavierville 2"
+ },
+ "3000533": {
+  "lat": 14.5723258,
+  "lon": 120.9904726,
+  "source": "geocode",
+  "matched": "Taft Avenue"
+ },
+ "3000534": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000535": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000536": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000537": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000538": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000541": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000542": {
+  "lat": 16.0767069,
+  "lon": 108.1392444,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000543": {
+  "lat": 16.1021731,
+  "lon": 108.2485821,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
