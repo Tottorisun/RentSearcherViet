@@ -263,7 +263,10 @@ def main():
     # 40 было рассчитано на один город. С девятью источник даёт больше тысячи
     # подходящих в сутки, и 40 означало бы отставать от него каждый день.
     ap.add_argument("--limit", type=int, default=150, help="максимум новых строк с Chợ Tốt")
-    ap.add_argument("--fb-cities", default="dumaguete,cebu,manila")
+    # Все города, по которым в реестре fb_collect.GROUPS есть группы. Вьетнамские
+    # добавлены 11 сентября 2026: до этого их группы стояли в реестре, но ночной
+    # прогон их не обходил -- что было незаметно, пока он не собирал вообще ничего.
+    ap.add_argument("--fb-cities", default="dumaguete,cebu,manila,ho-chi-minh,nha-trang,da-nang")
     ap.add_argument("--fb-groups", type=int, default=2, help="групп на город за прогон")
     ap.add_argument("--tg-pages", type=int, default=2)
     ap.add_argument("--no-chotot", action="store_true")

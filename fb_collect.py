@@ -137,7 +137,7 @@ try:
 except Exception:
     pass
 
-SCRIPT_VERSION = "1.1 (2026-09-04, groups-first)"
+SCRIPT_VERSION = "1.2 (2026-09-11, group search)"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROFILE_DIR = os.path.join(HERE, "_fb_profile")          # git-ignored (_*)
@@ -273,7 +273,11 @@ def looks_obfuscated(s):
     toks = [t for t in re.split(r"\s+", s or "") if t]
     if len(toks) < 12:
         return False
-    singles = sum(1 for t in toks if len(t) == 1)
+    # Считаются только одиночные БУКВЫ. Раньше считался любой одиночный символ,
+    # и обычный список «- 2 Bedrooms / - 1 Comfort Room / - ✓ Aircon» -- дефисы,
+    # цифры, галочки -- набирал больше трети и уходил в отсев как спам. Так
+    # 11 сентября 2026 был отброшен чистый пост из группы Думагете.
+    singles = sum(1 for t in toks if len(t) == 1 and t.isalpha())
     return singles / float(len(toks)) > 0.35
 
 
@@ -722,13 +726,31 @@ def do_login(headless, channel):
         print("\nA browser window is open on its OWN profile (%s)." % PROFILE_DIR)
         print("Log in there by hand -- type the password yourself, this script never")
         print("touches credentials. Two-factor, 'save this browser', all of it is yours")
-        print("to click. When Facebook shows your normal feed, come back here.\n")
+        print("to click. The window closes by itself once Facebook has let you in.\n")
+        # ЖДЁМ САМ ФАКТ ВХОДА, а не нажатия Enter. Раньше тут стоял input():
+        # из терминала это работало, но запущенный не из терминала (сессией,
+        # по кнопке) вход получал EOF, ждал ровно 120 секунд и закрывал окно --
+        # посреди двухфакторки. Теперь окно живёт, пока не появится кука c_user
+        # или пока человек сам его не закроет, но не дольше 20 минут.
+        deadline = time.time() + 20 * 60
+        ok = False
+        while time.time() < deadline:
+            try:
+                ok = is_logged_in(ctx)
+            except Exception:
+                break                       # окно закрыли руками
+            if ok:
+                # Кука c_user ставится раньше остальных; даём Facebook дописать
+                # сессию (xs, fr), иначе следующий запуск может оказаться без неё.
+                time.sleep(8)
+                break
+            if not ctx.pages:
+                break
+            time.sleep(2)
         try:
-            input("Press Enter when you are logged in... ")
-        except EOFError:
-            print("(no stdin -- waiting 120 s instead)")
-            time.sleep(120)
-        ok = is_logged_in(ctx)
+            ok = is_logged_in(ctx)
+        except Exception:
+            pass
         print("logged in: %s" % ("YES -- the session is saved in the profile" if ok else
                                  "NO -- no c_user cookie; nothing was saved"))
         ctx.close()
@@ -962,52 +984,160 @@ def clean_post_body(text, author_name=None, time_raw=None):
     return "\n".join(lines).strip()
 
 
-def wait_for_posts(page, want, budget_s):
-    """Group feeds render lazily: right after load, `[role="article"]` matches
-    two or three nodes and most cards are still skeletons. Poll instead of
-    trusting the load event."""
-    deadline = time.time() + budget_s
-    while time.time() < deadline:
-        try:
-            posts = page.evaluate(GROUP_JS)
-        except Exception:
-            posts = []
-        real = [p for p in posts if len(p.get("text") or "") > 120 and p.get("links")]
-        if len(real) >= want:
-            return real
-        time.sleep(1.5)
-    return []
+# ЛЕНТА ГРУППЫ -- ТУПИК, и это измерено, а не предположено. Она виртуализована,
+# а текст в её DOM перемешан подменой символов (подробно -- fb_groups_howto.md).
+# Здесь раньше стояли wait_for_posts/harvest_group, листавшие ленту: 11 сентября
+# 2026, в первом же ночном сборе с живым входом (до того в каждом прогоне профиль
+# был не залогинен, и этот код не работал ни разу), они трижды пролистали группу
+# и вернули НОЛЬ постов. Поиск по той же группе, в тот же час, из того же профиля
+# отдал пять -- с текстом и id. Поиск и стоит теперь на их месте.
+GROUP_SEARCH_URL = "https://www.facebook.com/groups/{gid}/search/?q={q}"
+# Разные запросы -- разные срезы одной группы: поиск отдаёт 5-7 постов за заход.
+GROUP_QUERIES = ("for rent", "apartment", "room")
+
+# Посты из JSON в <script>: текст там НЕ обфусцирован, в отличие от DOM. Рядом с
+# текстом (+-6000 символов) лежит base64-id истории; atob даёт «автор:пост», и
+# последнее длинное число -- id поста.
+SEARCH_JS = r"""
+() => {
+  const blobs = [...document.querySelectorAll('script')].map(s => s.textContent || '');
+  const out = new Map();
+  for (const S of blobs) {
+    const re = /"message":\{"text":"((?:[^"\\]|\\.)*)"/g;
+    let m;
+    while ((m = re.exec(S))) {
+      let t;
+      try { t = JSON.parse('"' + m[1] + '"'); } catch (e) { continue; }
+      if (t.length < 60) continue;
+      const win = S.slice(Math.max(0, m.index - 6000), m.index + 6000);
+      let pid = null;
+      for (const raw of [...win.matchAll(/"id":"([A-Za-z0-9_\-]{16,80}=*)"/g)].map(x => x[1])) {
+        try {
+          const d = atob(raw.replace(/-/g, '+').replace(/_/g, '/'));
+          const n = [...d.matchAll(/(\d{12,})/g)].map(x => x[1]);
+          if (n.length) { pid = n[n.length - 1]; break; }
+        } catch (e) {}
+      }
+      const k = pid || t.slice(0, 70);
+      if (!out.has(k)) out.set(k, {pid: pid, text: t});
+    }
+  }
+  return {title: document.title, posts: [...out.values()]};
+}
+"""
+
+# Страница поста: жив ли он, его полный текст и его фото.
+#
+# ТЕКСТ -- из payload по ключу, а не «самый длинный на странице»: там лежат и
+# чужие посты (однажды так пришла история про переезд в Чикаго).
+#
+# ФОТО -- ТОЛЬКО ВЛОЖЕНИЯ ЭТОГО ПОСТА В ЕГО JSON-ОБЪЕКТЕ. У истории Facebook
+# поля message, attachments и post_id -- соседи в одном объекте, и это привязка
+# по структуре, а не по соседству на экране. Картинки из DOM рядом с постом --
+# чужие, и это измерено 11 сентября 2026, а не предположено: на двух постах
+# группы Думагете картинки из div[role="main"] оказались соседними блоками и
+# менялись от загрузки к загрузке, а к «цокольному жилью за 6 500 ₱» так
+# приклеились фото отремонтированной квартиры с чужой плиткой. Собственные же
+# снимки поста лежали в его просмотрщике ([role="dialog"]) -- который я перед
+# этим как раз исключил, приняв за чужой пост. Глазами сверено: вложения из
+# JSON -- это те самые комнаты из объявления.
+DETAIL_JS = r"""
+(args) => {
+  const norm = x => (x || '').replace(/\s+/g, ' ').trim().toUpperCase();
+  const K = norm(args.key), PID = String(args.pid || '');
+  let text = '';
+  for (const sc of document.querySelectorAll('script')) {
+    const S = sc.textContent || '';
+    const re = /"message":\{"text":"((?:[^"\\]|\\.)*)"/g;
+    let m;
+    while ((m = re.exec(S))) {
+      let t;
+      try { t = JSON.parse('"' + m[1] + '"'); } catch (e) { continue; }
+      if (K && norm(t).includes(K) && t.length > text.length) text = t;
+    }
+  }
+  const collect = (att) => {
+    const out = [], st = [att];
+    while (st.length) {
+      const x = st.pop();
+      if (!x || typeof x !== 'object') continue;
+      if (typeof x.uri === 'string' && /scontent|fbcdn/.test(x.uri)) {
+        out.push({src: x.uri, w: x.width || 0, h: x.height || 0});
+      }
+      for (const v of Object.values(x)) if (v && typeof v === 'object') st.push(v);
+    }
+    return out;
+  };
+  let images = [], best = -1;
+  for (const sc of document.querySelectorAll('script[type="application/json"]')) {
+    let data;
+    try { data = JSON.parse(sc.textContent); } catch (e) { continue; }
+    const stack = [data];
+    while (stack.length) {
+      const o = stack.pop();
+      if (!o || typeof o !== 'object') continue;
+      const msg = o.message;
+      if (o.attachments && msg && typeof msg === 'object' && typeof msg.text === 'string') {
+        const byId = PID && String(o.post_id || '') === PID;
+        const byText = K && norm(msg.text).includes(K);
+        if (byId || byText) {
+          const imgs = collect(o.attachments);
+          const score = (byId ? 2 : 0) + (imgs.length ? 1 : 0);
+          if (score > best) { best = score; images = imgs; }
+        }
+      }
+      for (const v of Object.values(o)) if (v && typeof v === 'object') stack.push(v);
+    }
+  }
+  return {title: document.title, text: text, images: images};
+}
+"""
 
 
-def harvest_group(page, want, max_scrolls, verbose=True):
-    """Small, slow scroll steps -- a big jump outruns the lazy renderer."""
-    seen, out = set(), []
-    stale = 0
-    for i in range(max_scrolls):
-        real = wait_for_posts(page, want=1, budget_s=12)
-        before = len(out)
-        for p in real:
-            pid = None
-            for l in p.get("links") or []:
-                m = GROUP_POST_ID_RE.search(l.get("href") or "")
-                if m:
-                    pid = m.group(1)
-                    break
-            if not pid or pid in seen:
-                continue
-            seen.add(pid)
-            p["post_id"] = pid
-            out.append(p)
-        if verbose:
-            print("  scroll %d: %d posts so far" % (i + 1, len(out)))
+def payload_body(text):
+    """Текст поста из payload -- уже чистый; только пробелы и пустые строки.
+
+    clean_post_body тут не годится: он писан под innerText карточки и выбрасывает
+    строки вроде одинокого числа -- а в объявлении это бывает пункт списка."""
+    lines = [re.sub(r"[ \t\u00a0]+", " ", l).strip() for l in (text or "").splitlines()]
+    return "\n".join(l for l in lines if l)
+
+
+def harvest_group_search(page, gid, want, queries=GROUP_QUERIES, verbose=True):
+    """Посты группы через поиск по группе. Каждый запрос -- свежая загрузка,
+    посты приходят в первом же payload, прокрутка не нужна."""
+    seen, heads, out = set(), set(), []
+    for q in queries:
         if len(out) >= want:
             break
-        stale = stale + 1 if len(out) == before else 0
-        if stale >= 3:
-            if verbose:
-                print("  feed stopped producing new posts")
-            break
-        page.mouse.wheel(0, 1200)
+        page.goto(GROUP_SEARCH_URL.format(gid=gid, q=q.replace(" ", "%20")),
+                  wait_until="domcontentloaded")
+        _sleep(5.0, 8.0)
+        check_alive(page)
+        try:
+            r = page.evaluate(SEARCH_JS) or {}
+        except Exception as e:
+            print("  search %r: %s" % (q, str(e)[:120]))
+            continue
+        fresh = 0
+        for p in r.get("posts") or []:
+            pid, text = p.get("pid"), payload_body(p.get("text"))
+            # Без id не собрать ссылку, а без ссылки пост не проверить на живость.
+            if not pid or not text:
+                continue
+            head = re.sub(r"\s+", " ", text)[:70].upper()
+            # Пост и его репост в ту же группу приходят под двумя id с одним текстом.
+            if pid in seen or head in heads:
+                continue
+            seen.add(pid)
+            heads.add(head)
+            out.append({"post_id": pid, "text": text, "from_payload": True,
+                        "links": [{"href": "https://www.facebook.com/groups/%s/posts/%s/"
+                                   % (gid, pid), "text": ""}],
+                        "authors": [], "images": [], "aria": ""})
+            fresh += 1
+        if verbose:
+            print("  search %r: %d new post(s), %d so far" % (q, fresh, len(out)))
         _sleep(2.0, 4.0)
     return out
 
@@ -1065,14 +1195,9 @@ def collect_groups(args, ctx, page, result, known):
         if budget <= 0:
             break
         gid = g["id"]
-        url = GROUP_URL.format(gid=gid) + (GROUP_SORT_PARAM if args.chronological else "")
         print("\n[group %d/%d] %s %s" % (gi, len(groups), gid, g.get("name") or ""))
         try:
-            page.goto(url, wait_until="domcontentloaded")
-            _sleep(4.0, 7.0)
-            check_alive(page)
-            expand_text(page)
-            posts = harvest_group(page, want=min(budget * 3, 40), max_scrolls=args.max_scrolls)
+            posts = harvest_group_search(page, gid, want=min(budget * 3, 40))
         except SystemExit:
             raise
         except Exception as e:
@@ -1092,7 +1217,8 @@ def collect_groups(args, ctx, page, result, known):
                 continue
             author = post_author(post)
             days, time_raw, precision = post_timestamp(post)
-            body = clean_post_body(post.get("text"), author.get("name"), time_raw)
+            body = (payload_body(post.get("text")) if post.get("from_payload")
+                    else clean_post_body(post.get("text"), author.get("name"), time_raw))
             ok, reason = classify(None, body, currency=currency)
             if not ok:
                 result["rejected"].append({"post_id": pid, "url": permalink, "group": gid,
@@ -1117,25 +1243,32 @@ def collect_groups(args, ctx, page, result, known):
             full_body = body
 
             if args.open_permalinks:
+                # ЖИВОСТЬ, ПОЛНЫЙ ТЕКСТ, ФОТО. Поиск по группе продолжает отдавать
+                # уже снятые посты: 8 сентября 2026 таких было три из одиннадцати.
+                # Живость решают заголовок страницы и текст в payload: у живого поста
+                # заголовок «<группа> | <начало поста> | Facebook», у снятого -- просто
+                # «Facebook». Текст -- только из payload: в DOM он перемешан подменой
+                # символов, и более длинная DOM-версия раньше заменила бы чистую.
                 print("  opening %s" % permalink)
                 try:
                     page.goto(permalink, wait_until="domcontentloaded")
-                    _sleep(3.0, 5.0)
+                    _sleep(4.0, 6.0)
                     check_alive(page)
-                    expand_text(page, limit=3)
-                    detail = page.evaluate(GROUP_JS)
-                    if detail:
-                        d = detail[0]
-                        d_author = post_author(d) or author
-                        d_days, d_raw, d_prec = post_timestamp(d)
-                        d_body = clean_post_body(d.get("text"), d_author.get("name"), d_raw)
-                        if len(d_body) > len(full_body):
-                            full_body = d_body
-                        if d_days is not None and days is None:
-                            days, time_raw, precision = d_days, d_raw, d_prec
-                        if d.get("images"):
-                            images = d["images"]
-                        author = d_author or author
+                    d = page.evaluate(DETAIL_JS, {"key": re.sub(r"\s+", " ", body)[:40],
+                                             "pid": pid}) or {}
+                    title = d.get("title") or ""
+                    if not d.get("text") and title.count(" | ") < 2:
+                        result["rejected"].append({"post_id": pid, "url": permalink, "group": gid,
+                                                   "reason": "post no longer available (title %r)"
+                                                             % title[:60],
+                                                   "excerpt": body[:160]})
+                        budget += 1
+                        print("    gone: %s" % title[:60])
+                        continue
+                    if d.get("text") and len(d["text"]) > len(full_body):
+                        full_body = payload_body(d["text"])
+                    if d.get("images"):
+                        images = d["images"]
                 except SystemExit:
                     raise
                 except Exception as e:
