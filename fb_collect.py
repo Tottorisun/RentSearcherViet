@@ -382,7 +382,11 @@ def parse_prices(text, currency="VND"):
                 add(val * 1_000_000, m)
 
     # Grouped numbers: 4.900.000 / 8,000,000 / 12 000 / 15,000
-    for m in re.finditer(r"(?<![\d.,])(\d{1,3}(?:[.,\s]\d{3}){1,3})(?![\d])", text):
+    # (?<!\d\s) -- не начинать с середины цифрового ряда через пробел: телефон
+    # «0386 715 274» иначе давал «715 274», и 11 сентября 2026 у двух
+    # нячангских постов ценой оказалось 715 274 ₫ вместо 13 и 12,5 млн -- кусок
+    # номера шёл в выдаче первым и становился ценой кандидата.
+    for m in re.finditer(r"(?<![\d.,])(?<!\d\s)(\d{1,3}(?:[.,\s]\d{3}){1,3})(?![\d])", text):
         raw = m.group(1)
         if raw.lstrip().startswith("0"):          # phone number, not money
             continue
@@ -1825,6 +1829,10 @@ def selftest():
     check("grouped vnd", parse_prices("Giá thuê 4.900.000 đ/tháng")[0][0], 4_900_000)
     check("5500k", parse_prices("giá 5500k/tháng")[0][0], 5_500_000)
     check("phone-not-money", parse_prices("LH 0901.234.567"), [])
+    # 11.09.2026: «0386 715 274» давал цену 715 274 ₫ -- кусок номера шёл первым.
+    check("phone-spaced-not-money",
+          [v for v, _ in parse_prices("RENT: 13,000,000 VND/month. Zalo: 0386 715 274")],
+          [13_000_000])
     check("deposit-skipped", [v for v, _ in parse_prices("Giá 8 triệu, cọc 16 triệu")],
           [8_000_000])
     check("electricity-skipped",
