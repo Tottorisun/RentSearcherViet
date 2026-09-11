@@ -97,7 +97,7 @@
       sortAsc:"Дешевле", sortDesc:"Дороже", sortNew:"Новые", perM2:"сортировать по цене за м²",
       poiLabel:"Ближе к...", poiNone:"не важно", poiMetro:"🚇 метро", poiSchool:"🎓 школе", poiHospital:"✚ больнице",
       mapTitle:"Карта района", mapNote:"реальные границы районов, OpenStreetMap",
-      mapLegendPin:"точка из объявления", mapLegendPinApprox:"приблизительно — центр района", mapLegendClick:"клик по району на карте — фильтр по нему",
+      mapLegendPin:"цена — место из объявления", mapLegendPinApprox:"пунктир — приблизительно, центр района", mapLegendCluster:"кружок с числом — несколько объявлений рядом", mapFullscreen:"⤢ На весь экран", mapExitFullscreen:"✕ Свернуть карту", mapNearMe:"📍 Рядом со мной", nearMeHere:"Вы здесь", nearMeDenied:"Не удалось узнать, где вы: браузер не дал доступ к местоположению.", nearMeFar:"Рядом с вами нет объявлений этого города — выберите свой город вверху.", mapLegendClick:"клик по району на карте — фильтр по нему",
       poiToggle:"метро / школы / госпитали",
       mapCredit:"Карта и адреса — © участники OpenStreetMap (ODbL). Границы районов актуальны после реформы административного деления 2025 года.",
       mapNoBounds:"нет официальных границ районов — показаны только точки объявлений",
@@ -123,7 +123,7 @@
       addFav:"В избранное",
       anyDistrict:"любой район", anyBudget:"любой бюджет", anyType:"любой тип",
       searchCtx:"поиск", forDays:"за", noAdsYet:"пока нет объявлений", adsShort:"объяв.",
-      m2:"м²", thousandPerM2:"тыс ₫/м²", mlnShort:"млн", metres:"м", km:"км",
+      m2:"м²", thousandPerM2:"тыс ₫/м²", mlnShort:"млн", thouShort:"тыс", metres:"м", km:"км",
       detailLabels:{deposit:"Депозит", electricity:"Электричество", water:"Вода", internet:"Интернет/wifi",
         managementFee:"Управление", amenities:"Удобства", policy:"Правила", contract:"Договор", notice:"Важно"},
       stamp:"Данные актуальны на 11 сентября 2026 · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
@@ -148,7 +148,7 @@
       sortAsc:"Cheaper", sortDesc:"Pricier", sortNew:"Newest", perM2:"sort by price per m²",
       poiLabel:"Closer to...", poiNone:"doesn't matter", poiMetro:"🚇 metro", poiSchool:"🎓 school", poiHospital:"✚ hospital",
       mapTitle:"District map", mapNote:"real district boundaries, OpenStreetMap",
-      mapLegendPin:"point from the listing", mapLegendPinApprox:"approximate — the district centre", mapLegendClick:"click a district on the map to filter by it",
+      mapLegendPin:"price — the listing's own location", mapLegendPinApprox:"dashed — approximate, the district centre", mapLegendCluster:"a number in a circle — several listings nearby", mapFullscreen:"⤢ Full screen", mapExitFullscreen:"✕ Close full screen", mapNearMe:"📍 Near me", nearMeHere:"You are here", nearMeDenied:"Could not find your location: the browser did not allow access to it.", nearMeFar:"No listings of this city near you — pick your city above.", mapLegendClick:"click a district on the map to filter by it",
       poiToggle:"metro / schools / hospitals",
       mapCredit:"Map and addresses — © OpenStreetMap contributors (ODbL). District boundaries reflect the 2025 administrative reform.",
       mapNoBounds:"no official district boundaries — only listing points are shown",
@@ -174,7 +174,7 @@
       addFav:"Add to favourites",
       anyDistrict:"any district", anyBudget:"any budget", anyType:"any type",
       searchCtx:"search", forDays:"within", noAdsYet:"no listings yet", adsShort:"listings",
-      m2:"m²", thousandPerM2:"k ₫/m²", mlnShort:"mln", metres:"m", km:"km",
+      m2:"m²", thousandPerM2:"k ₫/m²", mlnShort:"mln", thouShort:"k", metres:"m", km:"km",
       detailLabels:{deposit:"Deposit", electricity:"Electricity", water:"Water", internet:"Internet/wifi",
         managementFee:"Management fee", amenities:"Amenities", policy:"House rules", contract:"Contract", notice:"Important"},
       stamp:"Data current as of 11 September 2026 · listings older than 14 days are excluded · always confirm price and availability via the original listing before calling the owner."
@@ -257,6 +257,7 @@
         b.classList.toggle("active", b.getAttribute("data-theme-choice") === choice);
       });
     }
+    if (typeof setTiles === "function") setTiles();
   }
   function initTheme(){
     var saved = "auto";
@@ -534,17 +535,129 @@
     }
   }
 
+  // ПОДЛОЖКА. Стандартный стиль OSM рисует всё сразу -- дороги цветом, парки,
+  // вывески, -- и зелёные пины на нём теряются; в тёмной теме сайта он был
+  // белым пятном посреди тёмной страницы. У renthome.pro спокойная подложка
+  // CARTO, но она теперь только с ключом: 11 сентября 2026 CARTO без ключа
+  // отдавал вместо карты водяной знак «API KEY REQUIRED» -- с кодом 200, так
+  // что проверка по статусу ответа его пропускает (я на этом и попался). Их
+  // ключ стоит в адресе каждого их тайла, но он их. Поэтому тайлы остаются
+  // свои, OSM, а спокойными их делает CSS-фильтр на слое тайлов -- пины и
+  // границы районов он не трогает. Ни стороннего сервиса, ни ключа.
+  var TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+  var TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
+  var meMarker = null;
+  function isDarkTheme(){
+    var th = document.documentElement.getAttribute("data-theme");
+    if (th) return th === "dark";
+    return !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }
+  function setTiles(){
+    var box = document.getElementById("leaflet-map");
+    if (!box) return;
+    var dark = isDarkTheme();
+    box.classList.toggle("tiles-dark", dark);
+    box.classList.toggle("tiles-light", !dark);
+  }
+
+  function toggleMapFull(){
+    var card = document.querySelector(".map.card");
+    if (!card || !leafletMap) return;
+    var on = !card.classList.contains("map-full");
+    card.classList.toggle("map-full", on);
+    document.body.classList.toggle("map-full-open", on);
+    var btn = document.getElementById("map-full-btn");
+    if (btn){
+      // data-i18n меняется вместе с текстом: иначе переключение языка вернуло
+      // бы на развёрнутой карте надпись «На весь экран».
+      btn.setAttribute("data-i18n", on ? "mapExitFullscreen" : "mapFullscreen");
+      btn.textContent = t(on ? "mapExitFullscreen" : "mapFullscreen");
+    }
+    setTimeout(function(){ leafletMap.invalidateSize(); }, 80);
+  }
+
+  function nearMe(){
+    var note = document.getElementById("map-note");
+    if (!leafletReady) return;
+    if (!navigator.geolocation){ if (note) note.textContent = t("nearMeDenied"); return; }
+    var btn = document.getElementById("map-near-btn");
+    if (btn) btn.disabled = true;
+    navigator.geolocation.getCurrentPosition(function(p){
+      if (btn) btn.disabled = false;
+      var here = [p.coords.latitude, p.coords.longitude];
+      if (meMarker) leafletMap.removeLayer(meMarker);
+      meMarker = L.circleMarker(here, {radius: 8, weight: 3, color: "#fff", fillColor: "#2F7CF6", fillOpacity: 1})
+        .bindTooltip(t("nearMeHere")).addTo(leafletMap);
+      // Ближайшее объявление ЭТОГО города. Дальше 30 км -- человек в другом
+      // городе, и увести карту к нему значит показать пустоту; честнее сказать,
+      // что выбрать.
+      var best = null;
+      LISTINGS.forEach(function(l){
+        if (l.city !== state.city || typeof l.lat !== "number") return;
+        var km = haversineKm(here[0], here[1], l.lat, l.lon);
+        if (best === null || km < best) best = km;
+      });
+      if (best === null || best > 30){ if (note) note.textContent = t("nearMeFar"); return; }
+      leafletMap.setView(here, 15);
+    }, function(){
+      if (btn) btn.disabled = false;
+      if (note) note.textContent = t("nearMeDenied");
+    }, {enableHighAccuracy: false, timeout: 10000, maximumAge: 300000});
+  }
+
   function initLeafletMap(){
     if (leafletMap || typeof L === "undefined") return;
     leafletMap = L.map("leaflet-map", {scrollWheelZoom:true});
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
-    }).addTo(leafletMap);
+    L.tileLayer(TILE_URL, {maxZoom: 19, attribution: TILE_ATTR}).addTo(leafletMap);
+    setTiles();
+    if (window.matchMedia){
+      var mq = window.matchMedia("(prefers-color-scheme: dark)");
+      if (mq.addEventListener) mq.addEventListener("change", setTiles);
+    }
     wardLayerGroup = L.layerGroup().addTo(leafletMap);
-    markerLayerGroup = L.layerGroup().addTo(leafletMap);
+    // КЛАСТЕРЫ. Без них в Хошимине на экран ложилась тысяча точек, и выбрать
+    // одну было нельзя; раньше это лечилось раздвиганием одинаковых точек по
+    // спирали. Кластер решает то же честнее: «12» на месте двенадцати
+    // объявлений, при нажатии -- приближение, а у точек в одном месте -- веер.
+    // Не загрузилась библиотека -- карта работает по-старому, без кластеров.
+    markerLayerGroup = (typeof L.markerClusterGroup === "function")
+      ? L.markerClusterGroup({
+          showCoverageOnHover: false, spiderfyOnMaxZoom: true, chunkedLoading: true,
+          maxClusterRadius: 56,
+          iconCreateFunction: function(c){
+            var n = c.getChildCount(), px = n < 10 ? 34 : (n < 100 ? 40 : 48);
+            return L.divIcon({html: '<div class="cluster-pin" style="width:' + px + 'px;height:' + px + 'px">' + n + '</div>',
+                              className: "cluster-wrap", iconSize: [px, px]});
+          }
+        })
+      : L.layerGroup();
+    markerLayerGroup.addTo(leafletMap);
     poiLayerGroup = L.layerGroup().addTo(leafletMap);
     leafletReady = true;
+    var fullBtn = document.getElementById("map-full-btn");
+    if (fullBtn) fullBtn.addEventListener("click", toggleMapFull);
+    var nearBtn = document.getElementById("map-near-btn");
+    if (nearBtn) nearBtn.addEventListener("click", nearMe);
+    document.addEventListener("keydown", function(e){
+      if (e.key === "Escape" && document.body.classList.contains("map-full-open")) toggleMapFull();
+    });
+    // Карта, размеченная в контейнере без ширины (скрытая вкладка, ещё не
+    // разложенная страница), запоминает этот размер: Leaflet подгоняет город
+    // под 4 пикселя и ставит максимальное приближение -- пустой квадрат вместо
+    // карты. Так было и до кластеров, просто точки тогда тоже были не видны.
+    // Найдено 11 сентября 2026 в скрытой панели браузера. Когда у контейнера
+    // появляется настоящая ширина, город подгоняется заново.
+    if (window.ResizeObserver){
+      var box = document.getElementById("leaflet-map");
+      var lastW = box.offsetWidth;
+      new ResizeObserver(function(){
+        var w = box.offsetWidth;
+        if (!w || w === lastW) return;
+        leafletMap.invalidateSize();
+        if (lastW < 50 && w >= 50) renderCityMap();
+        lastW = w;
+      }).observe(box);
+    }
     var poiToggle = document.getElementById("poi-toggle");
     if (poiToggle){
       poiToggle.addEventListener("change", function(){
@@ -678,37 +791,59 @@
     return pos;
   }
 
+  // Подпись на пине -- цена коротко: «12,5 млн» для донгов (у вьетнамских
+  // страниц валюта одна), «45 тыс ₱», «1 060 $». Пин с ценой отвечает на
+  // главный вопрос прямо на карте; кружок-точку приходилось наводить по одному.
+  function pinPrice(l){
+    if (l.price === null) return "—";
+    var cur = curOf(l), v = l.price;
+    if (cur === "VND") return fmtPrice(v);
+    var sym = CUR_SYM[cur] || cur;
+    if (v >= 10000) return groupNum(v / 1000) + " " + t("thouShort") + " " + sym;
+    return groupNum(v) + " " + sym;
+  }
+
   function renderLeafletMarkers(list){
     if (!leafletReady) return;
     markerLayerGroup.clearLayers();
-    var pos = spreadStackedPins(list);
-    // Fingers are wider than cursors: a 7px dot is hard to hit on a phone.
+    var clustered = typeof markerLayerGroup.addLayers === "function";
+    // Раздвигать одинаковые точки нужно только без кластеров: кластер сам
+    // раскрывает их веером, а точки, раздвинутые на метры, он раскрыл бы лишь
+    // на самом крупном масштабе, после пяти нажатий подряд.
+    var pos = clustered ? {} : spreadStackedPins(list);
     var coarsePointer = !!(window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
-    var baseRadius = coarsePointer ? 9 : 7;
+    var batch = [];
     list.forEach(function(l){
       if (typeof l.lat !== "number" || typeof l.lon !== "number") return;
-      var marker = L.circleMarker(pos[l.id] || [l.lat, l.lon], {
-        radius: baseRadius, weight: 1.6, color: "var(--surface)",
-        fillColor: "#1E7A4C", fillOpacity: l.geocoded ? 0.9 : 0.35
+      var icon = L.divIcon({
+        className: "pin-wrap", iconSize: null, popupAnchor: [0, -32],
+        html: '<div class="price-pin' + (l.geocoded ? "" : " approx") + '">' + pinPrice(l) + '</div>'
       });
+      var marker = L.marker(pos[l.id] || [l.lat, l.lon], {icon: icon, keyboard: false});
       // A tap/click never navigates away: it opens the card and PINS it, so
       // the person can read it; the card's own "Посмотреть" link is the only
-      // way to the source. (Before: click = window.open, which on a phone
-      // meant every tap on a dot threw you out of the site with no chance to
-      // see what it was.) Hover still previews on mouse devices; on touch
+      // way to the source. Hover still previews on mouse devices; on touch
       // there is no hover, and emulated mouseout must not close a pinned card
       // before the link inside it can be tapped.
       marker.bindPopup(popupHtml(l), {closeButton:true, maxWidth:240, autoPanPadding:[24,24]});
       marker.off("click");                       // drop Leaflet's open/close toggle
       var pinned = false;
-      marker.on("click", function(){ pinned = true; marker.openPopup(); marker.setStyle({radius:10}); });
-      marker.on("popupclose", function(){ pinned = false; marker.setStyle({radius: baseRadius}); });
-      if (!coarsePointer){
-        marker.on("mouseover", function(){ if (!pinned) marker.openPopup(); marker.setStyle({radius:10}); });
-        marker.on("mouseout", function(){ if (!pinned){ marker.closePopup(); marker.setStyle({radius: baseRadius}); } });
+      function setActive(on){
+        var node = marker.getElement();
+        var pill = node && node.querySelector(".price-pin");
+        if (pill) pill.classList.toggle("active", on);
+        marker.setZIndexOffset(on ? 1000 : 0);
       }
-      marker.addTo(markerLayerGroup);
+      marker.on("click", function(){ pinned = true; marker.openPopup(); setActive(true); });
+      marker.on("popupclose", function(){ pinned = false; setActive(false); });
+      if (!coarsePointer){
+        marker.on("mouseover", function(){ if (!pinned) marker.openPopup(); setActive(true); });
+        marker.on("mouseout", function(){ if (!pinned){ marker.closePopup(); setActive(false); } });
+      }
+      batch.push(marker);
     });
+    if (clustered) markerLayerGroup.addLayers(batch);
+    else batch.forEach(function(m){ m.addTo(markerLayerGroup); });
   }
 
   function renderSuggestions(){
