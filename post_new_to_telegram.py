@@ -387,7 +387,14 @@ def clip(text, limit):
 
 
 def details_photos(l):
-    return (l.get("details") or {}).get("photos") or []
+    # Только настоящие адреса. С 11 сентября 2026 у строк из групп Facebook фото
+    # лежат на самом сайте, путями вида assets/fb_photos/<id>/01.webp: ссылки
+    # Facebook на картинки живут около четырёх дней, и хранить их нельзя. Telegram
+    # такой путь не откроет, а пост в хабе необратим -- бот не может найти и
+    # удалить свой прошлый пост. Строка с такими фото просто не наберёт
+    # --min-photos и будет пропущена, не помеченная как опубликованная.
+    return [u for u in ((l.get("details") or {}).get("photos") or [])
+            if isinstance(u, str) and u.startswith(("http://", "https://"))]
 
 
 def send_listing(token, chat_id, thread, l):
