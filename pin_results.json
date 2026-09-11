@@ -16990,5 +16990,65 @@
   "lon": 121.0379559,
   "source": "geocode",
   "matched": "One Rockwell"
+ },
+ "2000590": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000591": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000592": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000593": {
+  "lat": 16.0683682,
+  "lon": 108.1966311,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000594": {
+  "lat": 16.0589539,
+  "lon": 108.2194844,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000595": {
+  "lat": 16.0049492,
+  "lon": 108.2204494,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000596": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000597": {
+  "lat": 16.0589539,
+  "lon": 108.2194844,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000598": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000599": {
+  "lat": 16.0589539,
+  "lon": 108.2194844,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
