@@ -50,8 +50,13 @@ function Say-Owner {
 }
 
 try {
-    $args = @("run_pipeline.py")
-    if (-not $NoPublish) { $args += "--publish" }
+    # С 11 сентября 2026 сайт собирает и публикует СЕРВЕР (Netcup, таймер
+    # rentsearcher-pipeline.timer, 05:00 и 17:00 по Вьетнаму): компьютер ночью
+    # выключен. Здесь остаётся то, что может только этот ПК: группы Facebook (вход
+    # в личный аккаунт владельца с адреса дата-центра грозит блокировкой) и каналы
+    # Telegram (их кандидатов разбирает сессия здесь же). --publish отсюда больше
+    # не передаётся: два публикующих прогона столкнулись бы на пуше.
+    $args = @("run_pipeline.py", "--candidates-only")
 
     "[$stamp] запуск: python $($args -join ' ')" | Add-Content -LiteralPath $logFile -Encoding UTF8
     & python @args *>&1 | ForEach-Object {
