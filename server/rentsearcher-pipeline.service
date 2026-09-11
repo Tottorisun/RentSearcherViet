@@ -1,0 +1,40 @@
+# RentSearcher: суточный прогон на Netcup (188.68.56.188).
+#
+# ЧТО ИДЁТ ЗДЕСЬ, А ЧТО НА ПК ВЛАДЕЛЬЦА. Здесь -- всё, что не требует входа в
+# чужие аккаунты: Chợ Tốt, dotproperty, hoppler, обслуживание, карта, сборка и
+# публикация. Facebook -- только на ПК: программа ходит туда под личным
+# аккаунтом владельца, а вход с адреса дата-центра -- типичный повод для
+# проверки личности или блокировки. Telegram -- тоже на ПК: его кандидатов
+# разбирает сессия там же.
+#
+# ПОЧЕМУ NETCUP, А НЕ SELECTEL (проверено 11 сентября 2026 запросами с обоих):
+# из России не открываются t.me и api.telegram.org (оповещения), а dotproperty
+# отвечает 403. К тому же Selectel -- общий клиентский продакшн, где сборки
+# запрещены правилами инфраструктуры.
+#
+# ПРЕДЕЛЫ. На этом же сервере VPN владельца и три сайта, а свободно ~430 МБ.
+# Пик прогона измерен: 182 МБ (rebuild_final.py). Если он когда-нибудь
+# разрастётся, ядро остановит прогон, а не Xray.
+
+[Unit]
+Description=RentSearcher: суточный прогон без Facebook и Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=rentsearcher
+Group=rentsearcher
+WorkingDirectory=/opt/rentsearcher/app
+Environment=PYTHONIOENCODING=utf-8
+Environment=HOME=/opt/rentsearcher
+# Токен бота оповещений и чат -- здесь, не в репозитории (он публичный).
+EnvironmentFile=-/opt/rentsearcher/pipeline.env
+ExecStart=/bin/sh /opt/rentsearcher/app/server/run_on_server.sh
+MemoryHigh=300M
+MemoryMax=400M
+MemorySwapMax=200M
+CPUQuota=60%
+Nice=19
+IOSchedulingClass=idle
+TimeoutStartSec=2h

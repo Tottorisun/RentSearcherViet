@@ -58,6 +58,8 @@ import os
 import subprocess
 import sys
 import time
+import urllib.parse
+import urllib.request
 
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -148,6 +150,8 @@ def steps_for(a):
         Step("карта: данные Leaflet", [py, "build_leaflet_data.py"]),
         Step("сборка сайта (после карты)", [py, "rebuild_final.py"], timeout=900),
     ]
+    if a.candidates_only:
+        out = [st for st in out if st.name.startswith(("Facebook:", "Telegram:"))]
     return out
 
 
@@ -216,13 +220,40 @@ def alert_owner(text):
     """Провал обязан быть слышен. Лог никто не открывает -- 3 сентября вход
     протух, и об этом узнали по устаревшим данным, а не от программы."""
     if not os.path.exists(SAY):
-        return "оповещение пропущено: нет %s" % SAY
+        return telegram_direct(text)
     try:
         p = subprocess.run([sys.executable, SAY, text], capture_output=True, text=True,
                            encoding="utf-8", errors="replace", timeout=120)
         return (p.stdout or p.stderr or "").strip()
     except Exception as e:
         return "оповестить не удалось: %s" % e
+
+
+def telegram_direct(text):
+    """Оповещение там, где gelios_say.py нет, -- на сервере.
+
+    Тот же бот и тот же чат, что у gelios_say.py: токен -- из файла
+    GELIOS_TOKEN_FILE (или ~/.gelios/token), чат -- из переменной GELIOS_CHAT_ID.
+    В репозитории нет ни того, ни другого: он публичный. До 11 сентября 2026 на
+    машине без gelios_say.py оповещение молча пропускалось -- то есть на сервере
+    о протухшем входе, упавшем шаге или несостоявшемся пуше не узнал бы никто."""
+    tf = (os.environ.get("GELIOS_TOKEN_FILE")
+          or os.path.join(os.path.expanduser("~"), ".gelios", "token"))
+    chat = os.environ.get("GELIOS_CHAT_ID")
+    if not chat or not os.path.exists(tf):
+        return "оповещение пропущено: нет ни %s, ни токена с GELIOS_CHAT_ID" % SAY
+    try:
+        token = open(tf, encoding="utf-8").read().strip()
+        data = urllib.parse.urlencode({"chat_id": chat, "text": "[сервер] " + text[:3990],
+                                       "disable_web_page_preview": "true"}).encode()
+        req = urllib.request.Request("https://api.telegram.org/bot%s/sendMessage" % token,
+                                     data=data)
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return ("отправлено в Telegram" if json.load(r).get("ok")
+                    else "Telegram не принял сообщение")
+    except Exception as e:
+        # Текст исключения не печатается: в нём может оказаться адрес с токеном.
+        return "оповестить не удалось (%s)" % type(e).__name__
 
 
 def git(*args):
@@ -252,6 +283,12 @@ def publish(log, note):
     rc, _, err = git("push")
     if rc != 0:
         say(log, "пуш не прошёл: %s" % err)
+        # Раньше провал пуша оставался только в логе, а прогон завершался с кодом 0:
+        # данные собраны, сайт не обновлён, и никто об этом не знает.
+        last = (err.strip().splitlines() or ["?"])[-1][:200]
+        say(log, "оповещение владельцу: %s" % alert_once(
+            "RentSearcher: прогон собрал данные, но не опубликовал их -- пуш не прошёл (%s)."
+            % last, "push-failed", hours=12))
         return False
     say(log, "опубликовано: %s" % git("log", "--oneline", "-1")[1])
     return True
@@ -275,11 +312,19 @@ def main():
     ap.add_argument("--no-hoppler", action="store_true")
     ap.add_argument("--no-tg", action="store_true")
     ap.add_argument("--no-maintain", action="store_true")
+    # С 11 сентября 2026 сайт собирает и публикует сервер (Netcup), а ПК владельца
+    # собирает то, что может только он: Facebook -- из-за входа в личный аккаунт,
+    # Telegram -- потому что его кандидатов разбирает сессия на этом же ПК.
+    ap.add_argument("--candidates-only", action="store_true",
+                    help="только кандидаты Facebook и Telegram: без сборки и публикации")
     ap.add_argument("--publish", action="store_true", help="закоммитить и запушить результат")
     ap.add_argument("--dirty-ok", action="store_true",
                     help="работать, даже если в дереве есть чужие правки")
     ap.add_argument("--dry-run", action="store_true", help="показать план и выйти")
     a = ap.parse_args()
+    if a.candidates_only and a.publish:
+        sys.exit("--candidates-only и --publish несовместимы: кандидатов не публикуют, "
+                 "их разбирает сессия")
 
     plan = steps_for(a)
     if a.dry_run:
@@ -294,7 +339,9 @@ def main():
     # прямо сейчас держать наполовину сделанную партию, а --publish закоммитит
     # её вместе со своим.
     d = dirty()
-    if d and not a.dirty_ok:
+    # Кандидаты пишутся только в игнорируемые файлы, так что состояние дерева им
+    # безразлично, а сессия на ПК вполне может быть на середине своей партии.
+    if d and not a.dirty_ok and not a.candidates_only:
         sys.exit("в рабочем дереве есть незакоммиченные правки (%d файлов) -- возможно, "
                  "работает другая сессия. Разберитесь или запустите с --dirty-ok:\n%s"
                  % (len(d.split("\n")), d[:800]))
@@ -314,6 +361,7 @@ def main():
     os.close(fd)
 
     results = []
+    publish_failed = False
     try:
         with open(log_path, "w", encoding="utf-8") as log:
             say(log, "=== прогон %s ===" % stamp)
@@ -347,7 +395,7 @@ def main():
                     "RentSearcher: суточный прогон остановлен на шаге «%s». Лог: %s"
                     % (bad[0], os.path.basename(log_path))))
             elif a.publish:
-                publish(log, note)
+                publish_failed = not publish(log, note)
             elif dirty():
                 say(log, "результат не опубликован (--publish не задан); в дереве есть изменения")
         json.dump({"stamp": stamp, "steps": [(s.name, st) for s, st, _t in results]},
@@ -358,7 +406,8 @@ def main():
             os.unlink(LOCK)
         except FileNotFoundError:
             pass
-    return 1 if any(st in ("failed", "timeout") and s.fatal for s, st, _t in results) else 0
+    return 1 if (publish_failed or any(st in ("failed", "timeout") and s.fatal
+                                        for s, st, _t in results)) else 0
 
 
 if __name__ == "__main__":

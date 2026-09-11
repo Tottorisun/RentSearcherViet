@@ -1,0 +1,15 @@
+# Дважды в сутки по вьетнамскому времени: к утру и к вечеру сайт свежий,
+# включён ли компьютер владельца или нет. Persistent -- пропущенный запуск
+# (перезагрузка сервера) выполнится при первой возможности.
+
+[Unit]
+Description=RentSearcher: прогон в 05:00 и 17:00 по Вьетнаму
+
+[Timer]
+OnCalendar=*-*-* 05:00:00 Asia/Ho_Chi_Minh
+OnCalendar=*-*-* 17:00:00 Asia/Ho_Chi_Minh
+Persistent=true
+RandomizedDelaySec=10min
+
+[Install]
+WantedBy=timers.target
