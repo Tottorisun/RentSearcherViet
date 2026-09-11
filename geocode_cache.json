@@ -6143,5 +6143,71 @@
   "lon": 120.9769116,
   "display_name": "S-Tower, 1630, Abad Santos Avenue, Barangay 254, Tondo, Second District, Manila, Capital District, Metro Manila, 1630, Philippines"
  },
- "Euro Village, Phường Sơn Trà, Da Nang, Vietnam": null
+ "Euro Village, Phường Sơn Trà, Da Nang, Vietnam": null,
+ "One Serendra, Manila, Philippines": {
+  "lat": 14.5515528,
+  "lon": 121.055263,
+  "display_name": "Serendra One Gate 3 Entrance Road, Serendra, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1635, Philippines"
+ },
+ "Luna Gardens, Manila, Philippines": {
+  "lat": 14.5650871,
+  "lon": 121.035088,
+  "display_name": "Luna Gardens, Residential Drive, Rockwell Center, Poblacion, District I, Makati, Southern Manila District, Metro Manila, 1210, Philippines"
+ },
+ "Amorsolo West, Manila, Philippines": {
+  "lat": 14.5656031,
+  "lon": 121.0350922,
+  "display_name": "Amorsolo West, Residential Drive, Rockwell Center, Poblacion, District I, Makati, Southern Manila District, Metro Manila, 1210, Philippines"
+ },
+ "Amorsolo East, Manila, Philippines": {
+  "lat": 14.5655319,
+  "lon": 121.0356028,
+  "display_name": "Amorsolo East, Lopez Drive, Rockwell Center, Poblacion, District I, Makati, Southern Manila District, Metro Manila, 1210, Philippines"
+ },
+ "Two Roxas Triangle, Manila, Philippines": {
+  "lat": 14.5599282,
+  "lon": 121.0280891,
+  "display_name": "Two Roxas Triangle, Cruzada Street, Urdaneta, District I, Makati, Southern Manila District, Metro Manila, 1209, Philippines"
+ },
+ "One Rockwell, Manila, Philippines": {
+  "lat": 14.5634138,
+  "lon": 121.0379559,
+  "display_name": "One Rockwell, Poblacion, District I, Makati, Southern Manila District, Metro Manila, 1210, Philippines"
+ },
+ "Cavalry Hills Subdivision, Manila, Philippines": null,
+ "Cavalry Hills Subdivision, BGC / Taguig, Manila, Philippines": null,
+ "Park Terraces, Manila, Philippines": {
+  "lat": 14.5503026,
+  "lon": 121.024012,
+  "display_name": "Park Terraces, San Lorenzo, District I, Makati, Southern Manila District, Metro Manila, Philippines"
+ },
+ "The Renaissance Building, Manila, Philippines": null,
+ "The Renaissance Building, Makati, Manila, Philippines": null,
+ "The Residences, Manila, Philippines": {
+  "lat": 14.6048156,
+  "lon": 120.9889304,
+  "display_name": "The Residences, Padre Campa Street, Barangay 410, Sampaloc, Fourth District, Manila, Capital District, Metro Manila, 1015, Philippines"
+ },
+ "The Balmori Suites, Manila, Philippines": null,
+ "The Balmori Suites, Makati, Manila, Philippines": null,
+ "Bellagio I, Manila, Philippines": {
+  "lat": 14.5634599,
+  "lon": 121.029605,
+  "display_name": "Royal Bellagio Hotel, 5010, P. Burgos Street, Poblacion, District I, Makati, Southern Manila District, Metro Manila, 1210, Philippines"
+ },
+ "Avida Towers Verte, Manila, Philippines": {
+  "lat": 14.5553516,
+  "lon": 121.0530915,
+  "display_name": "Avida Towers Verte, 9th Avenue, Bonifacio Global City, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1635, Philippines"
+ },
+ "One Mc, Manila, Philippines": {
+  "lat": 14.5508454,
+  "lon": 121.0283205,
+  "display_name": "One Ayala MC Taxi, Ayala Avenue, San Lorenzo, District I, Makati, Southern Manila District, Metro Manila, 1226, Philippines"
+ },
+ "Verve Residences, Manila, Philippines": {
+  "lat": 14.5486331,
+  "lon": 121.0492244,
+  "display_name": "The Verve Residences One, 26th Street, Bonifacio Global City, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1635, Philippines"
+ }
 }
