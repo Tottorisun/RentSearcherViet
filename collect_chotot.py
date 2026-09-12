@@ -466,8 +466,26 @@ def main():
                     seen_photos |= ph
                     picked.append((city, key, type_ru, ad, max(0, int(age_days))))
 
+    # ЛИМИТ ТРАТИТСЯ ПО КРУГУ ГОРОДОВ, а не «сорок самых свежих по стране».
+    # 12 сентября 2026 у Куинёна на сайте было 5 строк, у Хойана 3, у Фантхьета
+    # 2 -- и не потому, что там нечего брать: проверка нашла по 4-6 годных
+    # объявлений в каждом. Просто сорок мест забирали Хошимин, Ханой и Дананг,
+    # где свежих объявлений сотни. Круг тратит лимит поровну, а внутри города
+    # порядок прежний -- сначала самые свежие. Так же устроен collect_hoppler.
     picked.sort(key=lambda p: p[4])
-    picked = picked[:a.limit]
+    queues = {}                      # обычный словарь хранит порядок вставки
+    for p in picked:
+        queues.setdefault(p[0], []).append(p)
+    ordered = []
+    while len(ordered) < a.limit and any(queues.values()):
+        for city in list(queues):
+            if not queues[city]:
+                del queues[city]
+                continue
+            ordered.append(queues[city].pop(0))
+            if len(ordered) >= a.limit:
+                break
+    picked = ordered
     print("найдено пригодных: %d (не старше %.1f дн.)" % (len(picked), a.days))
     print("пропущено:", ", ".join("%s %d" % (k, v) for k, v in skipped.items() if v))
     by_city = {}
