@@ -159,6 +159,12 @@ def steps_for(a):
                             [py, "ingest_facebook.py", "--write", "--insert"]
                             + (["--commit"] if a.candidates_only else []),
                             fatal=False, timeout=1800))
+            # Фотографии скачиваются у КАЖДОГО кандидата -- иначе их негде взять
+            # потом, ссылки Facebook живут четыре дня. Заводится меньшинство, и
+            # папки остальных копились бы навсегда, вися неотслеживаемыми под
+            # рукой у `git add -A`.
+            out.append(Step("Facebook: чистка скачанных фотографий",
+                            [py, "clean_fb_photos.py", "--apply"], fatal=False, timeout=600))
 
     if not a.no_dotproperty:
         # Медленный по устройству: возраст записи виден только на её странице,
