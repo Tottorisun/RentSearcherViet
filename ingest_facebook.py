@@ -106,13 +106,13 @@ NOT_A_RENTAL = (
 
 # Тип жилья. Порядок важен: «studio apartment» -- студия, а не квартира.
 TYPE_RULES = (
-    (r"\bstudio\b|студи", "Студия"),
+    (r"\bstudio\b|студи|\bmini\s?house\b|\bcan ho mini\b|\bchung cu mini\b", "Студия"),
     (r"\bvilla\b|\bbiet thu\b|вилл", "Дом"),
     (r"\btown\s*house\b|\bnha pho\b|таунхаус", "Дом"),
     (r"\bhouse\b|\bnha nguyen can\b|\bдом\b", "Дом"),
     (r"\bapartment\b|\bapt\b|\bflat\b|\bcondo\b|\bcan ho\b|\bchung cu\b|\bpenthouse\b|квартир",
      "Квартира"),
-    (r"\broom for rent\b|\bphong tro\b|комнат", "Комната"),
+    (r"\broom for rent\b|\bphong tro\b|\bnha tro\b|\bphong cho thue\b|комнат", "Комната"),
 )
 
 # Строка адреса: с неё начинается разбор района.
@@ -172,6 +172,15 @@ def _type_in(src):
     return None
 
 
+# Сдаётся не дом целиком, а его часть: «bottom part», «silong ra» (по-себуански
+# «только низ»), «tầng trệt». Заголовок при этом кричит HOUSE FOR RENT, и тип
+# выходил «Дом» -- фильтр показывал бы такую строку тем, кто ищет дом целиком.
+# Пост 4606474172943066: «HOUSE FOR RENT... Bottom part lang (SILONG RA), 2 bedroom».
+PART_OF_HOUSE = re.compile(
+    r"\bbottom part\b|\bsilong\b|\bupper floor only\b|\bground floor only\b|"
+    r"\b(?:1st|2nd|first|second) floor only\b|\btang tret\b")
+
+
 def type_of(text):
     """(тип, спальни). Тип сначала ищется в ЗАГОЛОВКЕ поста и только потом во
     всём тексте: у «1 BEDROOM APARTMENT FOR RENT» ниже по тексту почти всегда
@@ -182,9 +191,28 @@ def type_of(text):
     beds = it.beds_in(text)
     if typ == "Квартира" and beds == 0:
         typ = "Студия"
+    if typ == "Дом" and PART_OF_HOUSE.search(it.words(text)):
+        typ = "Квартира"
     if typ == "Студия":
         beds = 0
     return typ, beds
+
+
+# Любое число с тысячами из текста: ищем вторую цену, которую сборщик не счёл
+# ценой. 12 сентября пост про Valencia назвал 25 000 ₱ с мебелью и 18 000 ₱ без
+# неё; сборщик вернул одну сумму, и строка ушла бы на сайт с ценой, которой в
+# заголовке объявления нет. Отсеиваются только числа того же порядка, что цена
+# (от трети до трёх цен): коммуналка, площадь и телефоны в этот коридор не попадают.
+AMOUNT_RX = re.compile(r"(?<![\d.,])(\d{1,3}(?:[.,\s]\d{3})+|\d{4,9})(?![\d.,])")
+
+
+def other_prices(text, price):
+    out = set()
+    for m in AMOUNT_RX.finditer(text or ""):
+        v = int(re.sub(r"\D", "", m.group(1)))
+        if 0.3 * price <= v <= 3 * price and abs(v - price) > 0.03 * price:
+            out.add(v)
+    return sorted(out)
 
 
 def price_of(c):
@@ -203,6 +231,10 @@ def price_of(c):
     lo, hi = PRICE_LIMITS.get(cur, PRICE_LIMITS["VND"])
     if not lo <= price <= hi:
         raise Skip("цена %s %s вне разумных пределов" % (format(price, ","), cur))
+    others = other_prices(body_of(c), price)
+    if others:
+        raise Skip("в тексте есть и другая цена того же порядка: %s против %s"
+                   % (", ".join(format(v, ",") for v in others), format(price, ",")))
     return price, cur
 
 

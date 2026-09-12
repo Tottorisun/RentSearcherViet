@@ -113,7 +113,31 @@ WARD_ALIASES = {
 }
 # Район, названный как сам город, встречается в любом тексте про этот город --
 # совпадением с районом он не считается.
-CITY_WORDS = {"da-nang": {"da nang", "danang"}, "nha-trang": {"nha trang", "nhatrang"}}
+# Район, названный как сам город, встречается в любом тексте про этот город --
+# совпадением с районом он не считается. Ловушка не выдумана: в Нячанге,
+# Куинёне, Хойане, Вунгтау и Буонметхуоте реформа 2025 года создала район с
+# именем города («Phường Nha Trang», «Phường Quy Nhơn»), и слово из любого
+# объявления попадало бы в него.
+CITY_WORDS = {
+    "da-nang": {"da nang", "danang"},
+    "nha-trang": {"nha trang", "nhatrang"},
+    "ho-chi-minh": {"ho chi minh", "hochiminh", "sai gon", "saigon", "tphcm", "hcm"},
+    "ha-noi": {"ha noi", "hanoi"},
+    "hai-phong": {"hai phong", "haiphong"},
+    "can-tho": {"can tho", "cantho"},
+    "hue": {"hue", "thua thien hue"},
+    "buon-ma-thuot": {"buon ma thuot", "bmt", "dak lak", "daklak"},
+    "quy-nhon": {"quy nhon", "quynhon"},
+    "hoi-an": {"hoi an", "hoian"},
+    "vung-tau": {"vung tau", "vungtau"},
+    "da-lat": {"da lat", "dalat"},
+    "phu-quoc": {"phu quoc", "phuquoc"},
+    "phan-thiet": {"phan thiet", "mui ne", "muine"},
+    "binh-duong": {"binh duong", "binhduong"},
+    "cebu": {"cebu", "cebu city"},
+    "manila": {"manila", "metro manila", "ncr"},
+    "dumaguete": {"dumaguete", "dumaguete city", "negros oriental"},
+}
 # Места, чей район установлен по источнику, а не по прецеденту сайта:
 # Nominatim назвал объект (искомое имя стоит в его display_name), а точка ответа
 # попала в границы района на нашей карте. Проверено 12 сентября 2026. Прецедент
@@ -680,12 +704,16 @@ class Ctx:
         self.today = today
         cities = data["CITIES"]
         self.dnames = {c: {d["key"]: d["name"] for d in v.get("districts", [])} for c, v in cities.items()}
+        # По ВСЕМ городам, а не только по двум. 12 сентября 2026 заведение
+        # Facebook по девяти новым городам дало ноль строк: посты называли район
+        # прямо («Khu vực trung tâm Ninh Kiều»), но сравнивать было не с чем --
+        # список строился только для Дананга и Нячанга.
         self.ward_words = {}
-        for city in ("da-nang", "nha-trang"):
+        for city, names in self.dnames.items():
             m = {}
-            for k, name in self.dnames.get(city, {}).items():
-                w = words(re.sub(r"^Phường\s+", "", name))
-                if w and w not in CITY_WORDS[city] and w not in OLD_DISTRICTS[city]:
+            for k, name in names.items():
+                w = words(re.sub(r"^(?:Phường|Quận|Đặc khu|Xã|Thị trấn)\s+", "", name))
+                if w and w not in CITY_WORDS.get(city, ()) and w not in OLD_DISTRICTS.get(city, {}):
                     m[w] = k
             m.update(WARD_ALIASES.get(city, {}))
             self.ward_words[city] = m
@@ -804,7 +832,7 @@ def precedent(name, city, ctx, exclude):
 
 def resolve_da_nang(p, ctx, exclude):
     city = "da-nang"
-    wmap, olds = ctx.ward_words[city], OLD_DISTRICTS[city]
+    wmap, olds = ctx.ward_words[city], OLD_DISTRICTS.get(city, {})
     parts = [x.strip() for x in re.split(r"[,;]", p.get("address") or "") if x.strip()]
     parts = [x for x in parts if district_word(x) not in CITY_WORDS[city]]
     old = None

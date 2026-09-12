@@ -18628,5 +18628,77 @@
   "lon": 107.09249,
   "source": "chotot",
   "matched": null
+ },
+ "2000626": {
+  "lat": 16.0683682,
+  "lon": 108.1966311,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000545": {
+  "lat": 9.998913,
+  "lon": 105.806199,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000546": {
+  "lat": 9.998913,
+  "lon": 105.806199,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000547": {
+  "lat": 10.033793,
+  "lon": 105.777216,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000548": {
+  "lat": 10.32288,
+  "lon": 123.883939,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000549": {
+  "lat": 9.248483,
+  "lon": 123.292926,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000550": {
+  "lat": 9.359718,
+  "lon": 123.284764,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000551": {
+  "lat": 9.311661,
+  "lon": 123.237335,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000552": {
+  "lat": 16.4431524,
+  "lon": 107.6041478,
+  "source": "geocode",
+  "matched": "Hồ Đắc Di"
+ },
+ "3000553": {
+  "lat": 16.475065,
+  "lon": 107.612257,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000554": {
+  "lat": 14.556795,
+  "lon": 121.021123,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000555": {
+  "lat": 10.012093,
+  "lon": 104.01481,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
