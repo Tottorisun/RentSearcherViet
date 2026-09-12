@@ -22,7 +22,8 @@ except FileNotFoundError:
 
 CITY_VN = {"nha-trang":"Nha Trang","da-lat":"Da Lat","da-nang":"Da Nang","hoi-an":"Hoi An","ho-chi-minh":"Ho Chi Minh City",
            "vung-tau":"Vung Tau","quy-nhon":"Quy Nhon","phan-thiet":"Phan Thiet",
-           "ha-noi":"Hanoi","binh-duong":"Binh Duong","phu-quoc":"Phu Quoc","dumaguete":"Dumaguete","cebu":"Cebu","manila":"Manila"}
+           "ha-noi":"Hanoi","binh-duong":"Binh Duong","phu-quoc":"Phu Quoc","dumaguete":"Dumaguete","cebu":"Cebu","manila":"Manila",
+           "can-tho":"Can Tho","hai-phong":"Hai Phong","hue":"Hue","buon-ma-thuot":"Buon Ma Thuot"}
 # Страна для запроса к Nominatim. До 9 сентября 2026 в запрос была вшита строка
 # "Vietnam", и все 246 филиппинских строк спрашивались как «Banilad, Cebu, Vietnam»
 # -- такого адреса нет, поэтому ни одна из них не была геокодирована ни разу, и

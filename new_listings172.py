@@ -1,0 +1,136 @@
+# -*- coding: utf-8 -*-
+"""Chợ Tốt, автоматический сбор: 22 объявлений, 2026-09-12.
+
+Партию собрал collect_chotot.py -- без модели в контуре. Район взят точным
+совпадением ward_name_v3 с CITIES, описание собрано из полей объявления, а не
+пересказом текста продавца, возраст не больше 10.0 дней по orig_list_time.
+
+Объявления, район которых не совпал ни с одним нашим, пропущены, а не приписаны
+к соседнему -- в этом и разница с тем, как это делала сессия.
+"""
+from listing_lock import insert_listings
+
+IDS = [1002658, 1002659, 1002660, 1002661, 1002662, 1002663, 1002664, 1002665, 1002666, 1002667, 1002668, 1002669, 1002670, 1002671, 1002672, 1002673, 1002674, 1002675, 1002676, 1002677, 1002678, 1002679]
+
+N_RU = "Описание собрано программой из полей объявления на Chợ Tốt — тип, комнаты, площадь, улица, район, удобства по ключевым словам. Рекламный текст продавца не пересказан, названия районов оставлены вьетнамскими. Подробности смотрите по ссылке."
+N_EN = "This description was assembled by a program from the ad's own fields on Chợ Tốt — type, rooms, size, street, ward and amenities matched by keyword. The seller's marketing copy is not retold and ward names are left in Vietnamese. See the source for the rest."
+
+NEW_SRC = r'''
+L(1002658,"buon-ma-thuot","bmt","Дом",6000000,259,
+  "2-спальный дом, 259 м², ул. 160 Y Moan, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134649854.htm","сегодня",0,source="chotot",
+  descEn="2-bedroom house, 259 m², 160 Y Moan, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/7CztqERP_nC-pSnq_TUSB4mfjUBPJMWBSqt9bE0LN7g/preset:view/plain/8fbd48559f0971e4ba549da3d366228a-3001765290726730938.jpg", "https://cdn.chotot.com/5MJyHeMDeRehUjTcngSr62Vhbt00ANV0sFJ0BqnYZd0/preset:view/plain/488acba7d77be26fea36c222d0d467ed-3001765292043890867.jpg", "https://cdn.chotot.com/-2qGu4ok09L5G-F3SzmyRcvYjXZ_LkzrBEtNndweJe4/preset:view/plain/3bbbcbbb0c3182f063ad8444b3aa5005-3001765292454849722.jpg", "https://cdn.chotot.com/bCnA9iwA1-nVp7lCX1EDcnKU37y8dNJjq5V8v9TovSM/preset:view/plain/cd1117610c3bf13b5492388c57715693-3001765290533875891.jpg", "https://cdn.chotot.com/HpPaKB1P7KBf7a_P4LiMXc8ouDR5QNMVCnw7pWe1euk/preset:view/plain/86567636642146de69a403f1311a714d-3001765290490161684.jpg", "https://cdn.chotot.com/3PmEOxd2gni2y0-lEiDY7pG4FLKMLJ_2bpowqRhA9wE/preset:view/plain/2f7c558a5d580f606c67257dce0c4c9a-3001765291640816217.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002659,"buon-ma-thuot","bmt","Дом",18000000,699,
+  "4-спальный дом, 699 м², ул. Trung Tâm, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134638159.htm","сегодня",0,source="chotot",
+  descEn="4-bedroom house, 699 m², Trung Tâm, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/fOXiUrBtQ6VmRxumocFtrrabG1ekpbWlHFBB6AmaApc/preset:view/plain/f0394d376bcf653de922b31076208c9b-3001648217521161576.jpg", "https://cdn.chotot.com/Jn5_B-qgDHIOMivypbNX-xY567ejLAE6c-iMBlMso8s/preset:view/plain/1e1a29a31deacc5cbe11199d51b23329-3001648217707580204.jpg", "https://cdn.chotot.com/LvWH4ESwhts3di3nFQ1M3vnmozhUg12hfXM7mFjwmMU/preset:view/plain/d5432b0e46b43c7e75ff7a5d9a859b56-3001648217573735565.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002660,"buon-ma-thuot","tlp","Дом",5000000,129,
+  "1-спальный дом, 129 м², ул. Đinh Văn Gió, Tân Lập, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/133909456.htm","сегодня",0,source="chotot",
+  descEn="1-bedroom house, 129 m², Đinh Văn Gió, Tân Lập, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/4dkf2dMz2AFjmV7mfpRzV5MRi4FA8c5yjiGThzwQRsE/preset:view/plain/510df88270a5a47fe0c55acb5fc9d6a5-2995871952856238457.jpg", "https://cdn.chotot.com/-ou1hRILNvUU91xRFc-X6TVFDzMBuGoLSXuhCIrHFHM/preset:view/plain/6a251a2bbe03cceab31a162c3da5fb20-2995871953179166180.jpg", "https://cdn.chotot.com/Jfr0ObOt3azEohnghuBxQNOKqpMKFFP_LRgDq_tqVmY/preset:view/plain/8f77f38b4607c123dae64f9a0cc012cd-2995871953891349503.jpg", "https://cdn.chotot.com/tn9AjYCE0WkviBN9X43cKbof1SkYA_qC01wSNZR8RmA/preset:view/plain/308e51de60d572d6d283c1ce25936b94-2995871950888162303.jpg", "https://cdn.chotot.com/4wL6EJLHLytda1TFViHDYR0VsK3ppUoapsKvrpRPOzs/preset:view/plain/6031cae54243f6f842d9e160e77edbec-2995871950897399268.jpg", "https://cdn.chotot.com/HWwEo2uzrsuyPDjzhbTfAscRjt4IVODFkjquMtyROvc/preset:view/plain/4555dbba20d09233a150f053d9e2c444-2995871951321500244.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002661,"buon-ma-thuot","bmt","Дом",2000000,79,
+  "1-спальный дом, 79 м², пер. 151 Đường Y Ngông, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/133199033.htm","сегодня",0,source="chotot",
+  descEn="1-bedroom house, 79 m², Hẻm 151 Đường Y Ngông, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/Q_LeO5g6Tq9vlGynBEyjJ0NjdnXwhXLMacZYAAsHSp8/preset:view/plain/3aa8f40aba6860870d6570221fd894b5-2990454395823982671.jpg", "https://cdn.chotot.com/T37-HdldM3naC_RoQdYhDbFJXlQfKHK-ZkPZX_-Imz8/preset:view/plain/53a671c7100f74f4abe81d85493abacd-2990454397206195318.jpg", "https://cdn.chotot.com/aPDR3sWgFU7aIVvGe8vn66pPadb45rqQuZrdOMmiGrQ/preset:view/plain/dc3b6e717356c89346fc9e2b2a4734e3-2990454397417883727.jpg", "https://cdn.chotot.com/fYT2S4rpfmPdQuYTjUu7xLId4MghFz_ihEK7Knxp3fM/preset:view/plain/10de94e2288d99b282e8ce8754d5ed76-2990454397250171986.jpg", "https://cdn.chotot.com/MoDjQTIraif9cHf4owEAkAY3BiftWOnDXZWqOhwXr_M/preset:view/plain/658fe23b38edd56df18bdc7ffa80edaa-2990454397411861640.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002662,"buon-ma-thuot","eak","Дом",3000000,559,
+  "1-спальный дом, 559 м², ул. Săm Brăm, Ea Kao, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/133404001.htm","сегодня",0,source="chotot",
+  descEn="1-bedroom house, 559 m², Săm Brăm, Ea Kao, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/9Xp9TO7oXujW5ILk8MS4bPwTJxegJ_z1qYLAhjnsLXk/preset:view/plain/93a0cb552a3debf194e48de776153042-2992039446277808630.jpg", "https://cdn.chotot.com/5EXjt0eSl4q1YzuMKQcpc60d_CHgR43sajyNS0_ozPs/preset:view/plain/f6684cb388a9ff4dd4a818fccf656aee-2992039446368850424.jpg", "https://cdn.chotot.com/979ed4pSYH_IDKkhwLPkcz2tizR9NHsKAAdm-mWq_bc/preset:view/plain/23ea03dcb6bd1dc7feae86ac4a75447e-2992039448055858119.jpg", "https://cdn.chotot.com/KCJ9Vm8EcP4K2SuvJisF6Qk8asxrz0qFZbUbsErjAxk/preset:view/plain/a39491d71d4833f5f06bfc54dc9f5ab7-2992039447298573051.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002663,"buon-ma-thuot","eak","Офис",22000000,400,
+  "Офис, 400 м², ул. Lê Duẩn, Ea Kao, Буонметхуот — парковка.",
+  "https://www.nhatot.com/thue-van-phong-mat-bang-kinh-doanh-thanh-pho-buon-ma-thuot-dak-lak/134650475.htm","сегодня",0,source="chotot",
+  descEn="Office, 400 m², Lê Duẩn, Ea Kao, Buon Ma Thuot — parking.",
+  details={"photos": ["https://cdn.chotot.com/RzrvcJIIfbb4baiLfcUAnaxRp1mi8jCTMZaUInjisnU/preset:view/plain/139f83f9d8bc4ded399703eb4e7592f4-3001768621265855248.jpg", "https://cdn.chotot.com/vl0Urd_YysvhcfADpRwlLyuNMq1CjXfkLBPUjLKHR2g/preset:view/plain/20c81dae7f5318cf9689db44bd031cfa-3001768621371370682.jpg", "https://cdn.chotot.com/vDGIQ8Ehe-OnqwBcCRuRGKOuDkA5NbCkts489Slee8M/preset:view/plain/59babd0a89e0d98234a9ac8df2fb1fae-3001768620600789684.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002664,"buon-ma-thuot","tanb","Офис",12000000,216,
+  "Офис, 216 м², ул. Lý Chính Thắng, Tân An, Буонметхуот.",
+  "https://www.nhatot.com/thue-van-phong-mat-bang-kinh-doanh-thanh-pho-buon-ma-thuot-dak-lak/134617795.htm","вчера",1,source="chotot",
+  descEn="Office, 216 m², Lý Chính Thắng, Tân An, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/5Q-UOrMmDhFc62CbVHQjT4pfPIF5psxGkdl8nEsD324/preset:view/plain/32b17a3632eb1bb2ebf6c91839f044f4-3001488357745887924.jpg", "https://cdn.chotot.com/QBOOJzNuufyVhqb8nkb_Z2X4WhxFB-M9AN-UFxmdN34/preset:view/plain/51c8614bf2dd1bf64fdf4bd3a675e343-3001488357942424174.jpg", "https://cdn.chotot.com/Lr691pIdBdxByx1ko4jI0UF-eZ4jnZ4YqQT0Pd6_uyI/preset:view/plain/d49931acee38168ac56acea47aaf14f4-3001488708242967220.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002665,"buon-ma-thuot","bmt","Дом",35000000,125,
+  "5-спальный дом, 125 м², ул. Nguyễn Đình Chiểu, Buôn Ma Thuột, Буонметхуот — 5 санузлов, полная меблировка, кондиционер, лифт.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/132919951.htm","5 дней назад",5,source="chotot",
+  descEn="5-bedroom house, 125 m², Nguyễn Đình Chiểu, Buôn Ma Thuột, Buon Ma Thuot — 5 bathrooms, fully furnished, air conditioning, lift.",
+  details={"photos": ["https://cdn.chotot.com/1Qb7tVrW7EbnhemlzTQRaIxCLxi1eOjZ3C5g_VVL0y4/preset:view/plain/8f634419f79054aaa2526ae19f5b312c-2988298741675745966.jpg", "https://cdn.chotot.com/lrpdpWE7NHEMESvP7FHlCF4jKxOIXsW615HqSn5nHaE/preset:view/plain/efaddf251c60ea44d6dbf3afdbc1c7e9-2988298741845154014.jpg", "https://cdn.chotot.com/fo_KL7f0nULkJ7AnMwbLRQPzT34qv83peRljnvIIWZk/preset:view/plain/d60e5d8c2a7e9713ac18c7d3b6ba7a29-2988298741794597583.jpg", "https://cdn.chotot.com/jjV7VcaXuND3OPV-RXeSkCzJyGsswf-qRXnDvdC10Os/preset:view/plain/5d9f23c0d36d7253a1f46e4fb6de46c7-2988298742245562262.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002666,"buon-ma-thuot","bmt","Дом",7500000,139,
+  "4-спальный дом, 139 м², ул. Trần Hưng Đạo, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134545142.htm","5 дней назад",5,source="chotot",
+  descEn="4-bedroom house, 139 m², Trần Hưng Đạo, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/C_iQESmphmMjM5KTWIUDxOTm6zUT-mfPEYU8DyhzJQs/preset:view/plain/83999fb62279597e11cb5babc564cf34-3000922864059798917.jpg", "https://cdn.chotot.com/ojITPUc7xU3MTmWilQrF7OvmhTAcLtb3ePJLW5Btanc/preset:view/plain/75cb42412c805409f63ce2f51d540911-3000922863200085078.jpg", "https://cdn.chotot.com/upwnjz6POu8MUYj3kVpsarxH6wXOkjfg0itgfgAuNb0/preset:view/plain/238b2c9a0bfa1259fbbed5e0ab66ab3a-3000922863257994871.jpg", "https://cdn.chotot.com/6urrSHlWPGYqW5VQBoLsovzDXdQfR4hrPrHIU6k276Y/preset:view/plain/42dacb6ed127ccd7d8b36f42c3c981e2-3000922863855477748.jpg", "https://cdn.chotot.com/ROjPQioy6sEyZmeo0Vj_uJ0YKvCw6e4HecrAb2kYZbA/preset:view/plain/4a4fcd25043d51db59a03be72eca2df9-3000922863927617175.jpg", "https://cdn.chotot.com/0rTPbBOWXyqs1SiQELpsVYqkJD7oueGUDjceQBbwczE/preset:view/plain/e50d5ec83791df797073f6ea022b2050-3000922863580789892.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002667,"buon-ma-thuot","bmt","Дом",8000000,199,
+  "2-спальный дом, 199 м², ул. Xuân Diệu, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134543386.htm","5 дней назад",5,source="chotot",
+  descEn="2-bedroom house, 199 m², Xuân Diệu, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/fTPPNrU4M-NoOE27R-qbD-CnJw1Nb3FhwzUwqZSwWGs/preset:view/plain/086a7c1957be6ea6bdd959385fe607eb-3000913208855418245.jpg", "https://cdn.chotot.com/2xUdqfOKvs7OuJFLNeD49jy331NbUO-t239aajr5cO4/preset:view/plain/88b37b84cde618ccf1bb77d353b4a76f-3000913207781610885.jpg", "https://cdn.chotot.com/yUKOtZCU8io8WuGPyJnI4UHba3CwqJB1KVGRVyrWqWU/preset:view/plain/8eeca3be72771b7e6a541c513be0fb70-3000913209409137503.jpg", "https://cdn.chotot.com/lvofOBpWNbauXIBO4UIBcstw9wgbacnEyhkg_J8kGwE/preset:view/plain/26757f9cf52530098300fc8bcfb9abc6-3000913208449154180.jpg", "https://cdn.chotot.com/yY6CzsSNpKZbYt7FCiCdJUpyUzDmaHXchZCNRw9jGYc/preset:view/plain/7ea67e56c5b38ea67945202cb9e6633d-3000913208953816695.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002668,"buon-ma-thuot","tlp","Дом",9000000,120,
+  "3-спальный дом, 120 м², ул. Ama Jhao, Tân Lập, Буонметхуот — 1 санузел, бассейн.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134539276.htm","6 дней назад",6,source="chotot",
+  descEn="3-bedroom house, 120 m², Ama Jhao, Tân Lập, Buon Ma Thuot — 1 bathroom, swimming pool.",
+  details={"photos": ["https://cdn.chotot.com/kUWRB15ITkcSHQlDTsqZ2VsPtJ4e6iBsqitcj9jc4bs/preset:view/plain/6fcf9ec9f7a56a5348b7db28149c5d58-3000887837523078554.jpg", "https://cdn.chotot.com/E9mMwGraVVp1IXE-idH3UpfMCZHtZrTHXI_I2tU5jKU/preset:view/plain/92fcac58338398b176a458f2e3de055b-3000887838481393376.jpg", "https://cdn.chotot.com/IBpcs5U_yuu_sOh69NEUcUkZ7_DPkxRX2TQH8xOXI-o/preset:view/plain/5ce329000c5491f6535c210de797d2d7-3000887834145998455.jpg", "https://cdn.chotot.com/qj1GocLCKhbAB6XO6hy4sFkOMIgKDVpkDnMmDiqp1Pk/preset:view/plain/90f9a7b5b8b77e6ae63908d6935f4c33-3000887836226438775.jpg", "https://cdn.chotot.com/xnR-rd_ykjk7_vaGXq3DOtQg0MndPvjKrfZmLMKUeU8/preset:view/plain/49484b4c43fd68c20a2e774e6c96feeb-3000887838176269938.jpg", "https://cdn.chotot.com/ksu9EgYVy4HKWPpY3Yh4zdnVHuCG_jcrQzzJpUs4gBI/preset:view/plain/a161feda5ee664accc3cf14637df7507-3000887837837552479.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002669,"buon-ma-thuot","bmt","Дом",12000000,199,
+  "4-спальный дом, 199 м², ул. Giáp Hải, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134079236.htm","6 дней назад",6,source="chotot",
+  descEn="4-bedroom house, 199 m², Giáp Hải, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/pVi_EcMP-6v7yvay802fXGin-6oX8roeFFHoh188vog/preset:view/plain/55aadcb4a40ca792c7f0239d10a57ada-2997150148669268010.jpg", "https://cdn.chotot.com/yRMeNFOt7vKREtwxM7XbfjyHZg0-NYmWq81tqmp7MJw/preset:view/plain/7d8ba38dd2c865a4c2408b7f28147a56-2997150149764389227.jpg", "https://cdn.chotot.com/fK0kjVsXkxW15v4sYkbaNqTrQ06Quvm--b5TTfXOH9A/preset:view/plain/a52947f46da5fed5c2db5066b524e273-2997150149820623792.jpg", "https://cdn.chotot.com/CBb5jpLM8LB0tvHNBvst_jwA0NfExfpt0jy-LewzTFM/preset:view/plain/d449eb1712f4c9534043be30f84a4d7d-2997150149469817929.jpg", "https://cdn.chotot.com/A4y865sTjBixZdaoywqfhuv9kQ0CXImuAmOxY-hcE0g/preset:view/plain/b72638846f53c537c55bc91f9e6038b0-2997150149720878968.jpg", "https://cdn.chotot.com/cPA_uP9gCKNelB04aeX0qPJn-bx4fbRE3KfjyIUHPCM/preset:view/plain/3079c4f96d67326d393b4759a75db456-2997150148712552837.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002670,"buon-ma-thuot","bmt","Дом",30000000,900,
+  "9-спальный дом, 900 м², ул. Phan Bội Châu, Buôn Ma Thuột, Буонметхуот — балкон.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/131502226.htm","6 дней назад",6,source="chotot",
+  descEn="9-bedroom house, 900 m², Phan Bội Châu, Buôn Ma Thuột, Buon Ma Thuot — balcony.",
+  details={"photos": ["https://cdn.chotot.com/d6YOk8XZTypfPk7_i744o2KR8Pp7FK5NuqtQID-mUbQ/preset:view/plain/44a563452f289bd56dc2665f68a02000-2977584640240584018.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002671,"buon-ma-thuot","bmt","Дом",10000000,199,
+  "3-спальный дом, 199 м², ул. Hùng Vương, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134527074.htm","6 дней назад",6,source="chotot",
+  descEn="3-bedroom house, 199 m², Hùng Vương, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/rGJ85ZgHTQR08QHr_-LtgvBd5WouyV0uEzD4O6reHlk/preset:view/plain/21b44820f921c4ebed6c200ea878c49a-3000770421996515920.jpg", "https://cdn.chotot.com/yGMFy8toi3fqvLqDq1y-9TZE1O_ESMymc9UW1jJZFRE/preset:view/plain/e12f55572eaa6e8fd0b4568f05f10e97-3000770422200825360.jpg", "https://cdn.chotot.com/AgDHHqh2SjlMGwpaQBW_9srFB6AV5ZqMiwONagmDelA/preset:view/plain/15a7e2552a84697f9a4458e7d2aeb8b9-3000770422242793358.jpg", "https://cdn.chotot.com/zGJnEkk0DSfpqhgs3JSxXD7q0bb1fV8b8S2drPSlayk/preset:view/plain/5f1571f8ddd2f75c7e106cc1903b67ff-3000770420861614771.jpg", "https://cdn.chotot.com/KoccuhSQOmyMr-epU7KaZa-TE2HeZXYO-kOf3hE_12U/preset:view/plain/182b6874c02dee68d8c04240193407d7-3000770420835834900.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002672,"buon-ma-thuot","bmt","Дом",7500000,180,
+  "3-спальный дом, 180 м², ул. Y Moan Ênuôl, Buôn Ma Thuột, Буонметхуот — 2 санузла, кондиционер, стиральная машина.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134504715.htm","8 дней назад",8,source="chotot",
+  descEn="3-bedroom house, 180 m², Y Moan Ênuôl, Buôn Ma Thuột, Buon Ma Thuot — 2 bathrooms, air conditioning, washing machine.",
+  details={"photos": ["https://cdn.chotot.com/RI6CuJfVEw7DA1O8rlXRaq5yl35X_JetP1craGhlZ-w/preset:view/plain/9fc57e0120109bd8a1239279b2871fe8-3000601585762644247.jpg", "https://cdn.chotot.com/eb1FEBlubSy2strXSD9GF-vBj14_kovpx-pedMwudxY/preset:view/plain/1442ab58c6604fbdff15dfa330a8477c-3000601585213246928.jpg", "https://cdn.chotot.com/T0XlfBfeqMyPasR2l2B9h1io71iYMf4v1tJJXRkoZM0/preset:view/plain/b19ceba5a609d60fc39592691e7ec9b7-3000601585819853078.jpg", "https://cdn.chotot.com/-sgAymv1eMivoMTle46C-Ro254h24oVThXqs6zz53LA/preset:view/plain/22fc1f3a38548aba7fc44ebb86dbb6e7-3000601586585575080.jpg", "https://cdn.chotot.com/p1qqagnQ6pjcSNREldcgzJWN43b_nD-YHoWFIgoQrt8/preset:view/plain/e931f92cddf6bfbb611e5c533f76dafe-3000601586425740206.jpg", "https://cdn.chotot.com/-oDniM_A835-2rYsOTt3e4Eow9usCk9tqAkkGoDjk-Y/preset:view/plain/5225731f440144c0de0ff300f4f876b9-3000601585876981125.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002673,"buon-ma-thuot","bmt","Дом",8000000,239,
+  "2-спальный дом, 239 м², ул. Lý Thái Tổ, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134496432.htm","8 дней назад",8,source="chotot",
+  descEn="2-bedroom house, 239 m², Lý Thái Tổ, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/COgtkK2svgxRqGkvI_gwsIFc0uLOYIWUfiGtZnfstKo/preset:view/plain/3b51300ecc3196b547e1b2d72738dbd5-3001345178548183471.jpg", "https://cdn.chotot.com/urB1GXnFuGzGGxtZJjoi6X-IPO-rDc7YCHMMsUF7ywc/preset:view/plain/cdf0e97bafc198c7d08103e92af46d46-3001345178322209460.jpg", "https://cdn.chotot.com/W7mYa4uzPUaBGHSh4-1NIFhvMDP02592MbJdoCOtt-A/preset:view/plain/7e84eccc4b586dc403374eae20e384bd-3001345178252464714.jpg", "https://cdn.chotot.com/Btgg6EK8jcOwjhZClInIRYhfa2Ge2Oc8g3UFsx0n5CI/preset:view/plain/28e9b3087998e878e83c82ba4b2b80a3-3001345178510156924.jpg", "https://cdn.chotot.com/EjHZD5c49lR45wUcIuJLJ1JNpWt3wi5IrL-lv1FNI40/preset:view/plain/87ed34201b92e49da32f379f6444885a-3001345178410333251.jpg", "https://cdn.chotot.com/9_fNOYj-Ut4XX0AKjG71e_ZcnpWoK0g16EBHQQCFIqk/preset:view/plain/d39b026067de56e5bc38bccd65e5d6ad-3001345178280328388.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002674,"buon-ma-thuot","bmt","Дом",16000000,199,
+  "3-спальный дом, 199 м², ул. Giáp Hải, Buôn Ma Thuột, Буонметхуот — кондиционер.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134494886.htm","8 дней назад",8,source="chotot",
+  descEn="3-bedroom house, 199 m², Giáp Hải, Buôn Ma Thuột, Buon Ma Thuot — air conditioning.",
+  details={"photos": ["https://cdn.chotot.com/UiJV3119lNdwoxNq4OzhTJW4CZF8TQOvmaYB8n8Kq6E/preset:view/plain/8a5f6da1afcee89cc262aef5f0a7a657-3000510672473489454.jpg", "https://cdn.chotot.com/zLyamzHMRc5fZqRPb0HrtPtJcUJoDMS3p0uKLvmPxzg/preset:view/plain/027813b7b7fa898b6e2b190f58b597f2-3000510672874635109.jpg", "https://cdn.chotot.com/_1RksdhU9NoHw-lmqHWySFPCbIeei_Huf-rrjayeFiQ/preset:view/plain/c9c5e98cb5c1f7a48de7b703835b2df7-3000510672770765374.jpg", "https://cdn.chotot.com/joZEe8IKOvYyjjQ54nUzKFzYv0jTTGKA8hJklWLCDyM/preset:view/plain/8bed77961ce0f920cc21e5a1a2e37c72-3000510672724865687.jpg", "https://cdn.chotot.com/x-s4Rx4X2Nb4G8llMIP_2V1FwXq6OMeU4WifjLOeu6o/preset:view/plain/df9691d548afba005f0956c0bbd964ae-3000510672905366480.jpg", "https://cdn.chotot.com/WvgdCgCuKNdESwDdW3oS4z_pPaSLI1TlG5uAOL-aB0U/preset:view/plain/4997419bcfcdeb452eb550696401b5df-3000510672857097120.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002675,"buon-ma-thuot","bmt","Дом",6000000,139,
+  "1-спальный дом, 139 м², ул. Nguyễn Hữu Thọ, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134489159.htm","8 дней назад",8,source="chotot",
+  descEn="1-bedroom house, 139 m², Nguyễn Hữu Thọ, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/9bsN-HhNUsb1WkoNseNeXSHxRhRoVmTXaZCVJRc9mrg/preset:view/plain/015acaab173876501eaa7bd41d60bdb8-3000478859809718117.jpg", "https://cdn.chotot.com/lr6ClJuYxSF9kC5Tc4kG2Uy3RfuCPd8bjjCh75zvw8w/preset:view/plain/9326815a46772f82b9d1634e207ce0fb-3000478859859222590.jpg", "https://cdn.chotot.com/T5WhcKtUz6B_K9oERJE16RyQts0RVZPuPXYGPLkgCAY/preset:view/plain/400ecacf0df001a7b10e6986ae0f4618-3000478859946209858.jpg", "https://cdn.chotot.com/fqMl2-s7orvFwmJp5RKvWq3HPBJJbaLMmhupN3i3nmg/preset:view/plain/3540921c42d56133c6ebbf63556f28b1-3000478860128989847.jpg", "https://cdn.chotot.com/Hqp7HS5xjQsSbhTtORZL-aiEChSrkovjoF8eFXWssJM/preset:view/plain/ff64b2f89e82a9f0a041d123a8de8990-3000478860215729546.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002676,"buon-ma-thuot","bmt","Дом",17500000,299,
+  "3-спальный дом, 299 м², ул. Nguyễn Khuyến, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134487698.htm","8 дней назад",8,source="chotot",
+  descEn="3-bedroom house, 299 m², Nguyễn Khuyến, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/c3gXbF_nFXkWzGscbdCWVxpD9D4SXh1Sn4HRbbxkW4o/preset:view/plain/faa22983c1782be424ec6cf2a25e47fd-3000471820584055787.jpg", "https://cdn.chotot.com/-VCiDTyi-daMRSfAsOVObb-ejP3vq0ijKFPOaUDV-X0/preset:view/plain/dd5f660692d358d2a8e1c80d60534dec-3000471820552091424.jpg", "https://cdn.chotot.com/lwbj_oVdDfMX0XsfXckoRc_MR_7C2fCiPIJyIrV7Xm4/preset:view/plain/398b5e7277b08b15f659ca8114880488-3000471819461328942.jpg", "https://cdn.chotot.com/qgTe5QJbHL7wYxTe-8p0l3NGnYF3WMa09Ln98ERqYAo/preset:view/plain/c384c56758c07dfca22886d4eb063f2d-3000471819669189271.jpg", "https://cdn.chotot.com/RR89_8x09J14-QIrKCi-AZBLsX7whkke5wHXNHCF834/preset:view/plain/2551c6d0890c0cb9e012348cfcb22772-3000471819638750602.jpg", "https://cdn.chotot.com/ErM71UG27cZlqfCrKhijytePXHl3cb6GAXCC2Sf2YoI/preset:view/plain/d284290bcc6ce5cdf0eadf1bf30b995d-3000471819613463456.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002677,"buon-ma-thuot","bmt","Офис",2500000,200,
+  "Офис, 200 м², ул. Mai Hắc Đế, Buôn Ma Thuột, Буонметхуот.",
+  "https://www.nhatot.com/thue-van-phong-mat-bang-kinh-doanh-thanh-pho-buon-ma-thuot-dak-lak/134504959.htm","8 дней назад",8,source="chotot",
+  descEn="Office, 200 m², Mai Hắc Đế, Buôn Ma Thuột, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/5UPWKqVY8IUd2Ntkq8eX5DlWGy6C3rDnRcTFyjBNn2Q/preset:view/plain/4680a2f4757da08350fddc0789a9085c-3000603077469459845.jpg", "https://cdn.chotot.com/T61qcVCKKT6u1rpRG6hJpqdMolDKbzYi7jN65ui0qek/preset:view/plain/fedf44648f5c0013989984a95823c589-3000603077532454352.jpg", "https://cdn.chotot.com/dHU6ghRrCAi8rgzafO1FPlRtcGdruhwA3qabMeu1x2g/preset:view/plain/669aea9378e4276c0abf8b95193b407b-3000603090316889552.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002678,"buon-ma-thuot","tlp","Дом",3000000,229,
+  "3-спальный дом, 229 м², ул. Nguyễn Đình Thi, Tân Lập, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134478233.htm","9 дней назад",9,source="chotot",
+  descEn="3-bedroom house, 229 m², Nguyễn Đình Thi, Tân Lập, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/3dv-5x7YjCV9NHTBtSCowUBVFDBPK8iutW0fzcm9jfE/preset:view/plain/93adaebc46c3b71f9acb8cccfe3c31f9-3000373689287453064.jpg", "https://cdn.chotot.com/HkXrinygRdmT74fgj5cPtHpQMEDBh7myt1-Q6_Yh1Gw/preset:view/plain/3cc94c567161addfc5aa182279a067eb-3000373688650959319.jpg", "https://cdn.chotot.com/v76mJZi4t8lOnru-9MX4Dwz2wYrBr82yhdlwfBC1Ofo/preset:view/plain/1bbad62c31e87bd439975c5f02fbf42f-3000373688848023598.jpg", "https://cdn.chotot.com/F6RElauNy_7vWRJts025Xax9sjqocqJ4UqDbk9aVXeI/preset:view/plain/399d0b348f57bdb3156e00521f77cccc-3000373689195415779.jpg", "https://cdn.chotot.com/SRk007NyQ8XKu3aaFoQj574pasSHWVHL1wI7Jk-t1_I/preset:view/plain/fe6d811e21bd4efbe92b64923c1bb808-3000373689231201303.jpg", "https://cdn.chotot.com/MSn152eJ6YTppn-2EOr8t7Wkg7kE3NaJfD9GaX5Oi2o/preset:view/plain/0d42ca051b2bafb952bc3fa293f80f91-3000373689263939744.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(1002679,"buon-ma-thuot","tlp","Дом",2500000,40,
+  "1-спальный дом, 40 м², ул. Ama Khê, Tân Lập, Буонметхуот.",
+  "https://www.nhatot.com/thue-nha-o-thanh-pho-buon-ma-thuot-dak-lak/134473175.htm","9 дней назад",9,source="chotot",
+  descEn="1-bedroom house, 40 m², Ama Khê, Tân Lập, Buon Ma Thuot.",
+  details={"photos": ["https://cdn.chotot.com/skLeZvrVANbUhYmwuazPOFFxQDnLHqIphwkXuo50XDk/preset:view/plain/8a91851d412a64e7664bba7d7d8b063a-3000325546105434938.jpg", "https://cdn.chotot.com/r3v16beikZ_sX_TKQyixT-mImhtkPxb9skw--0ehVr0/preset:view/plain/d9908a5d875e5e023e2fc25ddd782928-3000325545957392430.jpg", "https://cdn.chotot.com/dGDzOYuOt2S2Zx-waLBj0OO6b4LJJEZpLl94Aj7XPAE/preset:view/plain/967e202d52b873e127f6ff463aa9377c-3000325546287630769.jpg", "https://cdn.chotot.com/-9GJOm4PWnrgCX-hfUMTbPP1KG0rDt_v_Omx6tVmSMs/preset:view/plain/4034660a9247e247eadbd052bd5b19ec-3000325544064108771.jpg", "https://cdn.chotot.com/kiYk0nhn9rqfPzF3ICR4aNdbNMUEMIOfDiryFQeVsQs/preset:view/plain/551749535ed7e3ed06df6d0634426e73-3000325547532235680.jpg", "https://cdn.chotot.com/5CN5EAvcKBiRftDscGUTSKZLIk-vB9TDkHnz3bNJh5s/preset:view/plain/53a5f722a891c8632cefcec468277234-3000325546270242407.jpg"], "notice": "RU_N", "noticeEn": "EN_N"}),
+'''
+
+# Оговорка одна на всю партию, поэтому в строках стоит метка, а не её текст:
+# так партия остаётся читаемой глазами.
+NEW_SRC = NEW_SRC.replace("RU_N", N_RU).replace("EN_N", N_EN)
+
+if __name__ == "__main__":
+    insert_listings(NEW_SRC, IDS, owner=__file__)

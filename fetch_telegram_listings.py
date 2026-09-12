@@ -48,7 +48,6 @@ CHANNELS = {
     "danangrentaflat":        "da-nang",
     "vietnam_nedvijimost":    "da-nang",
     "danang_house":           "da-nang",
-    "danang_rent":            "da-nang",
     # Nha Trang
     # rentnhatrang is the largest rental channel found anywhere in this survey
     # (4,450 subscribers, posting daily) and was missed by the first sweep --
@@ -69,6 +68,19 @@ CHANNELS = {
     # Telegram rental channels exist essentially only where the Russian-speaking
     # community is dense -- Nha Trang and Da Nang.
     "dalatapartment":         "da-lat",
+    # Проверка 12 сентября 2026: канал danang_rent исчез (лента отдаёт заглушку),
+    # строка убрана -- каждый прогон тратил на неё запрос впустую. Далатский
+    # канал, наоборот, живее, чем считалось: 14 постов с 10 мая по 1 июля, то
+    # есть около двух в неделю, с площадью, ценой и 6-10 фотографиями.
+    #
+    # Ханой -- посуточный оператор, но посты строго по шаблону: «📍 тип (район
+    # по-русски)», «Сутки:/Месяц:» в долларах, «Код объекта», ровно 10 фото.
+    # Заводить их программа пока не может: район назван по-русски («Ба Динь»),
+    # а улиц в постах нет. Пока это кандидаты на ручной разбор.
+    "Hanoi_Rent":             "ha-noi",
+    # Фукуок: единственный вьетнамский город сайта без единой строки. Поток
+    # слабый (пост в две-три недели) и текст свободный, но и это открывает город.
+    "Qhu_Quock_Rent_BigTravelChat": "phu-quoc",
 }
 
 # Known cross-posting pairs: the same flat is published in both channels.

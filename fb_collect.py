@@ -183,6 +183,58 @@ GROUPS = {
     "da-nang": [
         {"id": "canhochothuedanangtot", "name": None},
     ],
+    # --- добавлено 12 сентября 2026, города с ежедневными авиарейсами ---
+    "hai-phong": [
+        {"id": "CHOTHUE.NHATRO.NHARIENG.HAIPHONG", "name": "CHO THUÊ NHÀ TRỌ NHÀ RIÊNG TẠI HẢI PHÒNG (247k, 263 поста в сутки)"},
+        {"id": "chothuenhataihaiphong", "name": "CHO THUÊ NHÀ TRỌ, NHÀ RIÊNG TẠI HẢI PHÒNG (122k, 572 в сутки)"},
+        {"id": "thuenhahaiphong", "name": "Thuê và cho thuê nhà Hải Phòng (87k)"},
+        {"id": "v3homechothuenhahaiphong10", "name": "Hội Thuê Và Cho Thuê Nhà Giá Rẻ Hải Phòng (40k)"},
+        {"id": "283071930523954", "name": "CHO THUÊ CĂN HỘ MINI - CHUNG CƯ HẢI PHÒNG (26k, только квартиры)"},
+    ],
+    "hue": [
+        {"id": "phongtrochothuehue", "name": "Phòng Trọ Huế (145k)"},
+        {"id": "phongtrosvhue", "name": "Phòng trọ, nhà cho thuê tại Huế (77k)"},
+        {"id": "395741968199512", "name": "CHO THUÊ NHÀ NGUYÊN CĂN TẠI HUẾ (17k, дома целиком)"},
+        {"id": "807531664242245", "name": "CHO THUÊ CĂN HỘ CHUNG CƯ HUẾ (11k, только квартиры)"},
+    ],
+    "can-tho": [
+        {"id": "nhatrocantho", "name": "Nhà cho thuê - nhà trọ - nhà đất Cần Thơ (169k, есть и продажа)"},
+        {"id": "674135380985772", "name": "NHÀ CHO THUÊ GIÁ RẺ TP CẦN THƠ (82k)"},
+        {"id": "1451533241829065", "name": "Nhà Trọ Cho thuê, Mặt Bằng Cho thuê TP Cần Thơ (26k)"},
+        {"id": "509491406620906", "name": "CHO THUÊ NHÀ - MINI HOUSE CẦN THƠ (25k)"},
+    ],
+    "buon-ma-thuot": [
+        {"id": "phongtrobmt.daklak", "name": "Phòng Trọ BMT - Đắk Lắk (110k, 30 модераторов)"},
+        {"id": "746418385561178", "name": "Phòng trọ - Nhà cho thuê BMT Đăk Lăk (66k)"},
+        {"id": "204833953301672", "name": "Cho thuê nhà trọ - Kios - Phòng trọ BMT (43k)"},
+        {"id": "1409268496679368", "name": "CHO THUÊ NHÀ BUÔN MA THUỘT (12k, 402 поста в сутки)"},
+    ],
+    # --- города, которые на сайте были, а групп у них не было ---
+    "phu-quoc": [
+        {"id": "congdongphuquocnew", "name": "Phú Quốc - Cho thuê nhà ở, mặt bằng (25k)"},
+        {"id": "472474987298531", "name": "Nhà trọ, Nhà nguyên căn, Căn hộ cho thuê Phú Quốc (19k)"},
+        {"id": "833750970492261", "name": "Cho Thuê Phòng Trọ, Nhà Trọ, Bungalow Phú Quốc (20k)"},
+    ],
+    "hoi-an": [
+        {"id": "1123238638354528", "name": "CHO THUÊ NHÀ HỘI AN / House for rent in Hoi An (15k, двуязычная)"},
+        {"id": "459550368937059", "name": "Cho Thuê Nhà, Căn Hộ, Phòng trọ ở Hội An - Đà Nẵng (11k)"},
+        {"id": "638261513523497", "name": "Nhà Cho Thuê Hội An (24k, есть и продажа)"},
+    ],
+    "vung-tau": [
+        {"id": "620288516581892", "name": "Căn Hộ Chung Cư & Nhà Cho Thuê Vũng Tàu (50k)"},
+        {"id": "bdsvungtauu", "name": "Cho thuê nhà và phòng trọ Vũng Tàu (43k)"},
+        {"id": "925030715227920", "name": "CHO THUÊ CHUNG CƯ VŨNG TÀU (5k, но 246 постов в сутки)"},
+    ],
+    "quy-nhon": [
+        {"id": "phongtroQN", "name": "Phòng Trọ Quy Nhơn - Nhà cho thuê Quy Nhơn (130k)"},
+        {"id": "thuechungcuthuenhaquynhon", "name": "CHO THUÊ NHÀ VÀ CĂN HỘ QUY NHƠN (50k)"},
+        {"id": "chothuecanvanhaohoquynhon", "name": "CHO THUÊ CĂN HỘ VÀ NHÀ Ở QUY NHƠN (7k)"},
+    ],
+    "da-lat": [
+        {"id": "211616406116962", "name": "PHÒNG TRỌ - NHÀ CHO THUÊ ĐÀ LẠT (72k, долгая аренда без туризма)"},
+        {"id": "phongtrodalat", "name": "Phòng Trọ Đà Lạt Lâm Đồng (48k)"},
+        {"id": "975470559939040", "name": "CHO THUÊ NHÀ NGUYÊN CĂN ĐÀ LẠT (106k, есть отели)"},
+    ],
     # City not confirmed: the slug says "commercial rentals" and nothing more.
     # Left unassigned on purpose rather than guessed into a city bucket.
     "_unassigned": [

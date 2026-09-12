@@ -152,3 +152,31 @@ IF AND ONLY IF you added at least one genuinely new, verified listing, OR the st
 IF NOTHING NEW WAS FOUND ANYWHERE AND NOTHING WAS PURGED (including if all sources were inaccessible today): do NOT commit, do NOT publish -- just say so.
 
 End your final message with a short, human-readable Russian-language summary: how many new listings found (if any) and in which cities/areas, which sources worked vs were blocked today, and confirmation of whether you pushed/published. Keep it concise -- this is a daily status update, not a full report.
+
+NEW CITIES ADDED 12 SEP 2026 -- airports with several flights every day, so people actually
+move there. Vinh was deliberately NOT added: five rental ads in the whole province.
+
+11. CẦN THƠ (can-tho) -- the Mekong delta capital, the biggest of the four by far
+    Districts: nki=Phường Ninh Kiều, tanc=Phường Tân An, ckh=Phường Cái Khế, anb=Phường An Bình,
+    crg=Phường Cái Răng, hpu=Phường Hưng Phú, bth2=Phường Bình Thủy, ltu=Phường Long Tuyền
+    Chợ Tốt: region_v2=5027, area_v2 502701 (Ninh Kiều), 502703 (Bình Thuỷ), 502704 (Cái Răng).
+    Province 5027 also holds Ô Môn, Cờ Đỏ and Phong Điền -- villages, deliberately not collected.
+    Volume: ~1200 live rental ads, ~480 of them under two weeks old. This city alone can eat the
+    daily --limit, so it is collected with its own `--city can-tho` run when a big fill is wanted.
+    Facebook: 4 groups in fb_collect.GROUPS. Telegram: no channel exists.
+
+12. HẢI PHÒNG (hai-phong) -- port and industrial belt, Korean/Japanese engineers rent long
+    Districts: hbg=Phường Hồng Bàng, anb2=Phường An Biên, lch=Phường Lê Chân,
+    gvi=Phường Gia Viên, nqu=Phường Ngô Quyền, kan=Phường Kiến An
+    Chợ Tốt: region_v2=4019, area_v2 401901, 401902, 401903, 401905.
+    Volume: ~28 live ads. Facebook is the richer source here: 5 groups, the largest 247k members.
+
+13. HUẾ (hue)
+    Districts: pxu=Phường Phú Xuân (Citadel), vyd=Phường Vỹ Dạ, acu=Phường An Cựu
+    Chợ Tốt: region_v2=6040, area_v2=604001. Volume: ~24 live ads. Facebook: 4 groups.
+
+14. BUÔN MA THUỘT (buon-ma-thuot) -- the coffee capital, domestic demand
+    Districts: bmt=Phường Buôn Ma Thuột, tlp=Phường Tân Lập, tanb=Phường Tân An, eak=Phường Ea Kao
+    Chợ Tốt: region_v2=9053, area_v2=905301. Volume: ~44 live ads. Facebook: 4 groups.
+    Careful: Tân Lập and Tân An are ward names that also exist in other cities of the site
+    (Nha Trang has its own Tân Lập). The keys are deliberately different -- tlp/tanb here.

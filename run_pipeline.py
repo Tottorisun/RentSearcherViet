@@ -135,8 +135,16 @@ def steps_for(a):
         why = None if os.path.isdir(FB_PROFILE) else (
             "нет %s -- на этой машине вход в Facebook не заведён; "
             "профиль не переносится с чужой машины намеренно" % FB_PROFILE)
-        for city in a.fb_cities.split(","):
-            city = city.strip()
+        cities = [c.strip() for c in a.fb_cities.split(",") if c.strip()]
+        # Городов Facebook стало пятнадцать, а каждый занимает до сорока минут:
+        # полный обход за прогон невозможен. Поэтому за прогон берётся окно из
+        # a.fb_batch городов, а начало окна сдвигается по дню года -- каждый
+        # город получает свой черёд раз в два-три дня, и порядок не зависит от
+        # того, чем закончился прошлый прогон.
+        if a.fb_batch and len(cities) > a.fb_batch:
+            start = (datetime.date.today().toordinal() * a.fb_batch) % len(cities)
+            cities = [cities[(start + i) % len(cities)] for i in range(a.fb_batch)]
+        for city in cities:
             if city:
                 out.append(Step("Facebook: группы, %s" % city,
                                 [py, "fb_collect.py", "--groups", "--city", city,
@@ -363,7 +371,9 @@ def main():
     # Все города, по которым в реестре fb_collect.GROUPS есть группы. Вьетнамские
     # добавлены 11 сентября 2026: до этого их группы стояли в реестре, но ночной
     # прогон их не обходил -- что было незаметно, пока он не собирал вообще ничего.
-    ap.add_argument("--fb-cities", default="dumaguete,cebu,manila,ho-chi-minh,nha-trang,da-nang")
+    ap.add_argument("--fb-cities", default=("dumaguete,cebu,manila,ho-chi-minh,nha-trang,da-nang,"
+                             "hai-phong,hue,can-tho,buon-ma-thuot,phu-quoc,hoi-an,"
+                             "vung-tau,quy-nhon,da-lat"))
     ap.add_argument("--fb-groups", type=int, default=2, help="групп на город за прогон")
     ap.add_argument("--tg-pages", type=int, default=2)
     ap.add_argument("--no-chotot", action="store_true")
@@ -371,6 +381,8 @@ def main():
     ap.add_argument("--no-dotproperty", action="store_true")
     ap.add_argument("--no-hoppler", action="store_true")
     ap.add_argument("--no-tg", action="store_true")
+    ap.add_argument("--fb-batch", type=int, default=6,
+                    help="сколько городов Facebook обходить за прогон (по кругу)")
     ap.add_argument("--no-maintain", action="store_true")
     # С 11 сентября 2026 сайт собирает и публикует сервер (Netcup), а ПК владельца
     # собирает то, что может только он: Facebook -- из-за входа в личный аккаунт,
