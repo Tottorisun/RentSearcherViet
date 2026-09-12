@@ -176,6 +176,20 @@ GROUPS = {
     ],
     "ho-chi-minh": [
         {"id": "chungcumini.canhodichvu.phongtrotphcm", "name": None},
+        {"id": "chothuecanhotphcm5starsgroup", "name": "CHO THUÊ CĂN HỘ CHUNG CƯ TP.HCM (309k)"},
+    ],
+    # --- Ханой, 12 сентября 2026. Второй по величине город сайта (562 строки),
+    # а групп у него не было ни одной. Найдены поиском внутри Facebook нашим же
+    # профилем -- он, в отличие от веб-поиска, показывает число участников.
+    # Взяты те, где СДАЮТ: группы «Tìm phòng trọ» («ищу комнату») полны запросов,
+    # а не предложений, и сборщику там нечего брать.
+    "ha-noi": [
+        {"id": "nhatrogiarenhat", "name": "Nhà Trọ, Phòng Trọ Giá Rẻ Nhất - Hà Nội (622k)"},
+        {"id": "chungcuminigiarehanoii", "name": "Nhà trọ, Phòng Trọ Giá Rẻ Hà Nội (582k)"},
+        {"id": "6603021829726413", "name": "CHO THUÊ NHÀ VÀ PHÒNG TRỌ HÀ NỘI (550k)"},
+        {"id": "chothuechungcuminihanoigiare", "name": "Phòng Trọ Hà Nội Giá Rẻ (535k)"},
+        {"id": "2244023172420260", "name": "Cho Thuê Nhà Nguyên Căn - Hà Nội (436k)"},
+        {"id": "416308689716559", "name": "HỘI CHO THUÊ CHUNG CƯ HÀ NỘI (280k)"},
     ],
     "nha-trang": [
         {"id": "chothuecanhogiarenhatrang", "name": None},

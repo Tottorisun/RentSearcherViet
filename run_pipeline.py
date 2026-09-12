@@ -380,9 +380,9 @@ def main():
     # Все города, по которым в реестре fb_collect.GROUPS есть группы. Вьетнамские
     # добавлены 11 сентября 2026: до этого их группы стояли в реестре, но ночной
     # прогон их не обходил -- что было незаметно, пока он не собирал вообще ничего.
-    ap.add_argument("--fb-cities", default=("dumaguete,cebu,manila,ho-chi-minh,nha-trang,da-nang,"
-                             "hai-phong,hue,can-tho,buon-ma-thuot,phu-quoc,hoi-an,"
-                             "vung-tau,quy-nhon,da-lat"))
+    ap.add_argument("--fb-cities", default=("dumaguete,cebu,manila,ho-chi-minh,ha-noi,nha-trang,"
+                             "da-nang,hai-phong,hue,can-tho,buon-ma-thuot,phu-quoc,"
+                             "hoi-an,vung-tau,quy-nhon,da-lat"))
     ap.add_argument("--fb-groups", type=int, default=2, help="групп на город за прогон")
     ap.add_argument("--tg-pages", type=int, default=2)
     ap.add_argument("--no-chotot", action="store_true")
