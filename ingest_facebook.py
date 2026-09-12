@@ -511,13 +511,20 @@ def decide(c, ctx, exclude=frozenset()):
 
     pv = price if cur == "VND" else int(round(price * ctx.rate(cur)))
     place_w = it.words(place or "")
+    # Ни улицы, ни комплекса, ни площади -- строка получается «Студия, Tây Hồ»:
+    # посетителю она не говорит ничего, а проверка повторов на ней слепа. 12
+    # сентября так завелись две неотличимые студии за 6 млн из одной группы.
+    baths = it.baths_in(text)
+    if not place_w and not area and not beds and not baths:
+        raise Skip("ни улицы, ни комплекса, ни площади, ни комнат -- карточка вышла бы "
+                   "«Студия, район» и ни о чём не говорила")
     dup = it.duplicate({"city": city, "type": typ, "beds": beds, "area": area, "cat": None,
                         "block": None}, key, pv, place_w, ctx, exclude)
     if dup:
         raise Skip("похоже на уже заведённое: id %s" % dup["id"])
 
     dname = ctx.district_label(city, key)
-    ru, en = describe(typ, beds, it.baths_in(text), area, place, dname)
+    ru, en = describe(typ, beds, baths, area, place, dname)
     notice, notice_en = NOTICE_RU, NOTICE_EN
     if moved:
         notice, notice_en = notice + it.HOW_RU["moved"], notice_en + it.HOW_EN["moved"]
@@ -751,6 +758,12 @@ def main():
             d = json.load(open(f, encoding="utf-8"))
         except Exception as e:
             print("не читается %s: %s" % (f, e))
+            continue
+        if not isinstance(d, dict) or "candidates" not in d:
+            # Под маску кандидатов легко попадает чужой файл: 12 сентября это
+            # был мой же вывод поиска групп (_fb_group_search.json -- список, а
+            # не словарь), и шаг падал целиком, ничего не заведя.
+            print("пропускаю %s: это не файл кандидатов fb_collect" % f)
             continue
         for c in d.get("candidates") or []:
             u = it.norm_url(c.get("url") or "")

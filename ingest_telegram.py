@@ -1055,7 +1055,14 @@ def duplicate(p, key, pv, place_w, ctx, exclude):
                 continue
             if not close(l.get("pv"), pv, REPOST_PRICE_TOL["flat" if flat else "house"]):
                 continue
-        elif not (p["area"] and l.get("area") and close(l.get("pv"), pv, REPOST_PRICE_TOL["flat"])):
+        elif not (close(l.get("pv"), pv, REPOST_PRICE_TOL["flat"])
+                  and ((p["area"] and l.get("area") and close(p["area"], l["area"]))
+                       or (p["beds"] is not None and l["_beds"] is not None
+                           and p["beds"] == l["_beds"]))):
+            # Без улицы и комплекса сравнивать больше не с чем: нужна та же цена
+            # и либо та же площадь, либо то же число спален. 12 сентября две
+            # студии «Студия, Tây Hồ» за 6 млн без площади разошлись по сайту
+            # двумя строками именно потому, что площади не было ни у одной.
             continue
         return l
     return None

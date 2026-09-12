@@ -19630,5 +19630,35 @@
   "lon": 108.263527,
   "source": "geocode",
   "matched": "Son Thuy"
+ },
+ "3000558": {
+  "lat": 21.0627805,
+  "lon": 105.8184637,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000560": {
+  "lat": 21.0395325,
+  "lon": 105.836423,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000561": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000562": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "3000563": {
+  "lat": 10.7850885,
+  "lon": 106.7293654,
+  "source": "ward-centroid",
+  "matched": null
  }
 }
