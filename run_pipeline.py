@@ -38,6 +38,10 @@ run_daily_check.ps1 запускает не программу, а сессию:
     заводит ingest_telegram.py: район -- из слов поста, по улице (OSM и
     границы районов карты) или по однозначному прецеденту комплекса. Всё
     остальное -- свободный текст, его по-прежнему разбирает сессия.
+  * batdongsan.com.vn -- полностью, с 12 сентября 2026, и это самый надёжный по
+    району источник: портал печатает и нынешний квартал, и прежний, так что
+    район не выводится, а берётся у него. Только на ПК: Cloudflare пускает
+    лишь настоящий браузер с прогретым профилем.
   * Обслуживание, сборка, карта, публикация -- полностью.
 
 То есть после этого файла модель нужна ТОЛЬКО на разбор свободного текста двух
@@ -53,8 +57,10 @@ run_daily_check.ps1 запускает не программу, а сессию:
   * ПК владельца -- `--candidates-only` (задача планировщика через
     run_daily_program.ps1): группы Facebook (сбор и заведение доказуемых
     постов -- прямо здесь, потому что кандидаты Facebook есть только на этой
-    машине; шаг сам коммитит и пушит) и кандидаты Telegram для ручного
-    разбора. Сайт здесь не собирается и не публикуется -- это делает сервер.
+    машине; шаг сам коммитит и пушит), batdongsan (по той же причине: Cloudflare
+    пускает только браузер с прогретым профилем) и кандидаты Telegram для
+    ручного разбора. Сайт здесь не собирается и не публикуется -- это делает
+    сервер.
   * Сессия, которая заводит строки из кандидатов на ПК, начинает с `git pull`:
     сервер пушит дважды в сутки. И после него собирает кандидатов Telegram
     заново: сервер заводит шаблонные посты сам, а файл кандидатов, собранный
@@ -98,6 +104,7 @@ LOG_DIR = os.path.join(HERE, "daily_check_logs")
 LOCK = os.path.join(HERE, ".pipeline.lock")
 SAY = r"D:\MyDev\AI_CONTEXT\TASKS\gelios_say.py"
 FB_PROFILE = os.path.join(HERE, "_fb_profile")
+BDS_PROFILE = os.path.join(HERE, "_bds_profile_c")
 
 
 class Step:
@@ -166,6 +173,23 @@ def steps_for(a):
             out.append(Step("Facebook: чистка скачанных фотографий",
                             [py, "clean_fb_photos.py", "--apply"], fatal=False, timeout=600))
 
+    if not a.no_bds:
+        why = None if os.path.isdir(BDS_PROFILE) else (
+            "нет %s -- Cloudflare пускает только настоящий браузер с прогретым "
+            "профилем, а он есть лишь на ПК владельца" % BDS_PROFILE)
+        cities = [c.strip() for c in a.bds_cities.split(",") if c.strip()]
+        # Городов четырнадцать, и каждый занимает минуты: за прогон берётся окно,
+        # начало которого сдвигается по дню года -- как у Facebook.
+        if a.bds_batch and len(cities) > a.bds_batch:
+            start = (datetime.date.today().toordinal() * a.bds_batch) % len(cities)
+            cities = [cities[(start + i) % len(cities)] for i in range(a.bds_batch)]
+        for city in cities:
+            out.append(Step("batdongsan: %s" % city,
+                            [py, "collect_batdongsan.py", "--city", city, "--pages", "1",
+                             "--limit", "20", "--profile", BDS_PROFILE, "--write", "--insert"]
+                            + (["--commit"] if a.candidates_only else []),
+                            fatal=False, timeout=2400, skip_if=why))
+
     if not a.no_dotproperty:
         # Медленный по устройству: возраст записи виден только на её странице,
         # поэтому старые приходится открыть, чтобы отбросить. Отсюда и таймаут.
@@ -225,7 +249,7 @@ def steps_for(a):
         Step("сборка сайта (после карты)", [py, "rebuild_final.py"], timeout=900),
     ]
     if a.candidates_only:
-        out = [st for st in out if st.name.startswith(("Facebook:", "Telegram:"))]
+        out = [st for st in out if st.name.startswith(("Facebook:", "Telegram:", "batdongsan:"))]
     return out
 
 
@@ -389,6 +413,11 @@ def main():
     ap.add_argument("--no-fb", action="store_true")
     ap.add_argument("--no-dotproperty", action="store_true")
     ap.add_argument("--no-hoppler", action="store_true")
+    ap.add_argument("--no-bds", action="store_true", help="без batdongsan.com.vn")
+    ap.add_argument("--bds-cities", default=("ho-chi-minh,ha-noi,da-nang,nha-trang,can-tho,"
+                                             "hai-phong,hue,buon-ma-thuot,vung-tau,da-lat,"
+                                             "quy-nhon,hoi-an,phu-quoc,phan-thiet"))
+    ap.add_argument("--bds-batch", type=int, default=3, help="городов batdongsan за прогон")
     ap.add_argument("--no-tg", action="store_true")
     ap.add_argument("--fb-batch", type=int, default=6,
                     help="сколько городов Facebook обходить за прогон (по кругу)")

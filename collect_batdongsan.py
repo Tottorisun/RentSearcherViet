@@ -349,6 +349,30 @@ if __name__ == "__main__":
 '''
 
 
+def git(*args):
+    return subprocess.run(["git"] + list(args), capture_output=True, text=True, encoding="utf-8")
+
+
+def commit_rows(path):
+    """Коммит только своих файлов -- и только если чужой работы в них нет.
+
+    Репозиторий на ПК рабочий: в нём сидит сессия. Если rebuild_final.py уже
+    изменён кем-то ещё, `git add` унёс бы чужую работу в чужой коммит."""
+    r = git("pull", "--rebase", "--quiet")
+    if r.returncode:
+        return "git pull --rebase не прошёл -- партия записана, но не закоммичена"
+    git("add", "--", "rebuild_final.py", path)
+    msg = ("batdongsan: rows filed by the program\n\n"
+           "Districts come from the portal itself: it prints the current ward in the card\n"
+           "and the ward of the address in the ad's own URL.\n\n"
+           "Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>")
+    r = git("commit", "-q", "-m", msg)
+    if r.returncode:
+        return "git commit не прошёл: %s" % ((r.stdout or "") + (r.stderr or "")).strip()[:160]
+    r = git("push", "-q", "origin", "HEAD")
+    return ("закоммичено, но push не прошёл: %s" % (r.stderr or "").strip()[:160]) if r.returncode else None
+
+
 def allocate(n):
     """Свой блок номеров: 3000000 -- общий для «прочих» источников (hoppler,
     dotproperty), а не телеграмный 2000000."""
@@ -394,6 +418,9 @@ def main():
     ap.add_argument("--insert", action="store_true")
     ap.add_argument("--delay", type=float, default=3.5)
     ap.add_argument("--profile", default=PROFILE, help="каталог профиля браузера")
+    ap.add_argument("--commit", action="store_true",
+                    help="закоммитить и запушить (на ПК: сервер соберёт сайт, "
+                         "только когда строки в репозитории)")
     a = ap.parse_args()
     os.chdir(HERE)
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -545,6 +572,9 @@ def main():
             return 0
         subprocess.run([sys.executable, path], check=True)
         inserted = True
+        if a.commit:
+            err = commit_rows(path)
+            print(err if err else "закоммичено и запушено: %s" % path)
     finally:
         subprocess.run([sys.executable, "allocate_ids.py", "--release", "%d-%d" % (ids[0], ids[-1])])
         if not inserted and a.insert:
