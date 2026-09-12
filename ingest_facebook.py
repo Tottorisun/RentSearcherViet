@@ -429,6 +429,21 @@ def resolve(c, text, city, ctx, exclude):
             place = place or name
         elif cnt:
             split.append("«%s»: %s" % (name, it.fmt_counts(cnt)))
+    # Улица как ещё один довод -- там, где это проверяемо (см. OSM_STREET_CITIES).
+    # Правило строже дананговского: улица должна почти целиком лежать в одном
+    # районе, иначе довода нет. Расхождение с названным районом -- пропуск.
+    if city in it.OSM_STREET_CITIES and city != "da-nang":
+        street = street_from(lines_)
+        st = it.street_counts(street, ctx, city) if street else None
+        if st and st["counts"]:
+            total = sum(st["counts"].values())
+            top, top_n = st["counts"].most_common(1)[0]
+            if top != it.OUTSIDE and top_n >= 0.85 * total:
+                ev["street"] = top
+                why["street"] = "улица %s: %d из %d отрезков в %s" % (
+                    " / ".join(st["names"]), top_n, total, top)
+                place = place or (st["names"][0] if st["names"] else street)
+
     keys = set(ev.values())
     if not keys:
         raise Skip("район не определяется по адресу «%s»%s"

@@ -75,6 +75,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 CANDIDATES = "telegram_candidates.json"
 STATE = "telegram_ingest_state.json"
 OSM_CACHE = "osm_streets_da-nang.json"
+# Города, где район можно ставить по улице: выгрузка улиц есть, и границы
+# районов карты совпадают с районами сайта. Хошимина здесь нет намеренно --
+# в нём улицы нумерованные и одноимённые в разных кварталах.
+OSM_STREET_CITIES = ("da-nang", "ha-noi")
 BOUNDS = "leaflet_ward_boundaries.json"
 
 # Дананг в границах города до слияния провинций: без Хойана и Тамки, где после
@@ -642,9 +646,9 @@ def refresh_osm(path=OSM_CACHE):
     return len(names)
 
 
-def load_osm():
+def load_osm(path=None):
     try:
-        data = json.load(open(OSM_CACHE, encoding="utf-8"))
+        data = json.load(open(path or OSM_CACHE, encoding="utf-8"))
     except FileNotFoundError:
         return {}
     idx = collections.defaultdict(dict)
@@ -790,19 +794,35 @@ def save_state(state):
 
 # ----------------------------------------------------------------- район --
 
-def street_counts(place, ctx):
+_OSM_BY_CITY = {}
+
+
+def osm_index(city):
+    """Указатель улиц города; читается один раз за прогон."""
+    if city not in _OSM_BY_CITY:
+        _OSM_BY_CITY[city] = (ctx_osm_da_nang() if city == "da-nang"
+                              else load_osm("osm_streets_%s.json" % city))
+    return _OSM_BY_CITY[city]
+
+
+def ctx_osm_da_nang():
+    return load_osm(OSM_CACHE)
+
+
+def street_counts(place, ctx, city="da-nang"):
     """Отрезки улицы по районам: {"counts", "names", "ambiguous"}."""
     k = words(clean_place(place))
     if not k:
         return {"counts": None, "names": [], "ambiguous": False}
     keys = [k] + ([k[len("duong "):]] if k.startswith("duong ") else [])
+    index = ctx.osm if city == "da-nang" else osm_index(city)
     groups = {}
     for kk in keys:
-        for name, pts in ctx.osm.get(kk, {}).items():
+        for name, pts in index.get(kk, {}).items():
             groups.setdefault(name, []).extend(pts)
     if not groups:
         return {"counts": None, "names": [], "ambiguous": False}
-    per = {n: collections.Counter(ctx.ward_of("da-nang", la, lo) for la, lo in pts) for n, pts in groups.items()}
+    per = {n: collections.Counter(ctx.ward_of(city, la, lo) for la, lo in pts) for n, pts in groups.items()}
     if len({c.most_common(1)[0][0] for c in per.values()}) > 1:
         return {"counts": None, "names": sorted(per), "ambiguous": True}
     total = collections.Counter()
