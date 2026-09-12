@@ -6267,5 +6267,32 @@
   "display_name": "Taft Avenue, Barangay 692, Malate, Fifth District, Manila, Capital District, Metro Manila, 1004, Philippines"
  },
  "Mia Centerpoint, Da Nang, Vietnam": null,
- "Mia Centerpoint, Phường Liên Chiểu, Da Nang, Vietnam": null
+ "Mia Centerpoint, Phường Liên Chiểu, Da Nang, Vietnam": null,
+ "Studio Balcony, Da Nang, Vietnam": null,
+ "Studio Balcony, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Ngu Hanh Son, Da Nang, Vietnam": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "display_name": "Phường Ngũ Hành Sơn, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "Mỹ Khê 8, Da Nang, Vietnam": {
+  "lat": 16.061519,
+  "lon": 108.2413131,
+  "display_name": "GỐM Garden Coffee, 8a, Đường Mỹ Khê 5, Tổ dân phố Mỹ Quang, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "Nguyễn Bá Lân, Da Nang, Vietnam": {
+  "lat": 16.0413509,
+  "lon": 108.2422444,
+  "display_name": "Đường Nguyễn Bá Lân, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Nam Viet A, Da Nang, Vietnam": {
+  "lat": 16.0328797,
+  "lon": 108.115206,
+  "display_name": "Đường sắt cao tốc Bắc - Nam, Vòng Xoay Hoàng Văn Thái, Phường Hòa Khánh, Thành phố Đà Nẵng, 51000, Việt Nam"
+ },
+ "Hà Khê, Da Nang, Vietnam": {
+  "lat": 16.071858,
+  "lon": 108.1917418,
+  "display_name": "Đường Hà Khê, Tổ dân phố 37 Xuân Hà, Phường Thanh Khê, Thành phố Đà Nẵng, 84236, Việt Nam"
+ }
 }

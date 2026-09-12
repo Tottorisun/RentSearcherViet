@@ -17050,5 +17050,59 @@
   "lon": 121.021123,
   "source": "ward-centroid",
   "matched": null
+ },
+ "2000614": {
+  "lat": 10.302058,
+  "lon": 123.868958,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000615": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "geocode",
+  "matched": "Ngu Hanh Son"
+ },
+ "2000618": {
+  "lat": 16.061519,
+  "lon": 108.2413131,
+  "source": "geocode",
+  "matched": "Mỹ Khê 8"
+ },
+ "2000619": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "source": "ward-centroid",
+  "matched": null
+ },
+ "2000620": {
+  "lat": 16.0413509,
+  "lon": 108.2422444,
+  "source": "geocode",
+  "matched": "Nguyễn Bá Lân"
+ },
+ "2000621": {
+  "lat": 16.0413509,
+  "lon": 108.2422444,
+  "source": "geocode",
+  "matched": "Nguyễn Bá Lân"
+ },
+ "2000622": {
+  "lat": 16.0328797,
+  "lon": 108.115206,
+  "source": "geocode",
+  "matched": "Nam Viet A"
+ },
+ "2000623": {
+  "lat": 16.071858,
+  "lon": 108.1917418,
+  "source": "geocode",
+  "matched": "Hà Khê"
+ },
+ "2000624": {
+  "lat": 16.0669747,
+  "lon": 108.1997848,
+  "source": "geocode",
+  "matched": "Điện Biên Phủ"
  }
 }

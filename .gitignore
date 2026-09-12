@@ -42,6 +42,8 @@ telegram_topics_ph.json
 # Временные файлы атомарной записи ingest_telegram.py (сами файлы -- в репозитории:
 # состояние и выгрузка улиц нужны серверу между прогонами).
 telegram_ingest_state.json.tmp
+facebook_ingest_state.json.tmp
+liveness_telegram_cache.json.tmp
 osm_streets_da-nang.json.tmp
 
 # Ad-hoc backups of scripts (run_daily_check.ps1.bak-..., etc) stay local.

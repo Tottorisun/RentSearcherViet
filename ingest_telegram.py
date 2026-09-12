@@ -57,6 +57,7 @@ import argparse
 import ast
 import collections
 import datetime
+import functools
 import glob
 import json
 import os
@@ -113,6 +114,34 @@ WARD_ALIASES = {
 # Район, названный как сам город, встречается в любом тексте про этот город --
 # совпадением с районом он не считается.
 CITY_WORDS = {"da-nang": {"da nang", "danang"}, "nha-trang": {"nha trang", "nhatrang"}}
+# Места, чей район установлен по источнику, а не по прецеденту сайта:
+# Nominatim назвал объект (искомое имя стоит в его display_name), а точка ответа
+# попала в границы района на нашей карте. Проверено 12 сентября 2026. Прецедент
+# живёт лишь пока строки не сняты чисткой по возрасту -- в тот же день на глазах
+# рассыпался прецедент Mường Thanh Viễn Triều, когда сняли единственную строку;
+# таблица от этого не зависит.
+#
+# Сюда НЕ вошли: Champa Island (OSM относит точку к Bắc Nha Trang, наши границы
+# -- к Tây Nha Trang, а посты пишут «центр»: три ответа, ни одного совпадения);
+# Panorama и Star City (источник даёт только укрупнённый nt, а строки сайта
+# стоят в прежних lt/ph2 -- прежний квартал OSM уже не различает); Vega City,
+# Maple, An Viên, Mỹ Gia (источник молчит или спорит с существующей строкой).
+PLACE_WARDS = {
+    "nha-trang": {
+        "muong thanh vien trieu": "vp",
+        "napoleon castle": "vp",
+        "napoleon": "vp",
+        "hon chong": "vp",
+        "hon xen": "vh",
+        "scenia bay": "btr",     # снимает раскол vh/vp: обе внутри укрупнённого btr
+        "ba lang": "btr",
+        "ana marina": "btr",
+        "po nagar": "btr",
+        "cho dam": "nt",
+        "ct2 vcn phuoc hai": "ph",
+    },
+}
+
 # Комплексы, которые агентства пишут по-русски, -> латинское имя (оно же в descEn).
 COMPLEX_LATIN = {"океанус": "Oceanus"}
 
@@ -228,9 +257,13 @@ def money(s):
     m = re.search(r"(\d+(?:[.,]\d+)?)\s*(?:млн|mln|million|mil|trieu|tr)(?![a-z])", f)
     if m:
         return int(round(float(m.group(1).replace(",", ".")) * 1_000_000)), "VND"
-    m = re.search(r"(\d{2,5})\s*(?:\$|usd)", f) or re.search(r"\$\s*(\d{2,5})\b", f)
+    # Слева от числа не должно быть цифры или разделителя: без этого «1.500$»
+    # читалось как 500 -- цена втрое ниже настоящей, и в разумные пределы она
+    # укладывается, то есть ошибка прошла бы молча.
+    m = (re.search(r"(?<![\d.,])(\d{1,3}(?:[.,\s]\d{3})+|\d{2,5})\s*(?:\$|usd)", f)
+         or re.search(r"\$\s*(\d{1,3}(?:[.,\s]\d{3})+|\d{2,5})(?![\d.,])", f))
     if m:
-        return int(m.group(1)), "USD"
+        return int(re.sub(r"\D", "", m.group(1))), "USD"
     return None
 
 
@@ -664,7 +697,10 @@ class Ctx:
         self.state = load_state()
         self.by_hash, self.by_cat, self.cat_of = {}, {}, {}
         for e in self.state["posts"].values():
-            if e.get("id") is None:
+            # Запись о снятой строке -- мёртвая блокировка: purge_old_listings
+            # снимает строку через 14 дней, а тот же номер каталога агентство
+            # выложит снова. Помним ровно столько, сколько строка стоит.
+            if e.get("id") is None or e["id"] not in self.site:
                 continue
             if e.get("hash"):
                 self.by_hash[e["hash"]] = e["id"]
@@ -744,16 +780,17 @@ def precedent(name, city, ctx, exclude):
     n = re.sub(r"^(?:жк|комплекс|complex)\s+", "", words(name))
     if len(n) < 3 or n in CITY_WORDS.get(city, ()):
         return None, collections.Counter()
-    toks = n.split()
-    for t in [n] + ([" ".join(toks[:2])] if len(toks) >= 3 else []):
-        alts = {t} | ({words(COMPLEX_LATIN[t])} if t in COMPLEX_LATIN else set())
-        c = collections.Counter(l["district"] for l in ctx.by_city.get(city, [])
-                                if l["id"] not in exclude and not l.get("_new")
-                                and any(has_words(l["_words"], x) for x in alts))
-        if c:
-            ok = len(c) == 1 and sum(c.values()) >= MIN_PRECEDENT
-            return (next(iter(c)) if ok else None), c
-    return None, collections.Counter()
+    # Раньше, если полного названия на сайте не находилось, искались его первые
+    # два слова. Это ловило рекламные обороты: «Ocean View Apartment» находило
+    # две строки со словами «ocean view» и уверенно ставило район -- да ещё и с
+    # оговоркой «все объявления сайта из этого комплекса стоят в этом районе».
+    # Ищется только полное название.
+    alts = {n} | ({words(COMPLEX_LATIN[n])} if n in COMPLEX_LATIN else set())
+    c = collections.Counter(l["district"] for l in ctx.by_city.get(city, [])
+                            if l["id"] not in exclude and not l.get("_new")
+                            and any(has_words(l["_words"], x) for x in alts))
+    ok = len(c) == 1 and sum(c.values()) >= MIN_PRECEDENT
+    return (next(iter(c)) if ok else None), c
 
 
 def resolve_da_nang(p, ctx, exclude):
@@ -771,13 +808,21 @@ def resolve_da_nang(p, ctx, exclude):
             wards.add(wmap[w])
             ward_part = ward_part or part
         elif w in olds:
-            raise Skip("в адресе два прежних района: «%s»" % p["address"])
+            # Одно и то же слово прежнего района встречается в адресе дважды --
+            # в заголовке и в строке адреса. Это не противоречие; противоречие --
+            # только два РАЗНЫХ прежних района.
+            if old and w != old:
+                raise Skip("в адресе два прежних района: «%s»" % p["address"])
+            old = w
         elif place is None:
             place = part
     tw = words(p.get("ward_text") or "")
     wards |= {k for w, k in wmap.items() if has_words(tw, w)}
     if old is None:
-        old = next((w for w in olds if has_words(tw, w)), None)
+        named = [w for w in olds if has_words(tw, w)]
+        if len(named) > 1:
+            raise Skip("пост называет два прежних района: %s" % ", ".join(named))
+        old = named[0] if named else None
     word_key, children = olds[old] if old else (None, None)
     if len(wards) > 1:
         raise Skip("пост называет несколько районов: %s" % ", ".join(sorted(wards)))
@@ -794,10 +839,23 @@ def resolve_da_nang(p, ctx, exclude):
         counts = st["counts"]
         if counts:
             total = sum(counts.values())
-            own = word_key or ev.get("ward")
             top, top_n = counts.most_common(1)[0]
-            if own and counts.get(own, 0) * 4 >= total:
-                k = own
+            ward = ev.get("ward")
+            if ward and counts.get(ward, 0) * 4 >= total:
+                # Пост назвал НАСТОЯЩИЙ район сайта -- это довод, и четверти
+                # отрезков хватает, чтобы ему поверить.
+                k = ward
+            elif children and len(children) > 1:
+                # Пост назвал ПРЕЖНИЙ район, распавшийся на два. Он не говорит,
+                # в каком из наследников дом, и голоса не имеет: Ngô Quyền лежит
+                # на 36 отрезков в Sơn Trà и на 47 в An Hải, и по слову поста
+                # («Son Tra») квартира с ан-хайского конца уезжала не туда.
+                # Поэтому либо улица почти целиком в одном районе, либо пропуск.
+                if top_n < total * 0.85:
+                    raise Skip("улица %s идёт через несколько районов (%s), а пост называет "
+                               "только прежний район %s"
+                               % (" / ".join(st["names"]), fmt_counts(counts), old.title()))
+                k = top
             elif top_n * 3 >= total * 2:
                 k = top
             else:
@@ -808,7 +866,7 @@ def resolve_da_nang(p, ctx, exclude):
             why["street"] = "улица %s: %d из %d отрезков в %s%s" % (
                 " / ".join(st["names"]), counts[k], total, k, "; пост: %s" % old.title() if old else "")
         else:
-            k, c = precedent(place, city, ctx, exclude)
+            k, c = precedent(clean_place(place), city, ctx, exclude)
             if k:
                 ev["precedent"] = k
                 why["precedent"] = "«%s»: %d строк сайта, все в %s" % (place, sum(c.values()), k)
@@ -842,7 +900,15 @@ def resolve_nha_trang(p, ctx, exclude):
         ev["ward"] = wards.pop()
         why["ward"] = "район назван в посте"
     for name in p.get("complexes") or []:
-        if words(name) in wmap:
+        w = words(name)
+        if w in wmap:
+            continue
+        known = PLACE_WARDS.get(city, {}).get(w)
+        if known:
+            if ev.get("precedent", known) != known:
+                raise Skip("места из поста стоят в разных районах")
+            ev["precedent"] = known
+            why["precedent"] = "«%s» -- проверенное место, район %s" % (name, known)
             continue
         k, c = precedent(name, city, ctx, exclude)
         if k:
@@ -888,7 +954,10 @@ def close(a, b, tol=0.03):
 #     35 и 40 млн -- один дом). Без предела цены совпадали разные дома одной
 #     улицы: Dũng Sĩ Thanh Khê за 16 и за 25 млн.
 REPOST_PRICE_TOL = {"flat": 0.03, "house": 0.15}
-BLOCK_RX = re.compile(r"\b(?:корпус\w*|block)\s+([a-z]{0,3}\d{1,3}[a-z]?)\b")
+# Корпус во вьетнамских комплексах чаще буквенный, чем цифровой: «block A»,
+# «корпус Б». Пока цифра была обязательной, правило «разные корпуса -- разные
+# квартиры» просто не срабатывало.
+BLOCK_RX = re.compile(r"\b(?:корпус\w*|корп|block|tower)\s+([a-zа-я]{0,3}\d{0,3}[a-zа-я]?)\b")
 
 
 def block_of(w):
@@ -986,7 +1055,13 @@ def describe(p, dname, place_ru, place_en):
 
 
 def post_date(c):
-    return datetime.datetime.fromisoformat(c["date"]).astimezone(VN_TZ).date()
+    d = (c.get("date") or "").strip()
+    if not d:
+        raise Skip("в посте нет даты размещения")
+    try:
+        return datetime.datetime.fromisoformat(d).astimezone(VN_TZ).date()
+    except ValueError:
+        raise Skip("дата поста не читается: %r" % d[:30])
 
 
 def short(permalink):
@@ -1094,6 +1169,11 @@ def seed_state(ctx, budget=SEED_FETCHES):
                 break
             fetched += 1
             page, _ = ftl.parse_page(html, ch)
+            if not page and "tgme_widget_message" not in html:
+                # 200 с чужим телом (заглушка, антибот) разбирается в пустой
+                # список -- и каждый непроверенный пост объявлялся удалённым.
+                report.append("  %s: страница канала не прочиталась -- сверка в следующий раз" % ch)
+                break
             got = {q["msg_id"]: q for q in page}
             low = min(got) if got else top
             for i in sorted(todo, reverse=True):
@@ -1160,13 +1240,18 @@ def doc_safe(s):
     return s.replace("\\", "/").replace('"""', '"')
 
 
-def posted_label(n):
+@functools.lru_cache(maxsize=None)
+def _days_label_fn():
     src = open("rebuild_final.py", encoding="utf-8").read()
     fn = next(x for x in ast.walk(ast.parse(src))
               if isinstance(x, ast.FunctionDef) and x.name == "_ru_days_label")
     ns = {}
     exec(ast.unparse(fn), ns)
-    return ns["_ru_days_label"](n)
+    return ns["_ru_days_label"]
+
+
+def posted_label(n):
+    return _days_label_fn()(n)
 
 
 def write_batch(accepted, skipped, ids, today):
@@ -1192,9 +1277,10 @@ def write_batch(accepted, skipped, ids, today):
     return path
 
 
-def allocate(n):
-    out = subprocess.run([sys.executable, "allocate_ids.py", "--block", "2000000", "--count", str(n),
-                          "--owner", "ingest_telegram"], capture_output=True, text=True, encoding="utf-8")
+def allocate(n, block="2000000", owner="ingest_telegram"):
+    """Блок id по источнику: 2000000 -- Telegram, 3000000 -- hoppler и Facebook."""
+    out = subprocess.run([sys.executable, "allocate_ids.py", "--block", block, "--count", str(n),
+                          "--owner", owner], capture_output=True, text=True, encoding="utf-8")
     m = re.search(r"FIRST=(\d+) LAST=(\d+)", out.stdout or "")
     if not m:
         sys.exit("не удалось зарезервировать id:\n%s%s" % (out.stdout, out.stderr))
@@ -1235,6 +1321,12 @@ def main():
         except Skip as e:
             skipped.append((short(c["permalink"]), str(e)))
             continue
+        except Exception as e:
+            # Разбор пятидесяти постов не должен зависеть от пятьдесят первого:
+            # кандидат с неожиданными данными уходит в отчёт, а не роняет шаг.
+            skipped.append((short(c.get("permalink") or "?"),
+                            "разбор сорвался: %s: %s" % (type(e).__name__, e)))
+            continue
         if r is None:
             manual[c.get("channel", "?")] += 1
             continue
@@ -1262,16 +1354,23 @@ def main():
         save_state(ctx.state)
         return 0
     ids = allocate(len(accepted))
-    path = write_batch(accepted, skipped, ids, today)
-    print("\nзаписано: %s -- %d строк, id %d..%d" % (path, len(ids), ids[0], ids[-1]))
-    if not a.insert:
-        save_state(ctx.state)
-        print("(--insert не задан: партия записана, но не вставлена)")
-        return 0
+    inserted = False
     try:
+        path = write_batch(accepted, skipped, ids, today)
+        print("\nзаписано: %s -- %d строк, id %d..%d" % (path, len(ids), ids[0], ids[-1]))
+        if not a.insert:
+            save_state(ctx.state)
+            print("(--insert не задан: партия записана, но не вставлена)")
+            return 0
         subprocess.run([sys.executable, path], check=True)
+        inserted = True
     finally:
+        # Бронь снимается в любом случае: и после вставки, и если партия не
+        # записалась. Иначе номера выпадали из оборота на сутки после каждого
+        # прогона с --write без --insert.
         subprocess.run([sys.executable, "allocate_ids.py", "--release", "%d-%d" % (ids[0], ids[-1])])
+        if not inserted:
+            print("вставка не состоялась -- зарезервированные id освобождены")
     for i, r in zip(ids, accepted):
         entry = {"id": i, "hash": r["hash"], "cat": r["cat"], "checked": today.isoformat()}
         ctx.state["posts"][norm_url(r["permalink"])] = entry
