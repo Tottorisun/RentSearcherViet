@@ -808,7 +808,9 @@ def main():
         why = repo_sync.prepare(["rebuild_final.py", STATE])
         if why:
             print("заведение отложено -- %s" % why)
-            return 0
+            # Не 0: прогон судит о шаге по коду выхода, и 13.09 его сводка
+            # написала «не сделано: ничего» над тремя несостоявшимися коммитами.
+            return 1
     # Блок 3000000 -- это Facebook и hoppler; 2000000, который it.allocate
     # берёт по умолчанию, принадлежит Telegram. Номер сам по себе ничего не
     # ломает, но по блоку видно, чей это ряд, и обе программы не должны
@@ -835,6 +837,8 @@ def main():
         if a.commit:
             err = commit(path, accepted)
             print(err if err else "закоммичено и запушено: %s" % path)
+            if err:
+                return 1
     finally:
         subprocess.run([sys.executable, "allocate_ids.py", "--release", "%d-%d" % (ids[0], ids[-1])])
     return 0

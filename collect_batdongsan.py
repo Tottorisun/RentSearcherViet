@@ -566,7 +566,9 @@ def main():
         why = repo_sync.prepare(["rebuild_final.py"])
         if why:
             print("заведение отложено -- %s" % why)
-            return 0
+            # Не 0: прогон судит о шаге по коду выхода, и 13.09 его сводка
+            # написала «не сделано: ничего» над тремя несостоявшимися коммитами.
+            return 1
     ids = allocate(len(accepted))
     inserted = False
     try:
@@ -579,6 +581,8 @@ def main():
         if a.commit:
             err = commit_rows(path)
             print(err if err else "закоммичено и запушено: %s" % path)
+            if err:
+                return 1
     finally:
         subprocess.run([sys.executable, "allocate_ids.py", "--release", "%d-%d" % (ids[0], ids[-1])])
         if not inserted and a.insert:
