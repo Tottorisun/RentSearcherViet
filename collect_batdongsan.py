@@ -83,6 +83,43 @@ CITY_SLUG = {
 AREA_SLUGS = {
     "ho-chi-minh": ["quan-7", "quan-2", "quan-1", "quan-4", "binh-thanh"],
 }
+# Провинция нового деления в конце адреса свежего объявления:
+# «...-phuong-nam-nha-trang-tinh-khanh-hoa», «...-phuong-vung-tau-tp-ho-chi-minh».
+# Если там стоит ДРУГАЯ провинция, карточка не из нашего города -- даже если
+# квартал с тем же именем у города есть («An Bình» есть не только в Кантхо).
+# Такое случится, если кусок адреса города в CITY_SLUG неверен и портал вместо
+# пустой страницы отдаст общий список по стране: 13.09.2026 у десяти городов из
+# четырнадцати адрес ещё ни разу не проверялся живым обходом. Список -- все 34
+# провинции из справочника самого портала; «tp-» или «tinh-» -- по его же
+# приставке, кроме Huế: справочник пишет «Tỉnh», а страницы портала -- «tp-hue».
+# Нет провинции в адресе (старые объявления) -- проверки нет, как раньше.
+PROVINCE_SLUGS = (
+    "tp-ha-noi", "tp-ho-chi-minh", "tp-da-nang", "tp-hai-phong", "tp-can-tho", "tp-hue", "tinh-hue",
+    "tinh-khanh-hoa", "tinh-dong-nai", "tinh-an-giang", "tinh-bac-ninh", "tinh-ca-mau",
+    "tinh-cao-bang", "tinh-dak-lak", "tinh-dien-bien", "tinh-dong-thap", "tinh-gia-lai",
+    "tinh-ha-tinh", "tinh-hung-yen", "tinh-lai-chau", "tinh-lam-dong", "tinh-lang-son",
+    "tinh-lao-cai", "tinh-nghe-an", "tinh-ninh-binh", "tinh-phu-tho", "tinh-quang-ngai",
+    "tinh-quang-ninh", "tinh-quang-tri", "tinh-son-la", "tinh-tay-ninh", "tinh-thai-nguyen",
+    "tinh-thanh-hoa", "tinh-tuyen-quang", "tinh-vinh-long",
+)
+CITY_PROVINCE = {
+    "ho-chi-minh": ("tp-ho-chi-minh",), "vung-tau": ("tp-ho-chi-minh",), "binh-duong": ("tp-ho-chi-minh",),
+    "ha-noi": ("tp-ha-noi",), "da-nang": ("tp-da-nang",), "hoi-an": ("tp-da-nang",),
+    "nha-trang": ("tinh-khanh-hoa",), "da-lat": ("tinh-lam-dong",), "phan-thiet": ("tinh-lam-dong",),
+    "quy-nhon": ("tinh-gia-lai",), "can-tho": ("tp-can-tho",), "hai-phong": ("tp-hai-phong",),
+    "hue": ("tp-hue", "tinh-hue"), "buon-ma-thuot": ("tinh-dak-lak",), "phu-quoc": ("tinh-an-giang",),
+}
+
+
+def foreign_province(href, city):
+    """Чужая провинция из адреса объявления; None -- своя или не указана."""
+    seg = (href or "").split("batdongsan.com.vn/")[-1].split("/")[0]
+    mine = CITY_PROVINCE.get(city, ())
+    if not mine or any(seg.endswith("-" + p) for p in mine):
+        return None
+    return next((p for p in PROVINCE_SLUGS if seg.endswith("-" + p)), None)
+
+
 # Раздел -> тип жилья у нас. Только жильё: офисы, склады и киоски пропускаем,
 # как и в остальных сборщиках.
 CATEGORIES = (
@@ -503,6 +540,10 @@ def main():
                 if it.norm_url(href) in known:
                     skipped.append((key, "уже на сайте"))
                     continue
+                other = foreign_province(href, a.city)
+                if other:
+                    skipped.append((key, "объявление из другой провинции: %s" % other))
+                    continue
                 age = days_ago(c.get("when"), today)
                 if age is None or age > MAX_AGE_DAYS:
                     skipped.append((key, "старее %d дней (%s)" % (MAX_AGE_DAYS, c.get("when"))))
@@ -575,6 +616,12 @@ def main():
         accepted = [r for r in accepted if r["prid"] >= floor]
 
     print("\nbatdongsan, %s: карточек %d, заводится %d" % (a.city, len(seen), len(accepted)))
+    if not seen:
+        # Ни одной карточки со всех страниц -- это не «рынок пуст», а неверный
+        # кусок адреса города в CITY_SLUG или Cloudflare (строки выше). Код 1,
+        # чтобы сводка прогона назвала шаг, а не написала «не сделано: ничего».
+        print("  ни одной карточки: проверьте CITY_SLUG[%r] и строки «Cloudflare» выше" % a.city)
+        return 1
     for r in accepted:
         print("  + %-10s %-4s %-9s %12s ₫  %s м²  -- %s"
               % (r["prid"], r["district"], r["type"], format(r["price"], ","), r["area"] or "?", r["why"]))
