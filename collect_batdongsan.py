@@ -501,7 +501,6 @@ def main():
     ctx_site = it.Ctx(today)
     known = set(ctx_site.urls)
     accepted, skipped, seen = [], [], set()
-    max_prid = 0
 
     with sync_playwright() as pw:
         br = open_ctx(pw, headless=True, profile=a.profile)
@@ -526,6 +525,18 @@ def main():
                     if len(got) < 20:
                         break
 
+            # Старый номер при свежей дате -- перевыкладка витрины, а не новое
+            # объявление. Порог считается ДО разбора: раньше перевыкладка проходила
+            # все проверки, для неё открывалась страница объявления, она занимала
+            # место в лимите прогона и выбрасывалась лишь в конце. 13.09 в Кантхо
+            # лимит в 20 строк был выбран, 17 карточек до него не дошли, а
+            # завелось 12; в Хайфоне -- 6 и 5. Порог зависит только от наибольшего
+            # номера среди всех карточек, так что посчитать его заранее -- то же
+            # самое, что считать по ходу.
+            prids = [int(m.group(1)) for m in
+                     (PRID.search((c.get("href") or "").split("?")[0]) for c in cards) if m]
+            floor = max(prids) - PRID_PER_DAY * (MAX_AGE_DAYS + 1) if prids else 0
+
             for c in cards:
                 href = (c.get("href") or "").split("?")[0]
                 m = PRID.search(href)
@@ -535,7 +546,6 @@ def main():
                 if prid in seen:
                     continue
                 seen.add(prid)
-                max_prid = max(max_prid, prid)
                 key = str(prid)
                 if it.norm_url(href) in known:
                     skipped.append((key, "уже на сайте"))
@@ -543,6 +553,9 @@ def main():
                 other = foreign_province(href, a.city)
                 if other:
                     skipped.append((key, "объявление из другой провинции: %s" % other))
+                    continue
+                if prid < floor:
+                    skipped.append((key, "номер объявления старый при свежей дате -- перевыкладка"))
                     continue
                 age = days_ago(c.get("when"), today)
                 if age is None or age > MAX_AGE_DAYS:
@@ -606,14 +619,6 @@ def main():
                      "_new": True})
         finally:
             br.close()
-
-    # Старый номер при свежей дате -- перевыкладка витрины, а не новое объявление.
-    if max_prid:
-        floor = max_prid - PRID_PER_DAY * (MAX_AGE_DAYS + 1)
-        old = [r for r in accepted if r["prid"] < floor]
-        for r in old:
-            skipped.append((str(r["prid"]), "номер объявления старый при свежей дате -- перевыкладка"))
-        accepted = [r for r in accepted if r["prid"] >= floor]
 
     print("\nbatdongsan, %s: карточек %d, заводится %d" % (a.city, len(seen), len(accepted)))
     if not seen:
