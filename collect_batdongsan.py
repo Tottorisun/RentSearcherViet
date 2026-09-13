@@ -47,6 +47,7 @@ import sys
 import time
 
 import ingest_telegram as it
+import repo_sync
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROFILE = os.path.join(HERE, "_bds_profile")   # переопределяется ключом --profile
@@ -359,28 +360,13 @@ if __name__ == "__main__":
 '''
 
 
-def git(*args):
-    return subprocess.run(["git"] + list(args), capture_output=True, text=True, encoding="utf-8")
-
-
 def commit_rows(path):
-    """Коммит только своих файлов -- и только если чужой работы в них нет.
-
-    Репозиторий на ПК рабочий: в нём сидит сессия. Если rebuild_final.py уже
-    изменён кем-то ещё, `git add` унёс бы чужую работу в чужой коммит."""
-    r = git("pull", "--rebase", "--quiet")
-    if r.returncode:
-        return "git pull --rebase не прошёл -- партия записана, но не закоммичена"
-    git("add", "--", "rebuild_final.py", path)
+    """Коммит только своих файлов; сервер подтянут ещё до вставки (repo_sync.prepare)."""
     msg = ("batdongsan: rows filed by the program\n\n"
            "Districts come from the portal itself: it prints the current ward in the card\n"
            "and the ward of the address in the ad's own URL.\n\n"
            "Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>")
-    r = git("commit", "-q", "-m", msg)
-    if r.returncode:
-        return "git commit не прошёл: %s" % ((r.stdout or "") + (r.stderr or "")).strip()[:160]
-    r = git("push", "-q", "origin", "HEAD")
-    return ("закоммичено, но push не прошёл: %s" % (r.stderr or "").strip()[:160]) if r.returncode else None
+    return repo_sync.commit_and_push(["rebuild_final.py", path], msg, path)
 
 
 def allocate(n):
@@ -575,6 +561,12 @@ def main():
 
     if not a.write or not accepted:
         return 0
+    if a.commit and a.insert:
+        # До номеров и вставки, а не после: см. repo_sync.
+        why = repo_sync.prepare(["rebuild_final.py"])
+        if why:
+            print("заведение отложено -- %s" % why)
+            return 0
     ids = allocate(len(accepted))
     inserted = False
     try:

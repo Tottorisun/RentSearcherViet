@@ -71,6 +71,7 @@ import subprocess
 import sys
 
 import ingest_telegram as it
+import repo_sync
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STATE = "facebook_ingest_state.json"
@@ -704,7 +705,9 @@ def commit(path, accepted):
     rebuild_final.py уже изменён кем-то ещё, `git add` унёс бы чужую работу в
     чужой коммит. Тогда партия просто остаётся на диске."""
     photos = sorted({os.path.dirname(p) for r in accepted for p in r["details"]["photos"]})
-    files = ["rebuild_final.py", path] + photos
+    # Файл состояния -- тоже свой: он отслеживается, и не попади он в коммит,
+    # изменённым он сорвал бы pull следующему прогону.
+    files = ["rebuild_final.py", STATE, path] + photos
     # Каталоги с фотографиями должны быть НЕ исключены из репозитория. Сейчас
     # они исключены (.gitignore, правило fb_photos/), и git add на исключённом
     # пути обрывается целиком: не добавляется ни фотография, ни rebuild_final,
@@ -716,24 +719,12 @@ def commit(path, accepted):
         return ("фотографии не идут в репозиторий: %s исключён правилом %s -- партия записана, но "
                 "не закоммичена, иначе сервер собрал бы карточки с пустыми местами вместо снимков"
                 % (first or photos[0], rule))
-    r = git("pull", "--rebase", "--quiet")
-    if r.returncode:
-        return "git pull --rebase не прошёл (%s) -- партия записана, но не закоммичена" % (r.stderr or "").strip()[:120]
-    r = git("add", "--", *files)
-    if r.returncode:
-        return "git add не прошёл: %s" % ((r.stdout or "") + (r.stderr or "")).strip()[:200]
     msg = ("Facebook groups: %s filed by the program\n\n"
            "ingest_facebook.py read the posts fb_collect.py had collected and filed only those\n"
            "whose type, single price, photos and district all came out of the post itself.\n\n"
            "Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
            % it.ru_plural(len(accepted), "строка", "строки", "строк"))
-    r = git("commit", "-q", "-m", msg)
-    if r.returncode:
-        return "git commit не прошёл: %s" % ((r.stdout or "") + (r.stderr or "")).strip()[:160]
-    r = git("push", "-q", "origin", "HEAD")
-    if r.returncode:
-        return "закоммичено, но push не прошёл: %s" % (r.stderr or "").strip()[:160]
-    return None
+    return repo_sync.commit_and_push(files, msg, path)
 
 
 def main():
@@ -812,11 +803,12 @@ def main():
 
     if not a.write or not accepted:
         return 0
-    dirty = (git("status", "--porcelain", "--", "rebuild_final.py").stdout or "").strip()
-    if dirty and a.commit:
-        print("rebuild_final.py уже изменён кем-то ещё -- заведение отложено, чтобы не смешать работу:")
-        print("  %s" % dirty)
-        return 0
+    if a.commit and a.insert:
+        # До номеров и вставки, а не после: см. repo_sync.
+        why = repo_sync.prepare(["rebuild_final.py", STATE])
+        if why:
+            print("заведение отложено -- %s" % why)
+            return 0
     # Блок 3000000 -- это Facebook и hoppler; 2000000, который it.allocate
     # берёт по умолчанию, принадлежит Telegram. Номер сам по себе ничего не
     # ломает, но по блоку видно, чей это ряд, и обе программы не должны
