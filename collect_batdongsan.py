@@ -72,6 +72,16 @@ CITY_SLUG = {
     "buon-ma-thuot": "buon-ma-thuot-dl",
     "phu-quoc": "phu-quoc-kg",
 }
+# Где город большой, а районов у сайта мало, обходится не весь город, а списки
+# прежних округов, в которых эти районы лежат. Хошимин: 8733 объявления о
+# квартирах на город, а районов у сайта семь -- Tân Mỹ и Tân Hưng (Quận 7), An
+# Khánh и Bình Trưng (Quận 2), Bến Thành (Quận 1), Khánh Hội (Quận 4), Bình Quới
+# (Bình Thạnh). По первой странице общего списка большинство карточек из других
+# районов и отсеивается; ссылки такого вида стоят на самой странице списка
+# (проверено 13.09.2026).
+AREA_SLUGS = {
+    "ho-chi-minh": ["quan-7", "quan-2", "quan-1", "quan-4", "binh-thanh"],
+}
 # Раздел -> тип жилья у нас. Только жильё: офисы, склады и киоски пропускаем,
 # как и в остальных сборщиках.
 CATEGORIES = (
@@ -451,9 +461,11 @@ def main():
         page = br.pages[0] if br.pages else br.new_page()
         try:
             cards = []
+            areas = AREA_SLUGS.get(a.city) or [slug]
             for cat, typ in CATEGORIES:
+              for area in areas:
                 for p in range(1, a.pages + 1):
-                    url = "%s/%s-%s%s" % (BASE, cat, slug, "" if p == 1 else "/p%d" % p)
+                    url = "%s/%s-%s%s" % (BASE, cat, area, "" if p == 1 else "/p%d" % p)
                     try:
                         got = fetch_list(page, url)
                     except Skip as e:
