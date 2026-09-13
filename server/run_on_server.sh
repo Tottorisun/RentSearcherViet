@@ -20,4 +20,6 @@ cd /opt/rentsearcher/app
 git fetch -q origin
 git reset -q --hard origin/main
 git clean -fdq
-exec /usr/bin/python3 run_pipeline.py --publish --no-fb
+# --no-bds: batdongsan пускает только браузер с прогретым профилем, а он живёт
+# на ПК владельца (13.09.2026). Без ключа шаги честно пропускаются, но засоряют итог.
+exec /usr/bin/python3 run_pipeline.py --publish --no-fb --no-bds
