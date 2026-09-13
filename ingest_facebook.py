@@ -123,8 +123,12 @@ ADDR_LINE = re.compile(
     r"địa chỉ|dia chi|адрес|адресс|находится\s+в)\s*:?\s*(.+)$", re.I | re.M)
 # Ориентир -- не адрес: «рядом с Lotte», «5 минут до Mỹ Khê», «easy access to
 # Makati». Такие куски выбрасываются, иначе район берётся от соседнего города.
+# Вьетнамские слова добавлены 13.09.2026 вместе с названиями жилых комплексов в
+# WARD_ALIASES: «gần Manor Crown» иначе дал бы район комплекса дому по соседству.
+# «cách» -- только не в «Cách Mạng Tháng Tám»: это улица почти в каждом городе.
 NEARBY = re.compile(r"^\s*(?:near|close to|beside|next to|walking distance|access to|"
-                    r"\d+\s*[- ]?(?:min|mins|minute|minutes)|рядом|близко|в \d+ минут)", re.I)
+                    r"\d+\s*[- ]?(?:min|mins|minute|minutes)|рядом|близко|в \d+ минут|"
+                    r"gần\b|sát\b|đối diện\b|cách\s+(?!m[ạa]ng\b))", re.I)
 STREET_TAIL = re.compile(r"\b([A-ZĐ][\wÀ-ỹ']*(?:\s+[A-ZĐ0-9][\wÀ-ỹ']*){0,3})\s+(?:street|str\.?|st\.)\b")
 STREET_HEAD = re.compile(r"\b(?:đường|duong|street|ул\.)\s+([A-ZĐ][\wÀ-ỹ']*(?:\s+[A-ZĐ0-9][\wÀ-ỹ']*){0,3})")
 # Слова, которые в адресной строке ничего не называют, но встречаются в

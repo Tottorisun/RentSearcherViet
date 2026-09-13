@@ -123,11 +123,24 @@ OLD_DISTRICTS = {
 # установлен по адресной иерархии OSM (10-11 сентября 2026).
 WARD_ALIASES = {
     "da-nang": {"my an": "ns", "khue my": "ns", "hoa hai": "ns", "phuoc my": "ah"},
-    "nha-trang": {"vinh hoa": "btr"},
+    "nha-trang": {"vinh hoa": "btr", "hud building": "tl"},
     # Thảo Điền и An Phú -- прежние кварталы Quận 2, после реформы в An Khánh.
     # Жило только в модуле Facebook, и сборщик batdongsan, читающий эту таблицу,
     # пропускал объявления Thảo Điền -- самого плотного рынка аренды для приезжих.
     "ho-chi-minh": {"thao dien": "ak", "an phu": "ak"},
+    # Жилые комплексы, которые посты пишут вместо района (13.09.2026 на них отсеялись
+    # посты Facebook). Район каждого проверен двумя независимыми источниками:
+    # контур или здание в OSM внутри квартала, резолюция 2025 года о слиянии
+    # кварталов, адрес застройщика. Только полное название: «hud» есть и в Phước
+    # Long, «bulacao» -- и в Talisay, «baseline» -- ещё три здания квартала.
+    # Отклонены AS Fortuna (улица через Banilad и Mandaue) и KĐT An Phú Thịnh
+    # (лежит в qn и qnd); Meyhomes отложен -- контура нет, площадь в источниках
+    # от 56 до 267 га. Доказательства -- в сообщении коммита.
+    "hai-phong": {"waterfront city": "lch"},
+    "hue": {"manor crown": "vyd", "vicoland": "vyd"},
+    "can-tho": {"cara river park": "crg"},
+    "cebu": {"baseline residences": "cap", "saint jude acres": "prd", "st jude acres": "prd"},
+    "phu-quoc": {"marina waterfront": "dto"},
 }
 # Район, названный как сам город, встречается в любом тексте про этот город --
 # совпадением с районом он не считается. Ловушка не выдумана: в Нячанге,
