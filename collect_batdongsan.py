@@ -136,6 +136,15 @@ PRID = re.compile(r"-pr(\d+)(?:$|[/?#])")
 WARD_IN_SLUG = re.compile(r"phuong-([a-z0-9-]+)", re.I)
 NEW_WARD = re.compile(r"\(\s*(?:P\.|Phường|X\.|Xã)?\s*([^()]+?)\s+mới\s*\)", re.I)
 OLD_MARK = re.compile(r"\(\s*(?:P\.|Phường|Q\.|Quận|TP\.)?\s*([^()]+?)\s+cũ\s*\)", re.I)
+# Города, где районы сайта названы по ПРЕЖНИМ округам, а не по кварталам реформы
+# 2025 года: у Ханоя двенадцать прежних quận, у Биньзыонга пять прежних городов.
+# Свежее объявление портал показывает новым адресом и прежним округом в скобках --
+# «P. Yên Hòa (Q. Cầu Giấy cũ)», -- и для таких городов этот округ и есть ключ
+# сайта. Новый квартал им не годится: Yên Hòa, Vĩnh Tuy, Tây Mỗ -- не районы
+# сайта, и 13.09 из 80 ханойских карточек завелось 9, а среди отсеянных почти все
+# были «район не назван».
+OLD_DISTRICT_CITIES = {"ha-noi", "binh-duong"}
+OLD_DISTRICT_PREFIX = re.compile(r"^(?:Q\.|Quận|H\.|Huyện|TX\.|Thị xã|TP\.|Thành phố)\s*", re.I)
 DATE_LD = re.compile(r'"@datePublished"\s*:\s*"([\d-]{10})')
 NUM = re.compile(r"([\d.,]+)")
 
@@ -217,6 +226,18 @@ def ward_from(card_loc, href, city, ctx, coarse=None):
     coarse = coarse_keys(city) if coarse is None else coarse
     found, tried = [], []
 
+    # Прежний округ, напечатанный в карточке, -- для городов, чьи районы и есть
+    # прежние округа, это ответ, а не догадка. И он важнее нового квартала из
+    # адреса ссылки: квартал реформы бывает собран из кусков разных округов, и
+    # квартал, названный как округ, не обязательно лежит в нём целиком.
+    m = OLD_MARK.search(card_loc or "")
+    if m and city in OLD_DISTRICT_CITIES:
+        name = OLD_DISTRICT_PREFIX.sub("", m.group(1).split(",")[0].strip())
+        w = it.words(name)
+        if w in full:
+            return full[w], "прежний округ назван в карточке: %s" % name
+        tried.append(w)
+
     # Где кончается квартал, разметка адреса не говорит («phuong-loc-tho-350»),
     # поэтому берём самый длинный кусок, который знает сайт.
     for m in WARD_IN_SLUG.finditer(href or ""):
@@ -245,7 +266,10 @@ def ward_from(card_loc, href, city, ctx, coarse=None):
             return key, why
     if found:
         return found[0]
-    return None, "район не назван так, как его знает сайт (%s)" % (", ".join(tried) or "нет данных")
+    # Сама строка карточки -- в причину: без неё 13.09 пришлось восстанавливать,
+    # что портал печатает, по чужим сохранённым страницам.
+    return None, "район не назван так, как его знает сайт (%s; в карточке «%s»)" % (
+        ", ".join(tried) or "нет данных", re.sub(r"\s+", " ", card_loc or "").strip()[:60])
 
 
 def describe(typ, beds, baths, area, place, dname, furnished):
