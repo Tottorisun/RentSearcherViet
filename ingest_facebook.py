@@ -80,6 +80,7 @@ FRESH_HOURS = 30          # файлы кандидатов прошлой но�
 MAX_PHOTOS = 6
 MIN_BODY = 60
 SOURCE_BY_MODE = {"group_post": "fbgroup", "marketplace": "fbmarketplace"}
+MIN_STREET_SEGMENTS = 3   # см. ветку улиц в decide: меньше -- не довод
 PRICE_LIMITS = {"VND": (1_500_000, 500_000_000), "PHP": (3_000, 500_000), "USD": (100, 20_000)}
 
 # Прежние кварталы и местности, чей нынешний район установлен по адресной
@@ -181,11 +182,24 @@ PART_OF_HOUSE = re.compile(
     r"\bbottom part\b|\bsilong\b|\bupper floor only\b|\bground floor only\b|"
     r"\b(?:1st|2nd|first|second) floor only\b|\btang tret\b")
 
+# Заголовок про помещение под бизнес или здание целиком. Тип жилья у такого поста
+# не назван, разбор уходил в текст и находил там чужое слово: «CHO THUÊ TÒA 3 TẦNG
+# GÓC 2 MẶT TIỀN THI SÁCH» (здание под F&B и банки, 120 млн) стал «Квартирой» из-за
+# «tổ hợp chung cư, khách sạn 4-5 sao bao quanh» -- «рядом жилые комплексы». Только
+# по заголовку: в тексте жилого объявления «gần văn phòng» -- ориентир, не предмет.
+# На 186 кандидатах 13.09 совпало два заголовка, оба коммерческие.
+COMMERCIAL_TITLE = re.compile(
+    r"\btoa nha\b|\btoa \d+ tang\b|\bmat bang\b|\bvan phong\b|\bshowroom\b|\bshophouse\b|"
+    r"\bnha xuong\b|\bkho xuong\b|\bkho bai\b|\boffice space\b|\bcommercial\b|\bwarehouse\b|"
+    r"\bki ot\b|\bkiot\b|\bretail space\b")
+
 
 def type_of(text):
     """(тип, спальни). Тип сначала ищется в ЗАГОЛОВКЕ поста и только потом во
     всём тексте: у «1 BEDROOM APARTMENT FOR RENT» ниже по тексту почти всегда
     попадается слово studio, и по всему тексту квартира становилась студией."""
+    if COMMERCIAL_TITLE.search(it.words(it.first_line(text))):
+        raise Skip("помещение под бизнес или здание целиком, а не жильё")
     typ = _type_in(it.first_line(text)) or _type_in(text)
     if not typ:
         raise Skip("тип жилья в тексте не назван")
@@ -439,7 +453,12 @@ def resolve(c, text, city, ctx, exclude):
         if st and st["counts"]:
             total = sum(st["counts"].values())
             top, top_n = st["counts"].most_common(1)[0]
-            if top != it.OUTSIDE and top_n >= 0.85 * total:
+            # Отрезок выгрузки -- одна центральная точка улицы, и у короткой улицы
+            # у границы она ложится не туда: Thi Sách в Вунгтау -- «1 из 1» в
+            # Phường Vũng Tàu, а пост сам назвал прежний Phường 8. По сверке со
+            # строками Вунгтау и Далата однотрезковые совпадения держались на доле
+            # крупнейшего района, а с тремя отрезками правило попадало и в малые.
+            if total >= MIN_STREET_SEGMENTS and top != it.OUTSIDE and top_n >= 0.85 * total:
                 ev["street"] = top
                 why["street"] = "улица %s: %d из %d отрезков в %s" % (
                     " / ".join(st["names"]), top_n, total, top)
