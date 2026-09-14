@@ -355,7 +355,13 @@ def _to_base(amount, cur):
 
 N = "https://www.nhatot.com"
 
-def L(id, city, district, type_, price, area, desc, url, posted, daysAgo, source="chotot", details=None, descEn=None, cur="VND"):
+def L(id, city, district, type_, price, area, desc, url, posted, daysAgo, source="chotot", details=None, descEn=None, cur="VND", postedOn=None):
+    # postedOn -- дата выкладки объявления (ГГГГ-ММ-ДД). Её читает только
+    # purge_old_listings.py, в данные страницы она не идёт. Без неё чистка ставит
+    # якорь в день, когда впервые встретила строку: «сегодня минус daysAgo». Строки
+    # вечернего прогона ПК сервер впервые видит утром -- 14.09 у всех строк
+    # вечернего прогона 13.09 якорь оказался на день позже, и неделя на сайте
+    # становилась восемью днями.
     d = {"id":id,"city":city,"district":district,"type":type_,"price":price,"area":area,"desc":desc,
          "url":url,"posted":posted,"daysAgo":daysAgo,"source":source}
     # Optional English description. The site falls back to `desc` when absent,

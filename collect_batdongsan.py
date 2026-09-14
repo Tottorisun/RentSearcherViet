@@ -522,11 +522,12 @@ def write_batch(rows_data, skipped, ids, today, city):
     j = lambda s: json.dumps(s, ensure_ascii=False)
     rows = []
     for i, r in zip(ids, rows_data):
-        rows.append('L(%d,"%s","%s","%s",%d,%s,\n  %s,\n  %s,%s,%d,source="batdongsan",\n'
+        rows.append('L(%d,"%s","%s","%s",%d,%s,\n  %s,\n  %s,%s,%d,source="batdongsan",postedOn="%s",\n'
                     '  descEn=%s,\n  details=%s),'
                     % (i, r["city"], r["district"], r["type"], r["price"],
                        r["area"] if r["area"] else "None", j(r["ru"]), j(r["url"]),
-                       j(it.posted_label(r["age"])), r["age"], j(r["en"]), j(r["details"])))
+                       j(it.posted_label(r["age"])), r["age"],
+                       (today - datetime.timedelta(days=r["age"])).isoformat(), j(r["en"]), j(r["details"])))
     acc = "\n".join("  * %s -- %s, %s ₫%s: %s"
                     % (r["prid"], r["district"], format(r["price"], ","),
                        ", %d м²" % r["area"] if r["area"] else "", r["why"]) for r in rows_data)

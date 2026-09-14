@@ -96,7 +96,8 @@ def main():
                 skipped.append((getattr(e, "lineno", "?"), lid))
                 continue
             src_kw = next((const(k.value) for k in e.keywords if k.arg == "source"), "chotot")
-            blocks.append((e.lineno, e.end_lineno, str(lid), posted_old, days_old, src_kw))
+            posted_on = next((const(k.value) for k in e.keywords if k.arg == "postedOn"), None)
+            blocks.append((e.lineno, e.end_lineno, str(lid), posted_old, days_old, src_kw, posted_on))
 
         if skipped:
             print(f"WARNING: {len(skipped)} block(s) could not be parsed as a plain L(id,...,posted,daysAgo,...) call and were left untouched:")
@@ -107,11 +108,20 @@ def main():
         removed_ids = []
         relabelled = 0
         # Edit from the bottom up so earlier line numbers stay valid.
-        for lineno, end_lineno, lid, posted_old, days_old, src_kw in sorted(blocks, key=lambda b: b[0], reverse=True):
+        for lineno, end_lineno, lid, posted_old, days_old, src_kw, posted_on in sorted(blocks, key=lambda b: b[0], reverse=True):
             if lid in posted_dates:
                 anchor = datetime.date.fromisoformat(posted_dates[lid])
             else:
-                anchor = today - datetime.timedelta(days=days_old)
+                # Дата выкладки из самой строки точнее «сегодня минус daysAgo»:
+                # daysAgo считан, когда строку записали, а чистка может впервые
+                # увидеть её на следующий день -- так бывает со строками вечернего
+                # прогона ПК (см. postedOn в L() шаблона).
+                try:
+                    anchor = datetime.date.fromisoformat(posted_on) if isinstance(posted_on, str) else None
+                except ValueError:
+                    anchor = None
+                if anchor is None or anchor > today:
+                    anchor = today - datetime.timedelta(days=days_old)
                 posted_dates[lid] = anchor.isoformat()
             true_days = (today - anchor).days
 

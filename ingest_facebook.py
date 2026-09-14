@@ -697,12 +697,12 @@ def write_batch(accepted, skipped, ids, today):
     j = lambda s: json.dumps(s, ensure_ascii=False)
     rows = []
     for i, r in zip(ids, accepted):
-        rows.append('L(%d,"%s","%s","%s",%d,%s,\n  %s,\n  %s,"сегодня",0,source="%s"%s,\n'
+        rows.append('L(%d,"%s","%s","%s",%d,%s,\n  %s,\n  %s,"сегодня",0,source="%s"%s,postedOn="%s",\n'
                     '  descEn=%s,\n  details=%s),'
                     % (i, r["city"], r["district"], r["type"], r["price"],
                        r["area"] if r["area"] else "None", j(r["ru"]), j(r["url"]), r["source"],
-                       "" if r["cur"] == "VND" else ',cur="%s"' % r["cur"], j(r["en"]),
-                       j(r["details"])))
+                       "" if r["cur"] == "VND" else ',cur="%s"' % r["cur"], today.isoformat(),
+                       j(r["en"]), j(r["details"])))
     acc = "\n".join("  * %s -- %s/%s, %s %s: %s"
                     % (r["key"], r["city"], r["district"], format(r["price"], ","), r["cur"], r["why"])
                     for r in accepted)
