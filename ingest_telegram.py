@@ -98,7 +98,7 @@ OVERPASS = "https://overpass-api.de/api/interpreter"
 UA = "RentSearcher/1.0 (+https://tottorisun.github.io/RentSearcherViet/)"
 
 VN_TZ = datetime.timezone(datetime.timedelta(hours=7))
-MAX_AGE_DAYS = 13        # purge_old_listings.py снимает строки старше 14 дней
+MAX_AGE_DAYS = 6         # purge_old_listings.py снимает строки старше 7 дней
 MAX_PHOTOS = 6
 MIN_PRECEDENT = 2
 PRICE_LIMITS = {"VND": (1_500_000, 500_000_000), "USD": (100, 20_000)}
@@ -764,7 +764,7 @@ class Ctx:
         self.by_hash, self.by_cat, self.cat_of = {}, {}, {}
         for e in self.state["posts"].values():
             # Запись о снятой строке -- мёртвая блокировка: purge_old_listings
-            # снимает строку через 14 дней, а тот же номер каталога агентство
+            # снимает строку через 7 дней, а тот же номер каталога агентство
             # выложит снова. Помним ровно столько, сколько строка стоит.
             if e.get("id") is None or e["id"] not in self.site:
                 continue

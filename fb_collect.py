@@ -1847,7 +1847,7 @@ def finish(result, out_path, started):
 def prune_photos(apply_it):
     """Delete photo directories for listings no longer on the site.
 
-    purge_old_listings.py removes rows after 14 days; without this the pixels
+    purge_old_listings.py removes rows after 7 days; without this the pixels
     stay in the repo forever.
     """
     if not os.path.isdir(PHOTO_ROOT):

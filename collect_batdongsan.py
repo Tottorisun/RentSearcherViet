@@ -143,7 +143,7 @@ CATEGORIES = (
     ("cho-thue-nha-tro-phong-tro", "Комната"),
     ("cho-thue-nha-biet-thu-lien-ke", "Дом"),
 )
-MAX_AGE_DAYS = 13          # purge_old_listings.py снимает строки старше 14 дней
+MAX_AGE_DAYS = 6           # purge_old_listings.py снимает строки старше 7 дней
 PRID_PER_DAY = 4500        # сквозная нумерация по стране, замер 12.09.2026
 MAX_PHOTOS = 6
 PRICE_LIMITS = (1_500_000, 500_000_000)
@@ -355,14 +355,14 @@ NOTICE_RU = ("Описание собрано программой из поле
              "санузлы, площадь, район и цена. Рекламный текст продавца не пересказан. Район назван "
              "самим источником: портал печатает и нынешний квартал, и прежний. Фотографии показаны "
              "ссылками на batdongsan и хранятся у них. Дата — «Ngày đăng» объявления; при "
-             "перевыкладке продавцом она обновляется, поэтому свежесть проверена ещё и по номеру "
-             "объявления.")
+             "перевыкладке продавцом она обновляется: перевыложенное объявление показывается "
+             "ещё 7 дней.")
 NOTICE_EN = ("This description was assembled by a program from the ad's own fields on "
              "batdongsan.com.vn — type, rooms, bathrooms, size, ward and price. The seller's "
              "marketing copy is not retold. The district comes from the source itself: the portal "
              "prints both the current ward and the former one. The photos are shown as links to "
              "batdongsan and stay hosted there. The date is the ad's own posting date; sellers reset "
-             "it when they repost, so freshness is checked against the ad's number as well.")
+             "it when they repost, and a reposted ad is shown for another 7 days.")
 
 
 # ------------------------------------------------------------------ браузер --
@@ -540,31 +540,11 @@ def main():
                     if len(got) < 20:
                         break
 
-            # Старый номер при свежей дате -- перевыкладка витрины, а не новое
-            # объявление. Порог считается ДО разбора: раньше перевыкладка проходила
-            # все проверки, для неё открывалась страница объявления, она занимала
-            # место в лимите прогона и выбрасывалась лишь в конце. 13.09 в Кантхо
-            # лимит в 20 строк был выбран, 17 карточек до него не дошли, а
-            # завелось 12; в Хайфоне -- 6 и 5. Порог зависит только от наибольшего
-            # номера среди всех карточек, так что посчитать его заранее -- то же
-            # самое, что считать по ходу.
-            # Карточка общего списка по стране пишет только провинцию: «· Hồ Chí Minh».
-            # На странице города в строке округ и квартал: «Q. Hải An (P. Hải An
-            # mới)». 14.09 неверные куски адреса Буонметхуота и Вунгтау привели на
-            # общий список -- 80 карточек из Хошимина и Ханоя под именем города.
-            # Не завелось ничего, но у Буонметхуота есть Tân An и Tân Lập, а такие
-            # кварталы есть во многих провинциях. Больше половины таких карточек --
-            # это не город: код 1, чтобы сводка назвала шаг.
-            national = [c for c in cards if national_card(c)]
-            if cards and len(national) * 2 >= len(cards):
-                print("  адрес города ведёт на общий список по стране: %d из %d карточек без "
-                      "квартала («%s») -- проверьте CITY_SLUG[%r]"
-                      % (len(national), len(cards), (national[0].get("loc") or "").strip(), a.city))
-                return 1
-
-            prids = [int(m.group(1)) for m in
-                     (PRID.search((c.get("href") or "").split("?")[0]) for c in cards) if m]
-            floor = max(prids) - PRID_PER_DAY * (MAX_AGE_DAYS + 1) if prids else 0
+            # Перевыкладку НЕ отсеиваем -- решение владельца 14.09.2026: «если такой же
+            # пост появится снова через день-два, значит арендодатель не нашёл
+            # клиента или клиент сорвался; он снова ищет, и мы снова показываем его 7
+            # дней». Дата «Ngày đăng» у перевыложенного объявления -- день
+            # перевыкладки, по ней и считается возраст.
 
             for c in cards:
                 href = (c.get("href") or "").split("?")[0]
@@ -585,9 +565,6 @@ def main():
                     continue
                 if national_card(c):
                     skipped.append((key, "карточка без квартала -- из общего списка, а не города"))
-                    continue
-                if prid < floor:
-                    skipped.append((key, "номер объявления старый при свежей дате -- перевыкладка"))
                     continue
                 age = days_ago(c.get("when"), today)
                 if age is None or age > MAX_AGE_DAYS:
