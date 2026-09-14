@@ -16296,6 +16296,11 @@ __LEAFLET_CSS__
   .leaflet-cluster-anim .leaflet-marker-icon,.leaflet-cluster-anim .leaflet-marker-shadow{transition:transform .3s ease-out,opacity .3s ease-in;}
   .leaflet-cluster-spider-leg{transition:stroke-dashoffset .3s ease-out,stroke-opacity .3s ease-in;}
   .map-tools{display:flex;gap:6px;flex-wrap:wrap;}
+  .map-filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:8px 10px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-md);}
+  .map-filter-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;}
+  .map-filter-label{font-size:0.72rem;font-weight:700;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;}
+  .map-filter-count{margin-left:auto;font-weight:700;font-size:0.9rem;color:var(--ink);white-space:nowrap;}
+  @media (max-width:640px){.map-filter-count{margin-left:0;}}
   .map-tool{appearance:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-dim);
     padding:6px 11px;border-radius:999px;font-size:0.8rem;font-weight:600;cursor:pointer;}
   .map-tool:hover{border-color:var(--accent);color:var(--accent);}
@@ -16582,6 +16587,21 @@ __LEAFLET_CSS__
           <button type="button" class="map-tool" id="map-near-btn" data-i18n="mapNearMe">📍 Рядом со мной</button>
           <button type="button" class="map-tool" id="map-full-btn" data-i18n="mapFullscreen">⤢ На весь экран</button>
         </div>
+      </div>
+      <!-- Цена и тип прямо в карточке карты (решение владельца 14.09.2026: «ценники в
+           самой карточке»): у RentHome они над картой, у нас в развёрнутой карте
+           фильтров не было вовсе. Это не копия фильтров, а второй набор тех же
+           кнопок: одно состояние, панель слева и карточка карты всегда совпадают. -->
+      <div class="map-filters" id="map-filters">
+        <div class="map-filter-group">
+          <span class="map-filter-label" data-i18n="typeLabel">Тип жилья</span>
+          <div class="chip-row" id="map-type-chips"></div>
+        </div>
+        <div class="map-filter-group">
+          <span class="map-filter-label" data-i18n="budgetLabel">Бюджет, млн ₫ / мес</span>
+          <div class="chip-row" id="map-budget-chips"></div>
+        </div>
+        <span class="map-filter-count" id="map-filter-count"></span>
       </div>
       <div id="leaflet-map" class="leaflet-map-el"></div>
       <div class="map-legend">
@@ -16965,6 +16985,9 @@ __LEAFLET_CSS__
     mapTitle: document.getElementById("map-title"),
     mapSvgWrap: document.getElementById("leaflet-map"),
     resultsCount: document.getElementById("results-count"),
+    mapTypeChips: document.getElementById("map-type-chips"),
+    mapBudgetChips: document.getElementById("map-budget-chips"),
+    mapFilterCount: document.getElementById("map-filter-count"),
     resultsContext: document.getElementById("results-context"),
     resultsList: document.getElementById("results-list"),
     favFilterToggle: document.getElementById("fav-filter-toggle"),
@@ -17539,18 +17562,23 @@ __LEAFLET_CSS__
   });
 
   function renderBudgetChips(){
-    el.budgetChips.innerHTML = "";
+    fillBudgetChips(el.budgetChips);
+    if (el.mapBudgetChips) fillBudgetChips(el.mapBudgetChips);
+  }
+
+  function fillBudgetChips(box){
+    box.innerHTML = "";
     var allBtn = document.createElement("button");
     allBtn.type="button"; allBtn.className="chip"; allBtn.textContent=t("any");
     allBtn.setAttribute("aria-pressed", (state.maxBudget===null && state.minBudget===null) ? "true":"false");
     allBtn.addEventListener("click", function(){ setBudgetRange(BUDGET_MIN, BUDGET_MAX); });
-    el.budgetChips.appendChild(allBtn);
+    box.appendChild(allBtn);
     BUDGET_CHIPS.forEach(function(v){
       var b = document.createElement("button");
       b.type="button"; b.className="chip"; b.textContent=t("upTo") + " " + v;
       b.setAttribute("aria-pressed", (state.maxBudget===v && state.minBudget===null) ? "true":"false");
       b.addEventListener("click", function(){ setBudgetRange(BUDGET_MIN, v); });
-      el.budgetChips.appendChild(b);
+      box.appendChild(b);
     });
   }
 
@@ -17686,12 +17714,17 @@ __LEAFLET_CSS__
   }
 
   function renderTypeChips(){
-    el.typeChips.innerHTML = "";
+    fillTypeChips(el.typeChips);
+    if (el.mapTypeChips) fillTypeChips(el.mapTypeChips);
+  }
+
+  function fillTypeChips(box){
+    box.innerHTML = "";
     var allBtn = document.createElement("button");
     allBtn.type="button"; allBtn.className="chip"; allBtn.textContent=t("all");
     allBtn.setAttribute("aria-pressed", state.type===null ? "true":"false");
     allBtn.addEventListener("click", function(){ state.type=null; renderTypeChips(); applyFilters(); });
-    el.typeChips.appendChild(allBtn);
+    box.appendChild(allBtn);
     // Only the types belonging to the selected kind: showing "Warehouse" while
     // the user is browsing housing is noise, and vice versa.
     var typesForKind = state.kind === "commercial" ? COMMERCIAL_TYPES
@@ -17704,7 +17737,7 @@ __LEAFLET_CSS__
       b.type="button"; b.className="chip"; b.textContent=typeName(tp);
       b.setAttribute("aria-pressed", state.type===tp ? "true":"false");
       b.addEventListener("click", function(){ state.type = (state.type===tp) ? null : tp; renderTypeChips(); applyFilters(); });
-      el.typeChips.appendChild(b);
+      box.appendChild(b);
     });
   }
 
@@ -17819,6 +17852,7 @@ __LEAFLET_CSS__
     }
 
     el.resultsCount.textContent = list.length + " " + declineObjav(list.length);
+    if (el.mapFilterCount) el.mapFilterCount.textContent = el.resultsCount.textContent;
     var distLabel = state.district ? districtByKey(state.city, state.district).name : t("anyDistrict");
     var budgetLabel;
     if (state.minBudget===null && state.maxBudget===null) budgetLabel = t("anyBudget");
