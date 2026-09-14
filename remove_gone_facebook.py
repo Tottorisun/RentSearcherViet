@@ -18,6 +18,13 @@ Chrome и тот же перехват пишущих запросов, что �
 Пропажа -- только надпись о недоступности (fb_collect.UNAVAILABLE_RE) на почти
 пустой странице без статьи. Всё незнакомое -- «неясно», строка остаётся.
 
+У MARKETPLACE СВОЙ ПРИЗНАК -- замерено тем же днём на двух объявлениях, которые
+первый живой отчёт оставил «неясными»: Facebook перенаправляет на
+/marketplace/<город>/?unavailable_product=1 и пишет «This listing isn't available
+anymore. It may have been sold or expired», а ниже -- лента чужих объявлений,
+поэтому страница длинная и под правило «почти пустой страницы» не подходит.
+Параметр в адресе -- признак самого Facebook, надёжнее текста; текст -- запасной.
+
 ТА ЖЕ НАДПИСЬ -- И У СКРЫТОГО. Facebook пишет «isn't available» и про удалённый
 пост, и про пост, который аккаунту не виден: владелец вышел из группы, группу
 закрыли. Поэтому если в прогоне у одной группы пропали HIDDEN_GROUP_MIN постов и
@@ -75,11 +82,17 @@ SHORT_PAGE = 1200                        # живые страницы заме�
 GROUP_POST = re.compile(r"facebook\.com/groups/([^/?#]+)/posts/(\d+)")
 MARKET_ITEM = re.compile(r"facebook\.com/marketplace/item/(\d+)")
 MARKET_TITLE = re.compile(r"^(?:\(\d+\)\s*)?Marketplace\s*[-–]", re.I)
+MARKET_GONE_TEXT = re.compile(r"this listing isn'?t available anymore|tin rao này không còn", re.I)
 
 
-def verdict(title, body, articles, url):
+def verdict(title, body, articles, url, final_url=""):
     """(gone | alive | unclear, почему) -- по признакам, замеренным 14.09.2026."""
     body = body or ""
+    if MARKET_ITEM.search(url or ""):
+        if "unavailable_product=1" in (final_url or ""):
+            return "gone", "Marketplace: объявление снято или продано (unavailable_product)"
+        if MARKET_GONE_TEXT.search(body):
+            return "gone", "Marketplace: «This listing isn't available anymore»"
     if fc.UNAVAILABLE_RE.search(body):
         if len(body) < SHORT_PAGE and not articles:
             return "gone", "Facebook: «This content isn't available»"
@@ -144,12 +157,13 @@ def check_rows(todo, cache):
                     body = page.inner_text("body", timeout=8000)
                     title = page.title()
                     articles = page.locator('[role="article"]').count()
+                    final_url = page.url
                 except SystemExit:
                     raise
                 except Exception as e:
                     unclear.append((l, "страница не открылась: %s" % str(e).splitlines()[0][:90]))
                     continue
-                v, why = verdict(title, body, articles, url)
+                v, why = verdict(title, body, articles, url, final_url)
                 if v == "alive":
                     alive.append(l)
                     cache[str(l["id"])] = {"checked": now}
