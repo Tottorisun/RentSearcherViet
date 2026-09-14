@@ -415,7 +415,8 @@ def row_text(lid, city, key, type_ru, ad, age):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--days", type=float, default=3.0, help="брать объявления не старше стольких дней")
+    ap.add_argument("--days", type=float, default=7.0, help="брать объявления не старше стольких дней "
+                    "(сайт показывает неделю)")
     ap.add_argument("--limit", type=int, default=40, help="максимум строк за прогон")
     # Отбор идёт по возрасту, поэтому город с небольшим потоком (Нячанг, Хойан)
     # в общую партию может не попасть вовсе -- вот для него это и нужно.

@@ -138,6 +138,38 @@ def max_in_file(block):
     return max(in_block) if in_block else block - 1
 
 
+BATCH_GLOB = re.compile(r"^new_listings\d+\.py$")
+BATCH_IDS = re.compile(r"^IDS\s*=\s*\[([^\]]*)\]", re.M)
+
+
+def max_in_batches(block):
+    """Наибольший номер блока во всех файлах партий new_listingsNNN.py на диске.
+
+    Журнал с высшей отметкой (hwm) у каждой машины свой, а номера блока 3000000
+    выдают и сервер (dotproperty, hoppler), и ПК (Facebook, batdongsan).
+    14.09.2026 чистка по возрасту сняла верхние строки блока, max_in_file()
+    откатился, и сервер выдал 3000643 повторно -- этот номер уже носила строка
+    ПК. Файлы партий хранят свои номера (IDS = [...]), коммитятся с обеих машин,
+    а перед выдачей номеров обе подтягивают репозиторий -- поэтому по ним виден
+    наибольший номер, выданный где угодно, и чистка его не откатит. Смотрятся
+    файлы на диске, а не в git: партия текущего прогона ещё не закоммичена."""
+    best = block - 1
+    for name in os.listdir("."):
+        if not BATCH_GLOB.match(name):
+            continue
+        try:
+            src = open(name, encoding="utf-8", errors="replace").read()
+        except OSError:
+            continue
+        m = BATCH_IDS.search(src)
+        ids = [int(x) for x in re.findall(r"\d+", m.group(1))] if m else \
+              [int(x) for x in re.findall(r"^\s*L\((\d+),", src, re.M)]
+        for i in ids:
+            if block <= i < block + 1000000 and i > best:
+                best = i
+    return best
+
+
 def cmd_allocate(args):
     acquire_lock()
     try:
@@ -156,7 +188,7 @@ def cmd_allocate(args):
         # that posted_to_telegram.json / posted_dates.json / users' favourites
         # already know under another listing (2 Sep 2026 audit).
         hwm = int(led.setdefault("hwm", {}).get(str(args.block), 0))
-        floor = max(max_in_file(args.block), hwm)
+        floor = max(max_in_file(args.block), hwm, max_in_batches(args.block))
         for r in live:
             if r["block"] == args.block:
                 floor = max(floor, r["last"])
