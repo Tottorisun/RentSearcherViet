@@ -20,11 +20,13 @@ batdongsan печатает оба сразу -- в карточке списк�
 
     python collect_batdongsan.py --warmup
 
-СВЕЖЕСТЬ -- ПО ДВУМ КЛЮЧАМ. «Ngày đăng» сбрасывается при перевыкладке: 12
-сентября объявление с номером девятимесячной давности показывалось как
-«Đăng hôm nay». Поэтому кроме даты проверяется сам номер объявления (prid): он
-сквозной по стране и растёт примерно на 4500 в сутки, так что старый номер со
-свежей датой -- это витрина агентства, а не новое объявление.
+СВЕЖЕСТЬ -- ПО ПОСЛЕДНЕЙ ВЫКЛАДКЕ. Правило владельца 14.09.2026: объявление,
+которое продавец выложил снова, ищет жильца, и сайт показывает его ещё 7 дней.
+«Ngày đăng» карточки при перевыкладке становится днём перевыкладки, а
+«datePublished» страницы объявления остаётся первой публикацией -- берётся более
+поздняя из двух дат. Повтор того же объявления узнаётся по фотографиям: имя
+файла у batdongsan -- секунда загрузки и случайный хвост. Свежий повтор заменяет
+строку сайта, несвежий отсеивается.
 
 ЧТО НЕ ДЕЛАЕТСЯ. Не трогается `/microservice-architecture-router/` -- он прямо
 запрещён в их robots.txt (всё остальное там разрешено). Не нажимается «Hiện số»
@@ -198,6 +200,12 @@ OLD_MARK = re.compile(r"\(\s*(?:P\.|Phường|Q\.|Quận|TP\.)?\s*([^()]+?)\s+c�
 OLD_DISTRICT_CITIES = {"ha-noi", "binh-duong"}
 OLD_DISTRICT_PREFIX = re.compile(r"^(?:Q\.|Quận|H\.|Huyện|TX\.|Thị xã|TP\.|Thành phố)\s*", re.I)
 DATE_LD = re.compile(r'"@datePublished"\s*:\s*"([\d-]{10})')
+# Сколько общих файлов фотографий делают объявление повтором строки сайта. 14.09
+# одна вилла Далата завелась четырьмя строками (разные рубрики, цена 25 и 27 млн,
+# площадь 350 и 450 м², спальни 3-5): у всех четырёх 4-5 общих фотографий. Среди
+# остальных 103 строк batdongsan общей нет ни одной.
+PHOTO_DUP_MIN = 2
+BDS_PHOTO = re.compile(r'"(https://file4\.batdongsan\.com\.vn/[^"]+)"')
 NUM = re.compile(r"([\d.,]+)")
 
 
@@ -250,6 +258,55 @@ def days_ago(when, today):
         d = datetime.date(int(m.group(3)), int(m.group(2)), int(m.group(1)))
         return (today - d).days
     return None
+
+
+def photo_names(urls):
+    """Имена файлов фотографий batdongsan: «20260121095108-4f13_wm.jpg»."""
+    return {u.split("?")[0].rsplit("/", 1)[-1] for u in urls or []
+            if isinstance(u, str) and "file4.batdongsan" in u}
+
+
+def template_rows(city):
+    """[{id, url, age, photos}] -- строки города прямо из rebuild_final.py.
+
+    По собранной странице (it.Ctx) этого не узнать: на ПК она свежа лишь на момент
+    последней сборки сервера, и строк, заведённых после неё, в ней нет. Повторный
+    сбор того же города завёл бы их ссылки снова -- вставка отказала бы всей
+    партии -- и не увидел бы их фотографий."""
+    import ast
+    from listing_lock import SOURCE
+    src = open(SOURCE, encoding="utf-8").read()
+    lines = src.split("\n")
+    out = []
+    for node in ast.walk(ast.parse(src)):
+        if not (isinstance(node, ast.Call) and getattr(node.func, "id", "") == "L"
+                and len(node.args) >= 10):
+            continue
+        v = [x.value if isinstance(x, ast.Constant) else None for x in node.args[:10]]
+        if v[1] != city or not isinstance(v[0], int) or not isinstance(v[7], str):
+            continue
+        seg = "\n".join(lines[node.lineno - 1:node.end_lineno])
+        out.append({"id": v[0], "url": v[7], "age": v[9],
+                    "photos": photo_names(BDS_PHOTO.findall(seg))})
+    return out
+
+
+def photo_twins(mine, age, rows):
+    """("skip" | "replace" | None, строки-двойники) по общим фотографиям.
+
+    Двойник -- строка, с которой у объявления не меньше PHOTO_DUP_MIN общих файлов
+    фотографий. Есть двойник не старше объявления или заведённый этим же прогоном --
+    объявление отсеивается. Все двойники старше -- это перевыкладка, и объявление
+    заменяет их: правило владельца 14.09.2026, перевыложенное показывается ещё 7
+    дней, а у старой строки ссылка чаще всего уже мёртвая."""
+    twins = [r for r in rows if len(mine & r["photos"]) >= PHOTO_DUP_MIN]
+    if not twins:
+        return None, []
+    keep = [r for r in twins
+            if r.get("new") or not isinstance(r.get("age"), int) or r["age"] <= age]
+    if keep:
+        return "skip", keep
+    return "replace", twins
 
 
 def coarse_keys(city):
@@ -413,9 +470,9 @@ Nha Trang mới») и прежний в адресе объявления («phu
 собрано из полей объявления, рекламный текст не пересказан. Фотографии --
 ссылками на batdongsan, у них же и хранятся.
 
-Свежесть проверена дважды: по дате объявления и по его номеру. Номер сквозной по
-стране, поэтому старый номер со свежей датой -- это перевыкладка, а не новое
-объявление, и такие отброшены.
+Возраст -- от последней выкладки: более поздняя из даты карточки и даты страницы
+объявления. Перевыложенное объявление (те же фотографии) заменяет строку сайта:
+её номер -- в REPLACES, партия снимает её, вставив новую.
 
 ЗАВЕДЕНО:
 %(accepted)s
@@ -423,16 +480,20 @@ Nha Trang mới») и прежний в адресе объявления («phu
 ОТСЕЯНО (%(nskip)d):
 %(skipped)s
 """
-from listing_lock import insert_listings
+from listing_lock import insert_listings, remove_listings
 
 IDS = %(ids)r
+REPLACES = %(replaces)r
 
 NEW_SRC = r%(q)s
 %(rows)s
 %(q)s
 
 if __name__ == "__main__":
+    # Сначала вставка, потом снятие: откажет вставка -- файл строк не тронут.
     insert_listings(NEW_SRC, IDS, owner=__file__)
+    if REPLACES:
+        remove_listings(REPLACES, owner=__file__)
 '''
 
 
@@ -476,6 +537,7 @@ def write_batch(rows_data, skipped, ids, today, city):
         f.write(HEADER % {"n": it.ru_plural(len(rows), "строка", "строки", "строк"),
                           "date": today.isoformat(), "city": city, "accepted": it.doc_safe(acc),
                           "nskip": len(skipped), "skipped": it.doc_safe(skp), "ids": ids,
+                          "replaces": sorted({i for r in rows_data for i in r.get("replaces") or []}),
                           "q": "'''", "rows": "\n".join(rows)})
     return path
 
@@ -515,6 +577,8 @@ def main():
     today = datetime.date.today()
     ctx_site = it.Ctx(today)
     known = set(ctx_site.urls)
+    by_photo = template_rows(a.city)            # см. template_rows: не только собранная страница
+    known |= {it.norm_url(r["url"]) for r in by_photo}
     accepted, skipped, seen = [], [], set()
 
     with sync_playwright() as pw:
@@ -601,25 +665,45 @@ def main():
                 area = area or area_m2(short.get("Diện tích") or "")
                 beds = beds or small_int(spec.get("Số phòng ngủ") or "")
                 furnished = "day du" in it.words(spec.get("Nội thất") or "")
+                # Возраст -- от ПОСЛЕДНЕЙ выкладки (правило владельца 14.09.2026).
+                # «datePublished» страницы -- первая публикация, у перевыложенного
+                # объявления она старше даты карточки. Пока бралась она, 14.09
+                # вечером 18 из 36 строк Далата и Куинёна завелись с возрастом 7-35
+                # дней, хотя в списке были свежими, и утренняя чистка сняла бы их, не
+                # показав. Более поздняя из двух дат -- меньший возраст.
                 ld = DATE_LD.search(d.get("ld") or "")
                 if ld:
                     try:
-                        age = (today - datetime.date(*map(int, ld.group(1).split("-")))).days
+                        age = min(age, (today - datetime.date(*map(int, ld.group(1).split("-")))).days)
                     except ValueError:
                         pass
+                mine = photo_names(photos)
+                verdict, twins = photo_twins(mine, age, by_photo)
+                if verdict == "skip":
+                    skipped.append((key, "то же объявление, что id %s: общие фотографии, а та строка "
+                                         "не старше" % twins[0]["id"]))
+                    continue
+                replaces = [r["id"] for r in twins] if verdict == "replace" else []
                 pv = price
                 place = None
                 mproj = re.search(r"/cho-thue-[a-z-]+?-([a-z0-9-]+)/", href)
                 dup = it.duplicate({"city": a.city, "type": typ, "beds": beds, "area": area,
-                                    "cat": None, "block": None}, dkey, pv, "", ctx_site, frozenset())
+                                    "cat": None, "block": None}, dkey, pv, "", ctx_site,
+                                   frozenset(replaces))
                 if dup:
                     skipped.append((key, "похоже на уже заведённое: id %s" % dup["id"]))
                     continue
                 dname = ctx_site.district_label(a.city, dkey)
                 ru, en = describe(typ, beds, baths, area, place, dname, furnished)
+                if replaces:
+                    why += "; перевыложено -- заменяет id %s (те же фотографии)" % ", ".join(map(str, replaces))
+                by_photo = [r for r in by_photo if r["id"] not in replaces]
+                by_photo.append({"id": "new:%d" % prid, "url": href, "age": max(0, age),
+                                 "photos": mine, "new": True})
                 accepted.append({"prid": prid, "url": href, "city": a.city, "district": dkey,
                                  "type": typ, "price": price, "area": area, "beds": beds,
                                  "age": max(0, age), "ru": ru, "en": en, "why": why,
+                                 "replaces": replaces,
                                  "details": {"photos": photos, "notice": NOTICE_RU,
                                              "noticeEn": NOTICE_EN}})
                 ctx_site.by_city[a.city].append(
