@@ -71,7 +71,10 @@ import repo_sync
 from listing_lock import remove_listings
 from site_data import load_listings
 
-CACHE_FILE = "_fb_liveness_cache.json"   # git-ignored (_*): знание этой машины
+# Не «_fb_…»: под этот шаблон ingest_facebook.py ищет файлы кандидатов, и память
+# проверки печаталась в его логе как «это не файл кандидатов fb_collect».
+CACHE_FILE = "_liveness_facebook_cache.json"   # git-ignored (_*): знание этой машины
+OLD_CACHE_FILE = "_fb_liveness_cache.json"     # прежнее имя, переносится при первом чтении
 DEFAULT_LIMIT = 25
 MAX_GONE = 15
 # Половина, а не четверть, как у Telegram: проверяются в первую очередь самые
@@ -109,6 +112,8 @@ def verdict(title, body, articles, url, final_url=""):
 
 
 def load_cache():
+    if not os.path.exists(CACHE_FILE) and os.path.exists(OLD_CACHE_FILE):
+        os.replace(OLD_CACHE_FILE, CACHE_FILE)
     try:
         return json.load(open(CACHE_FILE, encoding="utf-8"))
     except (OSError, ValueError):
