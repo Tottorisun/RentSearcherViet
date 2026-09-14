@@ -89,6 +89,17 @@ HN_KEYS = {"Quận Tây Hồ":"tyh","Quận Ba Đình":"bd","Quận Hoàn Kiếm
 # Former Bình Dương (merged into HCMC in 2025): the five post-reform wards map 1:1 onto the site's keys.
 BD_NAMES = ["Phường Thuận An","Phường Dĩ An","Phường Thủ Dầu Một","Phường Bến Cát","Phường Tân Uyên"]
 BD_KEYS = {"Phường Thuận An":"ta","Phường Dĩ An":"da","Phường Thủ Dầu Một":"tdm","Phường Bến Cát":"bc","Phường Tân Uyên":"tu"}
+# Хайфон, Хюэ, Кантхо, Буонматхуот: районы сайта -- районы реформы 2025 года, и у
+# всех 21 в OSM есть действующие границы (admin_level 6, население на 01.07.2025),
+# выгружены 14.09.2026 по номерам отношений. Сверка перед добавлением: из 256 строк
+# этих городов с настоящими координатами 253 лежат в контуре своего района, 3 -- в
+# соседнем у самой границы. До этого карта этих городов была без контуров.
+# «Phường Tân An» есть и в Кантхо, и в Буонматхуоте -- у каждого города своя
+# выгрузка, поэтому имена не пересекаются.
+HP_KEYS = {"Phường Hồng Bàng":"hbg","Phường An Biên":"anb2","Phường Lê Chân":"lch","Phường Gia Viên":"gvi","Phường Ngô Quyền":"nqu","Phường Kiến An":"kan"}
+HUE_KEYS = {"Phường Phú Xuân":"pxu","Phường Vỹ Dạ":"vyd","Phường An Cựu":"acu"}
+CT_KEYS = {"Phường Ninh Kiều":"nki","Phường Tân An":"tanc","Phường Cái Khế":"ckh","Phường An Bình":"anb","Phường Cái Răng":"crg","Phường Hưng Phú":"hpu","Phường Bình Thủy":"bth2","Phường Long Tuyền":"ltu"}
+BMT_KEYS = {"Phường Buôn Ma Thuột":"bmt","Phường Tân Lập":"tlp","Phường Tân An":"tanb","Phường Ea Kao":"eak"}
 
 dl = load("dalat_overpass.json")["elements"]
 dn = load("danang_overpass.json")["elements"]
@@ -99,6 +110,10 @@ qn = load("quynhon_overpass.json")["elements"]
 pt = load("phanthiet_overpass.json")["elements"]
 hn = load("hanoi_overpass.json")["elements"]        # 12 boundary=historic quận, fetched 2 Sep 2026
 bd = load("binhduong_overpass.json")["elements"]    # 5 post-reform phường, fetched 2 Sep 2026
+hp = load("haiphong_overpass.json")["elements"]     # 6 post-reform phường, fetched 14 Sep 2026
+hue = load("hue_overpass.json")["elements"]         # 3
+ct = load("cantho_overpass.json")["elements"]       # 8
+bmt = load("buonmathuot_overpass.json")["elements"] # 4
 # Nha Trang: the four enlarged post-2025 wards DO have real OSM polygons, and
 # they were sitting unused in nt_overpass.json all along. The city's twelve
 # familiar old wards have none -- OSM keeps only the historic city outline, not
@@ -118,11 +133,16 @@ ward_boundaries = {
     "phan-thiet": wards_latlon(pt, PT_NAMES, PT_KEYS),
     "ha-noi": wards_latlon(hn, HN_NAMES, HN_KEYS),
     "binh-duong": wards_latlon(bd, BD_NAMES, BD_KEYS),
+    "hai-phong": wards_latlon(hp, list(HP_KEYS), HP_KEYS),
+    "hue": wards_latlon(hue, list(HUE_KEYS), HUE_KEYS),
+    "can-tho": wards_latlon(ct, list(CT_KEYS), CT_KEYS),
+    "buon-ma-thuot": wards_latlon(bmt, list(BMT_KEYS), BMT_KEYS),
     "nha-trang": wards_latlon(nt, NT_NAMES, NT_KEYS),
 }
 # Every key the site knows for these two cities must have come back with a
 # polygon -- a silent miss here shows up only as a district with no outline.
-for _city, _keys in (("ha-noi", HN_KEYS), ("binh-duong", BD_KEYS)):
+for _city, _keys in (("ha-noi", HN_KEYS), ("binh-duong", BD_KEYS), ("hai-phong", HP_KEYS),
+                     ("hue", HUE_KEYS), ("can-tho", CT_KEYS), ("buon-ma-thuot", BMT_KEYS)):
     _missing = sorted(set(_keys.values()) - set(ward_boundaries[_city]))
     if _missing:
         raise SystemExit("%s: no boundary polygon extracted for district key(s) %s -- check the overpass dump" % (_city, _missing))
