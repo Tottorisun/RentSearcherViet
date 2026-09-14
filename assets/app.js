@@ -126,7 +126,7 @@
       m2:"м²", thousandPerM2:"тыс ₫/м²", mlnShort:"млн", thouShort:"тыс", metres:"м", km:"км",
       detailLabels:{deposit:"Депозит", electricity:"Электричество", water:"Вода", internet:"Интернет/wifi",
         managementFee:"Управление", amenities:"Удобства", policy:"Правила", contract:"Договор", notice:"Важно"},
-      stamp:"Данные актуальны на 14 сентября 2026 · объявления старше 7 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
+      stamp:"Данные актуальны на 15 сентября 2026 · объявления старше 7 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
     },
     en: {
       h1Title:"Rental housing in Vietnam and the Philippines",
@@ -177,7 +177,7 @@
       m2:"m²", thousandPerM2:"k ₫/m²", mlnShort:"mln", thouShort:"k", metres:"m", km:"km",
       detailLabels:{deposit:"Deposit", electricity:"Electricity", water:"Water", internet:"Internet/wifi",
         managementFee:"Management fee", amenities:"Amenities", policy:"House rules", contract:"Contract", notice:"Important"},
-      stamp:"Data current as of 14 September 2026 · listings older than 7 days are excluded · always confirm price and availability via the original listing before calling the owner."
+      stamp:"Data current as of 15 September 2026 · listings older than 7 days are excluded · always confirm price and availability via the original listing before calling the owner."
     }
   };
 
@@ -228,7 +228,7 @@
   function districtHint(d){ return (lang === "en" && d.hintEn) ? d.hintEn : d.hint; }
   function typeName(tp){ return (lang === "en" && TYPE_EN[tp]) ? TYPE_EN[tp] : tp; }
   // Listings gain an English description over time (the daily checks write
-  // descEn for every new listing, and the 14-day purge cycles the whole
+  // descEn for every new listing, and the 7-day purge cycles the whole
   // dataset), so fall back to the Russian text until one exists.
   function descText(l){ return (lang === "en" && l.descEn) ? l.descEn : l.desc; }
   function sourceLabel(s){ return (lang === "en" && s.labelEn) ? s.labelEn : s.label; }
@@ -323,6 +323,9 @@
     mapTitle: document.getElementById("map-title"),
     mapSvgWrap: document.getElementById("leaflet-map"),
     resultsCount: document.getElementById("results-count"),
+    mapTypeChips: document.getElementById("map-type-chips"),
+    mapBudgetChips: document.getElementById("map-budget-chips"),
+    mapFilterCount: document.getElementById("map-filter-count"),
     resultsContext: document.getElementById("results-context"),
     resultsList: document.getElementById("results-list"),
     favFilterToggle: document.getElementById("fav-filter-toggle"),
@@ -897,18 +900,23 @@
   });
 
   function renderBudgetChips(){
-    el.budgetChips.innerHTML = "";
+    fillBudgetChips(el.budgetChips);
+    if (el.mapBudgetChips) fillBudgetChips(el.mapBudgetChips);
+  }
+
+  function fillBudgetChips(box){
+    box.innerHTML = "";
     var allBtn = document.createElement("button");
     allBtn.type="button"; allBtn.className="chip"; allBtn.textContent=t("any");
     allBtn.setAttribute("aria-pressed", (state.maxBudget===null && state.minBudget===null) ? "true":"false");
     allBtn.addEventListener("click", function(){ setBudgetRange(BUDGET_MIN, BUDGET_MAX); });
-    el.budgetChips.appendChild(allBtn);
+    box.appendChild(allBtn);
     BUDGET_CHIPS.forEach(function(v){
       var b = document.createElement("button");
       b.type="button"; b.className="chip"; b.textContent=t("upTo") + " " + v;
       b.setAttribute("aria-pressed", (state.maxBudget===v && state.minBudget===null) ? "true":"false");
       b.addEventListener("click", function(){ setBudgetRange(BUDGET_MIN, v); });
-      el.budgetChips.appendChild(b);
+      box.appendChild(b);
     });
   }
 
@@ -1044,12 +1052,17 @@
   }
 
   function renderTypeChips(){
-    el.typeChips.innerHTML = "";
+    fillTypeChips(el.typeChips);
+    if (el.mapTypeChips) fillTypeChips(el.mapTypeChips);
+  }
+
+  function fillTypeChips(box){
+    box.innerHTML = "";
     var allBtn = document.createElement("button");
     allBtn.type="button"; allBtn.className="chip"; allBtn.textContent=t("all");
     allBtn.setAttribute("aria-pressed", state.type===null ? "true":"false");
     allBtn.addEventListener("click", function(){ state.type=null; renderTypeChips(); applyFilters(); });
-    el.typeChips.appendChild(allBtn);
+    box.appendChild(allBtn);
     // Only the types belonging to the selected kind: showing "Warehouse" while
     // the user is browsing housing is noise, and vice versa.
     var typesForKind = state.kind === "commercial" ? COMMERCIAL_TYPES
@@ -1062,7 +1075,7 @@
       b.type="button"; b.className="chip"; b.textContent=typeName(tp);
       b.setAttribute("aria-pressed", state.type===tp ? "true":"false");
       b.addEventListener("click", function(){ state.type = (state.type===tp) ? null : tp; renderTypeChips(); applyFilters(); });
-      el.typeChips.appendChild(b);
+      box.appendChild(b);
     });
   }
 
@@ -1177,6 +1190,7 @@
     }
 
     el.resultsCount.textContent = list.length + " " + declineObjav(list.length);
+    if (el.mapFilterCount) el.mapFilterCount.textContent = el.resultsCount.textContent;
     var distLabel = state.district ? districtByKey(state.city, state.district).name : t("anyDistrict");
     var budgetLabel;
     if (state.minBudget===null && state.maxBudget===null) budgetLabel = t("anyBudget");

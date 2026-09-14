@@ -850,6 +850,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
   .leaflet-cluster-anim .leaflet-marker-icon,.leaflet-cluster-anim .leaflet-marker-shadow{transition:transform .3s ease-out,opacity .3s ease-in;}
   .leaflet-cluster-spider-leg{transition:stroke-dashoffset .3s ease-out,stroke-opacity .3s ease-in;}
   .map-tools{display:flex;gap:6px;flex-wrap:wrap;}
+  .map-filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:8px 10px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-md);}
+  .map-filter-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;}
+  .map-filter-label{font-size:0.72rem;font-weight:700;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;}
+  .map-filter-count{margin-left:auto;font-weight:700;font-size:0.9rem;color:var(--ink);white-space:nowrap;}
+  @media (max-width:640px){.map-filter-count{margin-left:0;}}
   .map-tool{appearance:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-dim);
     padding:6px 11px;border-radius:999px;font-size:0.8rem;font-weight:600;cursor:pointer;}
   .map-tool:hover{border-color:var(--accent);color:var(--accent);}
