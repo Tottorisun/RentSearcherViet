@@ -67,8 +67,13 @@ def _commit(files, msg):
     return None
 
 
-def commit_and_push(files, msg, batch):
-    """После вставки партии `batch`. None -- в репозитории, иначе что не получилось."""
+def commit_and_push(files, msg, batch=None, redo=None):
+    """После правки rebuild_final.py. None -- в репозитории, иначе что не получилось.
+
+    Повторить правку поверх серверной версии можно двумя способами: `batch` --
+    файл партии, который вставляет строки заново; `redo` -- функция без
+    аргументов, которая повторяет правку сама и возвращает None или причину
+    неудачи (так снимает строки remove_gone_facebook.py: у снятия файла партии нет)."""
     err = _commit(files, msg)
     if err:
         return err
@@ -86,13 +91,20 @@ def commit_and_push(files, msg, batch):
     p = _pull()
     if p.returncode:
         return "push отклонён, а pull --rebase не прошёл -- партия не вставлена: %s" % _said(p)
-    r = subprocess.run([sys.executable, batch], capture_output=True, text=True, encoding="utf-8")
-    if r.returncode:
-        # insert_listings отказывает сам, если сервер тем временем выдал те же
-        # номера или завёл те же адреса.
-        return "после подтягивания сервера партия не встала заново -- не отправлено: %s" % _said(r, 240)
-    if (r.stdout or "").strip():
-        print(r.stdout.strip())
+    if batch:
+        r = subprocess.run([sys.executable, batch], capture_output=True, text=True, encoding="utf-8")
+        if r.returncode:
+            # insert_listings отказывает сам, если сервер тем временем выдал те же
+            # номера или завёл те же адреса.
+            return "после подтягивания сервера партия не встала заново -- не отправлено: %s" % _said(r, 240)
+        if (r.stdout or "").strip():
+            print(r.stdout.strip())
+    elif redo:
+        why = redo()
+        if why:
+            return "после подтягивания сервера правка не повторилась -- не отправлено: %s" % why
+    else:
+        return "push отклонён, а повторить правку нечем (нет ни batch, ни redo) -- не отправлено"
     err = _commit(files, msg)
     if err:
         return err
