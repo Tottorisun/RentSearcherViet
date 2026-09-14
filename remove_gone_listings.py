@@ -13,7 +13,9 @@ posted_dates anchors. The same answer carries the ad's own timestamps, so
 it also (a) removes rows Chợ Tốt itself proves are older than 7 whole
 days (STALE -- a session once dated five listings "today" that were 2-12
 days old) and (b) corrects the posted_dates anchor of every FRESH row
-whose recorded date differs from orig_list_time, so the age purge and the
+whose recorded date differs from the ad's latest posting or bump (list_time --
+the owner's rule of 14 Sep 2026: a reposted or bumped ad is fresh again, and it
+is shown for another 7 days), so the age purge and the
 "N дней назад" label rest on the source's date, not on an estimate. Run
 it BEFORE purge_old_listings.py in the daily pipeline;
 cleanup_telegram_posts.py later deletes the removed rows' hub posts.
@@ -100,17 +102,25 @@ for ad_id, lid, city in todo:
     # verdict (check_freshness.verdict) is the source of truth the site's
     # anchor date was only ever an estimate of: a session once dated five
     # listings "today" that were 2-12 days old.
-    v, age, via = cf.verdict(ad, now, MAX_DAYS)
-    # Same rule as purge_old_listings.py: gone when OLDER THAN 7 whole days,
-    # so a 7.3-day-old ad is not removed half a day before the age purge
-    # would have removed it anyway. (cf.verdict says STALE from 7.0.)
-    if v == "STALE" and age is not None and int(age) > MAX_DAYS:
-        stale.append((lid, ad_id, city, age, via))
-    elif v == "FRESH" and ad.get("orig_list_time"):
-        true_anchor = time.strftime("%Y-%m-%d", time.localtime(ad["orig_list_time"] / 1000))
-        if pd.get(str(lid)) != true_anchor:
-            redated.append((lid, pd.get(str(lid)), true_anchor))
-            pd[str(lid)] = true_anchor
+    # Дата строки -- ПОСЛЕДНЯЯ публикация или поднятие объявления, а не первая
+    # публикация (правило владельца 14.09.2026: снова выложенное или поднятое
+    # объявление показывается ещё 7 дней). cf.verdict судит по orig_list_time и
+    # снимал бы как STALE объявление, поднятое вчера, а дату строки возвращал бы
+    # к первой публикации -- поэтому здесь свой расчёт от более поздней из дат.
+    last = max(ad.get("list_time") or 0, ad.get("orig_list_time") or 0)
+    if last:
+        age = (now - last / 1000) / 86400
+        via = "list_time" if (ad.get("list_time") or 0) >= (ad.get("orig_list_time") or 0) else "orig_list_time"
+        # Same rule as purge_old_listings.py: gone when OLDER THAN 7 whole days,
+        # so a 7.3-day-old ad is not removed half a day before the age purge
+        # would have removed it anyway.
+        if int(age) > MAX_DAYS:
+            stale.append((lid, ad_id, city, age, via))
+        else:
+            true_anchor = time.strftime("%Y-%m-%d", time.localtime(last / 1000))
+            if pd.get(str(lid)) != true_anchor:
+                redated.append((lid, pd.get(str(lid)), true_anchor))
+                pd[str(lid)] = true_anchor
     time.sleep(0.3)
 
 print("checked %d in %.0fs: alive %d, GONE %d, STALE %d, re-dated %d, errors %d"
@@ -120,7 +130,7 @@ for lid, ad_id, city in gone:
 for lid, ad_id, city, age, via in stale:
     print("  STALE  listing %s  (%s, ad %s): %.1f days old via %s" % (lid, city, ad_id, age, via))
 for lid, old, new in redated:
-    print("  DATE   listing %s: anchor %s -> %s (Chợ Tốt orig_list_time)" % (lid, old, new))
+    print("  DATE   listing %s: anchor %s -> %s (Chợ Tốt, последняя публикация)" % (lid, old, new))
 
 if not DRY:
     # forget cache entries whose listing left the base by any other route
