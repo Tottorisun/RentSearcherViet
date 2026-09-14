@@ -101,6 +101,9 @@ NOT_A_RENTAL = (
     (r"\bdown payment\b|\bequity\b|\binstallment\b", "рассрочка"),
     (r"(?:looking for|in search of|ищу|сниму|need).{0,30}(?:roommate|female|соседк|сожител)",
      "ищут соседа, а не сдают"),
+    # По-вьетнамски: «Tìm 1 bạn nữ ở ghép phòng 3 người» -- жилец ищет соседа. Со словом
+    # «phòng trọ» в тексте такой пост проходил бы как сдаваемая комната (14.09.2026).
+    (r"\btim\b.{0,40}\bo ghep\b|\bo ghep\b.{0,40}\btim\b", "ищут соседа, а не сдают"),
     (r"\bcan thue\b|\bищу\b.{0,20}(?:квартир|комнат|дом)|\bсниму\b",
      "это поиск жилья, а не предложение"),
     (r"\bper night\b|\bnightly\b|посуточн|\bdaily rate\b", "посуточно"),
@@ -111,10 +114,19 @@ TYPE_RULES = (
     (r"\bstudio\b|студи|\bmini\s?house\b|\bcan ho mini\b|\bchung cu mini\b", "Студия"),
     (r"\bvilla\b|\bbiet thu\b|вилл", "Дом"),
     (r"\btown\s*house\b|\bnha pho\b|таунхаус", "Дом"),
-    (r"\bhouse\b|\bnha nguyen can\b|\bдом\b", "Дом"),
+    # Дом в переулке: «Cho thuê nhà hẻm 102 Nguyễn Tất Thành». Только с hẻm/kiệt/ngõ:
+    # «cho thuê nhà» без них -- это и «nhà trọ» (комнаты), и дом у дороги под бизнес.
+    (r"\bhouse\b|\bnha nguyen can\b|\bдом\b|\bcho thue nha (?:hem|kiet|ngo)\b", "Дом"),
     (r"\bapartment\b|\bapt\b|\bflat\b|\bcondo\b|\bcan ho\b|\bchung cu\b|\bpenthouse\b|квартир",
      "Квартира"),
-    (r"\broom for rent\b|\bphong tro\b|\bnha tro\b|\bphong cho thue\b|комнат", "Комната"),
+    # «CHO THUÊ TRỌ», «CHO THUÊ PHÒNG», «PASS PHÒNG», «TRỌ F33» (14.09.2026: 6 из 20
+    # отказов «тип не назван» были комнатами). Одно «tro» не годится -- без диакритики
+    # это и «trở về», и «trợ lý»; «cho thuê phòng» -- кроме phòng khách/ngủ/họp/kinh
+    # doanh... На 223 кандидатах поменялся тип у 14, все 14 проверены глазами.
+    (r"\broom for rent\b|\bphong tro\b|\bnha tro\b|\bphong cho thue\b|комнат|"
+     r"\bcho thue (?:phong )?tro\b|\bpass phong\b|\btro [a-z]\d+\b|"
+     r"\bcho thue phong\b(?! (?:khach|ngu|hop|tap|kham|hat|lam viec|may|thu|so|kinh doanh|dich vu)\b)",
+     "Комната"),
 )
 
 # Строка адреса: с неё начинается разбор района.
@@ -195,7 +207,10 @@ PART_OF_HOUSE = re.compile(
 COMMERCIAL_TITLE = re.compile(
     r"\btoa nha\b|\btoa \d+ tang\b|\bmat bang\b|\bvan phong\b|\bshowroom\b|\bshophouse\b|"
     r"\bnha xuong\b|\bkho xuong\b|\bkho bai\b|\boffice space\b|\bcommercial\b|\bwarehouse\b|"
-    r"\bki ot\b|\bkiot\b|\bretail space\b")
+    r"\bki ot\b|\bkiot\b|\bretail space\b|"
+    # «CHO THUÊ PHÒNG KINH DOANH / DỊCH VỤ» (Далат), «Cho Thuê Nhà 4 Tầng Kinh Doanh»
+    # (Ханой): «kinh doanh» -- «для бизнеса» (14.09.2026).
+    r"\bkinh doanh\b|\bphong dich vu\b")
 
 
 def type_of(text):
