@@ -135,7 +135,7 @@ def collect_ids(argv):
 
 def main():
     argv = sys.argv[1:]
-    max_days = 14.0
+    max_days = 7.0   # сайт показывает неделю (правило владельца 14.09.2026)
     if "--max-days" in argv:
         k = argv.index("--max-days")
         max_days = float(argv[k + 1])

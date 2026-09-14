@@ -2,15 +2,15 @@
 """
 Drop listings whose ad has been taken down at the source.
 
-The 14-day purge only knows a listing's age. A flat that gets rented on day
-3 stays on the site for another 11 days with a dead link -- measured at
+The 7-day purge only knows a listing's age. A flat that gets rented on day
+3 stays on the site for another 4 days with a dead link -- measured at
 ~4-5% of the base at any moment (31 Aug 2026: ~4% overall; 2 Sep 2026: 2 of
 the 40 oldest Chợ Tốt rows). This script asks Chợ Tốt whether each ad still
 exists (check_freshness.fetch: 404/410 = GONE, anything else = still there
 or a transport error, which never counts as gone) and removes the GONE
 rows from rebuild_final.py under the write lock, then drops their
 posted_dates anchors. The same answer carries the ad's own timestamps, so
-it also (a) removes rows Chợ Tốt itself proves are older than 14 whole
+it also (a) removes rows Chợ Tốt itself proves are older than 7 whole
 days (STALE -- a session once dated five listings "today" that were 2-12
 days old) and (b) corrects the posted_dates anchor of every FRESH row
 whose recorded date differs from orig_list_time, so the age purge and the
@@ -74,7 +74,7 @@ rows.sort(key=lambda r: cache.get(str(r[0]), {}).get("checked", 0))
 todo = rows if ALL else rows[:LIMIT]
 print("liveness: %d Chợ Tốt rows in the base, checking %d%s" % (len(rows), len(todo), " (dry run)" if DRY else ""))
 
-MAX_DAYS = 14.0
+MAX_DAYS = 7.0          # правило владельца 14.09.2026: сайт показывает неделю
 pd = load_json(POSTED_DATES_FILE, {})
 now = time.time()
 gone, stale, redated, errors, alive = [], [], [], 0, 0
@@ -101,9 +101,9 @@ for ad_id, lid, city in todo:
     # anchor date was only ever an estimate of: a session once dated five
     # listings "today" that were 2-12 days old.
     v, age, via = cf.verdict(ad, now, MAX_DAYS)
-    # Same rule as purge_old_listings.py: gone when OLDER THAN 14 whole days,
-    # so a 14.3-day-old ad is not removed half a day before the age purge
-    # would have removed it anyway. (cf.verdict says STALE from 14.0.)
+    # Same rule as purge_old_listings.py: gone when OLDER THAN 7 whole days,
+    # so a 7.3-day-old ad is not removed half a day before the age purge
+    # would have removed it anyway. (cf.verdict says STALE from 7.0.)
     if v == "STALE" and age is not None and int(age) > MAX_DAYS:
         stale.append((lid, ad_id, city, age, via))
     elif v == "FRESH" and ad.get("orig_list_time"):

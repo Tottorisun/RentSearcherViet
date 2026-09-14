@@ -16870,7 +16870,7 @@ __LEAFLET_CSS__
   function districtHint(d){ return (lang === "en" && d.hintEn) ? d.hintEn : d.hint; }
   function typeName(tp){ return (lang === "en" && TYPE_EN[tp]) ? TYPE_EN[tp] : tp; }
   // Listings gain an English description over time (the daily checks write
-  // descEn for every new listing, and the 14-day purge cycles the whole
+  // descEn for every new listing, and the 7-day purge cycles the whole
   // dataset), so fall back to the Russian text until one exists.
   function descText(l){ return (lang === "en" && l.descEn) ? l.descEn : l.desc; }
   function sourceLabel(s){ return (lang === "en" && s.labelEn) ? s.labelEn : s.label; }
