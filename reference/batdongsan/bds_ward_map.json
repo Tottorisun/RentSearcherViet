@@ -1,0 +1,8327 @@
+{
+ "generated": "2026-09-13",
+ "source": "batdongsan.com.vn sitemap + страницы объявлений",
+ "notes": {
+  "old": "Прежние кварталы (phường/xã), только увиденные в ТЕКСТЕ источника в режиме прежнего адреса: карточка списка по прежнему делению «P. <прежний> (P. <новый> mới)» и страница объявления, где одна строка -- полный прежний адрес, а другая «(<новый квартал>, <провинция> mới)». Какая строка старая, решает пометка mới/cũ, не порядок. Подробности и счётчики -- old_evidence (cards -- карточки, ad_pages -- страницы объявлений). Пустой список -- пары не нашлось, а не «не было прежних кварталов».",
+  "old_district": "Прежний район так, как он виден в источнике: карточка выдачи '<новый квартал> (<прежний район> cũ)' и адресная строка объявления '(<район>, <провинция> cũ)'. cards / ad_pages -- сколько раз увидено. Смотрели только первую страницу выдачи квартала (20-30 карточек): район, давший кварталу малую часть, может не попасть.",
+  "old_district.ambiguous": "Одноимённые районы в разных прежних провинциях; не угадывали.",
+  "project_keys": "Совпадение нашего ключа района с новым кварталом ПО НАЗВАНИЮ. same_place=false -- одноимённое другое место; null -- у нас этим именем назван прежний район/город, новый квартал меньше его.",
+  "old_provinces_checked": "Прежние провинции, чьи списки районов (API сайта) использованы для расшифровки old_district.",
+  "city_key": "Ключ города проекта, если в провинции ровно один наш город; иначе null, а полный список в city_keys."
+ },
+ "stats": {
+  "wards": 1172,
+  "ward_pages": 25,
+  "cards": 497,
+  "wards_with_pair": 29,
+  "ad_pages": 23,
+  "old_ward_pairs": 8,
+  "old_ward_pairs_ad_confirmed": 2,
+  "old_mode_cards": 20,
+  "old_mode_ad_pages": 2
+ },
+ "provinces": {
+  "Thành phố Hồ Chí Minh": {
+   "code": "SG",
+   "city_key": null,
+   "city_keys": [
+    "ho-chi-minh",
+    "vung-tau",
+    "binh-duong"
+   ],
+   "old_provinces_checked": [
+    "Hồ Chí Minh",
+    "Bình Dương",
+    "Bà Rịa Vũng Tàu"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tp-ho-chi-minh.xml",
+   "ward_count": 169,
+   "wards": [
+    {
+     "new": "Phường An Đông",
+     "slug": "nha-dat-cho-thue-phuong-an-dong-tp-ho-chi-minh",
+     "wardId": 18956,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận 5",
+       "cards": 22,
+       "ad_pages": 0,
+       "old_district": "Quận 5",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 57
+      }
+     ],
+     "listing_page": {
+      "cards": 22,
+      "miss": false
+     }
+    },
+    {
+     "new": "Phường An Hội Đông",
+     "slug": "nha-dat-cho-thue-phuong-an-hoi-dong-tp-ho-chi-minh",
+     "wardId": 25356,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Q. Gò Vấp",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận Gò Vấp",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 67
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Phường An Hội Tây",
+     "slug": "nha-dat-cho-thue-phuong-an-hoi-tay-tp-ho-chi-minh",
+     "wardId": 25100,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Q. Gò Vấp",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận Gò Vấp",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 67
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Phường An Khánh",
+     "slug": "nha-dat-cho-thue-phuong-an-khanh-tp-ho-chi-minh",
+     "wardId": 11020,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận 2",
+       "cards": 28,
+       "ad_pages": 4,
+       "old_province_seen": "Hồ Chí Minh",
+       "old_district": "Quận 2",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 54
+      },
+      {
+       "seen_as": "TP. Thủ Đức",
+       "cards": 2,
+       "ad_pages": 1,
+       "old_province_seen": "Hồ Chí Minh",
+       "old_district": "Thành phố Thủ Đức",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 71
+      }
+     ],
+     "listing_page": {
+      "cards": 30,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "ho-chi-minh",
+       "key": "ak",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường An Lạc",
+     "slug": "nha-dat-cho-thue-phuong-an-lac-tp-ho-chi-minh",
+     "wardId": 23820,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Q. Bình Tân",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận Bình Tân",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 65
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Xã An Long",
+     "slug": "nha-dat-cho-thue-xa-an-long-sg-tp-ho-chi-minh",
+     "wardId": 40972,
+     "old": []
+    },
+    {
+     "new": "Phường An Nhơn",
+     "slug": "nha-dat-cho-thue-phuong-an-nhon-sg-tp-ho-chi-minh",
+     "wardId": 24332,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Q. Gò Vấp",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận Gò Vấp",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 67
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Xã An Nhơn Tây",
+     "slug": "nha-dat-cho-thue-xa-an-nhon-tay-sg-tp-ho-chi-minh",
+     "wardId": 27404,
+     "old": []
+    },
+    {
+     "new": "Phường An Phú",
+     "slug": "nha-dat-cho-thue-phuong-an-phu-sg-tp-ho-chi-minh",
+     "wardId": 12556,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Thuận An",
+       "cards": 19,
+       "ad_pages": 0,
+       "old_district": "Thành phố Thuận An",
+       "old_province": "Bình Dương",
+       "old_districtId": 161
+      },
+      {
+       "seen_as": "Quận 2",
+       "cards": 1,
+       "ad_pages": 0,
+       "old_district": "Quận 2",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 54
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Phường An Phú Đông",
+     "slug": "nha-dat-cho-thue-phuong-an-phu-dong-tp-ho-chi-minh",
+     "wardId": 22284,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận 12",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận 12",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 64
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Xã An Thới Đông",
+     "slug": "nha-dat-cho-thue-xa-an-thoi-dong-tp-ho-chi-minh",
+     "wardId": 2060,
+     "old": []
+    },
+    {
+     "new": "Xã Bà Điểm",
+     "slug": "nha-dat-cho-thue-xa-ba-diem-tp-ho-chi-minh",
+     "wardId": 30220,
+     "old": []
+    },
+    {
+     "new": "Phường Bà Rịa",
+     "slug": "nha-dat-cho-thue-phuong-ba-ria-tp-ho-chi-minh",
+     "wardId": 34060,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Bà Rịa",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Thành phố Bà Rịa",
+       "old_province": "Bà Rịa Vũng Tàu",
+       "old_districtId": 103
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Xã Bắc Tân Uyên",
+     "slug": "nha-dat-cho-thue-xa-bac-tan-uyen-tp-ho-chi-minh",
+     "wardId": 40716,
+     "old": []
+    },
+    {
+     "new": "Phường Bàn Cờ",
+     "slug": "nha-dat-cho-thue-phuong-ban-co-tp-ho-chi-minh",
+     "wardId": 2572,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận 3",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận 3",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 55
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Xã Bàu Bàng",
+     "slug": "nha-dat-cho-thue-xa-bau-bang-tp-ho-chi-minh",
+     "wardId": 33292,
+     "old": []
+    },
+    {
+     "new": "Xã Bàu Lâm",
+     "slug": "nha-dat-cho-thue-xa-bau-lam-tp-ho-chi-minh",
+     "wardId": 38412,
+     "old": []
+    },
+    {
+     "new": "Phường Bảy Hiền",
+     "slug": "nha-dat-cho-thue-phuong-bay-hien-tp-ho-chi-minh",
+     "wardId": 26636,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Q. Tân Bình",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận Tân Bình",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 69
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Phường Bến Cát",
+     "slug": "nha-dat-cho-thue-phuong-ben-cat-tp-ho-chi-minh",
+     "wardId": 14348,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Bến Cát",
+       "cards": 19,
+       "ad_pages": 0,
+       "old_district": "Thành phố Bến Cát",
+       "old_province": "Bình Dương",
+       "old_districtId": 156
+      },
+      {
+       "seen_as": "H. Bàu Bàng",
+       "cards": 3,
+       "ad_pages": 0,
+       "old_district": "Huyện Bàu Bàng",
+       "old_province": "Bình Dương",
+       "old_districtId": 716
+      }
+     ],
+     "listing_page": {
+      "cards": 22,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "binh-duong",
+       "key": "bc",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Bến Thành",
+     "slug": "nha-dat-cho-thue-phuong-ben-thanh-tp-ho-chi-minh",
+     "wardId": 7948,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận 1",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận 1",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 53
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "ho-chi-minh",
+       "key": "bth",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Bình Chánh",
+     "slug": "nha-dat-cho-thue-xa-binh-chanh-tp-ho-chi-minh",
+     "wardId": 1292,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Châu",
+     "slug": "nha-dat-cho-thue-xa-binh-chau-tp-ho-chi-minh",
+     "wardId": 39948,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Cơ",
+     "slug": "nha-dat-cho-thue-phuong-binh-co-tp-ho-chi-minh",
+     "wardId": 40460,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Tân Uyên",
+       "cards": 12,
+       "ad_pages": 0,
+       "old_district": "Thành phố Tân Uyên",
+       "old_province": "Bình Dương",
+       "old_districtId": 160
+      },
+      {
+       "seen_as": "H. Bắc Tân Uyên",
+       "cards": 8,
+       "ad_pages": 0,
+       "old_district": "Huyện Bắc Tân Uyên",
+       "old_province": "Bình Dương",
+       "old_districtId": 730
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Phường Bình Đông",
+     "slug": "nha-dat-cho-thue-phuong-binh-dong-tp-ho-chi-minh",
+     "wardId": 3084,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận 8",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận 8",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 60
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Phường Bình Dương",
+     "slug": "nha-dat-cho-thue-phuong-binh-duong-tp-ho-chi-minh",
+     "wardId": 41484,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Thủ Dầu Một",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Thành phố Thủ Dầu Một",
+       "old_province": "Bình Dương",
+       "old_districtId": 163
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     }
+    },
+    {
+     "new": "Xã Bình Giã",
+     "slug": "nha-dat-cho-thue-xa-binh-gia-sg-tp-ho-chi-minh",
+     "wardId": 36364,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Hòa",
+     "slug": "nha-dat-cho-thue-phuong-binh-hoa-tp-ho-chi-minh",
+     "wardId": 11788,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Hưng",
+     "slug": "nha-dat-cho-thue-xa-binh-hung-tp-ho-chi-minh",
+     "wardId": 5644,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Hưng Hòa",
+     "slug": "nha-dat-cho-thue-phuong-binh-hung-hoa-tp-ho-chi-minh",
+     "wardId": 18188,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Khánh",
+     "slug": "nha-dat-cho-thue-xa-binh-khanh-tp-ho-chi-minh",
+     "wardId": 2316,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Lợi",
+     "slug": "nha-dat-cho-thue-xa-binh-loi-tp-ho-chi-minh",
+     "wardId": 26892,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Lợi Trung",
+     "slug": "nha-dat-cho-thue-phuong-binh-loi-trung-tp-ho-chi-minh",
+     "wardId": 23052,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Mỹ",
+     "slug": "nha-dat-cho-thue-xa-binh-my-sg-tp-ho-chi-minh",
+     "wardId": 28940,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Phú",
+     "slug": "nha-dat-cho-thue-phuong-binh-phu-tp-ho-chi-minh",
+     "wardId": 9228,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Quới",
+     "slug": "nha-dat-cho-thue-phuong-binh-quoi-tp-ho-chi-minh",
+     "wardId": 23564,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ho-chi-minh",
+       "key": "bq",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Bình Tân",
+     "slug": "nha-dat-cho-thue-phuong-binh-tan-tp-ho-chi-minh",
+     "wardId": 4876,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Tây",
+     "slug": "nha-dat-cho-thue-phuong-binh-tay-tp-ho-chi-minh",
+     "wardId": 32268,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Thạnh",
+     "slug": "nha-dat-cho-thue-phuong-binh-thanh-tp-ho-chi-minh",
+     "wardId": 22796,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Thới",
+     "slug": "nha-dat-cho-thue-phuong-binh-thoi-tp-ho-chi-minh",
+     "wardId": 8716,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Tiên",
+     "slug": "nha-dat-cho-thue-phuong-binh-tien-tp-ho-chi-minh",
+     "wardId": 19468,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Trị Đông",
+     "slug": "nha-dat-cho-thue-phuong-binh-tri-dong-tp-ho-chi-minh",
+     "wardId": 5132,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Trưng",
+     "slug": "nha-dat-cho-thue-phuong-binh-trung-tp-ho-chi-minh",
+     "wardId": 10764,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ho-chi-minh",
+       "key": "btr",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Cần Giờ",
+     "slug": "nha-dat-cho-thue-xa-can-gio-tp-ho-chi-minh",
+     "wardId": 29196,
+     "old": []
+    },
+    {
+     "new": "Phường Cát Lái",
+     "slug": "nha-dat-cho-thue-phuong-cat-lai-tp-ho-chi-minh",
+     "wardId": 32012,
+     "old": []
+    },
+    {
+     "new": "Phường Cầu Kiệu",
+     "slug": "nha-dat-cho-thue-phuong-cau-kieu-tp-ho-chi-minh",
+     "wardId": 6412,
+     "old": []
+    },
+    {
+     "new": "Phường Cầu Ông Lãnh",
+     "slug": "nha-dat-cho-thue-phuong-cau-ong-lanh-tp-ho-chi-minh",
+     "wardId": 7436,
+     "old": []
+    },
+    {
+     "new": "Phường Chánh Hiệp",
+     "slug": "nha-dat-cho-thue-phuong-chanh-hiep-tp-ho-chi-minh",
+     "wardId": 15628,
+     "old": []
+    },
+    {
+     "new": "Phường Chánh Hưng",
+     "slug": "nha-dat-cho-thue-phuong-chanh-hung-tp-ho-chi-minh",
+     "wardId": 4108,
+     "old": []
+    },
+    {
+     "new": "Phường Chánh Phú Hòa",
+     "slug": "nha-dat-cho-thue-phuong-chanh-phu-hoa-tp-ho-chi-minh",
+     "wardId": 42252,
+     "old": []
+    },
+    {
+     "new": "Xã Châu Đức",
+     "slug": "nha-dat-cho-thue-xa-chau-duc-tp-ho-chi-minh",
+     "wardId": 36876,
+     "old": []
+    },
+    {
+     "new": "Xã Châu Pha",
+     "slug": "nha-dat-cho-thue-xa-chau-pha-tp-ho-chi-minh",
+     "wardId": 35852,
+     "old": []
+    },
+    {
+     "new": "Phường Chợ Lớn",
+     "slug": "nha-dat-cho-thue-phuong-cho-lon-tp-ho-chi-minh",
+     "wardId": 19212,
+     "old": []
+    },
+    {
+     "new": "Phường Chợ Quán",
+     "slug": "nha-dat-cho-thue-phuong-cho-quan-tp-ho-chi-minh",
+     "wardId": 18700,
+     "old": []
+    },
+    {
+     "new": "Đặc Khu Côn Đảo",
+     "slug": "nha-dat-cho-thue-dac-khu-con-dao-tp-ho-chi-minh",
+     "wardId": 17676,
+     "old": []
+    },
+    {
+     "new": "Xã Củ Chi",
+     "slug": "nha-dat-cho-thue-xa-cu-chi-tp-ho-chi-minh",
+     "wardId": 28428,
+     "old": []
+    },
+    {
+     "new": "Xã Đất Đỏ",
+     "slug": "nha-dat-cho-thue-xa-dat-do-tp-ho-chi-minh",
+     "wardId": 38668,
+     "old": []
+    },
+    {
+     "new": "Xã Dầu Tiếng",
+     "slug": "nha-dat-cho-thue-xa-dau-tieng-tp-ho-chi-minh",
+     "wardId": 14604,
+     "old": []
+    },
+    {
+     "new": "Phường Dĩ An",
+     "slug": "nha-dat-cho-thue-phuong-di-an-tp-ho-chi-minh",
+     "wardId": 16908,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "binh-duong",
+       "key": "da",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Diên Hồng",
+     "slug": "nha-dat-cho-thue-phuong-dien-hong-sg-tp-ho-chi-minh",
+     "wardId": 8204,
+     "old": []
+    },
+    {
+     "new": "Phường Đông Hòa",
+     "slug": "nha-dat-cho-thue-phuong-dong-hoa-sg-tp-ho-chi-minh",
+     "wardId": 42764,
+     "old": []
+    },
+    {
+     "new": "Phường Đông Hưng Thuận",
+     "slug": "nha-dat-cho-thue-phuong-dong-hung-thuan-tp-ho-chi-minh",
+     "wardId": 21260,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Thạnh",
+     "slug": "nha-dat-cho-thue-xa-dong-thanh-sg-tp-ho-chi-minh",
+     "wardId": 29452,
+     "old": []
+    },
+    {
+     "new": "Phường Đức Nhuận",
+     "slug": "nha-dat-cho-thue-phuong-duc-nhuan-tp-ho-chi-minh",
+     "wardId": 25612,
+     "old": []
+    },
+    {
+     "new": "Phường Gia Định",
+     "slug": "nha-dat-cho-thue-phuong-gia-dinh-tp-ho-chi-minh",
+     "wardId": 22540,
+     "old": []
+    },
+    {
+     "new": "Phường Gò Vấp",
+     "slug": "nha-dat-cho-thue-phuong-go-vap-tp-ho-chi-minh",
+     "wardId": 24588,
+     "old": []
+    },
+    {
+     "new": "Phường Hạnh Thông",
+     "slug": "nha-dat-cho-thue-phuong-hanh-thong-tp-ho-chi-minh",
+     "wardId": 24076,
+     "old": []
+    },
+    {
+     "new": "Phường Hiệp Bình",
+     "slug": "nha-dat-cho-thue-phuong-hiep-binh-tp-ho-chi-minh",
+     "wardId": 10252,
+     "old": []
+    },
+    {
+     "new": "Xã Hiệp Phước",
+     "slug": "nha-dat-cho-thue-xa-hiep-phuoc-tp-ho-chi-minh",
+     "wardId": 30732,
+     "old": []
+    },
+    {
+     "new": "Xã Hồ Tràm",
+     "slug": "nha-dat-cho-thue-xa-ho-tram-tp-ho-chi-minh",
+     "wardId": 37644,
+     "old": []
+    },
+    {
+     "new": "Phường Hòa Bình",
+     "slug": "nha-dat-cho-thue-phuong-hoa-binh-sg-tp-ho-chi-minh",
+     "wardId": 21004,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Hiệp",
+     "slug": "nha-dat-cho-thue-xa-hoa-hiep-tp-ho-chi-minh",
+     "wardId": 39692,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Hội",
+     "slug": "nha-dat-cho-thue-xa-hoa-hoi-sg-tp-ho-chi-minh",
+     "wardId": 38156,
+     "old": []
+    },
+    {
+     "new": "Phường Hòa Hưng",
+     "slug": "nha-dat-cho-thue-phuong-hoa-hung-tp-ho-chi-minh",
+     "wardId": 8460,
+     "old": []
+    },
+    {
+     "new": "Phường Hòa Lợi",
+     "slug": "nha-dat-cho-thue-phuong-hoa-loi-tp-ho-chi-minh",
+     "wardId": 41996,
+     "old": []
+    },
+    {
+     "new": "Xã Hóc Môn",
+     "slug": "nha-dat-cho-thue-xa-hoc-mon-tp-ho-chi-minh",
+     "wardId": 29708,
+     "old": []
+    },
+    {
+     "new": "Xã Hưng Long",
+     "slug": "nha-dat-cho-thue-xa-hung-long-tp-ho-chi-minh",
+     "wardId": 27148,
+     "old": []
+    },
+    {
+     "new": "Phường Khánh Hội",
+     "slug": "nha-dat-cho-thue-phuong-khanh-hoi-tp-ho-chi-minh",
+     "wardId": 1036,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ho-chi-minh",
+       "key": "kh",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Kim Long",
+     "slug": "nha-dat-cho-thue-xa-kim-long-tp-ho-chi-minh",
+     "wardId": 36620,
+     "old": []
+    },
+    {
+     "new": "Phường Lái Thiêu",
+     "slug": "nha-dat-cho-thue-phuong-lai-thieu-tp-ho-chi-minh",
+     "wardId": 12300,
+     "old": []
+    },
+    {
+     "new": "Phường Linh Xuân",
+     "slug": "nha-dat-cho-thue-phuong-linh-xuan-tp-ho-chi-minh",
+     "wardId": 10508,
+     "old": []
+    },
+    {
+     "new": "Phường Long Bình",
+     "slug": "nha-dat-cho-thue-phuong-long-binh-sg-tp-ho-chi-minh",
+     "wardId": 4364,
+     "old": []
+    },
+    {
+     "new": "Xã Long Điền",
+     "slug": "nha-dat-cho-thue-xa-long-dien-sg-tp-ho-chi-minh",
+     "wardId": 17932,
+     "old": []
+    },
+    {
+     "new": "Xã Long Hải",
+     "slug": "nha-dat-cho-thue-xa-long-hai-tp-ho-chi-minh",
+     "wardId": 38924,
+     "old": []
+    },
+    {
+     "new": "Xã Long Hòa",
+     "slug": "nha-dat-cho-thue-xa-long-hoa-tp-ho-chi-minh",
+     "wardId": 13068,
+     "old": []
+    },
+    {
+     "new": "Phường Long Hương",
+     "slug": "nha-dat-cho-thue-phuong-long-huong-tp-ho-chi-minh",
+     "wardId": 34316,
+     "old": []
+    },
+    {
+     "new": "Phường Long Nguyên",
+     "slug": "nha-dat-cho-thue-phuong-long-nguyen-tp-ho-chi-minh",
+     "wardId": 13836,
+     "old": []
+    },
+    {
+     "new": "Phường Long Phước",
+     "slug": "nha-dat-cho-thue-phuong-long-phuoc-tp-ho-chi-minh",
+     "wardId": 31500,
+     "old": []
+    },
+    {
+     "new": "Xã Long Sơn",
+     "slug": "nha-dat-cho-thue-xa-long-son-tp-ho-chi-minh",
+     "wardId": 39436,
+     "old": []
+    },
+    {
+     "new": "Phường Long Trường",
+     "slug": "nha-dat-cho-thue-phuong-long-truong-tp-ho-chi-minh",
+     "wardId": 31756,
+     "old": []
+    },
+    {
+     "new": "Phường Minh Phụng",
+     "slug": "nha-dat-cho-thue-phuong-minh-phung-tp-ho-chi-minh",
+     "wardId": 20748,
+     "old": []
+    },
+    {
+     "new": "Xã Minh Thạnh",
+     "slug": "nha-dat-cho-thue-xa-minh-thanh-tp-ho-chi-minh",
+     "wardId": 13324,
+     "old": []
+    },
+    {
+     "new": "Xã Ngãi Giao",
+     "slug": "nha-dat-cho-thue-xa-ngai-giao-tp-ho-chi-minh",
+     "wardId": 36108,
+     "old": []
+    },
+    {
+     "new": "Xã Nghĩa Thành",
+     "slug": "nha-dat-cho-thue-xa-nghia-thanh-tp-ho-chi-minh",
+     "wardId": 37388,
+     "old": []
+    },
+    {
+     "new": "Phường Ngọc Hà",
+     "slug": "nha-dat-cho-thue-phuong-ngoc-ha-tp-ho-chi-minh",
+     "wardId": 1001,
+     "old": []
+    },
+    {
+     "new": "Xã Nhà Bè",
+     "slug": "nha-dat-cho-thue-xa-nha-be-tp-ho-chi-minh",
+     "wardId": 30476,
+     "old": []
+    },
+    {
+     "new": "Phường Nhiêu Lộc",
+     "slug": "nha-dat-cho-thue-phuong-nhieu-loc-tp-ho-chi-minh",
+     "wardId": 18444,
+     "old": []
+    },
+    {
+     "new": "Xã Nhuận Đức",
+     "slug": "nha-dat-cho-thue-xa-nhuan-duc-tp-ho-chi-minh",
+     "wardId": 27916,
+     "old": []
+    },
+    {
+     "new": "Phường Phú An",
+     "slug": "nha-dat-cho-thue-phuong-phu-an-tp-ho-chi-minh",
+     "wardId": 11276,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Định",
+     "slug": "nha-dat-cho-thue-phuong-phu-dinh-tp-ho-chi-minh",
+     "wardId": 3852,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Giáo",
+     "slug": "nha-dat-cho-thue-xa-phu-giao-tp-ho-chi-minh",
+     "wardId": 5388,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Hòa Đông",
+     "slug": "nha-dat-cho-thue-xa-phu-hoa-dong-tp-ho-chi-minh",
+     "wardId": 28684,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Lâm",
+     "slug": "nha-dat-cho-thue-phuong-phu-lam-tp-ho-chi-minh",
+     "wardId": 19724,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Lợi",
+     "slug": "nha-dat-cho-thue-phuong-phu-loi-sg-tp-ho-chi-minh",
+     "wardId": 17420,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Mỹ",
+     "slug": "nha-dat-cho-thue-phuong-phu-my-tp-ho-chi-minh",
+     "wardId": 34828,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Nhuận",
+     "slug": "nha-dat-cho-thue-phuong-phu-nhuan-tp-ho-chi-minh",
+     "wardId": 6156,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Thạnh",
+     "slug": "nha-dat-cho-thue-phuong-phu-thanh-tp-ho-chi-minh",
+     "wardId": 6924,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Thọ",
+     "slug": "nha-dat-cho-thue-phuong-phu-tho-sg-tp-ho-chi-minh",
+     "wardId": 8972,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Thọ Hòa",
+     "slug": "nha-dat-cho-thue-phuong-phu-tho-hoa-tp-ho-chi-minh",
+     "wardId": 32780,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Thuận",
+     "slug": "nha-dat-cho-thue-phuong-phu-thuan-tp-ho-chi-minh",
+     "wardId": 3340,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Hải",
+     "slug": "nha-dat-cho-thue-xa-phuoc-hai-tp-ho-chi-minh",
+     "wardId": 39180,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Hòa",
+     "slug": "nha-dat-cho-thue-xa-phuoc-hoa-tp-ho-chi-minh",
+     "wardId": 15372,
+     "old": []
+    },
+    {
+     "new": "Phường Phước Long",
+     "slug": "nha-dat-cho-thue-phuong-phuoc-long-sg-tp-ho-chi-minh",
+     "wardId": 31244,
+     "old": []
+    },
+    {
+     "new": "Phường Phước Thắng",
+     "slug": "nha-dat-cho-thue-phuong-phuoc-thang-tp-ho-chi-minh",
+     "wardId": 33804,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "vung-tau",
+       "key": "pth",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Phước Thành",
+     "slug": "nha-dat-cho-thue-xa-phuoc-thanh-sg-tp-ho-chi-minh",
+     "wardId": 41228,
+     "old": []
+    },
+    {
+     "new": "Phường Rạch Dừa",
+     "slug": "nha-dat-cho-thue-phuong-rach-dua-tp-ho-chi-minh",
+     "wardId": 12812,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "vung-tau",
+       "key": "rd",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Sài Gòn",
+     "slug": "nha-dat-cho-thue-phuong-sai-gon-tp-ho-chi-minh",
+     "wardId": 7692,
+     "old": []
+    },
+    {
+     "new": "Phường Tam Bình",
+     "slug": "nha-dat-cho-thue-phuong-tam-binh-tp-ho-chi-minh",
+     "wardId": 30988,
+     "old": []
+    },
+    {
+     "new": "Phường Tam Long",
+     "slug": "nha-dat-cho-thue-phuong-tam-long-tp-ho-chi-minh",
+     "wardId": 34572,
+     "old": []
+    },
+    {
+     "new": "Phường Tam Thắng",
+     "slug": "nha-dat-cho-thue-phuong-tam-thang-tp-ho-chi-minh",
+     "wardId": 33548,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "vung-tau",
+       "key": "tth",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Tân An Hội",
+     "slug": "nha-dat-cho-thue-xa-tan-an-hoi-tp-ho-chi-minh",
+     "wardId": 28172,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Bình",
+     "slug": "nha-dat-cho-thue-phuong-tan-binh-tp-ho-chi-minh",
+     "wardId": 6668,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Định",
+     "slug": "nha-dat-cho-thue-phuong-tan-dinh-tp-ho-chi-minh",
+     "wardId": 7180,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Đông Hiệp",
+     "slug": "nha-dat-cho-thue-phuong-tan-dong-hiep-tp-ho-chi-minh",
+     "wardId": 17164,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Hải",
+     "slug": "nha-dat-cho-thue-phuong-tan-hai-tp-ho-chi-minh",
+     "wardId": 35596,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Hiệp",
+     "slug": "nha-dat-cho-thue-phuong-tan-hiep-tp-ho-chi-minh",
+     "wardId": 41740,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Hòa",
+     "slug": "nha-dat-cho-thue-phuong-tan-hoa-sg-tp-ho-chi-minh",
+     "wardId": 26380,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Hưng",
+     "slug": "nha-dat-cho-thue-phuong-tan-hung-sg-tp-ho-chi-minh",
+     "wardId": 19980,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ho-chi-minh",
+       "key": "th",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Tân Khánh",
+     "slug": "nha-dat-cho-thue-phuong-tan-khanh-tp-ho-chi-minh",
+     "wardId": 14860,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Mỹ",
+     "slug": "nha-dat-cho-thue-phuong-tan-my-tp-ho-chi-minh",
+     "wardId": 3596,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận 7",
+       "cards": 0,
+       "ad_pages": 5,
+       "old_province_seen": "Hồ Chí Minh",
+       "old_district": "Quận 7",
+       "old_province": "Hồ Chí Minh",
+       "old_districtId": 59
+      }
+     ],
+     "project_keys": [
+      {
+       "city": "ho-chi-minh",
+       "key": "tm",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Tân Nhựt",
+     "slug": "nha-dat-cho-thue-xa-tan-nhut-tp-ho-chi-minh",
+     "wardId": 16652,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Phú",
+     "slug": "nha-dat-cho-thue-phuong-tan-phu-tp-ho-chi-minh",
+     "wardId": 33036,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Phước",
+     "slug": "nha-dat-cho-thue-phuong-tan-phuoc-tp-ho-chi-minh",
+     "wardId": 35340,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Sơn",
+     "slug": "nha-dat-cho-thue-phuong-tan-son-tp-ho-chi-minh",
+     "wardId": 32524,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Sơn Hòa",
+     "slug": "nha-dat-cho-thue-phuong-tan-son-hoa-tp-ho-chi-minh",
+     "wardId": 25868,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Sơn Nhất",
+     "slug": "nha-dat-cho-thue-phuong-tan-son-nhat-tp-ho-chi-minh",
+     "wardId": 26124,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Sơn Nhì",
+     "slug": "nha-dat-cho-thue-phuong-tan-son-nhi-tp-ho-chi-minh",
+     "wardId": 9484,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Tạo",
+     "slug": "nha-dat-cho-thue-phuong-tan-tao-tp-ho-chi-minh",
+     "wardId": 13580,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Thành",
+     "slug": "nha-dat-cho-thue-phuong-tan-thanh-sg-tp-ho-chi-minh",
+     "wardId": 35084,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Thới Hiệp",
+     "slug": "nha-dat-cho-thue-phuong-tan-thoi-hiep-tp-ho-chi-minh",
+     "wardId": 21772,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Thuận",
+     "slug": "nha-dat-cho-thue-phuong-tan-thuan-tp-ho-chi-minh",
+     "wardId": 20236,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Uyên",
+     "slug": "nha-dat-cho-thue-phuong-tan-uyen-tp-ho-chi-minh",
+     "wardId": 15116,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "binh-duong",
+       "key": "tu",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Xã Tân Vĩnh Lộc",
+     "slug": "nha-dat-cho-thue-xa-tan-vinh-loc-tp-ho-chi-minh",
+     "wardId": 1804,
+     "old": []
+    },
+    {
+     "new": "Phường Tăng Nhơn Phú",
+     "slug": "nha-dat-cho-thue-phuong-tang-nhon-phu-tp-ho-chi-minh",
+     "wardId": 4620,
+     "old": []
+    },
+    {
+     "new": "Phường Tây Nam",
+     "slug": "nha-dat-cho-thue-phuong-tay-nam-tp-ho-chi-minh",
+     "wardId": 16140,
+     "old": []
+    },
+    {
+     "new": "Phường Tây Thạnh",
+     "slug": "nha-dat-cho-thue-phuong-tay-thanh-tp-ho-chi-minh",
+     "wardId": 9740,
+     "old": []
+    },
+    {
+     "new": "Xã Thái Mỹ",
+     "slug": "nha-dat-cho-thue-xa-thai-my-tp-ho-chi-minh",
+     "wardId": 27660,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh An",
+     "slug": "nha-dat-cho-thue-xa-thanh-an-tp-ho-chi-minh",
+     "wardId": 268,
+     "old": []
+    },
+    {
+     "new": "Xã Thanh An",
+     "slug": "nha-dat-cho-thue-xa-thanh-an-sg-tp-ho-chi-minh",
+     "wardId": 16396,
+     "old": []
+    },
+    {
+     "new": "Phường Thạnh Mỹ Tây",
+     "slug": "nha-dat-cho-thue-phuong-thanh-my-tay-tp-ho-chi-minh",
+     "wardId": 23308,
+     "old": []
+    },
+    {
+     "new": "Phường Thới An",
+     "slug": "nha-dat-cho-thue-phuong-thoi-an-tp-ho-chi-minh",
+     "wardId": 22028,
+     "old": []
+    },
+    {
+     "new": "Phường Thới Hòa",
+     "slug": "nha-dat-cho-thue-phuong-thoi-hoa-tp-ho-chi-minh",
+     "wardId": 15884,
+     "old": []
+    },
+    {
+     "new": "Phường Thông Tây Hội",
+     "slug": "nha-dat-cho-thue-phuong-thong-tay-hoi-tp-ho-chi-minh",
+     "wardId": 24844,
+     "old": []
+    },
+    {
+     "new": "Phường Thủ Dầu Một",
+     "slug": "nha-dat-cho-thue-phuong-thu-dau-mot-tp-ho-chi-minh",
+     "wardId": 12044,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "binh-duong",
+       "key": "tdm",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Thủ Đức",
+     "slug": "nha-dat-cho-thue-phuong-thu-duc-tp-ho-chi-minh",
+     "wardId": 9996,
+     "old": []
+    },
+    {
+     "new": "Phường Thuận An",
+     "slug": "nha-dat-cho-thue-phuong-thuan-an-tp-ho-chi-minh",
+     "wardId": 43020,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "binh-duong",
+       "key": "ta",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Thuận Giao",
+     "slug": "nha-dat-cho-thue-phuong-thuan-giao-tp-ho-chi-minh",
+     "wardId": 11532,
+     "old": []
+    },
+    {
+     "new": "Xã Thường Tân",
+     "slug": "nha-dat-cho-thue-xa-thuong-tan-tp-ho-chi-minh",
+     "wardId": 5900,
+     "old": []
+    },
+    {
+     "new": "Xã Trừ Văn Thố",
+     "slug": "nha-dat-cho-thue-xa-tru-van-tho-tp-ho-chi-minh",
+     "wardId": 14092,
+     "old": []
+    },
+    {
+     "new": "Phường Trung Mỹ Tây",
+     "slug": "nha-dat-cho-thue-phuong-trung-my-tay-tp-ho-chi-minh",
+     "wardId": 21516,
+     "old": []
+    },
+    {
+     "new": "Phường Vĩnh Hội",
+     "slug": "nha-dat-cho-thue-phuong-vinh-hoi-tp-ho-chi-minh",
+     "wardId": 780,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Lộc",
+     "slug": "nha-dat-cho-thue-xa-vinh-loc-sg-tp-ho-chi-minh",
+     "wardId": 1548,
+     "old": []
+    },
+    {
+     "new": "Phường Vĩnh Tân",
+     "slug": "nha-dat-cho-thue-phuong-vinh-tan-tp-ho-chi-minh",
+     "wardId": 42508,
+     "old": []
+    },
+    {
+     "new": "Phường Vũng Tàu",
+     "slug": "nha-dat-cho-thue-phuong-vung-tau-tp-ho-chi-minh",
+     "wardId": 40204,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Vũng Tàu",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Thành phố Vũng Tàu",
+       "old_province": "Bà Rịa Vũng Tàu",
+       "old_districtId": 102
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "vung-tau",
+       "key": "vtp",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Vườn Lài",
+     "slug": "nha-dat-cho-thue-phuong-vuon-lai-tp-ho-chi-minh",
+     "wardId": 20492,
+     "old": []
+    },
+    {
+     "new": "Phường Xóm Chiếu",
+     "slug": "nha-dat-cho-thue-phuong-xom-chieu-tp-ho-chi-minh",
+     "wardId": 524,
+     "old": []
+    },
+    {
+     "new": "Phường Xuân Hòa",
+     "slug": "nha-dat-cho-thue-phuong-xuan-hoa-sg-tp-ho-chi-minh",
+     "wardId": 2828,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Sơn",
+     "slug": "nha-dat-cho-thue-xa-xuan-son-tp-ho-chi-minh",
+     "wardId": 37132,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Thới Sơn",
+     "slug": "nha-dat-cho-thue-xa-xuan-thoi-son-tp-ho-chi-minh",
+     "wardId": 29964,
+     "old": []
+    },
+    {
+     "new": "Xã Xuyên Mộc",
+     "slug": "nha-dat-cho-thue-xa-xuyen-moc-tp-ho-chi-minh",
+     "wardId": 37900,
+     "old": []
+    }
+   ]
+  },
+  "Thành phố Hà Nội": {
+   "code": "HN",
+   "city_key": "ha-noi",
+   "city_keys": [
+    "ha-noi"
+   ],
+   "old_provinces_checked": [
+    "Hà Nội"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tp-ha-noi.xml",
+   "ward_count": 126,
+   "wards": [
+    {
+     "new": "Xã An Khánh",
+     "slug": "nha-dat-cho-thue-xa-an-khanh-tp-ha-noi",
+     "wardId": 15883,
+     "old": []
+    },
+    {
+     "new": "Phường Ba Đình",
+     "slug": "nha-dat-cho-thue-phuong-ba-dinh-tp-ha-noi",
+     "wardId": 14091,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận Ba Đình",
+       "cards": 0,
+       "ad_pages": 5,
+       "old_province_seen": "Hà Nội",
+       "old_district": "Quận Ba Đình",
+       "old_province": "Hà Nội",
+       "old_districtId": 2
+      }
+     ],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "bd",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Xã Ba Vì",
+     "slug": "nha-dat-cho-thue-xa-ba-vi-tp-ha-noi",
+     "wardId": 3851,
+     "old": []
+    },
+    {
+     "new": "Phường Bạch Mai",
+     "slug": "nha-dat-cho-thue-phuong-bach-mai-tp-ha-noi",
+     "wardId": 27915,
+     "old": []
+    },
+    {
+     "new": "Xã Bất Bạt",
+     "slug": "nha-dat-cho-thue-xa-bat-bat-tp-ha-noi",
+     "wardId": 10763,
+     "old": []
+    },
+    {
+     "new": "Xã Bát Tràng",
+     "slug": "nha-dat-cho-thue-xa-bat-trang-tp-ha-noi",
+     "wardId": 27403,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Minh",
+     "slug": "nha-dat-cho-thue-xa-binh-minh-hn-tp-ha-noi",
+     "wardId": 13579,
+     "old": []
+    },
+    {
+     "new": "Phường Bồ Đề",
+     "slug": "nha-dat-cho-thue-phuong-bo-de-tp-ha-noi",
+     "wardId": 18443,
+     "old": []
+    },
+    {
+     "new": "Phường Cầu Giấy",
+     "slug": "nha-dat-cho-thue-phuong-cau-giay-tp-ha-noi",
+     "wardId": 14859,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "cg",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Xã Chương Dương",
+     "slug": "nha-dat-cho-thue-xa-chuong-duong-tp-ha-noi",
+     "wardId": 28939,
+     "old": []
+    },
+    {
+     "new": "Phường Chương Mỹ",
+     "slug": "nha-dat-cho-thue-phuong-chuong-my-tp-ha-noi",
+     "wardId": 11531,
+     "old": []
+    },
+    {
+     "new": "Xã Chuyên Mỹ",
+     "slug": "nha-dat-cho-thue-xa-chuyen-my-tp-ha-noi",
+     "wardId": 16651,
+     "old": []
+    },
+    {
+     "new": "Xã Cổ Đô",
+     "slug": "nha-dat-cho-thue-xa-co-do-hn-tp-ha-noi",
+     "wardId": 4107,
+     "old": []
+    },
+    {
+     "new": "Phường Cửa Nam",
+     "slug": "nha-dat-cho-thue-phuong-cua-nam-tp-ha-noi",
+     "wardId": 17419,
+     "old": []
+    },
+    {
+     "new": "Xã Đa Phúc",
+     "slug": "nha-dat-cho-thue-xa-da-phuc-tp-ha-noi",
+     "wardId": 31243,
+     "old": []
+    },
+    {
+     "new": "Phường Đại Mỗ",
+     "slug": "nha-dat-cho-thue-phuong-dai-mo-tp-ha-noi",
+     "wardId": 23563,
+     "old": []
+    },
+    {
+     "new": "Xã Đại Thanh",
+     "slug": "nha-dat-cho-thue-xa-dai-thanh-tp-ha-noi",
+     "wardId": 5387,
+     "old": []
+    },
+    {
+     "new": "Xã Đại Xuyên",
+     "slug": "nha-dat-cho-thue-xa-dai-xuyen-tp-ha-noi",
+     "wardId": 2315,
+     "old": []
+    },
+    {
+     "new": "Xã Dân Hòa",
+     "slug": "nha-dat-cho-thue-xa-dan-hoa-tp-ha-noi",
+     "wardId": 13835,
+     "old": []
+    },
+    {
+     "new": "Xã Đan Phượng",
+     "slug": "nha-dat-cho-thue-xa-dan-phuong-tp-ha-noi",
+     "wardId": 28683,
+     "old": []
+    },
+    {
+     "new": "Phường Định Công",
+     "slug": "nha-dat-cho-thue-phuong-dinh-cong-tp-ha-noi",
+     "wardId": 10507,
+     "old": []
+    },
+    {
+     "new": "Xã Đoài Phương",
+     "slug": "nha-dat-cho-thue-xa-doai-phuong-tp-ha-noi",
+     "wardId": 3083,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Anh",
+     "slug": "nha-dat-cho-thue-xa-dong-anh-tp-ha-noi",
+     "wardId": 7179,
+     "old": []
+    },
+    {
+     "new": "Phường Đống Đa",
+     "slug": "nha-dat-cho-thue-phuong-dong-da-tp-ha-noi",
+     "wardId": 25099,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "dd",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Đông Ngạc",
+     "slug": "nha-dat-cho-thue-phuong-dong-ngac-tp-ha-noi",
+     "wardId": 26379,
+     "old": []
+    },
+    {
+     "new": "Xã Dương Hòa",
+     "slug": "nha-dat-cho-thue-xa-duong-hoa-tp-ha-noi",
+     "wardId": 7947,
+     "old": []
+    },
+    {
+     "new": "Phường Dương Nội",
+     "slug": "nha-dat-cho-thue-phuong-duong-noi-tp-ha-noi",
+     "wardId": 21259,
+     "old": []
+    },
+    {
+     "new": "Xã Gia Lâm",
+     "slug": "nha-dat-cho-thue-xa-gia-lam-tp-ha-noi",
+     "wardId": 3339,
+     "old": []
+    },
+    {
+     "new": "Phường Giảng Võ",
+     "slug": "nha-dat-cho-thue-phuong-giang-vo-tp-ha-noi",
+     "wardId": 14347,
+     "old": []
+    },
+    {
+     "new": "Xã Hạ Bằng",
+     "slug": "nha-dat-cho-thue-xa-ha-bang-tp-ha-noi",
+     "wardId": 22795,
+     "old": []
+    },
+    {
+     "new": "Phường Hà Đông",
+     "slug": "nha-dat-cho-thue-phuong-ha-dong-tp-ha-noi",
+     "wardId": 21771,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "hd",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Hai Bà Trưng",
+     "slug": "nha-dat-cho-thue-phuong-hai-ba-trung-tp-ha-noi",
+     "wardId": 22027,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "hbt",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Xã Hát Môn",
+     "slug": "nha-dat-cho-thue-xa-hat-mon-tp-ha-noi",
+     "wardId": 30731,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Lạc",
+     "slug": "nha-dat-cho-thue-xa-hoa-lac-hn-tp-ha-noi",
+     "wardId": 13067,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Phú",
+     "slug": "nha-dat-cho-thue-xa-hoa-phu-hn-tp-ha-noi",
+     "wardId": 26635,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Xá",
+     "slug": "nha-dat-cho-thue-xa-hoa-xa-tp-ha-noi",
+     "wardId": 27147,
+     "old": []
+    },
+    {
+     "new": "Xã Hoài Đức",
+     "slug": "nha-dat-cho-thue-xa-hoai-duc-tp-ha-noi",
+     "wardId": 15627,
+     "old": []
+    },
+    {
+     "new": "Phường Hoàn Kiếm",
+     "slug": "nha-dat-cho-thue-phuong-hoan-kiem-tp-ha-noi",
+     "wardId": 31755,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "hkm",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Hoàng Liệt",
+     "slug": "nha-dat-cho-thue-phuong-hoang-liet-tp-ha-noi",
+     "wardId": 4363,
+     "old": []
+    },
+    {
+     "new": "Phường Hoàng Mai",
+     "slug": "nha-dat-cho-thue-phuong-hoang-mai-tp-ha-noi",
+     "wardId": 25867,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "hm",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Hồng Hà",
+     "slug": "nha-dat-cho-thue-phuong-hong-ha-tp-ha-noi",
+     "wardId": 17163,
+     "old": []
+    },
+    {
+     "new": "Xã Hồng Sơn",
+     "slug": "nha-dat-cho-thue-xa-hong-son-tp-ha-noi",
+     "wardId": 29707,
+     "old": []
+    },
+    {
+     "new": "Xã Hồng Vân",
+     "slug": "nha-dat-cho-thue-xa-hong-van-tp-ha-noi",
+     "wardId": 17931,
+     "old": []
+    },
+    {
+     "new": "Xã Hưng Đạo",
+     "slug": "nha-dat-cho-thue-xa-hung-dao-hn-tp-ha-noi",
+     "wardId": 29963,
+     "old": []
+    },
+    {
+     "new": "Xã Hương Sơn",
+     "slug": "nha-dat-cho-thue-xa-huong-son-tp-ha-noi",
+     "wardId": 9227,
+     "old": []
+    },
+    {
+     "new": "Phường Khương Đình",
+     "slug": "nha-dat-cho-thue-phuong-khuong-dinh-tp-ha-noi",
+     "wardId": 20747,
+     "old": []
+    },
+    {
+     "new": "Phường Kiến Hưng",
+     "slug": "nha-dat-cho-thue-phuong-kien-hung-tp-ha-noi",
+     "wardId": 21515,
+     "old": []
+    },
+    {
+     "new": "Xã Kiều Phú",
+     "slug": "nha-dat-cho-thue-xa-kieu-phu-tp-ha-noi",
+     "wardId": 18699,
+     "old": []
+    },
+    {
+     "new": "Xã Kim Anh",
+     "slug": "nha-dat-cho-thue-xa-kim-anh-tp-ha-noi",
+     "wardId": 19467,
+     "old": []
+    },
+    {
+     "new": "Phường Kim Liên",
+     "slug": "nha-dat-cho-thue-phuong-kim-lien-tp-ha-noi",
+     "wardId": 24587,
+     "old": []
+    },
+    {
+     "new": "Phường Láng",
+     "slug": "nha-dat-cho-thue-phuong-lang-tp-ha-noi",
+     "wardId": 24843,
+     "old": []
+    },
+    {
+     "new": "Xã Liên Minh",
+     "slug": "nha-dat-cho-thue-xa-lien-minh-tp-ha-noi",
+     "wardId": 6667,
+     "old": []
+    },
+    {
+     "new": "Phường Lĩnh Nam",
+     "slug": "nha-dat-cho-thue-phuong-linh-nam-tp-ha-noi",
+     "wardId": 4619,
+     "old": []
+    },
+    {
+     "new": "Phường Long Biên",
+     "slug": "nha-dat-cho-thue-phuong-long-bien-tp-ha-noi",
+     "wardId": 20491,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "lbn",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Xã Mê Linh",
+     "slug": "nha-dat-cho-thue-xa-me-linh-tp-ha-noi",
+     "wardId": 9483,
+     "old": []
+    },
+    {
+     "new": "Xã Minh Châu",
+     "slug": "nha-dat-cho-thue-xa-minh-chau-tp-ha-noi",
+     "wardId": 267,
+     "old": []
+    },
+    {
+     "new": "Xã Mỹ Đức",
+     "slug": "nha-dat-cho-thue-xa-my-duc-hn-tp-ha-noi",
+     "wardId": 10251,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Phù",
+     "slug": "nha-dat-cho-thue-xa-nam-phu-tp-ha-noi",
+     "wardId": 23051,
+     "old": []
+    },
+    {
+     "new": "Phường Nghĩa Đô",
+     "slug": "nha-dat-cho-thue-phuong-nghia-do-tp-ha-noi",
+     "wardId": 15115,
+     "old": []
+    },
+    {
+     "new": "Phường Ngọc Hà",
+     "slug": "nha-dat-cho-thue-phuong-ngoc-ha-tp-ha-noi",
+     "wardId": 14603,
+     "old": []
+    },
+    {
+     "new": "Xã Ngọc Hồi",
+     "slug": "nha-dat-cho-thue-xa-ngoc-hoi-tp-ha-noi",
+     "wardId": 523,
+     "old": []
+    },
+    {
+     "new": "Xã Nội Bài",
+     "slug": "nha-dat-cho-thue-xa-noi-bai-tp-ha-noi",
+     "wardId": 19723,
+     "old": []
+    },
+    {
+     "new": "Phường Ô Chợ Dừa",
+     "slug": "nha-dat-cho-thue-phuong-o-cho-dua-tp-ha-noi",
+     "wardId": 24331,
+     "old": []
+    },
+    {
+     "new": "Xã Ô Diên",
+     "slug": "nha-dat-cho-thue-xa-o-dien-tp-ha-noi",
+     "wardId": 5899,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Cát",
+     "slug": "nha-dat-cho-thue-xa-phu-cat-hn-tp-ha-noi",
+     "wardId": 18955,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Diễn",
+     "slug": "nha-dat-cho-thue-phuong-phu-dien-tp-ha-noi",
+     "wardId": 1035,
+     "old": []
+    },
+    {
+     "new": "Xã Phù Đổng",
+     "slug": "nha-dat-cho-thue-xa-phu-dong-tp-ha-noi",
+     "wardId": 15371,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Lương",
+     "slug": "nha-dat-cho-thue-phuong-phu-luong-tp-ha-noi",
+     "wardId": 21003,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Nghĩa",
+     "slug": "nha-dat-cho-thue-xa-phu-nghia-hn-tp-ha-noi",
+     "wardId": 12043,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Thượng",
+     "slug": "nha-dat-cho-thue-phuong-phu-thuong-tp-ha-noi",
+     "wardId": 25611,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Xuyên",
+     "slug": "nha-dat-cho-thue-xa-phu-xuyen-tp-ha-noi",
+     "wardId": 7435,
+     "old": []
+    },
+    {
+     "new": "Xã Phúc Lộc",
+     "slug": "nha-dat-cho-thue-xa-phuc-loc-tp-ha-noi",
+     "wardId": 31499,
+     "old": []
+    },
+    {
+     "new": "Phường Phúc Lợi",
+     "slug": "nha-dat-cho-thue-phuong-phuc-loi-tp-ha-noi",
+     "wardId": 12555,
+     "old": []
+    },
+    {
+     "new": "Xã Phúc Sơn",
+     "slug": "nha-dat-cho-thue-xa-phuc-son-tp-ha-noi",
+     "wardId": 16139,
+     "old": []
+    },
+    {
+     "new": "Xã Phúc Thịnh",
+     "slug": "nha-dat-cho-thue-xa-phuc-thinh-tp-ha-noi",
+     "wardId": 8203,
+     "old": []
+    },
+    {
+     "new": "Xã Phúc Thọ",
+     "slug": "nha-dat-cho-thue-xa-phuc-tho-tp-ha-noi",
+     "wardId": 30987,
+     "old": []
+    },
+    {
+     "new": "Xã Phượng Dực",
+     "slug": "nha-dat-cho-thue-xa-phuong-duc-tp-ha-noi",
+     "wardId": 29195,
+     "old": []
+    },
+    {
+     "new": "Phường Phương Liệt",
+     "slug": "nha-dat-cho-thue-phuong-phuong-liet-tp-ha-noi",
+     "wardId": 2571,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Bị",
+     "slug": "nha-dat-cho-thue-xa-quang-bi-tp-ha-noi",
+     "wardId": 6155,
+     "old": []
+    },
+    {
+     "new": "Xã Quang Minh",
+     "slug": "nha-dat-cho-thue-xa-quang-minh-tp-ha-noi",
+     "wardId": 8971,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Oai",
+     "slug": "nha-dat-cho-thue-xa-quang-oai-tp-ha-noi",
+     "wardId": 7691,
+     "old": []
+    },
+    {
+     "new": "Xã Quốc Oai",
+     "slug": "nha-dat-cho-thue-xa-quoc-oai-tp-ha-noi",
+     "wardId": 20235,
+     "old": []
+    },
+    {
+     "new": "Xã Sóc Sơn",
+     "slug": "nha-dat-cho-thue-xa-soc-son-tp-ha-noi",
+     "wardId": 19211,
+     "old": []
+    },
+    {
+     "new": "Xã Sơn Đồng",
+     "slug": "nha-dat-cho-thue-xa-son-dong-hn-tp-ha-noi",
+     "wardId": 16395,
+     "old": []
+    },
+    {
+     "new": "Phường Sơn Tây",
+     "slug": "nha-dat-cho-thue-phuong-son-tay-tp-ha-noi",
+     "wardId": 28427,
+     "old": []
+    },
+    {
+     "new": "Xã Suối Hai",
+     "slug": "nha-dat-cho-thue-xa-suoi-hai-tp-ha-noi",
+     "wardId": 3595,
+     "old": []
+    },
+    {
+     "new": "Xã Tam Hưng",
+     "slug": "nha-dat-cho-thue-xa-tam-hung-tp-ha-noi",
+     "wardId": 30219,
+     "old": []
+    },
+    {
+     "new": "Phường Tây Hồ",
+     "slug": "nha-dat-cho-thue-phuong-tay-ho-tp-ha-noi",
+     "wardId": 32267,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "tyh",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Phường Tây Mỗ",
+     "slug": "nha-dat-cho-thue-phuong-tay-mo-tp-ha-noi",
+     "wardId": 779,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Phương",
+     "slug": "nha-dat-cho-thue-xa-tay-phuong-tp-ha-noi",
+     "wardId": 26891,
+     "old": []
+    },
+    {
+     "new": "Phường Tây Tựu",
+     "slug": "nha-dat-cho-thue-phuong-tay-tuu-tp-ha-noi",
+     "wardId": 1291,
+     "old": []
+    },
+    {
+     "new": "Xã Thạch Thất",
+     "slug": "nha-dat-cho-thue-xa-thach-that-tp-ha-noi",
+     "wardId": 22539,
+     "old": []
+    },
+    {
+     "new": "Phường Thanh Liệt",
+     "slug": "nha-dat-cho-thue-phuong-thanh-liet-tp-ha-noi",
+     "wardId": 5131,
+     "old": []
+    },
+    {
+     "new": "Xã Thanh Oai",
+     "slug": "nha-dat-cho-thue-xa-thanh-oai-tp-ha-noi",
+     "wardId": 13323,
+     "old": []
+    },
+    {
+     "new": "Xã Thanh Trì",
+     "slug": "nha-dat-cho-thue-xa-thanh-tri-tp-ha-noi",
+     "wardId": 23307,
+     "old": []
+    },
+    {
+     "new": "Phường Thanh Xuân",
+     "slug": "nha-dat-cho-thue-phuong-thanh-xuan-tp-ha-noi",
+     "wardId": 28171,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "ha-noi",
+       "key": "tx",
+       "same_place": null
+      }
+     ]
+    },
+    {
+     "new": "Xã Thiên Lộc",
+     "slug": "nha-dat-cho-thue-xa-thien-loc-tp-ha-noi",
+     "wardId": 8715,
+     "old": []
+    },
+    {
+     "new": "Xã Thư Lâm",
+     "slug": "nha-dat-cho-thue-xa-thu-lam-tp-ha-noi",
+     "wardId": 6923,
+     "old": []
+    },
+    {
+     "new": "Xã Thuận An",
+     "slug": "nha-dat-cho-thue-xa-thuan-an-tp-ha-noi",
+     "wardId": 27659,
+     "old": []
+    },
+    {
+     "new": "Phường Thượng Cát",
+     "slug": "nha-dat-cho-thue-phuong-thuong-cat-tp-ha-noi",
+     "wardId": 1547,
+     "old": []
+    },
+    {
+     "new": "Xã Thượng Phúc",
+     "slug": "nha-dat-cho-thue-xa-thuong-phuc-tp-ha-noi",
+     "wardId": 22283,
+     "old": []
+    },
+    {
+     "new": "Xã Thường Tín",
+     "slug": "nha-dat-cho-thue-xa-thuong-tin-tp-ha-noi",
+     "wardId": 5643,
+     "old": []
+    },
+    {
+     "new": "Xã Tiến Thắng",
+     "slug": "nha-dat-cho-thue-xa-tien-thang-tp-ha-noi",
+     "wardId": 9739,
+     "old": []
+    },
+    {
+     "new": "Xã Trần Phú",
+     "slug": "nha-dat-cho-thue-xa-tran-phu-tp-ha-noi",
+     "wardId": 6411,
+     "old": []
+    },
+    {
+     "new": "Xã Trung Giã",
+     "slug": "nha-dat-cho-thue-xa-trung-gia-tp-ha-noi",
+     "wardId": 19979,
+     "old": []
+    },
+    {
+     "new": "Phường Từ Liêm",
+     "slug": "nha-dat-cho-thue-phuong-tu-liem-tp-ha-noi",
+     "wardId": 26123,
+     "old": []
+    },
+    {
+     "new": "Phường Tùng Thiện",
+     "slug": "nha-dat-cho-thue-phuong-tung-thien-tp-ha-noi",
+     "wardId": 2827,
+     "old": []
+    },
+    {
+     "new": "Phường Tương Mai",
+     "slug": "nha-dat-cho-thue-phuong-tuong-mai-tp-ha-noi",
+     "wardId": 4875,
+     "old": []
+    },
+    {
+     "new": "Xã Ứng Hòa",
+     "slug": "nha-dat-cho-thue-xa-ung-hoa-tp-ha-noi",
+     "wardId": 30475,
+     "old": []
+    },
+    {
+     "new": "Xã Ứng Thiên",
+     "slug": "nha-dat-cho-thue-xa-ung-thien-tp-ha-noi",
+     "wardId": 29451,
+     "old": []
+    },
+    {
+     "new": "Xã Vân Đình",
+     "slug": "nha-dat-cho-thue-xa-van-dinh-tp-ha-noi",
+     "wardId": 23819,
+     "old": []
+    },
+    {
+     "new": "Phường Văn Miếu-Quốc Tử Giám",
+     "slug": "nha-dat-cho-thue-phuong-van-mieu-quoc-tu-giam-tp-ha-noi",
+     "wardId": 25355,
+     "old": []
+    },
+    {
+     "new": "Xã Vật Lại",
+     "slug": "nha-dat-cho-thue-xa-vat-lai-tp-ha-noi",
+     "wardId": 11019,
+     "old": []
+    },
+    {
+     "new": "Phường Việt Hưng",
+     "slug": "nha-dat-cho-thue-phuong-viet-hung-tp-ha-noi",
+     "wardId": 12811,
+     "old": []
+    },
+    {
+     "new": "Phường Vĩnh Hưng",
+     "slug": "nha-dat-cho-thue-phuong-vinh-hung-tp-ha-noi",
+     "wardId": 18187,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thanh",
+     "slug": "nha-dat-cho-thue-xa-vinh-thanh-hn-tp-ha-noi",
+     "wardId": 8459,
+     "old": []
+    },
+    {
+     "new": "Phường Vĩnh Tuy",
+     "slug": "nha-dat-cho-thue-phuong-vinh-tuy-tp-ha-noi",
+     "wardId": 16907,
+     "old": []
+    },
+    {
+     "new": "Phường Xuân Đỉnh",
+     "slug": "nha-dat-cho-thue-phuong-xuan-dinh-tp-ha-noi",
+     "wardId": 1803,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Mai",
+     "slug": "nha-dat-cho-thue-xa-xuan-mai-tp-ha-noi",
+     "wardId": 11787,
+     "old": []
+    },
+    {
+     "new": "Phường Xuân Phương",
+     "slug": "nha-dat-cho-thue-phuong-xuan-phuong-tp-ha-noi",
+     "wardId": 2059,
+     "old": []
+    },
+    {
+     "new": "Xã Yên Bài",
+     "slug": "nha-dat-cho-thue-xa-yen-bai-tp-ha-noi",
+     "wardId": 11275,
+     "old": []
+    },
+    {
+     "new": "Phường Yên Hòa",
+     "slug": "nha-dat-cho-thue-phuong-yen-hoa-tp-ha-noi",
+     "wardId": 24075,
+     "old": []
+    },
+    {
+     "new": "Xã Yên Lãng",
+     "slug": "nha-dat-cho-thue-xa-yen-lang-tp-ha-noi",
+     "wardId": 9995,
+     "old": []
+    },
+    {
+     "new": "Phường Yên Nghĩa",
+     "slug": "nha-dat-cho-thue-phuong-yen-nghia-tp-ha-noi",
+     "wardId": 17675,
+     "old": []
+    },
+    {
+     "new": "Phường Yên Sở",
+     "slug": "nha-dat-cho-thue-phuong-yen-so-tp-ha-noi",
+     "wardId": 32011,
+     "old": []
+    },
+    {
+     "new": "Xã Yên Xuân",
+     "slug": "nha-dat-cho-thue-xa-yen-xuan-tp-ha-noi",
+     "wardId": 12299,
+     "old": []
+    }
+   ]
+  },
+  "Thành phố Đà Nẵng": {
+   "code": "DDN",
+   "city_key": null,
+   "city_keys": [
+    "da-nang",
+    "hoi-an"
+   ],
+   "old_provinces_checked": [
+    "Đà Nẵng",
+    "Quảng Nam"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tp-da-nang.xml",
+   "ward_count": 93,
+   "wards": [
+    {
+     "new": "Phường An Hải",
+     "slug": "nha-dat-cho-thue-phuong-an-hai-tp-da-nang",
+     "wardId": 20493,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "ah",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường An Khê",
+     "slug": "nha-dat-cho-thue-phuong-an-khe-tp-da-nang",
+     "wardId": 20237,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "ak",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường An Thắng",
+     "slug": "nha-dat-cho-thue-phuong-an-thang-tp-da-nang",
+     "wardId": 11277,
+     "old": []
+    },
+    {
+     "new": "Xã Avương",
+     "slug": "nha-dat-cho-thue-xa-avuong-tp-da-nang",
+     "wardId": 16653,
+     "old": []
+    },
+    {
+     "new": "Xã Bà Nà",
+     "slug": "nha-dat-cho-thue-xa-ba-na-tp-da-nang",
+     "wardId": 22797,
+     "old": []
+    },
+    {
+     "new": "Phường Bàn Thạch",
+     "slug": "nha-dat-cho-thue-phuong-ban-thach-tp-da-nang",
+     "wardId": 2317,
+     "old": []
+    },
+    {
+     "new": "Xã Bến Giằng",
+     "slug": "nha-dat-cho-thue-xa-ben-giang-tp-da-nang",
+     "wardId": 14349,
+     "old": []
+    },
+    {
+     "new": "Xã Bến Hiên",
+     "slug": "nha-dat-cho-thue-xa-ben-hien-tp-da-nang",
+     "wardId": 16397,
+     "old": []
+    },
+    {
+     "new": "Phường Cẩm Lệ",
+     "slug": "nha-dat-cho-thue-phuong-cam-le-tp-da-nang",
+     "wardId": 21773,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "cl2",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Chiên Đàn",
+     "slug": "nha-dat-cho-thue-xa-chien-dan-tp-da-nang",
+     "wardId": 2829,
+     "old": []
+    },
+    {
+     "new": "Xã Đắc Pring",
+     "slug": "nha-dat-cho-thue-xa-dac-pring-tp-da-nang",
+     "wardId": 14861,
+     "old": []
+    },
+    {
+     "new": "Xã Đại Lộc",
+     "slug": "nha-dat-cho-thue-xa-dai-loc-tp-da-nang",
+     "wardId": 13069,
+     "old": []
+    },
+    {
+     "new": "Phường Điện Bàn",
+     "slug": "nha-dat-cho-thue-phuong-dien-ban-tp-da-nang",
+     "wardId": 10765,
+     "old": []
+    },
+    {
+     "new": "Phường Điện Bàn Bắc",
+     "slug": "nha-dat-cho-thue-phuong-dien-ban-bac-tp-da-nang",
+     "wardId": 11533,
+     "old": []
+    },
+    {
+     "new": "Phường Điện Bàn Đông",
+     "slug": "nha-dat-cho-thue-phuong-dien-ban-dong-tp-da-nang",
+     "wardId": 11021,
+     "old": []
+    },
+    {
+     "new": "Xã Điện Bàn Tây",
+     "slug": "nha-dat-cho-thue-xa-dien-ban-tay-tp-da-nang",
+     "wardId": 11789,
+     "old": []
+    },
+    {
+     "new": "Xã Đồng Dương",
+     "slug": "nha-dat-cho-thue-xa-dong-duong-tp-da-nang",
+     "wardId": 8205,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Giang",
+     "slug": "nha-dat-cho-thue-xa-dong-giang-tp-da-nang",
+     "wardId": 16141,
+     "old": []
+    },
+    {
+     "new": "Xã Đức Phú",
+     "slug": "nha-dat-cho-thue-xa-duc-phu-tp-da-nang",
+     "wardId": 23565,
+     "old": []
+    },
+    {
+     "new": "Xã Duy Nghĩa",
+     "slug": "nha-dat-cho-thue-xa-duy-nghia-tp-da-nang",
+     "wardId": 9741,
+     "old": []
+    },
+    {
+     "new": "Xã Duy Xuyên",
+     "slug": "nha-dat-cho-thue-xa-duy-xuyen-tp-da-nang",
+     "wardId": 10253,
+     "old": []
+    },
+    {
+     "new": "Xã Gò Nổi",
+     "slug": "nha-dat-cho-thue-xa-go-noi-tp-da-nang",
+     "wardId": 12045,
+     "old": []
+    },
+    {
+     "new": "Xã Hà Nha",
+     "slug": "nha-dat-cho-thue-xa-ha-nha-tp-da-nang",
+     "wardId": 13325,
+     "old": []
+    },
+    {
+     "new": "Phường Hải Châu",
+     "slug": "nha-dat-cho-thue-phuong-hai-chau-tp-da-nang",
+     "wardId": 19469,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Quận Hải Châu",
+       "cards": 0,
+       "ad_pages": 4,
+       "old_province_seen": "Đà Nẵng",
+       "old_district": "Quận Hải Châu",
+       "old_province": "Đà Nẵng",
+       "old_districtId": 46
+      }
+     ],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "hc",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Hải Vân",
+     "slug": "nha-dat-cho-thue-phuong-hai-van-tp-da-nang",
+     "wardId": 781,
+     "old": []
+    },
+    {
+     "new": "Xã Hiệp Đức",
+     "slug": "nha-dat-cho-thue-xa-hiep-duc-tp-da-nang",
+     "wardId": 17421,
+     "old": []
+    },
+    {
+     "new": "Phường Hòa Cường",
+     "slug": "nha-dat-cho-thue-phuong-hoa-cuong-tp-da-nang",
+     "wardId": 19725,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "hcg",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Hòa Khánh",
+     "slug": "nha-dat-cho-thue-phuong-hoa-khanh-tp-da-nang",
+     "wardId": 21261,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "hk",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Hòa Tiến",
+     "slug": "nha-dat-cho-thue-xa-hoa-tien-tp-da-nang",
+     "wardId": 22541,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Vang",
+     "slug": "nha-dat-cho-thue-xa-hoa-vang-tp-da-nang",
+     "wardId": 22285,
+     "old": []
+    },
+    {
+     "new": "Phường Hòa Xuân",
+     "slug": "nha-dat-cho-thue-phuong-hoa-xuan-tp-da-nang",
+     "wardId": 22029,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "hx",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Hội An",
+     "slug": "nha-dat-cho-thue-phuong-hoi-an-tp-da-nang",
+     "wardId": 12301,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Hội An",
+       "cards": 21,
+       "ad_pages": 0,
+       "old_district": "Thành phố Hội An",
+       "old_province": "Quảng Nam",
+       "old_districtId": 520
+      }
+     ],
+     "listing_page": {
+      "cards": 21,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "hoi-an",
+       "key": "ha",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Hội An Đông",
+     "slug": "nha-dat-cho-thue-phuong-hoi-an-dong-tp-da-nang",
+     "wardId": 12557,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hoi-an",
+       "key": "had",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Hội An Tây",
+     "slug": "nha-dat-cho-thue-phuong-hoi-an-tay-tp-da-nang",
+     "wardId": 12813,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hoi-an",
+       "key": "hat",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Hùng Sơn",
+     "slug": "nha-dat-cho-thue-xa-hung-son-tp-da-nang",
+     "wardId": 17165,
+     "old": []
+    },
+    {
+     "new": "Phường Hương Trà",
+     "slug": "nha-dat-cho-thue-phuong-huong-tra-tp-da-nang",
+     "wardId": 2061,
+     "old": []
+    },
+    {
+     "new": "Xã Khâm Đức",
+     "slug": "nha-dat-cho-thue-xa-kham-duc-tp-da-nang",
+     "wardId": 18189,
+     "old": []
+    },
+    {
+     "new": "Xã La Dêê",
+     "slug": "nha-dat-cho-thue-xa-la-dee-tp-da-nang",
+     "wardId": 15117,
+     "old": []
+    },
+    {
+     "new": "Xã La Êê",
+     "slug": "nha-dat-cho-thue-xa-la-ee-tp-da-nang",
+     "wardId": 15373,
+     "old": []
+    },
+    {
+     "new": "Xã Lãnh Ngọc",
+     "slug": "nha-dat-cho-thue-xa-lanh-ngoc-tp-da-nang",
+     "wardId": 3341,
+     "old": []
+    },
+    {
+     "new": "Phường Liên Chiểu",
+     "slug": "nha-dat-cho-thue-phuong-lien-chieu-tp-da-nang",
+     "wardId": 21517,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "lc",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Nam Giang",
+     "slug": "nha-dat-cho-thue-xa-nam-giang-tp-da-nang",
+     "wardId": 14605,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Phước",
+     "slug": "nha-dat-cho-thue-xa-nam-phuoc-tp-da-nang",
+     "wardId": 9997,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Trà My",
+     "slug": "nha-dat-cho-thue-xa-nam-tra-my-tp-da-nang",
+     "wardId": 5645,
+     "old": []
+    },
+    {
+     "new": "Phường Ngũ Hành Sơn",
+     "slug": "nha-dat-cho-thue-phuong-ngu-hanh-son-tp-da-nang",
+     "wardId": 21005,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "ns",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Nông Sơn",
+     "slug": "nha-dat-cho-thue-xa-nong-son-tp-da-nang",
+     "wardId": 9229,
+     "old": []
+    },
+    {
+     "new": "Xã Núi Thành",
+     "slug": "nha-dat-cho-thue-xa-nui-thanh-tp-da-nang",
+     "wardId": 525,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Ninh",
+     "slug": "nha-dat-cho-thue-xa-phu-ninh-tp-da-nang",
+     "wardId": 3085,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Thuận",
+     "slug": "nha-dat-cho-thue-xa-phu-thuan-tp-da-nang",
+     "wardId": 14093,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Chánh",
+     "slug": "nha-dat-cho-thue-xa-phuoc-chanh-tp-da-nang",
+     "wardId": 18701,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Hiệp",
+     "slug": "nha-dat-cho-thue-xa-phuoc-hiep-tp-da-nang",
+     "wardId": 19213,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Năng",
+     "slug": "nha-dat-cho-thue-xa-phuoc-nang-tp-da-nang",
+     "wardId": 18445,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Thành",
+     "slug": "nha-dat-cho-thue-xa-phuoc-thanh-tp-da-nang",
+     "wardId": 18957,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Trà",
+     "slug": "nha-dat-cho-thue-xa-phuoc-tra-tp-da-nang",
+     "wardId": 17933,
+     "old": []
+    },
+    {
+     "new": "Phường Quảng Phú",
+     "slug": "nha-dat-cho-thue-phuong-quang-phu-tp-da-nang",
+     "wardId": 1805,
+     "old": []
+    },
+    {
+     "new": "Xã Quế Phước",
+     "slug": "nha-dat-cho-thue-xa-que-phuoc-tp-da-nang",
+     "wardId": 9485,
+     "old": []
+    },
+    {
+     "new": "Xã Quế Sơn",
+     "slug": "nha-dat-cho-thue-xa-que-son-tp-da-nang",
+     "wardId": 8717,
+     "old": []
+    },
+    {
+     "new": "Xã Quế Sơn Trung",
+     "slug": "nha-dat-cho-thue-xa-que-son-trung-tp-da-nang",
+     "wardId": 8461,
+     "old": []
+    },
+    {
+     "new": "Xã Sơn Cẩm Hà",
+     "slug": "nha-dat-cho-thue-xa-son-cam-ha-tp-da-nang",
+     "wardId": 4109,
+     "old": []
+    },
+    {
+     "new": "Phường Sơn Trà",
+     "slug": "nha-dat-cho-thue-phuong-son-tra-tp-da-nang",
+     "wardId": 20749,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "st",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Sông Kôn",
+     "slug": "nha-dat-cho-thue-xa-song-kon-tp-da-nang",
+     "wardId": 15885,
+     "old": []
+    },
+    {
+     "new": "Xã Sông Vàng",
+     "slug": "nha-dat-cho-thue-xa-song-vang-tp-da-nang",
+     "wardId": 15629,
+     "old": []
+    },
+    {
+     "new": "Xã Tam Anh",
+     "slug": "nha-dat-cho-thue-xa-tam-anh-tp-da-nang",
+     "wardId": 23309,
+     "old": []
+    },
+    {
+     "new": "Xã Tam Hải",
+     "slug": "nha-dat-cho-thue-xa-tam-hai-tp-da-nang",
+     "wardId": 269,
+     "old": []
+    },
+    {
+     "new": "Phường Tam Kỳ",
+     "slug": "nha-dat-cho-thue-phuong-tam-ky-tp-da-nang",
+     "wardId": 24077,
+     "old": []
+    },
+    {
+     "new": "Xã Tam Mỹ",
+     "slug": "nha-dat-cho-thue-xa-tam-my-tp-da-nang",
+     "wardId": 23053,
+     "old": []
+    },
+    {
+     "new": "Xã Tam Xuân",
+     "slug": "nha-dat-cho-thue-xa-tam-xuan-tp-da-nang",
+     "wardId": 23821,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Hiệp",
+     "slug": "nha-dat-cho-thue-xa-tan-hiep-ddn-tp-da-nang",
+     "wardId": 1293,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Giang",
+     "slug": "nha-dat-cho-thue-xa-tay-giang-tp-da-nang",
+     "wardId": 16909,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Hồ",
+     "slug": "nha-dat-cho-thue-xa-tay-ho-tp-da-nang",
+     "wardId": 2573,
+     "old": []
+    },
+    {
+     "new": "Xã Thăng An",
+     "slug": "nha-dat-cho-thue-xa-thang-an-tp-da-nang",
+     "wardId": 7181,
+     "old": []
+    },
+    {
+     "new": "Xã Thăng Bình",
+     "slug": "nha-dat-cho-thue-xa-thang-binh-tp-da-nang",
+     "wardId": 6925,
+     "old": []
+    },
+    {
+     "new": "Xã Thăng Điền",
+     "slug": "nha-dat-cho-thue-xa-thang-dien-tp-da-nang",
+     "wardId": 7693,
+     "old": []
+    },
+    {
+     "new": "Xã Thăng Phú",
+     "slug": "nha-dat-cho-thue-xa-thang-phu-tp-da-nang",
+     "wardId": 7949,
+     "old": []
+    },
+    {
+     "new": "Xã Thăng Trường",
+     "slug": "nha-dat-cho-thue-xa-thang-truong-tp-da-nang",
+     "wardId": 7437,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Bình",
+     "slug": "nha-dat-cho-thue-xa-thanh-binh-tp-da-nang",
+     "wardId": 3853,
+     "old": []
+    },
+    {
+     "new": "Phường Thanh Khê",
+     "slug": "nha-dat-cho-thue-phuong-thanh-khe-tp-da-nang",
+     "wardId": 19981,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-nang",
+       "key": "tk",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Thạnh Mỹ",
+     "slug": "nha-dat-cho-thue-xa-thanh-my-tp-da-nang",
+     "wardId": 1037,
+     "old": []
+    },
+    {
+     "new": "Xã Thu Bồn",
+     "slug": "nha-dat-cho-thue-xa-thu-bon-tp-da-nang",
+     "wardId": 10509,
+     "old": []
+    },
+    {
+     "new": "Xã Thượng Đức",
+     "slug": "nha-dat-cho-thue-xa-thuong-duc-tp-da-nang",
+     "wardId": 13581,
+     "old": []
+    },
+    {
+     "new": "Xã Tiên Phước",
+     "slug": "nha-dat-cho-thue-xa-tien-phuoc-tp-da-nang",
+     "wardId": 3597,
+     "old": []
+    },
+    {
+     "new": "Xã Trà Đốc",
+     "slug": "nha-dat-cho-thue-xa-tra-doc-tp-da-nang",
+     "wardId": 5133,
+     "old": []
+    },
+    {
+     "new": "Xã Trà Giáp",
+     "slug": "nha-dat-cho-thue-xa-tra-giap-tp-da-nang",
+     "wardId": 4621,
+     "old": []
+    },
+    {
+     "new": "Xã Trà Leng",
+     "slug": "nha-dat-cho-thue-xa-tra-leng-tp-da-nang",
+     "wardId": 6669,
+     "old": []
+    },
+    {
+     "new": "Xã Trà Liên",
+     "slug": "nha-dat-cho-thue-xa-tra-lien-tp-da-nang",
+     "wardId": 4365,
+     "old": []
+    },
+    {
+     "new": "Xã Trà Linh",
+     "slug": "nha-dat-cho-thue-xa-tra-linh-ddn-tp-da-nang",
+     "wardId": 6413,
+     "old": []
+    },
+    {
+     "new": "Xã Trà My",
+     "slug": "nha-dat-cho-thue-xa-tra-my-tp-da-nang",
+     "wardId": 5389,
+     "old": []
+    },
+    {
+     "new": "Xã Trà Tân",
+     "slug": "nha-dat-cho-thue-xa-tra-tan-tp-da-nang",
+     "wardId": 4877,
+     "old": []
+    },
+    {
+     "new": "Xã Trà Tập",
+     "slug": "nha-dat-cho-thue-xa-tra-tap-tp-da-nang",
+     "wardId": 5901,
+     "old": []
+    },
+    {
+     "new": "Xã Trà Vân",
+     "slug": "nha-dat-cho-thue-xa-tra-van-tp-da-nang",
+     "wardId": 6157,
+     "old": []
+    },
+    {
+     "new": "Xã Việt An",
+     "slug": "nha-dat-cho-thue-xa-viet-an-tp-da-nang",
+     "wardId": 17677,
+     "old": []
+    },
+    {
+     "new": "Xã Vu Gia",
+     "slug": "nha-dat-cho-thue-xa-vu-gia-tp-da-nang",
+     "wardId": 13837,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Phú",
+     "slug": "nha-dat-cho-thue-xa-xuan-phu-tp-da-nang",
+     "wardId": 8973,
+     "old": []
+    }
+   ]
+  },
+  "Tỉnh Khánh Hòa": {
+   "code": "KH",
+   "city_key": "nha-trang",
+   "city_keys": [
+    "nha-trang"
+   ],
+   "old_provinces_checked": [
+    "Khánh Hòa"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tinh-khanh-hoa.xml",
+   "ward_count": 65,
+   "wards": [
+    {
+     "new": "Xã Anh Dũng",
+     "slug": "nha-dat-cho-thue-xa-anh-dung-tinh-khanh-hoa",
+     "wardId": 15388,
+     "old": []
+    },
+    {
+     "new": "Phường Ba Ngòi",
+     "slug": "nha-dat-cho-thue-phuong-ba-ngoi-tinh-khanh-hoa",
+     "wardId": 6684,
+     "old": []
+    },
+    {
+     "new": "Xã Bác Ái",
+     "slug": "nha-dat-cho-thue-xa-bac-ai-tinh-khanh-hoa",
+     "wardId": 16156,
+     "old": []
+    },
+    {
+     "new": "Xã Bác Ái Đông",
+     "slug": "nha-dat-cho-thue-xa-bac-ai-dong-tinh-khanh-hoa",
+     "wardId": 15900,
+     "old": []
+    },
+    {
+     "new": "Xã Bác Ái Tây",
+     "slug": "nha-dat-cho-thue-xa-bac-ai-tay-tinh-khanh-hoa",
+     "wardId": 16412,
+     "old": []
+    },
+    {
+     "new": "Phường Bắc Cam Ranh",
+     "slug": "nha-dat-cho-thue-phuong-bac-cam-ranh-tinh-khanh-hoa",
+     "wardId": 2332,
+     "old": []
+    },
+    {
+     "new": "Xã Bắc Khánh Vĩnh",
+     "slug": "nha-dat-cho-thue-xa-bac-khanh-vinh-tinh-khanh-hoa",
+     "wardId": 10268,
+     "old": []
+    },
+    {
+     "new": "Phường Bắc Nha Trang",
+     "slug": "nha-dat-cho-thue-phuong-bac-nha-trang-tinh-khanh-hoa",
+     "wardId": 3356,
+     "old": [
+      "Phường Vĩnh Phước",
+      "Phường Vĩnh Hòa"
+     ],
+     "old_evidence": [
+      {
+       "ward": "Phường Vĩnh Phước",
+       "cards": 4,
+       "ad_pages": 1,
+       "pages": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+       ],
+       "old_district_seen": "Thành phố Nha Trang",
+       "ads": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-pham-van-dong-phuong-vinh-phuoc-muong-thanh-vien-trieu"
+       ]
+      },
+      {
+       "ward": "Phường Vĩnh Hòa",
+       "cards": 1,
+       "ad_pages": 1,
+       "pages": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+       ],
+       "old_district_seen": "Thành phố Nha Trang",
+       "ads": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-duong-pham-van-dong-phuong-vinh-hoa-2-libera-nha-trang"
+       ]
+      }
+     ],
+     "old_district": [
+      {
+       "seen_as": "Thành Phố Nha Trang",
+       "cards": 0,
+       "ad_pages": 4,
+       "old_province_seen": "Khánh Hòa",
+       "old_district": "Thành phố Nha Trang",
+       "old_province": "Khánh Hòa",
+       "old_districtId": 350
+      }
+     ],
+     "project_keys": [
+      {
+       "city": "nha-trang",
+       "key": "btr",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Bắc Ninh Hòa",
+     "slug": "nha-dat-cho-thue-xa-bac-ninh-hoa-tinh-khanh-hoa",
+     "wardId": 6940,
+     "old": []
+    },
+    {
+     "new": "Phường Bảo An",
+     "slug": "nha-dat-cho-thue-phuong-bao-an-tinh-khanh-hoa",
+     "wardId": 796,
+     "old": []
+    },
+    {
+     "new": "Xã Cà Ná",
+     "slug": "nha-dat-cho-thue-xa-ca-na-tinh-khanh-hoa",
+     "wardId": 13340,
+     "old": []
+    },
+    {
+     "new": "Xã Cam An",
+     "slug": "nha-dat-cho-thue-xa-cam-an-tinh-khanh-hoa",
+     "wardId": 4380,
+     "old": []
+    },
+    {
+     "new": "Xã Cam Hiệp",
+     "slug": "nha-dat-cho-thue-xa-cam-hiep-tinh-khanh-hoa",
+     "wardId": 4636,
+     "old": []
+    },
+    {
+     "new": "Xã Cam Lâm",
+     "slug": "nha-dat-cho-thue-xa-cam-lam-tinh-khanh-hoa",
+     "wardId": 4124,
+     "old": []
+    },
+    {
+     "new": "Phường Cam Linh",
+     "slug": "nha-dat-cho-thue-phuong-cam-linh-tinh-khanh-hoa",
+     "wardId": 6428,
+     "old": []
+    },
+    {
+     "new": "Phường Cam Ranh",
+     "slug": "nha-dat-cho-thue-phuong-cam-ranh-tinh-khanh-hoa",
+     "wardId": 6172,
+     "old": []
+    },
+    {
+     "new": "Xã Công Hải",
+     "slug": "nha-dat-cho-thue-xa-cong-hai-tinh-khanh-hoa",
+     "wardId": 14620,
+     "old": []
+    },
+    {
+     "new": "Xã Đại Lãnh",
+     "slug": "nha-dat-cho-thue-xa-dai-lanh-tinh-khanh-hoa",
+     "wardId": 2076,
+     "old": []
+    },
+    {
+     "new": "Xã Diên Điền",
+     "slug": "nha-dat-cho-thue-xa-dien-dien-tinh-khanh-hoa",
+     "wardId": 9244,
+     "old": []
+    },
+    {
+     "new": "Xã Diên Khánh",
+     "slug": "nha-dat-cho-thue-xa-dien-khanh-tinh-khanh-hoa",
+     "wardId": 8732,
+     "old": []
+    },
+    {
+     "new": "Xã Diên Lạc",
+     "slug": "nha-dat-cho-thue-xa-dien-lac-tinh-khanh-hoa",
+     "wardId": 8988,
+     "old": []
+    },
+    {
+     "new": "Xã Diên Lâm",
+     "slug": "nha-dat-cho-thue-xa-dien-lam-tinh-khanh-hoa",
+     "wardId": 9500,
+     "old": []
+    },
+    {
+     "new": "Xã Diên Thọ",
+     "slug": "nha-dat-cho-thue-xa-dien-tho-tinh-khanh-hoa",
+     "wardId": 9756,
+     "old": []
+    },
+    {
+     "new": "Phường Đô Vinh",
+     "slug": "nha-dat-cho-thue-phuong-do-vinh-tinh-khanh-hoa",
+     "wardId": 284,
+     "old": []
+    },
+    {
+     "new": "Phường Đông Hải",
+     "slug": "nha-dat-cho-thue-phuong-dong-hai-kh-tinh-khanh-hoa",
+     "wardId": 16668,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Khánh Sơn",
+     "slug": "nha-dat-cho-thue-xa-dong-khanh-son-tinh-khanh-hoa",
+     "wardId": 12060,
+     "old": []
+    },
+    {
+     "new": "Phường Đông Ninh Hòa",
+     "slug": "nha-dat-cho-thue-phuong-dong-ninh-hoa-tinh-khanh-hoa",
+     "wardId": 5148,
+     "old": []
+    },
+    {
+     "new": "Phường Hòa Thắng",
+     "slug": "nha-dat-cho-thue-phuong-hoa-thang-tinh-khanh-hoa",
+     "wardId": 7708,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Trí",
+     "slug": "nha-dat-cho-thue-xa-hoa-tri-tinh-khanh-hoa",
+     "wardId": 8220,
+     "old": []
+    },
+    {
+     "new": "Xã Khánh Sơn",
+     "slug": "nha-dat-cho-thue-xa-khanh-son-tinh-khanh-hoa",
+     "wardId": 11548,
+     "old": []
+    },
+    {
+     "new": "Xã Khánh Vĩnh",
+     "slug": "nha-dat-cho-thue-xa-khanh-vinh-tinh-khanh-hoa",
+     "wardId": 11292,
+     "old": []
+    },
+    {
+     "new": "Xã Lâm Sơn",
+     "slug": "nha-dat-cho-thue-xa-lam-son-tinh-khanh-hoa",
+     "wardId": 15132,
+     "old": []
+    },
+    {
+     "new": "Xã Mỹ Sơn",
+     "slug": "nha-dat-cho-thue-xa-my-son-tinh-khanh-hoa",
+     "wardId": 15644,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Cam Ranh",
+     "slug": "nha-dat-cho-thue-xa-nam-cam-ranh-tinh-khanh-hoa",
+     "wardId": 2588,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Khánh Vĩnh",
+     "slug": "nha-dat-cho-thue-xa-nam-khanh-vinh-tinh-khanh-hoa",
+     "wardId": 11036,
+     "old": []
+    },
+    {
+     "new": "Phường Nam Nha Trang",
+     "slug": "nha-dat-cho-thue-phuong-nam-nha-trang-tinh-khanh-hoa",
+     "wardId": 5916,
+     "old": [
+      "Phường Phước Hải",
+      "Phường Phước Long"
+     ],
+     "old_evidence": [
+      {
+       "ward": "Phường Phước Hải",
+       "cards": 2,
+       "ad_pages": 0,
+       "pages": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+       ]
+      },
+      {
+       "ward": "Phường Phước Long",
+       "cards": 2,
+       "ad_pages": 0,
+       "pages": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+       ]
+      }
+     ],
+     "project_keys": [
+      {
+       "city": "nha-trang",
+       "key": "ntr",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Nam Ninh Hòa",
+     "slug": "nha-dat-cho-thue-xa-nam-ninh-hoa-tinh-khanh-hoa",
+     "wardId": 1052,
+     "old": []
+    },
+    {
+     "new": "Phường Nha Trang",
+     "slug": "nha-dat-cho-thue-phuong-nha-trang-tinh-khanh-hoa",
+     "wardId": 3100,
+     "old": [
+      "Phường Lộc Thọ",
+      "Phường Vạn Thạnh",
+      "Phường Tân Tiến"
+     ],
+     "old_evidence": [
+      {
+       "ward": "Phường Lộc Thọ",
+       "cards": 5,
+       "ad_pages": 0,
+       "pages": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+       ]
+      },
+      {
+       "ward": "Phường Vạn Thạnh",
+       "cards": 3,
+       "ad_pages": 0,
+       "pages": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+       ]
+      },
+      {
+       "ward": "Phường Tân Tiến",
+       "cards": 2,
+       "ad_pages": 0,
+       "pages": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+       ]
+      }
+     ],
+     "project_keys": [
+      {
+       "city": "nha-trang",
+       "key": "nt",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Ninh Chử",
+     "slug": "nha-dat-cho-thue-phuong-ninh-chu-tinh-khanh-hoa",
+     "wardId": 3612,
+     "old": []
+    },
+    {
+     "new": "Xã Ninh Hải",
+     "slug": "nha-dat-cho-thue-xa-ninh-hai-tinh-khanh-hoa",
+     "wardId": 13852,
+     "old": []
+    },
+    {
+     "new": "Phường Ninh Hòa",
+     "slug": "nha-dat-cho-thue-phuong-ninh-hoa-tinh-khanh-hoa",
+     "wardId": 7196,
+     "old": []
+    },
+    {
+     "new": "Xã Ninh Phước",
+     "slug": "nha-dat-cho-thue-xa-ninh-phuoc-tinh-khanh-hoa",
+     "wardId": 12316,
+     "old": []
+    },
+    {
+     "new": "Xã Ninh Sơn",
+     "slug": "nha-dat-cho-thue-xa-ninh-son-tinh-khanh-hoa",
+     "wardId": 14876,
+     "old": []
+    },
+    {
+     "new": "Phường Phan Rang",
+     "slug": "nha-dat-cho-thue-phuong-phan-rang-tinh-khanh-hoa",
+     "wardId": 540,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Dinh",
+     "slug": "nha-dat-cho-thue-xa-phuoc-dinh-tinh-khanh-hoa",
+     "wardId": 2844,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Hà",
+     "slug": "nha-dat-cho-thue-xa-phuoc-ha-tinh-khanh-hoa",
+     "wardId": 13596,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Hậu",
+     "slug": "nha-dat-cho-thue-xa-phuoc-hau-tinh-khanh-hoa",
+     "wardId": 12828,
+     "old": []
+    },
+    {
+     "new": "Xã Phước Hữu",
+     "slug": "nha-dat-cho-thue-xa-phuoc-huu-tinh-khanh-hoa",
+     "wardId": 12572,
+     "old": []
+    },
+    {
+     "new": "Xã Suối Dầu",
+     "slug": "nha-dat-cho-thue-xa-suoi-dau-tinh-khanh-hoa",
+     "wardId": 4892,
+     "old": []
+    },
+    {
+     "new": "Xã Suối Hiệp",
+     "slug": "nha-dat-cho-thue-xa-suoi-hiep-tinh-khanh-hoa",
+     "wardId": 10012,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Định",
+     "slug": "nha-dat-cho-thue-xa-tan-dinh-kh-tinh-khanh-hoa",
+     "wardId": 7452,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Khánh Sơn",
+     "slug": "nha-dat-cho-thue-xa-tay-khanh-son-tinh-khanh-hoa",
+     "wardId": 11804,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Khánh Vĩnh",
+     "slug": "nha-dat-cho-thue-xa-tay-khanh-vinh-tinh-khanh-hoa",
+     "wardId": 10780,
+     "old": []
+    },
+    {
+     "new": "Phường Tây Nha Trang",
+     "slug": "nha-dat-cho-thue-phuong-tay-nha-trang-tinh-khanh-hoa",
+     "wardId": 5660,
+     "old": [
+      "Xã Vĩnh Hiệp"
+     ],
+     "old_evidence": [
+      {
+       "ward": "Xã Vĩnh Hiệp",
+       "cards": 1,
+       "ad_pages": 0,
+       "pages": [
+        "https://batdongsan.com.vn/cho-thue-can-ho-chung-cu-nha-trang-kh"
+       ]
+      }
+     ],
+     "project_keys": [
+      {
+       "city": "nha-trang",
+       "key": "ttr",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Tây Ninh Hòa",
+     "slug": "nha-dat-cho-thue-xa-tay-ninh-hoa-tinh-khanh-hoa",
+     "wardId": 7964,
+     "old": []
+    },
+    {
+     "new": "Xã Thuận Bắc",
+     "slug": "nha-dat-cho-thue-xa-thuan-bac-tinh-khanh-hoa",
+     "wardId": 14364,
+     "old": []
+    },
+    {
+     "new": "Xã Thuận Nam",
+     "slug": "nha-dat-cho-thue-xa-thuan-nam-tinh-khanh-hoa",
+     "wardId": 13084,
+     "old": []
+    },
+    {
+     "new": "Xã Trung Khánh Vĩnh",
+     "slug": "nha-dat-cho-thue-xa-trung-khanh-vinh-tinh-khanh-hoa",
+     "wardId": 10524,
+     "old": []
+    },
+    {
+     "new": "Đặc Khu Trường Sa",
+     "slug": "nha-dat-cho-thue-dac-khu-truong-sa-tinh-khanh-hoa",
+     "wardId": 5404,
+     "old": []
+    },
+    {
+     "new": "Xã Tu Bông",
+     "slug": "nha-dat-cho-thue-xa-tu-bong-tinh-khanh-hoa",
+     "wardId": 1564,
+     "old": []
+    },
+    {
+     "new": "Xã Vạn Hưng",
+     "slug": "nha-dat-cho-thue-xa-van-hung-tinh-khanh-hoa",
+     "wardId": 1308,
+     "old": []
+    },
+    {
+     "new": "Xã Vạn Ninh",
+     "slug": "nha-dat-cho-thue-xa-van-ninh-tinh-khanh-hoa",
+     "wardId": 8476,
+     "old": []
+    },
+    {
+     "new": "Xã Vạn Thắng",
+     "slug": "nha-dat-cho-thue-xa-van-thang-tinh-khanh-hoa",
+     "wardId": 1820,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hải",
+     "slug": "nha-dat-cho-thue-xa-vinh-hai-kh-tinh-khanh-hoa",
+     "wardId": 3868,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "nha-trang",
+       "key": "vh",
+       "same_place": false,
+       "note": "у нас Vĩnh Hải -- прежний квартал Нячанга; Xã Vĩnh Hải -- другое место с тем же именем"
+      }
+     ]
+    },
+    {
+     "new": "Xã Xuân Hải",
+     "slug": "nha-dat-cho-thue-xa-xuan-hai-tinh-khanh-hoa",
+     "wardId": 14108,
+     "old": []
+    }
+   ]
+  },
+  "Tỉnh Lâm Đồng": {
+   "code": "LDD",
+   "city_key": null,
+   "city_keys": [
+    "da-lat",
+    "phan-thiet"
+   ],
+   "old_provinces_checked": [
+    "Lâm Đồng",
+    "Bình Thuận"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tinh-lam-dong.xml",
+   "ward_count": 124,
+   "wards": [
+    {
+     "new": "Phường 1 Bảo Lộc",
+     "slug": "nha-dat-cho-thue-phuong-1-bao-loc-tinh-lam-dong",
+     "wardId": 4126,
+     "old": []
+    },
+    {
+     "new": "Phường 2 Bảo Lộc",
+     "slug": "nha-dat-cho-thue-phuong-2-bao-loc-tinh-lam-dong",
+     "wardId": 4382,
+     "old": []
+    },
+    {
+     "new": "Phường 3 Bảo Lộc",
+     "slug": "nha-dat-cho-thue-phuong-3-bao-loc-tinh-lam-dong",
+     "wardId": 4638,
+     "old": []
+    },
+    {
+     "new": "Phường B'Lao",
+     "slug": "nha-dat-cho-thue-phuong-blao-tinh-lam-dong",
+     "wardId": 4894,
+     "old": []
+    },
+    {
+     "new": "Xã Bắc Bình",
+     "slug": "nha-dat-cho-thue-xa-bac-binh-tinh-lam-dong",
+     "wardId": 22302,
+     "old": []
+    },
+    {
+     "new": "Phường Bắc Gia Nghĩa",
+     "slug": "nha-dat-cho-thue-phuong-bac-gia-nghia-tinh-lam-dong",
+     "wardId": 19742,
+     "old": []
+    },
+    {
+     "new": "Xã Bắc Ruộng",
+     "slug": "nha-dat-cho-thue-xa-bac-ruong-tinh-lam-dong",
+     "wardId": 25886,
+     "old": []
+    },
+    {
+     "new": "Xã Bảo Lâm 1",
+     "slug": "nha-dat-cho-thue-xa-bao-lam-1-tinh-lam-dong",
+     "wardId": 12062,
+     "old": []
+    },
+    {
+     "new": "Xã Bảo Lâm 2",
+     "slug": "nha-dat-cho-thue-xa-bao-lam-2-tinh-lam-dong",
+     "wardId": 12318,
+     "old": []
+    },
+    {
+     "new": "Xã Bảo Lâm 3",
+     "slug": "nha-dat-cho-thue-xa-bao-lam-3-tinh-lam-dong",
+     "wardId": 12574,
+     "old": []
+    },
+    {
+     "new": "Xã Bảo Lâm 4",
+     "slug": "nha-dat-cho-thue-xa-bao-lam-4-tinh-lam-dong",
+     "wardId": 12830,
+     "old": []
+    },
+    {
+     "new": "Xã Bảo Lâm 5",
+     "slug": "nha-dat-cho-thue-xa-bao-lam-5-tinh-lam-dong",
+     "wardId": 13086,
+     "old": []
+    },
+    {
+     "new": "Xã Bảo Thuận",
+     "slug": "nha-dat-cho-thue-xa-bao-thuan-tinh-lam-dong",
+     "wardId": 11294,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Thuận",
+     "slug": "nha-dat-cho-thue-phuong-binh-thuan-tinh-lam-dong",
+     "wardId": 29470,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "phan-thiet",
+       "key": "bt",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Cam Ly-Đà Lạt",
+     "slug": "nha-dat-cho-thue-phuong-cam-ly-da-lat-tinh-lam-dong",
+     "wardId": 3102,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-lat",
+       "key": "cl",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Cát Tiên",
+     "slug": "nha-dat-cho-thue-xa-cat-tien-ldd-tinh-lam-dong",
+     "wardId": 14622,
+     "old": []
+    },
+    {
+     "new": "Xã Cát Tiên 2",
+     "slug": "nha-dat-cho-thue-xa-cat-tien-2-tinh-lam-dong",
+     "wardId": 14878,
+     "old": []
+    },
+    {
+     "new": "Xã Cát Tiên 3",
+     "slug": "nha-dat-cho-thue-xa-cat-tien-3-tinh-lam-dong",
+     "wardId": 15134,
+     "old": []
+    },
+    {
+     "new": "Xã Cư Jút",
+     "slug": "nha-dat-cho-thue-xa-cu-jut-tinh-lam-dong",
+     "wardId": 15902,
+     "old": []
+    },
+    {
+     "new": "Xã D'Ran",
+     "slug": "nha-dat-cho-thue-xa-dran-tinh-lam-dong",
+     "wardId": 5918,
+     "old": []
+    },
+    {
+     "new": "Xã Đạ Huoai",
+     "slug": "nha-dat-cho-thue-xa-da-huoai-tinh-lam-dong",
+     "wardId": 13342,
+     "old": []
+    },
+    {
+     "new": "Xã Đạ Huoai 2",
+     "slug": "nha-dat-cho-thue-xa-da-huoai-2-tinh-lam-dong",
+     "wardId": 13598,
+     "old": []
+    },
+    {
+     "new": "Xã Đạ Huoai 3",
+     "slug": "nha-dat-cho-thue-xa-da-huoai-3-tinh-lam-dong",
+     "wardId": 2590,
+     "old": []
+    },
+    {
+     "new": "Xã Đạ Tẻh",
+     "slug": "nha-dat-cho-thue-xa-da-teh-tinh-lam-dong",
+     "wardId": 13854,
+     "old": []
+    },
+    {
+     "new": "Xã Đạ Tẻh 2",
+     "slug": "nha-dat-cho-thue-xa-da-teh-2-tinh-lam-dong",
+     "wardId": 14110,
+     "old": []
+    },
+    {
+     "new": "Xã Đạ Tẻh 3",
+     "slug": "nha-dat-cho-thue-xa-da-teh-3-tinh-lam-dong",
+     "wardId": 14366,
+     "old": []
+    },
+    {
+     "new": "Xã Đắk Mil",
+     "slug": "nha-dat-cho-thue-xa-dak-mil-tinh-lam-dong",
+     "wardId": 16670,
+     "old": []
+    },
+    {
+     "new": "Xã Đắk Sắk",
+     "slug": "nha-dat-cho-thue-xa-dak-sak-tinh-lam-dong",
+     "wardId": 16926,
+     "old": []
+    },
+    {
+     "new": "Xã Đắk Song",
+     "slug": "nha-dat-cho-thue-xa-dak-song-ldd-tinh-lam-dong",
+     "wardId": 18206,
+     "old": []
+    },
+    {
+     "new": "Xã Đắk Wil",
+     "slug": "nha-dat-cho-thue-xa-dak-wil-tinh-lam-dong",
+     "wardId": 15390,
+     "old": []
+    },
+    {
+     "new": "Xã Đam Rông 1",
+     "slug": "nha-dat-cho-thue-xa-dam-rong-1-tinh-lam-dong",
+     "wardId": 9246,
+     "old": []
+    },
+    {
+     "new": "Xã Đam Rông 2",
+     "slug": "nha-dat-cho-thue-xa-dam-rong-2-tinh-lam-dong",
+     "wardId": 9502,
+     "old": []
+    },
+    {
+     "new": "Xã Đam Rông 3",
+     "slug": "nha-dat-cho-thue-xa-dam-rong-3-tinh-lam-dong",
+     "wardId": 9758,
+     "old": []
+    },
+    {
+     "new": "Xã Đam Rông 4",
+     "slug": "nha-dat-cho-thue-xa-dam-rong-4-tinh-lam-dong",
+     "wardId": 10014,
+     "old": []
+    },
+    {
+     "new": "Xã Di Linh",
+     "slug": "nha-dat-cho-thue-xa-di-linh-tinh-lam-dong",
+     "wardId": 10270,
+     "old": []
+    },
+    {
+     "new": "Xã Đinh Trang Thượng",
+     "slug": "nha-dat-cho-thue-xa-dinh-trang-thuong-tinh-lam-dong",
+     "wardId": 11038,
+     "old": []
+    },
+    {
+     "new": "Xã Đinh Văn Lâm Hà",
+     "slug": "nha-dat-cho-thue-xa-dinh-van-lam-ha-tinh-lam-dong",
+     "wardId": 7710,
+     "old": []
+    },
+    {
+     "new": "Xã Đơn Dương",
+     "slug": "nha-dat-cho-thue-xa-don-duong-tinh-lam-dong",
+     "wardId": 5150,
+     "old": []
+    },
+    {
+     "new": "Phường Đông Gia Nghĩa",
+     "slug": "nha-dat-cho-thue-phuong-dong-gia-nghia-tinh-lam-dong",
+     "wardId": 20254,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Giang",
+     "slug": "nha-dat-cho-thue-xa-dong-giang-ldd-tinh-lam-dong",
+     "wardId": 23582,
+     "old": []
+    },
+    {
+     "new": "Xã Đồng Kho",
+     "slug": "nha-dat-cho-thue-xa-dong-kho-tinh-lam-dong",
+     "wardId": 26142,
+     "old": []
+    },
+    {
+     "new": "Xã Đức An",
+     "slug": "nha-dat-cho-thue-xa-duc-an-tinh-lam-dong",
+     "wardId": 18462,
+     "old": []
+    },
+    {
+     "new": "Xã Đức Lập",
+     "slug": "nha-dat-cho-thue-xa-duc-lap-tinh-lam-dong",
+     "wardId": 16414,
+     "old": []
+    },
+    {
+     "new": "Xã Đức Linh",
+     "slug": "nha-dat-cho-thue-xa-duc-linh-tinh-lam-dong",
+     "wardId": 27166,
+     "old": []
+    },
+    {
+     "new": "Xã Đức Trọng",
+     "slug": "nha-dat-cho-thue-xa-duc-trong-tinh-lam-dong",
+     "wardId": 6686,
+     "old": []
+    },
+    {
+     "new": "Xã Gia Hiệp",
+     "slug": "nha-dat-cho-thue-xa-gia-hiep-tinh-lam-dong",
+     "wardId": 11806,
+     "old": []
+    },
+    {
+     "new": "Xã Hải Ninh",
+     "slug": "nha-dat-cho-thue-xa-hai-ninh-tinh-lam-dong",
+     "wardId": 22558,
+     "old": []
+    },
+    {
+     "new": "Xã Hàm Kiệm",
+     "slug": "nha-dat-cho-thue-xa-ham-kiem-tinh-lam-dong",
+     "wardId": 31262,
+     "old": []
+    },
+    {
+     "new": "Xã Hàm Liêm",
+     "slug": "nha-dat-cho-thue-xa-ham-liem-tinh-lam-dong",
+     "wardId": 28958,
+     "old": []
+    },
+    {
+     "new": "Xã Hàm Tân",
+     "slug": "nha-dat-cho-thue-xa-ham-tan-tinh-lam-dong",
+     "wardId": 24350,
+     "old": []
+    },
+    {
+     "new": "Phường Hàm Thắng",
+     "slug": "nha-dat-cho-thue-phuong-ham-thang-tinh-lam-dong",
+     "wardId": 29214,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "phan-thiet",
+       "key": "hth",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Hàm Thạnh",
+     "slug": "nha-dat-cho-thue-xa-ham-thanh-tinh-lam-dong",
+     "wardId": 31006,
+     "old": []
+    },
+    {
+     "new": "Xã Hàm Thuận",
+     "slug": "nha-dat-cho-thue-xa-ham-thuan-tinh-lam-dong",
+     "wardId": 28446,
+     "old": []
+    },
+    {
+     "new": "Xã Hàm Thuận Bắc",
+     "slug": "nha-dat-cho-thue-xa-ham-thuan-bac-tinh-lam-dong",
+     "wardId": 28190,
+     "old": []
+    },
+    {
+     "new": "Xã Hàm Thuận Nam",
+     "slug": "nha-dat-cho-thue-xa-ham-thuan-nam-tinh-lam-dong",
+     "wardId": 31774,
+     "old": []
+    },
+    {
+     "new": "Xã Hiệp Thạnh",
+     "slug": "nha-dat-cho-thue-xa-hiep-thanh-tinh-lam-dong",
+     "wardId": 6174,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Bắc",
+     "slug": "nha-dat-cho-thue-xa-hoa-bac-tinh-lam-dong",
+     "wardId": 10782,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Ninh",
+     "slug": "nha-dat-cho-thue-xa-hoa-ninh-tinh-lam-dong",
+     "wardId": 10526,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Thắng",
+     "slug": "nha-dat-cho-thue-xa-hoa-thang-tinh-lam-dong",
+     "wardId": 1822,
+     "old": []
+    },
+    {
+     "new": "Xã Hoài Đức",
+     "slug": "nha-dat-cho-thue-xa-hoai-duc-ldd-tinh-lam-dong",
+     "wardId": 27422,
+     "old": []
+    },
+    {
+     "new": "Xã Hồng Sơn",
+     "slug": "nha-dat-cho-thue-xa-hong-son-ldd-tinh-lam-dong",
+     "wardId": 28702,
+     "old": []
+    },
+    {
+     "new": "Xã Hồng Thái",
+     "slug": "nha-dat-cho-thue-xa-hong-thai-tinh-lam-dong",
+     "wardId": 2334,
+     "old": []
+    },
+    {
+     "new": "Xã Ka Đô",
+     "slug": "nha-dat-cho-thue-xa-ka-do-tinh-lam-dong",
+     "wardId": 5406,
+     "old": []
+    },
+    {
+     "new": "Xã Kiến Đức",
+     "slug": "nha-dat-cho-thue-xa-kien-duc-tinh-lam-dong",
+     "wardId": 21022,
+     "old": []
+    },
+    {
+     "new": "Xã Krông Nô",
+     "slug": "nha-dat-cho-thue-xa-krong-no-ldd-tinh-lam-dong",
+     "wardId": 17438,
+     "old": []
+    },
+    {
+     "new": "Xã La Dạ",
+     "slug": "nha-dat-cho-thue-xa-la-da-tinh-lam-dong",
+     "wardId": 27934,
+     "old": []
+    },
+    {
+     "new": "Phường La Gi",
+     "slug": "nha-dat-cho-thue-phuong-la-gi-tinh-lam-dong",
+     "wardId": 24862,
+     "old": []
+    },
+    {
+     "new": "Xã Lạc Dương",
+     "slug": "nha-dat-cho-thue-xa-lac-duong-tinh-lam-dong",
+     "wardId": 6430,
+     "old": []
+    },
+    {
+     "new": "Phường Lâm Viên-Đà Lạt",
+     "slug": "nha-dat-cho-thue-phuong-lam-vien-da-lat-tinh-lam-dong",
+     "wardId": 3358,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-lat",
+       "key": "lv",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Lang Biang-Đà Lạt",
+     "slug": "nha-dat-cho-thue-phuong-lang-biang-da-lat-tinh-lam-dong",
+     "wardId": 3870,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-lat",
+       "key": "lb",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Liên Hương",
+     "slug": "nha-dat-cho-thue-xa-lien-huong-tinh-lam-dong",
+     "wardId": 22046,
+     "old": []
+    },
+    {
+     "new": "Xã Lương Sơn",
+     "slug": "nha-dat-cho-thue-xa-luong-son-tinh-lam-dong",
+     "wardId": 23326,
+     "old": []
+    },
+    {
+     "new": "Phường Mũi Né",
+     "slug": "nha-dat-cho-thue-phuong-mui-ne-tinh-lam-dong",
+     "wardId": 29726,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Phan Thiết",
+       "cards": 14,
+       "ad_pages": 0,
+       "old_district": "Thành phố Phan Thiết",
+       "old_province": "Bình Thuận",
+       "old_districtId": 181,
+       "unconfirmed": "district lists of DNO not loaded; a same-named district there is not ruled out"
+      }
+     ],
+     "listing_page": {
+      "cards": 14,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "phan-thiet",
+       "key": "mn",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Nam Ban Lâm Hà",
+     "slug": "nha-dat-cho-thue-xa-nam-ban-lam-ha-tinh-lam-dong",
+     "wardId": 8478,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Đà",
+     "slug": "nha-dat-cho-thue-xa-nam-da-tinh-lam-dong",
+     "wardId": 17182,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Dong",
+     "slug": "nha-dat-cho-thue-xa-nam-dong-tinh-lam-dong",
+     "wardId": 15646,
+     "old": []
+    },
+    {
+     "new": "Phường Nam Gia Nghĩa",
+     "slug": "nha-dat-cho-thue-phuong-nam-gia-nghia-tinh-lam-dong",
+     "wardId": 19998,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Hà Lâm Hà",
+     "slug": "nha-dat-cho-thue-xa-nam-ha-lam-ha-tinh-lam-dong",
+     "wardId": 8222,
+     "old": []
+    },
+    {
+     "new": "Xã Nâm Nung",
+     "slug": "nha-dat-cho-thue-xa-nam-nung-tinh-lam-dong",
+     "wardId": 17694,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Thành",
+     "slug": "nha-dat-cho-thue-xa-nam-thanh-tinh-lam-dong",
+     "wardId": 26910,
+     "old": []
+    },
+    {
+     "new": "Xã Nghị Đức",
+     "slug": "nha-dat-cho-thue-xa-nghi-duc-tinh-lam-dong",
+     "wardId": 25630,
+     "old": []
+    },
+    {
+     "new": "Xã Nhân Cơ",
+     "slug": "nha-dat-cho-thue-xa-nhan-co-tinh-lam-dong",
+     "wardId": 21278,
+     "old": []
+    },
+    {
+     "new": "Xã Ninh Gia",
+     "slug": "nha-dat-cho-thue-xa-ninh-gia-tinh-lam-dong",
+     "wardId": 1054,
+     "old": []
+    },
+    {
+     "new": "Xã Phan Rí Cửa",
+     "slug": "nha-dat-cho-thue-xa-phan-ri-cua-tinh-lam-dong",
+     "wardId": 1310,
+     "old": []
+    },
+    {
+     "new": "Xã Phan Sơn",
+     "slug": "nha-dat-cho-thue-xa-phan-son-tinh-lam-dong",
+     "wardId": 22814,
+     "old": []
+    },
+    {
+     "new": "Phường Phan Thiết",
+     "slug": "nha-dat-cho-thue-phuong-phan-thiet-tinh-lam-dong",
+     "wardId": 30238,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "phan-thiet",
+       "key": "pt",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Đặc Khu Phú Quý",
+     "slug": "nha-dat-cho-thue-dac-khu-phu-quy-tinh-lam-dong",
+     "wardId": 2078,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Sơn Lâm Hà",
+     "slug": "nha-dat-cho-thue-xa-phu-son-lam-ha-tinh-lam-dong",
+     "wardId": 7966,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Thủy",
+     "slug": "nha-dat-cho-thue-phuong-phu-thuy-tinh-lam-dong",
+     "wardId": 29982,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "phan-thiet",
+       "key": "put",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Phúc Thọ Lâm Hà",
+     "slug": "nha-dat-cho-thue-xa-phuc-tho-lam-ha-tinh-lam-dong",
+     "wardId": 8990,
+     "old": []
+    },
+    {
+     "new": "Phường Phước Hội",
+     "slug": "nha-dat-cho-thue-phuong-phuoc-hoi-tinh-lam-dong",
+     "wardId": 25118,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Hòa",
+     "slug": "nha-dat-cho-thue-xa-quang-hoa-tinh-lam-dong",
+     "wardId": 286,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Khê",
+     "slug": "nha-dat-cho-thue-xa-quang-khe-tinh-lam-dong",
+     "wardId": 19486,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Lập",
+     "slug": "nha-dat-cho-thue-xa-quang-lap-tinh-lam-dong",
+     "wardId": 5662,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Phú",
+     "slug": "nha-dat-cho-thue-xa-quang-phu-ldd-tinh-lam-dong",
+     "wardId": 17950,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Sơn",
+     "slug": "nha-dat-cho-thue-xa-quang-son-tinh-lam-dong",
+     "wardId": 542,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Tân",
+     "slug": "nha-dat-cho-thue-xa-quang-tan-tinh-lam-dong",
+     "wardId": 20510,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Tín",
+     "slug": "nha-dat-cho-thue-xa-quang-tin-tinh-lam-dong",
+     "wardId": 21534,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Trực",
+     "slug": "nha-dat-cho-thue-xa-quang-truc-tinh-lam-dong",
+     "wardId": 798,
+     "old": []
+    },
+    {
+     "new": "Xã Sơn Điền",
+     "slug": "nha-dat-cho-thue-xa-son-dien-tinh-lam-dong",
+     "wardId": 11550,
+     "old": []
+    },
+    {
+     "new": "Xã Sơn Mỹ",
+     "slug": "nha-dat-cho-thue-xa-son-my-tinh-lam-dong",
+     "wardId": 24606,
+     "old": []
+    },
+    {
+     "new": "Xã Sông Lũy",
+     "slug": "nha-dat-cho-thue-xa-song-luy-tinh-lam-dong",
+     "wardId": 23070,
+     "old": []
+    },
+    {
+     "new": "Xã Suối Kiết",
+     "slug": "nha-dat-cho-thue-xa-suoi-kiet-tinh-lam-dong",
+     "wardId": 26654,
+     "old": []
+    },
+    {
+     "new": "Xã Tà Đùng",
+     "slug": "nha-dat-cho-thue-xa-ta-dung-tinh-lam-dong",
+     "wardId": 19230,
+     "old": []
+    },
+    {
+     "new": "Xã Tà Hine",
+     "slug": "nha-dat-cho-thue-xa-ta-hine-tinh-lam-dong",
+     "wardId": 7198,
+     "old": []
+    },
+    {
+     "new": "Xã Tà Năng",
+     "slug": "nha-dat-cho-thue-xa-ta-nang-tinh-lam-dong",
+     "wardId": 7454,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Hà Lâm Hà",
+     "slug": "nha-dat-cho-thue-xa-tan-ha-lam-ha-tinh-lam-dong",
+     "wardId": 8734,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Hải",
+     "slug": "nha-dat-cho-thue-xa-tan-hai-tinh-lam-dong",
+     "wardId": 25374,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Hội",
+     "slug": "nha-dat-cho-thue-xa-tan-hoi-ldd-tinh-lam-dong",
+     "wardId": 6942,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Lập",
+     "slug": "nha-dat-cho-thue-xa-tan-lap-tinh-lam-dong",
+     "wardId": 23838,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Minh",
+     "slug": "nha-dat-cho-thue-xa-tan-minh-ldd-tinh-lam-dong",
+     "wardId": 24094,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Thành",
+     "slug": "nha-dat-cho-thue-xa-tan-thanh-ldd-tinh-lam-dong",
+     "wardId": 31518,
+     "old": []
+    },
+    {
+     "new": "Xã Tánh Linh",
+     "slug": "nha-dat-cho-thue-xa-tanh-linh-tinh-lam-dong",
+     "wardId": 26398,
+     "old": []
+    },
+    {
+     "new": "Xã Thuận An",
+     "slug": "nha-dat-cho-thue-xa-thuan-an-ldd-tinh-lam-dong",
+     "wardId": 16158,
+     "old": []
+    },
+    {
+     "new": "Xã Thuận Hạnh",
+     "slug": "nha-dat-cho-thue-xa-thuan-hanh-tinh-lam-dong",
+     "wardId": 18718,
+     "old": []
+    },
+    {
+     "new": "Phường Tiến Thành",
+     "slug": "nha-dat-cho-thue-phuong-tien-thanh-tinh-lam-dong",
+     "wardId": 30494,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "phan-thiet",
+       "key": "tt",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Trà Tân",
+     "slug": "nha-dat-cho-thue-xa-tra-tan-ldd-tinh-lam-dong",
+     "wardId": 27678,
+     "old": []
+    },
+    {
+     "new": "Xã Trường Xuân",
+     "slug": "nha-dat-cho-thue-xa-truong-xuan-ldd-tinh-lam-dong",
+     "wardId": 18974,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy Đức",
+     "slug": "nha-dat-cho-thue-xa-tuy-duc-tinh-lam-dong",
+     "wardId": 20766,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy Phong",
+     "slug": "nha-dat-cho-thue-xa-tuy-phong-tinh-lam-dong",
+     "wardId": 1566,
+     "old": []
+    },
+    {
+     "new": "Xã Tuyên Quang",
+     "slug": "nha-dat-cho-thue-xa-tuyen-quang-tinh-lam-dong",
+     "wardId": 30750,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hảo",
+     "slug": "nha-dat-cho-thue-xa-vinh-hao-tinh-lam-dong",
+     "wardId": 21790,
+     "old": []
+    },
+    {
+     "new": "Phường Xuân Hương-Đà Lạt",
+     "slug": "nha-dat-cho-thue-phuong-xuan-huong-da-lat-tinh-lam-dong",
+     "wardId": 2846,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Đà Lạt",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Thành phố Đà Lạt",
+       "old_province": "Lâm Đồng",
+       "old_districtId": 391,
+       "unconfirmed": "district lists of DNO not loaded; a same-named district there is not ruled out"
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "da-lat",
+       "key": "xh",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Xuân Trường-Đà Lạt",
+     "slug": "nha-dat-cho-thue-phuong-xuan-truong-da-lat-tinh-lam-dong",
+     "wardId": 3614,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "da-lat",
+       "key": "xt",
+       "same_place": true
+      }
+     ]
+    }
+   ]
+  },
+  "Tỉnh Gia Lai": {
+   "code": "GL",
+   "city_key": "quy-nhon",
+   "city_keys": [
+    "quy-nhon"
+   ],
+   "old_provinces_checked": [
+    "Bình Định"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tinh-gia-lai.xml",
+   "ward_count": 135,
+   "wards": [
+    {
+     "new": "Xã Al Bá",
+     "slug": "nha-dat-cho-thue-xa-al-ba-tinh-gia-lai",
+     "wardId": 9753,
+     "old": []
+    },
+    {
+     "new": "Phường An Bình",
+     "slug": "nha-dat-cho-thue-phuong-an-binh-gl-tinh-gia-lai",
+     "wardId": 11033,
+     "old": []
+    },
+    {
+     "new": "Xã Ân Hảo",
+     "slug": "nha-dat-cho-thue-xa-an-hao-tinh-gia-lai",
+     "wardId": 33049,
+     "old": []
+    },
+    {
+     "new": "Xã An Hòa",
+     "slug": "nha-dat-cho-thue-xa-an-hoa-gl-tinh-gia-lai",
+     "wardId": 2841,
+     "old": []
+    },
+    {
+     "new": "Phường An Khê",
+     "slug": "nha-dat-cho-thue-phuong-an-khe-gl-tinh-gia-lai",
+     "wardId": 10777,
+     "old": []
+    },
+    {
+     "new": "Xã An Lão",
+     "slug": "nha-dat-cho-thue-xa-an-lao-tinh-gia-lai",
+     "wardId": 34329,
+     "old": []
+    },
+    {
+     "new": "Xã An Lương",
+     "slug": "nha-dat-cho-thue-xa-an-luong-tinh-gia-lai",
+     "wardId": 28697,
+     "old": []
+    },
+    {
+     "new": "Phường An Nhơn",
+     "slug": "nha-dat-cho-thue-phuong-an-nhon-tinh-gia-lai",
+     "wardId": 24601,
+     "old": []
+    },
+    {
+     "new": "Phường An Nhơn Bắc",
+     "slug": "nha-dat-cho-thue-phuong-an-nhon-bac-tinh-gia-lai",
+     "wardId": 25625,
+     "old": []
+    },
+    {
+     "new": "Phường An Nhơn Đông",
+     "slug": "nha-dat-cho-thue-phuong-an-nhon-dong-tinh-gia-lai",
+     "wardId": 24857,
+     "old": []
+    },
+    {
+     "new": "Phường An Nhơn Nam",
+     "slug": "nha-dat-cho-thue-phuong-an-nhon-nam-tinh-gia-lai",
+     "wardId": 25369,
+     "old": []
+    },
+    {
+     "new": "Xã An Nhơn Tây",
+     "slug": "nha-dat-cho-thue-xa-an-nhon-tay-tinh-gia-lai",
+     "wardId": 25113,
+     "old": []
+    },
+    {
+     "new": "Phường An Phú",
+     "slug": "nha-dat-cho-thue-phuong-an-phu-tinh-gia-lai",
+     "wardId": 5657,
+     "old": []
+    },
+    {
+     "new": "Xã An Toàn",
+     "slug": "nha-dat-cho-thue-xa-an-toan-tinh-gia-lai",
+     "wardId": 793,
+     "old": []
+    },
+    {
+     "new": "Xã Ân Tường",
+     "slug": "nha-dat-cho-thue-xa-an-tuong-tinh-gia-lai",
+     "wardId": 32281,
+     "old": []
+    },
+    {
+     "new": "Xã An Vinh",
+     "slug": "nha-dat-cho-thue-xa-an-vinh-tinh-gia-lai",
+     "wardId": 34585,
+     "old": []
+    },
+    {
+     "new": "Xã Ayun",
+     "slug": "nha-dat-cho-thue-xa-ayun-tinh-gia-lai",
+     "wardId": 20505,
+     "old": []
+    },
+    {
+     "new": "Phường Ayun Pa",
+     "slug": "nha-dat-cho-thue-phuong-ayun-pa-tinh-gia-lai",
+     "wardId": 14873,
+     "old": []
+    },
+    {
+     "new": "Xã Bàu Cạn",
+     "slug": "nha-dat-cho-thue-xa-bau-can-tinh-gia-lai",
+     "wardId": 7705,
+     "old": []
+    },
+    {
+     "new": "Xã Biển Hồ",
+     "slug": "nha-dat-cho-thue-xa-bien-ho-tinh-gia-lai",
+     "wardId": 5913,
+     "old": []
+    },
+    {
+     "new": "Xã Bình An",
+     "slug": "nha-dat-cho-thue-xa-binh-an-gl-tinh-gia-lai",
+     "wardId": 31769,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Định",
+     "slug": "nha-dat-cho-thue-phuong-binh-dinh-tinh-gia-lai",
+     "wardId": 24345,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Dương",
+     "slug": "nha-dat-cho-thue-xa-binh-duong-tinh-gia-lai",
+     "wardId": 28953,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Hiệp",
+     "slug": "nha-dat-cho-thue-xa-binh-hiep-tinh-gia-lai",
+     "wardId": 31513,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Khê",
+     "slug": "nha-dat-cho-thue-xa-binh-khe-tinh-gia-lai",
+     "wardId": 31001,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Phú",
+     "slug": "nha-dat-cho-thue-xa-binh-phu-gl-tinh-gia-lai",
+     "wardId": 31257,
+     "old": []
+    },
+    {
+     "new": "Xã Bờ Ngoong",
+     "slug": "nha-dat-cho-thue-xa-bo-ngoong-tinh-gia-lai",
+     "wardId": 9241,
+     "old": []
+    },
+    {
+     "new": "Phường Bồng Sơn",
+     "slug": "nha-dat-cho-thue-phuong-bong-son-tinh-gia-lai",
+     "wardId": 25881,
+     "old": []
+    },
+    {
+     "new": "Xã Canh Liên",
+     "slug": "nha-dat-cho-thue-xa-canh-lien-tinh-gia-lai",
+     "wardId": 281,
+     "old": []
+    },
+    {
+     "new": "Xã Canh Vinh",
+     "slug": "nha-dat-cho-thue-xa-canh-vinh-tinh-gia-lai",
+     "wardId": 2585,
+     "old": []
+    },
+    {
+     "new": "Xã Cát Tiến",
+     "slug": "nha-dat-cho-thue-xa-cat-tien-tinh-gia-lai",
+     "wardId": 22553,
+     "old": []
+    },
+    {
+     "new": "Xã Chơ Long",
+     "slug": "nha-dat-cho-thue-xa-cho-long-tinh-gia-lai",
+     "wardId": 14617,
+     "old": []
+    },
+    {
+     "new": "Xã Chư A Thai",
+     "slug": "nha-dat-cho-thue-xa-chu-a-thai-tinh-gia-lai",
+     "wardId": 15897,
+     "old": []
+    },
+    {
+     "new": "Xã Chư Krey",
+     "slug": "nha-dat-cho-thue-xa-chu-krey-tinh-gia-lai",
+     "wardId": 13849,
+     "old": []
+    },
+    {
+     "new": "Xã Chư Păh",
+     "slug": "nha-dat-cho-thue-xa-chu-pah-tinh-gia-lai",
+     "wardId": 6681,
+     "old": []
+    },
+    {
+     "new": "Xã Chư Prông",
+     "slug": "nha-dat-cho-thue-xa-chu-prong-tinh-gia-lai",
+     "wardId": 7449,
+     "old": []
+    },
+    {
+     "new": "Xã Chư Pưh",
+     "slug": "nha-dat-cho-thue-xa-chu-puh-tinh-gia-lai",
+     "wardId": 10009,
+     "old": []
+    },
+    {
+     "new": "Xã Chư Sê",
+     "slug": "nha-dat-cho-thue-xa-chu-se-tinh-gia-lai",
+     "wardId": 8985,
+     "old": []
+    },
+    {
+     "new": "Xã Cửu An",
+     "slug": "nha-dat-cho-thue-xa-cuu-an-tinh-gia-lai",
+     "wardId": 11289,
+     "old": []
+    },
+    {
+     "new": "Xã Đak Đoa",
+     "slug": "nha-dat-cho-thue-xa-dak-doa-tinh-gia-lai",
+     "wardId": 18201,
+     "old": []
+    },
+    {
+     "new": "Xã Đak Pơ",
+     "slug": "nha-dat-cho-thue-xa-dak-po-tinh-gia-lai",
+     "wardId": 11545,
+     "old": []
+    },
+    {
+     "new": "Xã Đak Rong",
+     "slug": "nha-dat-cho-thue-xa-dak-rong-tinh-gia-lai",
+     "wardId": 13081,
+     "old": []
+    },
+    {
+     "new": "Xã Đak Sơmei",
+     "slug": "nha-dat-cho-thue-xa-dak-somei-tinh-gia-lai",
+     "wardId": 19225,
+     "old": []
+    },
+    {
+     "new": "Xã Đăk Song",
+     "slug": "nha-dat-cho-thue-xa-dak-song-tinh-gia-lai",
+     "wardId": 14361,
+     "old": []
+    },
+    {
+     "new": "Xã Đề Gi",
+     "slug": "nha-dat-cho-thue-xa-de-gi-tinh-gia-lai",
+     "wardId": 22809,
+     "old": []
+    },
+    {
+     "new": "Phường Diên Hồng",
+     "slug": "nha-dat-cho-thue-phuong-dien-hong-tinh-gia-lai",
+     "wardId": 5401,
+     "old": []
+    },
+    {
+     "new": "Xã Đức Cơ",
+     "slug": "nha-dat-cho-thue-xa-duc-co-tinh-gia-lai",
+     "wardId": 21529,
+     "old": []
+    },
+    {
+     "new": "Xã Gào",
+     "slug": "nha-dat-cho-thue-xa-gao-tinh-gia-lai",
+     "wardId": 6169,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Hội",
+     "slug": "nha-dat-cho-thue-xa-hoa-hoi-tinh-gia-lai",
+     "wardId": 23065,
+     "old": []
+    },
+    {
+     "new": "Xã Hoài Ân",
+     "slug": "nha-dat-cho-thue-xa-hoai-an-tinh-gia-lai",
+     "wardId": 32025,
+     "old": []
+    },
+    {
+     "new": "Phường Hoài Nhơn",
+     "slug": "nha-dat-cho-thue-phuong-hoai-nhon-tinh-gia-lai",
+     "wardId": 26137,
+     "old": []
+    },
+    {
+     "new": "Phường Hoài Nhơn Bắc",
+     "slug": "nha-dat-cho-thue-phuong-hoai-nhon-bac-tinh-gia-lai",
+     "wardId": 27417,
+     "old": []
+    },
+    {
+     "new": "Phường Hoài Nhơn Đông",
+     "slug": "nha-dat-cho-thue-phuong-hoai-nhon-dong-tinh-gia-lai",
+     "wardId": 26649,
+     "old": []
+    },
+    {
+     "new": "Phường Hoài Nhơn Nam",
+     "slug": "nha-dat-cho-thue-phuong-hoai-nhon-nam-tinh-gia-lai",
+     "wardId": 27161,
+     "old": []
+    },
+    {
+     "new": "Phường Hoài Nhơn Tây",
+     "slug": "nha-dat-cho-thue-phuong-hoai-nhon-tay-tinh-gia-lai",
+     "wardId": 26905,
+     "old": []
+    },
+    {
+     "new": "Phường Hội Phú",
+     "slug": "nha-dat-cho-thue-phuong-hoi-phu-tinh-gia-lai",
+     "wardId": 4889,
+     "old": []
+    },
+    {
+     "new": "Xã Hội Sơn",
+     "slug": "nha-dat-cho-thue-xa-hoi-son-tinh-gia-lai",
+     "wardId": 28185,
+     "old": []
+    },
+    {
+     "new": "Xã Hra",
+     "slug": "nha-dat-cho-thue-xa-hra-tinh-gia-lai",
+     "wardId": 20249,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Băng",
+     "slug": "nha-dat-cho-thue-xa-ia-bang-tinh-gia-lai",
+     "wardId": 18713,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Boòng",
+     "slug": "nha-dat-cho-thue-xa-ia-boong-tinh-gia-lai",
+     "wardId": 7961,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Chia",
+     "slug": "nha-dat-cho-thue-xa-ia-chia-tinh-gia-lai",
+     "wardId": 3865,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Dơk",
+     "slug": "nha-dat-cho-thue-xa-ia-dok-tinh-gia-lai",
+     "wardId": 21785,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Dom",
+     "slug": "nha-dat-cho-thue-xa-ia-dom-tinh-gia-lai",
+     "wardId": 1817,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Dreh",
+     "slug": "nha-dat-cho-thue-xa-ia-dreh-tinh-gia-lai",
+     "wardId": 17433,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Grai",
+     "slug": "nha-dat-cho-thue-xa-ia-grai-tinh-gia-lai",
+     "wardId": 20761,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Hiao",
+     "slug": "nha-dat-cho-thue-xa-ia-hiao-tinh-gia-lai",
+     "wardId": 16153,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Hrú",
+     "slug": "nha-dat-cho-thue-xa-ia-hru-tinh-gia-lai",
+     "wardId": 10521,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Hrung",
+     "slug": "nha-dat-cho-thue-xa-ia-hrung-tinh-gia-lai",
+     "wardId": 21273,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Khươl",
+     "slug": "nha-dat-cho-thue-xa-ia-khuol-tinh-gia-lai",
+     "wardId": 6937,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Ko",
+     "slug": "nha-dat-cho-thue-xa-ia-ko-tinh-gia-lai",
+     "wardId": 9497,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Krái",
+     "slug": "nha-dat-cho-thue-xa-ia-krai-tinh-gia-lai",
+     "wardId": 21017,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Krêl",
+     "slug": "nha-dat-cho-thue-xa-ia-krel-tinh-gia-lai",
+     "wardId": 22041,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Lâu",
+     "slug": "nha-dat-cho-thue-xa-ia-lau-tinh-gia-lai",
+     "wardId": 8217,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Le",
+     "slug": "nha-dat-cho-thue-xa-ia-le-tinh-gia-lai",
+     "wardId": 10265,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Ly",
+     "slug": "nha-dat-cho-thue-xa-ia-ly-tinh-gia-lai",
+     "wardId": 6425,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Mơ",
+     "slug": "nha-dat-cho-thue-xa-ia-mo-tinh-gia-lai",
+     "wardId": 1561,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Nan",
+     "slug": "nha-dat-cho-thue-xa-ia-nan-tinh-gia-lai",
+     "wardId": 2073,
+     "old": []
+    },
+    {
+     "new": "Xã Ia O",
+     "slug": "nha-dat-cho-thue-xa-ia-o-tinh-gia-lai",
+     "wardId": 4121,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Pa",
+     "slug": "nha-dat-cho-thue-xa-ia-pa-tinh-gia-lai",
+     "wardId": 16665,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Phí",
+     "slug": "nha-dat-cho-thue-xa-ia-phi-tinh-gia-lai",
+     "wardId": 7193,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Pia",
+     "slug": "nha-dat-cho-thue-xa-ia-pia-tinh-gia-lai",
+     "wardId": 8473,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Pnôn",
+     "slug": "nha-dat-cho-thue-xa-ia-pnon-tinh-gia-lai",
+     "wardId": 2329,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Púch",
+     "slug": "nha-dat-cho-thue-xa-ia-puch-tinh-gia-lai",
+     "wardId": 1305,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Rbol",
+     "slug": "nha-dat-cho-thue-xa-ia-rbol-tinh-gia-lai",
+     "wardId": 15129,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Rsai",
+     "slug": "nha-dat-cho-thue-xa-ia-rsai-tinh-gia-lai",
+     "wardId": 17689,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Sao",
+     "slug": "nha-dat-cho-thue-xa-ia-sao-tinh-gia-lai",
+     "wardId": 15385,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Tôr",
+     "slug": "nha-dat-cho-thue-xa-ia-tor-tinh-gia-lai",
+     "wardId": 8729,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Tul",
+     "slug": "nha-dat-cho-thue-xa-ia-tul-tinh-gia-lai",
+     "wardId": 16921,
+     "old": []
+    },
+    {
+     "new": "Xã Kbang",
+     "slug": "nha-dat-cho-thue-xa-kbang-tinh-gia-lai",
+     "wardId": 12057,
+     "old": []
+    },
+    {
+     "new": "Xã KDang",
+     "slug": "nha-dat-cho-thue-xa-kdang-tinh-gia-lai",
+     "wardId": 18969,
+     "old": []
+    },
+    {
+     "new": "Xã Kim Sơn",
+     "slug": "nha-dat-cho-thue-xa-kim-son-gl-tinh-gia-lai",
+     "wardId": 32537,
+     "old": []
+    },
+    {
+     "new": "Xã Kon Chiêng",
+     "slug": "nha-dat-cho-thue-xa-kon-chieng-tinh-gia-lai",
+     "wardId": 19993,
+     "old": []
+    },
+    {
+     "new": "Xã Kon Gang",
+     "slug": "nha-dat-cho-thue-xa-kon-gang-tinh-gia-lai",
+     "wardId": 18457,
+     "old": []
+    },
+    {
+     "new": "Xã Kông Bơ La",
+     "slug": "nha-dat-cho-thue-xa-kong-bo-la-tinh-gia-lai",
+     "wardId": 12313,
+     "old": []
+    },
+    {
+     "new": "Xã Kông Chro",
+     "slug": "nha-dat-cho-thue-xa-kong-chro-tinh-gia-lai",
+     "wardId": 13337,
+     "old": []
+    },
+    {
+     "new": "Xã Krong",
+     "slug": "nha-dat-cho-thue-xa-krong-tinh-gia-lai",
+     "wardId": 4377,
+     "old": []
+    },
+    {
+     "new": "Xã Lơ Pang",
+     "slug": "nha-dat-cho-thue-xa-lo-pang-tinh-gia-lai",
+     "wardId": 19737,
+     "old": []
+    },
+    {
+     "new": "Xã Mang Yang",
+     "slug": "nha-dat-cho-thue-xa-mang-yang-tinh-gia-lai",
+     "wardId": 19481,
+     "old": []
+    },
+    {
+     "new": "Xã Ngô Mây",
+     "slug": "nha-dat-cho-thue-xa-ngo-may-tinh-gia-lai",
+     "wardId": 22297,
+     "old": []
+    },
+    {
+     "new": "Xã Nhơn Châu",
+     "slug": "nha-dat-cho-thue-xa-nhon-chau-tinh-gia-lai",
+     "wardId": 537,
+     "old": []
+    },
+    {
+     "new": "Xã Phù Cát",
+     "slug": "nha-dat-cho-thue-xa-phu-cat-tinh-gia-lai",
+     "wardId": 27673,
+     "old": []
+    },
+    {
+     "new": "Xã Phù Mỹ",
+     "slug": "nha-dat-cho-thue-xa-phu-my-gl-tinh-gia-lai",
+     "wardId": 28441,
+     "old": []
+    },
+    {
+     "new": "Xã Phù Mỹ Bắc",
+     "slug": "nha-dat-cho-thue-xa-phu-my-bac-tinh-gia-lai",
+     "wardId": 29721,
+     "old": []
+    },
+    {
+     "new": "Xã Phù Mỹ Đông",
+     "slug": "nha-dat-cho-thue-xa-phu-my-dong-tinh-gia-lai",
+     "wardId": 3097,
+     "old": []
+    },
+    {
+     "new": "Xã Phù Mỹ Nam",
+     "slug": "nha-dat-cho-thue-xa-phu-my-nam-tinh-gia-lai",
+     "wardId": 29465,
+     "old": []
+    },
+    {
+     "new": "Xã Phù Mỹ Tây",
+     "slug": "nha-dat-cho-thue-xa-phu-my-tay-tinh-gia-lai",
+     "wardId": 29209,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Thiện",
+     "slug": "nha-dat-cho-thue-xa-phu-thien-tinh-gia-lai",
+     "wardId": 15641,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Túc",
+     "slug": "nha-dat-cho-thue-xa-phu-tuc-tinh-gia-lai",
+     "wardId": 17177,
+     "old": []
+    },
+    {
+     "new": "Phường Pleiku",
+     "slug": "nha-dat-cho-thue-phuong-pleiku-tinh-gia-lai",
+     "wardId": 4633,
+     "old": []
+    },
+    {
+     "new": "Xã Pờ Tó",
+     "slug": "nha-dat-cho-thue-xa-po-to-tinh-gia-lai",
+     "wardId": 16409,
+     "old": []
+    },
+    {
+     "new": "Phường Quy Nhơn",
+     "slug": "nha-dat-cho-thue-phuong-quy-nhon-tinh-gia-lai",
+     "wardId": 23321,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Quy Nhơn",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Thành phố Quy Nhơn",
+       "old_province": "Bình Định",
+       "old_districtId": 155,
+       "unconfirmed": "district lists of GL not loaded; a same-named district there is not ruled out"
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "quy-nhon",
+       "key": "qn",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Quy Nhơn Bắc",
+     "slug": "nha-dat-cho-thue-phuong-quy-nhon-bac-tinh-gia-lai",
+     "wardId": 24089,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "quy-nhon",
+       "key": "qnb",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Quy Nhơn Đông",
+     "slug": "nha-dat-cho-thue-phuong-quy-nhon-dong-tinh-gia-lai",
+     "wardId": 3353,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "quy-nhon",
+       "key": "qnd",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Quy Nhơn Nam",
+     "slug": "nha-dat-cho-thue-phuong-quy-nhon-nam-tinh-gia-lai",
+     "wardId": 23833,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "quy-nhon",
+       "key": "qnn",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Quy Nhơn Tây",
+     "slug": "nha-dat-cho-thue-phuong-quy-nhon-tay-tinh-gia-lai",
+     "wardId": 23577,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "quy-nhon",
+       "key": "qnt",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Sơn Lang",
+     "slug": "nha-dat-cho-thue-xa-son-lang-tinh-gia-lai",
+     "wardId": 12825,
+     "old": []
+    },
+    {
+     "new": "Xã SRó",
+     "slug": "nha-dat-cho-thue-xa-sro-tinh-gia-lai",
+     "wardId": 14105,
+     "old": []
+    },
+    {
+     "new": "Phường Tam Quan",
+     "slug": "nha-dat-cho-thue-phuong-tam-quan-tinh-gia-lai",
+     "wardId": 26393,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Sơn",
+     "slug": "nha-dat-cho-thue-xa-tay-son-gl-tinh-gia-lai",
+     "wardId": 3609,
+     "old": []
+    },
+    {
+     "new": "Phường Thống Nhất",
+     "slug": "nha-dat-cho-thue-phuong-thong-nhat-tinh-gia-lai",
+     "wardId": 5145,
+     "old": []
+    },
+    {
+     "new": "Xã Tơ Tung",
+     "slug": "nha-dat-cho-thue-xa-to-tung-tinh-gia-lai",
+     "wardId": 12569,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy Phước",
+     "slug": "nha-dat-cho-thue-xa-tuy-phuoc-tinh-gia-lai",
+     "wardId": 29977,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy Phước Bắc",
+     "slug": "nha-dat-cho-thue-xa-tuy-phuoc-bac-tinh-gia-lai",
+     "wardId": 30745,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy Phước Đông",
+     "slug": "nha-dat-cho-thue-xa-tuy-phuoc-dong-tinh-gia-lai",
+     "wardId": 30233,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy Phước Tây",
+     "slug": "nha-dat-cho-thue-xa-tuy-phuoc-tay-tinh-gia-lai",
+     "wardId": 30489,
+     "old": []
+    },
+    {
+     "new": "Xã Uar",
+     "slug": "nha-dat-cho-thue-xa-uar-tinh-gia-lai",
+     "wardId": 17945,
+     "old": []
+    },
+    {
+     "new": "Xã Vân Canh",
+     "slug": "nha-dat-cho-thue-xa-van-canh-tinh-gia-lai",
+     "wardId": 1049,
+     "old": []
+    },
+    {
+     "new": "Xã Vạn Đức",
+     "slug": "nha-dat-cho-thue-xa-van-duc-tinh-gia-lai",
+     "wardId": 32793,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Quang",
+     "slug": "nha-dat-cho-thue-xa-vinh-quang-tinh-gia-lai",
+     "wardId": 33817,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Sơn",
+     "slug": "nha-dat-cho-thue-xa-vinh-son-tinh-gia-lai",
+     "wardId": 34073,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thạnh",
+     "slug": "nha-dat-cho-thue-xa-vinh-thanh-gl-tinh-gia-lai",
+     "wardId": 33305,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thịnh",
+     "slug": "nha-dat-cho-thue-xa-vinh-thinh-tinh-gia-lai",
+     "wardId": 33561,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân An",
+     "slug": "nha-dat-cho-thue-xa-xuan-an-tinh-gia-lai",
+     "wardId": 27929,
+     "old": []
+    },
+    {
+     "new": "Xã Ya Hội",
+     "slug": "nha-dat-cho-thue-xa-ya-hoi-tinh-gia-lai",
+     "wardId": 11801,
+     "old": []
+    },
+    {
+     "new": "Xã Ya Ma",
+     "slug": "nha-dat-cho-thue-xa-ya-ma-tinh-gia-lai",
+     "wardId": 13593,
+     "old": []
+    }
+   ]
+  },
+  "Thành phố Cần Thơ": {
+   "code": "CT",
+   "city_key": "can-tho",
+   "city_keys": [
+    "can-tho"
+   ],
+   "old_provinces_checked": [
+    "Cần Thơ"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tp-can-tho.xml",
+   "ward_count": 103,
+   "wards": [
+    {
+     "new": "Phường An Bình",
+     "slug": "nha-dat-cho-thue-phuong-an-binh-tp-can-tho",
+     "wardId": 2575,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "can-tho",
+       "key": "anb",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã An Lạc Thôn",
+     "slug": "nha-dat-cho-thue-xa-an-lac-thon-tp-can-tho",
+     "wardId": 25615,
+     "old": []
+    },
+    {
+     "new": "Xã An Ninh",
+     "slug": "nha-dat-cho-thue-xa-an-ninh-tp-can-tho",
+     "wardId": 16911,
+     "old": []
+    },
+    {
+     "new": "Xã An Thạnh",
+     "slug": "nha-dat-cho-thue-xa-an-thanh-tp-can-tho",
+     "wardId": 22031,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Thủy",
+     "slug": "nha-dat-cho-thue-phuong-binh-thuy-tp-can-tho",
+     "wardId": 15887,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "can-tho",
+       "key": "bth2",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Cái Khế",
+     "slug": "nha-dat-cho-thue-phuong-cai-khe-tp-can-tho",
+     "wardId": 2319,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "can-tho",
+       "key": "ckh",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Cái Răng",
+     "slug": "nha-dat-cho-thue-phuong-cai-rang-tp-can-tho",
+     "wardId": 3855,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "can-tho",
+       "key": "crg",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Châu Thành",
+     "slug": "nha-dat-cho-thue-xa-chau-thanh-ct-tp-can-tho",
+     "wardId": 12815,
+     "old": []
+    },
+    {
+     "new": "Xã Cờ Đỏ",
+     "slug": "nha-dat-cho-thue-xa-co-do-tp-can-tho",
+     "wardId": 6927,
+     "old": []
+    },
+    {
+     "new": "Xã Cù Lao Dung",
+     "slug": "nha-dat-cho-thue-xa-cu-lao-dung-tp-can-tho",
+     "wardId": 22287,
+     "old": []
+    },
+    {
+     "new": "Xã Đại Hải",
+     "slug": "nha-dat-cho-thue-xa-dai-hai-tp-can-tho",
+     "wardId": 26383,
+     "old": []
+    },
+    {
+     "new": "Xã Đại Ngãi",
+     "slug": "nha-dat-cho-thue-xa-dai-ngai-tp-can-tho",
+     "wardId": 22543,
+     "old": []
+    },
+    {
+     "new": "Phường Đại Thành",
+     "slug": "nha-dat-cho-thue-phuong-dai-thanh-tp-can-tho",
+     "wardId": 13583,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Hiệp",
+     "slug": "nha-dat-cho-thue-xa-dong-hiep-tp-can-tho",
+     "wardId": 7183,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Phước",
+     "slug": "nha-dat-cho-thue-xa-dong-phuoc-tp-can-tho",
+     "wardId": 13071,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Thuận",
+     "slug": "nha-dat-cho-thue-xa-dong-thuan-tp-can-tho",
+     "wardId": 6159,
+     "old": []
+    },
+    {
+     "new": "Xã Gia Hòa",
+     "slug": "nha-dat-cho-thue-xa-gia-hoa-tp-can-tho",
+     "wardId": 24591,
+     "old": []
+    },
+    {
+     "new": "Xã Hiệp Hưng",
+     "slug": "nha-dat-cho-thue-xa-hiep-hung-tp-can-tho",
+     "wardId": 15119,
+     "old": []
+    },
+    {
+     "new": "Xã Hồ Đắc Kiện",
+     "slug": "nha-dat-cho-thue-xa-ho-dac-kien-tp-can-tho",
+     "wardId": 17423,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa An",
+     "slug": "nha-dat-cho-thue-xa-hoa-an-ct-tp-can-tho",
+     "wardId": 14351,
+     "old": []
+    },
+    {
+     "new": "Xã Hỏa Lựu",
+     "slug": "nha-dat-cho-thue-xa-hoa-luu-tp-can-tho",
+     "wardId": 9231,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Tú",
+     "slug": "nha-dat-cho-thue-xa-hoa-tu-tp-can-tho",
+     "wardId": 24335,
+     "old": []
+    },
+    {
+     "new": "Phường Hưng Phú",
+     "slug": "nha-dat-cho-thue-phuong-hung-phu-tp-can-tho",
+     "wardId": 4111,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "can-tho",
+       "key": "hpu",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Kế Sách",
+     "slug": "nha-dat-cho-thue-xa-ke-sach-tp-can-tho",
+     "wardId": 25871,
+     "old": []
+    },
+    {
+     "new": "Phường Khánh Hòa",
+     "slug": "nha-dat-cho-thue-phuong-khanh-hoa-tp-can-tho",
+     "wardId": 18959,
+     "old": []
+    },
+    {
+     "new": "Xã Lai Hòa",
+     "slug": "nha-dat-cho-thue-xa-lai-hoa-tp-can-tho",
+     "wardId": 527,
+     "old": []
+    },
+    {
+     "new": "Xã Lâm Tân",
+     "slug": "nha-dat-cho-thue-xa-lam-tan-tp-can-tho",
+     "wardId": 20495,
+     "old": []
+    },
+    {
+     "new": "Xã Lịch Hội Thượng",
+     "slug": "nha-dat-cho-thue-xa-lich-hoi-thuong-tp-can-tho",
+     "wardId": 21519,
+     "old": []
+    },
+    {
+     "new": "Xã Liêu Tú",
+     "slug": "nha-dat-cho-thue-xa-lieu-tu-tp-can-tho",
+     "wardId": 21263,
+     "old": []
+    },
+    {
+     "new": "Phường Long Bình",
+     "slug": "nha-dat-cho-thue-phuong-long-binh-tp-can-tho",
+     "wardId": 11279,
+     "old": []
+    },
+    {
+     "new": "Xã Long Hưng",
+     "slug": "nha-dat-cho-thue-xa-long-hung-tp-can-tho",
+     "wardId": 17935,
+     "old": []
+    },
+    {
+     "new": "Phường Long Mỹ",
+     "slug": "nha-dat-cho-thue-phuong-long-my-tp-can-tho",
+     "wardId": 11535,
+     "old": []
+    },
+    {
+     "new": "Xã Long Phú",
+     "slug": "nha-dat-cho-thue-xa-long-phu-tp-can-tho",
+     "wardId": 23055,
+     "old": []
+    },
+    {
+     "new": "Phường Long Phú 1",
+     "slug": "nha-dat-cho-thue-phuong-long-phu-1-tp-can-tho",
+     "wardId": 11791,
+     "old": []
+    },
+    {
+     "new": "Phường Long Tuyền",
+     "slug": "nha-dat-cho-thue-phuong-long-tuyen-tp-can-tho",
+     "wardId": 2063,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "can-tho",
+       "key": "ltu",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Lương Tâm",
+     "slug": "nha-dat-cho-thue-xa-luong-tam-tp-can-tho",
+     "wardId": 11023,
+     "old": []
+    },
+    {
+     "new": "Xã Mỹ Hương",
+     "slug": "nha-dat-cho-thue-xa-my-huong-tp-can-tho",
+     "wardId": 18191,
+     "old": []
+    },
+    {
+     "new": "Xã Mỹ Phước",
+     "slug": "nha-dat-cho-thue-xa-my-phuoc-tp-can-tho",
+     "wardId": 1039,
+     "old": []
+    },
+    {
+     "new": "Phường Mỹ Quới",
+     "slug": "nha-dat-cho-thue-phuong-my-quoi-tp-can-tho",
+     "wardId": 19471,
+     "old": []
+    },
+    {
+     "new": "Xã Mỹ Tú",
+     "slug": "nha-dat-cho-thue-xa-my-tu-tp-can-tho",
+     "wardId": 17679,
+     "old": []
+    },
+    {
+     "new": "Phường Mỹ Xuyên",
+     "slug": "nha-dat-cho-thue-phuong-my-xuyen-tp-can-tho",
+     "wardId": 24079,
+     "old": []
+    },
+    {
+     "new": "Phường Ngã Bảy",
+     "slug": "nha-dat-cho-thue-phuong-nga-bay-tp-can-tho",
+     "wardId": 13839,
+     "old": []
+    },
+    {
+     "new": "Phường Ngã Năm",
+     "slug": "nha-dat-cho-thue-phuong-nga-nam-tp-can-tho",
+     "wardId": 19215,
+     "old": []
+    },
+    {
+     "new": "Xã Ngọc Tố",
+     "slug": "nha-dat-cho-thue-xa-ngoc-to-tp-can-tho",
+     "wardId": 25103,
+     "old": []
+    },
+    {
+     "new": "Xã Nhơn Ái",
+     "slug": "nha-dat-cho-thue-xa-nhon-ai-tp-can-tho",
+     "wardId": 5647,
+     "old": []
+    },
+    {
+     "new": "Xã Nhơn Mỹ",
+     "slug": "nha-dat-cho-thue-xa-nhon-my-ct-tp-can-tho",
+     "wardId": 23311,
+     "old": []
+    },
+    {
+     "new": "Xã Nhu Gia",
+     "slug": "nha-dat-cho-thue-xa-nhu-gia-tp-can-tho",
+     "wardId": 24847,
+     "old": []
+    },
+    {
+     "new": "Phường Ninh Kiều",
+     "slug": "nha-dat-cho-thue-phuong-ninh-kieu-tp-can-tho",
+     "wardId": 3087,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "Q. Ninh Kiều",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Quận Ninh Kiều",
+       "old_province": "Cần Thơ",
+       "old_districtId": 83,
+       "unconfirmed": "district lists of HGI, ST not loaded; a same-named district there is not ruled out"
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "can-tho",
+       "key": "nki",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Ô Môn",
+     "slug": "nha-dat-cho-thue-phuong-o-mon-tp-can-tho",
+     "wardId": 4367,
+     "old": []
+    },
+    {
+     "new": "Xã Phong Điền",
+     "slug": "nha-dat-cho-thue-xa-phong-dien-tp-can-tho",
+     "wardId": 5391,
+     "old": []
+    },
+    {
+     "new": "Xã Phong Nẫm",
+     "slug": "nha-dat-cho-thue-xa-phong-nam-tp-can-tho",
+     "wardId": 271,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Hữu",
+     "slug": "nha-dat-cho-thue-xa-phu-huu-ct-tp-can-tho",
+     "wardId": 13327,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Lộc",
+     "slug": "nha-dat-cho-thue-xa-phu-loc-tp-can-tho",
+     "wardId": 19983,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Lợi",
+     "slug": "nha-dat-cho-thue-phuong-phu-loi-tp-can-tho",
+     "wardId": 23567,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Tâm",
+     "slug": "nha-dat-cho-thue-xa-phu-tam-tp-can-tho",
+     "wardId": 16655,
+     "old": []
+    },
+    {
+     "new": "Xã Phụng Hiệp",
+     "slug": "nha-dat-cho-thue-xa-phung-hiep-tp-can-tho",
+     "wardId": 15375,
+     "old": []
+    },
+    {
+     "new": "Phường Phước Thới",
+     "slug": "nha-dat-cho-thue-phuong-phuoc-thoi-tp-can-tho",
+     "wardId": 4879,
+     "old": []
+    },
+    {
+     "new": "Xã Phương Bình",
+     "slug": "nha-dat-cho-thue-xa-phuong-binh-tp-can-tho",
+     "wardId": 14607,
+     "old": []
+    },
+    {
+     "new": "Phường Sóc Trăng",
+     "slug": "nha-dat-cho-thue-phuong-soc-trang-tp-can-tho",
+     "wardId": 23823,
+     "old": []
+    },
+    {
+     "new": "Xã Tài Văn",
+     "slug": "nha-dat-cho-thue-xa-tai-van-tp-can-tho",
+     "wardId": 21007,
+     "old": []
+    },
+    {
+     "new": "Phường Tân An",
+     "slug": "nha-dat-cho-thue-phuong-tan-an-ct-tp-can-tho",
+     "wardId": 3343,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "can-tho",
+       "key": "tanc",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Tân Bình",
+     "slug": "nha-dat-cho-thue-xa-tan-binh-tp-can-tho",
+     "wardId": 14095,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Hòa",
+     "slug": "nha-dat-cho-thue-xa-tan-hoa-tp-can-tho",
+     "wardId": 12303,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Lộc",
+     "slug": "nha-dat-cho-thue-phuong-tan-loc-tp-can-tho",
+     "wardId": 2831,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Long",
+     "slug": "nha-dat-cho-thue-xa-tan-long-tp-can-tho",
+     "wardId": 19727,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Phước Hưng",
+     "slug": "nha-dat-cho-thue-xa-tan-phuoc-hung-tp-can-tho",
+     "wardId": 14863,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Thạnh",
+     "slug": "nha-dat-cho-thue-xa-tan-thanh-ct-tp-can-tho",
+     "wardId": 22799,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh An",
+     "slug": "nha-dat-cho-thue-xa-thanh-an-ct-tp-can-tho",
+     "wardId": 8207,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Hòa",
+     "slug": "nha-dat-cho-thue-xa-thanh-hoa-tp-can-tho",
+     "wardId": 15631,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Phú",
+     "slug": "nha-dat-cho-thue-xa-thanh-phu-tp-can-tho",
+     "wardId": 1295,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Quới",
+     "slug": "nha-dat-cho-thue-xa-thanh-quoi-tp-can-tho",
+     "wardId": 8463,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Thới An",
+     "slug": "nha-dat-cho-thue-xa-thanh-thoi-an-tp-can-tho",
+     "wardId": 20751,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Xuân",
+     "slug": "nha-dat-cho-thue-xa-thanh-xuan-tp-can-tho",
+     "wardId": 12047,
+     "old": []
+    },
+    {
+     "new": "Phường Thới An Đông",
+     "slug": "nha-dat-cho-thue-phuong-thoi-an-dong-tp-can-tho",
+     "wardId": 3599,
+     "old": []
+    },
+    {
+     "new": "Xã Thới An Hội",
+     "slug": "nha-dat-cho-thue-xa-thoi-an-hoi-tp-can-tho",
+     "wardId": 26127,
+     "old": []
+    },
+    {
+     "new": "Xã Thới Hưng",
+     "slug": "nha-dat-cho-thue-xa-thoi-hung-tp-can-tho",
+     "wardId": 1551,
+     "old": []
+    },
+    {
+     "new": "Xã Thới Lai",
+     "slug": "nha-dat-cho-thue-xa-thoi-lai-tp-can-tho",
+     "wardId": 5903,
+     "old": []
+    },
+    {
+     "new": "Phường Thới Long",
+     "slug": "nha-dat-cho-thue-phuong-thoi-long-tp-can-tho",
+     "wardId": 4623,
+     "old": []
+    },
+    {
+     "new": "Phường Thốt Nốt",
+     "slug": "nha-dat-cho-thue-phuong-thot-not-tp-can-tho",
+     "wardId": 16143,
+     "old": []
+    },
+    {
+     "new": "Xã Thuận Hòa",
+     "slug": "nha-dat-cho-thue-xa-thuan-hoa-tp-can-tho",
+     "wardId": 17167,
+     "old": []
+    },
+    {
+     "new": "Phường Thuận Hưng",
+     "slug": "nha-dat-cho-thue-phuong-thuan-hung-tp-can-tho",
+     "wardId": 16399,
+     "old": []
+    },
+    {
+     "new": "Xã Trần Đề",
+     "slug": "nha-dat-cho-thue-xa-tran-de-tp-can-tho",
+     "wardId": 21775,
+     "old": []
+    },
+    {
+     "new": "Xã Trung Hưng",
+     "slug": "nha-dat-cho-thue-xa-trung-hung-tp-can-tho",
+     "wardId": 7439,
+     "old": []
+    },
+    {
+     "new": "Phường Trung Nhứt",
+     "slug": "nha-dat-cho-thue-phuong-trung-nhut-tp-can-tho",
+     "wardId": 5135,
+     "old": []
+    },
+    {
+     "new": "Xã Trường Khánh",
+     "slug": "nha-dat-cho-thue-xa-truong-khanh-tp-can-tho",
+     "wardId": 25359,
+     "old": []
+    },
+    {
+     "new": "Xã Trường Long",
+     "slug": "nha-dat-cho-thue-xa-truong-long-tp-can-tho",
+     "wardId": 1807,
+     "old": []
+    },
+    {
+     "new": "Xã Trường Long Tây",
+     "slug": "nha-dat-cho-thue-xa-truong-long-tay-tp-can-tho",
+     "wardId": 12559,
+     "old": []
+    },
+    {
+     "new": "Xã Trường Thành",
+     "slug": "nha-dat-cho-thue-xa-truong-thanh-tp-can-tho",
+     "wardId": 6671,
+     "old": []
+    },
+    {
+     "new": "Xã Trường Xuân",
+     "slug": "nha-dat-cho-thue-xa-truong-xuan-tp-can-tho",
+     "wardId": 6415,
+     "old": []
+    },
+    {
+     "new": "Phường Vị Tân",
+     "slug": "nha-dat-cho-thue-phuong-vi-tan-tp-can-tho",
+     "wardId": 8975,
+     "old": []
+    },
+    {
+     "new": "Phường Vị Thanh",
+     "slug": "nha-dat-cho-thue-phuong-vi-thanh-tp-can-tho",
+     "wardId": 8719,
+     "old": []
+    },
+    {
+     "new": "Xã Vị Thanh 1",
+     "slug": "nha-dat-cho-thue-xa-vi-thanh-1-tp-can-tho",
+     "wardId": 9999,
+     "old": []
+    },
+    {
+     "new": "Xã Vị Thủy",
+     "slug": "nha-dat-cho-thue-xa-vi-thuy-tp-can-tho",
+     "wardId": 9487,
+     "old": []
+    },
+    {
+     "new": "Phường Vĩnh Châu",
+     "slug": "nha-dat-cho-thue-phuong-vinh-chau-tp-can-tho",
+     "wardId": 18703,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hải",
+     "slug": "nha-dat-cho-thue-xa-vinh-hai-tp-can-tho",
+     "wardId": 783,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Lợi",
+     "slug": "nha-dat-cho-thue-xa-vinh-loi-ct-tp-can-tho",
+     "wardId": 20239,
+     "old": []
+    },
+    {
+     "new": "Phường Vĩnh Phước",
+     "slug": "nha-dat-cho-thue-phuong-vinh-phuoc-tp-can-tho",
+     "wardId": 18447,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thạnh",
+     "slug": "nha-dat-cho-thue-xa-vinh-thanh-ct-tp-can-tho",
+     "wardId": 7695,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thuận Đông",
+     "slug": "nha-dat-cho-thue-xa-vinh-thuan-dong-tp-can-tho",
+     "wardId": 9743,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Trinh",
+     "slug": "nha-dat-cho-thue-xa-vinh-trinh-tp-can-tho",
+     "wardId": 7951,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Tường",
+     "slug": "nha-dat-cho-thue-xa-vinh-tuong-tp-can-tho",
+     "wardId": 10255,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Viễn",
+     "slug": "nha-dat-cho-thue-xa-vinh-vien-tp-can-tho",
+     "wardId": 10511,
+     "old": []
+    },
+    {
+     "new": "Xã Xà Phiên",
+     "slug": "nha-dat-cho-thue-xa-xa-phien-tp-can-tho",
+     "wardId": 10767,
+     "old": []
+    }
+   ]
+  },
+  "Thành phố Hải Phòng": {
+   "code": "HP",
+   "city_key": "hai-phong",
+   "city_keys": [
+    "hai-phong"
+   ],
+   "old_provinces_checked": [
+    "Hải Phòng"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tp-hai-phong.xml",
+   "ward_count": 113,
+   "wards": [
+    {
+     "new": "Phường Ái Quốc",
+     "slug": "nha-dat-cho-thue-phuong-ai-quoc-tp-hai-phong",
+     "wardId": 1294,
+     "old": []
+    },
+    {
+     "new": "Phường An Biên",
+     "slug": "nha-dat-cho-thue-phuong-an-bien-tp-hai-phong",
+     "wardId": 5134,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hai-phong",
+       "key": "anb2",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường An Dương",
+     "slug": "nha-dat-cho-thue-phuong-an-duong-tp-hai-phong",
+     "wardId": 27662,
+     "old": []
+    },
+    {
+     "new": "Phường An Hải",
+     "slug": "nha-dat-cho-thue-phuong-an-hai-hp-tp-hai-phong",
+     "wardId": 9742,
+     "old": []
+    },
+    {
+     "new": "Xã An Hưng",
+     "slug": "nha-dat-cho-thue-xa-an-hung-tp-hai-phong",
+     "wardId": 14094,
+     "old": []
+    },
+    {
+     "new": "Xã An Khánh",
+     "slug": "nha-dat-cho-thue-xa-an-khanh-hp-tp-hai-phong",
+     "wardId": 1550,
+     "old": []
+    },
+    {
+     "new": "Xã An Lão",
+     "slug": "nha-dat-cho-thue-xa-an-lao-hp-tp-hai-phong",
+     "wardId": 4110,
+     "old": []
+    },
+    {
+     "new": "Phường An Phong",
+     "slug": "nha-dat-cho-thue-phuong-an-phong-tp-hai-phong",
+     "wardId": 11278,
+     "old": []
+    },
+    {
+     "new": "Xã An Phú",
+     "slug": "nha-dat-cho-thue-xa-an-phu-hp-tp-hai-phong",
+     "wardId": 13326,
+     "old": []
+    },
+    {
+     "new": "Xã An Quang",
+     "slug": "nha-dat-cho-thue-xa-an-quang-tp-hai-phong",
+     "wardId": 14350,
+     "old": []
+    },
+    {
+     "new": "Xã An Thành",
+     "slug": "nha-dat-cho-thue-xa-an-thanh-hp-tp-hai-phong",
+     "wardId": 25358,
+     "old": []
+    },
+    {
+     "new": "Xã An Trường",
+     "slug": "nha-dat-cho-thue-xa-an-truong-tp-hai-phong",
+     "wardId": 14606,
+     "old": []
+    },
+    {
+     "new": "Phường Bắc An Phụ",
+     "slug": "nha-dat-cho-thue-phuong-bac-an-phu-tp-hai-phong",
+     "wardId": 7438,
+     "old": []
+    },
+    {
+     "new": "Xã Bắc Thanh Miện",
+     "slug": "nha-dat-cho-thue-xa-bac-thanh-mien-tp-hai-phong",
+     "wardId": 24590,
+     "old": []
+    },
+    {
+     "new": "Phường Bạch Đằng",
+     "slug": "nha-dat-cho-thue-phuong-bach-dang-tp-hai-phong",
+     "wardId": 17678,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Giang",
+     "slug": "nha-dat-cho-thue-xa-binh-giang-hp-tp-hai-phong",
+     "wardId": 3598,
+     "old": []
+    },
+    {
+     "new": "Xã Cẩm Giàng",
+     "slug": null,
+     "wardId": 782,
+     "old": []
+    },
+    {
+     "new": "Xã Cẩm Giang",
+     "slug": null,
+     "wardId": 22030,
+     "old": []
+    },
+    {
+     "new": "Đặc Khu Cát Hải",
+     "slug": "nha-dat-cho-thue-dac-khu-cat-hai-tp-hai-phong",
+     "wardId": 25614,
+     "old": []
+    },
+    {
+     "new": "Xã Chấn Hưng",
+     "slug": "nha-dat-cho-thue-xa-chan-hung-tp-hai-phong",
+     "wardId": 15630,
+     "old": []
+    },
+    {
+     "new": "Phường Chí Linh",
+     "slug": "nha-dat-cho-thue-phuong-chi-linh-tp-hai-phong",
+     "wardId": 18702,
+     "old": []
+    },
+    {
+     "new": "Xã Chí Minh",
+     "slug": "nha-dat-cho-thue-xa-chi-minh-tp-hai-phong",
+     "wardId": 22798,
+     "old": []
+    },
+    {
+     "new": "Phường Chu Văn An",
+     "slug": "nha-dat-cho-thue-phuong-chu-van-an-tp-hai-phong",
+     "wardId": 28174,
+     "old": []
+    },
+    {
+     "new": "Xã Đại Sơn",
+     "slug": "nha-dat-cho-thue-xa-dai-son-hp-tp-hai-phong",
+     "wardId": 9230,
+     "old": []
+    },
+    {
+     "new": "Phường Đồ Sơn",
+     "slug": "nha-dat-cho-thue-phuong-do-son-tp-hai-phong",
+     "wardId": 27150,
+     "old": []
+    },
+    {
+     "new": "Phường Đông Hải",
+     "slug": "nha-dat-cho-thue-phuong-dong-hai-tp-hai-phong",
+     "wardId": 2830,
+     "old": []
+    },
+    {
+     "new": "Xã Đường An",
+     "slug": "nha-dat-cho-thue-xa-duong-an-tp-hai-phong",
+     "wardId": 3086,
+     "old": []
+    },
+    {
+     "new": "Phường Dương Kinh",
+     "slug": "nha-dat-cho-thue-phuong-duong-kinh-tp-hai-phong",
+     "wardId": 2574,
+     "old": []
+    },
+    {
+     "new": "Xã Gia Lộc",
+     "slug": "nha-dat-cho-thue-xa-gia-loc-tp-hai-phong",
+     "wardId": 28686,
+     "old": []
+    },
+    {
+     "new": "Xã Gia Phúc",
+     "slug": "nha-dat-cho-thue-xa-gia-phuc-tp-hai-phong",
+     "wardId": 3854,
+     "old": []
+    },
+    {
+     "new": "Phường Gia Viên",
+     "slug": "nha-dat-cho-thue-phuong-gia-vien-tp-hai-phong",
+     "wardId": 10254,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hai-phong",
+       "key": "gvi",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Hà Bắc",
+     "slug": "nha-dat-cho-thue-xa-ha-bac-tp-hai-phong",
+     "wardId": 13582,
+     "old": []
+    },
+    {
+     "new": "Xã Hà Đông",
+     "slug": "nha-dat-cho-thue-xa-ha-dong-tp-hai-phong",
+     "wardId": 21774,
+     "old": []
+    },
+    {
+     "new": "Xã Hà Nam",
+     "slug": "nha-dat-cho-thue-xa-ha-nam-tp-hai-phong",
+     "wardId": 7694,
+     "old": []
+    },
+    {
+     "new": "Xã Hà Tây",
+     "slug": "nha-dat-cho-thue-xa-ha-tay-tp-hai-phong",
+     "wardId": 7950,
+     "old": []
+    },
+    {
+     "new": "Phường Hải An",
+     "slug": "nha-dat-cho-thue-phuong-hai-an-tp-hai-phong",
+     "wardId": 2062,
+     "old": []
+    },
+    {
+     "new": "Phường Hải Dương",
+     "slug": "nha-dat-cho-thue-phuong-hai-duong-tp-hai-phong",
+     "wardId": 17934,
+     "old": []
+    },
+    {
+     "new": "Xã Hải Hưng",
+     "slug": "nha-dat-cho-thue-xa-hai-hung-tp-hai-phong",
+     "wardId": 24846,
+     "old": []
+    },
+    {
+     "new": "Phường Hòa Bình",
+     "slug": "nha-dat-cho-thue-phuong-hoa-binh-tp-hai-phong",
+     "wardId": 12302,
+     "old": []
+    },
+    {
+     "new": "Phường Hồng An",
+     "slug": "nha-dat-cho-thue-phuong-hong-an-tp-hai-phong",
+     "wardId": 11022,
+     "old": []
+    },
+    {
+     "new": "Phường Hồng Bàng",
+     "slug": "nha-dat-cho-thue-phuong-hong-bang-tp-hai-phong",
+     "wardId": 26382,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hai-phong",
+       "key": "hbg",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Hồng Châu",
+     "slug": "nha-dat-cho-thue-xa-hong-chau-tp-hai-phong",
+     "wardId": 24078,
+     "old": []
+    },
+    {
+     "new": "Xã Hợp Tiến",
+     "slug": "nha-dat-cho-thue-xa-hop-tien-tp-hai-phong",
+     "wardId": 21262,
+     "old": []
+    },
+    {
+     "new": "Phường Hưng Đạo",
+     "slug": "nha-dat-cho-thue-phuong-hung-dao-tp-hai-phong",
+     "wardId": 27406,
+     "old": []
+    },
+    {
+     "new": "Xã Hùng Thắng",
+     "slug": "nha-dat-cho-thue-xa-hung-thang-tp-hai-phong",
+     "wardId": 15886,
+     "old": []
+    },
+    {
+     "new": "Xã Kẻ Sặt",
+     "slug": "nha-dat-cho-thue-xa-ke-sat-tp-hai-phong",
+     "wardId": 28430,
+     "old": []
+    },
+    {
+     "new": "Xã Khúc Thừa Dụ",
+     "slug": "nha-dat-cho-thue-xa-khuc-thua-du-tp-hai-phong",
+     "wardId": 23566,
+     "old": []
+    },
+    {
+     "new": "Phường Kiến An",
+     "slug": "nha-dat-cho-thue-phuong-kien-an-tp-hai-phong",
+     "wardId": 4622,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hai-phong",
+       "key": "kan",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Kiến Hải",
+     "slug": "nha-dat-cho-thue-xa-kien-hai-tp-hai-phong",
+     "wardId": 4366,
+     "old": []
+    },
+    {
+     "new": "Xã Kiến Hưng",
+     "slug": "nha-dat-cho-thue-xa-kien-hung-tp-hai-phong",
+     "wardId": 9998,
+     "old": []
+    },
+    {
+     "new": "Xã Kiến Minh",
+     "slug": "nha-dat-cho-thue-xa-kien-minh-tp-hai-phong",
+     "wardId": 14862,
+     "old": []
+    },
+    {
+     "new": "Xã Kiến Thụy",
+     "slug": "nha-dat-cho-thue-xa-kien-thuy-tp-hai-phong",
+     "wardId": 25870,
+     "old": []
+    },
+    {
+     "new": "Xã Kim Thành",
+     "slug": "nha-dat-cho-thue-xa-kim-thanh-tp-hai-phong",
+     "wardId": 11534,
+     "old": []
+    },
+    {
+     "new": "Phường Kinh Môn",
+     "slug": "nha-dat-cho-thue-phuong-kinh-mon-tp-hai-phong",
+     "wardId": 19470,
+     "old": []
+    },
+    {
+     "new": "Xã Lạc Phượng",
+     "slug": "nha-dat-cho-thue-xa-lac-phuong-tp-hai-phong",
+     "wardId": 8462,
+     "old": []
+    },
+    {
+     "new": "Xã Lai Khê",
+     "slug": "nha-dat-cho-thue-xa-lai-khe-tp-hai-phong",
+     "wardId": 13838,
+     "old": []
+    },
+    {
+     "new": "Phường Lê Chân",
+     "slug": "nha-dat-cho-thue-phuong-le-chan-tp-hai-phong",
+     "wardId": 26894,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hai-phong",
+       "key": "lch",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Lê Đại Hành",
+     "slug": "nha-dat-cho-thue-phuong-le-dai-hanh-tp-hai-phong",
+     "wardId": 19214,
+     "old": []
+    },
+    {
+     "new": "Phường Lê Ích Mộc",
+     "slug": "nha-dat-cho-thue-phuong-le-ich-moc-tp-hai-phong",
+     "wardId": 13070,
+     "old": []
+    },
+    {
+     "new": "Phường Lê Thanh Nghị",
+     "slug": "nha-dat-cho-thue-phuong-le-thanh-nghi-tp-hai-phong",
+     "wardId": 6158,
+     "old": []
+    },
+    {
+     "new": "Phường Lưu Kiếm",
+     "slug": "nha-dat-cho-thue-phuong-luu-kiem-tp-hai-phong",
+     "wardId": 12046,
+     "old": []
+    },
+    {
+     "new": "Xã Mao Điền",
+     "slug": "nha-dat-cho-thue-xa-mao-dien-tp-hai-phong",
+     "wardId": 270,
+     "old": []
+    },
+    {
+     "new": "Xã Nam An Phụ",
+     "slug": "nha-dat-cho-thue-xa-nam-an-phu-tp-hai-phong",
+     "wardId": 7182,
+     "old": []
+    },
+    {
+     "new": "Phường Nam Đồ Sơn",
+     "slug": "nha-dat-cho-thue-phuong-nam-do-son-tp-hai-phong",
+     "wardId": 2318,
+     "old": []
+    },
+    {
+     "new": "Phường Nam Đồng",
+     "slug": "nha-dat-cho-thue-phuong-nam-dong-tp-hai-phong",
+     "wardId": 18446,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Sách",
+     "slug": "nha-dat-cho-thue-xa-nam-sach-tp-hai-phong",
+     "wardId": 20494,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Thanh Miện",
+     "slug": "nha-dat-cho-thue-xa-nam-thanh-mien-tp-hai-phong",
+     "wardId": 25102,
+     "old": []
+    },
+    {
+     "new": "Phường Nam Triệu",
+     "slug": "nha-dat-cho-thue-phuong-nam-trieu-tp-hai-phong",
+     "wardId": 12558,
+     "old": []
+    },
+    {
+     "new": "Xã Nghi Dương",
+     "slug": "nha-dat-cho-thue-xa-nghi-duong-tp-hai-phong",
+     "wardId": 15118,
+     "old": []
+    },
+    {
+     "new": "Phường Ngô Quyền",
+     "slug": "nha-dat-cho-thue-phuong-ngo-quyen-tp-hai-phong",
+     "wardId": 26638,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hai-phong",
+       "key": "nqu",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Nguyễn Bỉnh Khiêm",
+     "slug": "nha-dat-cho-thue-xa-nguyen-binh-khiem-tp-hai-phong",
+     "wardId": 16398,
+     "old": []
+    },
+    {
+     "new": "Phường Nguyễn Đại Năng",
+     "slug": "nha-dat-cho-thue-phuong-nguyen-dai-nang-tp-hai-phong",
+     "wardId": 19726,
+     "old": []
+    },
+    {
+     "new": "Xã Nguyên Giáp",
+     "slug": "nha-dat-cho-thue-xa-nguyen-giap-tp-hai-phong",
+     "wardId": 6926,
+     "old": []
+    },
+    {
+     "new": "Xã Nguyễn Lương Bằng",
+     "slug": "nha-dat-cho-thue-xa-nguyen-luong-bang-tp-hai-phong",
+     "wardId": 8206,
+     "old": []
+    },
+    {
+     "new": "Phường Nguyễn Trãi",
+     "slug": "nha-dat-cho-thue-phuong-nguyen-trai-tp-hai-phong",
+     "wardId": 18958,
+     "old": []
+    },
+    {
+     "new": "Phường Nhị Chiểu",
+     "slug": "nha-dat-cho-thue-phuong-nhi-chieu-tp-hai-phong",
+     "wardId": 20238,
+     "old": []
+    },
+    {
+     "new": "Xã Ninh Giang",
+     "slug": "nha-dat-cho-thue-xa-ninh-giang-tp-hai-phong",
+     "wardId": 23054,
+     "old": []
+    },
+    {
+     "new": "Phường Phạm Sư Mạnh",
+     "slug": "nha-dat-cho-thue-phuong-pham-su-manh-tp-hai-phong",
+     "wardId": 19982,
+     "old": []
+    },
+    {
+     "new": "Phường Phù Liễn",
+     "slug": "nha-dat-cho-thue-phuong-phu-lien-tp-hai-phong",
+     "wardId": 4878,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Thái",
+     "slug": "nha-dat-cho-thue-xa-phu-thai-tp-hai-phong",
+     "wardId": 29198,
+     "old": []
+    },
+    {
+     "new": "Xã Quyết Thắng",
+     "slug": "nha-dat-cho-thue-xa-quyet-thang-tp-hai-phong",
+     "wardId": 5390,
+     "old": []
+    },
+    {
+     "new": "Xã Tân An",
+     "slug": "nha-dat-cho-thue-xa-tan-an-hp-tp-hai-phong",
+     "wardId": 23822,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Hưng",
+     "slug": "nha-dat-cho-thue-phuong-tan-hung-tp-hai-phong",
+     "wardId": 1038,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Kỳ",
+     "slug": "nha-dat-cho-thue-xa-tan-ky-tp-hai-phong",
+     "wardId": 6670,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Minh",
+     "slug": "nha-dat-cho-thue-xa-tan-minh-tp-hai-phong",
+     "wardId": 1806,
+     "old": []
+    },
+    {
+     "new": "Phường Thạch Khôi",
+     "slug": "nha-dat-cho-thue-phuong-thach-khoi-tp-hai-phong",
+     "wardId": 6414,
+     "old": []
+    },
+    {
+     "new": "Xã Thái Tân",
+     "slug": "nha-dat-cho-thue-xa-thai-tan-tp-hai-phong",
+     "wardId": 20750,
+     "old": []
+    },
+    {
+     "new": "Phường Thành Đông",
+     "slug": "nha-dat-cho-thue-phuong-thanh-dong-tp-hai-phong",
+     "wardId": 18190,
+     "old": []
+    },
+    {
+     "new": "Xã Thanh Hà",
+     "slug": "nha-dat-cho-thue-xa-thanh-ha-tp-hai-phong",
+     "wardId": 21518,
+     "old": []
+    },
+    {
+     "new": "Xã Thanh Miện",
+     "slug": "nha-dat-cho-thue-xa-thanh-mien-tp-hai-phong",
+     "wardId": 24334,
+     "old": []
+    },
+    {
+     "new": "Phường Thiên Hương",
+     "slug": "nha-dat-cho-thue-phuong-thien-huong-tp-hai-phong",
+     "wardId": 11790,
+     "old": []
+    },
+    {
+     "new": "Xã Thượng Hồng",
+     "slug": "nha-dat-cho-thue-xa-thuong-hong-tp-hai-phong",
+     "wardId": 3342,
+     "old": []
+    },
+    {
+     "new": "Phường Thủy Nguyên",
+     "slug": "nha-dat-cho-thue-phuong-thuy-nguyen-tp-hai-phong",
+     "wardId": 26126,
+     "old": []
+    },
+    {
+     "new": "Xã Tiên Lãng",
+     "slug": "nha-dat-cho-thue-xa-tien-lang-tp-hai-phong",
+     "wardId": 15374,
+     "old": []
+    },
+    {
+     "new": "Xã Tiên Minh",
+     "slug": "nha-dat-cho-thue-xa-tien-minh-tp-hai-phong",
+     "wardId": 5646,
+     "old": []
+    },
+    {
+     "new": "Phường Trần Hưng Đạo",
+     "slug": "nha-dat-cho-thue-phuong-tran-hung-dao-tp-hai-phong",
+     "wardId": 8974,
+     "old": []
+    },
+    {
+     "new": "Phường Trần Liễu",
+     "slug": "nha-dat-cho-thue-phuong-tran-lieu-tp-hai-phong",
+     "wardId": 5902,
+     "old": []
+    },
+    {
+     "new": "Phường Trần Nhân Tông",
+     "slug": "nha-dat-cho-thue-phuong-tran-nhan-tong-tp-hai-phong",
+     "wardId": 8718,
+     "old": []
+    },
+    {
+     "new": "Xã Trần Phú",
+     "slug": "nha-dat-cho-thue-xa-tran-phu-hp-tp-hai-phong",
+     "wardId": 21006,
+     "old": []
+    },
+    {
+     "new": "Xã Trường Tân",
+     "slug": "nha-dat-cho-thue-xa-truong-tan-tp-hai-phong",
+     "wardId": 10766,
+     "old": []
+    },
+    {
+     "new": "Xã Tứ Kỳ",
+     "slug": "nha-dat-cho-thue-xa-tu-ky-tp-hai-phong",
+     "wardId": 22542,
+     "old": []
+    },
+    {
+     "new": "Phường Tứ Minh",
+     "slug": "nha-dat-cho-thue-phuong-tu-minh-tp-hai-phong",
+     "wardId": 27918,
+     "old": []
+    },
+    {
+     "new": "Xã Tuệ Tĩnh",
+     "slug": "nha-dat-cho-thue-xa-tue-tinh-tp-hai-phong",
+     "wardId": 22286,
+     "old": []
+    },
+    {
+     "new": "Phường Việt Hòa",
+     "slug": "nha-dat-cho-thue-phuong-viet-hoa-tp-hai-phong",
+     "wardId": 526,
+     "old": []
+    },
+    {
+     "new": "Xã Việt Khê",
+     "slug": "nha-dat-cho-thue-xa-viet-khe-tp-hai-phong",
+     "wardId": 12814,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Am",
+     "slug": "nha-dat-cho-thue-xa-vinh-am-tp-hai-phong",
+     "wardId": 10510,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Bảo",
+     "slug": "nha-dat-cho-thue-xa-vinh-bao-tp-hai-phong",
+     "wardId": 16142,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hải",
+     "slug": "nha-dat-cho-thue-xa-vinh-hai-hp-tp-hai-phong",
+     "wardId": 16654,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hòa",
+     "slug": "nha-dat-cho-thue-xa-vinh-hoa-hp-tp-hai-phong",
+     "wardId": 16910,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Lại",
+     "slug": "nha-dat-cho-thue-xa-vinh-lai-tp-hai-phong",
+     "wardId": 23310,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thịnh",
+     "slug": "nha-dat-cho-thue-xa-vinh-thinh-hp-tp-hai-phong",
+     "wardId": 17166,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thuận",
+     "slug": "nha-dat-cho-thue-xa-vinh-thuan-hp-tp-hai-phong",
+     "wardId": 17422,
+     "old": []
+    },
+    {
+     "new": "Xã Yết Kiêu",
+     "slug": "nha-dat-cho-thue-xa-yet-kieu-tp-hai-phong",
+     "wardId": 28942,
+     "old": []
+    }
+   ]
+  },
+  "Tỉnh Huế": {
+   "code": "TTH",
+   "city_key": "hue",
+   "city_keys": [
+    "hue"
+   ],
+   "old_provinces_checked": [
+    "Thừa Thiên Huế"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tp-hue.xml",
+   "ward_count": 40,
+   "wards": [
+    {
+     "new": "Xã A Lưới 1",
+     "slug": "nha-dat-cho-thue-xa-a-luoi-1-tp-hue",
+     "wardId": 9232,
+     "old": []
+    },
+    {
+     "new": "Xã A Lưới 2",
+     "slug": "nha-dat-cho-thue-xa-a-luoi-2-tp-hue",
+     "wardId": 9488,
+     "old": []
+    },
+    {
+     "new": "Xã A Lưới 3",
+     "slug": "nha-dat-cho-thue-xa-a-luoi-3-tp-hue",
+     "wardId": 9744,
+     "old": []
+    },
+    {
+     "new": "Xã A Lưới 4",
+     "slug": "nha-dat-cho-thue-xa-a-luoi-4-tp-hue",
+     "wardId": 10000,
+     "old": []
+    },
+    {
+     "new": "Xã A Lưới 5",
+     "slug": "nha-dat-cho-thue-xa-a-luoi-5-tp-hue",
+     "wardId": 10256,
+     "old": []
+    },
+    {
+     "new": "Phường An Cựu",
+     "slug": "nha-dat-cho-thue-phuong-an-cuu-tp-hue",
+     "wardId": 5136,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hue",
+       "key": "acu",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Bình Điền",
+     "slug": "nha-dat-cho-thue-xa-binh-dien-tp-hue",
+     "wardId": 2832,
+     "old": []
+    },
+    {
+     "new": "Xã Chân Mây-Lăng Cô",
+     "slug": "nha-dat-cho-thue-xa-chan-may-lang-co-tp-hue",
+     "wardId": 8208,
+     "old": []
+    },
+    {
+     "new": "Xã Đan Điền",
+     "slug": "nha-dat-cho-thue-xa-dan-dien-tp-hue",
+     "wardId": 1808,
+     "old": []
+    },
+    {
+     "new": "Phường Dương Nỗ",
+     "slug": "nha-dat-cho-thue-phuong-duong-no-tp-hue",
+     "wardId": 272,
+     "old": []
+    },
+    {
+     "new": "Phường Hóa Châu",
+     "slug": "nha-dat-cho-thue-phuong-hoa-chau-tp-hue",
+     "wardId": 4112,
+     "old": []
+    },
+    {
+     "new": "Xã Hưng Lộc",
+     "slug": "nha-dat-cho-thue-xa-hung-loc-tp-hue",
+     "wardId": 7440,
+     "old": []
+    },
+    {
+     "new": "Phường Hương An",
+     "slug": "nha-dat-cho-thue-phuong-huong-an-tp-hue",
+     "wardId": 3344,
+     "old": []
+    },
+    {
+     "new": "Phường Hương Thủy",
+     "slug": "nha-dat-cho-thue-phuong-huong-thuy-tp-hue",
+     "wardId": 6672,
+     "old": []
+    },
+    {
+     "new": "Phường Hương Trà",
+     "slug": "nha-dat-cho-thue-phuong-huong-tra-tth-tp-hue",
+     "wardId": 2320,
+     "old": []
+    },
+    {
+     "new": "Xã Khe Tre",
+     "slug": "nha-dat-cho-thue-xa-khe-tre-tp-hue",
+     "wardId": 8976,
+     "old": []
+    },
+    {
+     "new": "Phường Kim Long",
+     "slug": "nha-dat-cho-thue-phuong-kim-long-tp-hue",
+     "wardId": 3088,
+     "old": []
+    },
+    {
+     "new": "Phường Kim Trà",
+     "slug": "nha-dat-cho-thue-phuong-kim-tra-tp-hue",
+     "wardId": 2576,
+     "old": []
+    },
+    {
+     "new": "Xã Lộc An",
+     "slug": "nha-dat-cho-thue-xa-loc-an-tp-hue",
+     "wardId": 7696,
+     "old": []
+    },
+    {
+     "new": "Xã Long Quảng",
+     "slug": "nha-dat-cho-thue-xa-long-quang-tp-hue",
+     "wardId": 8464,
+     "old": []
+    },
+    {
+     "new": "Phường Mỹ Thượng",
+     "slug": "nha-dat-cho-thue-phuong-my-thuong-tp-hue",
+     "wardId": 4368,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Đông",
+     "slug": "nha-dat-cho-thue-xa-nam-dong-tth-tp-hue",
+     "wardId": 8720,
+     "old": []
+    },
+    {
+     "new": "Phường Phong Điền",
+     "slug": "nha-dat-cho-thue-phuong-phong-dien-tp-hue",
+     "wardId": 528,
+     "old": []
+    },
+    {
+     "new": "Phường Phong Dinh",
+     "slug": "nha-dat-cho-thue-phuong-phong-dinh-tp-hue",
+     "wardId": 1040,
+     "old": []
+    },
+    {
+     "new": "Phường Phong Phú",
+     "slug": "nha-dat-cho-thue-phuong-phong-phu-tp-hue",
+     "wardId": 1296,
+     "old": []
+    },
+    {
+     "new": "Phường Phong Quảng",
+     "slug": "nha-dat-cho-thue-phuong-phong-quang-tp-hue",
+     "wardId": 1552,
+     "old": []
+    },
+    {
+     "new": "Phường Phong Thái",
+     "slug": "nha-dat-cho-thue-phuong-phong-thai-tp-hue",
+     "wardId": 784,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Bài",
+     "slug": "nha-dat-cho-thue-phuong-phu-bai-tp-hue",
+     "wardId": 6928,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Hồ",
+     "slug": "nha-dat-cho-thue-xa-phu-ho-tp-hue",
+     "wardId": 5904,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Lộc",
+     "slug": "nha-dat-cho-thue-xa-phu-loc-tth-tp-hue",
+     "wardId": 7952,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Vang",
+     "slug": "nha-dat-cho-thue-xa-phu-vang-tp-hue",
+     "wardId": 6160,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Vinh",
+     "slug": "nha-dat-cho-thue-xa-phu-vinh-tth-tp-hue",
+     "wardId": 5648,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Xuân",
+     "slug": "nha-dat-cho-thue-phuong-phu-xuan-tp-hue",
+     "wardId": 3600,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hue",
+       "key": "pxu",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Quảng Điền",
+     "slug": "nha-dat-cho-thue-xa-quang-dien-tp-hue",
+     "wardId": 2064,
+     "old": []
+    },
+    {
+     "new": "Phường Thanh Thủy",
+     "slug": "nha-dat-cho-thue-phuong-thanh-thuy-tp-hue",
+     "wardId": 6416,
+     "old": []
+    },
+    {
+     "new": "Phường Thuận An",
+     "slug": "nha-dat-cho-thue-phuong-thuan-an-tth-tp-hue",
+     "wardId": 3856,
+     "old": []
+    },
+    {
+     "new": "Phường Thuận Hóa",
+     "slug": "nha-dat-cho-thue-phuong-thuan-hoa-tp-hue",
+     "wardId": 4880,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Huế",
+       "cards": 8,
+       "ad_pages": 0,
+       "old_district": "Thành phố Huế",
+       "old_province": "Thừa Thiên Huế",
+       "old_districtId": 641
+      }
+     ],
+     "listing_page": {
+      "cards": 8,
+      "miss": false
+     }
+    },
+    {
+     "new": "Phường Thủy Xuân",
+     "slug": "nha-dat-cho-thue-phuong-thuy-xuan-tp-hue",
+     "wardId": 5392,
+     "old": []
+    },
+    {
+     "new": "Xã Vinh Lộc",
+     "slug": "nha-dat-cho-thue-xa-vinh-loc-tth-tp-hue",
+     "wardId": 7184,
+     "old": []
+    },
+    {
+     "new": "Phường Vỹ Dạ",
+     "slug": "nha-dat-cho-thue-phuong-vy-da-tp-hue",
+     "wardId": 4624,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "hue",
+       "key": "vyd",
+       "same_place": true
+      }
+     ]
+    }
+   ]
+  },
+  "Tỉnh Đắk Lắk": {
+   "code": "DDL",
+   "city_key": "buon-ma-thuot",
+   "city_keys": [
+    "buon-ma-thuot"
+   ],
+   "old_provinces_checked": [
+    "Đắk Lắk"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tinh-dak-lak.xml",
+   "ward_count": 102,
+   "wards": [
+    {
+     "new": "Phường Bình Kiến",
+     "slug": "nha-dat-cho-thue-phuong-binh-kien-tinh-dak-lak",
+     "wardId": 533,
+     "old": []
+    },
+    {
+     "new": "Xã Buôn Đôn",
+     "slug": "nha-dat-cho-thue-xa-buon-don-tinh-dak-lak",
+     "wardId": 2581,
+     "old": []
+    },
+    {
+     "new": "Phường Buôn Hồ",
+     "slug": "nha-dat-cho-thue-phuong-buon-ho-tinh-dak-lak",
+     "wardId": 6165,
+     "old": []
+    },
+    {
+     "new": "Phường Buôn Ma Thuột",
+     "slug": "nha-dat-cho-thue-phuong-buon-ma-thuot-tinh-dak-lak",
+     "wardId": 4629,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Buôn Ma Thuột",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Thành phố Buôn Ma Thuột",
+       "old_province": "Đắk Lắk",
+       "old_districtId": 218,
+       "unconfirmed": "district lists of PY not loaded; a same-named district there is not ruled out"
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "buon-ma-thuot",
+       "key": "bmt",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Cư Bao",
+     "slug": "nha-dat-cho-thue-phuong-cu-bao-tinh-dak-lak",
+     "wardId": 6421,
+     "old": []
+    },
+    {
+     "new": "Xã Cư M'gar",
+     "slug": "nha-dat-cho-thue-xa-cu-mgar-tinh-dak-lak",
+     "wardId": 9237,
+     "old": []
+    },
+    {
+     "new": "Xã Cư M'ta",
+     "slug": "nha-dat-cho-thue-xa-cu-mta-tinh-dak-lak",
+     "wardId": 15637,
+     "old": []
+    },
+    {
+     "new": "Xã Cư Pơng",
+     "slug": "nha-dat-cho-thue-xa-cu-pong-tinh-dak-lak",
+     "wardId": 10261,
+     "old": []
+    },
+    {
+     "new": "Xã Cư Prao",
+     "slug": "nha-dat-cho-thue-xa-cu-prao-tinh-dak-lak",
+     "wardId": 16149,
+     "old": []
+    },
+    {
+     "new": "Xã Cư Pui",
+     "slug": "nha-dat-cho-thue-xa-cu-pui-tinh-dak-lak",
+     "wardId": 17429,
+     "old": []
+    },
+    {
+     "new": "Xã Cư Yang",
+     "slug": "nha-dat-cho-thue-xa-cu-yang-tinh-dak-lak",
+     "wardId": 14613,
+     "old": []
+    },
+    {
+     "new": "Xã Cuôr Đăng",
+     "slug": "nha-dat-cho-thue-xa-cuor-dang-tinh-dak-lak",
+     "wardId": 8981,
+     "old": []
+    },
+    {
+     "new": "Xã Đắk Liêng",
+     "slug": "nha-dat-cho-thue-xa-dak-lieng-tinh-dak-lak",
+     "wardId": 17941,
+     "old": []
+    },
+    {
+     "new": "Xã Đắk Phơi",
+     "slug": "nha-dat-cho-thue-xa-dak-phoi-tinh-dak-lak",
+     "wardId": 18453,
+     "old": []
+    },
+    {
+     "new": "Xã Dang Kang",
+     "slug": "nha-dat-cho-thue-xa-dang-kang-tinh-dak-lak",
+     "wardId": 16661,
+     "old": []
+    },
+    {
+     "new": "Xã Dliê Ya",
+     "slug": "nha-dat-cho-thue-xa-dlie-ya-tinh-dak-lak",
+     "wardId": 11797,
+     "old": []
+    },
+    {
+     "new": "Phường Đông Hòa",
+     "slug": "nha-dat-cho-thue-phuong-dong-hoa-tinh-dak-lak",
+     "wardId": 20501,
+     "old": []
+    },
+    {
+     "new": "Xã Đồng Xuân",
+     "slug": "nha-dat-cho-thue-xa-dong-xuan-tinh-dak-lak",
+     "wardId": 24597,
+     "old": []
+    },
+    {
+     "new": "Xã Dray Bhăng",
+     "slug": "nha-dat-cho-thue-xa-dray-bhang-tinh-dak-lak",
+     "wardId": 2325,
+     "old": []
+    },
+    {
+     "new": "Xã Đức Bình",
+     "slug": "nha-dat-cho-thue-xa-duc-binh-tinh-dak-lak",
+     "wardId": 1045,
+     "old": []
+    },
+    {
+     "new": "Xã Dur Kmăl",
+     "slug": "nha-dat-cho-thue-xa-dur-kmal-tinh-dak-lak",
+     "wardId": 19221,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Bá",
+     "slug": "nha-dat-cho-thue-xa-ea-ba-tinh-dak-lak",
+     "wardId": 1301,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Bung",
+     "slug": "nha-dat-cho-thue-xa-ea-bung-tinh-dak-lak",
+     "wardId": 7445,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Drăng",
+     "slug": "nha-dat-cho-thue-xa-ea-drang-tinh-dak-lak",
+     "wardId": 10773,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Drông",
+     "slug": "nha-dat-cho-thue-xa-ea-drong-tinh-dak-lak",
+     "wardId": 6677,
+     "old": []
+    },
+    {
+     "new": "Xã Ea H'Leo",
+     "slug": "nha-dat-cho-thue-xa-ea-hleo-tinh-dak-lak",
+     "wardId": 3861,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Hiao",
+     "slug": "nha-dat-cho-thue-xa-ea-hiao-tinh-dak-lak",
+     "wardId": 11285,
+     "old": []
+    },
+    {
+     "new": "Phường Ea Kao",
+     "slug": "nha-dat-cho-thue-phuong-ea-kao-tinh-dak-lak",
+     "wardId": 5653,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "buon-ma-thuot",
+       "key": "eak",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Ea Kar",
+     "slug": "nha-dat-cho-thue-xa-ea-kar-tinh-dak-lak",
+     "wardId": 13845,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Khăl",
+     "slug": "nha-dat-cho-thue-xa-ea-khal-tinh-dak-lak",
+     "wardId": 10517,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Kiết",
+     "slug": "nha-dat-cho-thue-xa-ea-kiet-tinh-dak-lak",
+     "wardId": 8213,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Kly",
+     "slug": "nha-dat-cho-thue-xa-ea-kly-tinh-dak-lak",
+     "wardId": 13589,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Knốp",
+     "slug": "nha-dat-cho-thue-xa-ea-knop-tinh-dak-lak",
+     "wardId": 14357,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Knuếc",
+     "slug": "nha-dat-cho-thue-xa-ea-knuec-tinh-dak-lak",
+     "wardId": 12821,
+     "old": []
+    },
+    {
+     "new": "Xã Ea KTur",
+     "slug": "nha-dat-cho-thue-xa-ea-ktur-tinh-dak-lak",
+     "wardId": 2837,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Ly",
+     "slug": "nha-dat-cho-thue-xa-ea-ly-tinh-dak-lak",
+     "wardId": 1557,
+     "old": []
+    },
+    {
+     "new": "Xã Ea M'Droh",
+     "slug": "nha-dat-cho-thue-xa-ea-mdroh-tinh-dak-lak",
+     "wardId": 8469,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Na",
+     "slug": "nha-dat-cho-thue-xa-ea-na-tinh-dak-lak",
+     "wardId": 19477,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Ning",
+     "slug": "nha-dat-cho-thue-xa-ea-ning-tinh-dak-lak",
+     "wardId": 18709,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Nuôl",
+     "slug": "nha-dat-cho-thue-xa-ea-nuol-tinh-dak-lak",
+     "wardId": 7957,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Ô",
+     "slug": "nha-dat-cho-thue-xa-ea-o-tinh-dak-lak",
+     "wardId": 14101,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Păl",
+     "slug": "nha-dat-cho-thue-xa-ea-pal-tinh-dak-lak",
+     "wardId": 14869,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Phê",
+     "slug": "nha-dat-cho-thue-xa-ea-phe-tinh-dak-lak",
+     "wardId": 13333,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Riêng",
+     "slug": "nha-dat-cho-thue-xa-ea-rieng-tinh-dak-lak",
+     "wardId": 15381,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Rốk",
+     "slug": "nha-dat-cho-thue-xa-ea-rok-tinh-dak-lak",
+     "wardId": 7189,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Súp",
+     "slug": "nha-dat-cho-thue-xa-ea-sup-tinh-dak-lak",
+     "wardId": 6933,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Trang",
+     "slug": "nha-dat-cho-thue-xa-ea-trang-tinh-dak-lak",
+     "wardId": 3605,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Tul",
+     "slug": "nha-dat-cho-thue-xa-ea-tul-tinh-dak-lak",
+     "wardId": 9493,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Wer",
+     "slug": "nha-dat-cho-thue-xa-ea-wer-tinh-dak-lak",
+     "wardId": 7701,
+     "old": []
+    },
+    {
+     "new": "Xã Ea Wy",
+     "slug": "nha-dat-cho-thue-xa-ea-wy-tinh-dak-lak",
+     "wardId": 11029,
+     "old": []
+    },
+    {
+     "new": "Phường Hòa Hiệp",
+     "slug": "nha-dat-cho-thue-phuong-hoa-hiep-tinh-dak-lak",
+     "wardId": 277,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Mỹ",
+     "slug": "nha-dat-cho-thue-xa-hoa-my-tinh-dak-lak",
+     "wardId": 22549,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Phú",
+     "slug": "nha-dat-cho-thue-xa-hoa-phu-tinh-dak-lak",
+     "wardId": 5909,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Sơn",
+     "slug": "nha-dat-cho-thue-xa-hoa-son-tinh-dak-lak",
+     "wardId": 16405,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Thịnh",
+     "slug": "nha-dat-cho-thue-xa-hoa-thinh-tinh-dak-lak",
+     "wardId": 22293,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Xuân",
+     "slug": "nha-dat-cho-thue-xa-hoa-xuan-tinh-dak-lak",
+     "wardId": 20757,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Lốp",
+     "slug": "nha-dat-cho-thue-xa-ia-lop-tinh-dak-lak",
+     "wardId": 4117,
+     "old": []
+    },
+    {
+     "new": "Xã Ia Rvê",
+     "slug": "nha-dat-cho-thue-xa-ia-rve-tinh-dak-lak",
+     "wardId": 4373,
+     "old": []
+    },
+    {
+     "new": "Xã Krông Á",
+     "slug": "nha-dat-cho-thue-xa-krong-a-tinh-dak-lak",
+     "wardId": 15893,
+     "old": []
+    },
+    {
+     "new": "Xã Krông Ana",
+     "slug": "nha-dat-cho-thue-xa-krong-ana-tinh-dak-lak",
+     "wardId": 18965,
+     "old": []
+    },
+    {
+     "new": "Xã Krông Bông",
+     "slug": "nha-dat-cho-thue-xa-krong-bong-tinh-dak-lak",
+     "wardId": 16917,
+     "old": []
+    },
+    {
+     "new": "Xã Krông Búk",
+     "slug": "nha-dat-cho-thue-xa-krong-buk-tinh-dak-lak",
+     "wardId": 10005,
+     "old": []
+    },
+    {
+     "new": "Xã Krông Năng",
+     "slug": "nha-dat-cho-thue-xa-krong-nang-tinh-dak-lak",
+     "wardId": 11541,
+     "old": []
+    },
+    {
+     "new": "Xã Krông Nô",
+     "slug": "nha-dat-cho-thue-xa-krong-no-tinh-dak-lak",
+     "wardId": 3349,
+     "old": []
+    },
+    {
+     "new": "Xã Krông Pắc",
+     "slug": "nha-dat-cho-thue-xa-krong-pac-tinh-dak-lak",
+     "wardId": 12565,
+     "old": []
+    },
+    {
+     "new": "Xã Liên Sơn Lắk",
+     "slug": "nha-dat-cho-thue-xa-lien-son-lak-tinh-dak-lak",
+     "wardId": 17685,
+     "old": []
+    },
+    {
+     "new": "Xã M'Drắk",
+     "slug": "nha-dat-cho-thue-xa-mdrak-tinh-dak-lak",
+     "wardId": 15125,
+     "old": []
+    },
+    {
+     "new": "Xã Nam Ka",
+     "slug": "nha-dat-cho-thue-xa-nam-ka-tinh-dak-lak",
+     "wardId": 18197,
+     "old": []
+    },
+    {
+     "new": "Xã Ô Loan",
+     "slug": "nha-dat-cho-thue-xa-o-loan-tinh-dak-lak",
+     "wardId": 21525,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Hòa 1",
+     "slug": "nha-dat-cho-thue-xa-phu-hoa-1-tinh-dak-lak",
+     "wardId": 25621,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Hòa 2",
+     "slug": "nha-dat-cho-thue-xa-phu-hoa-2-tinh-dak-lak",
+     "wardId": 789,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Mỡ",
+     "slug": "nha-dat-cho-thue-xa-phu-mo-tinh-dak-lak",
+     "wardId": 24085,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Xuân",
+     "slug": "nha-dat-cho-thue-xa-phu-xuan-tinh-dak-lak",
+     "wardId": 12309,
+     "old": []
+    },
+    {
+     "new": "Phường Phú Yên",
+     "slug": "nha-dat-cho-thue-phuong-phu-yen-tinh-dak-lak",
+     "wardId": 1813,
+     "old": []
+    },
+    {
+     "new": "Xã Pơng Drang",
+     "slug": "nha-dat-cho-thue-xa-pong-drang-tinh-dak-lak",
+     "wardId": 9749,
+     "old": []
+    },
+    {
+     "new": "Xã Quảng Phú",
+     "slug": "nha-dat-cho-thue-xa-quang-phu-tinh-dak-lak",
+     "wardId": 8725,
+     "old": []
+    },
+    {
+     "new": "Xã Sơn Hòa",
+     "slug": "nha-dat-cho-thue-xa-son-hoa-tinh-dak-lak",
+     "wardId": 23061,
+     "old": []
+    },
+    {
+     "new": "Xã Sơn Thành",
+     "slug": "nha-dat-cho-thue-xa-son-thanh-tinh-dak-lak",
+     "wardId": 22805,
+     "old": []
+    },
+    {
+     "new": "Phường Sông Cầu",
+     "slug": "nha-dat-cho-thue-phuong-song-cau-tinh-dak-lak",
+     "wardId": 24853,
+     "old": []
+    },
+    {
+     "new": "Xã Sông Hinh",
+     "slug": "nha-dat-cho-thue-xa-song-hinh-tinh-dak-lak",
+     "wardId": 26133,
+     "old": []
+    },
+    {
+     "new": "Xã Suối Trai",
+     "slug": "nha-dat-cho-thue-xa-suoi-trai-tinh-dak-lak",
+     "wardId": 25109,
+     "old": []
+    },
+    {
+     "new": "Xã Tam Giang",
+     "slug": "nha-dat-cho-thue-xa-tam-giang-ddl-tinh-dak-lak",
+     "wardId": 12053,
+     "old": []
+    },
+    {
+     "new": "Phường Tân An",
+     "slug": "nha-dat-cho-thue-phuong-tan-an-ddl-tinh-dak-lak",
+     "wardId": 4885,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "buon-ma-thuot",
+       "key": "tanb",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Phường Tân Lập",
+     "slug": "nha-dat-cho-thue-phuong-tan-lap-tinh-dak-lak",
+     "wardId": 5141,
+     "old": [],
+     "project_keys": [
+      {
+       "city": "buon-ma-thuot",
+       "key": "tlp",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Tân Tiến",
+     "slug": "nha-dat-cho-thue-xa-tan-tien-ddl-tinh-dak-lak",
+     "wardId": 13077,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Hòa",
+     "slug": "nha-dat-cho-thue-xa-tay-hoa-tinh-dak-lak",
+     "wardId": 25877,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Sơn",
+     "slug": "nha-dat-cho-thue-xa-tay-son-tinh-dak-lak",
+     "wardId": 23573,
+     "old": []
+    },
+    {
+     "new": "Phường Thành Nhất",
+     "slug": "nha-dat-cho-thue-phuong-thanh-nhat-tinh-dak-lak",
+     "wardId": 5397,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy An Bắc",
+     "slug": "nha-dat-cho-thue-xa-tuy-an-bac-tinh-dak-lak",
+     "wardId": 21013,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy An Đông",
+     "slug": "nha-dat-cho-thue-xa-tuy-an-dong-tinh-dak-lak",
+     "wardId": 21269,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy An Nam",
+     "slug": "nha-dat-cho-thue-xa-tuy-an-nam-tinh-dak-lak",
+     "wardId": 21781,
+     "old": []
+    },
+    {
+     "new": "Xã Tuy An Tây",
+     "slug": "nha-dat-cho-thue-xa-tuy-an-tay-tinh-dak-lak",
+     "wardId": 22037,
+     "old": []
+    },
+    {
+     "new": "Phường Tuy Hòa",
+     "slug": "nha-dat-cho-thue-phuong-tuy-hoa-tinh-dak-lak",
+     "wardId": 25365,
+     "old": []
+    },
+    {
+     "new": "Xã Vân Hòa",
+     "slug": "nha-dat-cho-thue-xa-van-hoa-tinh-dak-lak",
+     "wardId": 23317,
+     "old": []
+    },
+    {
+     "new": "Xã Vụ Bổn",
+     "slug": "nha-dat-cho-thue-xa-vu-bon-tinh-dak-lak",
+     "wardId": 3093,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Cảnh",
+     "slug": "nha-dat-cho-thue-xa-xuan-canh-tinh-dak-lak",
+     "wardId": 19989,
+     "old": []
+    },
+    {
+     "new": "Phường Xuân Đài",
+     "slug": "nha-dat-cho-thue-phuong-xuan-dai-tinh-dak-lak",
+     "wardId": 2069,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Lãnh",
+     "slug": "nha-dat-cho-thue-xa-xuan-lanh-tinh-dak-lak",
+     "wardId": 23829,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Lộc",
+     "slug": "nha-dat-cho-thue-xa-xuan-loc-tinh-dak-lak",
+     "wardId": 20245,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Phước",
+     "slug": "nha-dat-cho-thue-xa-xuan-phuoc-tinh-dak-lak",
+     "wardId": 24341,
+     "old": []
+    },
+    {
+     "new": "Xã Xuân Thọ",
+     "slug": "nha-dat-cho-thue-xa-xuan-tho-tinh-dak-lak",
+     "wardId": 19733,
+     "old": []
+    },
+    {
+     "new": "Xã Yang Mao",
+     "slug": "nha-dat-cho-thue-xa-yang-mao-tinh-dak-lak",
+     "wardId": 17173,
+     "old": []
+    }
+   ]
+  },
+  "Tỉnh An Giang": {
+   "code": "AG",
+   "city_key": "phu-quoc",
+   "city_keys": [
+    "phu-quoc"
+   ],
+   "old_provinces_checked": [
+    "Kiên Giang"
+   ],
+   "sitemap": "https://batdongsan.com.vn/sitemap/nha-dat-cho-thue-tat-ca-phuong-xa-tinh-an-giang.xml",
+   "ward_count": 102,
+   "wards": [
+    {
+     "new": "Xã An Biên",
+     "slug": "nha-dat-cho-thue-xa-an-bien-tinh-an-giang",
+     "wardId": 22801,
+     "old": []
+    },
+    {
+     "new": "Xã An Châu",
+     "slug": "nha-dat-cho-thue-xa-an-chau-tinh-an-giang",
+     "wardId": 11537,
+     "old": []
+    },
+    {
+     "new": "Xã An Cư",
+     "slug": "nha-dat-cho-thue-xa-an-cu-tinh-an-giang",
+     "wardId": 9489,
+     "old": []
+    },
+    {
+     "new": "Xã An Minh",
+     "slug": "nha-dat-cho-thue-xa-an-minh-tinh-an-giang",
+     "wardId": 23825,
+     "old": []
+    },
+    {
+     "new": "Xã An Phú",
+     "slug": "nha-dat-cho-thue-xa-an-phu-tinh-an-giang",
+     "wardId": 1809,
+     "old": []
+    },
+    {
+     "new": "Xã Ba Chúc",
+     "slug": "nha-dat-cho-thue-xa-ba-chuc-tinh-an-giang",
+     "wardId": 10257,
+     "old": []
+    },
+    {
+     "new": "Xã Bình An",
+     "slug": "nha-dat-cho-thue-xa-binh-an-tinh-an-giang",
+     "wardId": 18705,
+     "old": []
+    },
+    {
+     "new": "Phường Bình Đức",
+     "slug": "nha-dat-cho-thue-phuong-binh-duc-tinh-an-giang",
+     "wardId": 3857,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Giang",
+     "slug": "nha-dat-cho-thue-xa-binh-giang-tinh-an-giang",
+     "wardId": 2065,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Hòa",
+     "slug": "nha-dat-cho-thue-xa-binh-hoa-tinh-an-giang",
+     "wardId": 11793,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Mỹ",
+     "slug": "nha-dat-cho-thue-xa-binh-my-tinh-an-giang",
+     "wardId": 8465,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Sơn",
+     "slug": "nha-dat-cho-thue-xa-binh-son-tinh-an-giang",
+     "wardId": 2321,
+     "old": []
+    },
+    {
+     "new": "Xã Bình Thạnh Đông",
+     "slug": "nha-dat-cho-thue-xa-binh-thanh-dong-tinh-an-giang",
+     "wardId": 6673,
+     "old": []
+    },
+    {
+     "new": "Xã Cần Đăng",
+     "slug": "nha-dat-cho-thue-xa-can-dang-tinh-an-giang",
+     "wardId": 12049,
+     "old": []
+    },
+    {
+     "new": "Phường Châu Đốc",
+     "slug": "nha-dat-cho-thue-phuong-chau-doc-tinh-an-giang",
+     "wardId": 1553,
+     "old": []
+    },
+    {
+     "new": "Xã Châu Phong",
+     "slug": "nha-dat-cho-thue-xa-chau-phong-tinh-an-giang",
+     "wardId": 5649,
+     "old": []
+    },
+    {
+     "new": "Xã Châu Phú",
+     "slug": "nha-dat-cho-thue-xa-chau-phu-tinh-an-giang",
+     "wardId": 8209,
+     "old": []
+    },
+    {
+     "new": "Xã Châu Thành",
+     "slug": "nha-dat-cho-thue-xa-chau-thanh-tinh-an-giang",
+     "wardId": 18449,
+     "old": []
+    },
+    {
+     "new": "Phường Chi Lăng",
+     "slug": "nha-dat-cho-thue-phuong-chi-lang-tinh-an-giang",
+     "wardId": 9745,
+     "old": []
+    },
+    {
+     "new": "Xã Chợ Mới",
+     "slug": "nha-dat-cho-thue-xa-cho-moi-tinh-an-giang",
+     "wardId": 13585,
+     "old": []
+    },
+    {
+     "new": "Xã Chợ Vàm",
+     "slug": "nha-dat-cho-thue-xa-cho-vam-tinh-an-giang",
+     "wardId": 6929,
+     "old": []
+    },
+    {
+     "new": "Xã Cô Tô",
+     "slug": "nha-dat-cho-thue-xa-co-to-tinh-an-giang",
+     "wardId": 11025,
+     "old": []
+    },
+    {
+     "new": "Xã Cù Lao Giêng",
+     "slug": "nha-dat-cho-thue-xa-cu-lao-gieng-tinh-an-giang",
+     "wardId": 12817,
+     "old": []
+    },
+    {
+     "new": "Xã Định Hòa",
+     "slug": "nha-dat-cho-thue-xa-dinh-hoa-tinh-an-giang",
+     "wardId": 21265,
+     "old": []
+    },
+    {
+     "new": "Xã Định Mỹ",
+     "slug": "nha-dat-cho-thue-xa-dinh-my-tinh-an-giang",
+     "wardId": 14865,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Hòa",
+     "slug": "nha-dat-cho-thue-xa-dong-hoa-tinh-an-giang",
+     "wardId": 23057,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Hưng",
+     "slug": "nha-dat-cho-thue-xa-dong-hung-tinh-an-giang",
+     "wardId": 23569,
+     "old": []
+    },
+    {
+     "new": "Xã Đông Thái",
+     "slug": "nha-dat-cho-thue-xa-dong-thai-tinh-an-giang",
+     "wardId": 22545,
+     "old": []
+    },
+    {
+     "new": "Xã Giang Thành",
+     "slug": "nha-dat-cho-thue-xa-giang-thanh-tinh-an-giang",
+     "wardId": 16913,
+     "old": []
+    },
+    {
+     "new": "Xã Giồng Riềng",
+     "slug": "nha-dat-cho-thue-xa-giong-rieng-tinh-an-giang",
+     "wardId": 19729,
+     "old": []
+    },
+    {
+     "new": "Xã Gò Quao",
+     "slug": "nha-dat-cho-thue-xa-go-quao-tinh-an-giang",
+     "wardId": 21521,
+     "old": []
+    },
+    {
+     "new": "Phường Hà Tiên",
+     "slug": "nha-dat-cho-thue-phuong-ha-tien-tinh-an-giang",
+     "wardId": 16401,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Điền",
+     "slug": "nha-dat-cho-thue-xa-hoa-dien-tinh-an-giang",
+     "wardId": 785,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Hưng",
+     "slug": "nha-dat-cho-thue-xa-hoa-hung-tinh-an-giang",
+     "wardId": 20497,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Lạc",
+     "slug": "nha-dat-cho-thue-xa-hoa-lac-tinh-an-giang",
+     "wardId": 7185,
+     "old": []
+    },
+    {
+     "new": "Xã Hòa Thuận",
+     "slug": "nha-dat-cho-thue-xa-hoa-thuan-tinh-an-giang",
+     "wardId": 21009,
+     "old": []
+    },
+    {
+     "new": "Xã Hội An",
+     "slug": "nha-dat-cho-thue-xa-hoi-an-tinh-an-giang",
+     "wardId": 13073,
+     "old": []
+    },
+    {
+     "new": "Xã Hòn Đất",
+     "slug": "nha-dat-cho-thue-xa-hon-dat-tinh-an-giang",
+     "wardId": 17425,
+     "old": []
+    },
+    {
+     "new": "Xã Hòn Nghệ",
+     "slug": "nha-dat-cho-thue-xa-hon-nghe-tinh-an-giang",
+     "wardId": 273,
+     "old": []
+    },
+    {
+     "new": "Xã Khánh Bình",
+     "slug": "nha-dat-cho-thue-xa-khanh-binh-tinh-an-giang",
+     "wardId": 4625,
+     "old": []
+    },
+    {
+     "new": "Đặc Khu Kiên Hải",
+     "slug": "nha-dat-cho-thue-dac-khu-kien-hai-tinh-an-giang",
+     "wardId": 25873,
+     "old": []
+    },
+    {
+     "new": "Xã Kiên Lương",
+     "slug": "nha-dat-cho-thue-xa-kien-luong-tinh-an-giang",
+     "wardId": 26129,
+     "old": []
+    },
+    {
+     "new": "Xã Long Điền",
+     "slug": "nha-dat-cho-thue-xa-long-dien-tinh-an-giang",
+     "wardId": 13329,
+     "old": []
+    },
+    {
+     "new": "Xã Long Kiến",
+     "slug": "nha-dat-cho-thue-xa-long-kien-tinh-an-giang",
+     "wardId": 14097,
+     "old": []
+    },
+    {
+     "new": "Phường Long Phú",
+     "slug": "nha-dat-cho-thue-phuong-long-phu-tinh-an-giang",
+     "wardId": 5137,
+     "old": []
+    },
+    {
+     "new": "Xã Long Thạnh",
+     "slug": "nha-dat-cho-thue-xa-long-thanh-tinh-an-giang",
+     "wardId": 20241,
+     "old": []
+    },
+    {
+     "new": "Phường Long Xuyên",
+     "slug": "nha-dat-cho-thue-phuong-long-xuyen-tinh-an-giang",
+     "wardId": 3601,
+     "old": []
+    },
+    {
+     "new": "Xã Mỹ Đức",
+     "slug": "nha-dat-cho-thue-xa-my-duc-tinh-an-giang",
+     "wardId": 7697,
+     "old": []
+    },
+    {
+     "new": "Xã Mỹ Hòa Hưng",
+     "slug": "nha-dat-cho-thue-xa-my-hoa-hung-tinh-an-giang",
+     "wardId": 2577,
+     "old": []
+    },
+    {
+     "new": "Phường Mỹ Thới",
+     "slug": "nha-dat-cho-thue-phuong-my-thoi-tinh-an-giang",
+     "wardId": 4113,
+     "old": []
+    },
+    {
+     "new": "Xã Mỹ Thuận",
+     "slug": "nha-dat-cho-thue-xa-my-thuan-tinh-an-giang",
+     "wardId": 17937,
+     "old": []
+    },
+    {
+     "new": "Xã Ngọc Chúc",
+     "slug": "nha-dat-cho-thue-xa-ngoc-chuc-tinh-an-giang",
+     "wardId": 20753,
+     "old": []
+    },
+    {
+     "new": "Xã Nhơn Hội",
+     "slug": "nha-dat-cho-thue-xa-nhon-hoi-tinh-an-giang",
+     "wardId": 2833,
+     "old": []
+    },
+    {
+     "new": "Xã Nhơn Mỹ",
+     "slug": "nha-dat-cho-thue-xa-nhon-my-tinh-an-giang",
+     "wardId": 13841,
+     "old": []
+    },
+    {
+     "new": "Xã Núi Cấm",
+     "slug": "nha-dat-cho-thue-xa-nui-cam-tinh-an-giang",
+     "wardId": 10001,
+     "old": []
+    },
+    {
+     "new": "Xã Ô Lâm",
+     "slug": "nha-dat-cho-thue-xa-o-lam-tinh-an-giang",
+     "wardId": 10769,
+     "old": []
+    },
+    {
+     "new": "Xã Óc Eo",
+     "slug": "nha-dat-cho-thue-xa-oc-eo-tinh-an-giang",
+     "wardId": 14609,
+     "old": []
+    },
+    {
+     "new": "Xã Phú An",
+     "slug": "nha-dat-cho-thue-xa-phu-an-tinh-an-giang",
+     "wardId": 6417,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Hòa",
+     "slug": "nha-dat-cho-thue-xa-phu-hoa-tinh-an-giang",
+     "wardId": 15121,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Hữu",
+     "slug": "nha-dat-cho-thue-xa-phu-huu-tinh-an-giang",
+     "wardId": 3089,
+     "old": []
+    },
+    {
+     "new": "Xã Phú Lâm",
+     "slug": "nha-dat-cho-thue-xa-phu-lam-tinh-an-giang",
+     "wardId": 7441,
+     "old": []
+    },
+    {
+     "new": "Đặc Khu Phú Quốc",
+     "slug": "nha-dat-cho-thue-dac-khu-phu-quoc-tinh-an-giang",
+     "wardId": 25617,
+     "old": [],
+     "old_district": [
+      {
+       "seen_as": "TP. Phú Quốc",
+       "cards": 20,
+       "ad_pages": 0,
+       "old_district": "Thành phố Phú Quốc",
+       "old_province": "Kiên Giang",
+       "old_districtId": 360,
+       "unconfirmed": "district lists of AG not loaded; a same-named district there is not ruled out"
+      }
+     ],
+     "listing_page": {
+      "cards": 20,
+      "miss": false
+     },
+     "project_keys": [
+      {
+       "city": "phu-quoc",
+       "key": "pq",
+       "same_place": true
+      }
+     ]
+    },
+    {
+     "new": "Xã Phú Tân",
+     "slug": "nha-dat-cho-thue-xa-phu-tan-tinh-an-giang",
+     "wardId": 6161,
+     "old": []
+    },
+    {
+     "new": "Phường Rạch Giá",
+     "slug": "nha-dat-cho-thue-phuong-rach-gia-tinh-an-giang",
+     "wardId": 16145,
+     "old": []
+    },
+    {
+     "new": "Xã Sơn Hải",
+     "slug": "nha-dat-cho-thue-xa-son-hai-tinh-an-giang",
+     "wardId": 529,
+     "old": []
+    },
+    {
+     "new": "Xã Sơn Kiên",
+     "slug": "nha-dat-cho-thue-xa-son-kien-tinh-an-giang",
+     "wardId": 17681,
+     "old": []
+    },
+    {
+     "new": "Xã Tân An",
+     "slug": "nha-dat-cho-thue-xa-tan-an-tinh-an-giang",
+     "wardId": 5393,
+     "old": []
+    },
+    {
+     "new": "Phường Tân Châu",
+     "slug": "nha-dat-cho-thue-phuong-tan-chau-tinh-an-giang",
+     "wardId": 4881,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Hiệp",
+     "slug": "nha-dat-cho-thue-xa-tan-hiep-tinh-an-giang",
+     "wardId": 19217,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Hội",
+     "slug": "nha-dat-cho-thue-xa-tan-hoi-tinh-an-giang",
+     "wardId": 18961,
+     "old": []
+    },
+    {
+     "new": "Xã Tân Thạnh",
+     "slug": "nha-dat-cho-thue-xa-tan-thanh-tinh-an-giang",
+     "wardId": 23313,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Phú",
+     "slug": "nha-dat-cho-thue-xa-tay-phu-tinh-an-giang",
+     "wardId": 15633,
+     "old": []
+    },
+    {
+     "new": "Xã Tây Yên",
+     "slug": "nha-dat-cho-thue-xa-tay-yen-tinh-an-giang",
+     "wardId": 22289,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Đông",
+     "slug": "nha-dat-cho-thue-xa-thanh-dong-tinh-an-giang",
+     "wardId": 19473,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Hưng",
+     "slug": "nha-dat-cho-thue-xa-thanh-hung-tinh-an-giang",
+     "wardId": 19985,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Lộc",
+     "slug": "nha-dat-cho-thue-xa-thanh-loc-tinh-an-giang",
+     "wardId": 18193,
+     "old": []
+    },
+    {
+     "new": "Xã Thạnh Mỹ Tây",
+     "slug": "nha-dat-cho-thue-xa-thanh-my-tay-tinh-an-giang",
+     "wardId": 8721,
+     "old": []
+    },
+    {
+     "new": "Đặc Khu Thổ Châu",
+     "slug": "nha-dat-cho-thue-dac-khu-tho-chau-tinh-an-giang",
+     "wardId": 15889,
+     "old": []
+    },
+    {
+     "new": "Xã Thoại Sơn",
+     "slug": "nha-dat-cho-thue-xa-thoai-son-tinh-an-giang",
+     "wardId": 14353,
+     "old": []
+    },
+    {
+     "new": "Phường Thới Sơn",
+     "slug": "nha-dat-cho-thue-phuong-thoi-son-tinh-an-giang",
+     "wardId": 8977,
+     "old": []
+    },
+    {
+     "new": "Xã Tiên Hải",
+     "slug": "nha-dat-cho-thue-xa-tien-hai-tinh-an-giang",
+     "wardId": 3345,
+     "old": []
+    },
+    {
+     "new": "Phường Tịnh Biên",
+     "slug": "nha-dat-cho-thue-phuong-tinh-bien-tinh-an-giang",
+     "wardId": 9233,
+     "old": []
+    },
+    {
+     "new": "Phường Tô Châu",
+     "slug": "nha-dat-cho-thue-phuong-to-chau-tinh-an-giang",
+     "wardId": 16657,
+     "old": []
+    },
+    {
+     "new": "Xã Tri Tôn",
+     "slug": "nha-dat-cho-thue-xa-tri-ton-tinh-an-giang",
+     "wardId": 10513,
+     "old": []
+    },
+    {
+     "new": "Xã U Minh Thượng",
+     "slug": "nha-dat-cho-thue-xa-u-minh-thuong-tinh-an-giang",
+     "wardId": 24593,
+     "old": []
+    },
+    {
+     "new": "Xã Vân Khánh",
+     "slug": "nha-dat-cho-thue-xa-van-khanh-tinh-an-giang",
+     "wardId": 24081,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh An",
+     "slug": "nha-dat-cho-thue-xa-vinh-an-tinh-an-giang",
+     "wardId": 12561,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Bình",
+     "slug": "nha-dat-cho-thue-xa-vinh-binh-tinh-an-giang",
+     "wardId": 24849,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Điều",
+     "slug": "nha-dat-cho-thue-xa-vinh-dieu-tinh-an-giang",
+     "wardId": 17169,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Gia",
+     "slug": "nha-dat-cho-thue-xa-vinh-gia-tinh-an-giang",
+     "wardId": 11281,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hanh",
+     "slug": "nha-dat-cho-thue-xa-vinh-hanh-tinh-an-giang",
+     "wardId": 12305,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hậu",
+     "slug": "nha-dat-cho-thue-xa-vinh-hau-tinh-an-giang",
+     "wardId": 4369,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hòa",
+     "slug": "nha-dat-cho-thue-xa-vinh-hoa-tinh-an-giang",
+     "wardId": 24337,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Hòa Hưng",
+     "slug": "nha-dat-cho-thue-xa-vinh-hoa-hung-tinh-an-giang",
+     "wardId": 21777,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Phong",
+     "slug": "nha-dat-cho-thue-xa-vinh-phong-tinh-an-giang",
+     "wardId": 25361,
+     "old": []
+    },
+    {
+     "new": "Phường Vĩnh Tế",
+     "slug": "nha-dat-cho-thue-phuong-vinh-te-tinh-an-giang",
+     "wardId": 1297,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thạnh Trung",
+     "slug": "nha-dat-cho-thue-xa-vinh-thanh-trung-tinh-an-giang",
+     "wardId": 7953,
+     "old": []
+    },
+    {
+     "new": "Phường Vĩnh Thông",
+     "slug": "nha-dat-cho-thue-phuong-vinh-thong-tinh-an-giang",
+     "wardId": 1041,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Thuận",
+     "slug": "nha-dat-cho-thue-xa-vinh-thuan-tinh-an-giang",
+     "wardId": 25105,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Trạch",
+     "slug": "nha-dat-cho-thue-xa-vinh-trach-tinh-an-giang",
+     "wardId": 15377,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Tuy",
+     "slug": "nha-dat-cho-thue-xa-vinh-tuy-tinh-an-giang",
+     "wardId": 22033,
+     "old": []
+    },
+    {
+     "new": "Xã Vĩnh Xương",
+     "slug": "nha-dat-cho-thue-xa-vinh-xuong-tinh-an-giang",
+     "wardId": 5905,
+     "old": []
+    }
+   ]
+  }
+ }
+}

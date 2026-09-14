@@ -63,8 +63,8 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 # правилом: «buon-ma-thuot-dl» и «vung-tau-brvt» 14.09.2026 привели на общий
 # список по стране (у всех карточек «· Hồ Chí Minh»), «quy-nhon-bd»,
 # «phan-thiet-bt», «da-lat-ld» -- та же ошибка кода. Исправлены по справочнику
-# портала (out/cities_old.json -- коды, out/olddist_*.json -- имена районов из
-# обхода карты кварталов): Đắk Lắk DDL, Bà Rịa Vũng Tàu VT, Bình Định BDD,
+# портала (reference/batdongsan/cities_old.json -- коды, olddist_*.json там же --
+# имена районов, выгружены при обходе карты кварталов 12-13.09.2026): Đắk Lắk DDL, Bà Rịa Vũng Tàu VT, Bình Định BDD,
 # Bình Thuận BTH, Lâm Đồng LDD. Города, у которых нет района (Кантхо, Хайфон,
 # Ханой) и новые «tp-...», -- по провинции, как и были.
 CITY_SLUG = {
