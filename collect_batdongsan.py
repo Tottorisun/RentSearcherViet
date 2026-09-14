@@ -57,6 +57,16 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 
 # Город проекта -> кусок их адреса. Проверяется по хлебным крошкам их же
 # страницы: Khánh Hòa -> Nha Trang -> «nha-trang-kh».
+# Кусок адреса города в прежнем делении -- имя его района в справочнике портала
+# и код провинции строчными: «nha-trang» + KH, «hue» + TTH (оба проверены живым
+# обходом). Пять кусков ниже были написаны по догадке и расходились с этим
+# правилом: «buon-ma-thuot-dl» и «vung-tau-brvt» 14.09.2026 привели на общий
+# список по стране (у всех карточек «· Hồ Chí Minh»), «quy-nhon-bd»,
+# «phan-thiet-bt», «da-lat-ld» -- та же ошибка кода. Исправлены по справочнику
+# портала (out/cities_old.json -- коды, out/olddist_*.json -- имена районов из
+# обхода карты кварталов): Đắk Lắk DDL, Bà Rịa Vũng Tàu VT, Bình Định BDD,
+# Bình Thuận BTH, Lâm Đồng LDD. Города, у которых нет района (Кантхо, Хайфон,
+# Ханой) и новые «tp-...», -- по провинции, как и были.
 CITY_SLUG = {
     "nha-trang": "nha-trang-kh",
     "da-nang": "tp-da-nang",
@@ -65,12 +75,12 @@ CITY_SLUG = {
     "can-tho": "can-tho",
     "hai-phong": "hai-phong",
     "hue": "hue-tth",
-    "da-lat": "da-lat-ld",
-    "vung-tau": "vung-tau-brvt",
-    "quy-nhon": "quy-nhon-bd",
+    "da-lat": "da-lat-ldd",
+    "vung-tau": "vung-tau-vt",
+    "quy-nhon": "quy-nhon-bdd",
     "hoi-an": "hoi-an-qna",
-    "phan-thiet": "phan-thiet-bt",
-    "buon-ma-thuot": "buon-ma-thuot-dl",
+    "phan-thiet": "phan-thiet-bth",
+    "buon-ma-thuot": "buon-ma-thuot-ddl",
     "phu-quoc": "phu-quoc-kg",
 }
 # Где город большой, а районов у сайта мало, обходится не весь город, а списки
@@ -109,6 +119,11 @@ CITY_PROVINCE = {
     "quy-nhon": ("tinh-gia-lai",), "can-tho": ("tp-can-tho",), "hai-phong": ("tp-hai-phong",),
     "hue": ("tp-hue", "tinh-hue"), "buon-ma-thuot": ("tinh-dak-lak",), "phu-quoc": ("tinh-an-giang",),
 }
+
+
+def national_card(card):
+    """Карточка общего списка по стране: в строке места только «· Провинция»."""
+    return (card.get("loc") or "").strip().startswith("·")
 
 
 def foreign_province(href, city):
@@ -533,6 +548,20 @@ def main():
             # завелось 12; в Хайфоне -- 6 и 5. Порог зависит только от наибольшего
             # номера среди всех карточек, так что посчитать его заранее -- то же
             # самое, что считать по ходу.
+            # Карточка общего списка по стране пишет только провинцию: «· Hồ Chí Minh».
+            # На странице города в строке округ и квартал: «Q. Hải An (P. Hải An
+            # mới)». 14.09 неверные куски адреса Буонметхуота и Вунгтау привели на
+            # общий список -- 80 карточек из Хошимина и Ханоя под именем города.
+            # Не завелось ничего, но у Буонметхуота есть Tân An и Tân Lập, а такие
+            # кварталы есть во многих провинциях. Больше половины таких карточек --
+            # это не город: код 1, чтобы сводка назвала шаг.
+            national = [c for c in cards if national_card(c)]
+            if cards and len(national) * 2 >= len(cards):
+                print("  адрес города ведёт на общий список по стране: %d из %d карточек без "
+                      "квартала («%s») -- проверьте CITY_SLUG[%r]"
+                      % (len(national), len(cards), (national[0].get("loc") or "").strip(), a.city))
+                return 1
+
             prids = [int(m.group(1)) for m in
                      (PRID.search((c.get("href") or "").split("?")[0]) for c in cards) if m]
             floor = max(prids) - PRID_PER_DAY * (MAX_AGE_DAYS + 1) if prids else 0
@@ -553,6 +582,9 @@ def main():
                 other = foreign_province(href, a.city)
                 if other:
                     skipped.append((key, "объявление из другой провинции: %s" % other))
+                    continue
+                if national_card(c):
+                    skipped.append((key, "карточка без квартала -- из общего списка, а не города"))
                     continue
                 if prid < floor:
                     skipped.append((key, "номер объявления старый при свежей дате -- перевыкладка"))
