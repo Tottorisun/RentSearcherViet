@@ -41,7 +41,7 @@
   SOURCES.forEach(function(s){ SOURCE_LABEL[s.key] = s; });
   var SOURCES_BY_CITY = DATA.SOURCES_BY_CITY || {};
 
-  var DAY_OPTIONS = [1,3,7,14];
+  var DAY_OPTIONS = [1,3,7];
   var BUDGET_CHIPS = [3,5,10,15];
   var DETAIL_ORDER = ["deposit","electricity","water","internet","managementFee","contract","policy","amenities","notice"];
 
@@ -126,7 +126,7 @@
       m2:"м²", thousandPerM2:"тыс ₫/м²", mlnShort:"млн", thouShort:"тыс", metres:"м", km:"км",
       detailLabels:{deposit:"Депозит", electricity:"Электричество", water:"Вода", internet:"Интернет/wifi",
         managementFee:"Управление", amenities:"Удобства", policy:"Правила", contract:"Договор", notice:"Важно"},
-      stamp:"Данные актуальны на 14 сентября 2026 · объявления старше 14 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
+      stamp:"Данные актуальны на 14 сентября 2026 · объявления старше 7 дней исключены из подборки · перед созвоном с хозяином всегда проверяйте цену и наличие по ссылке на объявление."
     },
     en: {
       h1Title:"Rental housing in Vietnam and the Philippines",
@@ -177,7 +177,7 @@
       m2:"m²", thousandPerM2:"k ₫/m²", mlnShort:"mln", thouShort:"k", metres:"m", km:"km",
       detailLabels:{deposit:"Deposit", electricity:"Electricity", water:"Water", internet:"Internet/wifi",
         managementFee:"Management fee", amenities:"Amenities", policy:"House rules", contract:"Contract", notice:"Important"},
-      stamp:"Data current as of 14 September 2026 · listings older than 14 days are excluded · always confirm price and availability via the original listing before calling the owner."
+      stamp:"Data current as of 14 September 2026 · listings older than 7 days are excluded · always confirm price and availability via the original listing before calling the owner."
     }
   };
 
@@ -241,7 +241,7 @@
   }
 
   var state = {
-    city: PAGE ? PAGE.city : "nha-trang", district: null, complex: null, minBudget: null, maxBudget: null, maxDays: 14, sort: "asc", type: null, kind: PAGE ? PAGE.kind : "residential", poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
+    city: PAGE ? PAGE.city : "nha-trang", district: null, complex: null, minBudget: null, maxBudget: null, maxDays: 7, sort: "asc", type: null, kind: PAGE ? PAGE.kind : "residential", poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
     sources: new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; })),
     openDetails: new Set()
   };
@@ -1287,7 +1287,7 @@
   }
 
   el.resetBtn.addEventListener("click", function(){
-    state.district = null; state.complex=null; state.minBudget=null; state.maxBudget=null; state.maxDays=14; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false
+    state.district = null; state.complex=null; state.minBudget=null; state.maxBudget=null; state.maxDays=7; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false
     // Reset returns to housing, so the budget ceiling must come back with it --
     // otherwise the slider keeps the 300M commercial scale on residential data.
     // On a per-city page the kind is the page itself and stays.
