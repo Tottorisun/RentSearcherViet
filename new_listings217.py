@@ -1,0 +1,97 @@
+# -*- coding: utf-8 -*-
+"""hoppler.com.ph, автоматический сбор: 15 объявлений, 2026-09-15.
+
+Партию собрал collect_hoppler.py -- без модели в контуре. Район взят из города
+Метро Манилы, к которому объявление отнёс сам портал; города без однозначного
+ключа (сама Манила, Лас-Пиньяс, Сан-Хуан) пропущены целиком. Описание собрано из
+полей карточки, возраст -- по дате последнего изменения, не старше 7 дней.
+"""
+from listing_lock import insert_listings
+
+IDS = [3000742, 3000743, 3000744, 3000745, 3000746, 3000747, 3000748, 3000749, 3000750, 3000751, 3000752, 3000753, 3000754, 3000755, 3000756]
+
+N_RU = "Описание собрано программой из карточки объявления на hoppler.com.ph — тип, спальни, санузлы, площадь, название дома и цена. Рекламный текст объявления не пересказан. hoppler публикует не дату размещения, а дату последнего изменения объявления: возраст считается по ней, и объявление могло быть создано раньше."
+N_EN = "This description was assembled by a program from the listing card on hoppler.com.ph — type, bedrooms, bathrooms, size, building name and price. The ad's marketing text is not retold. Hoppler publishes a last-updated date rather than a posting date: the age is counted from it, and the listing may have been created earlier."
+
+NEW_SRC = r'''
+L(3000742,"manila","mak","Квартира",70000,155,
+  "3-спальная квартира, 155 м², Dona Angela Garden, Makati — 2 санузла.",
+  "https://www.hoppler.com.ph/makati-legaspi-village-dona-angela-garden-rr3435481","сегодня",0,source="hoppler",cur="PHP",
+  descEn="3-bedroom flat, 155 m², Dona Angela Garden, Makati — 2 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3435481-111865.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3435481-111865_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3435481-111865_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3435481-169378_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3435481-169378_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3435481-583947_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000743,"manila","bgc","Квартира",360000,246,
+  "3-спальная квартира, 246 м², The Suites at One Bonifacio High Street, BGC / Taguig — 3 санузла.",
+  "https://www.hoppler.com.ph/taguig-bgc-bonifacio-global-city-the-suites-at-one-bonifacio-high-street-rr2817681","сегодня",0,source="hoppler",cur="PHP",
+  descEn="3-bedroom flat, 246 m², The Suites at One Bonifacio High Street, BGC / Taguig — 3 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2817681-111414.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2817681-111414_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2817681-111414_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2817681-688761_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2817681-688761_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2817681-533462_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000744,"manila","mak","Квартира",105000,74,
+  "1-спальная квартира, 74 м², Park Terraces, Makati — 1 санузел.",
+  "https://www.hoppler.com.ph/makati-san-lorenzo-village-park-terraces-rr2493481","сегодня",0,source="hoppler",cur="PHP",
+  descEn="1-bedroom flat, 74 m², Park Terraces, Makati — 1 bathroom.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2493481-377551.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2493481-377551_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2493481-377551_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2493481-868623_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2493481-868623_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR2493481-234471_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000745,"manila","bgc","Квартира",155000,145,
+  "2-спальная квартира, 145 м², Arya Residences, BGC / Taguig — 2 санузла.",
+  "https://www.hoppler.com.ph/taguig-bgc-bonifacio-global-city-arya-residences-rr1472181","сегодня",0,source="hoppler",cur="PHP",
+  descEn="2-bedroom flat, 145 m², Arya Residences, BGC / Taguig — 2 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR1472181-778195.jpg", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR1472181-778195_orig.jpg?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR1472181-778195_orig.jpg?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR1472181-296912_orig.jpg?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR1472181-296912_orig.jpg?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR1472181-653871_orig.jpg?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000746,"manila","bgc","Квартира",155000,136,
+  "2-спальная квартира, 136 м², Arya Residences, BGC / Taguig — 2 санузла.",
+  "https://www.hoppler.com.ph/taguig-bgc-bonifacio-global-city-arya-residences-rr3554981","сегодня",0,source="hoppler",cur="PHP",
+  descEn="2-bedroom flat, 136 m², Arya Residences, BGC / Taguig — 2 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3554981-542755.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3554981-542755_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3554981-542755_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3554981-264877_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3554981-264877_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/Condominium-rent-RR3554981-299493_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000747,"manila","mak","Дом",650000,700,
+  "4-спальный дом, 700 м², Forbes Park, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-forbes-park-rr1938482","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 700 m², Forbes Park, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1938482-428698.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1938482-428698_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1938482-428698_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1938482-712677_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1938482-712677_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1938482-365619_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000748,"manila","ort","Офис",65000,111,
+  "Офис, 111 м², Jollibee Center Condominium Corporation, Ortigas / Pasig.",
+  "https://www.hoppler.com.ph/pasig-ortigas-center-jollibee-center-condominium-corporation-cr0690573","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 111 m², Jollibee Center Condominium Corporation, Ortigas / Pasig.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0690573-273964.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0690573-273964_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0690573-273964_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0690573-849278_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0690573-849278_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0690573-595546_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000749,"manila","qzc","Офис",50290,187,
+  "Офис, 187 м², City Murphy Center, Quezon City.",
+  "https://www.hoppler.com.ph/quezon-city-cubao-murphy-center-cr0853873","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 187 m², City Murphy Center, Quezon City.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0853873-276476.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0853873-276476_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0853873-276476_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0853873-426725_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0853873-426725_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0853873-379131_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000750,"manila","mak","Дом",290000,663,
+  "7-спальный дом, 663 м², Magallanes, Makati — 5 санузлов.",
+  "https://www.hoppler.com.ph/makati-magallanes-rr3557382","сегодня",0,source="hoppler",cur="PHP",
+  descEn="7-bedroom house, 663 m², Magallanes, Makati — 5 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557382-535253.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557382-535253_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557382-535253_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557382-113287_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557382-113287_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557382-851885_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000751,"manila","qzc","Офис",25680,102,
+  "Офис, 102 м², City Murphy Center, Quezon City.",
+  "https://www.hoppler.com.ph/quezon-city-cubao-murphy-center-cr0854573","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 102 m², City Murphy Center, Quezon City.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0854573-836185.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0854573-836185_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0854573-836185_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0854573-975448_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0854573-975448_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0854573-977974_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000752,"manila","mak","Дом",230000,300,
+  "4-спальный дом, 300 м², San Lorenzo Village, Makati — 3 санузла.",
+  "https://www.hoppler.com.ph/makati-san-lorenzo-village-rr3557582","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 300 m², San Lorenzo Village, Makati — 3 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557582-887628.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557582-887628_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557582-887628_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557582-775463_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557582-775463_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557582-966171_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000753,"manila","mak","Дом",600000,450,
+  "5-спальный дом, 450 м², Dasmariñas Village, Makati — 5 санузлов.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr3523482","сегодня",0,source="hoppler",cur="PHP",
+  descEn="5-bedroom house, 450 m², Dasmariñas Village, Makati — 5 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3523482-169145.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3523482-169145_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3523482-169145_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3523482-845894_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3523482-845894_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3523482-567856_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000754,"manila","mak","Дом",450000,500,
+  "4-спальный дом, 500 м², Dasmariñas Village, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr3465182","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 500 m², Dasmariñas Village, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3465182-172199.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3465182-172199_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3465182-172199_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3465182-291964_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3465182-291964_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3465182-994749_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000755,"manila","mak","Офис",68200,124,
+  "Офис, 124 м², Cityland 10, Makati.",
+  "https://www.hoppler.com.ph/makati-salcedo-village-cityland-10-cr0815573","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 124 m², Cityland 10, Makati.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0815573-519593.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0815573-519593_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0815573-519593_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0815573-493167_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0815573-493167_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0815573-549945_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3000756,"manila","mak","Офис",313115,569,
+  "Офис, 569 м², Keyland Building, Makati.",
+  "https://www.hoppler.com.ph/makati-legaspi-village-keyland-building-cr0779573","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 569 m², Keyland Building, Makati.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0779573-123323.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0779573-123323_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0779573-123323_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0779573-338948_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0779573-338948_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0779573-624188_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+'''
+
+NEW_SRC = NEW_SRC.replace("RU_N", N_RU).replace("EN_N", N_EN)
+
+if __name__ == "__main__":
+    insert_listings(NEW_SRC, IDS, owner=__file__)
