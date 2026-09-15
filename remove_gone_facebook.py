@@ -68,7 +68,7 @@ sys.path.insert(0, HERE)
 
 import fb_collect as fc
 import repo_sync
-from listing_lock import remove_listings
+from listing_lock import SOURCE, listing_ids, remove_listings
 from site_data import load_listings
 
 # Не «_fb_…»: под этот шаблон ingest_facebook.py ищет файлы кандидатов, и память
@@ -196,7 +196,13 @@ def main():
     a = ap.parse_args()
 
     listings = load_listings()
-    fb = [l for l in listings if (l.get("source") or "").startswith("fb")]
+    # Строки берутся из собранной страницы, а она на ПК свежа лишь на момент последней
+    # подтяжки репозитория. 15.09 утром проверка снова «нашла пропавшими» 3000232 и
+    # 3000237, снятые накануне: страница была ещё вчерашней, потому что шаг Facebook
+    # перед проверкой ничего не завёл и репозиторий не подтягивал. Две из 25 проверок
+    # ушли впустую. Проверяются только строки, которые есть в самом rebuild_final.py.
+    present = set(listing_ids(open(SOURCE, encoding="utf-8").read()))
+    fb = [l for l in listings if (l.get("source") or "").startswith("fb") and l["id"] in present]
     rows = [l for l in fb if GROUP_POST.search(l.get("url") or "") or MARKET_ITEM.search(l.get("url") or "")]
     cache = load_cache()
     rows.sort(key=lambda l: cache.get(str(l["id"]), {}).get("checked", 0))
