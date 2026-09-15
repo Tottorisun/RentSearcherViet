@@ -172,17 +172,28 @@ MONTHS = {m: i + 1 for i, m in enumerate(
 MONTHS_SHORT = {m[:3]: i + 1 for m, i in MONTHS.items()}
 
 
+def _safe_date(year, month, day):
+    """Дата или None. 15.09.2026 серверный прогон упал целиком: у одной страницы
+    портала дата изменения невозможная («day is out of range for month»), и
+    datetime.date бросил ValueError посреди обхода 988 кандидатов. Такая страница --
+    это «даты нет», и объявление отсеивается как любое другое без даты."""
+    try:
+        return datetime.date(int(year), month, int(day))
+    except ValueError:
+        return None
+
+
 def updated_date(page_html):
     m = UPDATED_RE.search(page_html)
     if m:
         mon, day, year = re.match(r"([A-Z][a-z]+) (\d{1,2}), (20\d\d)", m.group(1)).groups()
         if mon in MONTHS:
-            return datetime.date(int(year), MONTHS[mon], int(day))
+            return _safe_date(year, MONTHS[mon], day)
     m = OG_UPDATED_RE.search(page_html)
     if m:
         mon, day, year = re.match(r"([A-Z][a-z]{2}) (\d{2}), (20\d\d)", m.group(1)).groups()
         if mon in MONTHS_SHORT:
-            return datetime.date(int(year), MONTHS_SHORT[mon], int(day))
+            return _safe_date(year, MONTHS_SHORT[mon], day)
     return None
 
 
