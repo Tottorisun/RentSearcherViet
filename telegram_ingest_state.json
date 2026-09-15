@@ -196,6 +196,10 @@
    "hash": "4be9011ce63925571c6df20e5412e53bc3e6f271",
    "id": 2000684
   },
+  "https://t.me/danang_house/21517": {
+   "checked": "2026-09-16",
+   "id": 2000697
+  },
   "https://t.me/danangrentaflat/128804": {
    "cat": null,
    "checked": "2026-09-12",
@@ -386,6 +390,18 @@
    "hash": "6369d86104db921f00a6356e67288ad998f9e183",
    "id": 2000688
   },
+  "https://t.me/danangrentaflat/131541": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "e8494dec67ae681659d0477a2a9053b45419513a",
+   "id": 2000695
+  },
+  "https://t.me/danangrentaflat/131586": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "33661bb9f893279c6fbd96ae2c55dd4d2e9675dc",
+   "id": 2000694
+  },
   "https://t.me/nhatranghomes/11270": {
    "cat": null,
    "checked": "2026-09-12",
@@ -463,6 +479,12 @@
    "checked": "2026-09-14",
    "hash": "9eb817f07f2218163bfac453ed5a13e49c238d6a",
    "id": 2000674
+  },
+  "https://t.me/nhatranghomes/12027": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "4d7688ff71e09f60c159c40fe38e03613fe7df54",
+   "id": 2000702
   },
   "https://t.me/nyachang_arenda/637411": {
    "cat": null,
@@ -601,6 +623,30 @@
    "checked": "2026-09-15",
    "hash": "7524c91de583f8aca6dedb5502a9d1899b2db7a4",
    "id": 2000692
+  },
+  "https://t.me/nyachang_arenda/648184": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "5e49287c22594ab2c5580df4582419cdb40a8a55",
+   "id": 2000699
+  },
+  "https://t.me/nyachang_arenda/648194": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "683a432b5e5cf394a3bd2f260d54c3ffba68d3c5",
+   "id": 2000700
+  },
+  "https://t.me/nyachang_arenda/648203": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "813cddb17e5e9ef86c2bdce60894b4bd01a6841a",
+   "id": 2000701
+  },
+  "https://t.me/nyachang_arenda/648213": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "c9788a7c2dec0d4253722fc4e848156d17a694e2",
+   "id": 2000698
   },
   "https://t.me/viet_life_niachang/177918": {
    "cat": null,
@@ -745,6 +791,18 @@
    "checked": "2026-09-15",
    "hash": "f6ef846f39b262ecab431a36ab120e8cdd7c1817",
    "id": 2000682
+  },
+  "https://t.me/vietnam_nedvijimost/23645": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "b560b4c707535a9325bc276cf22725f6786e6038",
+   "id": 2000697
+  },
+  "https://t.me/vietnam_nedvijimost/23683": {
+   "cat": null,
+   "checked": "2026-09-16",
+   "hash": "7425c6b8cdcad235f4e65fc0f0a0f3228d2f5cb7",
+   "id": 2000696
   }
  }
 }
