@@ -41,11 +41,25 @@ def expand_photo(u):
     return head + token + mid + tail
 
 
+def expand_notice(v, notices):
+    """«~3» -> текст пометки. Пометка об источнике одна и та же у тысяч строк, и
+    страница носит её списком (см. NOTICES в rebuild_final.py)."""
+    if isinstance(v, str) and v[:1] == "~" and v[1:].isdigit() and int(v[1:]) < len(notices):
+        return notices[int(v[1:])]
+    return v
+
+
 def _expand_all(data):
+    notices = data.get("NOTICES") or []
     for l in data.get("LISTINGS", []):
         d = l.get("details")
-        if d and d.get("photos"):
+        if not d:
+            continue
+        if d.get("photos"):
             d["photos"] = [expand_photo(u) for u in d["photos"]]
+        for k in ("notice", "noticeEn"):
+            if k in d:
+                d[k] = expand_notice(d[k], notices)
     return data
 
 

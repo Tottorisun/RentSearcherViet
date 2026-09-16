@@ -22867,6 +22867,32 @@ for _l in LISTINGS:
         _l = _l  # keep the row object; only the serialised copy differs
         _l["details"] = _d
 
+# Пометка об источнике -- один и тот же текст у тысяч строк: 16.09.2026 на 4389
+# строках их было ШЕСТЬ разных, а весили они 2.2 МБ из 6.8 МБ всех данных страницы
+# (треть). В страницу они идут списком NOTICES, в строке остаётся «~N».
+# Разворачивается один раз при загрузке -- страницей (expandNotices) и
+# site_data.load_data, поэтому ни остальной JS, ни питоновские программы короткой
+# формы не видят. Номер хранится строкой, а не числом: «0» -- ложное значение, и
+# проверки вида «if (l.details.notice)» потеряли бы пометку первой строки.
+_NOTICES, _notice_ix, _notices_before = [], {}, 0
+
+
+def _notice_ref(t):
+    if t not in _notice_ix:
+        _notice_ix[t] = "~%d" % len(_NOTICES)
+        _NOTICES.append(t)
+    return _notice_ix[t]
+
+
+for _l in LISTINGS:
+    _d = _l.get("details")
+    if not _d:
+        continue
+    for _k in ("notice", "noticeEn"):
+        if isinstance(_d.get(_k), str) and _d[_k]:
+            _notices_before += len(_d[_k])
+            _d[_k] = _notice_ref(_d[_k])
+
 # Нормализованная цена: фильтр бюджета и сортировка сравнивают объявления из
 # разных стран, а 45 000 песо и 7 500 000 донгов напрямую несопоставимы.
 # Считается здесь, на сборке, а не в браузере -- в JS это была бы работа на
@@ -22893,11 +22919,13 @@ _SOURCES_BY_CITY = {c: {k: sorted(v, key=_SRC_ORDER.index) for k, v in kinds.ite
 DATA = {
     "CITIES": CITIES, "SOURCES": SOURCES, "RATES": _RATES_PUBLIC,
     "SOURCES_BY_CITY": _SOURCES_BY_CITY,
-    "LISTINGS": LISTINGS, "WARD_BOUNDARIES": WARD_BOUNDARIES, "POIS": POIS
+    "LISTINGS": LISTINGS, "WARD_BOUNDARIES": WARD_BOUNDARIES, "POIS": POIS,
+    "NOTICES": _NOTICES
 }
 DATA_JSON = json.dumps(DATA, ensure_ascii=False, separators=(",",":"))
-print("Data JSON size: %d (photo URLs compacted: %.0f KB saved)"
-      % (len(DATA_JSON), (_photos_before - _photos_after) / 1024))
+print("Data JSON size: %d (photo URLs compacted: %.0f KB saved, %d notices shared: %.0f KB saved)"
+      % (len(DATA_JSON), (_photos_before - _photos_after) / 1024, len(_NOTICES),
+         (_notices_before - sum(len(t) for t in _NOTICES)) / 1024))
 
 # ================== HTML TEMPLATE ==================
 HTML = r"""<meta charset="utf-8">
@@ -23502,6 +23530,21 @@ __LEAFLET_CSS__
         if (u.charAt(0) !== "~") return u;
         var i = u.indexOf("/");
         return CDN + u.slice(1, i) + MID + u.slice(i + 1);
+      });
+    });
+  })();
+  // Пометка об источнике приходит номером «~N» в списке NOTICES (см. сжатие в
+  // rebuild_final.py): у тысяч строк она одна и та же. Разворачивается здесь же,
+  // один раз, поэтому карточка, поиск и панель подробностей читают обычный текст.
+  (function expandNotices(){
+    var N = DATA.NOTICES || [];
+    if (!N.length) return;
+    (DATA.LISTINGS || []).forEach(function(l){
+      var d = l.details;
+      if (!d) return;
+      ["notice", "noticeEn"].forEach(function(k){
+        var v = d[k];
+        if (typeof v === "string" && v.charAt(0) === "~" && N[+v.slice(1)] != null) d[k] = N[+v.slice(1)];
       });
     });
   })();
@@ -24608,7 +24651,11 @@ __LEAFLET_CSS__
   function detailsHtml(l){
     if (!l.details) return "";
     var rows = DETAIL_ORDER.filter(function(k){ return l.details[k]; }).map(function(k){
-      return '<div class="details-row"><dt>' + t("detailLabels")[k] + '</dt><dd>' + l.details[k] + '</dd></div>';
+      // Пометка -- единственная подробность с переводом. Панель печатала поле как
+      // есть, и в английском режиме под подписью «Important» стоял русский текст,
+      // хотя noticeEn есть у всех 4416 строк с пометкой (найдено 16.09.2026).
+      var v = (k === "notice") ? noticeText(l.details) : l.details[k];
+      return '<div class="details-row"><dt>' + t("detailLabels")[k] + '</dt><dd>' + v + '</dd></div>';
     }).join("");
     var open = state.openDetails.has(l.id);
     return '<button class="details-toggle" type="button" data-details-for="'+l.id+'" aria-expanded="'+open+'">' + t("detailsToggle") + ' <span class="arrow">▾</span></button>' +
@@ -25268,7 +25315,7 @@ def city_page(city, kind):
     data = {"CITIES": CITIES, "SOURCES": SOURCES, "RATES": _RATES_PUBLIC,
             "SOURCES_BY_CITY": _SOURCES_BY_CITY, "LISTINGS": rows, "COUNTS": COUNTS,
             "WARD_BOUNDARIES": ({city: WARD_BOUNDARIES[city]} if city in WARD_BOUNDARIES else {}),
-            "POIS": ({city: POIS[city]} if city in POIS else {})}
+            "POIS": ({city: POIS[city]} if city in POIS else {}), "NOTICES": _NOTICES}
     if kind == "commercial":
         title = "Коммерческая аренда: %s — %s" % (c["name"], ru_ads(n))
         desc = ("Офисы, торговые площади и склады в аренду: %s. %s с Chợ Tốt, Batdongsan и других площадок — "
