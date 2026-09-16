@@ -32,6 +32,21 @@
       });
     });
   })();
+  // Пометка об источнике приходит номером «~N» в списке NOTICES (см. сжатие в
+  // rebuild_final.py): у тысяч строк она одна и та же. Разворачивается здесь же,
+  // один раз, поэтому карточка, поиск и панель подробностей читают обычный текст.
+  (function expandNotices(){
+    var N = DATA.NOTICES || [];
+    if (!N.length) return;
+    (DATA.LISTINGS || []).forEach(function(l){
+      var d = l.details;
+      if (!d) return;
+      ["notice", "noticeEn"].forEach(function(k){
+        var v = d[k];
+        if (typeof v === "string" && v.charAt(0) === "~" && N[+v.slice(1)] != null) d[k] = N[+v.slice(1)];
+      });
+    });
+  })();
   var CITIES = DATA.CITIES;
   var SOURCES = DATA.SOURCES;
   var LISTINGS = DATA.LISTINGS;
@@ -1135,7 +1150,11 @@
   function detailsHtml(l){
     if (!l.details) return "";
     var rows = DETAIL_ORDER.filter(function(k){ return l.details[k]; }).map(function(k){
-      return '<div class="details-row"><dt>' + t("detailLabels")[k] + '</dt><dd>' + l.details[k] + '</dd></div>';
+      // Пометка -- единственная подробность с переводом. Панель печатала поле как
+      // есть, и в английском режиме под подписью «Important» стоял русский текст,
+      // хотя noticeEn есть у всех 4416 строк с пометкой (найдено 16.09.2026).
+      var v = (k === "notice") ? noticeText(l.details) : l.details[k];
+      return '<div class="details-row"><dt>' + t("detailLabels")[k] + '</dt><dd>' + v + '</dd></div>';
     }).join("");
     var open = state.openDetails.has(l.id);
     return '<button class="details-toggle" type="button" data-details-for="'+l.id+'" aria-expanded="'+open+'">' + t("detailsToggle") + ' <span class="arrow">▾</span></button>' +
