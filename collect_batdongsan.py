@@ -450,12 +450,26 @@ def fetch_list(page, url):
     return page.evaluate(CARDS_JS)
 
 
+# Сколько подряд не открывшихся страниц объявлений считать бедой, а не случайностью.
+# 16.09.2026 Кантхо упал целиком на таймауте одной страницы: все четыре списка (79
+# карточек) уже прочитались, а город остался без строк. Одна страница -- это одно
+# пропущенное объявление; несколько подряд -- это блокировка или упавший браузер,
+# и тогда город останавливается с кодом 1, записав то, что успел собрать.
+DETAIL_FAILS_IN_A_ROW = 5
+
+
 def fetch_detail(page, url):
-    page.goto(url, wait_until="domcontentloaded", timeout=90000)
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=90000)
+    except Exception as e:
+        raise Skip("страница объявления не открылась: %s" % str(e).splitlines()[0][:90])
     if not wait_cf(page):
         raise Skip("Cloudflare не пропустил на карточке")
     time.sleep(1.5)
-    return page.evaluate(DETAIL_JS)
+    try:
+        return page.evaluate(DETAIL_JS)
+    except Exception as e:
+        raise Skip("страница объявления не прочиталась: %s" % str(e).splitlines()[0][:90])
 
 
 # ------------------------------------------------------------------ партия --
@@ -581,6 +595,7 @@ def main():
     by_photo = template_rows(a.city)            # см. template_rows: не только собранная страница
     known |= {it.norm_url(r["url"]) for r in by_photo}
     accepted, skipped, seen = [], [], set()
+    detail_fails, detail_blocked = 0, False
 
     with sync_playwright() as pw:
         br = open_ctx(pw, headless=True, profile=a.profile)
@@ -653,8 +668,16 @@ def main():
                     continue
                 try:
                     d = fetch_detail(page, href)
+                    detail_fails = 0
                 except Skip as e:
                     skipped.append((key, str(e)))
+                    if "не открылась" in str(e) or "не прочиталась" in str(e):
+                        detail_fails += 1
+                        if detail_fails >= DETAIL_FAILS_IN_A_ROW:
+                            print("  подряд %d страниц объявлений не открылись -- останавливаю город, "
+                                  "записываю собранное" % detail_fails)
+                            detail_blocked = True
+                            break
                     continue
                 time.sleep(a.delay)
                 photos = [u for u in (d.get("imgs") or []) if "file4.batdongsan" in u][:MAX_PHOTOS]
@@ -730,7 +753,7 @@ def main():
         print("  ... и ещё %d отсеяно" % (len(skipped) - 25))
 
     if not a.write or not accepted:
-        return 0
+        return 1 if detail_blocked else 0
     if a.commit and a.insert:
         # До номеров и вставки, а не после: см. repo_sync.
         why = repo_sync.prepare(["rebuild_final.py"])
@@ -745,7 +768,7 @@ def main():
         path = write_batch(accepted, skipped, ids, today, a.city)
         print("\nзаписано: %s -- %d строк, id %d..%d" % (path, len(ids), ids[0], ids[-1]))
         if not a.insert:
-            return 0
+            return 1 if detail_blocked else 0
         subprocess.run([sys.executable, path], check=True)
         inserted = True
         if a.commit:
@@ -757,7 +780,7 @@ def main():
         subprocess.run([sys.executable, "allocate_ids.py", "--release", "%d-%d" % (ids[0], ids[-1])])
         if not inserted and a.insert:
             print("вставка не состоялась -- зарезервированные id освобождены")
-    return 0
+    return 1 if detail_blocked else 0
 
 
 if __name__ == "__main__":
