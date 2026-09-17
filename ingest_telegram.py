@@ -1400,7 +1400,7 @@ def main():
     ap.add_argument("--candidates", default=CANDIDATES)
     ap.add_argument("--limit", type=int, default=40, help="не больше стольких строк за прогон")
     ap.add_argument("--write", action="store_true", help="записать партию new_listingsNNN.py")
-    ap.add_argument("--insert", action="store_true", help="и вставить её в rebuild_final.py")
+    ap.add_argument("--insert", action="store_true", help="и вставить её в listings/")
     ap.add_argument("--refresh-osm", action="store_true", help="обновить выгрузку улиц Дананга")
     ap.add_argument("--no-seed", action="store_true", help="не читать посты уже заведённых строк")
     a = ap.parse_args()

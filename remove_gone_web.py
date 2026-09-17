@@ -139,7 +139,7 @@ def main():
         # снаружи была бы самозахватом: тот же процесс ждал бы замок, который
         # держит он сам, и висел бы до таймаута.
         removed = remove_listings([g[0] for g in gone], owner=__file__)
-        print("удалено из rebuild_final.py: %d" % len(removed))
+        print("удалено из listings/: %d" % len(removed))
         for lid in [g[0] for g in gone]:
             cache.pop(str(lid), None)
     save_json(CACHE_FILE, cache)

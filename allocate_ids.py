@@ -15,7 +15,7 @@ tried and each closed only part of the hole:
 
 Even "re-read the max at write time" leaves two gaps:
   - the read->write window itself: two processes can still read the same max;
-  - ids handed out but not yet written into rebuild_final.py are invisible to
+  - ids handed out but not yet written into listings/ are invisible to
     anyone grepping the file.
 
 This closes both. An exclusive lock (atomic O_CREAT|O_EXCL, which is atomic on
@@ -33,7 +33,7 @@ USAGE
   # expire while the job is still running:
   python allocate_ids.py --renew 1000042-1000053
 
-  # after the listings are actually written into rebuild_final.py:
+  # after the listings are actually written into listings/:
   python allocate_ids.py --release 1000042-1000053
 
 Blocks: 1000000 = daily HCMC check, 2000000 = daily 7-city check,
@@ -58,7 +58,7 @@ except Exception:
 
 LOCK_FILE = ".id_alloc.lock"
 LEDGER_FILE = "id_reservations.json"
-SOURCE = "rebuild_final.py"
+SOURCE = "listings/"
 LOCK_TIMEOUT_S = 30
 LOCK_STALE_S = 120
 
@@ -128,13 +128,9 @@ def save_ledger(led):
 
 
 def max_in_file(block):
-    """Highest id already written into the source, within this block."""
-    try:
-        src = open(SOURCE, encoding="utf-8").read()
-    except FileNotFoundError:
-        sys.exit("%s not found -- run from the project directory" % SOURCE)
-    ids = [int(x) for x in re.findall(r"^L\((\d+),", src, re.M)]
-    in_block = [i for i in ids if block <= i < block + 1000000]
+    """Highest id already stored in listings/, within this block."""
+    from listing_lock import listing_ids
+    in_block = [i for i in listing_ids() if block <= i < block + 1000000]
     return max(in_block) if in_block else block - 1
 
 
@@ -183,7 +179,7 @@ def cmd_allocate(args):
 
         # High-water mark: the highest id EVER handed out in this block, kept
         # in the ledger. max_in_file() alone rolls backwards whenever the top
-        # rows disappear from rebuild_final.py (git checkout/stash, a purged
+        # rows disappear from listings/ (git checkout/stash, a purged
         # duplicate, a lost concurrent write) and would then re-issue numbers
         # that posted_to_telegram.json / posted_dates.json / users' favourites
         # already know under another listing (2 Sep 2026 audit).

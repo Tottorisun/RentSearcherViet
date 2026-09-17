@@ -2,3 +2,6 @@
 # CRLF breaks on the first `case`/`if` line ending in "\r".
 *.sh text eol=lf
 .claude/hooks/* text eol=lf
+# Строки объявлений пишут и сервер, и ПК (core.autocrlf=true): без этого каждый
+# переписывал бы переводы строк во всех файлах другого.
+listings/**/*.jsonl text eol=lf

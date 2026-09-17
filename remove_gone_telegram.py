@@ -35,7 +35,7 @@ ingest_telegram.seed_state, но она читает ленту t.me/s/<кана
 разбирается шаблонами ingest_telegram: пост агентства пишет цену в
 предсказуемой строке. Расхождение печатается и НИЧЕГО не меняет: 12 сентября
 у строки 2000557 на сайте стояло 60 млн, а в посте уже 70 млн, но цену в
-rebuild_final.py правят руками -- разбор шаблона для этого недостаточно надёжен.
+listings/ правят руками -- разбор шаблона для этого недостаточно надёжен.
 
     python remove_gone_telegram.py                 отчёт, ничего не трогает
     python remove_gone_telegram.py --limit 15      отчёт по 15 строкам
@@ -233,7 +233,7 @@ def main():
         # снаружи была бы самозахватом: тот же процесс ждал бы замок, который
         # держит он сам.
         removed = remove_listings([g[0] for g in gone], owner=__file__)
-        print("удалено из rebuild_final.py: %d" % len(removed))
+        print("удалено из listings/: %d" % len(removed))
         for lid, _city, _link, _why in gone:
             cache.pop(str(lid), None)
     save_json(CACHE_FILE, cache)

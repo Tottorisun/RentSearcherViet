@@ -205,7 +205,6 @@ DATE_LD = re.compile(r'"@datePublished"\s*:\s*"([\d-]{10})')
 # площадь 350 и 450 м², спальни 3-5): у всех четырёх 4-5 общих фотографий. Среди
 # остальных 103 строк batdongsan общей нет ни одной.
 PHOTO_DUP_MIN = 2
-BDS_PHOTO = re.compile(r'"(https://file4\.batdongsan\.com\.vn/[^"]+)"')
 NUM = re.compile(r"([\d.,]+)")
 
 
@@ -267,28 +266,14 @@ def photo_names(urls):
 
 
 def template_rows(city):
-    """[{id, url, age, photos}] -- строки города прямо из rebuild_final.py.
-
-    По собранной странице (it.Ctx) этого не узнать: на ПК она свежа лишь на момент
-    последней сборки сервера, и строк, заведённых после неё, в ней нет. Повторный
-    сбор того же города завёл бы их ссылки снова -- вставка отказала бы всей
-    партии -- и не увидел бы их фотографий."""
-    import ast
-    from listing_lock import SOURCE
-    src = open(SOURCE, encoding="utf-8").read()
-    lines = src.split("\n")
-    out = []
-    for node in ast.walk(ast.parse(src)):
-        if not (isinstance(node, ast.Call) and getattr(node.func, "id", "") == "L"
-                and len(node.args) >= 10):
-            continue
-        v = [x.value if isinstance(x, ast.Constant) else None for x in node.args[:10]]
-        if v[1] != city or not isinstance(v[0], int) or not isinstance(v[7], str):
-            continue
-        seg = "\n".join(lines[node.lineno - 1:node.end_lineno])
-        out.append({"id": v[0], "url": v[7], "age": v[9],
-                    "photos": photo_names(BDS_PHOTO.findall(seg))})
-    return out
+    """[{id, url, age, photos}] -- строки города прямо из listings/ (а не из собранной
+    страницы: на ПК она свежа лишь на момент последней сборки сервера, и строк,
+    заведённых после неё, в ней нет -- повторный сбор завёл бы их ссылки снова и не
+    увидел бы их фотографий)."""
+    from listing_lock import load_rows
+    return [{"id": r["id"], "url": r["url"], "age": r.get("daysAgo"),
+             "photos": photo_names((r.get("details") or {}).get("photos"))}
+            for r in load_rows() if r["city"] == city and isinstance(r.get("url"), str)]
 
 
 def photo_twins(mine, age, rows):
@@ -517,7 +502,7 @@ def commit_rows(path):
            "Districts come from the portal itself: it prints the current ward in the card\n"
            "and the ward of the address in the ad's own URL.\n\n"
            "Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>")
-    return repo_sync.commit_and_push(["rebuild_final.py", path], msg, path)
+    return repo_sync.commit_and_push(["listings", path], msg, path)
 
 
 def allocate(n):
@@ -756,7 +741,7 @@ def main():
         return 1 if detail_blocked else 0
     if a.commit and a.insert:
         # До номеров и вставки, а не после: см. repo_sync.
-        why = repo_sync.prepare(["rebuild_final.py"])
+        why = repo_sync.prepare(["listings"])
         if why:
             print("заведение отложено -- %s" % why)
             # Не 0: прогон судит о шаге по коду выхода, и 13.09 его сводка

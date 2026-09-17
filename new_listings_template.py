@@ -9,14 +9,14 @@ Everything that used to be copy-pasted boilerplate at the bottom of every
 batch file (read rebuild_final.py, find the marker, replace, write) now
 lives in listing_lock.insert_listings(), which also:
   * takes the write lock, so two sessions can no longer overwrite each
-    other's rows in rebuild_final.py;
-  * refuses ids that are already in the file (re-running a batch used to
-    insert duplicates);
-  * checks that NEW_SRC declares exactly IDS and that exactly len(IDS)
-    rows were added;
-  * re-parses the result and writes it atomically.
+    other's rows;
+  * refuses ids and URLs that are already on the site (re-running a batch
+    used to insert duplicates);
+  * checks that NEW_SRC declares exactly IDS;
+  * writes the rows to listings/<source>/<city>.jsonl atomically (since
+    17 Sep 2026 the rows live there, not in rebuild_final.py).
 
-Do NOT open or write rebuild_final.py yourself in a batch file.
+Do NOT open or write rebuild_final.py or listings/ yourself in a batch file.
 """
 from listing_lock import insert_listings
 

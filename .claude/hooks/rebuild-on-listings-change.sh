@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # PostToolUse hook (Edit|Write|MultiEdit).
 #
-# rebuild_final.py and the new_listingsN.py data files at the repo root have
-# no test suite. This is the only safety net: after any edit to
-# rebuild_final.py itself, or to a new_listings*.py data file, rebuild the
+# rebuild_final.py, the new_listingsN.py batch files and the rows in
+# listings/<source>/<city>.jsonl have no test suite. This is the only safety
+# net: after any edit to one of them, rebuild the
 # static site and surface whether it succeeded. Non-blocking — the edit has
 # already happened; this only reports success/failure back to Claude.
 set -u
@@ -27,6 +27,9 @@ base="${norm##*/}"
 
 case "$base" in
   rebuild_final.py|new_listings*.py)
+    ;;
+  *.jsonl)
+    case "$norm" in */listings/*) ;; *) exit 0 ;; esac
     ;;
   *)
     exit 0

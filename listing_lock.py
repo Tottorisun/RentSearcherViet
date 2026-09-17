@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-One lock for every script that rewrites rebuild_final.py, plus the only
-sanctioned way to insert new L(...) rows into it.
+One lock for every script that changes the listing rows, plus the only
+sanctioned way to insert and remove them.
 
 WHY THIS EXISTS. allocate_ids.py serialises the hand-out of listing ids, but
 not the write of the file itself. Two sessions could still each read
@@ -12,25 +12,32 @@ That is the class of failure allocate_ids.py's own header says has happened
 four times; the id lock closed the hand-out, this closes the write
 (2 Sep 2026 audit, HIGH-4).
 
+WHERE THE ROWS LIVE. Since 17 Sep 2026 in listings/<source>/<city>.jsonl, one
+JSON object per line -- the dict rebuild_final.py's L() builds, plus postedOn and
+seq (see DATA_DIR below). rebuild_final.py is the page template and loads them.
+
 USAGE
-    from listing_lock import insert_listings
+    from listing_lock import insert_listings, remove_listings
     insert_listings(NEW_SRC, ids, owner="hcmc batch 108")
+    remove_listings([...ids...], owner="remove_gone")
 
-  or, for any other read-modify-write of rebuild_final.py:
+  or, for any other read-modify-write of the rows:
 
-    from listing_lock import listings_write_lock, write_source_atomic
+    from listing_lock import listings_write_lock, load_rows, save_rows
     with listings_write_lock("purge"):
-        src = open("rebuild_final.py", encoding="utf-8").read()
+        rows = load_rows()
         ...
-        write_source_atomic(new_src)
+        save_rows(rows)
 
-insert_listings() is idempotent and self-checking: it refuses an id that is
-already in the file (re-running a batch used to duplicate it), checks that
-the batch declares exactly the ids it contains, verifies that exactly
-len(ids) rows were added, re-parses the result with ast, and writes through
-a temp file + os.replace so no reader ever sees a half-written file.
+insert_listings() is idempotent and self-checking: it refuses an id or a URL
+that is already on the site (re-running a batch used to duplicate it), checks
+that the batch declares exactly the ids it contains, and save_rows() writes
+every changed file through a temp file + os.replace so no reader ever sees a
+half-written file.
 """
 import ast
+import collections
+import json
 import os
 import re
 import sys
@@ -39,7 +46,6 @@ from contextlib import contextmanager
 
 SOURCE = "rebuild_final.py"
 LOCK_FILE = ".listings_write.lock"
-MARKER = "]\n\n# Real lat/lon"
 TIMEOUT_S = 180      # a purge or a batch insert takes seconds; 3 minutes of waiting is plenty
 STALE_S = 900        # a holder silent for 15 minutes is dead, not slow
 
@@ -82,7 +88,7 @@ def acquire(owner=""):
                 except OSError:
                     holder = "?"
                 sys.exit("could not lock %s within %ds -- another session is writing it "
-                         "(lock holder: %s). Retry shortly." % (SOURCE, TIMEOUT_S, holder))
+                         "(lock holder: %s). Retry shortly." % (DATA_DIR, TIMEOUT_S, holder))
             time.sleep(0.5)
 
 
@@ -102,47 +108,33 @@ def listings_write_lock(owner=""):
         release()
 
 
-def listing_ids(src):
+def listing_ids(src=None):
+    """id строк: без аргумента -- всех строк в listings/; с текстом -- вызовов L(...)
+    в нём (так их считает партия)."""
+    if src is None:
+        return [r["id"] for r in load_rows()]
     return [int(x) for x in re.findall(r"^L\((\d+),", src, re.M)]
 
 
 # ---------------------------------------------------------------------------
-# Шаблон без строк объявлений. 17.09.2026 rebuild_final.py весил 8.5 МБ, из них
-# 7.1 МБ -- тело LISTINGS, и ast.parse целого файла стоил 164 МБ памяти и ~1 с.
-# Сборщикам нужен оттуда CITIES или одна функция (_ru_days_label), а
-# collect_chotot разбирал весь файл заново на КАЖДУЮ строку партии -- 500 раз за
-# прогон при пределе службы на сервере MemoryHigh=300M. Два прогона подряд Chợ
-# Tốt не уложился в 3600 с, dotproperty -- в 4800 с. Без тела LISTINGS разбор
-# стоит 7 МБ и сотые доли секунды, а функция и CITIES запоминаются на процесс.
-
-def _listings_span(src):
-    """(начало, конец) тела LISTINGS: от «LISTINGS = [» до MARKER. None -- не нашлось."""
-    start = src.find("\nLISTINGS = [")
-    end = src.find(MARKER)
-    if start < 0 or end < 0 or end < start:
-        return None
-    return start, end
-
-
-def template_without_listings(src=None):
-    """rebuild_final.py с пустым LISTINGS -- для CITIES и функций шаблона."""
-    if src is None:
-        src = open(SOURCE, encoding="utf-8").read()
-    span = _listings_span(src)
-    if not span:
-        return src
-    return src[:span[0]] + "\nLISTINGS = [\n" + src[span[1]:]
-
+# Функции и CITIES шаблона -- для сборщиков; каждая разбирается один раз на
+# процесс. 17.09.2026 collect_chotot разбирал весь rebuild_final.py (тогда ещё со
+# строками, 164 МБ на разбор) на КАЖДУЮ строку партии -- 500 раз за прогон, и два
+# прогона подряд не уложился в таймаут при пределе службы MemoryHigh=300M.
 
 _TEMPLATE_CACHE = {}
 
 
+def _template_tree():
+    with open(SOURCE, encoding="utf-8") as f:
+        return ast.parse(f.read())
+
+
 def template_function(name):
-    """Функция шаблона (например _ru_days_label), разобранная один раз на процесс."""
+    """Функция шаблона (например _ru_days_label или L), разобранная один раз на процесс."""
     key = ("fn", name)
     if key not in _TEMPLATE_CACHE:
-        tree = ast.parse(template_without_listings())
-        fn = next(x for x in ast.walk(tree) if isinstance(x, ast.FunctionDef) and x.name == name)
+        fn = next(x for x in ast.walk(_template_tree()) if isinstance(x, ast.FunctionDef) and x.name == name)
         ns = {}
         exec(ast.unparse(fn), ns)
         _TEMPLATE_CACHE[key] = ns[name]
@@ -153,112 +145,121 @@ def template_cities():
     """CITIES шаблона. Возвращается новая копия: вызывающие вправе её менять."""
     key = ("cities",)
     if key not in _TEMPLATE_CACHE:
-        tree = ast.parse(template_without_listings())
-        node = next(n for n in ast.walk(tree)
+        node = next(n for n in ast.walk(_template_tree())
                     if isinstance(n, ast.Assign) and any(getattr(t, "id", None) == "CITIES" for t in n.targets))
         _TEMPLATE_CACHE[key] = ast.unparse(node.value)
     return ast.literal_eval(_TEMPLATE_CACHE[key])
 
 
-def listing_elements(src):
-    """Узлы элементов LISTINGS с НАСТОЯЩИМИ номерами строк файла -- то же, что
-    `LISTINGS.value.elts` из ast.parse целого файла, но каждый разобран отдельно
-    (17.09.2026: целиком это 155-164 МБ, два раза подряд -- больше предела службы).
-    None -- тело LISTINGS не нашлось. Ошибка синтаксиса в строке -- SyntaxError."""
-    span = _listings_span(src)
-    if not span:
-        return None
-    body = src[span[0]:span[1]]
-    starts = [m.start() for m in re.finditer(r"^L\(", body, re.M)]
-    out, line, prev = [], 1, 0
-    for i, a in enumerate(starts):
-        off = span[0] + a
-        line += src.count("\n", prev, off)
-        prev = off
-        chunk = body[a:(starts[i + 1] if i + 1 < len(starts) else len(body))]
-        mod = ast.parse(chunk)
-        for stmt in mod.body:
-            value = stmt.value if isinstance(stmt, ast.Expr) else stmt
-            for e in (value.elts if isinstance(value, ast.Tuple) else [value]):
-                ast.increment_lineno(e, line - 1)
-                out.append(e)
+# ---------------------------------------------------------------------------
+# Строки объявлений -- в listings/<источник>/<город>.jsonl, по одной на строку
+# файла (с 17.09.2026). До того они стояли в rebuild_final.py кодом L(...): 9.9 МБ
+# на 5181 строку, и всякий, кто их читал или правил, разбирал этот код -- при
+# пределе памяти службы на сервере (MemoryHigh=300M, прогон 17.09 17:00 дошёл до
+# 302 МБ). Строка файла -- словарь, который строит L() шаблона, плюс поля только
+# для хранения: postedOn (дата выкладки, нужна чистке) и seq (порядок строк на
+# сайте). Файлы -- по источникам и городам: сервер и ПК пишут в основном разные
+# файлы, а git сравнивает построчно.
+
+DATA_DIR = "listings"
+STORE_ONLY = ("postedOn", "seq")
+
+
+def row_path(row, data_dir=None):
+    return os.path.join(data_dir or DATA_DIR, row.get("source") or "chotot", "%s.jsonl" % row["city"])
+
+
+def _row_files(data_dir=None):
+    base = data_dir or DATA_DIR
+    if not os.path.isdir(base):
+        sys.exit("нет каталога %s/ со строками объявлений -- запускайте из каталога проекта" % base)
+    out = []
+    for source in sorted(os.listdir(base)):
+        d = os.path.join(base, source)
+        if os.path.isdir(d):
+            out.extend(os.path.join(d, f) for f in sorted(os.listdir(d)) if f.endswith(".jsonl"))
     return out
 
 
-def iter_listing_blocks(src):
-    """Текст каждого L(...) из тела LISTINGS по отдельности -- от строки «L(» до
-    следующей такой строки (с хвостовыми пустыми строками и комментариями).
-    None -- тело LISTINGS не нашлось."""
-    span = _listings_span(src)
-    if not span:
-        return None
-    body = src[span[0]:span[1]]
-    starts = [m.start() for m in re.finditer(r"^L\(", body, re.M)]
-    return [body[a:(starts[i + 1] if i + 1 < len(starts) else len(body))] for i, a in enumerate(starts)]
+def _site_order(row):
+    return (row.get("seq", 0), row["id"])
 
 
-def write_source_atomic(new_src):
-    """Refuse to write anything that is not valid Python; then replace the
-    file in one step so a concurrent reader gets old-or-new, never half.
-
-    The check parses the template without its rows once and then every row on
-    its own (17 Sep 2026: a whole-file ast.parse cost 164 MB, see above). Any
-    syntax error is still caught: inside a row it breaks that row's parse, and
-    stray text between rows belongs to the row before it."""
-    blocks = iter_listing_blocks(new_src)
-    if blocks is None:
-        ast.parse(new_src)
-    else:
-        ast.parse(template_without_listings(new_src))
-        for b in blocks:
-            ast.parse(b)
-    tmp = "%s.tmp.%d" % (SOURCE, os.getpid())
-    with open(tmp, "w", encoding="utf-8") as f:
-        f.write(new_src)
-    os.replace(tmp, SOURCE)
+def load_rows(data_dir=None):
+    """Все строки -- словарями, в порядке сайта (seq, id)."""
+    rows = []
+    for path in _row_files(data_dir):
+        with open(path, encoding="utf-8") as f:
+            for n, line in enumerate(f, 1):
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rows.append(json.loads(line))
+                except ValueError as ex:
+                    sys.exit("%s, строка %d: не JSON (%s) -- файл строк испорчен, ничего не сделано"
+                             % (path, n, ex))
+    rows.sort(key=_site_order)
+    return rows
 
 
-def find_blocks(src):
-    """{listing id: (first line, last line)} for every L(...) element of the
-    LISTINGS list, via ast -- exact, never a regex guess. Lines are 1-based
-    and inclusive, so `lines[a-1:b]` is the block."""
-    elements = listing_elements(src)
-    if elements is None:
-        sys.exit("could not find exactly one `LISTINGS = [...]` list in %s" % SOURCE)
-    out = {}
-    for e in elements:
-        if isinstance(e, ast.Call) and e.args and isinstance(e.args[0], ast.Constant):
-            out[int(e.args[0].value)] = (e.lineno, e.end_lineno)
-    return out
+def load_page_rows(data_dir=None):
+    """Строки для страницы -- без полей хранения. Ни одной строки -- отказ, а не пустой сайт."""
+    rows = load_rows(data_dir)
+    if not rows:
+        sys.exit("в %s/ нет ни одной строки объявления -- пустой сайт не собирается" % (data_dir or DATA_DIR))
+    return [{k: v for k, v in r.items() if k not in STORE_ONLY} for r in rows]
+
+
+def _dump(row):
+    return json.dumps(row, ensure_ascii=False, separators=(",", ":"))
+
+
+def save_rows(rows, data_dir=None):
+    """Записать ПОЛНЫЙ набор строк. Переписывается только файл, чьё содержимое
+    изменилось (временный файл + os.replace); опустевший файл удаляется.
+    Вызывать под listings_write_lock."""
+    ids = [r["id"] for r in rows]
+    if len(set(ids)) != len(ids):
+        dup = [i for i, n in collections.Counter(ids).items() if n > 1]
+        sys.exit("save_rows: повторяющиеся id %s -- ничего не записано" % dup[:10])
+    by_path = collections.defaultdict(list)
+    for r in rows:
+        by_path[row_path(r, data_dir)].append(r)
+    existing = set(_row_files(data_dir))
+    for path in sorted(set(by_path) | existing):
+        text = "".join(_dump(r) + "\n" for r in sorted(by_path.get(path, []), key=_site_order))
+        if path in existing:
+            with open(path, encoding="utf-8", newline="") as f:
+                if f.read() == text:
+                    continue
+        if not text:
+            os.remove(path)
+            continue
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        tmp = "%s.tmp.%d" % (path, os.getpid())
+        with open(tmp, "w", encoding="utf-8", newline="\n") as f:
+            f.write(text)
+        os.replace(tmp, path)
 
 
 def remove_listings(ids, owner="remove"):
-    """Delete the L(...) blocks of `ids` under the write lock. Ids not in the
-    file are reported and skipped; the rewrite is re-parsed and its block
-    count checked before anything is written. Returns the ids removed."""
+    """Снять строки с этими id под блокировкой. Отсутствующие id называются и
+    пропускаются. Возвращает снятые id."""
     ids = sorted({int(i) for i in ids})
     if not ids:
         return []
     with listings_write_lock(owner):
-        src = open(SOURCE, encoding="utf-8").read()
-        blocks = find_blocks(src)
-        missing = [i for i in ids if i not in blocks]
+        rows = load_rows()
+        present = {r["id"] for r in rows}
+        missing = [i for i in ids if i not in present]
         if missing:
-            print("remove_listings: not in %s (already gone?): %s" % (SOURCE, missing))
-        todo = [i for i in ids if i in blocks]
+            print("remove_listings: not in %s (already gone?): %s" % (DATA_DIR, missing))
+        todo = [i for i in ids if i in present]
         if not todo:
             return []
-        lines = src.split("\n")
-        for i in sorted(todo, key=lambda i: blocks[i][0], reverse=True):
-            a, b = blocks[i]
-            start, end = a - 1, b
-            if end < len(lines) and lines[end].strip() == "":
-                end += 1                       # swallow one trailing blank line
-            del lines[start:end]
-        new_src = "\n".join(lines)
-        if len(find_blocks(new_src)) != len(blocks) - len(todo):
-            sys.exit("remove_listings: block count after rewrite is wrong -- nothing written")
-        write_source_atomic(new_src)
+        drop = set(todo)
+        save_rows([r for r in rows if r["id"] not in drop])
     return todo
 
 
@@ -267,61 +268,66 @@ def remove_listings(ids, owner="remove"):
 SHARED_URL_SOURCES = {"telegram", "facebook"}
 
 
-def _listing_urls(src):
-    """{нормализованный url: id} по всем L(...) в тексте -- через ast, не регуляркой.
-
-    Работает и с целым rebuild_final.py, и с фрагментом партии: фрагмент
-    `L(...),\nL(...),` разбирается как кортежное выражение, поэтому просто
-    обходим все вызовы L в дереве, а не ищем присваивание LISTINGS.
-    """
+def _listing_urls(rows):
+    """{нормализованный url: id} -- кроме источников с общей ссылкой; при повторе -- первый."""
     out = {}
-    # Весь файл -- по строке за раз, и дерево каждой строки сразу отпускается
-    # (целиком было 164 МБ, 17.09.2026); фрагмент партии разбирается целиком, как
-    # раньше. Ошибка синтаксиса где угодно -- пустой ответ, как и прежде.
-    blocks = iter_listing_blocks(src)
-    try:
-        for tree in ((ast.parse(src),) if blocks is None else (ast.parse(b) for b in blocks)):
-            for node in ast.walk(tree):
-                if not (isinstance(node, ast.Call) and getattr(node.func, "id", "") == "L"):
-                    continue
-                if len(node.args) < 8:
-                    continue
-                kw = {k.arg: (k.value.value if isinstance(k.value, ast.Constant) else None)
-                      for k in node.keywords}
-                if kw.get("source", "chotot") in SHARED_URL_SOURCES:
-                    continue
-                lid = node.args[0].value if isinstance(node.args[0], ast.Constant) else None
-                url = node.args[7].value if isinstance(node.args[7], ast.Constant) else None
-                if lid is None or not isinstance(url, str):
-                    continue
-                out.setdefault(url.split("?")[0].rstrip("/"), lid)
-    except SyntaxError:
-        return {}
+    for r in rows:
+        if (r.get("source") or "chotot") in SHARED_URL_SOURCES:
+            continue
+        url = r.get("url")
+        if isinstance(url, str):
+            out.setdefault(url.split("?")[0].rstrip("/"), r["id"])
     return out
 
 
-def _url_clashes(src, new_src):
-    """[(url, id уже заведённой строки)] для ссылок партии, которые уже в файле."""
-    have = _listing_urls(src)
-    return [(u, have[u]) for u in _listing_urls(new_src) if u in have]
+def rows_from_src(new_src):
+    """Текст партии -- строки `L(...),` -- в словари, как их строит L() шаблона.
+    Аргументы -- только литералы (так написаны все партии: 8694 вызова на
+    17.09.2026). postedOn L() в данные страницы не кладёт; здесь он сохраняется."""
+    L = template_function("L")
+    try:
+        tree = ast.parse(new_src.strip("\n") + "\n")
+    except SyntaxError as ex:
+        sys.exit("NEW_SRC is not valid Python (%s) -- fix the batch file, nothing written" % ex)
+    rows = []
+    for stmt in tree.body:
+        value = stmt.value if isinstance(stmt, ast.Expr) else None
+        for call in (value.elts if isinstance(value, ast.Tuple) else [value]):
+            if not (isinstance(call, ast.Call) and getattr(call.func, "id", "") == "L"):
+                sys.exit("NEW_SRC, line %d: only `L(...),` rows are allowed -- nothing written" % stmt.lineno)
+            try:
+                args = [ast.literal_eval(a) for a in call.args]
+                kw = {k.arg: ast.literal_eval(k.value) for k in call.keywords}
+            except ValueError:
+                sys.exit("NEW_SRC, line %d: L(...) arguments must be literals -- nothing written" % call.lineno)
+            row = L(*args, **kw)
+            if kw.get("postedOn") is not None:
+                row["postedOn"] = kw["postedOn"]
+            rows.append(row)
+    return rows
 
 
 def insert_listings(new_src, ids, owner="batch"):
-    """Insert NEW_SRC -- one or more complete `L(...),` rows, each starting at
-    column 0 -- at the end of the LISTINGS list. Idempotent and self-checking."""
+    """Завести строки партии -- NEW_SRC из строк `L(...),` -- в listings/. Партия
+    объявляет ровно свои id; ни id, ни ссылки ещё не должно быть на сайте. Новые
+    строки встают в конец порядка сайта (seq)."""
     ids = sorted(int(i) for i in ids)
-    new_src = new_src.strip("\n") + "\n"
     in_new = sorted(listing_ids(new_src))
     if in_new != ids:
         sys.exit("NEW_SRC contains ids %s but the batch declares %s -- fix the batch file" % (in_new, ids))
+    new_rows = rows_from_src(new_src)
+    if sorted(r["id"] for r in new_rows) != ids:
+        sys.exit("NEW_SRC rows carry ids %s but the batch declares %s -- fix the batch file"
+                 % (sorted(r["id"] for r in new_rows), ids))
     with listings_write_lock(owner):
-        src = open(SOURCE, encoding="utf-8").read()
-        present = set(listing_ids(src))
+        rows = load_rows()
+        present = {r["id"] for r in rows}
         clash = [i for i in ids if i in present]
         if clash:
             sys.exit("refusing to insert: id(s) already in %s: %s -- was this batch already "
-                     "applied, or were the ids handed out twice? Nothing written." % (SOURCE, clash))
-        dup_urls = _url_clashes(src, new_src)
+                     "applied, or were the ids handed out twice? Nothing written." % (DATA_DIR, clash))
+        have = _listing_urls(rows)
+        dup_urls = [(u, have[u]) for u in _listing_urls(new_rows) if u in have]
         if dup_urls:
             sys.exit("refusing to insert: %d listing(s) whose URL is already in %s.\n%s\n"
                      "Один и тот же URL -- это одно и то же объявление. Проверка по id этого "
@@ -329,16 +335,11 @@ def insert_listings(new_src, ids, owner="batch"):
                      "id. 8 сентября 2026 так набралось 49 задвоенных ссылок, 13 из них за одни "
                      "сутки. Уберите повтор из партии; если это осознанное исключение (ссылка на "
                      "канал, а не на объявление) -- добавьте источник в SHARED_URL_SOURCES."
-                     % (len(dup_urls), SOURCE,
+                     % (len(dup_urls), DATA_DIR,
                         "\n".join("  %s уже заведён как id %s" % (u, i) for u, i in dup_urls)))
-        if src.count(MARKER) != 1:
-            sys.exit("marker %r found %d time(s) in %s, expected exactly 1 -- nothing written"
-                     % (MARKER, src.count(MARKER), SOURCE))
-        out = src.replace(MARKER, new_src + MARKER, 1)
-        added = len(listing_ids(out)) - len(present)
-        if added != len(ids):
-            sys.exit("expected to add %d row(s) but the rewritten file has %d more -- nothing written"
-                     % (len(ids), added))
-        write_source_atomic(out)
-    print("inserted %d listing(s) into %s: %d..%d" % (len(ids), SOURCE, ids[0], ids[-1]))
+        seq = max((r.get("seq", 0) for r in rows), default=-1) + 1
+        for n, r in enumerate(new_rows):
+            r["seq"] = seq + n
+        save_rows(rows + new_rows)
+    print("inserted %d listing(s) into %s: %d..%d" % (len(ids), DATA_DIR, ids[0], ids[-1]))
     return len(ids)

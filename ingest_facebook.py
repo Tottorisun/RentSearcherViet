@@ -56,7 +56,7 @@ Thạnh/Phú Nhuận в Tân Mỹ -- район 7 на другом конце �
 ЗАПУСК
     python ingest_facebook.py                     отчёт: что завелось бы и почему нет
     python ingest_facebook.py --write             записать партию new_listingsNNN.py
-    python ingest_facebook.py --write --insert    и вставить её в rebuild_final.py
+    python ingest_facebook.py --write --insert    и вставить её в listings/
     python ingest_facebook.py --write --insert --commit   и закоммитить (так зовёт
         run_pipeline.py на ПК: сервер соберёт сайт, только когда строки в репозитории)
 """
@@ -634,7 +634,7 @@ def load_state():
 
 
 # Сколько дней помнить пост, чьей строки на сайте уже не видно. Ноль ставить
-# нельзя: заведённая строка попадает в rebuild_final.py сразу, а в
+# нельзя: заведённая строка попадает в listings/ сразу, а в
 # vietnam-rent-finder.html, откуда Ctx читает сайт, -- только после сборки, а
 # сборку с 11 сентября делает сервер. Забыв запись в тот же день, следующий
 # прогон завёл бы тот же пост второй раз.
@@ -740,15 +740,15 @@ def commit(path, accepted):
     """Коммит только своих файлов -- и только если чужой работы в них нет.
 
     Здесь, в отличие от сервера, репозиторий рабочий: в нём сидит сессия. Если
-    rebuild_final.py уже изменён кем-то ещё, `git add` унёс бы чужую работу в
+    listings/ уже изменён кем-то ещё, `git add` унёс бы чужую работу в
     чужой коммит. Тогда партия просто остаётся на диске."""
     photos = sorted({os.path.dirname(p) for r in accepted for p in r["details"]["photos"]})
     # Файл состояния -- тоже свой: он отслеживается, и не попади он в коммит,
     # изменённым он сорвал бы pull следующему прогону.
-    files = ["rebuild_final.py", STATE, path] + photos
+    files = ["listings", STATE, path] + photos
     # Каталоги с фотографиями должны быть НЕ исключены из репозитория. Сейчас
     # они исключены (.gitignore, правило fb_photos/), и git add на исключённом
-    # пути обрывается целиком: не добавляется ни фотография, ни rebuild_final,
+    # пути обрывается целиком: не добавляется ни фотография, ни строки,
     # ни сама партия, а следом падает git commit -- и всё это выглядело как
     # «git commit не прошёл» без единого слова о причине.
     blocked = ((git("check-ignore", "-v", "--", *photos).stdout or "").strip().splitlines())
@@ -843,7 +843,7 @@ def main():
         return 0
     if a.commit and a.insert:
         # До номеров и вставки, а не после: см. repo_sync.
-        why = repo_sync.prepare(["rebuild_final.py", STATE])
+        why = repo_sync.prepare(["listings", STATE])
         if why:
             print("заведение отложено -- %s" % why)
             # Не 0: прогон судит о шаге по коду выхода, и 13.09 его сводка
@@ -859,7 +859,7 @@ def main():
     # записи партии номера оставались висеть в ledger'е сутки. Освобождать не
     # опасно: allocate_ids держит высшую отметку (hwm) по каждому блоку и
     # никогда не выдаёт номер повторно, даже если строка ещё не в
-    # rebuild_final.py.
+    # listings/.
     try:
         path = write_batch(accepted, skipped, ids, today)
         print("\nзаписано: %s -- %d строк, id %d..%d" % (path, len(ids), ids[0], ids[-1]))

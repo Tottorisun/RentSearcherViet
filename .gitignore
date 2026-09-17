@@ -25,6 +25,7 @@ id_reservations.json
 # конец прогона -- удалить: в истории появлялся файл, которого нет.
 .pipeline.lock
 rebuild_final.py.tmp*
+listings/**/*.tmp.*
 *.html.tmp.*
 posted_dates.json.tmp
 liveness_cache.json.tmp

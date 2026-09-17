@@ -8,7 +8,7 @@ The 7-day purge only knows a listing's age. A flat that gets rented on day
 the 40 oldest Chợ Tốt rows). This script asks Chợ Tốt whether each ad still
 exists (check_freshness.fetch: 404/410 = GONE, anything else = still there
 or a transport error, which never counts as gone) and removes the GONE
-rows from rebuild_final.py under the write lock, then drops their
+rows from listings/ under the write lock, then drops their
 posted_dates anchors. The same answer carries the ad's own timestamps, so
 it also (a) removes rows Chợ Tốt itself proves are older than 7 whole
 days (STALE -- a session once dated five listings "today" that were 2-12

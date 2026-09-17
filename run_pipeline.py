@@ -234,7 +234,7 @@ def steps_for(a):
                         fatal=False, timeout=900))
         # Посты шести агентств, написанные по шаблону, заводит программа; прочие
         # остаются кандидатами для ручного разбора. Только там, где прогон
-        # публикует: на ПК (--candidates-only) вставка в rebuild_final.py
+        # публикует: на ПК (--candidates-only) вставка в listings/
         # оставила бы грязное дерево под носом у сессии, которая заводит руками.
         if not a.candidates_only:
             out.append(Step("Telegram: заведение по шаблонам",
@@ -257,18 +257,18 @@ def steps_for(a):
                  [py, "backfill_chotot_coords.py", "--limit", "150"], fatal=False, timeout=1800),
         ]
     # Порядок сборки не произволен: build_pins_step2_geocode.py читает DATA из
-    # СОБРАННОЙ страницы, а не из rebuild_final.py, поэтому сборка идёт и до
+    # СОБРАННОЙ страницы, а не из listings/, поэтому сборка идёт и до
     # карты, и после. step1 не зовём никогда: он переписывает pin_projections.json
     # целиком и стирает вручную добавленные Бинь Зыонг и Фукуок.
     out += [
-        # build_site.py, а не rebuild_final.py: то же самое побайтно (проверено 17.09.2026
-        # на всех 44 файлах сборки), но строки объявлений вычисляются по одной, и пик
-        # памяти 162 МБ вместо 276 -- у службы на сервере предел MemoryHigh=300M.
-        Step("сборка сайта", [py, "build_site.py"], timeout=900),
+        # Строки объявлений шаблон читает из listings/ (с 17.09.2026), поэтому
+        # сборка больше не компилирует их кодом: 17.09 это было 9.9 МБ и пик 276 МБ
+        # при пределе службы на сервере MemoryHigh=300M.
+        Step("сборка сайта", [py, "rebuild_final.py"], timeout=900),
         Step("карта: координаты", [py, "build_pins_step2_geocode.py"], timeout=3600),
         Step("карта: проекции пинов", [py, "build_pins_step3_project.py"]),
         Step("карта: данные Leaflet", [py, "build_leaflet_data.py"]),
-        Step("сборка сайта (после карты)", [py, "build_site.py"], timeout=900),
+        Step("сборка сайта (после карты)", [py, "rebuild_final.py"], timeout=900),
     ]
     if a.candidates_only:
         out = [st for st in out if st.name.startswith(("Facebook:", "Telegram:", "batdongsan:"))]

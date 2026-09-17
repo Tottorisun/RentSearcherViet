@@ -6,9 +6,9 @@ web previews (https://t.me/s/<channel>) for the Rent Searcher project.
 It fetches, parses and de-duplicates rental posts and writes
 `telegram_candidates.json` -- a list of *candidates* that a human (or the
 daily-check agent) must verify before anything is inserted into
-rebuild_final.py.
+listings/.
 
-This script NEVER writes to rebuild_final.py, never inserts listings and never
+This script NEVER writes to listings/, never inserts listings and never
 assigns a project district key: the address text needs judgement, so district
 assignment stays with the reviewer. `district_hits` / `landmark_hits` /
 `address_lines` are hints only.

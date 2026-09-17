@@ -68,7 +68,7 @@ sys.path.insert(0, HERE)
 
 import fb_collect as fc
 import repo_sync
-from listing_lock import SOURCE, listing_ids, remove_listings
+from listing_lock import listing_ids, remove_listings
 from site_data import load_listings
 
 # Не «_fb_…»: под этот шаблон ingest_facebook.py ищет файлы кандидатов, и память
@@ -201,7 +201,7 @@ def main():
     # 3000237, снятые накануне: страница была ещё вчерашней, потому что шаг Facebook
     # перед проверкой ничего не завёл и репозиторий не подтягивал. Две из 25 проверок
     # ушли впустую. Проверяются только строки, которые есть в самом rebuild_final.py.
-    present = set(listing_ids(open(SOURCE, encoding="utf-8").read()))
+    present = set(listing_ids())
     fb = [l for l in listings if (l.get("source") or "").startswith("fb") and l["id"] in present]
     rows = [l for l in fb if GROUP_POST.search(l.get("url") or "") or MARKET_ITEM.search(l.get("url") or "")]
     cache = load_cache()
@@ -254,7 +254,7 @@ def main():
 
     ids = sorted(l["id"] for l, _ in gone)
     if a.commit:
-        why = repo_sync.prepare(["rebuild_final.py"])
+        why = repo_sync.prepare(["listings"])
         if why:
             print("снятие отложено -- %s" % why)
             return 1
@@ -277,7 +277,7 @@ def main():
            "found \"This content isn't available\" on an almost empty page:\n%s\n\n"
            "Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
            % (len(removed), "\n".join("  %s  %s  %s" % (l["id"], l["city"], l["url"]) for l, _ in gone)))
-    err = repo_sync.commit_and_push(["rebuild_final.py"] + tracked, msg,
+    err = repo_sync.commit_and_push(["listings"] + tracked, msg,
                                     redo=lambda: None if remove_listings(ids, owner=__file__) is not None
                                     else "снятие не повторилось")
     print(err if err else "закоммичено и запушено: снято %d" % len(removed))

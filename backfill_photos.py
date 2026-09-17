@@ -10,10 +10,7 @@ could, and 283 listings sit at 0-2 photos, which is below the hub's
 
 This script fetches the ad's full image list from the same endpoint
 check_freshness uses, keeps the first CAP of them, and rewrites the
-`details.photos` list of that L(...) row in rebuild_final.py -- under the
-write lock, located through ast (never a regex over the whole file), with
-the result re-parsed and every touched row's photo list read back before
-anything is written.
+`details.photos` list of that row in listings/ -- under the write lock.
 
 CAP is 6, not "all": the URLs live in the page's inline JSON, so photos
 cost page weight even before a single image is fetched. Measured 3 Sep
@@ -30,10 +27,10 @@ rebuild_final.py/site_data.py roughly cancels out; 8 would be +1.2 MB and
 Progress lives in photos_backfill_cache.json (tracked), so runs resume
 where the last one stopped and a row is not re-fetched for nothing.
 """
-import ast, json, os, re, sys, time
+import json, os, re, sys, time
 
 from site_data import load_listings
-from listing_lock import listings_write_lock, write_source_atomic, find_blocks, SOURCE
+from listing_lock import listings_write_lock, load_rows, save_rows, DATA_DIR
 import check_freshness as cf
 
 CAP = 6
@@ -132,100 +129,48 @@ def main():
         print("nothing to write")
         return
 
-    # --- write phase, under the lock, offsets computed from the file as it is
-    # right now (the sweep or a batch insert may have changed it meanwhile).
+    # --- write phase, under the lock, over the rows as they are right now (the
+    # sweep or a batch insert may have changed them meanwhile).
     with listings_write_lock("backfill_photos"):
-        src = open(SOURCE, encoding="utf-8").read()
-        tree = ast.parse(src)
-        calls = {}
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Call) and getattr(node.func, "id", None) == "L" \
-                    and node.args and isinstance(node.args[0], ast.Constant):
-                calls[int(node.args[0].value)] = node
-        edits = []          # (start_offset, end_offset, replacement)
+        rows = load_rows()
+        by_id = {r["id"]: r for r in rows}
         skipped = []
         for lid, imgs in found.items():
-            call = calls.get(lid)
-            if call is None:
-                skipped.append((lid, "row is no longer in the file"))
+            row = by_id.get(lid)
+            if row is None:
+                skipped.append((lid, "row is no longer in %s" % DATA_DIR))
                 continue
-            details = next((k.value for k in call.keywords if k.arg == "details"), None)
-            new_list = "[" + ", ".join(json.dumps(u, ensure_ascii=False) for u in imgs) + "]"
-            if details is None:
-                # No details= at all (common among the 0-photo rows): add one,
-                # right after the LAST argument -- not before the closing paren.
-                # Some rows put that paren on its own line after a trailing
-                # comma, so inserting ",\n details=..." there produced ",\n,"
-                # and the rewrite failed to parse (caught by the guard below,
-                # nothing was written, 3 Sep 2026). Appending after the last
-                # argument is valid whether or not a trailing comma follows.
-                ends = list(call.args) + [k.value for k in call.keywords]
-                last = max(ends, key=lambda n: (n.end_lineno, n.end_col_offset))
-                at = _off(src, last.end_lineno, last.end_col_offset)
-                edits.append((at, at, ',\n  details={"photos": ' + new_list + "}"))
-                continue
-            if not isinstance(details, ast.Dict):
-                skipped.append((lid, "details= is not a literal dict"))
-                continue
-            photos_val = None
-            for k, v in zip(details.keys, details.values):
-                if isinstance(k, ast.Constant) and k.value == "photos":
-                    photos_val = v
-            if photos_val is not None:
-                if not isinstance(photos_val, ast.List):
-                    skipped.append((lid, "details['photos'] is not a literal list"))
-                    continue
-                edits.append((_off(src, photos_val.lineno, photos_val.col_offset),
-                              _off(src, photos_val.end_lineno, photos_val.end_col_offset), new_list))
+            details = row.get("details")
+            if not details:
+                _put_details(row, {"photos": imgs})
+            elif "photos" in details:
+                details["photos"] = imgs
             else:
-                # insert `"photos": [...], ` right after the opening brace
-                at = _off(src, details.lineno, details.col_offset) + 1
-                edits.append((at, at, '"photos": ' + new_list + ", "))
-        edits.sort(key=lambda e: e[0], reverse=True)
-        out = src
-        for start, end, text in edits:
-            out = out[:start] + text + out[end:]
-
-        # verify before writing: still parses, same number of rows, and every
-        # touched row really holds the photo list we meant to put there.
-        try:
-            new_tree = ast.parse(out)
-        except SyntaxError as ex:
-            raise SystemExit("rewritten %s does not parse (%s) -- nothing written" % (SOURCE, ex))
-        if len(find_blocks(out)) != len(find_blocks(src)):
-            raise SystemExit("row count changed during the rewrite -- nothing written")
-        check = {}
-        for node in ast.walk(new_tree):
-            if isinstance(node, ast.Call) and getattr(node.func, "id", None) == "L" \
-                    and node.args and isinstance(node.args[0], ast.Constant):
-                d = next((k.value for k in node.keywords if k.arg == "details"), None)
-                if isinstance(d, ast.Dict):
-                    for k, v in zip(d.keys, d.values):
-                        if isinstance(k, ast.Constant) and k.value == "photos":
-                            try:
-                                check[int(node.args[0].value)] = ast.literal_eval(v)
-                            except Exception:
-                                pass
-        bad = [lid for lid, imgs in found.items()
-               if lid not in [s[0] for s in skipped] and check.get(lid) != imgs]
-        if bad:
-            raise SystemExit("photo list did not read back correctly for %s -- nothing written" % bad[:5])
-        write_source_atomic(out)
+                row["details"] = {"photos": imgs, **details}
+        save_rows(rows)
 
     save_json(CACHE_FILE, cache)
-    print("updated %d listing(s) in %s (+%d photos)" % (len(found) - len(skipped), SOURCE, gained))
+    print("updated %d listing(s) in %s (+%d photos)" % (len(found) - len(skipped), DATA_DIR, gained))
     for lid, why in skipped:
         print("  skipped %s: %s" % (lid, why))
     print("now rebuild: python rebuild_final.py")
 
 
-def _off(src, lineno, col):
-    """ast gives (line, column); text splicing needs a character offset. Columns
-    are UTF-8 byte offsets, so the line is measured the same way."""
-    pos = 0
-    for _ in range(lineno - 1):
-        pos = src.index("\n", pos) + 1
-    return pos + len(src[pos:].split("\n")[0].encode("utf-8")[:col].decode("utf-8", "ignore"))
+def _put_details(row, details):
+    """details -- на его место в порядке ключей L(): после descEn, перед cur и полями
+    хранения. Иначе у филиппинской строки (cur="PHP") поля страницы встали бы в
+    другом порядке, чем у такой же строки, заведённой сразу с фотографиями."""
+    out = {}
+    for k, v in row.items():
+        if k in ("cur", "postedOn", "seq") and "details" not in out:
+            out["details"] = details
+        out[k] = v
+    out.setdefault("details", details)
+    row.clear()
+    row.update(out)
+
+
+
 
 
 if __name__ == "__main__":

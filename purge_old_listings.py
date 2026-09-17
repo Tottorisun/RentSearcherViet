@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Recompute each listing's TRUE current age and drop anything older than the
-freshness cutoff (7 days), physically removing its L(...) block from
-rebuild_final.py. Run this as a normal step in the daily-check pipeline,
-BEFORE the final `python rebuild_final.py` bake-in.
+freshness cutoff (7 days), removing its row from listings/<source>/<city>.jsonl.
+Run this as a normal step in the daily-check pipeline, BEFORE the final
+`python rebuild_final.py` bake-in.
 
 Why this exists: each L(...) call's `daysAgo` argument is a snapshot frozen
 at whichever moment that line was written -- it never updates itself as
@@ -13,22 +13,19 @@ to a real absolute post date (backfilled once via git history for anything
 already in the file, cached from then on in posted_dates.json) and
 recomputes the display fields from that anchor every time it runs.
 
-How blocks are located: through `ast`, not regex. rebuild_final.py is valid
-Python, so every L(...) element of the LISTINGS list comes with exact
-line numbers and its positional args (id is args[0], posted label args[8],
-daysAgo args[9]). The previous regex version silently skipped any block
-whose daysAgo was followed by `descEn=` (an older row format) -- four
-Da Nang listings stayed on the site for ever with a frozen "14 дней назад"
-label and no line in the output saying so. With ast there is nothing to
-mis-match, and the rewritten file is re-parsed before it is written.
+Where rows live: since 17 Sep 2026 in listings/<source>/<city>.jsonl, one JSON
+object per line (listing_lock.load_rows/save_rows); before that they were
+L(...) calls inside rebuild_final.py. A row without a plain id, posted label
+and daysAgo is reported and left untouched, never guessed at: a regex version
+of this script once skipped rows silently, and four Da Nang listings stayed on
+the site for ever with a frozen "14 дней назад" label.
 
 The whole read-modify-write runs under listing_lock.listings_write_lock so
 a concurrent batch insert from another session can neither be overwritten
 by this script nor overwrite it.
 """
-import ast, re, os, json, datetime
-from listing_lock import (listings_write_lock, write_source_atomic, listing_elements,
-                          template_without_listings, SOURCE as SRC)
+import os, json, datetime
+from listing_lock import listings_write_lock, load_rows, save_rows, row_path
 
 CUTOFF_DAYS = 7
 
@@ -61,10 +58,6 @@ def posted_label(days_ago):
         return "вчера"
     return f"{days_ago} {ru_day_word(days_ago)} назад"
 
-def const(node):
-    return node.value if isinstance(node, ast.Constant) else None
-
-
 def main():
     today = datetime.date.today()
     try:
@@ -73,42 +66,25 @@ def main():
         posted_dates = {}
 
     with listings_write_lock("purge_old_listings"):
-        src = open(SRC, encoding="utf-8").read()
-        lines = src.split("\n")
-
-        # Элементы LISTINGS разбираются по одному (listing_elements): ast.parse целого
-        # файла стоил 164 МБ, а чистка делала его дважды и держала оба дерева --
-        # больше предела службы на сервере (17.09.2026).
-        elements = listing_elements(src)
-        if elements is None:
-            raise SystemExit("could not find exactly one `LISTINGS = [...]` list in rebuild_final.py -- refusing to touch the file")
-
-        blocks = []   # (lineno, end_lineno, id, posted_label_old, days_ago_old)
-        skipped = []
-        for e in elements:
-            ok = (isinstance(e, ast.Call) and getattr(e.func, "id", None) == "L" and len(e.args) >= 10
-                  and lines[e.lineno - 1].startswith("L(") and lines[e.end_lineno - 1].rstrip().endswith("),"))
-            lid = const(e.args[0]) if ok else None
-            posted_old = const(e.args[8]) if ok else None
-            days_old = const(e.args[9]) if ok else None
-            if not ok or lid is None or not isinstance(days_old, int) or not isinstance(posted_old, str):
-                # never guess/delete on a block we don't fully understand -- but SAY so
-                skipped.append((getattr(e, "lineno", "?"), lid))
-                continue
-            src_kw = next((const(k.value) for k in e.keywords if k.arg == "source"), "chotot")
-            posted_on = next((const(k.value) for k in e.keywords if k.arg == "postedOn"), None)
-            blocks.append((e.lineno, e.end_lineno, str(lid), posted_old, days_old, src_kw, posted_on))
-
-        if skipped:
-            print(f"WARNING: {len(skipped)} block(s) could not be parsed as a plain L(id,...,posted,daysAgo,...) call and were left untouched:")
-            for ln, lid in skipped:
-                print(f"  line {ln}: id={lid}")
+        rows = load_rows()
+        plain = [r for r in rows if isinstance(r.get("id"), int) and isinstance(r.get("daysAgo"), int)
+                 and isinstance(r.get("posted"), str)]
+        if len(plain) != len(rows):
+            print(f"WARNING: {len(rows) - len(plain)} row(s) have no plain id/posted/daysAgo and were left untouched:")
+            for r in rows:
+                if r not in plain:
+                    print(f"  {row_path(r)}: id={r.get('id')}")
 
         kept = 0
         removed_ids = []
         relabelled = 0
-        # Edit from the bottom up so earlier line numbers stay valid.
-        for lineno, end_lineno, lid, posted_old, days_old, src_kw, posted_on in sorted(blocks, key=lambda b: b[0], reverse=True):
+        drop = set()
+        # С конца порядка сайта, как прежде снизу файла вверх: от порядка зависят
+        # список снятых id в выводе и порядок ключей в posted_dates.json.
+        for r in reversed(plain):
+            lid, posted_old, days_old = str(r["id"]), r["posted"], r["daysAgo"]
+            src_kw = r.get("source", "chotot")
+            posted_on = r.get("postedOn")
             if lid in posted_dates:
                 anchor = datetime.date.fromisoformat(posted_dates[lid])
             else:
@@ -128,40 +104,16 @@ def main():
             if true_days > CUTOFF_DAYS and src_kw not in DATELESS_SOURCES:
                 removed_ids.append(lid)
                 del posted_dates[lid]
-                start, end = lineno - 1, end_lineno          # slice bounds over `lines`
-                # also eat one following blank line, so removals don't leave double gaps
-                if end < len(lines) and lines[end].strip() == "":
-                    end += 1
-                del lines[start:end]
+                drop.add(r["id"])
                 continue
 
             kept += 1
             if true_days != days_old or posted_old != posted_label(true_days):
-                new_label = posted_label(true_days)
-                block_text = "\n".join(lines[lineno - 1:end_lineno])
-                pattern = '"' + re.escape(posted_old) + '",' + str(days_old)
-                new_block, n = re.subn(pattern, '"' + new_label + '",' + str(true_days), block_text, count=1)
-                if n != 1:
-                    raise SystemExit(f"id {lid}: expected exactly one `\"{posted_old}\",{days_old}` in its block, found {n} -- refusing to write")
-                lines[lineno - 1:end_lineno] = new_block.split("\n")
+                r["posted"] = posted_label(true_days)
+                r["daysAgo"] = true_days
                 relabelled += 1
 
-        new_src = "\n".join(lines)
-
-        # Safety net: the result must still parse and hold exactly the expected number of blocks.
-        try:
-            ast.parse(template_without_listings(new_src))
-            new_elements = listing_elements(new_src)
-        except SyntaxError as ex:
-            raise SystemExit(f"rewritten rebuild_final.py does not parse ({ex}) -- NOT written, original left intact")
-        if new_elements is None:
-            raise SystemExit("rewritten rebuild_final.py lost its LISTINGS list -- NOT written, original left intact")
-        new_count = len(new_elements)
-        expected = len(elements) - len(removed_ids)
-        if new_count != expected:
-            raise SystemExit(f"block count after rewrite is {new_count}, expected {expected} -- NOT written, original left intact")
-
-        write_source_atomic(new_src)
+        save_rows([r for r in rows if r["id"] not in drop])
 
     tmp_pd = POSTED_DATES_FILE + ".tmp"
     with open(tmp_pd, "w", encoding="utf-8") as f:
