@@ -27,7 +27,8 @@ a concurrent batch insert from another session can neither be overwritten
 by this script nor overwrite it.
 """
 import ast, re, os, json, datetime
-from listing_lock import listings_write_lock, write_source_atomic, SOURCE as SRC
+from listing_lock import (listings_write_lock, write_source_atomic, listing_elements,
+                          template_without_listings, SOURCE as SRC)
 
 CUTOFF_DAYS = 7
 
@@ -73,15 +74,14 @@ def main():
 
     with listings_write_lock("purge_old_listings"):
         src = open(SRC, encoding="utf-8").read()
-        tree = ast.parse(src)
         lines = src.split("\n")
 
-        listings_assign = [n for n in tree.body
-                           if isinstance(n, ast.Assign)
-                           and any(getattr(t, "id", None) == "LISTINGS" for t in n.targets)]
-        if len(listings_assign) != 1 or not isinstance(listings_assign[0].value, ast.List):
+        # Элементы LISTINGS разбираются по одному (listing_elements): ast.parse целого
+        # файла стоил 164 МБ, а чистка делала его дважды и держала оба дерева --
+        # больше предела службы на сервере (17.09.2026).
+        elements = listing_elements(src)
+        if elements is None:
             raise SystemExit("could not find exactly one `LISTINGS = [...]` list in rebuild_final.py -- refusing to touch the file")
-        elements = listings_assign[0].value.elts
 
         blocks = []   # (lineno, end_lineno, id, posted_label_old, days_ago_old)
         skipped = []
@@ -150,11 +150,13 @@ def main():
 
         # Safety net: the result must still parse and hold exactly the expected number of blocks.
         try:
-            new_tree = ast.parse(new_src)
+            ast.parse(template_without_listings(new_src))
+            new_elements = listing_elements(new_src)
         except SyntaxError as ex:
             raise SystemExit(f"rewritten rebuild_final.py does not parse ({ex}) -- NOT written, original left intact")
-        new_count = len([n for n in new_tree.body if isinstance(n, ast.Assign)
-                         and any(getattr(t, "id", None) == "LISTINGS" for t in n.targets)][0].value.elts)
+        if new_elements is None:
+            raise SystemExit("rewritten rebuild_final.py lost its LISTINGS list -- NOT written, original left intact")
+        new_count = len(new_elements)
         expected = len(elements) - len(removed_ids)
         if new_count != expected:
             raise SystemExit(f"block count after rewrite is {new_count}, expected {expected} -- NOT written, original left intact")

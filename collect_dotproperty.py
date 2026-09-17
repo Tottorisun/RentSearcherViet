@@ -99,10 +99,8 @@ def get(url, tries=3):
 
 def site_districts():
     """{(город, slug названия района): ключ} -- прямо из CITIES."""
-    src = open("rebuild_final.py", encoding="utf-8").read()
-    node = next(n for n in ast.walk(ast.parse(src))
-                if isinstance(n, ast.Assign) and any(getattr(t, "id", None) == "CITIES" for t in n.targets))
-    cities = ast.literal_eval(node.value)
+    from listing_lock import template_cities
+    cities = template_cities()
     out = {}
     for city, c in cities.items():
         for d in c["districts"]:
@@ -368,12 +366,8 @@ def main():
 
 def posted_label(n):
     """Та же функция, что и у сборки: посты и daysAgo обязаны совпадать."""
-    src = open("rebuild_final.py", encoding="utf-8").read()
-    fn = next(x for x in ast.walk(ast.parse(src))
-              if isinstance(x, ast.FunctionDef) and x.name == "_ru_days_label")
-    ns = {}
-    exec(ast.unparse(fn), ns)
-    return ns["_ru_days_label"](n)
+    from listing_lock import template_function
+    return template_function("_ru_days_label")(n)
 
 
 if __name__ == "__main__":

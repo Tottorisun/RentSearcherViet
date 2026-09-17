@@ -198,10 +198,8 @@ def updated_date(page_html):
 
 
 def site_district_names():
-    src = open("rebuild_final.py", encoding="utf-8").read()
-    node = next(n for n in ast.walk(ast.parse(src))
-                if isinstance(n, ast.Assign) and any(getattr(t, "id", None) == "CITIES" for t in n.targets))
-    cities = ast.literal_eval(node.value)
+    from listing_lock import template_cities
+    cities = template_cities()
     return {d["key"]: d["name"] for d in cities["manila"]["districts"]}
 
 
@@ -272,12 +270,8 @@ if __name__ == "__main__":
 
 
 def posted_label(n):
-    src = open("rebuild_final.py", encoding="utf-8").read()
-    fn = next(x for x in ast.walk(ast.parse(src))
-              if isinstance(x, ast.FunctionDef) and x.name == "_ru_days_label")
-    ns = {}
-    exec(ast.unparse(fn), ns)
-    return ns["_ru_days_label"](n)
+    from listing_lock import template_function
+    return template_function("_ru_days_label")(n)
 
 
 def main():

@@ -127,12 +127,10 @@ def ru_days_label(n):
     """Ту же функцию берём из rebuild_final.py, а не переписываем: сборка
     проверяет, что posted в точности равен _ru_days_label(daysAgo), и своя
     копия рано или поздно разошлась бы с оригиналом."""
-    src = open("rebuild_final.py", encoding="utf-8").read()
-    fn = next(n_ for n_ in ast.walk(ast.parse(src))
-              if isinstance(n_, ast.FunctionDef) and n_.name == "_ru_days_label")
-    ns = {}
-    exec(ast.unparse(fn), ns)
-    return ns["_ru_days_label"](n)
+    # Раньше здесь разбирался весь rebuild_final.py -- на каждую строку партии, 500
+    # раз за прогон; 17.09.2026 это уронило шаг на сервере (см. listing_lock).
+    from listing_lock import template_function
+    return template_function("_ru_days_label")(n)
 
 
 def safe(s):
@@ -209,10 +207,8 @@ AREA_PREFIX = re.compile(r"^(Thành phố|Thị xã|Quận|Huyện)\s+")
 def site_wards():
     """{(город, имя района в NFC): ключ} и {город: (имя RU, имя EN)} -- прямо из
     CITIES, без ручных таблиц."""
-    src = open("rebuild_final.py", encoding="utf-8").read()
-    node = next(n for n in ast.walk(ast.parse(src))
-                if isinstance(n, ast.Assign) and any(getattr(t, "id", None) == "CITIES" for t in n.targets))
-    cities = ast.literal_eval(node.value)
+    from listing_lock import template_cities
+    cities = template_cities()
     out, labels = {}, {}
     for city, c in cities.items():
         labels[city] = (c["name"], c.get("nameEn") or c["name"])

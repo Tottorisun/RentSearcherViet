@@ -106,10 +106,112 @@ def listing_ids(src):
     return [int(x) for x in re.findall(r"^L\((\d+),", src, re.M)]
 
 
+# ---------------------------------------------------------------------------
+# Шаблон без строк объявлений. 17.09.2026 rebuild_final.py весил 8.5 МБ, из них
+# 7.1 МБ -- тело LISTINGS, и ast.parse целого файла стоил 164 МБ памяти и ~1 с.
+# Сборщикам нужен оттуда CITIES или одна функция (_ru_days_label), а
+# collect_chotot разбирал весь файл заново на КАЖДУЮ строку партии -- 500 раз за
+# прогон при пределе службы на сервере MemoryHigh=300M. Два прогона подряд Chợ
+# Tốt не уложился в 3600 с, dotproperty -- в 4800 с. Без тела LISTINGS разбор
+# стоит 7 МБ и сотые доли секунды, а функция и CITIES запоминаются на процесс.
+
+def _listings_span(src):
+    """(начало, конец) тела LISTINGS: от «LISTINGS = [» до MARKER. None -- не нашлось."""
+    start = src.find("\nLISTINGS = [")
+    end = src.find(MARKER)
+    if start < 0 or end < 0 or end < start:
+        return None
+    return start, end
+
+
+def template_without_listings(src=None):
+    """rebuild_final.py с пустым LISTINGS -- для CITIES и функций шаблона."""
+    if src is None:
+        src = open(SOURCE, encoding="utf-8").read()
+    span = _listings_span(src)
+    if not span:
+        return src
+    return src[:span[0]] + "\nLISTINGS = [\n" + src[span[1]:]
+
+
+_TEMPLATE_CACHE = {}
+
+
+def template_function(name):
+    """Функция шаблона (например _ru_days_label), разобранная один раз на процесс."""
+    key = ("fn", name)
+    if key not in _TEMPLATE_CACHE:
+        tree = ast.parse(template_without_listings())
+        fn = next(x for x in ast.walk(tree) if isinstance(x, ast.FunctionDef) and x.name == name)
+        ns = {}
+        exec(ast.unparse(fn), ns)
+        _TEMPLATE_CACHE[key] = ns[name]
+    return _TEMPLATE_CACHE[key]
+
+
+def template_cities():
+    """CITIES шаблона. Возвращается новая копия: вызывающие вправе её менять."""
+    key = ("cities",)
+    if key not in _TEMPLATE_CACHE:
+        tree = ast.parse(template_without_listings())
+        node = next(n for n in ast.walk(tree)
+                    if isinstance(n, ast.Assign) and any(getattr(t, "id", None) == "CITIES" for t in n.targets))
+        _TEMPLATE_CACHE[key] = ast.unparse(node.value)
+    return ast.literal_eval(_TEMPLATE_CACHE[key])
+
+
+def listing_elements(src):
+    """Узлы элементов LISTINGS с НАСТОЯЩИМИ номерами строк файла -- то же, что
+    `LISTINGS.value.elts` из ast.parse целого файла, но каждый разобран отдельно
+    (17.09.2026: целиком это 155-164 МБ, два раза подряд -- больше предела службы).
+    None -- тело LISTINGS не нашлось. Ошибка синтаксиса в строке -- SyntaxError."""
+    span = _listings_span(src)
+    if not span:
+        return None
+    body = src[span[0]:span[1]]
+    starts = [m.start() for m in re.finditer(r"^L\(", body, re.M)]
+    out, line, prev = [], 1, 0
+    for i, a in enumerate(starts):
+        off = span[0] + a
+        line += src.count("\n", prev, off)
+        prev = off
+        chunk = body[a:(starts[i + 1] if i + 1 < len(starts) else len(body))]
+        mod = ast.parse(chunk)
+        for stmt in mod.body:
+            value = stmt.value if isinstance(stmt, ast.Expr) else stmt
+            for e in (value.elts if isinstance(value, ast.Tuple) else [value]):
+                ast.increment_lineno(e, line - 1)
+                out.append(e)
+    return out
+
+
+def iter_listing_blocks(src):
+    """Текст каждого L(...) из тела LISTINGS по отдельности -- от строки «L(» до
+    следующей такой строки (с хвостовыми пустыми строками и комментариями).
+    None -- тело LISTINGS не нашлось."""
+    span = _listings_span(src)
+    if not span:
+        return None
+    body = src[span[0]:span[1]]
+    starts = [m.start() for m in re.finditer(r"^L\(", body, re.M)]
+    return [body[a:(starts[i + 1] if i + 1 < len(starts) else len(body))] for i, a in enumerate(starts)]
+
+
 def write_source_atomic(new_src):
     """Refuse to write anything that is not valid Python; then replace the
-    file in one step so a concurrent reader gets old-or-new, never half."""
-    ast.parse(new_src)
+    file in one step so a concurrent reader gets old-or-new, never half.
+
+    The check parses the template without its rows once and then every row on
+    its own (17 Sep 2026: a whole-file ast.parse cost 164 MB, see above). Any
+    syntax error is still caught: inside a row it breaks that row's parse, and
+    stray text between rows belongs to the row before it."""
+    blocks = iter_listing_blocks(new_src)
+    if blocks is None:
+        ast.parse(new_src)
+    else:
+        ast.parse(template_without_listings(new_src))
+        for b in blocks:
+            ast.parse(b)
     tmp = "%s.tmp.%d" % (SOURCE, os.getpid())
     with open(tmp, "w", encoding="utf-8") as f:
         f.write(new_src)
@@ -120,13 +222,11 @@ def find_blocks(src):
     """{listing id: (first line, last line)} for every L(...) element of the
     LISTINGS list, via ast -- exact, never a regex guess. Lines are 1-based
     and inclusive, so `lines[a-1:b]` is the block."""
-    tree = ast.parse(src)
-    lists = [n for n in tree.body if isinstance(n, ast.Assign)
-             and any(getattr(t, "id", None) == "LISTINGS" for t in n.targets)]
-    if len(lists) != 1 or not isinstance(lists[0].value, ast.List):
+    elements = listing_elements(src)
+    if elements is None:
         sys.exit("could not find exactly one `LISTINGS = [...]` list in %s" % SOURCE)
     out = {}
-    for e in lists[0].value.elts:
+    for e in elements:
         if isinstance(e, ast.Call) and e.args and isinstance(e.args[0], ast.Constant):
             out[int(e.args[0].value)] = (e.lineno, e.end_lineno)
     return out
@@ -175,24 +275,28 @@ def _listing_urls(src):
     обходим все вызовы L в дереве, а не ищем присваивание LISTINGS.
     """
     out = {}
+    # Весь файл -- по строке за раз, и дерево каждой строки сразу отпускается
+    # (целиком было 164 МБ, 17.09.2026); фрагмент партии разбирается целиком, как
+    # раньше. Ошибка синтаксиса где угодно -- пустой ответ, как и прежде.
+    blocks = iter_listing_blocks(src)
     try:
-        tree = ast.parse(src)
+        for tree in ((ast.parse(src),) if blocks is None else (ast.parse(b) for b in blocks)):
+            for node in ast.walk(tree):
+                if not (isinstance(node, ast.Call) and getattr(node.func, "id", "") == "L"):
+                    continue
+                if len(node.args) < 8:
+                    continue
+                kw = {k.arg: (k.value.value if isinstance(k.value, ast.Constant) else None)
+                      for k in node.keywords}
+                if kw.get("source", "chotot") in SHARED_URL_SOURCES:
+                    continue
+                lid = node.args[0].value if isinstance(node.args[0], ast.Constant) else None
+                url = node.args[7].value if isinstance(node.args[7], ast.Constant) else None
+                if lid is None or not isinstance(url, str):
+                    continue
+                out.setdefault(url.split("?")[0].rstrip("/"), lid)
     except SyntaxError:
-        return out
-    for node in ast.walk(tree):
-        if not (isinstance(node, ast.Call) and getattr(node.func, "id", "") == "L"):
-            continue
-        if len(node.args) < 8:
-            continue
-        kw = {k.arg: (k.value.value if isinstance(k.value, ast.Constant) else None)
-              for k in node.keywords}
-        if kw.get("source", "chotot") in SHARED_URL_SOURCES:
-            continue
-        lid = node.args[0].value if isinstance(node.args[0], ast.Constant) else None
-        url = node.args[7].value if isinstance(node.args[7], ast.Constant) else None
-        if lid is None or not isinstance(url, str):
-            continue
-        out.setdefault(url.split("?")[0].rstrip("/"), lid)
+        return {}
     return out
 
 

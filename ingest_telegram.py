@@ -1354,12 +1354,8 @@ def doc_safe(s):
 
 @functools.lru_cache(maxsize=None)
 def _days_label_fn():
-    src = open("rebuild_final.py", encoding="utf-8").read()
-    fn = next(x for x in ast.walk(ast.parse(src))
-              if isinstance(x, ast.FunctionDef) and x.name == "_ru_days_label")
-    ns = {}
-    exec(ast.unparse(fn), ns)
-    return ns["_ru_days_label"]
+    from listing_lock import template_function
+    return template_function("_ru_days_label")
 
 
 def posted_label(n):
