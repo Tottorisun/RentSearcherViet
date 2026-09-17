@@ -261,11 +261,14 @@ def steps_for(a):
     # карты, и после. step1 не зовём никогда: он переписывает pin_projections.json
     # целиком и стирает вручную добавленные Бинь Зыонг и Фукуок.
     out += [
-        Step("сборка сайта", [py, "rebuild_final.py"], timeout=900),
+        # build_site.py, а не rebuild_final.py: то же самое побайтно (проверено 17.09.2026
+        # на всех 44 файлах сборки), но строки объявлений вычисляются по одной, и пик
+        # памяти 162 МБ вместо 276 -- у службы на сервере предел MemoryHigh=300M.
+        Step("сборка сайта", [py, "build_site.py"], timeout=900),
         Step("карта: координаты", [py, "build_pins_step2_geocode.py"], timeout=3600),
         Step("карта: проекции пинов", [py, "build_pins_step3_project.py"]),
         Step("карта: данные Leaflet", [py, "build_leaflet_data.py"]),
-        Step("сборка сайта (после карты)", [py, "rebuild_final.py"], timeout=900),
+        Step("сборка сайта (после карты)", [py, "build_site.py"], timeout=900),
     ]
     if a.candidates_only:
         out = [st for st in out if st.name.startswith(("Facebook:", "Telegram:", "batdongsan:"))]
