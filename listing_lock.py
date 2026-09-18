@@ -15,6 +15,8 @@ four times; the id lock closed the hand-out, this closes the write
 WHERE THE ROWS LIVE. Since 17 Sep 2026 in listings/<source>/<city>.jsonl, one
 JSON object per line -- the dict rebuild_final.py's L() builds, plus postedOn and
 seq (see DATA_DIR below). rebuild_final.py is the page template and loads them.
+posted/daysAgo in a file are as of the day the row was filed; the page gets
+today's (with_current_age).
 
 USAGE
     from listing_lock import insert_listings, remove_listings
@@ -37,6 +39,7 @@ half-written file.
 """
 import ast
 import collections
+import datetime
 import json
 import os
 import re
@@ -160,9 +163,52 @@ def template_cities():
 # для хранения: postedOn (дата выкладки, нужна чистке) и seq (порядок строк на
 # сайте). Файлы -- по источникам и городам: сервер и ПК пишут в основном разные
 # файлы, а git сравнивает построчно.
+#
+# posted и daysAgo в файле -- на день заведения строки, и больше не переписываются
+# (с 18.09.2026). Возраст на сегодня считается при сборке (with_current_age) от
+# даты выкладки: posted_dates.json, куда её кладёт чистка, или postedOn самой
+# строки. Прежде чистка каждое утро переписывала метку почти в каждой строке
+# (18.09 -- 4718 из 5278): 2 МБ изменений в сутки в публичный репозиторий, и
+# любая строка, которую ПК дописал в файл города в тот же прогон, конфликтовала
+# с переписанной соседкой.
 
 DATA_DIR = "listings"
 STORE_ONLY = ("postedOn", "seq")
+POSTED_DATES_FILE = "posted_dates.json"
+
+
+def row_anchor(row, anchors, today):
+    """Дата выкладки строки: из posted_dates.json (как её записала чистка), иначе
+    postedOn самой строки, если это дата не из будущего. None -- неизвестна."""
+    if str(row.get("id")) in anchors:
+        return datetime.date.fromisoformat(anchors[str(row["id"])])
+    on = row.get("postedOn")
+    try:
+        on = datetime.date.fromisoformat(on) if isinstance(on, str) else None
+    except ValueError:
+        return None
+    return on if on is not None and on <= today else None
+
+
+def with_current_age(rows, today=None):
+    """posted и daysAgo -- на сегодня, от даты выкладки. Строка без неё (чистка её
+    ещё не видела, postedOn нет) остаётся с тем, что записано при заведении."""
+    today = today or datetime.date.today()
+    try:
+        with open(POSTED_DATES_FILE, encoding="utf-8") as f:
+            anchors = json.load(f)
+    except FileNotFoundError:
+        anchors = {}
+    label = template_function("_ru_days_label")
+    for r in rows:
+        if not (isinstance(r.get("id"), int) and isinstance(r.get("daysAgo"), int)
+                and isinstance(r.get("posted"), str)):
+            continue
+        anchor = row_anchor(r, anchors, today)
+        if anchor is not None:
+            r["daysAgo"] = (today - anchor).days
+            r["posted"] = label(r["daysAgo"])
+    return rows
 
 
 def row_path(row, data_dir=None):
@@ -204,11 +250,12 @@ def load_rows(data_dir=None):
 
 
 def load_page_rows(data_dir=None):
-    """Строки для страницы -- без полей хранения. Ни одной строки -- отказ, а не пустой сайт."""
+    """Строки для страницы -- с возрастом на сегодня и без полей хранения. Ни одной
+    строки -- отказ, а не пустой сайт."""
     rows = load_rows(data_dir)
     if not rows:
         sys.exit("в %s/ нет ни одной строки объявления -- пустой сайт не собирается" % (data_dir or DATA_DIR))
-    return [{k: v for k, v in r.items() if k not in STORE_ONLY} for r in rows]
+    return [{k: v for k, v in r.items() if k not in STORE_ONLY} for r in with_current_age(rows)]
 
 
 def _dump(row):
@@ -283,7 +330,8 @@ def _listing_urls(rows):
 def rows_from_src(new_src):
     """Текст партии -- строки `L(...),` -- в словари, как их строит L() шаблона.
     Аргументы -- только литералы (так написаны все партии: 8694 вызова на
-    17.09.2026). postedOn L() в данные страницы не кладёт; здесь он сохраняется."""
+    17.09.2026). postedOn L() в данные страницы не кладёт; здесь он сохраняется, а
+    если партия его не назвала -- ставится сегодня минус daysAgo."""
     L = template_function("L")
     try:
         tree = ast.parse(new_src.strip("\n") + "\n")
@@ -303,6 +351,12 @@ def rows_from_src(new_src):
             row = L(*args, **kw)
             if kw.get("postedOn") is not None:
                 row["postedOn"] = kw["postedOn"]
+            elif isinstance(row.get("daysAgo"), int):
+                # Дата выкладки известна сейчас и только сейчас: метка в строке больше
+                # не переписывается, и потерянную запись posted_dates.json иначе
+                # восстановили бы от метки дня заведения -- строка прожила бы лишние дни.
+                row["postedOn"] = (datetime.date.today()
+                                   - datetime.timedelta(days=row["daysAgo"])).isoformat()
             rows.append(row)
     return rows
 

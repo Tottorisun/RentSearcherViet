@@ -269,11 +269,12 @@ def template_rows(city):
     """[{id, url, age, photos}] -- строки города прямо из listings/ (а не из собранной
     страницы: на ПК она свежа лишь на момент последней сборки сервера, и строк,
     заведённых после неё, в ней нет -- повторный сбор завёл бы их ссылки снова и не
-    увидел бы их фотографий)."""
-    from listing_lock import load_rows
+    увидел бы их фотографий). age -- на сегодня, как на странице: в файле строк
+    daysAgo на день заведения."""
+    from listing_lock import load_rows, with_current_age
     return [{"id": r["id"], "url": r["url"], "age": r.get("daysAgo"),
              "photos": photo_names((r.get("details") or {}).get("photos"))}
-            for r in load_rows() if r["city"] == city and isinstance(r.get("url"), str)]
+            for r in with_current_age(load_rows()) if r["city"] == city and isinstance(r.get("url"), str)]
 
 
 def photo_twins(mine, age, rows):

@@ -2951,8 +2951,8 @@ check_listing_types(HTML, LISTINGS)
 
 
 def _ru_days_label(n):
-    """Mirror of purge_old_listings.posted_label -- kept tiny and local so the
-    build has no import dependency on a maintenance script."""
+    """Метка «N дней назад». Одна на всех: её берут listing_lock.with_current_age
+    (возраст строк на сегодня при сборке) и сборщики -- через template_function."""
     if n <= 0:
         return "сегодня"
     if n == 1:
