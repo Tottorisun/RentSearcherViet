@@ -105,6 +105,33 @@ LOCK = os.path.join(HERE, ".pipeline.lock")
 SAY = r"D:\MyDev\AI_CONTEXT\TASKS\gelios_say.py"
 FB_PROFILE = os.path.join(HERE, "_fb_profile")
 BDS_PROFILE = os.path.join(HERE, "_bds_profile_c")
+# Когда этот ПК в последний раз обходил каждый город batdongsan: {город: ГГГГ-ММ-ДДTЧЧ:ММ:СС}.
+# Лежит среди логов -- у каждой машины свой и в репозиторий не идёт.
+BDS_VISITS = os.path.join(LOG_DIR, "batdongsan_visits.json")
+BDS_STEP = "batdongsan: "
+
+
+def least_recent(cities, n, path):
+    """n городов, которые дольше всех не обходились; ни разу не обходившиеся -- первыми,
+    при равенстве -- в порядке списка."""
+    try:
+        seen = json.load(open(path, encoding="utf-8"))
+    except (FileNotFoundError, ValueError):
+        seen = {}
+    order = sorted(range(len(cities)), key=lambda i: (seen.get(cities[i], ""), i))
+    return [cities[i] for i in order[:n]]
+
+
+def note_visit(city, path):
+    try:
+        seen = json.load(open(path, encoding="utf-8"))
+    except (FileNotFoundError, ValueError):
+        seen = {}
+    seen[city] = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path + ".tmp", "w", encoding="utf-8") as f:
+        json.dump(seen, f, ensure_ascii=False, indent=1, sort_keys=True)
+    os.replace(path + ".tmp", path)
 
 
 class Step:
@@ -187,23 +214,18 @@ def steps_for(a):
             "нет %s -- Cloudflare пускает только настоящий браузер с прогретым "
             "профилем, а он есть лишь на ПК владельца" % BDS_PROFILE)
         cities = [c.strip() for c in a.bds_cities.split(",") if c.strip()]
-        # Городов четырнадцать, и каждый занимает минуты: за прогон берётся окно.
-        # Сдвигается оно по ПРОГОНУ, а не по дню: при сдвиге по дню вечерний
-        # прогон ПК обходил те же три города, что утренний, и почти всё находил
-        # уже заведённым -- 13.09 Хошимин, Ханой и Дананг дважды за день, а до
-        # остальных одиннадцати очередь доходила раз в пять дней. Теперь окна
-        # утра и вечера разные и идут подряд, без пропусков (шаг окна и число
-        # городов взаимно просты). Граница -- 15 часов, посередине между
-        # запусками в 9 и 21: утренний прогон, начатый с опозданием (13.09 --
-        # в 11:28), остаётся утренним. У Facebook окно по-прежнему дневное:
-        # посты групп копятся непрерывно, и частый заход в те же группы не пуст.
+        # Городов четырнадцать, и каждый занимает минуты: за прогон берутся те,
+        # что дольше всех не обходились (отметки -- BDS_VISITS). Прежде окно
+        # сдвигалось по часам -- утро или вечер такого-то дня, -- и прогон,
+        # которого не было, уносил свои города с собой: ПК был выключен вечером
+        # 16.09, и Буонметхуот, Вунгтау и Далат, чьё это было окно, не обходились
+        # с 14.09 до 18.09 -- как раз тогда, когда им исправили адреса. Отметка
+        # ставится после шага, чем бы он ни кончился: город, который падает,
+        # уступает очередь, а не занимает место каждый прогон.
         if a.bds_batch and len(cities) > a.bds_batch:
-            now = datetime.datetime.now()
-            slot = now.date().toordinal() * 2 + (1 if now.hour >= 15 else 0)
-            start = (slot * a.bds_batch) % len(cities)
-            cities = [cities[(start + i) % len(cities)] for i in range(a.bds_batch)]
+            cities = least_recent(cities, a.bds_batch, BDS_VISITS)
         for city in cities:
-            out.append(Step("batdongsan: %s" % city,
+            out.append(Step(BDS_STEP + city,
                             [py, "collect_batdongsan.py", "--city", city, "--pages", "1",
                              "--limit", "20", "--profile", BDS_PROFILE, "--write", "--insert"]
                             + (["--commit"] if a.candidates_only else []),
@@ -511,6 +533,8 @@ def main():
                 say(log, "\n[%s]" % s.name)
                 state, tail = run(s, log)
                 results.append((s, state, tail))
+                if s.name.startswith(BDS_STEP) and state != "skipped":
+                    note_visit(s.name[len(BDS_STEP):], BDS_VISITS)
                 if state != "ok" and s.fatal:
                     break
 
