@@ -87,6 +87,7 @@ import argparse
 import datetime
 import json
 import os
+import socket
 import subprocess
 import sys
 import time
@@ -109,6 +110,34 @@ BDS_PROFILE = os.path.join(HERE, "_bds_profile_c")
 # Лежит среди логов -- у каждой машины свой и в репозиторий не идёт.
 BDS_VISITS = os.path.join(LOG_DIR, "batdongsan_visits.json")
 BDS_STEP = "batdongsan: "
+
+
+# Сеть проверяется до первого шага. Задание на ПК стоит «запустить при первой
+# возможности», и после включения компьютера оно стартует раньше, чем подключается
+# Wi-Fi: 19.09 в 13:09 весь прогон прошёл без сети (ERR_INTERNET_DISCONNECTED,
+# getaddrinfo failed). Facebook и Telegram отчитались «ok» с нулём постов, три
+# города batdongsan упали и ушли в конец очереди. Хватает одного ответившего адреса.
+NET_PROBES = (("github.com", 443), ("www.facebook.com", 443), ("t.me", 443))
+NET_WAIT_S = 20 * 60
+
+
+def wait_for_network(log, limit=None):
+    limit = NET_WAIT_S if limit is None else limit
+    t0 = time.time()
+    while True:
+        for host, port in NET_PROBES:
+            try:
+                socket.create_connection((host, port), timeout=10).close()
+                if time.time() - t0 > 1:
+                    say(log, "сеть появилась через %d с" % (time.time() - t0))
+                return True
+            except OSError:
+                pass
+        if time.time() - t0 >= limit:
+            say(log, "сети нет %d мин (%s) -- шаги не запускаются"
+                % (limit // 60, ", ".join(h for h, _p in NET_PROBES)))
+            return False
+        time.sleep(15)
 
 
 def least_recent(cities, n, path):
@@ -542,17 +571,27 @@ def main():
 
     results = []
     publish_failed = False
+    offline = False
     try:
         with open(log_path, "w", encoding="utf-8") as log:
             say(log, "=== прогон %s ===" % stamp)
-            for s in plan:
+            offline = not wait_for_network(log)
+            for s in ([] if offline else plan):
                 say(log, "\n[%s]" % s.name)
                 state, tail = run(s, log)
                 results.append((s, state, tail))
-                if s.name.startswith(BDS_STEP) and state != "skipped":
-                    note_visit(s.name[len(BDS_STEP):], BDS_VISITS)
                 if state != "ok" and s.fatal:
                     break
+            # Обход batdongsan отмечается, если хоть один его город в этом прогоне
+            # прошёл. Упали все -- значит, дело не в городах (сеть, Cloudflare,
+            # профиль браузера), и те же города пойдут первыми в следующий раз.
+            # Упал один из трёх -- он отмечен и уступает очередь, а не занимает
+            # место каждый прогон.
+            bds = [(s.name[len(BDS_STEP):], st) for s, st, _t in results
+                   if s.name.startswith(BDS_STEP) and st != "skipped"]
+            if any(st == "ok" for _c, st in bds):
+                for city, _st in bds:
+                    note_visit(city, BDS_VISITS)
 
             bad = [s.name for s, st, _t in results if st in ("failed", "timeout") and s.fatal]
             soft = [s.name for s, st, _t in results if st in ("failed", "timeout") and not s.fatal]
@@ -576,17 +615,19 @@ def main():
                 len(results), ", ".join(bad + soft) or "ничего")
             if skip:
                 note += "; пропущено по замыслу: %s" % ", ".join(skip)
+            if offline:
+                note = "сети нет %d мин -- прогон не начат, ни одного шага" % (NET_WAIT_S // 60)
             say(log, "\n=== итог ===\n%s" % note)
 
             if bad:
                 say(log, "оповещение владельцу: %s" % alert_owner(
                     "RentSearcher: суточный прогон остановлен на шаге «%s». Лог: %s"
                     % (bad[0], os.path.basename(log_path))))
-            elif a.publish:
+            elif a.publish and not offline:
                 publish_failed = not publish(log, note)
             elif dirty():
                 say(log, "результат не опубликован (--publish не задан); в дереве есть изменения")
-        json.dump({"stamp": stamp, "steps": [(s.name, st) for s, st, _t in results]},
+        json.dump({"stamp": stamp, "steps": [(s.name, st) for s, st, _t in results], "note": note},
                   open(os.path.join(LOG_DIR, "pipeline_last.json"), "w", encoding="utf-8"),
                   ensure_ascii=False, indent=1)
     finally:
@@ -594,8 +635,8 @@ def main():
             os.unlink(LOCK)
         except FileNotFoundError:
             pass
-    return 1 if (publish_failed or any(st in ("failed", "timeout") and s.fatal
-                                        for s, st, _t in results)) else 0
+    return 1 if (offline or publish_failed or any(st in ("failed", "timeout") and s.fatal
+                                                   for s, st, _t in results)) else 0
 
 
 if __name__ == "__main__":

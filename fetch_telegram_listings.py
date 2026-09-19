@@ -840,6 +840,14 @@ def main():
         per_channel[ch] = st
         all_posts.extend(posts)
 
+    # Не ответил ни один канал -- это сеть, а не пустые каналы. Прежний файл
+    # кандидатов остаётся как был: 19.09.2026 прогон без сети переписал его пустым,
+    # и сессия, разбирающая кандидатов, осталась без них до следующего прогона.
+    if not all_posts and wanted and len(fetch_errors) == len(wanted):
+        first = next(iter(fetch_errors.values()))[0]
+        sys.exit("ни один из %d каналов не ответил (%s) -- %s не перезаписан"
+                 % (len(wanted), first[:160], args.out))
+
     # ---- dedupe within the run -------------------------------------------
     kept, by_key, dup_count = [], {}, 0
     for p in all_posts:

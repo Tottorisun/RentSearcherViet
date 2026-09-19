@@ -1841,6 +1841,15 @@ def finish(result, out_path, started):
     if s["kept"] > s["with_date"]:
         print("NOTE: %d kept post(s) have age_days: null. Those must NOT be written into "
               "the dataset with an invented date." % (s["kept"] - s["with_date"]))
+    # Ни одна группа не открылась -- это провал, а не «постов нет». 19.09.2026 прогон
+    # без сети прошёл все шесть городов по 1-2 секунды, с ошибкой на каждой группе,
+    # и сводка назвала шаги сделанными.
+    groups = result["run"].get("groups") or []
+    failed = {e["group"] for e in result["errors"] if "group" in e}
+    if groups and not cands and not result["rejected"] and failed >= {g["id"] for g in groups}:
+        print("FAILED: none of the %d group(s) opened (%s)"
+              % (len(groups), result["errors"][0]["error"][:120]))
+        return 1
     return 0
 
 
