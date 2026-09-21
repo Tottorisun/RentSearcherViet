@@ -3034,6 +3034,7 @@ check_js_undefined_calls(HTML)
 
 TEMPLATE_HTML = HTML      # the template with placeholders intact -- the per-city build below needs it
 HTML = HTML.replace("__DATA_JSON__", DATA_JSON)
+del DATA_JSON             # дальше не нужен; см. «ПАМЯТЬ» ниже, у записи полной страницы
 # __LISTING_COUNT__ is deliberately NOT substituted here -- finalise() below
 # matches the RU meta descriptions verbatim to swap in English ones, so the
 # placeholder must survive until then. finalise() does the substitution.
@@ -3107,9 +3108,6 @@ def finalise(html, lang):
     return html
 
 
-RU_HTML = finalise(HTML, "ru")
-EN_HTML = finalise(HTML, "en")
-
 def _write_atomic(path, text):
     """Write through a temp file and rename, so a concurrent reader of the
     built HTML (build_pins_step2_geocode.py, build_leaflet_data.py,
@@ -3127,9 +3125,20 @@ def _write_atomic(path, text):
 # The all-in-one pages. vietnam-rent-finder.html is what every pipeline script
 # reads the complete DATA out of (site_data.load_data) and what the Artifact
 # copy is; keep writing it first, before anything below can fail.
+#
+# ПАМЯТЬ. Полная страница -- семь миллионов символов, и в ней есть эмодзи, поэтому
+# Python хранит её по 4 байта на символ: ~30 МБ на копию. Раньше общий HTML и обе
+# языковые копии жили до конца сборки, ~90 МБ поверх постраничной части. У службы
+# на сервере предел MemoryHigh=300M, и 19-21.09 все прогоны упирались в него ровно
+# (300.0-300.2 МБ при 6200-6600 строках). Теперь копия пишется и сразу отпускается.
+RU_HTML = finalise(HTML, "ru")
 _write_atomic(W + "/vietnam-rent-finder.html", RU_HTML)
+_RU_SIZE = len(RU_HTML)
+del RU_HTML
+EN_HTML = finalise(HTML, "en")
 _write_atomic(W + "/" + EN_PATH, EN_HTML)
-print("Wrote vietnam-rent-finder.html (ru) and " + EN_PATH + " (en), size", len(RU_HTML))
+del EN_HTML, HTML
+print("Wrote vietnam-rent-finder.html (ru) and " + EN_PATH + " (en), size", _RU_SIZE)
 
 
 # ================== MULTI-PAGE BUILD (2 Sep 2026) ==================
