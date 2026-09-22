@@ -306,6 +306,22 @@
    "checked": "2026-09-22",
    "id": 2000806
   },
+  "https://t.me/danang_house/21781": {
+   "cat": null,
+   "checked": "2026-09-22",
+   "hash": "c4836c7f47c64aed73173827a547418653c1d18a",
+   "id": 2000816
+  },
+  "https://t.me/danang_house/21801": {
+   "cat": null,
+   "checked": "2026-09-22",
+   "hash": "eb1e1afbd202bf27ac9db66eea7c105d5c405499",
+   "id": 2000817
+  },
+  "https://t.me/danang_house/21808": {
+   "checked": "2026-09-22",
+   "id": 2000815
+  },
   "https://t.me/danangrentaflat/128804": {
    "cat": null,
    "checked": "2026-09-12",
@@ -801,6 +817,36 @@
    "checked": "2026-09-22",
    "hash": "392655959a8ccf774a750c85e8eb47517518c1bc",
    "id": 2000803
+  },
+  "https://t.me/danangrentaflat/134928": {
+   "cat": null,
+   "checked": "2026-09-22",
+   "hash": "fcbebd7cebc84dfa384a217d1c22571bd741495b",
+   "id": 2000813
+  },
+  "https://t.me/danangrentaflat/134938": {
+   "cat": null,
+   "checked": "2026-09-22",
+   "hash": "a6995781c07977b621e6457316b52591fdef485c",
+   "id": 2000814
+  },
+  "https://t.me/danangrentaflat/134947": {
+   "cat": null,
+   "checked": "2026-09-22",
+   "hash": "f2da7989e3a3bc593001cacb4c78c54350610aa6",
+   "id": 2000810
+  },
+  "https://t.me/danangrentaflat/134957": {
+   "cat": null,
+   "checked": "2026-09-22",
+   "hash": "c85d17436d976fc972eeb9d36a9d2ca149c5f227",
+   "id": 2000811
+  },
+  "https://t.me/danangrentaflat/134962": {
+   "cat": null,
+   "checked": "2026-09-22",
+   "hash": "86490f0e518cac388d2545674a8760c7e80c67dd",
+   "id": 2000812
   },
   "https://t.me/nhatranghomes/11270": {
    "cat": null,
@@ -1465,6 +1511,12 @@
    "checked": "2026-09-22",
    "hash": "f412145107cc83f0f8d58e9be796e334e6552d6e",
    "id": 2000804
+  },
+  "https://t.me/vietnam_nedvijimost/24273": {
+   "cat": null,
+   "checked": "2026-09-22",
+   "hash": "ec8c0535bb1360301c089b20c8d0a66894cb6153",
+   "id": 2000815
   }
  }
 }
