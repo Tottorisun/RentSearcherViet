@@ -45,8 +45,11 @@ def esc(s):
 
 
 def real_photos(r):
+    """Фотографии строки: ссылки на источник и снимки, которые лежат на самом
+    сайте (assets/fb_photos/... у строк из групп Facebook -- ссылки Facebook
+    живут четыре дня, и фото хранятся у нас)."""
     return [u for u in ((r.get("details") or {}).get("photos") or [])
-            if isinstance(u, str) and u.startswith(("http://", "https://"))]
+            if isinstance(u, str) and u.startswith(("http://", "https://", "assets/"))]
 
 
 def mln(v):
