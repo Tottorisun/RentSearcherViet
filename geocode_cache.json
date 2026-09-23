@@ -6589,5 +6589,30 @@
   "display_name": "Fort Victoria, 5th Avenue, Bonifacio Global City, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1634, Philippines"
  },
  "Tran Kim Xuyen, Da Nang, Vietnam": null,
- "Tran Kim Xuyen, Phường Hòa Xuân, Da Nang, Vietnam": null
+ "Tran Kim Xuyen, Phường Hòa Xuân, Da Nang, Vietnam": null,
+ "My Da Tay 10, Da Nang, Vietnam": {
+  "lat": 15.8922219,
+  "lon": 108.1757666,
+  "display_name": "Cầu Ái Mỹ - VD 02A, Xã Điện Bàn Tây, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "My Da Tay 10, Phường Ngũ Hành Sơn, Da Nang, Vietnam": {
+  "lat": 16.0302602,
+  "lon": 108.2399323,
+  "display_name": "Đường Mỹ Đa Tây 5, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "An Thượng 22, Da Nang, Vietnam": {
+  "lat": 16.0477884,
+  "lon": 108.2430006,
+  "display_name": "Da Nang Bike Hub, 22, Đường An Thượng 10, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Fusion Villas, Da Nang, Vietnam": {
+  "lat": 15.9724202,
+  "lon": 108.2822877,
+  "display_name": "Fusion Resort & Villas, Ocean Drive, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "Phan Triêm, Da Nang, Vietnam": {
+  "lat": 16.0038155,
+  "lon": 108.223198,
+  "display_name": "Phan Triêm, Tổ dân phố Trung Lương 3, Phường Hòa Xuân, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ }
 }
