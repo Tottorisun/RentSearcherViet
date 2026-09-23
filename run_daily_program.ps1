@@ -33,6 +33,22 @@ $ErrorActionPreference = "Stop"
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
+# Окно задачи видимое и живёт весь прогон, 40-60 минут. 23.09.2026 в 11:37, через
+# десять минут после включения компьютера, его закрыли -- прогон умер на первом
+# городе Facebook (код 0xC000013A: закрыто окно консоли), и до вечера ПК не собрал
+# ничего. Окно теперь подписано и свёрнуто: безымянное чёрное окно поверх работы
+# хочется закрыть, свёрнутое с понятным названием -- нет. Не удалось свернуть
+# (Windows Terminal вместо консоли) -- не беда, заголовок всё равно виден.
+try { $Host.UI.RawUI.WindowTitle = "RentSearcher: идёт сбор (Facebook, batdongsan, Telegram) -- не закрывайте, окно закроется само" } catch { }
+try {
+    Add-Type -Namespace RentSearcher -Name ConsoleWindow -MemberDefinition @'
+[DllImport("kernel32.dll")] public static extern System.IntPtr GetConsoleWindow();
+[DllImport("user32.dll")] public static extern bool ShowWindow(System.IntPtr hWnd, int nCmdShow);
+'@
+    [void][RentSearcher.ConsoleWindow]::ShowWindow([RentSearcher.ConsoleWindow]::GetConsoleWindow(), 6)   # SW_MINIMIZE
+} catch { }
+"RentSearcher: суточный сбор идёт. Окно закроется само, когда он закончится; если закрыть его раньше, сбор оборвётся."
+
 $root = $PSScriptRoot
 Set-Location $root
 $logDir = Join-Path $root "daily_check_logs"

@@ -140,6 +140,37 @@ def wait_for_network(log, limit=None):
         time.sleep(15)
 
 
+def lock_holder(path):
+    """pid из замка прогона («<pid> <метка>»); None -- не прочитался."""
+    try:
+        return int(open(path, encoding="utf-8").read().split()[0])
+    except (OSError, ValueError, IndexError):
+        return None
+
+
+def pid_alive(pid):
+    """Жив ли процесс. Сомнение -- в пользу «жив»: снять чужой живой замок хуже,
+    чем подождать."""
+    if os.name == "nt":
+        import ctypes
+        k32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        k32.OpenProcess.restype = ctypes.c_void_p
+        h = k32.OpenProcess(0x1000, False, pid)          # PROCESS_QUERY_LIMITED_INFORMATION
+        if not h:
+            return ctypes.get_last_error() == 5            # ERROR_ACCESS_DENIED -- процесс есть
+        code = ctypes.c_ulong()
+        ok = k32.GetExitCodeProcess(ctypes.c_void_p(h), ctypes.byref(code))
+        k32.CloseHandle(ctypes.c_void_p(h))
+        return not ok or code.value == 259                 # STILL_ACTIVE
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
+
 def least_recent(cities, n, path):
     """n городов, которые дольше всех не обходились; ни разу не обходившиеся -- первыми,
     при равенстве -- в порядке списка."""
@@ -558,12 +589,19 @@ def main():
     os.makedirs(LOG_DIR, exist_ok=True)
     stamp = datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S")
     log_path = os.path.join(LOG_DIR, "pipeline_%s.log" % stamp)
+    stale_note = None
     try:
         fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
     except FileExistsError:
         age = time.time() - os.path.getmtime(LOCK)
-        if age < 6 * 3600:
+        holder = lock_holder(LOCK)
+        if age < 6 * 3600 and (holder is None or pid_alive(holder)):
             sys.exit("другой прогон уже идёт (%s, начат %d мин назад)" % (LOCK, age / 60))
+        # Прогон, убитый целиком (закрыли окно задачи, выключили компьютер), свой
+        # замок не снимает: finally ниже до него не доходит. 23.09.2026 так замок
+        # остался в 11:37 и шесть часов отказывал бы любому запуску руками.
+        stale_note = "замок прошлого прогона (pid %s, %d мин назад) снят: %s" % (
+            holder, age / 60, "процесса больше нет" if holder and not pid_alive(holder) else "старше 6 ч")
         os.unlink(LOCK)
         fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
     os.write(fd, ("%d %s" % (os.getpid(), stamp)).encode())
@@ -575,6 +613,8 @@ def main():
     try:
         with open(log_path, "w", encoding="utf-8") as log:
             say(log, "=== прогон %s ===" % stamp)
+            if stale_note:
+                say(log, stale_note)
             offline = not wait_for_network(log)
             for s in ([] if offline else plan):
                 say(log, "\n[%s]" % s.name)
