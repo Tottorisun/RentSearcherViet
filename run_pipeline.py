@@ -110,6 +110,9 @@ BDS_PROFILE = os.path.join(HERE, "_bds_profile_c")
 # Лежит среди логов -- у каждой машины свой и в репозиторий не идёт.
 BDS_VISITS = os.path.join(LOG_DIR, "batdongsan_visits.json")
 BDS_STEP = "batdongsan: "
+# То же для городов Facebook (кроме приоритетных -- они идут каждый прогон).
+FB_VISITS = os.path.join(LOG_DIR, "fb_city_visits.json")
+FB_STEP = "Facebook: группы, "
 
 
 # Сеть проверяется до первого шага. Задание на ПК стоит «запустить при первой
@@ -231,20 +234,21 @@ def steps_for(a):
             "нет %s -- на этой машине вход в Facebook не заведён; "
             "профиль не переносится с чужой машины намеренно" % FB_PROFILE)
         cities = [c.strip() for c in a.fb_cities.split(",") if c.strip()]
-        # Городов Facebook стало пятнадцать, а каждый занимает до сорока минут:
-        # полный обход за прогон невозможен. Поэтому за прогон берётся окно из
-        # a.fb_batch городов, а начало окна сдвигается по дню года -- каждый
-        # город получает свой черёд раз в два-три дня, и порядок не зависит от
-        # того, чем закончился прошлый прогон.
-        if a.fb_batch and len(cities) > a.fb_batch:
-            start = (datetime.date.today().toordinal() * a.fb_batch) % len(cities)
-            cities = [cities[(start + i) % len(cities)] for i in range(a.fb_batch)]
-        for city in cities:
-            if city:
-                out.append(Step("Facebook: группы, %s" % city,
-                                [py, "fb_collect.py", "--groups", "--city", city,
-                                 "--max-groups", str(a.fb_groups)],
-                                fatal=False, timeout=2400, skip_if=why))
+        # Приоритетные города -- в каждом прогоне и с большим числом групп: Нячанг --
+        # город публичного канала (решение владельца 21.09.2026), и с 23.09 у него и
+        # у Дананга по восемь групп вместо одной. Остальные -- a.fb_batch тех, что
+        # дольше всех не обходились (FB_VISITS), как у batdongsan. Прежде окно
+        # сдвигалось по дню, и оба прогона дня ходили в одни и те же шесть
+        # городов, а день без прогона уносил их черёд с собой.
+        prio = [c.strip() for c in a.fb_priority.split(",") if c.strip() in cities]
+        rest = [c for c in cities if c not in prio]
+        if a.fb_batch and len(rest) > a.fb_batch:
+            rest = least_recent(rest, a.fb_batch, FB_VISITS)
+        for city in prio + rest:
+            out.append(Step(FB_STEP + city,
+                            [py, "fb_collect.py", "--groups", "--city", city,
+                             "--max-groups", str(a.fb_priority_groups if city in prio else a.fb_groups)],
+                            fatal=False, timeout=2400, skip_if=why))
         # Посты, у которых разобрался тип, одна цена, фотографии и район,
         # заводит программа; остальное остаётся кандидатами для сессии. Здесь,
         # а не на сервере: кандидаты Facebook есть только на этом ПК. Поэтому
@@ -538,6 +542,10 @@ def main():
                              "da-nang,hai-phong,hue,can-tho,buon-ma-thuot,phu-quoc,"
                              "hoi-an,vung-tau,quy-nhon,da-lat"))
     ap.add_argument("--fb-groups", type=int, default=2, help="групп на город за прогон")
+    ap.add_argument("--fb-priority", default="nha-trang,da-nang",
+                    help="города Facebook, которые обходятся в каждом прогоне")
+    ap.add_argument("--fb-priority-groups", type=int, default=3,
+                    help="групп на приоритетный город за прогон")
     ap.add_argument("--tg-pages", type=int, default=2)
     ap.add_argument("--no-chotot", action="store_true")
     ap.add_argument("--no-fb", action="store_true")
@@ -627,11 +635,12 @@ def main():
             # профиль браузера), и те же города пойдут первыми в следующий раз.
             # Упал один из трёх -- он отмечен и уступает очередь, а не занимает
             # место каждый прогон.
-            bds = [(s.name[len(BDS_STEP):], st) for s, st, _t in results
-                   if s.name.startswith(BDS_STEP) and st != "skipped"]
-            if any(st == "ok" for _c, st in bds):
-                for city, _st in bds:
-                    note_visit(city, BDS_VISITS)
+            for step_prefix, visits in ((BDS_STEP, BDS_VISITS), (FB_STEP, FB_VISITS)):
+                done = [(s.name[len(step_prefix):], st) for s, st, _t in results
+                        if s.name.startswith(step_prefix) and st != "skipped"]
+                if any(st == "ok" for _c, st in done):
+                    for city, _st in done:
+                        note_visit(city, visits)
 
             bad = [s.name for s, st, _t in results if st in ("failed", "timeout") and s.fatal]
             soft = [s.name for s, st, _t in results if st in ("failed", "timeout") and not s.fatal]

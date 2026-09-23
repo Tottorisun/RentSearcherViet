@@ -191,11 +191,30 @@ GROUPS = {
         {"id": "2244023172420260", "name": "Cho Thuê Nhà Nguyên Căn - Hà Nội (436k)"},
         {"id": "416308689716559", "name": "HỘI CHO THUÊ CHUNG CƯ HÀ NỘI (280k)"},
     ],
+    # Нячанг и Дананг -- по одной группе до 23.09.2026, при том что Нячанг --
+    # первый город публичного канала. Найдены поиском самого Facebook
+    # (_fb_find_groups.py), каждая прочитана пробой: сколько постов из выдачи
+    # проходит фильтры сборщика (в скобках). Все открытые -- читаются без
+    # вступления, поэтому не вступали. Порядок -- по этой пробе.
     "nha-trang": [
-        {"id": "chothuecanhogiarenhatrang", "name": None},
+        {"id": "849441571863086", "name": "CHO THUÊ CĂN HỘ NHA TRANG (90k; 13 из 15)"},
+        {"id": "chothue79", "name": "Cho Thuê Căn Hộ Nha Trang - Apartment for rent (40k; 12 из 15)"},
+        {"id": "nhatrang.apartment.and.house", "name": "Nha Trang Apartment And House For Rent (170k; 10 из 15)"},
+        {"id": "thuecanhotronhatrang", "name": "Cho Thuê Nhà & Phòng Trọ Sinh Viên NHA TRANG (183k; 10 из 15)"},
+        {"id": "2253829621529798", "name": "Nha Trang apartment for rent (31k; 8 из 16)"},
+        {"id": "1172766863380743", "name": "CHO THUÊ NHÀ NHA TRANG | Аренда квартир в Нячанге (22k; 7 из 17)"},
+        {"id": "khachsanvillahomestaynhatrang", "name": "НЯЧАНГ АРЕНДА КВАРТИР | APARTMENTS FOR RENT (18k; 7 из 15)"},
+        {"id": "chothuecanhogiarenhatrang", "name": "Cho Thuê Căn Hộ Giá Rẻ Nha Trang (58k)"},
     ],
     "da-nang": [
-        {"id": "canhochothuedanangtot", "name": None},
+        {"id": "phongtrocanhonhadanang", "name": "Phòng Trọ, Căn Hộ, Nhà Đà Nẵng Cho Thuê (230k; 14 из 17)"},
+        {"id": "203559903815711", "name": "Apartments, Houses, Villas Rental in Da Nang - Hoi An Expats (170k; 10 из 14)"},
+        {"id": "476056366996433", "name": "Cho Thuê Nhà Nguyên Căn Đà Nẵng (171k; 10 из 15)"},
+        {"id": "728946289449167", "name": "Cho Thuê Phòng Trọ & Căn Hộ Sinh Viên Đà Nẵng (314k; 8 из 12)"},
+        {"id": "canhochungcudanang", "name": "CĂN HỘ CHUNG CƯ ĐÀ NẴNG (337k; 7 из 13)"},
+        {"id": "1454201286459382", "name": "Da Nang Apartment & House Rentals (86k; 7 из 15)"},
+        {"id": "chothuecanhodanang43", "name": "Cho Thuê Căn Hộ Đà Nẵng (231k; 7 из 18)"},
+        {"id": "canhochothuedanangtot", "name": "Căn hộ cho thuê Đà Nẵng (193k)"},
     ],
     # --- добавлено 12 сентября 2026, города с ежедневными авиарейсами ---
     "hai-phong": [
