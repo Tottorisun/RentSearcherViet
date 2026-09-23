@@ -88,7 +88,22 @@ PRICE_LIMITS = {"VND": (1_500_000, 500_000_000), "PHP": (3_000, 500_000), "USD":
 # ingest_telegram.WARD_ALIASES, не заменяя её.
 FB_ALIASES = {
     "ho-chi-minh": {"thao dien": "ak", "an phu": "ak"},
+    # Англоязычные посты агентств Нячанга (с 23.09.2026 у города восемь групп)
+    # называют укрупнённые районы реформы 2025 года по-английски: «North Nha
+    # Trang» -- дословно Bắc Nha Trang, и так зовут всё к северу от реки Cái, то
+    # есть сам этот район; «West» -- Tây. «South(ern) Nha Trang» сюда НЕ входит:
+    # это описание «юг города», а не район. 23.09.2026 одно и то же агентство
+    # писало «Phuoc Hai – Southern Nha Trang», а Phước Hải по границам карты --
+    # в Phường Nha Trang, не в Nam Nha Trang.
+    "nha-trang": {"north nha trang": "btr", "northern nha trang": "btr",
+                  "west nha trang": "ttr", "western nha trang": "ttr"},
 }
+# Проверенные места Нячанга (жилые комплексы, кварталы) -- та же таблица, по
+# которой заводит телеграм (it.PLACE_WARDS, сверена с OSM и границами карты).
+PLACE_CITIES = ("nha-trang",)
+# Прежний квартал внутри укрупнённого района: сколько строк сайта с координатами
+# нужно, чтобы считать вложенность доказанной, и какая их доля должна лежать внутри.
+NESTED_MIN_ROWS, NESTED_SHARE = 5, 0.8
 
 # Пост не про аренду жилья на месяцы, даже если слово «rent» в нём есть.
 # Проверка идёт по свёрнутому тексту (it.words): без диакритики, в нижнем
@@ -112,6 +127,17 @@ NOT_A_RENTAL = (
     # голое «muốn thuê» / «tìm thuê» 23.09.2026 отсеяло два настоящих объявления.
     (r"\b(?:minh|toi|em|chung toi|chung minh|vo chong minh|gia dinh minh) (?:dang )?(?:can )?"
      r"tim (?:thue|nha|can ho|phong|studio)\b",
+     "это поиск жилья, а не предложение"),
+    # «We are a married couple, Tanya and Anton, looking for a comfortable apartment»,
+    # «I'm looking for a 6-month rental» -- в группах Нячанга таких 5 из 40 (23.09.2026).
+    # Не «looking for» вообще: хозяин пишет «Looking for a peaceful place...? Our home»,
+    # «We are looking for long-term tenants».
+    # «I'm looking for someone to take over the apartment» -- жилец передаёт аренду,
+    # то есть сдаёт (23.09.2026, Дананг): после «looking for» -- кто-то, а не жильё.
+    (r"\b(?:we|i)(?: are| am| re| m)?(?: [a-z]+){0,6} looking for\b"
+     r"(?! (?:a |an |new |long term |long-term |reliable |good )?"
+     r"(?:tenant|renter|guest|occupant|client|someone|somebody|person|people|replacement|takeover))"
+     r"|\bмы ищем\b|\bищем\b.{0,20}(?:квартир|комнат|дом|жиль)",
      "это поиск жилья, а не предложение"),
     (r"\bper night\b|\bnightly\b|посуточн|\bdaily rate\b", "посуточно"),
 )
@@ -141,7 +167,11 @@ ADDR_LINE = re.compile(
     r"^.{0,4}(?:📍|🏠|🏡|address|adress|location|located\s+(?:in|at|on)|situated\s+in|"
     # «Vị trí: KĐT Royal Park» -- адрес; «Vị trí thuận tiện», «Vị trí đẹp» -- реклама,
     # поэтому «vị trí» считается только с двоеточием сразу за ним.
-    r"địa chỉ|dia chi|vị trí(?=\s*:)|vi tri(?=\s*:)|адрес|адресс|находится\s+в)\s*:?\s*(.+)$",
+    # «Area: Loc Tho - City Center», «Khu vực: Phước Hải» -- так агентства Нячанга
+    # пишут квартал. «Area: 45m²» тоже попадёт сюда, но района в нём нет, и строка
+    # ничего не решит.
+    r"địa chỉ|dia chi|vị trí(?=\s*:)|vi tri(?=\s*:)|area(?=\s*:)|khu vực(?=\s*:)|khu vuc(?=\s*:)|"
+    r"адрес|адресс|находится\s+в)\s*:?\s*(.+)$",
     re.I | re.M)
 # Ориентир -- не адрес: «рядом с Lotte», «5 минут до Mỹ Khê», «easy access to
 # Makati». Такие куски выбрасываются, иначе район берётся от соседнего города.
@@ -151,6 +181,7 @@ ADDR_LINE = re.compile(
 NEARBY = re.compile(r"^\s*(?:near|close to|beside|next to|walking distance|access to|"
                     r"\d+\s*[- ]?(?:min|mins|minute|minutes|phút)|рядом|близко|в \d+ минут|"
                     r"gần\b|sát\b|đối diện\b|cách\s+(?!m[ạa]ng\b))", re.I)
+SIZE_ONLY = re.compile(r"^[\d.,\s]+(?:m2|m²|sqm|sq\.?\s?m|mét vuông)\b.{0,12}$", re.I)
 STREET_TAIL = re.compile(r"\b([A-ZĐ][\wÀ-ỹ']*(?:\s+[A-ZĐ0-9][\wÀ-ỹ']*){0,3})\s+(?:street|str\.?|st\.)\b")
 STREET_HEAD = re.compile(r"\b(?:đường|duong|street|ул\.)\s+([A-ZĐ][\wÀ-ỹ']*(?:\s+[A-ZĐ0-9][\wÀ-ỹ']*){0,3})")
 # Слова, которые в адресной строке ничего не называют, но встречаются в
@@ -187,7 +218,8 @@ def body_of(c):
 
 # Заголовок «📍 TÌM CĂN HỘ CHO THUÊ» -- «ищу квартиру в аренду». Только в первой
 # строке: «Bạn đang tìm phòng trọ giá rẻ?» в середине -- это хозяин зазывает.
-SEEKING_TITLE = re.compile(r"^\W*(?:minh |em |toi )?(?:dang )?tim (?:can ho|phong|nha|studio)\b")
+SEEKING_TITLE = re.compile(r"^\W*(?:minh |em |toi )?(?:dang )?tim (?:can ho|phong|nha|studio)\b|"
+                           r"^\W*(?:apartment|house|room|studio|flat) wanted\b")
 
 
 def rental_or_skip(text):
@@ -323,7 +355,8 @@ def address_lines(text):
     for ln in raw:
         for part in re.split(r"[,;|·•–—]", ln):
             part = part.strip()
-            if part and not NEARBY.match(part):
+            # «Area: 35m²» -- размер, а не место (см. ADDR_LINE).
+            if part and not NEARBY.match(part) and not SIZE_ONLY.match(part):
                 keep.append(part)
     return keep
 
@@ -431,8 +464,44 @@ def desc_hits(name, key, city, ctx, exclude):
                and any(it.has_words(l["_dwords"], a) for a in alts))
 
 
+# «Phía Nam Nha Trang» -- «южная сторона Нячанга», описание, а не Phường Nam Nha
+# Trang (см. FB_ALIASES): без этого слова «nam nha trang» внутри него давали район.
+DESCRIPTIVE = {"nha-trang": re.compile(r"\bphia nam(?: nha trang)?\b")}
+
+
 def ward_keys_in(text, city, ctx):
-    return {k for w, k in ctx.ward_words.get(city, {}).items() if it.has_words(it.words(text), w)}
+    w = it.words(text)
+    if city in DESCRIPTIVE:
+        w = DESCRIPTIVE[city].sub(" ", w)
+    return {k for ww, k in ctx.ward_words.get(city, {}).items() if it.has_words(w, ww)}
+
+
+def parent_of(fine, city, ctx):
+    """Укрупнённый район, внутри которого лежит прежний квартал без своих границ,
+    -- по координатам строк сайта этого квартала. None -- не доказано."""
+    c = collections.Counter(ctx.ward_of(city, l["lat"], l["lon"]) for l in ctx.by_city.get(city, [])
+                            if l.get("district") == fine and l.get("lat") and not l.get("_new"))
+    total = sum(c.values())
+    if total < NESTED_MIN_ROWS:
+        return None
+    top, n = c.most_common(1)[0]
+    return top if top != it.OUTSIDE and n >= NESTED_SHARE * total else None
+
+
+def narrow_nested(wards, city, ctx):
+    """Пост назвал и прежний квартал, и укрупнённый район, в котором тот лежит
+    («An Vien – Vinh Truong – Southern Nha Trang»): это не противоречие, а два
+    уровня одного адреса -- берём квартал, он точнее. Вложенность -- только
+    доказанная строками сайта (parent_of); иначе набор остаётся как был, и пост
+    отсеивается за «несколько районов»."""
+    if len(wards) != 2:
+        return wards
+    bounds = ctx.bounds.get(city, {})
+    coarse = [k for k in wards if k in bounds]
+    fine = [k for k in wards if k not in bounds]
+    if len(coarse) == 1 and len(fine) == 1 and parent_of(fine[0], city, ctx) == coarse[0]:
+        return {fine[0]}
+    return wards
 
 
 def resolve(c, text, city, ctx, exclude):
@@ -448,7 +517,7 @@ def resolve(c, text, city, ctx, exclude):
         return (d["key"], d["why"],
                 place_name(d.get("street") or d.get("place") or d.get("ward_part")), d["moved"])
 
-    wards = ward_keys_in(" | ".join(lines_), city, ctx)
+    wards = narrow_nested(ward_keys_in(" | ".join(lines_), city, ctx), city, ctx)
     if len(wards) > 1:
         raise Skip("адрес называет несколько районов: %s" % ", ".join(sorted(wards)))
     ev, why, place, split, tried = {}, {}, None, [], set()
@@ -608,6 +677,8 @@ class Ctx(it.Ctx):
         super().__init__(today)
         for city, extra in FB_ALIASES.items():
             self.ward_words.setdefault(city, {}).update(extra)
+        for city in PLACE_CITIES:
+            self.ward_words.setdefault(city, {}).update(it.PLACE_WARDS.get(city, {}))
         # Слова ОПИСАНИЯ строки, отдельно от it.Ctx._words, куда подмешана ещё
         # и ссылка. Зачем разделять -- см. desc_hits.
         for rows in self.by_city.values():
