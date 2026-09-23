@@ -106,6 +106,13 @@ NOT_A_RENTAL = (
     (r"\btim\b.{0,40}\bo ghep\b|\bo ghep\b.{0,40}\btim\b", "ищут соседа, а не сдают"),
     (r"\bcan thue\b|\bищу\b.{0,20}(?:квартир|комнат|дом)|\bсниму\b",
      "это поиск жилья, а не предложение"),
+    # «Mình đang tìm thuê», «Tôi đang cần tìm thuê nhà», «Mình đang tìm nhà cho thuê» --
+    # ищут, а не сдают. Только от первого лица: хозяин пишет «Bạn đang tìm...?»,
+    # «khách muốn thuê trọn gói», «anh chị muốn thuê căn hộ đẹp nhắc máy gọi» --
+    # голое «muốn thuê» / «tìm thuê» 23.09.2026 отсеяло два настоящих объявления.
+    (r"\b(?:minh|toi|em|chung toi|chung minh|vo chong minh|gia dinh minh) (?:dang )?(?:can )?"
+     r"tim (?:thue|nha|can ho|phong|studio)\b",
+     "это поиск жилья, а не предложение"),
     (r"\bper night\b|\bnightly\b|посуточн|\bdaily rate\b", "посуточно"),
 )
 
@@ -132,14 +139,17 @@ TYPE_RULES = (
 # Строка адреса: с неё начинается разбор района.
 ADDR_LINE = re.compile(
     r"^.{0,4}(?:📍|🏠|🏡|address|adress|location|located\s+(?:in|at|on)|situated\s+in|"
-    r"địa chỉ|dia chi|адрес|адресс|находится\s+в)\s*:?\s*(.+)$", re.I | re.M)
+    # «Vị trí: KĐT Royal Park» -- адрес; «Vị trí thuận tiện», «Vị trí đẹp» -- реклама,
+    # поэтому «vị trí» считается только с двоеточием сразу за ним.
+    r"địa chỉ|dia chi|vị trí(?=\s*:)|vi tri(?=\s*:)|адрес|адресс|находится\s+в)\s*:?\s*(.+)$",
+    re.I | re.M)
 # Ориентир -- не адрес: «рядом с Lotte», «5 минут до Mỹ Khê», «easy access to
 # Makati». Такие куски выбрасываются, иначе район берётся от соседнего города.
 # Вьетнамские слова добавлены 13.09.2026 вместе с названиями жилых комплексов в
 # WARD_ALIASES: «gần Manor Crown» иначе дал бы район комплекса дому по соседству.
 # «cách» -- только не в «Cách Mạng Tháng Tám»: это улица почти в каждом городе.
 NEARBY = re.compile(r"^\s*(?:near|close to|beside|next to|walking distance|access to|"
-                    r"\d+\s*[- ]?(?:min|mins|minute|minutes)|рядом|близко|в \d+ минут|"
+                    r"\d+\s*[- ]?(?:min|mins|minute|minutes|phút)|рядом|близко|в \d+ минут|"
                     r"gần\b|sát\b|đối diện\b|cách\s+(?!m[ạa]ng\b))", re.I)
 STREET_TAIL = re.compile(r"\b([A-ZĐ][\wÀ-ỹ']*(?:\s+[A-ZĐ0-9][\wÀ-ỹ']*){0,3})\s+(?:street|str\.?|st\.)\b")
 STREET_HEAD = re.compile(r"\b(?:đường|duong|street|ул\.)\s+([A-ZĐ][\wÀ-ỹ']*(?:\s+[A-ZĐ0-9][\wÀ-ỹ']*){0,3})")
@@ -175,11 +185,18 @@ def body_of(c):
     return it.nfc(c.get("body") or "")
 
 
+# Заголовок «📍 TÌM CĂN HỘ CHO THUÊ» -- «ищу квартиру в аренду». Только в первой
+# строке: «Bạn đang tìm phòng trọ giá rẻ?» в середине -- это хозяин зазывает.
+SEEKING_TITLE = re.compile(r"^\W*(?:minh |em |toi )?(?:dang )?tim (?:can ho|phong|nha|studio)\b")
+
+
 def rental_or_skip(text):
     f = it.words(text)
     for rx, why in NOT_A_RENTAL:
         if re.search(rx, f):
             raise Skip(why)
+    if SEEKING_TITLE.search(it.words(it.first_line(text))):
+        raise Skip("это поиск жилья, а не предложение")
 
 
 def _type_in(src):

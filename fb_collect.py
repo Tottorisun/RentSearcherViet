@@ -307,6 +307,19 @@ INVISIBLE_RE = re.compile("[͏​-‏⁠-⁤⁪-⁯"
 FACEBOOK_RUN_RE = re.compile(r"(?:\bFacebook\b[ \t ]*){2,}")
 
 
+# «𝟐𝑩𝑹 • 𝑭𝑼𝑳𝑳𝒀 𝑭𝑼𝑹𝑵𝑰𝑺𝑯𝑬𝑫 | 𝑮Ò 𝑽Ấ𝑷», «𝗟𝗼𝗰𝗮𝘁𝗶𝗼𝗻: Crossing Bogo» -- посты пишут
+# «математическими» буквами Юникода (жирные, курсив) и полноширинными знаками, чтобы
+# выделиться в ленте. Для регулярных выражений это не буквы: 23.09.2026 такой пост
+# из Хошимина ушёл в отказ «нет признака аренды», а в Думагете строка «Location»
+# не нашлась как адрес. Переводятся только эти два блока -- общий NFKC превратил бы
+# ещё и «m²» в «m2», «½» в «1⁄2» и прочее, что видно в тексте.
+_STYLED_RE = re.compile("[\U0001D400-\U0001D7FF！-～]")
+
+
+def fold_styled(s):
+    return _STYLED_RE.sub(lambda m: unicodedata.normalize("NFKC", m.group(0)), s or "")
+
+
 def clean_text(s):
     """NFC-normalise, drop invisible spam separators, collapse hidden-node noise.
 
@@ -316,7 +329,7 @@ def clean_text(s):
     """
     if not s:
         return ""
-    s = unicodedata.normalize("NFC", s)
+    s = unicodedata.normalize("NFC", fold_styled(s))
     s = INVISIBLE_RE.sub("", s)
     s = FACEBOOK_RUN_RE.sub(" ", s)
     s = s.replace(" ", " ")
@@ -446,6 +459,17 @@ def parse_prices(text, currency="VND"):
             val = float(m.group(1).replace(",", "."))
             if 0.3 <= val <= 500:
                 add(val * 1_000_000, m)
+        # «25m VND/month», «7.5M/month», «15 million», «8 mil» -- так пишут англоязычные
+        # посты во вьетнамских группах (23.09.2026: нячангский пост «25m VND/month»
+        # ушёл в отказ «нет цены»). Голое «25m» -- это и метры («20m from the rice
+        # fields»), поэтому «m» считается миллионами только перед валютой или «/месяц».
+        for m in re.finditer(r"(?<![\d.,])(\d{1,3}(?:[.,]\d{1,2})?)\s*"
+                             r"(?:mil(?:lion)?s?\b|mln\b|"
+                             r"m\s*(?=(?:vnd|vnđ)\b|₫|đ\b|/\s*(?:month|mo\b|tháng)))",
+                             text, re.I):
+            val = float(m.group(1).replace(",", "."))
+            if 0.3 <= val <= 500:
+                add(val * 1_000_000, m)
 
     # Grouped numbers: 4.900.000 / 8,000,000 / 12 000 / 15,000
     # (?<!\d\s) -- не начинать с середины цифрового ряда через пробел: телефон
@@ -458,9 +482,9 @@ def parse_prices(text, currency="VND"):
             continue
         add(int(re.sub(r"[.,\s]", "", raw)), m)
 
-    # "12k", "5500k"
-    for m in re.finditer(r"(?<![\d.,])(\d{1,5})\s*k\b", text, re.I):
-        add(int(m.group(1)) * 1000, m)
+    # "12k", "5500k", "17.5k" (23.09.2026: «FOR RENT 17.5k/mo» в Маниле не читался)
+    for m in re.finditer(r"(?<![\d.,])(\d{1,3}[.,]\d{1,2}|\d{1,5})\s*k\b", text, re.I):
+        add(float(m.group(1).replace(",", ".")) * 1000, m)
 
     if currency == "PHP":
         # "PHP 12000", "₱12000", "P12000" without separators
@@ -557,7 +581,13 @@ def find_address(text):
         else:
             parts = [p for p in re.split(r"(?<=[.!?;•|])\s+|\s+[-–—]\s+", line) if p]
             chunks.extend(_norm(p) for p in parts if len(_norm(p)) >= 6)
-    strong = re.compile(r"địa chỉ|đ/c\b|\baddress\b|\blocated (?:at|in)\b|\blocation\b", re.I)
+    # 📍 и «Vị trí» -- тоже пометка адреса. Без них строка «📍 An Son Residential Area»
+    # или «Vị trí: KĐT Royal Park Huế» -- название места без номера дома -- не
+    # находилась, и пост уходил в отказ «нет адреса» (23.09.2026: так в отказе
+    # оказались посты из Далата и Нячанга). Район по этой строке всё равно решает
+    # ingest_facebook, и решает строго.
+    strong = re.compile(r"📍|địa chỉ|đ/c\b|\baddress\b|\blocated (?:at|in)\b|\blocation\b|"
+                        r"\bvị trí\s*:", re.I)
     for c in chunks:
         if strong.search(c):
             return c
@@ -1169,6 +1199,7 @@ def payload_body(text):
 
     clean_post_body тут не годится: он писан под innerText карточки и выбрасывает
     строки вроде одинокого числа -- а в объявлении это бывает пункт списка."""
+    text = unicodedata.normalize("NFC", fold_styled(text or ""))
     lines = [re.sub(r"[ \t\u00a0]+", " ", l).strip() for l in (text or "").splitlines()]
     return "\n".join(l for l in lines if l)
 
@@ -1242,6 +1273,41 @@ def post_timestamp(post, today=None):
     return pick_timestamp(strings, today=today)
 
 
+# Какие группы города открывать в этот раз. Раньше -- всегда первые --max-groups из
+# реестра: на 23.09.2026 в реестре 60 групп, а прогон ни разу не заходил в 31 из них
+# (у Себу -- в 6 из 8, у Манилы -- в 5 из 7, у Ханоя -- в 4 из 6). Теперь берутся
+# группы, в которые этот ПК дольше всех не заходил; не заходил ни разу -- первыми, при
+# равенстве -- в порядке реестра. Отметка -- только когда группа открылась: без сети
+# (19.09.2026) она не должна уходить в конец очереди. Лежит среди логов: у каждой
+# машины своя, в репозиторий не идёт.
+GROUP_VISITS = os.path.join(HERE, "daily_check_logs", "fb_group_visits.json")
+
+
+def _group_visits():
+    try:
+        return json.load(open(GROUP_VISITS, encoding="utf-8"))
+    except (FileNotFoundError, ValueError):
+        return {}
+
+
+def least_visited_groups(groups, n):
+    seen = _group_visits()
+    order = sorted(range(len(groups)), key=lambda i: (seen.get(groups[i]["id"], ""), i))
+    return [groups[i] for i in order[:n]]
+
+
+def note_group_visits(gids):
+    seen = _group_visits()
+    now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    for gid in gids:
+        seen[gid] = now
+    os.makedirs(os.path.dirname(GROUP_VISITS), exist_ok=True)
+    tmp = GROUP_VISITS + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(seen, f, ensure_ascii=False, indent=1, sort_keys=True)
+    os.replace(tmp, GROUP_VISITS)
+
+
 def collect_groups(args, ctx, page, result, known):
     city_key = args.city_key or CITY_SLUG_TO_KEY.get(args.city) or args.city
     currency = "PHP" if city_key in PH_CITIES else "VND"
@@ -1254,17 +1320,19 @@ def collect_groups(args, ctx, page, result, known):
         if not groups:
             raise SystemExit("no groups registered for city key %r. Known: %s"
                              % (city_key, ", ".join(sorted(k for k in GROUPS if k != "_unassigned"))))
-        groups = groups[:args.max_groups]
+        groups = least_visited_groups(groups, args.max_groups)
     result["run"]["groups"] = groups
     result["run"]["currency"] = currency
     print("city %s (%s), %d group(s), cap %d posts total"
           % (city_key, currency, len(groups), args.max_items))
 
     budget = args.max_items
+    attempted = []
     for gi, g in enumerate(groups, 1):
         if budget <= 0:
             break
         gid = g["id"]
+        attempted.append(gid)
         print("\n[group %d/%d] %s %s" % (gi, len(groups), gid, g.get("name") or ""))
         try:
             posts = harvest_group_search(page, gid, want=min(budget * 3, 40))
@@ -1292,20 +1360,20 @@ def collect_groups(args, ctx, page, result, known):
             ok, reason = classify(None, body, currency=currency)
             if not ok:
                 result["rejected"].append({"post_id": pid, "url": permalink, "group": gid,
-                                           "reason": reason, "excerpt": body[:160]})
+                                           "reason": reason, "excerpt": body[:400]})
                 continue
             address = find_address(body)
             if not address:
                 result["rejected"].append({"post_id": pid, "url": permalink, "group": gid,
                                            "reason": "no address in the post text",
-                                           "excerpt": body[:160]})
+                                           "excerpt": body[:400]})
                 continue
             prices = parse_prices(body, currency)
             usd = parse_prices_usd(body)
             if not prices and not usd:
                 result["rejected"].append({"post_id": pid, "url": permalink, "group": gid,
                                            "reason": "no price in the post text",
-                                           "excerpt": body[:160]})
+                                           "excerpt": body[:400]})
                 continue
 
             budget -= 1
@@ -1331,7 +1399,7 @@ def collect_groups(args, ctx, page, result, known):
                         result["rejected"].append({"post_id": pid, "url": permalink, "group": gid,
                                                    "reason": "post no longer available (title %r)"
                                                              % title[:60],
-                                                   "excerpt": body[:160]})
+                                                   "excerpt": body[:400]})
                         budget += 1
                         print("    gone: %s" % title[:60])
                         continue
@@ -1387,6 +1455,13 @@ def collect_groups(args, ctx, page, result, known):
                      "{:,}".format(cand["price"]) if cand["price"] else "?",
                      currency, (cand["district_hint_from_address"] or "")[:40]))
             _sleep(args.pause_min, args.pause_max)
+    # Отмечаются все группы, в которые заходили, -- если открылась хоть одна. Не
+    # открылась ни одна -- дело не в группах (сеть, вход), и они пойдут первыми в
+    # следующий раз. Одна упорно не открывается -- уступает очередь, а не занимает
+    # её навсегда.
+    failed = {e["group"] for e in result["errors"] if "group" in e}
+    if not args.group and any(g not in failed for g in attempted):
+        note_group_visits(attempted)
     return result
 
 
@@ -1922,6 +1997,29 @@ def selftest():
     check("php-symbol", parse_prices("Rent ₱15000/month", "PHP")[0][0], 15000)
     check("php-word", parse_prices("PHP 8500 per month", "PHP")[0][0], 8500)
     check("php-k", parse_prices("Rent is 12k a month", "PHP")[0][0], 12000)
+    check("php-k-decimal", parse_prices("FOR RENT 17.5k/mo", "PHP")[0][0], 17500)
+
+    # -- 23.09.2026: посты, которые сборщик отбрасывал зря --------------------
+    check("vnd-25m-vnd", [v for v, _ in parse_prices("Apartment in Nha Trang — 25m VND/month")],
+          [25_000_000])
+    check("vnd-7.5M-month", [v for v, _ in parse_prices("Price: 7.5M/month")], [7_500_000])
+    check("vnd-million", [v for v, _ in parse_prices("Rent 15 million per month")], [15_000_000])
+    check("metres-not-money",
+          [v for v, _ in parse_prices("20m from the rice fields, 5m wide, giá 8 triệu")],
+          [8_000_000])
+    styled = "🌿 𝟐𝑩𝑹 • 𝑭𝑼𝑳𝑳𝒀 𝑭𝑼𝑹𝑵𝑰𝑺𝑯𝑬𝑫 | 𝑮Ò 𝑽Ấ𝑷\n𝐋𝐨𝐜𝐚𝐭𝐢𝐨𝐧: Đường Số 7"
+    check("styled-payload", payload_body(styled),
+          "🌿 2BR • FULLY FURNISHED | GÒ VẤP\nLocation: Đường Số 7")
+    check("styled-clean", clean_text("𝗙𝗢𝗥 𝗥𝗘𝗡𝗧 · m² stays"), "FOR RENT · m² stays")
+    check("styled-classify", classify(None, payload_body("𝗙𝗢𝗥 𝗥𝗘𝗡𝗧: 𝟐𝑩𝑹 condo, 20k/month"),
+                                      "PHP")[0], True)
+    check("addr-pin", find_address("🏡 FOR RENT – NEWLY RENOVATED APARTMENT | OC1B\n"
+                                   "📍 3608 – Mường Thanh Viễn Triều • 71m²"),
+          "📍 3608 – Mường Thanh Viễn Triều • 71m²")
+    check("addr-pin-no-number", find_address("Nice house\n📍 An Son Residential Area – quiet"),
+          "📍 An Son Residential Area – quiet")
+    check("addr-vi-tri", find_address("CHO THUÊ STUDIO CAO CẤP\nVị trí: KĐT Royal Park Huế"),
+          "Vị trí: KĐT Royal Park Huế")
     check("php-footwear-85", parse_prices("Brand new sandals PHP 85", "PHP"), [])
     check("php-deposit-skipped",
           [v for v, _ in parse_prices("Rent 9,000. Deposit 18,000 and advance 9,000", "PHP")],
