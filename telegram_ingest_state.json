@@ -156,6 +156,18 @@
    "hash": "391c17a65de05c3924b1bf2b04700c080f05011d",
    "id": 2000843
   },
+  "https://t.me/arenda_nyachang_zhilye/28156": {
+   "cat": "sunset:A2350",
+   "checked": "2026-09-24",
+   "hash": "7320ab626756d1462e3bb0e0d69a87ab98046f98",
+   "id": 2000851
+  },
+  "https://t.me/arenda_nyachang_zhilye/28166": {
+   "cat": "sunset:A2351",
+   "checked": "2026-09-24",
+   "hash": "c81865d933e39826f802c3744568ee68ec66c38a",
+   "id": 2000852
+  },
   "https://t.me/arenda_vietnam/64978": {
    "checked": "2026-09-12",
    "hash": "1db4ad4716edb0148f02a2cf3870da16c9f3ad6b",
@@ -371,6 +383,12 @@
   "https://t.me/danang_house/21919": {
    "checked": "2026-09-24",
    "id": 2000837
+  },
+  "https://t.me/danang_house/21937": {
+   "cat": null,
+   "checked": "2026-09-24",
+   "hash": "7f65acbf38bcf8402beb19210a05e1655a732470",
+   "id": 2000850
   },
   "https://t.me/danangrentaflat/128804": {
    "cat": null,
@@ -961,6 +979,24 @@
    "checked": "2026-09-24",
    "hash": "dc2455ea636e347f474d05d2ef66c923a0e8a043",
    "id": 2000833
+  },
+  "https://t.me/danangrentaflat/135949": {
+   "cat": null,
+   "checked": "2026-09-24",
+   "hash": "2a14f2fc1b79c32424fa73319969aa2645bdc7ac",
+   "id": 2000847
+  },
+  "https://t.me/danangrentaflat/135965": {
+   "cat": null,
+   "checked": "2026-09-24",
+   "hash": "921bb4f8d337abffef2539892a2f68577dcf7c00",
+   "id": 2000845
+  },
+  "https://t.me/danangrentaflat/135975": {
+   "cat": null,
+   "checked": "2026-09-24",
+   "hash": "5ffcbc4c3d0972842b5eff582bc8463ea44a7a8c",
+   "id": 2000846
   },
   "https://t.me/nhatranghomes/11270": {
    "cat": null,
@@ -1691,6 +1727,18 @@
    "checked": "2026-09-24",
    "hash": "03ba48984d9fdccb728db8722f20105c69d888e5",
    "id": 2000837
+  },
+  "https://t.me/vietnam_nedvijimost/24505": {
+   "cat": null,
+   "checked": "2026-09-24",
+   "hash": "0796929f2444f99ca91dcc1ba1ca9b8c939deb02",
+   "id": 2000849
+  },
+  "https://t.me/vietnam_nedvijimost/24529": {
+   "cat": null,
+   "checked": "2026-09-24",
+   "hash": "f81210d92bca32ba65ba0b658ffb65e223e8673d",
+   "id": 2000848
   }
  }
 }
