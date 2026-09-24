@@ -6638,5 +6638,32 @@
   "lat": 16.025095,
   "lon": 108.2595335,
   "display_name": "My An Beach, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "New Apartment, Da Nang, Vietnam": null,
+ "New Apartment, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Ngu Hanh Sơn, Da Nang, Vietnam": {
+  "lat": 16.010798,
+  "lon": 108.253178,
+  "display_name": "Phường Ngũ Hành Sơn, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "An Đồn 5, Da Nang, Vietnam": {
+  "lat": 16.0740756,
+  "lon": 108.2296596,
+  "display_name": "Đường An Đồn, Tổ dân phố An Đồn 1, Phường An Hải, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Trương Quyền, Da Nang, Vietnam": {
+  "lat": 16.0870309,
+  "lon": 108.24527,
+  "display_name": "Đường Trương Quyền, Phường Sơn Trà, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "Nguyễn Sinh Sắc, Da Nang, Vietnam": {
+  "lat": 15.5571586,
+  "lon": 108.4763068,
+  "display_name": "Nguyễn Sinh Sắc, Phường Tam Kỳ, Tam Kỳ, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Nguyễn Sinh Sắc, Phường Hòa Khánh, Da Nang, Vietnam": {
+  "lat": 16.0799336,
+  "lon": 108.1651974,
+  "display_name": "Đường Nguyễn Sinh Sắc, Phường Hòa Khánh, Thành phố Đà Nẵng, 84236, Việt Nam"
  }
 }
