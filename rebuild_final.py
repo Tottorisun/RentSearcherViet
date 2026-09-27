@@ -1014,6 +1014,9 @@ __LEAFLET_CSS__
   #poi-sort-select,#complex-select{width:100%;max-width:100%;padding:11px 14px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font-size:1rem;}
   .poi-dist-badge{font-size:0.78rem;color:var(--ink-dim);white-space:nowrap;}
   .complex-pill{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:999px;background:var(--paper);border:1px solid var(--line-strong);font-size:0.78rem;color:var(--ink);}
+  .amen-pills{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+  .amen-pill{padding:1px 7px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:0.74rem;color:var(--ink-dim);white-space:nowrap;}
+  .amen-pill.on{border-color:var(--accent);color:var(--accent);}
   .suggest-list{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-md);list-style:none;margin:0;padding:6px;z-index:20;max-height:260px;overflow:auto;}
   .suggest-list li{border-radius:8px;}
   .suggest-list button{width:100%;text-align:left;background:none;border:none;padding:9px 10px;border-radius:8px;cursor:pointer;color:var(--ink);display:flex;justify-content:space-between;gap:10px;font-size:0.94rem;}
@@ -1320,6 +1323,17 @@ __LEAFLET_CSS__
       </div>
 
       <div class="field">
+        <span class="field-label" data-i18n="amenLabel">Есть в объявлении</span>
+        <div class="chip-row" id="amen-chips"></div>
+        <p class="field-hint" data-i18n="amenHint">Только то, что продавец сам написал в объявлении. Не написано — не значит «нет».</p>
+      </div>
+
+      <div class="field">
+        <span class="field-label" data-i18n="floorLabel">Этаж</span>
+        <div class="chip-row" id="floor-chips"></div>
+      </div>
+
+      <div class="field">
         <span class="field-label" data-i18n="sortLabel">Сортировка</span>
         <div class="sort-toggle" id="sort-toggle">
           <button data-sort="asc" class="active" type="button" data-i18n="sortAsc">Дешевле</button>
@@ -1532,6 +1546,11 @@ __LEAFLET_CSS__
       datesLabel:"Даты заезда (Airbnb / Agoda / Trip.com / CozyCozy)",
       datesHint:"Появится, когда подключим посуточные сервисы — там снимают на даты, а не на месяцы.",
       typeLabel:"Тип жилья", sortLabel:"Сортировка",
+      amenLabel:"Есть в объявлении", amenHint:"Только то, что продавец сам написал в объявлении. Не написано — не значит «нет».",
+      amenNames:{w:"🧺 своя стиралка", ws:"🧺 стиралка общая", k:"🍳 кухня", b:"балкон", win:"окно", lift:"лифт",
+                 pool:"бассейн", gym:"спортзал", free:"свободный вход", pet:"можно с животными"},
+      floorLabel:"Этаж", floorAny:"Любой", floorFrom:function(n){ return "от " + n + "-го"; },
+      floorPill:function(n){ return n + "-й этаж"; }, floorHigh:"высокий этаж",
       sortAsc:"Дешевле", sortDesc:"Дороже", sortNew:"Новые", perM2:"сортировать по цене за м²",
       poiLabel:"Ближе к...", poiNone:"не важно", poiMetro:"🚇 метро", poiSchool:"🎓 школе", poiHospital:"✚ больнице",
       mapTitle:"Карта района", mapNote:"реальные границы районов, OpenStreetMap",
@@ -1583,6 +1602,11 @@ __LEAFLET_CSS__
       datesLabel:"Check-in dates (Airbnb / Agoda / Trip.com / CozyCozy)",
       datesHint:"Coming when per-night services are added — those are booked by date, not by month.",
       typeLabel:"Property type", sortLabel:"Sort by",
+      amenLabel:"Stated in the listing", amenHint:"Only what the owner wrote in the listing. Not stated doesn't mean \"no\".",
+      amenNames:{w:"🧺 own washer", ws:"🧺 shared washer", k:"🍳 kitchen", b:"balcony", win:"window", lift:"lift",
+                 pool:"pool", gym:"gym", free:"no curfew", pet:"pets allowed"},
+      floorLabel:"Floor", floorAny:"Any", floorFrom:function(n){ return n + "+"; },
+      floorPill:function(n){ return "floor " + n; }, floorHigh:"high floor",
       sortAsc:"Cheaper", sortDesc:"Pricier", sortNew:"Newest", perM2:"sort by price per m²",
       poiLabel:"Closer to...", poiNone:"doesn't matter", poiMetro:"🚇 metro", poiSchool:"🎓 school", poiHospital:"✚ hospital",
       mapTitle:"District map", mapNote:"real district boundaries, OpenStreetMap",
@@ -1647,7 +1671,7 @@ __LEAFLET_CSS__
     });
     // re-render everything that builds its own strings in JS
     renderCityTabs(); renderCityMap(); renderBudgetChips(); renderDaysChips();
-    renderSourceChips(); renderTypeChips(); renderComplexFilter(); applyFilters();
+    renderSourceChips(); renderTypeChips(); renderAmenChips(); renderFloorChips(); renderComplexFilter(); applyFilters();
     el.favFilterToggle.textContent = (state.showFavoritesOnly ? "★" : "☆") + " " + t("favFilter");
   }
 
@@ -1681,7 +1705,9 @@ __LEAFLET_CSS__
   var state = {
     city: PAGE ? PAGE.city : "nha-trang", district: null, complex: null, minBudget: null, maxBudget: null, maxDays: 7, sort: "asc", type: null, kind: PAGE ? PAGE.kind : "residential", poiSort: "", textSearch: "", showFavoritesOnly: false, perM2: false,
     sources: new Set(SOURCES.filter(function(s){ return s.active; }).map(function(s){ return s.key; })),
-    openDetails: new Set()
+    openDetails: new Set(),
+    // Удобства и этаж из текста объявления (amenities.py на сборке данных).
+    amen: new Set(), minFloor: null
   };
 
   var THEME_KEY = "rentSearcherTheme";
@@ -1752,6 +1778,8 @@ __LEAFLET_CSS__
     complexField: document.getElementById("complex-field"),
     complexSelect: document.getElementById("complex-select"),
     daysChips: document.getElementById("days-chips"),
+    amenChips: document.getElementById("amen-chips"),
+    floorChips: document.getElementById("floor-chips"),
     sourceChips: document.getElementById("source-chips"),
     typeChips: document.getElementById("type-chips"),
     sortToggle: document.getElementById("sort-toggle"),
@@ -2445,6 +2473,52 @@ __LEAFLET_CSS__
     syncBudgetUI();
   }
 
+  // Что показывать фильтром: общая стиральная машина фильтром не нужна никому,
+  // окно -- почти у всех; обе остаются значками в карточке.
+  var AMEN_FILTER = ["w","k","b","lift","pool","gym","free","pet"];
+  var FLOOR_OPTIONS = [3, 5, 10];
+  function renderAmenChips(){
+    if (!el.amenChips) return;
+    el.amenChips.innerHTML = "";
+    AMEN_FILTER.forEach(function(code){
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.textContent = t("amenNames")[code];
+      b.setAttribute("aria-pressed", state.amen.has(code) ? "true":"false");
+      b.addEventListener("click", function(){
+        if (state.amen.has(code)) state.amen.delete(code); else state.amen.add(code);
+        renderAmenChips(); applyFilters();
+      });
+      el.amenChips.appendChild(b);
+    });
+  }
+  function renderFloorChips(){
+    if (!el.floorChips) return;
+    el.floorChips.innerHTML = "";
+    [null].concat(FLOOR_OPTIONS).forEach(function(n){
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.textContent = n === null ? t("floorAny") : t("floorFrom")(n);
+      b.setAttribute("aria-pressed", state.minFloor===n ? "true":"false");
+      b.addEventListener("click", function(){ state.minFloor = n; renderFloorChips(); applyFilters(); });
+      el.floorChips.appendChild(b);
+    });
+  }
+  // «Высокий этаж» без номера проходит «от 3-го» и «от 5-го», но не «от 10-го».
+  function floorPasses(l, n){
+    var d = l.details || {};
+    if (d.fl != null) return d.fl >= n;
+    return !!d.flHigh && n <= 5;
+  }
+  function amenPillsHtml(l){
+    var d = l.details || {};
+    var names = t("amenNames");
+    var pills = (d.am || []).map(function(c){
+      return names[c] ? '<span class="amen-pill' + (state.amen.has(c) ? " on" : "") + '">' + names[c] + '</span>' : "";
+    });
+    if (d.fl != null) pills.push('<span class="amen-pill' + (state.minFloor ? " on" : "") + '">' + t("floorPill")(d.fl) + '</span>');
+    else if (d.flHigh) pills.push('<span class="amen-pill' + (state.minFloor ? " on" : "") + '">' + t("floorHigh") + '</span>');
+    return pills.length ? '<div class="amen-pills">' + pills.join("") + '</div>' : "";
+  }
+
   function renderDaysChips(){
     el.daysChips.innerHTML = "";
     DAY_OPTIONS.forEach(function(v){
@@ -2602,6 +2676,13 @@ __LEAFLET_CSS__
       if (state.type && l.type !== state.type) return false;
       if (state.textSearch && listingSearchText(l).indexOf(state.textSearch) === -1) return false;
       if (state.showFavoritesOnly && !favorites.has(l.id)) return false;
+      if (state.amen.size){
+        var am = (l.details && l.details.am) || [];
+        var miss = false;
+        state.amen.forEach(function(c){ if (am.indexOf(c) === -1) miss = true; });
+        if (miss) return false;
+      }
+      if (state.minFloor !== null && !floorPasses(l, state.minFloor)) return false;
       return true;
     });
     if (state.poiSort){
@@ -2694,6 +2775,7 @@ __LEAFLET_CSS__
             (state.poiSort && l._poiDist!=null ? (' · <span class="poi-dist-badge">' + POI_STYLE[state.poiSort].icon + " " + fmtDist(l._poiDist) + '</span>') : "") +
             (l.complex ? ('<br><span class="complex-pill">🏢 ' + l.complex + '</span>') : "") +
           '</div>' +
+          amenPillsHtml(l) +
         '</div>' +
         '<p class="listing-desc">' + descText(l) + '</p>' +
         noticeHtml +
@@ -2744,6 +2826,7 @@ __LEAFLET_CSS__
 
   el.resetBtn.addEventListener("click", function(){
     state.district = null; state.complex=null; state.minBudget=null; state.maxBudget=null; state.maxDays=7; state.sort="asc"; state.type=null; state.poiSort=""; state.textSearch=""; state.showFavoritesOnly=false; state.perM2=false
+    state.amen = new Set(); state.minFloor = null;
     // Reset returns to housing, so the budget ceiling must come back with it --
     // otherwise the slider keeps the 300M commercial scale on residential data.
     // On a per-city page the kind is the page itself and stays.
@@ -2756,7 +2839,7 @@ __LEAFLET_CSS__
     el.districtInput.value=""; el.poiSortSelect.value=""; el.textSearchInput.value=""; el.perM2Toggle.checked=false;
     el.favFilterToggle.setAttribute("aria-pressed","false"); el.favFilterToggle.textContent="☆ " + t("favFilter");
     Array.prototype.forEach.call(el.sortToggle.querySelectorAll("button"), function(b){ b.classList.toggle("active", b.getAttribute("data-sort")==="asc"); });
-    syncBudgetUI(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderComplexFilter(); renderCityMap(); applyFilters();
+    syncBudgetUI(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderAmenChips(); renderFloorChips(); renderComplexFilter(); renderCityMap(); applyFilters();
   });
 
   var lightboxPhotos = [], lightboxIndex = 0;
@@ -2847,7 +2930,7 @@ __LEAFLET_CSS__
   }
   initTheme();
   initLeafletMap();
-  renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); setupBudgetSlider(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderComplexFilter(); applyFilters();
+  renderCityTabs(); renderCityMap(); updatePoiSortAvailability(); setupBudgetSlider(); renderBudgetChips(); renderDaysChips(); renderSourceChips(); renderTypeChips(); renderAmenChips(); renderFloorChips(); renderComplexFilter(); applyFilters();
   initLang();
 })();
 </script>

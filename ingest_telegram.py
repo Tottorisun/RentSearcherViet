@@ -69,6 +69,7 @@ import unicodedata
 import urllib.parse
 import urllib.request
 
+import amenities
 import fetch_telegram_listings as ftl
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -1241,7 +1242,8 @@ def decide(c, ctx, exclude=frozenset(), check_age=True):
               else "precedent" if set(d["how"]) == {"precedent"} else None)
     if method:
         notice, notice_en = notice + HOW_RU[method], notice_en + HOW_EN[method]
-    details = {"photos": photos, "notice": notice, "noticeEn": notice_en}
+    details = amenities.attach({"photos": photos}, text)
+    details.update({"notice": notice, "noticeEn": notice_en})
     also = [{"source": "telegram", "url": x["permalink"]} for x in c.get("duplicates") or []
             if x.get("permalink") and norm_url(x["permalink"]) != norm_url(c["permalink"])]
     if also:
