@@ -106,14 +106,24 @@ def extract(text):
     return out
 
 
-def attach(details, text):
+# Дом и склад сдаются целиком: «tầng 1: phòng khách, bếp» в их тексте -- планировка,
+# а не этаж сдаваемого. Так 27.09.2026 у 144 домов на карточке встал бы «1-й этаж».
+WHOLE_BUILDING = {"Дом", "Склад"}
+
+
+def floor_applies(typ):
+    return typ not in WHOLE_BUILDING
+
+
+def attach(details, text, typ=None):
     """Положить найденное в details строки (на месте, и вернуть его же). Пустое не
-    кладём: строка без удобств и этажа весит столько же, сколько раньше."""
+    кладём: строка без удобств и этажа весит столько же, сколько раньше. typ --
+    тип строки на сайте; у дома и склада этаж не кладётся."""
     got = extract(text)
     if got["am"]:
         details["am"] = got["am"]
     for k in ("fl", "flHigh"):
-        if k in got:
+        if k in got and floor_applies(typ):
             details[k] = got[k]
     return details
 

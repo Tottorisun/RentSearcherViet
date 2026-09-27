@@ -403,7 +403,7 @@ def row_text(lid, city, key, type_ru, ad, age):
     ru, en = describe(ad, type_ru, ward, city_ru, city_en)
     det = {"photos": [u for u in (ad.get("images") or [])[:6]]}
     # Удобства и этаж -- для фильтров сайта (amenities.py), из заголовка и текста.
-    amenities.attach(det, "%s\n%s" % (ad.get("subject") or "", ad.get("body") or ""))
+    amenities.attach(det, "%s\n%s" % (ad.get("subject") or "", ad.get("body") or ""), type_ru)
     det.update({"notice": "RU_N", "noticeEn": "EN_N"})
     j = lambda s: json.dumps(safe(s) if isinstance(s, str) else s, ensure_ascii=False)
     return ('L(%d,"%s","%s","%s",%d,%s,\n  %s,\n  %s,%s,%d,source="chotot",\n'

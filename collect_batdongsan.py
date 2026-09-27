@@ -525,7 +525,7 @@ def allocate(n):
 LD_DESC = re.compile(r'"description"\s*:\s*"((?:[^"\\]|\\.)*)"')
 
 
-def bds_details(photos, card, d):
+def bds_details(photos, card, d, typ):
     """details строки: фотографии, удобства и этаж, оговорка. Удобства -- из
     заголовка и описания продавца; характеристики не берём: «Số tầng» там --
     этажность дома, а не этаж квартиры."""
@@ -538,7 +538,7 @@ def bds_details(photos, card, d):
             except ValueError:
                 pass
     det = amenities.attach({"photos": photos},
-                           "\n".join([card.get("title") or "", d.get("h1") or "", desc]))
+                           "\n".join([card.get("title") or "", d.get("h1") or "", desc]), typ)
     det.update({"notice": NOTICE_RU, "noticeEn": NOTICE_EN})
     return det
 
@@ -739,7 +739,7 @@ def main():
                                  "type": typ, "price": price, "area": area, "beds": beds,
                                  "age": max(0, age), "ru": ru, "en": en, "why": why,
                                  "replaces": replaces,
-                                 "details": bds_details(photos, c, d)})
+                                 "details": bds_details(photos, c, d, typ)})
                 ctx_site.by_city[a.city].append(
                     {"id": "new:%d" % prid, "city": a.city, "district": dkey, "type": typ,
                      "area": area, "pv": pv, "_beds": beds, "_words": it.words(ru + " " + en),

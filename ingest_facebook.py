@@ -658,7 +658,7 @@ def decide(c, ctx, exclude=frozenset()):
         notice, notice_en = notice + it.HOW_RU["street"], notice_en + it.HOW_EN["street"]
     elif set(why) == {"precedent"}:
         notice, notice_en = notice + it.HOW_RU["precedent"], notice_en + it.HOW_EN["precedent"]
-    details = amenities.attach({"photos": photos}, text)
+    details = amenities.attach({"photos": photos}, text, typ)
     details.update({"notice": notice, "noticeEn": notice_en})
     return {"key": "%s/%s" % (c.get("group_id") or "fb", c.get("post_id")), "url": c["url"],
             "city": city, "district": key, "type": typ, "price": price, "cur": cur, "pv": pv,

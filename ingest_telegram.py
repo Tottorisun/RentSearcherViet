@@ -1242,7 +1242,7 @@ def decide(c, ctx, exclude=frozenset(), check_age=True):
               else "precedent" if set(d["how"]) == {"precedent"} else None)
     if method:
         notice, notice_en = notice + HOW_RU[method], notice_en + HOW_EN[method]
-    details = amenities.attach({"photos": photos}, text)
+    details = amenities.attach({"photos": photos}, text, p["type"])
     details.update({"notice": notice, "noticeEn": notice_en})
     also = [{"source": "telegram", "url": x["permalink"]} for x in c.get("duplicates") or []
             if x.get("permalink") and norm_url(x["permalink"]) != norm_url(c["permalink"])]

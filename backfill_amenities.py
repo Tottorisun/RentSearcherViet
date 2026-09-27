@@ -150,7 +150,7 @@ def apply():
             # На место перед оговоркой: photos, am, fl, flHigh, notice, noticeEn -- как у новых строк.
             tail = {k: det.pop(k) for k in ("notice", "noticeEn") if k in det}
             for k in KEYS:
-                if got.get(k):
+                if got.get(k) and (k == "am" or amenities.floor_applies(r.get("type"))):
                     det[k] = 1 if k == "flHigh" else got[k]   # в кэше до 27.09 -- True
             det.update(tail)
             if {k: det.get(k) for k in KEYS} != before:
