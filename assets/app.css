@@ -807,6 +807,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
   #poi-sort-select,#complex-select{width:100%;max-width:100%;padding:11px 14px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font-size:1rem;}
   .poi-dist-badge{font-size:0.78rem;color:var(--ink-dim);white-space:nowrap;}
   .complex-pill{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:999px;background:var(--paper);border:1px solid var(--line-strong);font-size:0.78rem;color:var(--ink);}
+  .amen-pills{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+  .amen-pill{padding:1px 7px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:0.74rem;color:var(--ink-dim);white-space:nowrap;}
+  .amen-pill.on{border-color:var(--accent);color:var(--accent);}
   .suggest-list{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-md);list-style:none;margin:0;padding:6px;z-index:20;max-height:260px;overflow:auto;}
   .suggest-list li{border-radius:8px;}
   .suggest-list button{width:100%;text-align:left;background:none;border:none;padding:9px 10px;border-radius:8px;cursor:pointer;color:var(--ink);display:flex;justify-content:space-between;gap:10px;font-size:0.94rem;}
