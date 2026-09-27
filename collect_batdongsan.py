@@ -48,6 +48,7 @@ import subprocess
 import sys
 import time
 
+import amenities
 import ingest_telegram as it
 import repo_sync
 
@@ -178,7 +179,10 @@ DETAIL_JS = """() => {
       .filter(s => s && s.includes('file4.batdongsan.com.vn')))];
   const ld = [...document.querySelectorAll('script[type="application/ld+json"]')]
       .map(s => s.textContent).join(' ');
+  const one = s => { const e = document.querySelector(s); return e ? e.innerText.trim() : ''; };
   return {short: short, spec: spec, imgs: imgs, ld: ld,
+          h1: one('h1.re__pr-title') || one('h1'),
+          desc: one('.re__section-body.re__detail-content') || one('.re__detail-content'),
           tracking: window.pageTrackingData ? JSON.stringify(window.pageTrackingData) : ''};
 }"""
 
@@ -518,6 +522,27 @@ def allocate(n):
     return list(range(int(m.group(1)), int(m.group(2)) + 1))
 
 
+LD_DESC = re.compile(r'"description"\s*:\s*"((?:[^"\\]|\\.)*)"')
+
+
+def bds_details(photos, card, d):
+    """details строки: фотографии, удобства и этаж, оговорка. Удобства -- из
+    заголовка и описания продавца; характеристики не берём: «Số tầng» там --
+    этажность дома, а не этаж квартиры."""
+    desc = d.get("desc") or ""
+    if not desc:
+        m = LD_DESC.search(d.get("ld") or "")
+        if m:
+            try:
+                desc = json.loads('"%s"' % m.group(1))
+            except ValueError:
+                pass
+    det = amenities.attach({"photos": photos},
+                           "\n".join([card.get("title") or "", d.get("h1") or "", desc]))
+    det.update({"notice": NOTICE_RU, "noticeEn": NOTICE_EN})
+    return det
+
+
 def write_batch(rows_data, skipped, ids, today, city):
     j = lambda s: json.dumps(s, ensure_ascii=False)
     rows = []
@@ -714,8 +739,7 @@ def main():
                                  "type": typ, "price": price, "area": area, "beds": beds,
                                  "age": max(0, age), "ru": ru, "en": en, "why": why,
                                  "replaces": replaces,
-                                 "details": {"photos": photos, "notice": NOTICE_RU,
-                                             "noticeEn": NOTICE_EN}})
+                                 "details": bds_details(photos, c, d)})
                 ctx_site.by_city[a.city].append(
                     {"id": "new:%d" % prid, "city": a.city, "district": dkey, "type": typ,
                      "area": area, "pv": pv, "_beds": beds, "_words": it.words(ru + " " + en),

@@ -9,9 +9,10 @@ ingest_telegram). Строки живут на сайте неделю, так �
 Две фазы, чтобы долгая сеть не держала блокировку и не пересекалась с прогоном
 сервера:
   1. сбор (без блокировки): полный текст объявления Chợ Tốt по API, текст поста
-     Facebook -- из файлов кандидатов fb_collect; разбор кладётся в кэш
-     daily_check_logs/amenities_cache.json (id -> {"am", "fl", "flHigh"}), и
-     прерванный сбор продолжается с места;
+     Facebook -- из файлов кандидатов fb_collect, Telegram -- со страницы поста
+     t.me (batdongsan закрыт Cloudflare -- его строки получают разбор только
+     при сборе); разбор кладётся в кэш daily_check_logs/amenities_cache.json
+     (id -> {"am", "fl", "flHigh"}), и прерванный сбор продолжается с места;
   2. --apply: под блокировкой строк -- положить разобранное в details тех строк,
      у которых его ещё нет. Быстро; делать между прогонами сервера.
 
@@ -35,6 +36,7 @@ sys.path.insert(0, HERE)
 
 import amenities
 import check_freshness as cf
+import fetch_telegram_listings as ftl
 from listing_lock import listings_write_lock, load_rows, save_rows
 
 CACHE = os.path.join("daily_check_logs", "amenities_cache.json")
@@ -106,6 +108,16 @@ def collect(a):
                 time.sleep(0.3)
             elif src == "fbgroup":
                 text = fb.get(r["url"].split("?")[0].rstrip("/"))
+            elif src == "telegram":
+                # Один пост -- страница-встраивание t.me, её отдают без входа.
+                try:
+                    h = ftl.http_get(r["url"].split("?")[0] + "?embed=1&mode=tme")
+                except RuntimeError:
+                    err += 1
+                    continue
+                tm = ftl.TEXT_RE.search(h)
+                text = ftl.strip_tags(ftl.inner_div(h, tm.start())) if tm else ""
+                time.sleep(0.5)
             if not text:
                 continue
             got = amenities.extract(text)
