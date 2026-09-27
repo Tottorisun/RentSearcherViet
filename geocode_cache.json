@@ -6772,5 +6772,22 @@
   "lat": 16.0828848,
   "lon": 108.1605522,
   "display_name": "Đường Dương Đức Hiền, Phường Hòa Khánh, Thành phố Đà Nẵng, 84236, Việt Nam"
+ },
+ "Đỗ Bí, Da Nang, Vietnam": {
+  "lat": 16.053845,
+  "lon": 108.2458405,
+  "display_name": "Đường Đỗ Bí, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Regal Villa, Da Nang, Vietnam": null,
+ "Regal Villa, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Bắc Đẩu, Da Nang, Vietnam": {
+  "lat": 16.0791728,
+  "lon": 108.2111238,
+  "display_name": "Kiệt 02 Bắc Đẩu, Tổ dân phố 14 Thanh Bình, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Hàm Nghi, Da Nang, Vietnam": {
+  "lat": 16.0634679,
+  "lon": 108.2106087,
+  "display_name": "Đường Hàm Nghi, Tổ dân phố 24 Thạc Gián, Phường Thanh Khê, Thành phố Đà Nẵng, 50207, Việt Nam"
  }
 }
