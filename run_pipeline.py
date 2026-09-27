@@ -143,6 +143,27 @@ def wait_for_network(log, limit=None):
         time.sleep(15)
 
 
+def keep_awake(on):
+    """Попросить Windows не засыпать, пока идёт прогон (и снять просьбу).
+
+    Работа фоновой программы для Windows -- не активность: ноутбук уходит в сон по
+    таймеру простоя посреди прогона. 23.09.2026 прогон начался в 23:45, в 00:05
+    система уснула (событие Kernel-Power 42) и проснулась в 11:23 -- шаг Facebook
+    по Вунгтау «не уложился в 2400 с»; 25.09 то же с Данангом (сон в 11:34).
+    SetThreadExecutionState действует, пока жив этот процесс, настройки питания
+    не меняет; закрытие крышки ноутбука по-прежнему усыпляет."""
+    if os.name != "nt":
+        return
+    try:
+        import ctypes
+        ES_CONTINUOUS, ES_SYSTEM_REQUIRED = 0x80000000, 0x00000001
+        f = ctypes.windll.kernel32.SetThreadExecutionState
+        f.argtypes, f.restype = [ctypes.c_uint32], ctypes.c_uint32
+        f(ES_CONTINUOUS | (ES_SYSTEM_REQUIRED if on else 0))
+    except Exception:
+        pass
+
+
 def lock_holder(path):
     """pid из замка прогона («<pid> <метка>»); None -- не прочитался."""
     try:
@@ -369,9 +390,18 @@ def run(step, log):
     try:
         p = subprocess.run(step.argv, cwd=HERE, capture_output=True, text=True,
                            encoding="utf-8", errors="replace", timeout=step.timeout)
-    except subprocess.TimeoutExpired:
-        say(log, "  ПРОВАЛ: не уложился в %d с" % step.timeout)
-        return "timeout", ""
+    except subprocess.TimeoutExpired as ex:
+        # Вывод убитого шага не выбрасываем: 23 и 25.09.2026 два шага Facebook
+        # «не уложились», и в логе не было ни строки -- гадать пришлось по журналу
+        # Windows (ноутбук уснул посреди шага, см. keep_awake).
+        def _s(x):
+            return x.decode("utf-8", "replace") if isinstance(x, bytes) else (x or "")
+        partial = "\n".join(t for t in (_s(ex.stdout).strip(), _s(ex.stderr).strip()) if t)
+        tail = "\n".join([ln for ln in partial.split("\n") if ln.strip()][-6:])
+        log.write("$ %s\n%s\n" % (" ".join(step.argv), partial))
+        say(log, "  ПРОВАЛ: не уложился в %d с. Последнее, что сказал:\n%s"
+            % (step.timeout, indent(tail or "(ничего)")))
+        return "timeout", tail
     # Хвост берём из ОБОИХ потоков. Сначала брался только stdout, и отказ
     # fb_collect.py («not logged in», stderr) в сводке выглядел пустым местом:
     # шаг провалился, а причина не показана -- ровно та беда, ради которой
@@ -618,6 +648,7 @@ def main():
     results = []
     publish_failed = False
     offline = False
+    keep_awake(True)
     try:
         with open(log_path, "w", encoding="utf-8") as log:
             say(log, "=== прогон %s ===" % stamp)
@@ -680,6 +711,7 @@ def main():
                   open(os.path.join(LOG_DIR, "pipeline_last.json"), "w", encoding="utf-8"),
                   ensure_ascii=False, indent=1)
     finally:
+        keep_awake(False)
         try:
             os.unlink(LOCK)
         except FileNotFoundError:
