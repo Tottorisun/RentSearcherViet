@@ -6846,5 +6846,26 @@
   "lat": 16.0737947,
   "lon": 108.2410714,
   "display_name": "Đường Hoàng Bích Sơn, Tổ dân phố An Cư 1, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "My An Stress, Da Nang, Vietnam": null,
+ "My An Stress, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Bedroom Apartment, Da Nang, Vietnam": null,
+ "Bedroom Apartment, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Cozy 1, Da Nang, Vietnam": null,
+ "Cozy 1, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Khue My 7, Da Nang, Vietnam": {
+  "lat": 16.0369082,
+  "lon": 108.2445028,
+  "display_name": "Đường Khuê Mỹ Đông 1, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "My Khe, Da Nang, Vietnam": {
+  "lat": 16.0603836,
+  "lon": 108.2458465,
+  "display_name": "My Khe, Đường Lâm Hoành, Tổ dân phố Mỹ Hiệp, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "Lê Độ, Da Nang, Vietnam": {
+  "lat": 16.0711592,
+  "lon": 108.2238854,
+  "display_name": "Lê Độ, 46, Trần Phú, Tổ dân phố 29 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
  }
 }
