@@ -6909,5 +6909,22 @@
   "display_name": "Đường Nguyễn Sơn, Tổ dân phố 53, Phường Hòa Cường, Thành phố Đà Nẵng, 50507, Việt Nam"
  },
  "Nghiem Xuan Yem, Da Nang, Vietnam": null,
- "Nghiem Xuan Yem, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null
+ "Nghiem Xuan Yem, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Châu Thị Vĩnh Tế, Da Nang, Vietnam": {
+  "lat": 16.0491229,
+  "lon": 108.2408674,
+  "display_name": "Đường Châu Thị Vĩnh Tế, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Sơn Thủy 12, Da Nang, Vietnam": {
+  "lat": 16.0135391,
+  "lon": 108.2548954,
+  "display_name": "Đường Sơn Thủy 12, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Ocean Villa, Da Nang, Vietnam": null,
+ "Ocean Villa, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Nguyễn Thông, Da Nang, Vietnam": {
+  "lat": 16.0663293,
+  "lon": 108.2314607,
+  "display_name": "Đường Nguyễn Thông, Tổ dân phố An Mỹ 1, Phường An Hải, Thành phố Đà Nẵng, 02363, Việt Nam"
+ }
 }
