@@ -6958,5 +6958,45 @@
   "display_name": "Tổ dân phố Thanh Lương 3, Phường Hòa Xuân, Thành phố Đà Nẵng, 50707, Việt Nam"
  },
  "The Point Villa 22, Da Nang, Vietnam": null,
- "The Point Villa 22, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null
+ "The Point Villa 22, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Lê Ninh, Da Nang, Vietnam": {
+  "lat": 16.0725018,
+  "lon": 108.2374595,
+  "display_name": "Đường Lê Ninh, Tổ dân phố An Đồn 2, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "Trương Văn Hiến, Da Nang, Vietnam": {
+  "lat": 16.0320979,
+  "lon": 108.2449276,
+  "display_name": "Trường Mẫu giáo SOS Đà Nẵng, 15, Kiệt 142 Lê Văn Hiến, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Thi Xuan Quy, Da Nang, Vietnam": {
+  "lat": 16.0424004,
+  "lon": 108.2435602,
+  "display_name": "Đường Thị Xuân Quý, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "Phước Trường 3, Da Nang, Vietnam": {
+  "lat": 16.0370995,
+  "lon": 108.1757093,
+  "display_name": "Tổ dân phố Phước Trường 4, Phường An Khê, Thành phố Đà Nẵng, 50309, Việt Nam"
+ },
+ "Đặng Vũ Hỷ, Da Nang, Vietnam": {
+  "lat": 16.058461,
+  "lon": 108.2401559,
+  "display_name": "Đường Đặng Vũ Hỷ, Tổ dân phố Mỹ Quang, Phường An Hải, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Nguyễn Thị Sáu, Da Nang, Vietnam": {
+  "lat": 16.0059429,
+  "lon": 108.2289038,
+  "display_name": "Đường Nguyễn Thị Sáu, Tổ dân phố Trung Lương 5, Phường Hòa Xuân, Hội An, Thành phố Đà Nẵng, 50510, Việt Nam"
+ },
+ "Mỹ Đa Đông 11, Da Nang, Vietnam": {
+  "lat": 15.9115966,
+  "lon": 108.3056588,
+  "display_name": "Hà My Tây, Phường Điện Bàn Đông, Hội An, Thành phố Đà Nẵng, 51427, Việt Nam"
+ },
+ "Khuê Mỹ Đông 12, Da Nang, Vietnam": {
+  "lat": 16.0376962,
+  "lon": 108.2473709,
+  "display_name": "Đường Khuê Mỹ Đông 12, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ }
 }
