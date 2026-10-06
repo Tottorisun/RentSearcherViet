@@ -1,0 +1,117 @@
+# -*- coding: utf-8 -*-
+"""hoppler.com.ph, автоматический сбор: 19 объявлений, 2026-10-06.
+
+Партию собрал collect_hoppler.py -- без модели в контуре. Район взят из города
+Метро Манилы, к которому объявление отнёс сам портал; города без однозначного
+ключа (сама Манила, Лас-Пиньяс, Сан-Хуан) пропущены целиком. Описание собрано из
+полей карточки, возраст -- по дате последнего изменения, не старше 7 дней.
+"""
+from listing_lock import insert_listings
+
+IDS = [3001997, 3001998, 3001999, 3002000, 3002001, 3002002, 3002003, 3002004, 3002005, 3002006, 3002007, 3002008, 3002009, 3002010, 3002011, 3002012, 3002013, 3002014, 3002015]
+
+N_RU = "Описание собрано программой из карточки объявления на hoppler.com.ph — тип, спальни, санузлы, площадь, название дома и цена. Рекламный текст объявления не пересказан. hoppler публикует не дату размещения, а дату последнего изменения объявления: возраст считается по ней, и объявление могло быть создано раньше."
+N_EN = "This description was assembled by a program from the listing card on hoppler.com.ph — type, bedrooms, bathrooms, size, building name and price. The ad's marketing text is not retold. Hoppler publishes a last-updated date rather than a posting date: the age is counted from it, and the listing may have been created earlier."
+
+NEW_SRC = r'''
+L(3001997,"manila","mak","Дом",550000,600,
+  "3-спальный дом, 600 м², Urdaneta Village, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-urdaneta-village-rr3268382","сегодня",0,source="hoppler",cur="PHP",
+  descEn="3-bedroom house, 600 m², Urdaneta Village, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3268382-489573.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3268382-489573_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3268382-489573_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3268382-431247_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3268382-431247_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3268382-725298_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3001998,"manila","mak","Дом",500000,600,
+  "4-спальный дом, 600 м², Dasmariñas Village, Makati — 5 санузлов.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr3354382","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 600 m², Dasmariñas Village, Makati — 5 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3354382-638351.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3354382-638351_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3354382-638351_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3354382-288488_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3354382-288488_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3354382-435714_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3001999,"manila","mak","Дом",400000,480,
+  "5-спальный дом, 480 м², Dasmariñas Village, Makati — 5 санузлов.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr3211382","сегодня",0,source="hoppler",cur="PHP",
+  descEn="5-bedroom house, 480 m², Dasmariñas Village, Makati — 5 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3211382-389449.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3211382-389449_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3211382-389449_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3211382-754517_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3211382-754517_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3211382-112783_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002000,"manila","ort","Офис",65000,102,
+  "Офис, 102 м², Jollibee Plaza, Ortigas / Pasig.",
+  "https://www.hoppler.com.ph/pasig-ortigas-center-jollibee-plaza-cr0000373","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 102 m², Jollibee Plaza, Ortigas / Pasig.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/office_space-rent-CR0000373-752938.jpg", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/office_space-rent-CR0000373-752938_orig.jpg?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/office_space-rent-CR0000373-752938_orig.jpg?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/office_space-rent-CR0000373-853184_orig.jpg?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/office_space-rent-CR0000373-853184_orig.jpg?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/office_space-rent-CR0000373-235811_orig.jpg?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002001,"manila","mak","Дом",350000,400,
+  "3-спальный дом, 400 м², Dasmariñas Village, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr0244882","сегодня",0,source="hoppler",cur="PHP",
+  descEn="3-bedroom house, 400 m², Dasmariñas Village, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR0244882-526398.jpg", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR0244882-526398_orig.jpg?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR0244882-526398_orig.jpg?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR0244882-915462_orig.jpg?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR0244882-915462_orig.jpg?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR0244882-838556_orig.jpg?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002002,"manila","mak","Дом",400000,450,
+  "4-спальный дом, 450 м², Bel-Air Village, Makati — 5 санузлов.",
+  "https://www.hoppler.com.ph/makati-bel-air-village-rr1462282","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 450 m², Bel-Air Village, Makati — 5 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1462282-925955.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1462282-925955_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1462282-925955_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1462282-735561_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1462282-735561_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1462282-231868_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002003,"manila","mak","Дом",250000,350,
+  "4-спальный дом, 350 м², Bel-Air Village, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-bel-air-village-rr2666082","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 350 m², Bel-Air Village, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2666082-968994.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2666082-968994_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2666082-968994_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2666082-735496_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2666082-735496_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2666082-983518_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002004,"manila","mak","Дом",325000,550,
+  "4-спальный дом, 550 м², Dasmariñas Village, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr3046982","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 550 m², Dasmariñas Village, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3046982-891677.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3046982-891677_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3046982-891677_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3046982-456513_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3046982-456513_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3046982-391657_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002005,"manila","mak","Дом",350000,700,
+  "6-спальный дом, 700 м², Dasmariñas Village, Makati — 5 санузлов.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr2672582","сегодня",0,source="hoppler",cur="PHP",
+  descEn="6-bedroom house, 700 m², Dasmariñas Village, Makati — 5 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2672582-757315.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2672582-757315_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2672582-757315_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2672582-325363_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2672582-325363_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2672582-658661_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002006,"manila","mak","Дом",500000,470,
+  "5-спальный дом, 470 м², Dasmariñas Village, Makati — 5 санузлов.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr3485182","сегодня",0,source="hoppler",cur="PHP",
+  descEn="5-bedroom house, 470 m², Dasmariñas Village, Makati — 5 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3485182-845617.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3485182-845617_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3485182-845617_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3485182-772276_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3485182-772276_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3485182-643156_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002007,"manila","mak","Дом",400000,1000,
+  "4-спальный дом, 1000 м², Dasmariñas Village, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr3486082","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 1000 m², Dasmariñas Village, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3486082-493478.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3486082-493478_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3486082-493478_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3486082-564296_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3486082-564296_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3486082-364122_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002008,"manila","mak","Дом",580000,750,
+  "4-спальный дом, 750 м², Dasmariñas Village, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr2669382","сегодня",0,source="hoppler",cur="PHP",
+  descEn="4-bedroom house, 750 m², Dasmariñas Village, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2669382-139534.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2669382-139534_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2669382-139534_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2669382-468645_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2669382-468645_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2669382-963749_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002009,"manila","mak","Дом",320000,500,
+  "3-спальный дом, 500 м², Dasmariñas Village, Makati — 4 санузла.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr2018382","сегодня",0,source="hoppler",cur="PHP",
+  descEn="3-bedroom house, 500 m², Dasmariñas Village, Makati — 4 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2018382-852831.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2018382-852831_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2018382-852831_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2018382-286466_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2018382-286466_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR2018382-818568_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002010,"manila","mak","Дом",500000,600,
+  "5-спальный дом, 600 м², Dasmariñas Village, Makati — 5 санузлов.",
+  "https://www.hoppler.com.ph/makati-dasmarinas-village-rr1108582","сегодня",0,source="hoppler",cur="PHP",
+  descEn="5-bedroom house, 600 m², Dasmariñas Village, Makati — 5 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1108582-482582.jpg", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1108582-482582_orig.jpg?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1108582-482582_orig.jpg?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1108582-136898_orig.jpg?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1108582-136898_orig.jpg?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR1108582-521435_orig.jpg?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002011,"manila","mak","Офис",88578,126,
+  "Офис, 126 м², Burgundy Corporate Tower, Makati.",
+  "https://www.hoppler.com.ph/makati-san-lorenzo-village-burgundy-corporate-tower-cr0766473","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 126 m², Burgundy Corporate Tower, Makati.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0766473-652181.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0766473-652181_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0766473-652181_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0766473-153294_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0766473-153294_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0766473-937512_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002012,"manila","mak","Офис",374790,374,
+  "Офис, 374 м², Insular Life Makati, Makati.",
+  "https://www.hoppler.com.ph/makati-paseo-de-roxas-insular-life-makati-cr0747473","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 374 m², Insular Life Makati, Makati.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747473-829235.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747473-829235_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747473-829235_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747473-739616_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747473-739616_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747473-479288_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002013,"manila","mak","Офис",718470,798,
+  "Офис, 798 м², Insular Life Makati, Makati.",
+  "https://www.hoppler.com.ph/makati-paseo-de-roxas-insular-life-makati-cr0747073","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Office, 798 m², Insular Life Makati, Makati.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747073-262221.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747073-262221_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747073-262221_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747073-317455_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747073-317455_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Office_Space-rent-CR0747073-391169_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002014,"manila","mak","Склад",1800000,1500,
+  "Склад, 1500 м², makati city, Makati.",
+  "https://www.hoppler.com.ph/makati-makati-city-cr0836874","сегодня",0,source="hoppler",cur="PHP",
+  descEn="Warehouse, 1500 m², makati city, Makati.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/commercial/Warehouse-rent-CR0836874-853112.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Warehouse-rent-CR0836874-853112_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Warehouse-rent-CR0836874-853112_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Warehouse-rent-CR0836874-791139_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Warehouse-rent-CR0836874-791139_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/commercial/Warehouse-rent-CR0836874-876859_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+L(3002015,"manila","mak","Дом",220000,400,
+  "3-спальный дом, 400 м², Magallanes, Makati — 3 санузла.",
+  "https://www.hoppler.com.ph/makati-magallanes-rr3557882","2 дня назад",2,source="hoppler",cur="PHP",
+  descEn="3-bedroom house, 400 m², Magallanes, Makati — 3 bathrooms.",
+  details={"photos": ["https://dzjqf1alh39sw.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557882-693169.png", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557882-693169_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557882-693169_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557882-197137_orig.png?sg=propertypage", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557882-197137_orig.png?sg=propertycard", "https://d2wy52y0hrt3v.cloudfront.net/hoppler/properties/residential/House_and_Lot-rent-RR3557882-592394_orig.png?sg=propertypage"], "notice": "RU_N", "noticeEn": "EN_N"}),
+'''
+
+NEW_SRC = NEW_SRC.replace("RU_N", N_RU).replace("EN_N", N_EN)
+
+if __name__ == "__main__":
+    insert_listings(NEW_SRC, IDS, owner=__file__)
