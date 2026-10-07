@@ -1,20 +1,5 @@
 {
  "posts": {
-  "https://www.facebook.com/groups/1172766863380743/posts/2095404804450273": {
-   "checked": "2026-09-28",
-   "hash": "30fc52d0298dd930de5dbcbe9cb405c0dd151c42",
-   "id": 3001618
-  },
-  "https://www.facebook.com/groups/1172766863380743/posts/2095436347780452": {
-   "checked": "2026-09-28",
-   "hash": "8285f3e1843aa8136478974b2f845e03daf29863",
-   "id": 3001616
-  },
-  "https://www.facebook.com/groups/1172766863380743/posts/2095448704445883": {
-   "checked": "2026-09-28",
-   "hash": "ea708c2faa014d495cca0ee3888062c90a2ca880",
-   "id": 3001617
-  },
   "https://www.facebook.com/groups/1172766863380743/posts/2096498764340877": {
    "checked": "2026-09-30",
    "hash": "5acc8fb1cc6a529482bcd8554300bd69da4d8d5f",
@@ -25,15 +10,10 @@
    "hash": "4b75cfcf2795ee0d02df16da7d0f3def6be5221e",
    "id": 3001729
   },
-  "https://www.facebook.com/groups/1454201286459382/posts/1574681351078041": {
-   "checked": "2026-09-28",
-   "hash": "9fbd92c2ac31964d7f254d707d4fb5a6ebbf04b1",
-   "id": 3001608
-  },
-  "https://www.facebook.com/groups/1454201286459382/posts/1574683517744491": {
-   "checked": "2026-09-28",
-   "hash": "ba591041fe7eeaefca192843e4e60db53c8426ae",
-   "id": 3001607
+  "https://www.facebook.com/groups/1172766863380743/posts/2103628353627918": {
+   "checked": "2026-10-07",
+   "hash": "1bb93a0aec8b5b7645ac6df2d5d1823cec3ce5b0",
+   "id": 3002032
   },
   "https://www.facebook.com/groups/1454201286459382/posts/1578555537357289": {
    "checked": "2026-10-05",
@@ -49,6 +29,11 @@
    "checked": "2026-10-06",
    "hash": "2aeecd14cf661106541d57d5f8fbe2956b553907",
    "id": 3001975
+  },
+  "https://www.facebook.com/groups/153191128587086/posts/2242577632981748": {
+   "checked": "2026-10-07",
+   "hash": "a86c5e28cabb99dddb2ecf81942ed9e1ce5507f9",
+   "id": 3002027
   },
   "https://www.facebook.com/groups/153191128587086/posts/2247439485828896": {
    "checked": "2026-09-30",
@@ -80,11 +65,6 @@
    "hash": "1c34ab8a2a2e0839794ba9115dca2e3e4fc08580",
    "id": 3001875
   },
-  "https://www.facebook.com/groups/2253829621529798/posts/4732237407022328": {
-   "checked": "2026-09-28",
-   "hash": "18837ee0b0dd03ca4370a445532f603b75f6bf73",
-   "id": 3001615
-  },
   "https://www.facebook.com/groups/2253829621529798/posts/4735693780010024": {
    "checked": "2026-09-30",
    "hash": "23c3fef7dd04e84a22f67fdd3d461082179369f7",
@@ -94,6 +74,11 @@
    "checked": "2026-09-30",
    "hash": "cf808c8b50e5a7cb5c93a850e1dde81e538211fd",
    "id": 3001727
+  },
+  "https://www.facebook.com/groups/2253829621529798/posts/4743707395875329": {
+   "checked": "2026-10-07",
+   "hash": "80455689b4afd9473589384ed37daf9a13848e37",
+   "id": 3002031
   },
   "https://www.facebook.com/groups/299437881275577/posts/1797047358181281": {
    "checked": "2026-09-30",
@@ -105,10 +90,15 @@
    "hash": "13285d86c6caffccdb28b90d08852e398777cfac",
    "id": 3001701
   },
-  "https://www.facebook.com/groups/3914645581932487/posts/28736619799308388": {
-   "checked": "2026-09-28",
-   "hash": "89b7ef9311367cbd95a962c8fbf312b285985e61",
-   "id": 3001603
+  "https://www.facebook.com/groups/3914645581932487/posts/28836130679357299": {
+   "checked": "2026-10-07",
+   "hash": "f80c735b5e475d3be51a89af24ec80e0b23676f1",
+   "id": 3002021
+  },
+  "https://www.facebook.com/groups/3914645581932487/posts/28849022008068166": {
+   "checked": "2026-10-07",
+   "hash": "30e437a8cfa4cff19eaf26ba8fcb6cda0aeaa2d4",
+   "id": 3002020
   },
   "https://www.facebook.com/groups/476056366996433/posts/1589097499025642": {
    "checked": "2026-10-05",
@@ -120,11 +110,6 @@
    "hash": "223411e302aafb523b06c125d7b587fc47c47e59",
    "id": 3001886
   },
-  "https://www.facebook.com/groups/476056366996433/posts/1651454722789919": {
-   "checked": "2026-09-28",
-   "hash": "c2c493bbea2e559eaa4a4d51f5989a0b6ca186a7",
-   "id": 3001604
-  },
   "https://www.facebook.com/groups/476056366996433/posts/1651973576071367": {
    "checked": "2026-09-30",
    "hash": "5c61c47e79f5fc3824e6ca1a044aad00ec7d8190",
@@ -134,6 +119,16 @@
    "checked": "2026-10-05",
    "hash": "5e178083e6804c639fcab08633ccfba2d26c5365",
    "id": 3001884
+  },
+  "https://www.facebook.com/groups/476056366996433/posts/1655589649043093": {
+   "checked": "2026-10-07",
+   "hash": "3148e7a6a746e9a43c0f4e1a130139cbca396fb3",
+   "id": 3002023
+  },
+  "https://www.facebook.com/groups/476056366996433/posts/1656261375642587": {
+   "checked": "2026-10-07",
+   "hash": "4ac6eb79bb28f23cafd006f575ef1df70ee5f649",
+   "id": 3002022
   },
   "https://www.facebook.com/groups/476056366996433/posts/1658807542054637": {
    "checked": "2026-10-06",
@@ -190,25 +185,55 @@
    "hash": "219a59e126af19d1fe7f985b73ec975cb2d5b441",
    "id": 3001887
   },
+  "https://www.facebook.com/groups/728946289449167/posts/1405859971757792": {
+   "checked": "2026-10-07",
+   "hash": "948b34bd97ee9d39799bf7ce852317dc9ce37319",
+   "id": 3002024
+  },
+  "https://www.facebook.com/groups/728946289449167/posts/1407479641595825": {
+   "checked": "2026-10-07",
+   "hash": "2fcfca32f5a38aadeb4c4032905464ee098fbda4",
+   "id": 3002025
+  },
   "https://www.facebook.com/groups/807531664242245/posts/1464410321887706": {
    "checked": "2026-10-06",
    "hash": "03b074d85503bc76d8252db17c70dd24515a7d72",
    "id": 3001985
   },
-  "https://www.facebook.com/groups/849441571863086/posts/3847261448747735": {
-   "checked": "2026-09-28",
-   "hash": "f64aa37290ea9ab84e316d880b5c9941daccaca3",
-   "id": 3001619
+  "https://www.facebook.com/groups/807531664242245/posts/1466927818302623": {
+   "checked": "2026-10-07",
+   "hash": "411d9d8c1f3330363ad1e4b5138ad54c4a9b3c94",
+   "id": 3002028
   },
   "https://www.facebook.com/groups/849441571863086/posts/3850156065124940": {
    "checked": "2026-09-30",
    "hash": "8f3b42e09bd8d232913fc4cd631b84e054d58a60",
    "id": 3001726
   },
-  "https://www.facebook.com/groups/993673090964916/posts/3096835193982018": {
-   "checked": "2026-09-28",
+  "https://www.facebook.com/groups/849441571863086/posts/3857113297762550": {
+   "checked": "2026-10-07",
+   "hash": "a811b0274f6150cac6ed9c1cd2a30ec2f22b1a16",
+   "id": 3002039
+  },
+  "https://www.facebook.com/groups/993673090964916/posts/3105063616492509": {
+   "checked": "2026-10-07",
+   "hash": "f5f725ac7e42e94eb639e4c285052888de8dbf06",
+   "id": 3002019
+  },
+  "https://www.facebook.com/groups/993673090964916/posts/3106122276386643": {
+   "checked": "2026-10-07",
+   "hash": "2b111ba097af7d851f3a5636842de0534d6aec8c",
+   "id": 3002018
+  },
+  "https://www.facebook.com/groups/993673090964916/posts/3106336639698540": {
+   "checked": "2026-10-07",
+   "hash": "24e517f05a5f8308c50df4c81f8b38edcdcadb75",
+   "id": 3002016
+  },
+  "https://www.facebook.com/groups/993673090964916/posts/3106366376362233": {
+   "checked": "2026-10-07",
    "hash": "3ae3352d37ed38cadc3bdfc5e082d7d9973a9eb5",
-   "id": 3001602
+   "id": 3002017
   },
   "https://www.facebook.com/groups/994303254903669/posts/1831364024530917": {
    "checked": "2026-09-30",
@@ -270,16 +295,6 @@
    "hash": "8a85769ca1a092a4ce099d455cae811741d73e2c",
    "id": 3001982
   },
-  "https://www.facebook.com/groups/canhochungcudanang/posts/2969867860073958": {
-   "checked": "2026-09-28",
-   "hash": "f004325b88cbaab1ac4525ca6f48c399c97ea274",
-   "id": 3001606
-  },
-  "https://www.facebook.com/groups/canhochungcudanang/posts/2981249928935751": {
-   "checked": "2026-09-28",
-   "hash": "9a5a0a575032a872882adc7091290c0599c13869",
-   "id": 3001605
-  },
   "https://www.facebook.com/groups/canhochungcudanang/posts/2985124201881657": {
    "checked": "2026-10-05",
    "hash": "3b8abfe5e317d67833f05822b9edaca08ad84741",
@@ -315,10 +330,10 @@
    "hash": "f49530bcaf69024ea216e9bc088a0dd29a3f2fad",
    "id": 3001990
   },
-  "https://www.facebook.com/groups/chothue79/posts/4622243491378505": {
-   "checked": "2026-09-28",
-   "hash": "b983688a967d7f9a3b42b5f3fbde9a9f6c0aa5b4",
-   "id": 3001611
+  "https://www.facebook.com/groups/chothue79/posts/4635199233416264": {
+   "checked": "2026-10-07",
+   "hash": "967fb5cf424cc887f6e44f4e409ee523961195cc",
+   "id": 3002033
   },
   "https://www.facebook.com/groups/chothuecanhodanang43/posts/1747683616887947": {
    "checked": "2026-09-29",
@@ -359,6 +374,16 @@
    "checked": "2026-09-29",
    "hash": "b7212263bd79194c9bd7e357ff08771d8cc5f65c",
    "id": 3001703
+  },
+  "https://www.facebook.com/groups/chothuecanhogiarenhatrang/posts/2082963112537790": {
+   "checked": "2026-10-07",
+   "hash": "d6abf759f52df2c4dab745581fdb68b0a46568dd",
+   "id": 3002037
+  },
+  "https://www.facebook.com/groups/chothuecanhogiarenhatrang/posts/2083377932496308": {
+   "checked": "2026-10-07",
+   "hash": "5eaf9943e872e4b5c4807c164c35a0cdf500999d",
+   "id": 3002038
   },
   "https://www.facebook.com/groups/chothuecanhotphcm5starsgroup/posts/1967788500964238": {
    "checked": "2026-10-05",
@@ -415,25 +440,30 @@
    "hash": "26e7015ce6a12544d9257a9240bf0448567f726b",
    "id": 3001893
   },
+  "https://www.facebook.com/groups/khachsanvillahomestaynhatrang/posts/1117203214086900": {
+   "checked": "2026-10-07",
+   "hash": "f64aa37290ea9ab84e316d880b5c9941daccaca3",
+   "id": 3002034
+  },
   "https://www.facebook.com/groups/khachsanvillahomestaynhatrang/posts/1118167457323809": {
    "checked": "2026-09-29",
    "hash": "fa5e2917ea853cd22023e64fe0ede7281d64567f",
    "id": 3001702
   },
+  "https://www.facebook.com/groups/khachsanvillahomestaynhatrang/posts/1125804183226803": {
+   "checked": "2026-10-07",
+   "hash": "122ff5f7ea10ff6e0faec183f60c688ff69decfc",
+   "id": 3002035
+  },
+  "https://www.facebook.com/groups/khachsanvillahomestaynhatrang/posts/1125809883226233": {
+   "checked": "2026-10-07",
+   "hash": "95f8af47a3809fa9475336ef590f0b5ac6236822",
+   "id": 3002036
+  },
   "https://www.facebook.com/groups/nhatrang.apartment.and.house/posts/2714566965642245": {
    "checked": "2026-10-06",
    "hash": "77ab708857c0dcb25c0ae5ae39e9d27628e04e3a",
    "id": 3001991
-  },
-  "https://www.facebook.com/groups/nhatrang.apartment.and.house/posts/2719042408528034": {
-   "checked": "2026-09-28",
-   "hash": "9ae1c1553679000ee400649fcffe8c7ce8482047",
-   "id": 3001613
-  },
-  "https://www.facebook.com/groups/nhatrang.apartment.and.house/posts/2722683684830573": {
-   "checked": "2026-09-28",
-   "hash": "3a262f4ad44eec0db90524307ddc96f79c6b0777",
-   "id": 3001612
   },
   "https://www.facebook.com/groups/nhatrang.apartment.and.house/posts/2726864874412454": {
    "checked": "2026-10-06",
@@ -460,11 +490,6 @@
    "hash": "e2c74f4859ffccb924ede3ef154041d723762a20",
    "id": 3001883
   },
-  "https://www.facebook.com/groups/phongtrocanhonhadanang/posts/1488716350088015": {
-   "checked": "2026-09-28",
-   "hash": "f49c309628c4b8cc1150f47b43d6f8c30b2a7fd3",
-   "id": 3001609
-  },
   "https://www.facebook.com/groups/phongtrocanhonhadanang/posts/1491410159818634": {
    "checked": "2026-09-30",
    "hash": "15ca47ad749f998a3c7d50c88a0be6426147872f",
@@ -490,6 +515,11 @@
    "hash": "0b8ffedb82e538e334a5f7bda8eae31e65ae7e9e",
    "id": 3001976
   },
+  "https://www.facebook.com/groups/phongtrocanhonhadanang/posts/1497921535834163": {
+   "checked": "2026-10-07",
+   "hash": "a8cbe15d44ec615a05eb83e0ae739c2f8e7cc8f2",
+   "id": 3002026
+  },
   "https://www.facebook.com/groups/phongtrochothuehue/posts/2044199632954479": {
    "checked": "2026-10-05",
    "hash": "4fc2d3ec4ea5096e0b08f152ffe02feb2fbe201c",
@@ -506,9 +536,14 @@
    "id": 3001899
   },
   "https://www.facebook.com/groups/phongtrosvhue/posts/1676192456923396": {
-   "checked": "2026-09-28",
+   "checked": "2026-10-07",
    "hash": "49b3045caba2670cf86bc7979605d9d8fbcc0d53",
-   "id": 3001610
+   "id": 3002029
+  },
+  "https://www.facebook.com/groups/phongtrosvhue/posts/1699463947929580": {
+   "checked": "2026-10-07",
+   "hash": "39dac084205f264df5c74027c169a8b26402b63f",
+   "id": 3002030
   },
   "https://www.facebook.com/groups/phongtrosvhue/posts/1739874880555153": {
    "checked": "2026-10-05",
@@ -529,11 +564,6 @@
    "checked": "2026-10-06",
    "hash": "836ee789d5879701be932b2df91a0d61df96a782",
    "id": 3001995
-  },
-  "https://www.facebook.com/groups/thuecanhotronhatrang/posts/1981650005864100": {
-   "checked": "2026-09-28",
-   "hash": "37013ef0a27d6beb32832ace712dfe7e7efe35db",
-   "id": 3001614
   },
   "https://www.facebook.com/groups/thuecanhotronhatrang/posts/1982808442414923": {
    "checked": "2026-09-29",
