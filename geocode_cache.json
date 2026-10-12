@@ -7115,5 +7115,27 @@
   "lat": 16.077983,
   "lon": 108.1586494,
   "display_name": "Đường Trần Quý Khoách, Phường Hòa Khánh, Thành phố Đà Nẵng, 84236, Việt Nam"
- }
+ },
+ "Phan Thành Tài, Da Nang, Vietnam": {
+  "lat": 15.5703527,
+  "lon": 108.471032,
+  "display_name": "Phan Thành Tài, Phường Bàn Thạch, Tam Kỳ, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Phan Thành Tài, Phường Hòa Cường, Da Nang, Vietnam": {
+  "lat": 16.0537794,
+  "lon": 108.221434,
+  "display_name": "Đường Phan Thành Tài, Tổ dân phố 4, Phường Hòa Cường, Thành phố Đà Nẵng, 02363, Việt Nam"
+ },
+ "Mỹ Đa Tây 9, Da Nang, Vietnam": {
+  "lat": 15.8922219,
+  "lon": 108.1757666,
+  "display_name": "Cầu Ái Mỹ - VD 02A, Xã Điện Bàn Tây, Thành phố Đà Nẵng, Việt Nam"
+ },
+ "Mỹ Đa Tây 9, Phường Ngũ Hành Sơn, Da Nang, Vietnam": {
+  "lat": 16.0314451,
+  "lon": 108.2393533,
+  "display_name": "Đường Mỹ Đa Tây 6, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+ },
+ "One River Villa, Da Nang, Vietnam": null,
+ "One River Villa, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null
 }
