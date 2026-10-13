@@ -7137,5 +7137,35 @@
   "display_name": "Đường Mỹ Đa Tây 6, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
  },
  "One River Villa, Da Nang, Vietnam": null,
- "One River Villa, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null
+ "One River Villa, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Du 44, Da Nang, Vietnam": {
+  "lat": 16.062815,
+  "lon": 108.2101633,
+  "display_name": "139nguyễn đucedm, 139, Đường Tản Đà, Tổ dân phố 24 Thạc Gián, Phường Thanh Khê, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Đông Kinh Nghĩa Thục, Da Nang, Vietnam": {
+  "lat": 16.0754639,
+  "lon": 108.2413155,
+  "display_name": "Đông Kinh Nghĩa Thục, Tổ dân phố An Cư 1, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "High Street South Corporate Plaza, Manila, Philippines": {
+  "lat": 14.5479598,
+  "lon": 121.0514136,
+  "display_name": "High Street South Corporate Plaza, East Gallery Place Lobby Road, East Gallery Place, Fort Bonifacio, Taguig District 2, Taguig, Southern Manila District, Metro Manila, 1635, Philippines"
+ },
+ "Nai Hien Dong, Da Nang, Vietnam": {
+  "lat": 16.0901339,
+  "lon": 108.234082,
+  "display_name": "Chợ Nại Hiên Đông, Đường Ngô Trí Hòa, Phường Sơn Trà, Thành phố Đà Nẵng, 50207, Việt Nam"
+ },
+ "Thôi Hữu, Da Nang, Vietnam": {
+  "lat": 16.1044807,
+  "lon": 108.2614337,
+  "display_name": "Đường Thôi Hữu, Phường Sơn Trà, Thành phố Đà Nẵng, 50408, Việt Nam"
+ },
+ "An Trung, Da Nang, Vietnam": {
+  "lat": 16.0601215,
+  "lon": 108.2308871,
+  "display_name": "Tổ dân phố An Trung 1, Phường An Hải, Thành phố Đà Nẵng, 50413, Việt Nam"
+ }
 }
