@@ -1,7 +1,7 @@
 {
  "date": "2026-10-14",
  "source": "https://open.er-api.com/v6/latest/USD",
- "source_updated": "Mon, 12 Oct 2026 23:57:31 +0000",
+ "source_updated": "Wed, 14 Oct 2026 00:02:32 +0000",
  "base": "VND",
  "listing_currencies": [
   "VND",
@@ -15,11 +15,11 @@
   "CNY"
  ],
  "per_usd": {
-  "CNY": 6.70582,
-  "EUR": 0.895156,
-  "PHP": 62.786942,
-  "RUB": 84.043643,
+  "CNY": 6.705025,
+  "EUR": 0.893421,
+  "PHP": 62.803175,
+  "RUB": 83.733665,
   "USD": 1.0,
-  "VND": 25897.062624
+  "VND": 25897.086574
  }
 }

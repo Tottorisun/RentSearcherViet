@@ -354,6 +354,18 @@
    "hash": "d953e995af69ed635bdc4414700797800b61e960",
    "id": 2001169
   },
+  "https://t.me/arenda_nyachang_zhilye/28718": {
+   "cat": "sunset:A2403",
+   "checked": "2026-10-14",
+   "hash": "24668df0fa084ca6f0cf59a6c95e59fbe21e0280",
+   "id": 2001186
+  },
+  "https://t.me/arenda_nyachang_zhilye/28728": {
+   "cat": "sunset:A2404",
+   "checked": "2026-10-14",
+   "hash": "0d33d707b352c823443e7d1862ba515a043cc5c2",
+   "id": 2001185
+  },
   "https://t.me/arenda_vietnam/64978": {
    "checked": "2026-09-12",
    "hash": "1db4ad4716edb0148f02a2cf3870da16c9f3ad6b",
@@ -867,6 +879,18 @@
   "https://t.me/danang_house/23033": {
    "checked": "2026-10-14",
    "id": 2001172
+  },
+  "https://t.me/danang_house/23072": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "49c013bb39c5d931aed673426348aaa989e4f180",
+   "id": 2001181
+  },
+  "https://t.me/danang_house/23082": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "31e1a076e82d48c6e5bf86d3842235a4548b5538",
+   "id": 2001182
   },
   "https://t.me/danangrentaflat/128804": {
    "cat": null,
@@ -2336,6 +2360,42 @@
    "hash": "464e92575c50723d0f30c20122771d4c63c492bc",
    "id": 2001170
   },
+  "https://t.me/danangrentaflat/147488": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "62c10e2f55c02b43a302e567b8185930623c2924",
+   "id": 2001177
+  },
+  "https://t.me/danangrentaflat/147497": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "973bf192ff608c102bbb4a8b75e57dea243b0d4e",
+   "id": 2001178
+  },
+  "https://t.me/danangrentaflat/147522": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "f7f1598920b552b41828b73e166cd8c1c945912e",
+   "id": 2001179
+  },
+  "https://t.me/danangrentaflat/147530": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "9f9902ae7419b58d665a8197d1094340ce1de4ef",
+   "id": 2001174
+  },
+  "https://t.me/danangrentaflat/147547": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "79fddc308b48786e8a19a5a90400bc17bbe11487",
+   "id": 2001175
+  },
+  "https://t.me/danangrentaflat/147555": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "a9a9549e2dcda8bafcfa465a8c7db20ff62e7ddb",
+   "id": 2001176
+  },
   "https://t.me/nhatranghomes/11270": {
    "cat": null,
    "checked": "2026-09-12",
@@ -3062,6 +3122,18 @@
    "hash": "1fd131c494664a291c2fba5f315c45448aac52db",
    "id": 2001173
   },
+  "https://t.me/nyachang_arenda/693375": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "8c94c6fc7c63edfc592f044fdfc12cc530c40fa5",
+   "id": 2001184
+  },
+  "https://t.me/nyachang_arenda/693400": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "3c305166ce8b9699f8d96e5b794ec47c363a9b4f",
+   "id": 2001183
+  },
   "https://t.me/viet_life_niachang/177918": {
    "cat": null,
    "checked": "2026-09-12",
@@ -3707,6 +3779,12 @@
    "checked": "2026-10-14",
    "hash": "cc608c072f1476eab5e6b360b97f4fc436d7d19a",
    "id": 2001172
+  },
+  "https://t.me/vietnam_nedvijimost/26454": {
+   "cat": null,
+   "checked": "2026-10-14",
+   "hash": "9ee8234e7eabc5597b8a8b5917510096f67cd86d",
+   "id": 2001180
   }
  }
 }
