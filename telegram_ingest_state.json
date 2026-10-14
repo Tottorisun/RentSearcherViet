@@ -892,6 +892,16 @@
    "hash": "31e1a076e82d48c6e5bf86d3842235a4548b5538",
    "id": 2001182
   },
+  "https://t.me/danang_house/23172": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "2a9e88db98f290c4d62f68ae09f3c6123f17ed0e",
+   "id": 2001195
+  },
+  "https://t.me/danang_house/23180": {
+   "checked": "2026-10-15",
+   "id": 2001193
+  },
   "https://t.me/danangrentaflat/128804": {
    "cat": null,
    "checked": "2026-09-12",
@@ -2396,6 +2406,36 @@
    "hash": "a9a9549e2dcda8bafcfa465a8c7db20ff62e7ddb",
    "id": 2001176
   },
+  "https://t.me/danangrentaflat/147653": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "e9812fa45c127f8d7322187926144c641a04f990",
+   "id": 2001189
+  },
+  "https://t.me/danangrentaflat/147661": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "bed292ed2ae3c60344475d58a8de6eca3f88a299",
+   "id": 2001190
+  },
+  "https://t.me/danangrentaflat/147669": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "509516c23ee243d63d9fae1f1df9729da26ba3dc",
+   "id": 2001191
+  },
+  "https://t.me/danangrentaflat/147687": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "d5d9eb99742c33f6c0955b5e25d66d2e549a6b49",
+   "id": 2001187
+  },
+  "https://t.me/danangrentaflat/147697": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "d1df873178570ab62c7345f4a25d85a3019dd01b",
+   "id": 2001188
+  },
   "https://t.me/nhatranghomes/11270": {
    "cat": null,
    "checked": "2026-09-12",
@@ -3785,6 +3825,24 @@
    "checked": "2026-10-14",
    "hash": "9ee8234e7eabc5597b8a8b5917510096f67cd86d",
    "id": 2001180
+  },
+  "https://t.me/vietnam_nedvijimost/26534": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "fdf79242b15409e2a4a3f059131d6ce83d8024f4",
+   "id": 2001193
+  },
+  "https://t.me/vietnam_nedvijimost/26544": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "0238b95107621443f545dd6ce34301d103866779",
+   "id": 2001194
+  },
+  "https://t.me/vietnam_nedvijimost/26572": {
+   "cat": null,
+   "checked": "2026-10-15",
+   "hash": "3268213d1ac8bb79df631416762705f9215f5857",
+   "id": 2001192
   }
  }
 }
