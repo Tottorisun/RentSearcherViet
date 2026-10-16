@@ -902,6 +902,10 @@
    "checked": "2026-10-15",
    "id": 2001193
   },
+  "https://t.me/danang_house/23200": {
+   "checked": "2026-10-16",
+   "id": 2001213
+  },
   "https://t.me/danangrentaflat/128804": {
    "cat": null,
    "checked": "2026-09-12",
@@ -2484,6 +2488,18 @@
    "hash": "d8107e72d4c828b95204b479a2a842777dc3ec8a",
    "id": 2001204
   },
+  "https://t.me/danangrentaflat/148682": {
+   "cat": "minhouse:F170",
+   "checked": "2026-10-16",
+   "hash": "f2dc26bb1d0eb71517206f2763b4cff6549c050f",
+   "id": 2001212
+  },
+  "https://t.me/danangrentaflat/148712": {
+   "cat": null,
+   "checked": "2026-10-16",
+   "hash": "53bfb500ac93043933682abcf7fa5a33f8f76a8a",
+   "id": 2001211
+  },
   "https://t.me/nhatranghomes/11270": {
    "cat": null,
    "checked": "2026-09-12",
@@ -2783,6 +2799,18 @@
    "checked": "2026-10-15",
    "hash": "69249ffc26eb0c064ae497974379dd141f92f112",
    "id": 2001203
+  },
+  "https://t.me/nhatranghomes/13119": {
+   "cat": null,
+   "checked": "2026-10-16",
+   "hash": "8452ca105fec74d529f92433b4013b71461abd6e",
+   "id": 2001217
+  },
+  "https://t.me/nhatranghomes/13142": {
+   "cat": null,
+   "checked": "2026-10-16",
+   "hash": "a0bbe9fdcc3d580c87dbadbfbc304708e1390e20",
+   "id": 2001216
   },
   "https://t.me/nyachang_arenda/637411": {
    "cat": null,
@@ -3251,6 +3279,18 @@
    "checked": "2026-10-16",
    "hash": "a4302e5e80bb1e399afe1f4dfa2a30427f8076f8",
    "id": 2001209
+  },
+  "https://t.me/nyachang_arenda/698183": {
+   "cat": null,
+   "checked": "2026-10-16",
+   "hash": "df0e0c890967dcbb93def19416bef9cab4e20792",
+   "id": 2001215
+  },
+  "https://t.me/nyachang_arenda/698203": {
+   "cat": null,
+   "checked": "2026-10-16",
+   "hash": "3c0fbe0a9d804f5236bf77e882ef4079a3fdec5d",
+   "id": 2001214
   },
   "https://t.me/viet_life_niachang/177918": {
    "cat": null,
@@ -3933,6 +3973,12 @@
    "checked": "2026-10-15",
    "hash": "f8461a15cb5cd60a22ee95e1aaf26c2969d479fd",
    "id": 2001200
+  },
+  "https://t.me/vietnam_nedvijimost/26631": {
+   "cat": null,
+   "checked": "2026-10-16",
+   "hash": "40d43a532635fdac086068ecd5df95ce28029d97",
+   "id": 2001213
   }
  }
 }
