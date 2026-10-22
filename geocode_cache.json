@@ -7260,5 +7260,10 @@
   "display_name": "Đường Đỗ Nhuận, Hòa Minh, Phường Hòa Khánh, Thành phố Đà Nẵng, 84236, Việt Nam"
  },
  "Bai Tam Tan Tra, Da Nang, Vietnam": null,
- "Bai Tam Tan Tra, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null
+ "Bai Tam Tan Tra, Phường Ngũ Hành Sơn, Da Nang, Vietnam": null,
+ "Hoa Cuong, Da Nang, Vietnam": {
+  "lat": 16.0416286,
+  "lon": 108.2175304,
+  "display_name": "Phường Hòa Cường, Thành phố Đà Nẵng, 50219, Việt Nam"
+ }
 }
