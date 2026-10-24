@@ -440,6 +440,12 @@
    "checked": "2026-10-23",
    "id": 2001348
   },
+  "https://t.me/arenda_nyachang_zhilye/28952": {
+   "cat": "sunset:A2424",
+   "checked": "2026-10-24",
+   "hash": "0d7e12536373805e844bfb6690c90e008f22537e",
+   "id": 2001359
+  },
   "https://t.me/arenda_vietnam/64978": {
    "checked": "2026-09-12",
    "hash": "1db4ad4716edb0148f02a2cf3870da16c9f3ad6b",
@@ -1119,6 +1125,14 @@
   "https://t.me/danang_house/23734": {
    "checked": "2026-10-24",
    "id": 2001352
+  },
+  "https://t.me/danang_house/23743": {
+   "checked": "2026-10-24",
+   "id": 2001357
+  },
+  "https://t.me/danang_house/23753": {
+   "checked": "2026-10-24",
+   "id": 2001358
   },
   "https://t.me/danangrentaflat/128804": {
    "cat": null,
@@ -3090,6 +3104,30 @@
    "hash": "6d2164943a6c74c47eb47ff9da0ef8f1d9a55c8b",
    "id": 2001349
   },
+  "https://t.me/danangrentaflat/152897": {
+   "cat": null,
+   "checked": "2026-10-24",
+   "hash": "10f76f98687c388f9a5ad0edccfac6046676ed76",
+   "id": 2001356
+  },
+  "https://t.me/danangrentaflat/152907": {
+   "cat": null,
+   "checked": "2026-10-24",
+   "hash": "d9a99f2520584119a4e0fbad5f8f193d04a64a26",
+   "id": 2001353
+  },
+  "https://t.me/danangrentaflat/152916": {
+   "cat": null,
+   "checked": "2026-10-24",
+   "hash": "865306ad2a5e96207759c45464f365cf73a226d1",
+   "id": 2001354
+  },
+  "https://t.me/danangrentaflat/152924": {
+   "cat": null,
+   "checked": "2026-10-24",
+   "hash": "fb32c1ca035852848ea31784367f4e2d7de131f9",
+   "id": 2001355
+  },
   "https://t.me/nhatranghomes/11270": {
    "cat": null,
    "checked": "2026-09-12",
@@ -4837,6 +4875,18 @@
    "checked": "2026-10-24",
    "hash": "67c1359f79358726aa56387437632cd75e698d89",
    "id": 2001352
+  },
+  "https://t.me/vietnam_nedvijimost/27591": {
+   "cat": null,
+   "checked": "2026-10-24",
+   "hash": "fe7dd4f782c2e96baf2ca89be2f5c7a88d8b8f09",
+   "id": 2001357
+  },
+  "https://t.me/vietnam_nedvijimost/27601": {
+   "cat": null,
+   "checked": "2026-10-24",
+   "hash": "3632d1ac09e8c5501fd13b929f226a396d09d28c",
+   "id": 2001358
   }
  }
 }
