@@ -504,6 +504,12 @@
    "checked": "2026-10-28",
    "id": 2001420
   },
+  "https://t.me/arenda_nyachang_zhilye/29086": {
+   "cat": "sunset:A2437",
+   "checked": "2026-10-29",
+   "hash": "85a9c6cfeddbcbcd2d0a5ddbd0bcd3056de6f50d",
+   "id": 2001431
+  },
   "https://t.me/arenda_vietnam/64978": {
    "checked": "2026-09-12",
    "hash": "1db4ad4716edb0148f02a2cf3870da16c9f3ad6b",
@@ -1275,6 +1281,10 @@
    "checked": "2026-10-28",
    "hash": "bc689126b9804a17cc71c4e56fb380bed500d67b",
    "id": 2001417
+  },
+  "https://t.me/danang_house/23998": {
+   "checked": "2026-10-29",
+   "id": 2001428
   },
   "https://t.me/danangrentaflat/128804": {
    "cat": null,
@@ -3444,6 +3454,18 @@
    "hash": "24ed50d9b8c6dc440215f5a307344bd509eb099c",
    "id": 2001425
   },
+  "https://t.me/danangrentaflat/156266": {
+   "cat": null,
+   "checked": "2026-10-29",
+   "hash": "97ee16dd93476b8097b6bea35ef67690738f1577",
+   "id": 2001427
+  },
+  "https://t.me/danangrentaflat/156293": {
+   "cat": null,
+   "checked": "2026-10-29",
+   "hash": "c586653279eb50c5c7c16ad2119653614f416b06",
+   "id": 2001426
+  },
   "https://t.me/nhatranghomes/11270": {
    "cat": null,
    "checked": "2026-09-12",
@@ -4428,6 +4450,12 @@
    "hash": "eadab163d63635bfd20590ffb8a73b6f4c68f7c2",
    "id": 2001418
   },
+  "https://t.me/nyachang_arenda/738097": {
+   "cat": null,
+   "checked": "2026-10-29",
+   "hash": "cd8af86fed2c16e8a023be5776deb497905fbd94",
+   "id": 2001430
+  },
   "https://t.me/viet_life_niachang/177918": {
    "cat": null,
    "checked": "2026-09-12",
@@ -5311,6 +5339,18 @@
    "checked": "2026-10-28",
    "hash": "c24197bfc3279e7ac0f1d7db4419258ceec12185",
    "id": 2001415
+  },
+  "https://t.me/vietnam_nedvijimost/28105": {
+   "cat": null,
+   "checked": "2026-10-29",
+   "hash": "2a9e88db98f290c4d62f68ae09f3c6123f17ed0e",
+   "id": 2001429
+  },
+  "https://t.me/vietnam_nedvijimost/28123": {
+   "cat": null,
+   "checked": "2026-10-29",
+   "hash": "55564787da91acb8c06a374c375101e7353801f8",
+   "id": 2001428
   }
  }
 }
